@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Departures from v2 · Veerha Design System</title>
+<meta name="description" content="Where Indigo Slate knowingly diverges from Veerha design system v2, and the reasoning for each.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="system/fonts.css">
+<link rel="stylesheet" href="system/tokens.css">
+<link rel="stylesheet" href="system/base.css">
+<link rel="stylesheet" href="system/components.css">
+<link rel="stylesheet" href="system/sheet.css">
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Design System</div>
+        <div class="sh-brand__sub">Indigo Slate · v1.0 · September 2026</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html">Overview</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="spec.html">Written spec</a>
+      <a href="departures.html" aria-current="page">Departures</a>
+      <a href="../screens/index.html">Screens ↗</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>Departures from v2</h1>
+    <p>
+      <code>Veerha_Product_Design_System_v2.md</code> governs this engagement. Indigo Slate — the
+      direction selected for the revamp — originated as the product's <em>first draft</em>, written
+      before v2 existed. In several places the two disagree. This page settles those disagreements
+      in writing, once, rather than re-arguing them in every review.
+    </p>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">00</div>
+    <h2 class="sh-sec__h">Five conflicts at a glance</h2>
+    <p class="sh-sec__d">
+      Two complied with, two departed from, one deferred. Each entry below gives the rule as v2
+      states it, what Indigo Slate does, the reasoning, and what we do to hold onto the rule's
+      intent even where we depart from its letter.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <table class="sh-tbl">
+      <thead><tr><th style="width:36px">#</th><th>v2 rule</th><th style="width:210px">Status</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>§02.5 / §08 / §65.7 — "AI does not equal purple"</td>
+            <td><span class="sh-status sh-status--ok">Complied</span></td></tr>
+        <tr><td class="num">2</td><td>§05 — warm-neutral canvas, not cool blue-grey</td>
+            <td><span class="sh-status sh-status--dep">Departed</span></td></tr>
+        <tr><td class="num">3</td><td>§06 — "Do not default to generic AI indigo"</td>
+            <td><span class="sh-status sh-status--dep">Departed</span></td></tr>
+        <tr><td class="num">4</td><td>§02.3 / §65.8 — "Do not design everything as cards"</td>
+            <td><span class="sh-status sh-status--part">Partially complied</span></td></tr>
+        <tr><td class="num">5</td><td>§54 / §60 — dark mode must avoid navy + purple</td>
+            <td><span class="sh-status sh-status--defer">Deferred</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===================== 1 ===================== -->
+  <section class="sh-sec" id="one">
+    <div class="sh-sec__n">01</div>
+    <h2 class="sh-sec__h">"AI does not equal purple" <span class="sh-status sh-status--ok" style="vertical-align:middle;margin-left:var(--s-2)">Complied</span></h2>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-prose">
+      <div class="sh-quote">
+        <p><strong>v2 §02, rule 5:</strong> "AI should have a subtle visual language, but it should
+        not be represented by purple everywhere. AI identity should come primarily from: Veerha
+        symbol + typography + wording + evidence + interaction pattern."</p>
+        <p><strong>§65.7:</strong> "Do not use purple as the default AI color."</p>
+      </div>
+      <p>
+        <strong>Indigo Slate as built:</strong> a violet AI layer — <code>--ai-bg:#F5F3FF</code>,
+        <code>--ai-bd:#DDD6FE</code>, <code>--ai-tx:#6D28D9</code>, <code>--ai-ic:#7C3AED</code>.
+      </p>
+      <p>
+        <strong>What we did:</strong> removed it. The AI layer is now v2's warm greige —
+        <code>#F4F2EA / #D9D4C7 / #5F5A4F / #6E6758</code>.
+      </p>
+      <p>
+        <strong>Why, beyond compliance.</strong> This was measured rather than asserted. The violet
+        mark sat <strong>19° from the brand indigo hue at 83% saturation</strong> — by any reasonable
+        definition the same colour family. An AI panel therefore looked like ordinary brand chrome,
+        which defeats the entire purpose of marking it. The greige sits <strong>158° opposite at 11%
+        saturation</strong>, and against the cool slate canvas the warmth reads as deliberate rather
+        than accidental.
+      </p>
+    </div>
+
+    <div class="sh-spec">
+      <p class="sh-spec__note">
+        Three candidates were rendered side by side on the actual canvas before choosing. The slate
+        was so quiet that AI went unmarked; the violet's body text was noisy and its chip competed
+        with the indigo primary button beneath it.
+      </p>
+      <div class="sh-frame">
+        <div class="sh-states" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+
+          <div class="sh-state" style="width:100%">
+            <div class="sh-state__l">Chosen · warm greige</div>
+            <div class="v-ai" style="width:100%">
+              <div class="label v-ai__label"><span class="v-ai__mark">V</span>Veerha's read</div>
+              <div style="font-size:14px;line-height:21px;font-weight:600">Ready for a callback.</div>
+              <p style="font-size:13px;line-height:19px;color:var(--ai-tx);margin-top:4px">
+                Asked for one, and has already chosen a room.</p>
+            </div>
+            <button class="v-btn v-btn--primary v-btn--sm">Call now</button>
+            <div class="t-meta muted">158° from brand · 11% saturation</div>
+          </div>
+
+          <div class="sh-state" style="width:100%">
+            <div class="sh-state__l">Rejected · chromaless slate</div>
+            <div style="width:100%;background:var(--surface-subtle);border:1px solid var(--border-strong);border-radius:var(--r-tile);padding:var(--s-4)">
+              <div class="label" style="display:flex;align-items:center;gap:7px;margin-bottom:var(--s-2)">
+                <span style="width:18px;height:18px;border-radius:var(--r-xs);display:grid;place-items:center;background:var(--text-secondary);color:var(--surface);font-size:10px;font-weight:600">V</span>Veerha's read</div>
+              <div style="font-size:14px;line-height:21px;font-weight:600">Ready for a callback.</div>
+              <p style="font-size:13px;line-height:19px;color:var(--text-secondary);margin-top:4px">
+                Asked for one, and has already chosen a room.</p>
+            </div>
+            <button class="v-btn v-btn--primary v-btn--sm">Call now</button>
+            <div class="t-meta muted">Too quiet — AI goes unmarked</div>
+          </div>
+
+          <div class="sh-state" style="width:100%">
+            <div class="sh-state__l">Rejected · the original violet</div>
+            <div style="width:100%;background:#F5F3FF;border:1px solid #DDD6FE;border-radius:var(--r-tile);padding:var(--s-4)">
+              <div class="label" style="display:flex;align-items:center;gap:7px;margin-bottom:var(--s-2);color:#6D28D9">
+                <span style="width:18px;height:18px;border-radius:var(--r-xs);display:grid;place-items:center;background:#7C3AED;color:#F5F3FF;font-size:10px;font-weight:600">V</span>Veerha's read</div>
+              <div style="font-size:14px;line-height:21px;font-weight:600">Ready for a callback.</div>
+              <p style="font-size:13px;line-height:19px;color:#6D28D9;margin-top:4px">
+                Asked for one, and has already chosen a room.</p>
+            </div>
+            <button class="v-btn v-btn--primary v-btn--sm">Call now</button>
+            <div class="t-meta muted">19° from brand · reads as brand chrome</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2 ===================== -->
+  <section class="sh-sec" id="two">
+    <div class="sh-sec__n">02</div>
+    <h2 class="sh-sec__h">The canvas is cool, not warm <span class="sh-status sh-status--dep" style="vertical-align:middle;margin-left:var(--s-2)">Departed</span></h2>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-prose">
+      <div class="sh-quote">
+        <p><strong>v2 §05:</strong> "Use a <strong>warm-neutral canvas</strong> rather than the
+        common cool blue-grey SaaS background." … "The warmth should be subtle. Do NOT make the
+        application beige."</p>
+      </div>
+      <p>
+        <strong>Indigo Slate as built:</strong> <code>--canvas:#F8FAFC</code> — a cool slate, which
+        is precisely the blue-grey the rule names.
+      </p>
+      <p>
+        <strong>Why.</strong> The client selected this direction with the live product in front of
+        them, and the live product is cool-toned. A warmer canvas would have been the more faithful
+        reading of v2, but it would also mean the direction they chose is not the direction they
+        receive.
+      </p>
+      <p>
+        <strong>What we do to keep the rule's intent.</strong> v2 wants warmth so the product doesn't
+        read as a generic cool SaaS template. We get that warmth from the <strong>AI layer instead of
+        the canvas</strong> — and arguably get it working harder there, because the warm greige only
+        appears where Veerha itself has done something. The contrast between a cool operational
+        canvas and a warm system layer is now carrying meaning rather than just being a mood.
+      </p>
+      <div class="sh-note">
+        <strong>If the client wants to revisit:</strong> warming the canvas is a two-token change
+        (<code>--canvas</code>, <code>--surface-subtle</code>) and nothing else in the system moves.
+        It is genuinely cheap to try.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3 ===================== -->
+  <section class="sh-sec" id="three">
+    <div class="sh-sec__n">03</div>
+    <h2 class="sh-sec__h">Indigo as the brand accent <span class="sh-status sh-status--dep" style="vertical-align:middle;margin-left:var(--s-2)">Departed</span></h2>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-prose">
+      <div class="sh-quote">
+        <p><strong>v2 §06:</strong> "Do not use the existing dashboard purple. <strong>Do not default
+        to generic AI indigo.</strong> Explore a distinctive <strong>cobalt / blue</strong> or another
+        controlled brand accent."</p>
+      </div>
+      <p>
+        <strong>Indigo Slate as built:</strong> <code>--brand:#4F46E5</code> — indigo 600. This is the
+        direction's defining characteristic; removing the indigo would make it a different direction.
+        The client chose it knowing the alternatives — three other directions were built and shown,
+        including the cobalt one v2 points toward.
+      </p>
+      <p>
+        <strong>What we do to keep the rule's intent.</strong> v2's concern in §06 and §02.4 is that a
+        brand colour gets sprayed around to make a product look branded rather than to mean anything.
+        So indigo is constrained:
+      </p>
+      <ul>
+        <li>It marks <strong>action and selection only</strong> — primary buttons, active nav,
+          selected rows, links, focus.</li>
+        <li>It <strong>never carries status.</strong> Semantic colour is fully independent of it.</li>
+        <li>It tints exactly <strong>one</strong> whole surface in the system — Recommended Next Step
+          — because that is the most actionable element on any screen.</li>
+      </ul>
+      <p>
+        A full 50–900 ramp now exists, which the prototype lacked. That matters for discipline as
+        well as convenience: without a ramp, components invent one-off indigos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 4 ===================== -->
+  <section class="sh-sec" id="four">
+    <div class="sh-sec__n">04</div>
+    <h2 class="sh-sec__h">Cards <span class="sh-status sh-status--part" style="vertical-align:middle;margin-left:var(--s-2)">Partially complied</span></h2>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-prose">
+      <div class="sh-quote">
+        <p><strong>v2 §02, rule 3:</strong> "Do not design everything as cards. Use typography,
+        whitespace, dividers, tables, lists, grid, alignment <strong>before</strong> adding a card.
+        Cards should represent meaningful grouped surfaces, not every piece of content."</p>
+        <p><strong>§60 anti-patterns:</strong> "Excessive cards."</p>
+      </div>
+      <p>
+        <strong>Indigo Slate as built:</strong> a structural overlay whose own source comment reads
+        <em>"every section becomes its own bordered surface."</em>
+      </p>
+      <p>
+        <strong>Why it isn't a straight departure.</strong> This exact question has already cost this
+        project two rounds. The first pass was judged to have too many cards; the correction went too
+        far the other way and was rejected as "a dark editorial productivity app" with too little
+        structure. The resolution the client landed on is specific, and it is the rule we follow:
+      </p>
+      <div class="sh-quote">
+        <p><strong>Group at the section level, not the metric level.</strong> A surface per block with
+        ruled rows inside. Never one card per number; never a wall of text and hairlines either.</p>
+      </div>
+      <p>
+        So: a section is a card. The rows <strong>inside</strong> it are ruled, not carded. Nothing
+        nests a card in a card. No metric gets its own floating tile. That satisfies v2's actual
+        concern — cards as meaningful grouped surfaces — while giving the client the structure they
+        asked for twice.
+      </p>
+      <p>
+        The client also later supplied three reference dashboards and asked explicitly for a
+        card-based mobile language, which supersedes the "dividers over cards" stance on mobile
+        specifically.
+      </p>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-rules">
+        <div class="sh-rule sh-rule--do">
+          <div class="sh-rule__h">What we do — section level</div>
+          <div class="v-card" style="box-shadow:none;margin-top:var(--s-3)">
+            <div class="v-card__head"><div class="grow">
+              <div class="label">Waiting on you</div>
+              <div class="v-card__title" style="margin-top:4px">4 decisions</div></div></div>
+            <div class="v-card__body">
+              <div class="v-waiting__row" style="border-top:0;padding:var(--s-2) 0">
+                <span class="grow"><span class="v-waiting__title">Confirm call with Arjun</span></span>
+                <span class="v-waiting__verb">Take over →</span></div>
+              <div class="v-waiting__row" style="padding:var(--s-2) 0">
+                <span class="grow"><span class="v-waiting__title">Approve quote for Vikram</span></span>
+                <span class="v-waiting__verb">Review →</span></div>
+              <div class="v-waiting__row" style="padding:var(--s-2) 0">
+                <span class="grow"><span class="v-waiting__title">Refund needs sign-off</span></span>
+                <span class="v-waiting__verb">Decide →</span></div>
+            </div>
+          </div>
+          <p style="margin-top:var(--s-3)">One surface for the block. Ruled rows inside it.</p>
+        </div>
+
+        <div class="sh-rule sh-rule--dont">
+          <div class="sh-rule__h">What we don't — metric level</div>
+          <div style="display:flex;flex-direction:column;gap:var(--s-2);margin-top:var(--s-3)">
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile);box-shadow:var(--e1);padding:var(--s-3)">
+              <div class="v-waiting__title">Confirm call with Arjun</div></div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile);box-shadow:var(--e1);padding:var(--s-3)">
+              <div class="v-waiting__title">Approve quote for Vikram</div></div>
+            <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile);box-shadow:var(--e1);padding:var(--s-3)">
+              <div class="v-waiting__title">Refund needs sign-off</div></div>
+          </div>
+          <p style="margin-top:var(--s-3)">A card per row. Three borders and three shadows doing the work one divider would.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 ===================== -->
+  <section class="sh-sec" id="five">
+    <div class="sh-sec__n">05</div>
+    <h2 class="sh-sec__h">Dark mode <span class="sh-status sh-status--defer" style="vertical-align:middle;margin-left:var(--s-2)">Deferred</span></h2>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-prose">
+      <div class="sh-quote">
+        <p><strong>v2 §54:</strong> "Dark mode is a theme inversion, not a new aesthetic. Do NOT use:
+        neon purple, glowing cards, blue/purple gradients, luminous AI borders, glassmorphism." It
+        should feel like "Veerha at night", not an "AI cyber dashboard".</p>
+        <p><strong>§60 anti-pattern:</strong> "Dark navy + purple combination."</p>
+      </div>
+      <p>
+        <strong>Indigo Slate as built:</strong> <code>--canvas:#080D18</code> (a navy-black) with
+        indigo <code>#6366F1</code> and a violet AI layer — close to the exact combination §60 names.
+      </p>
+      <p>
+        <strong>Status:</strong> deferred with the dark theme. Version 1.0 is light only, by decision.
+      </p>
+      <p>
+        <strong>What is already known for when it lands.</strong> The prototype's dark palette was
+        measured and it has a real structural problem: it is compressed so close to black that
+        surfaces cannot separate by fill. Card-against-canvas came out at <strong>1.20:1</strong>,
+        topbar-against-canvas at <strong>1.07:1</strong> — which is why it read as one flat slab.
+        Separation had to come entirely from borders.
+      </p>
+      <p>
+        So the dark theme should be rebuilt rather than inverted value-by-value: lifted surfaces with
+        real steps between them, and the AI layer re-derived as a dark warm neutral rather than a
+        violet. The navy-plus-violet objection resolves itself once the AI layer is greige, which is
+        already done in light.
+      </p>
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">06</div>
+    <h2 class="sh-sec__h">How to use this document</h2>
+    <hr class="sh-sec__rule">
+    <div class="sh-prose">
+      <p>
+        If a v2 rule is quoted in a review and it appears here, the answer is already written — point
+        at the entry. If a v2 rule is quoted and it <strong>isn't</strong> here, that is worth taking
+        seriously: it means we are either complying with it or we have missed it, and the second is
+        worth checking.
+      </p>
+      <div class="sh-note sh-note--warn">
+        Departures <strong>2</strong> and <strong>3</strong> are the two that rest purely on the
+        client's preference rather than on evidence. Both are reversible at low cost, and both should
+        be re-confirmed with the client at the first design review rather than assumed settled.
+      </div>
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Design System · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span><a href="index.html" style="color:var(--brand)">← Back to overview</a></span>
+  </footer>
+
+</main>
+</body>
+</html>
