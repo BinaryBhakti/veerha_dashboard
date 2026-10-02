@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components · Veerha Design System</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="system/fonts.css">
+<link rel="stylesheet" href="system/tokens.css">
+<link rel="stylesheet" href="system/base.css">
+<link rel="stylesheet" href="system/components.css">
+<link rel="stylesheet" href="system/sheet.css">
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Design System</div>
+        <div class="sh-brand__sub">Indigo Slate · v1.0 · September 2026</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html">Overview</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" aria-current="page">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="spec.html">Written spec</a>
+      <a href="departures.html">Departures</a>
+      <a href="../screens/index.html">Screens ↗</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>Components</h1>
+    <p>
+      Every state drawn as its own frame — default, hover, focus, selected, disabled, loading,
+      error. Nothing is hidden behind an interaction, so the whole library can be reviewed by
+      scrolling. Variants over duplicates: a component with six looks is one component.
+    </p>
+  </section>
+
+  <!-- ============================ SHELL ============================ -->
+  <section class="sh-sec" id="shell">
+    <div class="sh-sec__n">01</div>
+    <h2 class="sh-sec__h">The app shell</h2>
+    <p class="sh-sec__d">
+      Every internal screen sits inside this. An icon rail for modules, a quiet top bar, and —
+      on the config-heavy areas — a second-level section nav inside the canvas. The rail is the
+      only navigation that never changes.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Icon rail</div><div class="sh-spec__cls">.v-rail</div></div>
+      <p class="sh-spec__note">
+        56px. Workspace mark at the top, modules below, settings pinned to the bottom. The active
+        item takes a tinted chip <em>and</em> a 2px rule at the rail's edge — colour is never the
+        only signal. A red dot marks a module with work waiting in it.
+      </p>
+      <div class="sh-frame sh-frame--flush" style="padding:0">
+        <nav class="v-rail" style="height:340px" aria-label="Modules">
+          <div class="v-rail__mark">R</div>
+          <button class="v-rail__item is-active" aria-label="Dashboard">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+          <button class="v-rail__item is-hover" aria-label="Leads">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+            <span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Conversations">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-5.2A8 8 0 1 1 21 12z"/></svg></button>
+          <button class="v-rail__item" aria-label="Calendar">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></button>
+          <span class="v-rail__spacer"></span>
+          <button class="v-rail__item" aria-label="Settings">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+        </nav>
+        <div style="padding:var(--s-5);align-self:center">
+          <div class="sh-states" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))">
+            <div class="sh-state"><div class="sh-state__l">Default</div>
+              <button class="v-rail__item" style="border:1px dashed var(--border)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></button></div>
+            <div class="sh-state"><div class="sh-state__l">Hover</div>
+              <button class="v-rail__item is-hover"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></button></div>
+            <div class="sh-state"><div class="sh-state__l">Active</div>
+              <button class="v-rail__item is-active" style="margin-left:10px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></button></div>
+            <div class="sh-state"><div class="sh-state__l">Work waiting</div>
+              <button class="v-rail__item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><span class="v-navdot"></span></button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Rail — expanded</div><div class="sh-spec__cls">.v-rail.is-expanded</div></div>
+      <p class="sh-spec__note">
+        56px collapsed, 240px open — v2 §16's 64/232 range, tightened. The label is
+        <em>always in the DOM</em>; only its visibility changes, so the accessible name of each
+        button stays the same whichever state the rail is in. The content column shifts rather than
+        being covered: a rail that overlays the page hides the row you were reading.
+      </p>
+      <div class="sh-frame sh-frame--flush" style="padding:0;align-items:stretch">
+        <nav class="v-rail is-expanded" style="height:340px" aria-label="Modules">
+          <div class="v-rail__mark">R</div>
+          <button class="v-rail__item is-active">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <span class="v-rail__label">Dashboard</span></button>
+          <button class="v-rail__item">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+            <span class="v-rail__label">Leads</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-5.2A8 8 0 1 1 21 12z"/></svg>
+            <span class="v-rail__label">Conversations</span></button>
+          <span class="v-rail__spacer"></span>
+          <button class="v-rail__item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            <span class="v-rail__label">Settings</span></button>
+        </nav>
+        <div style="padding:var(--s-5);align-self:flex-start;max-width:44ch">
+          <div class="sh-state__l">Toggled from the top bar</div>
+          <p class="t-small muted" style="margin-top:var(--s-2)">
+            The hamburger carries <code>aria-expanded</code> and the choice persists per viewer, so
+            someone who prefers labels does not re-open it on every visit. Try it in the
+            <a href="../screens/walkthrough.html" style="color:var(--brand)">walkthrough</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Top bar</div><div class="sh-spec__cls">.v-topbar · .v-crumb</div></div>
+      <p class="sh-spec__note">
+        Quiet by instruction. Breadcrumb on the left, search and identity on the right, and
+        nothing else — a top bar full of controls is a top bar nobody reads.
+      </p>
+      <div class="sh-frame sh-frame--flush">
+        <header class="v-topbar" style="width:100%">
+          <button class="v-btn v-btn--icon v-btn--sm" aria-label="Collapse navigation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+          <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Workspace</span></nav>
+          <div style="display:flex;align-items:center;gap:var(--s-3);margin-left:auto">
+            <div class="v-search" style="width:240px">
+              <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+              <input class="v-input" placeholder="Search or run a command"></div>
+            <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+            <span class="v-avatar">A</span>
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Section navigation</div><div class="sh-spec__cls">.v-sidenav</div></div>
+      <p class="sh-spec__note">
+        The second level, used by Settings, Marketing, Catalog and the AI area — 19 of the 77
+        screens sit behind one of these. It lives <em>inside</em> the canvas, beside the content,
+        never stacked above it.
+      </p>
+      <div class="sh-frame sh-frame--flush">
+        <nav class="v-sidenav" style="height:420px" aria-label="Settings sections">
+          <div class="vs-sidenav__head" style="border-bottom:1px solid var(--border);padding-bottom:var(--s-3)">
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Workspace</span></nav>
+            <div class="v-search" style="margin-top:var(--s-3)">
+              <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+              <input class="v-input" placeholder="Search settings"></div>
+          </div>
+          <div class="v-sidenav__group">
+            <div class="label v-sidenav__label">Workspace</div>
+            <a class="v-sidenav__item is-active">Brand</a>
+            <a class="v-sidenav__item is-hover">Localization</a>
+            <a class="v-sidenav__item">Tax</a>
+            <a class="v-sidenav__item">Storage</a>
+            <a class="v-sidenav__item">Access</a>
+          </div>
+          <div class="v-sidenav__group">
+            <div class="label v-sidenav__label">Accounts</div>
+            <a class="v-sidenav__item">Team &amp; access</a>
+            <a class="v-sidenav__item">Departments</a>
+          </div>
+          <div class="v-sidenav__group">
+            <div class="label v-sidenav__label">AI</div>
+            <a class="v-sidenav__item">Behaviour</a>
+            <a class="v-sidenav__item">Knowledge</a>
+          </div>
+        </nav>
+        <div style="padding:var(--s-5);align-self:flex-start;max-width:42ch">
+          <div class="sh-state__l">Why it is here and not above the content</div>
+          <p class="t-small muted" style="margin-top:var(--s-2)">
+            In the live product this nav renders inline above the page on narrow viewports. On the
+            Settings tree that is roughly 27 items — about 1,400px — so more than half the app
+            opens on a phone showing nothing but a menu. Keeping it a sibling of the content, not
+            a block before it, is what makes the responsive pass possible later.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Page header</div><div class="sh-spec__cls">.v-pagehead</div></div>
+      <p class="sh-spec__note">
+        Title, a subtitle that carries a <em>count and a consequence</em> rather than a
+        description, and the action cluster. One primary action; everything else is secondary.
+      </p>
+      <div class="sh-frame sh-frame--surface">
+        <div class="v-pagehead" style="width:100%;margin-bottom:0">
+          <div class="v-pagehead__copy">
+            <h2 class="v-pagehead__title">Leads</h2>
+            <p class="v-pagehead__sub">27 leads · 5 have been waiting too long</p>
+          </div>
+          <div class="v-actions">
+            <div class="v-seg"><button class="v-seg__opt is-active">Table</button><button class="v-seg__opt">Queue</button></div>
+            <button class="v-btn v-btn--secondary v-btn--sm">Columns</button>
+            <button class="v-btn v-btn--secondary v-btn--sm">Import</button>
+            <button class="v-btn v-btn--primary v-btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New lead</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-note">
+      <strong>Assembled in <code>screens/assets/shell.css</code>.</strong> The parts above are
+      product components; composing them into the app frame — rail beside a column of top bar,
+      tab strip and canvas — is layout, and lives with the screens rather than here.
+    </div>
+  </section>
+
+  <!-- ============================ BUTTONS ============================ -->
+  <section class="sh-sec" id="buttons">
+    <div class="sh-sec__n">02</div>
+    <h2 class="sh-sec__h">Buttons</h2>
+    <p class="sh-sec__d">
+      One dominant primary action per section. If everything is primary, nothing is — secondary
+      and ghost exist so the important action stays obvious. Danger comes in two weights: solid when
+      destroying the thing is the point of the screen, quiet when it is a way out that has to be
+      findable without being the loudest thing on the page — a guest cancelling a call, not an
+      admin deleting a workflow.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Variants</div><div class="sh-spec__cls">.v-btn</div></div>
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-states">
+          <div class="sh-state"><div class="sh-state__l">Primary</div><button class="v-btn v-btn--primary">New lead</button></div>
+          <div class="sh-state"><div class="sh-state__l">Secondary</div><button class="v-btn v-btn--secondary">Export</button></div>
+          <div class="sh-state"><div class="sh-state__l">Ghost</div><button class="v-btn v-btn--ghost">View all</button></div>
+          <div class="sh-state"><div class="sh-state__l">Danger</div><button class="v-btn v-btn--danger">Delete lead</button></div>
+          <div class="sh-state"><div class="sh-state__l">Danger, quiet</div><button class="v-btn v-btn--danger-ghost">Cancel this call</button></div>
+          <div class="sh-state"><div class="sh-state__l">Icon</div><button class="v-btn v-btn--icon" aria-label="More">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></button></div>
+          <div class="sh-state"><div class="sh-state__l">With icon</div><button class="v-btn v-btn--primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New lead</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">States</div><div class="sh-spec__cls">.is-hover .is-active .is-focus .is-disabled .is-loading</div></div>
+      <p class="sh-spec__note">Shown on primary; every variant carries the same set.</p>
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-states">
+          <div class="sh-state"><div class="sh-state__l">Default</div><button class="v-btn v-btn--primary">Call now</button></div>
+          <div class="sh-state"><div class="sh-state__l">Hover</div><button class="v-btn v-btn--primary is-hover">Call now</button></div>
+          <div class="sh-state"><div class="sh-state__l">Pressed</div><button class="v-btn v-btn--primary is-active">Call now</button></div>
+          <div class="sh-state"><div class="sh-state__l">Focus</div><button class="v-btn v-btn--primary is-focus">Call now</button></div>
+          <div class="sh-state"><div class="sh-state__l">Disabled</div><button class="v-btn v-btn--primary is-disabled">Call now</button></div>
+          <div class="sh-state"><div class="sh-state__l">Loading</div><button class="v-btn v-btn--primary is-loading">Call now</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Sizes</div><div class="sh-spec__cls">--sm · default · --lg</div></div>
+      <div class="sh-frame sh-frame--surface" style="align-items:center">
+        <button class="v-btn v-btn--secondary v-btn--sm">Small · 30px</button>
+        <button class="v-btn v-btn--secondary">Default · 36px</button>
+        <button class="v-btn v-btn--secondary v-btn--lg">Large · 44px</button>
+        <span class="t-meta muted">Large is the touch size — it becomes the default on mobile.</span>
+      </div>
+    </div>
+
+    <div class="sh-rules">
+      <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+        <p>Keep the label a verb the user would say out loud: "Take over", "Call now", "Approve quote".</p></div>
+      <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+        <p>Don't stack four primary buttons in a header. Promote one, demote the rest to secondary, and push the remainder into an overflow menu.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================ FORMS ============================ -->
+  <section class="sh-sec" id="forms">
+    <div class="sh-sec__n">03</div>
+    <h2 class="sh-sec__h">Form controls</h2>
+    <p class="sh-sec__d">
+      Label above, hint below, error replacing the hint. The live product has no validation styling
+      at all today — these states are new, and they are the difference between a form that teaches
+      and a form that just refuses.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Text field</div><div class="sh-spec__cls">.v-field · .v-input</div></div>
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-states" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Default</div>
+            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
+            <input class="v-input" placeholder="you@company.com"></div></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Filled</div>
+            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
+            <input class="v-input" value="anita@rivergrove.example.com"></div></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Focus</div>
+            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
+            <input class="v-input is-focus" value="anita@rivergrove.example.com"></div></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">With hint</div>
+            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
+            <input class="v-input" value="anita@rivergrove.example.com">
+            <span class="v-field__hint">Used for booking confirmations.</span></div></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Error</div>
+            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
+            <input class="v-input is-error" value="anita@rivergrove.example">
+            <span class="v-field__error">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              Add the domain — this address is missing its .com</span></div></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Disabled</div>
+            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
+            <input class="v-input is-disabled" value="anita@rivergrove.example.com" disabled></div></div>
+        </div>
+      </div>
+      <div class="sh-note">
+        <strong>Error copy is specific.</strong> "Add the domain — this address is missing its .com"
+        tells the user what to do. "Invalid email" does not.
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Select, search, textarea</div></div>
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-states" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Select</div>
+            <select class="v-select"><option>All open (61)</option><option>Qualified</option></select></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Search</div>
+            <div class="v-search" style="width:100%">
+              <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+              <input class="v-input" placeholder="Search name, email, phone"></div></div>
+          <div class="sh-state" style="width:100%"><div class="sh-state__l">Textarea</div>
+            <textarea class="v-textarea" placeholder="Describe what this AI employee should handle…"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Checkbox &amp; toggle</div></div>
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-states">
+          <div class="sh-state"><div class="sh-state__l">Unchecked</div><span class="v-check"><span class="v-check__box"></span>Assigned to me</span></div>
+          <div class="sh-state"><div class="sh-state__l">Checked</div><span class="v-check is-checked"><span class="v-check__box">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Assigned to me</span></div>
+          <div class="sh-state"><div class="sh-state__l">Indeterminate</div><span class="v-check is-indeterminate"><span class="v-check__box">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M6 12h12"/></svg></span>Select all</span></div>
+          <div class="sh-state"><div class="sh-state__l">Disabled</div><span class="v-check is-disabled"><span class="v-check__box"></span>Assigned to me</span></div>
+          <div class="sh-state"><div class="sh-state__l">Toggle off</div><span class="v-toggle"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span><span class="t-small">Auto-assign</span></span></div>
+          <div class="sh-state"><div class="sh-state__l">Toggle on</div><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span><span class="t-small">Auto-assign</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Radio card &amp; dropzone</div></div>
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <div class="row" style="width:100%;align-items:stretch">
+          <label class="v-radiocard is-selected grow"><span class="v-radiocard__dot"></span>
+            <span><b class="t-strong">Leads</b><br><span class="t-small muted">People who enquired and still need qualifying.</span></span></label>
+          <label class="v-radiocard grow"><span class="v-radiocard__dot"></span>
+            <span><b class="t-strong">Contacts</b><br><span class="t-small muted">Everyone you hold details for, qualified or not.</span></span></label>
+        </div>
+        <div class="v-drop" style="width:100%">
+          <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5-5 5 5M12 5v12"/></svg></div>
+          <div><b class="t-strong">Drop a CSV here</b><div class="t-small muted" style="margin-top:3px">Up to 5,000 rows. Columns are mapped in the next step.</div></div>
+          <button class="v-btn v-btn--secondary">Choose file</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ NAVIGATION ============================ -->
+  <section class="sh-sec" id="nav">
+    <div class="sh-sec__n">04</div>
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Upload target</div><div class="sh-spec__cls">.v-upload</div></div>
+      <p class="sh-spec__note">
+        Used on the guest check-in page, where the only device in the room is a phone. It names the
+        formats it accepts and how long the file is kept — people hand over a government ID far more
+        readily when the page admits that up front.
+      </p>
+      <div class="sh-frame sh-frame--surface sh-frame--col" style="max-width:420px">
+        <div class="v-upload">
+          <div class="v-upload__ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></div>
+          <div class="t-small" style="font-weight:600">Add a document</div>
+          <div class="t-meta muted" style="margin-top:2px">A photo from your phone is fine · JPG, PNG or PDF</div>
+        </div>
+        <div class="v-upload is-error">
+          <div class="v-upload__ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
+          <div class="t-small" style="font-weight:600">That file is 14 MB — too large</div>
+          <div class="t-meta muted" style="margin-top:2px">Up to 8 MB. A phone photo is usually 2–4 MB.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sh-sec__h">Navigation controls</h2>
+    <p class="sh-sec__d">
+      Four controls that look similar and are not interchangeable. Tabs change what you are looking
+      at; segmented controls change how you are looking at it; pills filter; steppers show progress
+      through something you cannot leave half-done.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface sh-frame--col" style="gap:var(--s-6)">
+        <div style="width:100%">
+          <div class="sh-state__l" style="margin-bottom:var(--s-3)">Tabs — a different view of the same record</div>
+          <div class="v-tabs"><button class="v-tab is-active">Today</button><button class="v-tab">Analytics</button><button class="v-tab">Callbacks</button></div>
+        </div>
+        <div style="width:100%">
+          <div class="sh-state__l" style="margin-bottom:var(--s-3)">Segmented — same data, different shape</div>
+          <div class="v-seg"><button class="v-seg__opt is-active">Table</button><button class="v-seg__opt">Pipeline</button><button class="v-seg__opt">Queue</button></div>
+        </div>
+        <div style="width:100%">
+          <div class="sh-state__l" style="margin-bottom:var(--s-3)">Filter pills — a subset, with counts</div>
+          <div class="v-pilltabs">
+            <button class="v-pill is-active">All open <span class="v-pill__n">27</span></button>
+            <button class="v-pill">New <span class="v-pill__n">27</span></button>
+            <button class="v-pill">Contacted <span class="v-pill__n">0</span></button>
+            <button class="v-pill">Qualified <span class="v-pill__n">0</span></button>
+            <button class="v-pill">Lost <span class="v-pill__n">1</span></button>
+          </div>
+        </div>
+        <div style="width:100%">
+          <div class="sh-state__l" style="margin-bottom:var(--s-3)">Stepper — progress you cannot abandon halfway</div>
+          <div class="sh-scroll"><div class="v-stepper" style="min-width:420px">
+            <span class="v-stepper__step is-done"><span class="v-stepper__n">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Upload</span>
+            <span class="v-stepper__bar"></span>
+            <span class="v-stepper__step is-active"><span class="v-stepper__n">2</span>Map columns</span>
+            <span class="v-stepper__bar"></span>
+            <span class="v-stepper__step"><span class="v-stepper__n">3</span>Consent</span>
+            <span class="v-stepper__bar"></span>
+            <span class="v-stepper__step"><span class="v-stepper__n">4</span>Preview</span>
+          </div></div>
+        </div>
+        <div style="width:100%">
+          <div class="sh-state__l" style="margin-bottom:var(--s-3)">Pagination</div>
+          <div class="v-pager">
+            <span>Showing 1–25 of 61</span>
+            <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>25 per page</option></select>
+            <span class="v-pager__n">
+              <button class="v-btn v-btn--secondary v-btn--sm">Previous</button>
+              <button class="v-btn v-btn--secondary v-btn--sm">Next</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STATUS ============================ -->
+  <section class="sh-sec" id="status">
+    <div class="sh-sec__n">05</div>
+    <h2 class="sh-sec__h">Status</h2>
+    <p class="sh-sec__d">
+      Badges carry status, classification, channel and temperature — not ordinary metadata. If a
+      value is just a fact about the record, it is text, not a badge.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Badge</div><div class="sh-spec__cls">.v-badge</div></div>
+      <div class="sh-frame sh-frame--surface">
+        <span class="v-badge v-badge--danger">Hot</span>
+        <span class="v-badge v-badge--warn">Warm</span>
+        <span class="v-badge v-badge--info">Cold</span>
+        <span class="v-badge v-badge--neutral">New</span>
+        <span class="v-badge v-badge--ok">Qualified</span>
+        <span class="v-badge v-badge--brand">Proposal sent</span>
+        <span class="v-badge v-badge--ok">Won</span>
+        <span class="v-badge v-badge--danger">Overdue</span>
+        <span class="v-badge v-badge--neutral">WhatsApp</span>
+        <span class="v-badge v-badge--ai">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5l8 14 8-14"/></svg>Veerha</span>
+      </div>
+      <div class="sh-note">
+        <strong>Colour is never the only signal.</strong> Every badge carries its label; "Hot" is
+        legible with no colour vision at all. The AI badge additionally carries the Veerha mark.
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Select chip &amp; status dot</div><div class="sh-spec__cls">.v-selectchip · .v-dot</div></div>
+      <p class="sh-spec__note">
+        A badge that is also a control — used for editing a record's stage or owner inline, without
+        opening it, and on the guest pages as the answer to a short multiple-choice question.
+        <code class="sh-code">.is-active</code> carries a border as well as a fill, so the answer a
+        guest has already given is still legible to someone who cannot separate the two colours.
+      </p>
+      <div class="sh-frame sh-frame--surface">
+        <span class="v-selectchip">Qualified
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        <span class="v-selectchip is-hover">Anita
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        <span class="v-selectchip is-active">One king, one twin</span>
+        <span class="v-selectchip">Two kings</span>
+        <span class="v-legend" style="margin-left:var(--s-5)">
+          <span><i class="v-dot v-dot--ok"></i>Working</span>
+          <span><i class="v-dot v-dot--warn"></i>Waiting</span>
+          <span><i class="v-dot v-dot--danger"></i>Needs you</span>
+          <span><i class="v-dot v-dot--muted"></i>Paused</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ DATA ============================ -->
+  <section class="sh-sec" id="data">
+    <div class="sh-sec__n">06</div>
+    <h2 class="sh-sec__h">Data display</h2>
+    <p class="sh-sec__d">
+      Tables are core Veerha UI — 45 of the product's screens are list-shaped. Density, alignment
+      and minimal borders; the primary table does not carry every field.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Stat tile</div><div class="sh-spec__cls">.v-stat — selectable, acts as a filter</div></div>
+      <div class="sh-frame">
+        <div class="v-stats" style="width:100%">
+          <button class="v-stat">
+            <span class="v-stat__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/></svg></span>
+            <span class="label">All open</span><span class="v-stat__n">27</span>
+            <span class="v-stat__cap"><span class="v-delta v-delta--up">▲ 12%</span> vs last month</span></button>
+          <button class="v-stat is-selected">
+            <span class="v-stat__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="label">New</span><span class="v-stat__n">27</span>
+            <span class="v-stat__cap">Selected — filtering the table</span></button>
+          <button class="v-stat">
+            <span class="v-stat__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <span class="label">Contacted</span><span class="v-stat__n">0</span>
+            <span class="v-stat__cap">No change</span></button>
+          <button class="v-stat is-attn">
+            <span class="v-stat__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+            <span class="label">Overdue follow-up</span><span class="v-stat__n">5</span>
+            <span class="v-stat__cap">Need attention</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Table</div><div class="sh-spec__cls">.v-table</div></div>
+      <div class="sh-frame sh-frame--surface sh-frame--flush">
+        <div class="sh-scroll" style="width:100%"><table class="v-table">
+          <thead><tr>
+            <th style="width:30px"><span class="v-check"><span class="v-check__box"></span></span></th>
+            <th>Customer</th><th>Requirement</th><th>Source</th><th>Stage</th><th class="v-table__num">Value</th><th>Follow-up</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="v-check is-checked"><span class="v-check__box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></span></td>
+              <td><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__ref">OPP-0061</div><div class="v-identity__line">+91 90000 10001</div></td>
+              <td><div class="v-attrs">
+                <span class="v-attrs__row">2 adults · 15–17 Oct</span>
+                <span class="v-attrs__row muted">Premier River Retreat</span></div></td>
+              <td><span class="v-badge v-badge--neutral">WhatsApp</span></td>
+              <td><span class="v-selectchip">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></td>
+              <td class="v-table__num">₹43,700</td>
+              <td><span class="v-badge v-badge--danger">Overdue</span></td>
+            </tr>
+            <tr class="is-hover">
+              <td><span class="v-check"><span class="v-check__box"></span></span></td>
+              <td><div class="v-identity__name">Priya Nair</div><div class="v-identity__ref">OPP-0058</div><div class="v-identity__line">+91 90000 10002</div></td>
+              <td><div class="v-attrs"><span class="v-attrs__row">4 adults · 2–5 Nov</span><span class="v-attrs__row muted">Not chosen yet</span></div></td>
+              <td><span class="v-badge v-badge--neutral">Website</span></td>
+              <td><span class="v-selectchip">New <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></td>
+              <td class="v-table__num">₹78,200</td>
+              <td class="muted">Tomorrow</td>
+            </tr>
+            <tr class="is-selected">
+              <td><span class="v-check"><span class="v-check__box"></span></span></td>
+              <td><div class="v-identity__name">Vikram Rao</div><div class="v-identity__ref">OPP-0044</div><div class="v-identity__line">+91 90000 10003</div></td>
+              <td><div class="v-attrs"><span class="v-attrs__row">2 adults · 20–22 Oct</span><span class="v-attrs__row muted">Garden Suite</span></div></td>
+              <td><span class="v-badge v-badge--neutral">Referral</span></td>
+              <td><span class="v-selectchip">Proposal sent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></td>
+              <td class="v-table__num">₹36,100</td>
+              <td class="muted">Fri, 26 Sep</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="sh-note">
+        Rows are <strong>selected</strong> with a tinted background and a 2px left rule — not with a
+        border around the row, and never by lifting it into a card.
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Loading — skeletons</div><div class="sh-spec__cls">.v-skel</div></div>
+      <p class="sh-spec__note">
+        The live product has no loading state anywhere, on screens whose AI work genuinely takes
+        seconds. A skeleton preserves the layout that is coming, so the page does not jump.
+      </p>
+      <div class="sh-frame sh-frame--surface sh-frame--flush">
+        <div class="sh-scroll" style="width:100%"><table class="v-table">
+          <thead><tr><th style="width:30px"></th><th>Customer</th><th>Requirement</th><th>Stage</th><th class="v-table__num">Value</th></tr></thead>
+          <tbody>
+            <tr><td><div class="v-skel" style="width:16px;height:16px"></div></td>
+              <td><div class="v-skel v-skel--title" style="width:120px;margin-bottom:5px"></div><div class="v-skel v-skel--text" style="width:80px"></div></td>
+              <td><div class="v-skel v-skel--text" style="width:140px"></div></td>
+              <td><div class="v-skel" style="width:70px;height:20px;border-radius:var(--r-chip)"></div></td>
+              <td><div class="v-skel v-skel--text" style="width:56px;margin-left:auto"></div></td></tr>
+            <tr><td><div class="v-skel" style="width:16px;height:16px"></div></td>
+              <td><div class="v-skel v-skel--title" style="width:100px;margin-bottom:5px"></div><div class="v-skel v-skel--text" style="width:80px"></div></td>
+              <td><div class="v-skel v-skel--text" style="width:110px"></div></td>
+              <td><div class="v-skel" style="width:70px;height:20px;border-radius:var(--r-chip)"></div></td>
+              <td><div class="v-skel v-skel--text" style="width:56px;margin-left:auto"></div></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Record card</div><div class="sh-spec__cls">.v-record — the queue unit</div></div>
+      <div class="sh-frame sh-frame--col">
+        <div class="v-record v-record--danger" style="width:100%">
+          <div class="v-record__body">
+            <div class="v-record__title">Confirm call with Arjun <span class="v-badge v-badge--danger">Overdue</span></div>
+            <div class="v-record__desc">Mon 21 Sep, 12:00 · agreed on WhatsApp two days ago</div>
+          </div>
+          <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Reschedule</button><button class="v-btn v-btn--primary v-btn--sm">Take over</button></div>
+        </div>
+        <div class="v-record v-record--warn" style="width:100%">
+          <div class="v-record__body">
+            <div class="v-record__title">Approve quote for Vikram <span class="v-badge v-badge--warn">Waiting</span></div>
+            <div class="v-record__desc">₹36,100 · Garden Suite, 20–22 Oct</div>
+          </div>
+          <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Review</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Avatar, meter, key-value</div></div>
+      <div class="sh-frame sh-frame--surface" style="align-items:center;gap:var(--s-6)">
+        <span class="v-avatar v-avatar--sm">MI</span>
+        <span class="v-avatar">GP</span>
+        <span class="v-avatar v-avatar--lg">RS</span>
+        <span class="v-avatar v-avatar--lg v-avatar--ai">V</span>
+        <div style="width:180px">
+          <div class="spread t-meta muted" style="margin-bottom:5px"><span>Seats used</span><span class="num">1 / 999</span></div>
+          <div class="v-meter"><div class="v-meter__fill" style="width:14%"></div></div>
+        </div>
+        <dl class="v-kv" style="width:220px">
+          <dt>Check-in</dt><dd>15 Oct</dd>
+          <dt>Nights</dt><dd>2</dd>
+          <dt>Guests</dt><dd>2 adults</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FEEDBACK ============================ -->
+  <section class="sh-sec" id="feedback">
+    <div class="sh-sec__n">07</div>
+    <h2 class="sh-sec__h">Feedback</h2>
+    <p class="sh-sec__d">
+      An empty state answers three questions: what is empty, why, and what should I do. An error
+      answers the same three. Neither is ever a shrug.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Empty state</div><div class="sh-spec__cls">.v-empty</div></div>
+      <div class="sh-frame sh-frame--surface sh-frame--flush">
+        <div class="v-empty" style="width:100%">
+          <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="v-empty__title">No leads waiting to be qualified</div>
+          <p class="v-empty__body">Everything that came in has been handled. New enquiries from your connected channels will appear here as they arrive.</p>
+          <button class="v-btn v-btn--secondary">Connect a channel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Error</div><div class="sh-spec__cls">.v-error</div></div>
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <div class="v-error" style="width:100%">
+          <span style="color:var(--dn-ic);flex:none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
+          <div class="grow">
+            <div class="v-error__title">WhatsApp could not be connected</div>
+            <p class="v-error__body">Your credentials expired on 18 September. Eleven of seventeen leads arrive on this channel.</p>
+            <div class="v-actions" style="margin-top:var(--s-3)"><button class="v-btn v-btn--danger v-btn--sm">Reconnect WhatsApp</button></div>
+          </div>
+        </div>
+        <div class="sh-rules" style="width:100%;margin-top:0">
+          <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+            <p>Name what broke, say why, and give the button that fixes it.</p></div>
+          <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+            <p>"Something went wrong." "Not authorized." Both appear in the product today, and neither tells anyone anything.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Save state</div><div class="sh-spec__cls">.v-savebar</div></div>
+      <p class="sh-spec__note">
+        Today this bar is pinned bottom-right on every settings screen and sits on top of the
+        content beneath it. It belongs in the page footer, in flow, where it cannot cover anything.
+      </p>
+      <div class="sh-frame">
+        <div class="v-savebar"><span class="v-savebar__state">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span></div>
+        <div class="v-savebar is-dirty"><span class="v-savebar__state">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Unsaved changes</span>
+          <button class="v-btn v-btn--primary v-btn--sm">Save</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ OVERLAY ============================ -->
+  <section class="sh-sec" id="overlay">
+    <div class="sh-sec__n">08</div>
+    <h2 class="sh-sec__h">Overlays</h2>
+    <p class="sh-sec__d">
+      Drawers preserve context — you can still see the list you came from. Modals interrupt, so
+      they are reserved for confirmation and destructive actions.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Confirm dialog</div><div class="sh-spec__cls">.v-modal</div></div>
+      <p class="sh-spec__note">
+        No confirmation dialog exists in the product today, yet destructive buttons do. This is the
+        pattern for them: name the consequence, and make the destructive verb the one on the button.
+      </p>
+      <div class="sh-frame" style="justify-content:center;position:relative;padding:var(--s-10)">
+        <div class="v-modal">
+          <div class="v-modal__title">Delete this workflow?</div>
+          <p class="v-modal__body">“Overdue follow-up nudge” has run 231 times and is currently active for 27 leads. Deleting it stops those follow-ups immediately. This cannot be undone.</p>
+          <div class="v-modal__foot">
+            <button class="v-btn v-btn--secondary">Keep it</button>
+            <button class="v-btn v-btn--danger">Delete workflow</button>
+          </div>
+        </div>
+      </div>
+      <div class="sh-rules">
+        <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+          <p>Label the action with the verb, not "OK". Say what is lost and whether it is recoverable.</p></div>
+        <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+          <p>Don't use a modal for anything reversible. A toast with undo is less interruptive and usually kinder.</p></div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Detail drawer</div><div class="sh-spec__cls">.v-drawer</div></div>
+      <p class="sh-spec__note">
+        One header, one close button. The live drawer has two of each — an outer drawer header and
+        a second record header nested inside it — on all twelve drawer screens.
+      </p>
+      <div class="sh-frame sh-frame--flush" style="justify-content:flex-end">
+        <div class="v-drawer" style="width:440px;height:340px">
+          <div class="v-drawer__head">
+            <span class="v-avatar">GP</span>
+            <div class="grow">
+              <div class="t-strong">Arjun Mehta</div>
+              <div class="t-meta muted">+91 90000 10001 · WhatsApp · 4 replies</div>
+            </div>
+            <button class="v-btn v-btn--icon v-btn--sm" aria-label="Close">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+          </div>
+          <div class="v-drawer__body">
+            <div class="row wrap" style="margin-bottom:var(--s-4)">
+              <span class="v-badge v-badge--danger">Hot</span>
+              <span class="v-selectchip">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span>
+              <span class="t-meta muted">Score</span><span class="num t-strong">91</span>
+            </div>
+            <div class="v-next">
+              <div class="label v-next__label">Recommended next step</div>
+              <div class="v-next__action">Call Arjun tomorrow at 11:00</div>
+              <p class="v-next__why">He asked for it, and has replied within the hour every time.</p>
+              <div class="v-next__acts"><button class="v-btn v-btn--primary v-btn--sm">Call now</button><button class="v-btn v-btn--secondary v-btn--sm">Schedule</button></div>
+            </div>
+          </div>
+          <div class="v-drawer__foot">
+            <button class="v-btn v-btn--secondary grow">Convert to deal</button>
+            <button class="v-btn v-btn--primary grow">Call now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CHARTS ============================ -->
+  <section class="sh-sec" id="charts">
+    <div class="sh-sec__n">09</div>
+    <h2 class="sh-sec__h">Charts</h2>
+    <p class="sh-sec__d">
+      Hand-authored inline SVG. No library, no runtime, and <b>one series colour</b> — a chart that
+      needs to distinguish more than one series is usually two charts.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">The four required slots</div><div class="sh-spec__cls">.g-*</div></div>
+      <p class="sh-spec__note">
+        A chart is not finished until it has all four. The takeaway is the one that gets skipped
+        and the one that matters — without it the reader has to interpret the picture themselves,
+        which is the work the page exists to do for them.
+      </p>
+      <table class="sh-tbl">
+        <thead><tr><th style="width:200px">Slot</th><th>What goes in it</th></tr></thead>
+        <tbody>
+          <tr><td><code>.label</code></td><td>Context eyebrow — Volume · Autonomy · Conversion · Sources</td></tr>
+          <tr><td><code>h3</code></td><td>Plain-language title. "Where leads stop", not "Funnel analysis"</td></tr>
+          <tr><td><code>.v-card__desc</code></td><td>Timeframe <em>or</em> denominator — "84 leads captured, last 30 days"</td></tr>
+          <tr><td>takeaway</td><td>One bolded conclusion plus one explaining sentence, ≤58 characters wide</td></tr>
+          <tr><td><code>role="img"</code></td><td>An <code>aria-label</code> stating the data as a sentence. An SVG of a line is nothing at all to a screen reader.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Primitives</div></div>
+      <div class="sh-frame sh-frame--surface">
+        <svg viewBox="0 0 620 150" width="100%" role="img" aria-label="Sample line chart showing a rising series from 3 to 17.">
+          <line class="g-grid" x1="34" y1="120" x2="610" y2="120"/>
+          <line class="g-grid" x1="34" y1="86" x2="610" y2="86"/>
+          <line class="g-grid" x1="34" y1="52" x2="610" y2="52"/>
+          <text class="g-axis" x="26" y="124" text-anchor="end">0</text>
+          <text class="g-axis" x="26" y="90" text-anchor="end">6</text>
+          <text class="g-axis" x="26" y="56" text-anchor="end">12</text>
+          <line class="g-target" x1="34" y1="40" x2="610" y2="40"/>
+          <text class="g-axis" x="40" y="35">Target</text>
+          <path class="g-area" d="M34,110 150,96 266,72 382,84 498,58 600,34 L600,120 L34,120 Z"/>
+          <polyline class="g-line" points="34,110 150,96 266,72 382,84 498,58 600,34"/>
+          <circle class="g-dot" cx="600" cy="34" r="4.5"/>
+          <text class="g-val" x="592" y="25" text-anchor="end">17</text>
+          <text class="g-name" x="34" y="144">Start</text>
+          <text class="g-name" x="600" y="144" text-anchor="end">End</text>
+        </svg>
+        <table class="sh-tbl">
+          <thead><tr><th style="width:130px">Class</th><th>Draws</th></tr></thead>
+          <tbody>
+            <tr><td><code>.g-grid</code></td><td>Gridline — <code>--chart-grid</code>, quieter than a border</td></tr>
+            <tr><td><code>.g-axis</code></td><td>Tick labels and annotations, mono, muted</td></tr>
+            <tr><td><code>.g-name</code></td><td>Category label</td></tr>
+            <tr><td><code>.g-val</code></td><td>A value called out on the plot</td></tr>
+            <tr><td><code>.g-line</code> / <code>.g-area</code></td><td>The series and its fill</td></tr>
+            <tr><td><code>.g-dot</code></td><td>End-point marker, haloed against the surface</td></tr>
+            <tr><td><code>.g-bar</code></td><td>Horizontal bar, 24px, 4px radius</td></tr>
+            <tr><td><code>.g-target</code></td><td>Dashed reference line. Label it on the <em>left</em> — on the right it collides with the end value</td></tr>
+            <tr><td><code>.g-spark</code></td><td>Sparkline — the same line with no furniture</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sh-rules">
+        <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+          <p>Say what the chart means. "<b>The drop is at qualification.</b> 45 leads never gave enough to qualify."</p></div>
+        <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+          <p>No 3D, no decorative pie charts, no gradients for their own sake, and never more than one series colour.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONVERSATION ============================ -->
+  <section class="sh-sec" id="conversation">
+    <div class="sh-sec__n">10</div>
+    <h2 class="sh-sec__h">Conversation</h2>
+    <p class="sh-sec__d">
+      AI messages are identifiable but not visually transformed — they are attributed in the
+      footer, not turned into a differently coloured bubble.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface sh-frame--col" style="max-width:620px">
+        <div class="v-msg v-msg--in" style="width:100%;max-width:78%">
+          <div class="v-msg__bubble">Hi, is the Premier River Retreat available for 15–17 October? Two adults.</div>
+          <div class="v-msg__meta">Arjun · 2:58 PM</div>
+        </div>
+        <div class="v-msg v-msg--out" style="max-width:78%">
+          <div class="v-msg__bubble">Yes — it's available for those dates. For two adults it's ₹43,700 for the two nights, including breakfast. Would you like me to hold it?</div>
+          <div class="v-msg__meta">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5l8 14 8-14"/></svg>
+            Veerha · 3:01 PM</div>
+        </div>
+        <div class="v-composer" style="width:100%;border-radius:var(--r-tile);border:1px solid var(--border)">
+          <input class="v-input" placeholder="Write a reply…">
+          <button class="v-btn v-btn--primary">Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Design System · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span><a href="patterns.html" style="color:var(--brand)">Signature patterns →</a></span>
+  </footer>
+
+</main>
+</body>
+</html>
