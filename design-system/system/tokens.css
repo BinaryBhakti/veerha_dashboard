@@ -1,0 +1,222 @@
+/* ============================================================================
+   VEERHA — INDIGO SLATE
+   Design tokens. Single source of truth.
+
+   Every value in the product comes from this file. No component may carry a
+   raw hex or a raw px radius: the moment one does, the system stops being a
+   system. Grep for `#` outside this file — it should return nothing.
+
+   Light only. Dark is a later phase and will be a genuine inversion of this
+   same set, not a second aesthetic (design-system v2 §54).
+   ============================================================================ */
+
+:root {
+
+  /* --- 1 · NEUTRALS -------------------------------------------------------
+     Slate. Cool, which is a deliberate departure from v2 §05 (warm-neutral)
+     — see DEPARTURES.md. Chosen because it matches the product the client
+     runs today, and because the AI layer supplies the warmth instead. */
+
+  --canvas:          #F8FAFC;   /* application background                    */
+  --surface:         #FFFFFF;   /* cards, tables, panels                     */
+  --surface-subtle:  #F1F5F9;   /* secondary areas, striped rows             */
+  --surface-muted:   #E2E8F0;   /* disabled and quiet regions                */
+
+  --border:          #E2E8F0;   /* standard divider — the default tool       */
+  --border-strong:   #CBD5E1;   /* emphasis divider between surfaces         */
+
+  /* Form controls need a stronger edge than a divider does. On a white card
+     the border IS the only thing identifying the control, so WCAG 1.4.11
+     asks for 3:1 against the surface — a divider does not have to clear that
+     bar, and #CBD5E1 measures only 1.48:1. These two do, on BOTH the white
+     surface and the canvas — a control is not always inside a card:
+       field-border        3.22:1 surface · 3.07:1 canvas
+       field-border-hover  3.60:1 surface · 3.44:1 canvas  */
+  --field-border:       #8690A3;
+  --field-border-hover: #7C8899;
+
+  --text-primary:    #0F172A;   /* headings, figures, row titles             */
+  --text-secondary:  #334155;   /* body and supporting copy                  */
+  --text-muted:      #626F85;   /* metadata, captions, eyebrow labels        */
+  --text-faint:      #7C8899;   /* decorative only — see the note below      */
+
+  /* --text-faint is 3.60:1 on surface and 3.44:1 on canvas. That clears the
+     3:1 bar for non-text UI but NOT the 4.5:1 bar for text. Use it for
+     dividers, inactive glyphs, separators and disabled controls only.
+     Anything a user has to READ — placeholders, reference codes, counts,
+     captions — uses --text-muted, which measures 4.76:1 / 4.55:1.
+     The prototype's #94A3B8 measured 2.45:1 on canvas and was being used for
+     placeholder text that told people what a field searched. */
+
+
+  /* --- 2 · BRAND ----------------------------------------------------------
+     Indigo. The prototype set --brand as a bare hex with no scale, so there
+     was nothing to reach for when a component needed a lighter or darker
+     step. Full ramp below; 600 is the brand. */
+
+  --brand-50:        #EEF2FF;
+  --brand-100:       #E0E7FF;
+  --brand-200:       #C7D2FE;
+  --brand-300:       #A5B4FC;
+  --brand-400:       #818CF8;
+  --brand-500:       #6366F1;
+  --brand-600:       #4F46E5;
+  --brand-700:       #4338CA;
+  --brand-800:       #3730A3;
+  --brand-900:       #312E81;
+
+  --brand:           var(--brand-600);
+  --brand-hover:     var(--brand-700);
+  --brand-on:        #FFFFFF;   /* text on a brand fill                      */
+  --on-solid:        #FFFFFF;   /* text on any solid semantic fill           */
+  --brand-soft:      var(--brand-50);
+  --brand-soft-bd:   var(--brand-200);
+
+  /* Brand is for action and selection only. It is NOT applied to make the
+     interface look branded (v2 §02 rule 4). Status uses semantic colour. */
+
+
+  /* --- 3 · AI SYSTEM LAYER ------------------------------------------------
+     Warm greige, per v2 §08. NOT purple, NOT indigo.
+
+     Measured: the previous violet (#7C3AED) sat 19° from the brand hue at
+     83% saturation — it read as the same colour family, so AI surfaces did
+     not register as distinct from ordinary brand chrome. This greige is 158°
+     opposite at 11% saturation. Against the cool slate canvas the warmth is
+     unmistakably deliberate, which is exactly what a system layer wants.
+
+     AI identity comes from the Veerha mark, the wording, the evidence and
+     the interaction pattern. This colour is the quietest part of it. */
+
+  --ai-bg:           #F4F2EA;
+  --ai-bd:           #D9D4C7;
+  --ai-tx:           #5F5A4F;   /* 6.12:1 on --ai-bg                         */
+  --ai-ic:           #6E6758;
+
+
+  /* --- 4 · SEMANTIC -------------------------------------------------------
+     Independent of the brand (v2 §07). Four families, each background /
+     border / text / icon. Colour is never the only signal — every status
+     also carries a label and an icon (v2 §46). */
+
+  --ok-bg:  #F0FDF4;  --ok-bd:  #BBF7D0;  --ok-tx:  #15803D;  --ok-ic:  #16A34A;
+  --wn-bg:  #FFFBEB;  --wn-bd:  #FDE68A;  --wn-tx:  #B45309;  --wn-ic:  #D97706;
+  --dn-bg:  #FEF2F2;  --dn-bd:  #FECACA;  --dn-tx:  #B91C1C;  --dn-ic:  #DC2626;
+  --in-bg:  #EFF6FF;  --in-bd:  #BFDBFE;  --in-tx:  #1D4ED8;  --in-ic:  #2563EB;
+
+  --track:           #E2E8F0;   /* meter and progress track                  */
+
+
+  /* --- 4b · CHARTS --------------------------------------------------------
+     ONE series colour. A chart with six colours is a chart nobody reads —
+     if a chart needs to distinguish more than one series, it is usually two
+     charts. Grid and axis sit well below the data so the line is the thing
+     the eye lands on. */
+
+  --chart-1:    #4F46E5;               /* the series. Same indigo as brand.   */
+  --chart-fill: rgba(79, 70, 229, .12);/* the area under a line               */
+  --chart-grid: #EAEEF3;               /* gridlines — quieter than --border   */
+
+
+  /* --- 5 · TYPE -----------------------------------------------------------
+     Geist for the interface, Geist Mono for figures so columns of numbers
+     align. No serif anywhere in the UI — standing client instruction. Three
+     weights only: 400, 500, 600. There is no 700. */
+
+  --ui:    "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --num:   "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Scale — v2 §10. size / line-height / weight / tracking */
+  --t-display-s: 32px;  --t-display-l: 40px;  --t-display-w: 600;  --t-display-k: -.024em;
+  --t-page-s:    24px;  --t-page-l:    32px;  --t-page-w:    600;  --t-page-k:    -.018em;
+  --t-section-s: 18px;  --t-section-l: 26px;  --t-section-w: 600;  --t-section-k: -.012em;
+  --t-card-s:    16px;  --t-card-l:    24px;  --t-card-w:    600;  --t-card-k:    -.008em;
+  --t-body-s:    14px;  --t-body-l:    21px;  --t-body-w:    400;
+  --t-small-s:   13px;  --t-small-l:   19px;  --t-small-w:   400;
+  --t-meta-s:    12px;  --t-meta-l:    18px;  --t-meta-w:    500;
+  --t-micro-s:   11px;  --t-micro-l:   16px;  --t-micro-w:   600;
+
+  --label-tracking: .075em;     /* uppercase eyebrow labels                  */
+
+
+  /* --- 6 · SPACING --------------------------------------------------------
+     8px base (v2 §11). Use the token, not the number. */
+
+  --s-1:   4px;   --s-2:   8px;   --s-3:  12px;   --s-4:  16px;
+  --s-5:  20px;   --s-6:  24px;   --s-8:  32px;   --s-10: 40px;
+  --s-12: 48px;   --s-16: 64px;   --s-20: 80px;
+
+
+  /* --- 7 · RADIUS ---------------------------------------------------------
+     v2 §13. `full` is ONLY for avatars, dots and compact semantic pills —
+     the product is not pill-shaped.
+
+     Reconciliation: the prototype declared --r-card:16px and --r-tile:14px
+     but never used them on desktop, where every surface was actually 10px.
+     The card changed shape between breakpoints for no reason. One value per
+     role now, the same at every width, and both stay inside v2's scale so we
+     avoid the §60 "excessive rounded corners" anti-pattern. */
+
+  --r-xs:    4px;
+  --r-sm:    6px;
+  --r-md:    8px;
+  --r-lg:   10px;
+  --r-xl:   12px;
+  --r-full: 9999px;
+
+  --r-card: var(--r-xl);        /* sections, panels, drawers                 */
+  --r-tile: var(--r-lg);        /* stat tiles, nested surfaces               */
+  --r-ctrl: var(--r-sm);        /* buttons, inputs, selects                  */
+  --r-chip: var(--r-xs);        /* badges and chips                          */
+
+
+  /* --- 8 · ELEVATION ------------------------------------------------------
+     v2 §14. L0 is the default: the product is mostly flat and separates by
+     border, not by shadow. Cards should not all appear to float. */
+
+  --e0: none;
+  --e1: 0 1px 2px rgba(15, 23, 42, .04);
+  --e2: 0 4px 12px rgba(15, 23, 42, .08);
+  --e3: 0 16px 40px rgba(15, 23, 42, .14);
+
+  --scrim: rgba(15, 23, 42, .40);
+
+
+  /* --- 9 · LAYOUT ---------------------------------------------------------
+     12-column grid, v2 §12. */
+
+  --rail:      56px;            /* icon rail, collapsed                      */
+  --rail-open:240px;            /* icon rail, expanded with labels           */
+  --sidenav:  260px;            /* section navigation                        */
+  --topbar:    56px;
+  --gutter:    32px;            /* page horizontal padding                   */
+  --colgap:    24px;
+  --sect-gap:  32px;            /* between sections                          */
+  --page-max: 1400px;
+
+  --focus: 0 0 0 3px var(--brand-200);
+
+
+  /* --- 10 · MOTION --------------------------------------------------------
+     v2 §45. Short and functional. No decorative animation, no pulses. */
+
+  --m-hover:    120ms;
+  --m-dropdown: 180ms;
+  --m-drawer:   220ms;
+  --m-modal:    200ms;
+  --ease: cubic-bezier(.2, 0, 0, 1);
+
+
+  /* --- 11 · RESERVED ------------------------------------------------------
+     --k is the mobile UI scale factor. It stays 1 here and on every desktop
+     and tablet viewport; it only moves inside the mobile band, where a
+     viewer can hand the page a layout viewport wider than the device and
+     shrink the render. Declared now so nothing has to be retrofitted when
+     the responsive layer lands. */
+
+  --k: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --m-hover: 1ms; --m-dropdown: 1ms; --m-drawer: 1ms; --m-modal: 1ms; }
+}
