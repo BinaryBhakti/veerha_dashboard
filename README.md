@@ -3,8 +3,9 @@
 Static, high-fidelity HTML for the redesign of **Veerha**, an AI-workforce CRM for
 hospitality: AI employees, customer conversations and day-to-day operations in one
 workspace. This repository holds the design system (**Indigo Slate**), the 77 agreed
-screens built on top of it, a clickable walkthrough, and the tooling that keeps all
-of it consistent.
+screens built on top of it, a clickable walkthrough, the original single-file
+dashboard prototype the direction was chosen from, and the tooling that keeps all of
+it consistent.
 
 There is **no framework, no bundler and no build step**. Every page is plain HTML and
 CSS that opens from disk. That is a deliberate constraint, not an omission — the
@@ -23,15 +24,16 @@ exist to make a no-build codebase stay coherent.
 3. [How the pieces fit](#how-the-pieces-fit)
 4. [The design system](#the-design-system)
 5. [The screens](#the-screens)
-6. [The rules](#the-rules)
-7. [Generated files — do not edit by hand](#generated-files--do-not-edit-by-hand)
-8. [Tooling](#tooling)
-9. [Common tasks](#common-tasks)
-10. [Deploying](#deploying)
-11. [What is not in this repository](#what-is-not-in-this-repository)
-12. [Known rough edges](#known-rough-edges)
-13. [Decisions already taken](#decisions-already-taken)
-14. [Further reading](#further-reading)
+6. [The dashboard prototype](#the-dashboard-prototype)
+7. [The rules](#the-rules)
+8. [Generated files — do not edit by hand](#generated-files--do-not-edit-by-hand)
+9. [Tooling](#tooling)
+10. [Common tasks](#common-tasks)
+11. [Deploying](#deploying)
+12. [What is not in this repository](#what-is-not-in-this-repository)
+13. [Known rough edges](#known-rough-edges)
+14. [Decisions already taken](#decisions-already-taken)
+15. [Further reading](#further-reading)
 
 ---
 
@@ -67,6 +69,7 @@ Where to look first:
 | `design-system/index.html` | The design system, rendered |
 | `screens/index.html` | All 17 module files, 96 frames |
 | `screens/walkthrough.html` | The same screens as one clickable product |
+| `veerha-dashboard.html` | The original prototype: 7 screens in 4 visual directions |
 
 Requirements for the tooling only: Node 20+, Python 3, Google Chrome, and Playwright
 (see [Known rough edges](#known-rough-edges) — the scripts need one path fixed first).
@@ -80,6 +83,9 @@ Requirements for the tooling only: Node 20+, Python 3, Google Chrome, and Playwr
 ├── hub.html                    Landing page. Becomes index.html in the client bundle
 ├── deploy.sh                   The only supported way to deploy (gate → deploy → verify)
 ├── BUILD_NOTES.md              Conventions for building a screen. Short; read it
+├── veerha-dashboard.html       The original single-file prototype (4 directions, responsive)
+├── veerha-dashboard copy.html  An earlier snapshot of it, kept for reference
+├── HANDOFF.md                  Engineering notes for that prototype
 │
 ├── design-system/              Indigo Slate — the system and its documentation
 │   ├── system/
@@ -330,6 +336,55 @@ bulk-select, drawer open/close, rail expand. Two properties to preserve:
 
 ---
 
+## The dashboard prototype
+
+`veerha-dashboard.html` is where the project started and it is a different kind of
+artefact from everything in `screens/`. It is **one self-contained file** — its own
+CSS, its own JavaScript, its own data — and it does **not** use `design-system/`.
+
+| | `veerha-dashboard.html` | `screens/` |
+|---|---|---|
+| Purpose | Explore four visual directions | Deliver the chosen one across 77 screens |
+| Structure | One file, ~5,900 lines | One file per module, shared CSS |
+| Styling | Its own token blocks, one per direction | `design-system/system/*.css` |
+| Rendering | JavaScript renders from an inline dataset | Static HTML |
+| Responsive | Fully: mobile, tablet, desktop | Desktop; guest pages mobile-first |
+| Theme | Light and dark | Light only |
+
+What it contains: Overview, Leads, Inbox, Workforce, Employee detail, Automations and
+Analytics, each in four directions — **A** Warm Editorial, **B** Cold Press,
+**C** Bureau, **D** Indigo Slate. A direction is a token block under
+`[data-dir="…"]`; D additionally carries a structural overlay. Direction D is what
+became the design system.
+
+Deep links combine: `#analytics`, `?dir=c`, `?theme=light`, `?review=0` (hides the
+direction switcher for a clean screenshot).
+
+**Read `HANDOFF.md` before changing it.** It documents things that are not visible
+from the code and that each cost real time to find:
+
+- **Mobile sizes are `calc(Npx * var(--k))`**, never bare px. Embedded viewers hand a
+  phone a 650–840px layout viewport and shrink the result; `uiScale()` sets `--k` to
+  the ratio so type lands at the intended physical size.
+- **The mobile band is keyed to the pointer, not only the width** — for the same
+  reason.
+- **Each direction owns `--r-card` / `--r-tile` / `--r-pill` / `--r-chip`.** A px
+  radius on a mobile surface makes all four directions look identical.
+- **Specificity traps.** In a 5,900-line file a more specific rule almost always
+  already exists; `.bstat span` silently out-ranked `.bs-ic`, and a second `.delta`
+  hid the first.
+- **The stored-theme key is versioned** (`veerha-theme-2`). Bump it to re-assert light
+  for reviewers; do not delete the toggle.
+
+Use it as the reference for **responsive behaviour and interaction** — the three
+bands, the mobile card system, touch targets — which the static screens do not yet
+implement. Do not use it as a source of styles or of sample data: its values are the
+pre-system ones, and its dataset predates the Rivergrove fixture. The names in it are
+on the block-list in `tools/piicheck.sh` and will fail the gate if they reach a
+screen.
+
+---
+
 ## The rules
 
 Each of these is checked by a script in the deploy gate. They are listed with the
@@ -526,27 +581,23 @@ the Vercel projects before `deploy.sh` can push. `--check` needs no Vercel acces
 
 ## What is not in this repository
 
-This repository is public. The following exist in the working tree but are
-git-ignored, because they contain data captured from the client's production account:
+This repository is public. The following exist in the original working tree but are
+git-ignored:
 
 | Path | What it is | Why it is withheld |
 |---|---|---|
 | `audit/` | The crawl of the live app: screenshots, page-text dumps, interaction states, the written audit and feature inventory | Real customer names, phone numbers and emails; a workspace API key and a webhook token rendered in the UI; live guest share links |
-| `veerha-dashboard.html` | The original single-file dashboard prototype (7 screens × 4 visual directions) | Its sample dataset was seeded with real customer records |
-| `HANDOFF.md` | The engineering notes for that prototype | Quotes those records by name |
-| `veerha-dashboard copy.html` | An earlier snapshot of the same prototype | Same dataset |
 | `WhatsApp Image … .jpeg` | A reference screenshot the client sent of another product | Shows that product's customer records |
-| `dist/` | Build output | A copy of the above |
+| `dist/` | Build output of `tools/build-dist.sh` | A copy of the tree, including `audit/` captures |
 
 Consequences you will notice:
 
-- `hub.html` links to `veerha-dashboard.html` and `audit/gallery.html`. Both are dead
-  links in a fresh clone.
+- `hub.html` links to `audit/gallery.html`, which is a dead link in a fresh clone.
 - `tools/build-gallery.py`, `tools/build-dist.sh` and the capture scripts expect
   `audit/` to exist and will fail without it.
 - `MANIFEST.md` cites `audit/` screenshots as the reference for each screen.
 
-Ask the project owner for these if you need them. **Do not un-ignore them** while the
+Ask the project owner for `audit/` if you need it. **Do not un-ignore it** while the
 repository is public.
 
 ---
@@ -619,6 +670,7 @@ These were settled with the client. Reopening them costs a review cycle.
 | Document | Read it when |
 |---|---|
 | `BUILD_NOTES.md` | Before building or editing any screen |
+| `HANDOFF.md` | Before touching `veerha-dashboard.html`, or when implementing responsive behaviour |
 | `design-system/DESIGN-SYSTEM.md` | You need the reasoning behind a token or component |
 | `design-system/DEPARTURES.md` | Someone asks why this is not what the v2 brief said |
 | `screens/MANIFEST.md` | You need to know what is in scope, its number and its file |
