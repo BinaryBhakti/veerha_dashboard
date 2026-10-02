@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organisation · Veerha Screens</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../design-system/system/fonts.css">
+<link rel="stylesheet" href="../design-system/system/tokens.css">
+<link rel="stylesheet" href="../design-system/system/base.css">
+<link rel="stylesheet" href="../design-system/system/components.css">
+<link rel="stylesheet" href="../design-system/system/sheet.css">
+<link rel="stylesheet" href="assets/shell.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-grid"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></g>
+  <g id="i-target"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></g>
+  <g id="i-trend"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></g>
+  <g id="i-file"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></g>
+  <g id="i-bed"><path d="M3 18V7"/><path d="M3 12h18v6"/><path d="M21 18v-4a3 3 0 0 0-3-3h-7"/><circle cx="7.5" cy="9.5" r="2"/></g>
+  <g id="i-msg"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-5.2A8 8 0 1 1 21 12z"/></g>
+  <g id="i-check"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></g>
+  <g id="i-cal"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></g>
+  <g id="i-cpu"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3"/></g>
+  <g id="i-gear"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></g>
+  <g id="i-menu"><path d="M3 6h18M3 12h18M3 18h18"/></g>
+  <g id="i-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></g>
+  <g id="i-search"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></g>
+  <g id="i-alert"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></g>
+  <g id="i-plus"><path d="M12 5v14M5 12h14"/></g>
+  <g id="i-down"><path d="m6 9 6 6 6-6"/></g>
+  <g id="i-x"><path d="M18 6 6 18M6 6l12 12"/></g>
+  <g id="i-filter"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></g>
+  <g id="i-dots"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></g>
+  <g id="i-star"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2-5.5-2.9-5.5 2.9 1-6.2L3 9.6l6.2-.9z"/></g>
+  <g id="i-phone"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></g>
+  <g id="i-mail"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></g>
+  <g id="i-note"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></g>
+  <g id="i-v"><path d="M4 5l8 14 8-14"/></g>
+<g id="i-bolt"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></g><g id="i-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></g><g id="i-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></g>
+  <g id="i-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></g>
+<g id="i-wand"><path d="m3 21 9-9M15 4V2M15 16v-2M8 9h2M20 9h2M17.8 11.8 19 13M17.8 6.2 19 5M19 9h-4M12.2 6.2 11 5"/></g><g id="i-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></g><g id="i-help"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></g></defs></svg>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand"><div class="sh-brand__mark">V</div>
+      <div><div class="sh-brand__name">Veerha Screens</div>
+        <div class="sh-brand__sub">Indigo Slate · desktop · 13 Organisation</div></div></div>
+    <nav class="sh-nav">
+      <a href="index.html">Contents</a><a href="01-home.html">Home</a><a href="02-leads.html">Leads</a><a href="03-opportunities.html">Opportunities</a><a href="04-quotes.html">Quotes</a><a href="05-bookings.html">Bookings</a><a href="06-conversations.html">Conversations</a><a href="07-queues.html">Queues</a><a href="08-calendar.html">Calendar</a><a href="09-customers.html">Customers</a><a href="11-ai.html">AI</a><a href="10-campaigns.html">Campaigns</a><a href="12-catalog.html">Catalog</a><a href="13-org.html" aria-current="page">Org</a><a href="14-settings.html">Settings</a><a href="15-billing.html">Billing</a><a href="16-auth.html">Auth</a><a href="17-public.html">Guest</a>
+      <a href="walkthrough.html">Walkthrough ▶</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../design-system/index.html">Design system ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>Organisation</h1>
+    <p>
+      The module holding the single highest-uncertainty screen in the product. The live app’s org
+      chart has <b>never rendered a tree</b> — every person in it is unplaced — so both the
+      populated chart and the state it is actually in are drawn here. The chart is also where
+      Veerha’s central claim becomes visible: AI employees sit <em>on the org chart</em>,
+      reporting to a named human.
+    </p>
+  </section>
+
+  <section class="vs-frame vs-frame--h720" id="org-chart">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">58b</span><span class="vs-frame__name">Org chart</span>
+      <span class="vs-frame__route">/org</span><span class="t-meta muted">Bespoke · no reference exists</span>
+    </div>
+    <p class="vs-frame__note">Humans solid, AI employees dashed — the one distinction the chart has to carry. Each AI node shows its live state, so the chart doubles as a health view: the Support Executive is visibly broken and that is visible from the top of the company, not three screens down.</p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <button class="v-rail__item" aria-label="Analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Analytics</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span><span class="v-rail__count">17</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span><span class="v-rail__count v-rail__count--attn">11</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Front desk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Front desk</span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">AI staff</div>
+          <button class="v-rail__item" aria-label="AI workforce"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cpu"/></svg><span class="v-rail__label">AI workforce</span><span class="v-rail__count">4</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Workflows"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg><span class="v-rail__label">Workflows</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">Organisation</div>
+          <button class="v-rail__item is-active" aria-label="Organisation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Organisation</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <button class="v-rail__item" aria-label="Billing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Billing</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Organisation</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Org chart</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav" aria-label="Organisation sections">
+              <div class="vs-sidenav__head"><div class="label">Organisation</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
+                  <input class="v-input" placeholder="Search people"></div></div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Organisation</div>
+              <a class="v-sidenav__item is-active">Org chart</a>
+              <a class="v-sidenav__item">Team &amp; access</a>
+              <a class="v-sidenav__item">Departments</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Hiring</div>
+              <a class="v-sidenav__item">Onboarding</a>
+              <a class="v-sidenav__item">Roles</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI workforce</div>
+              <a class="v-sidenav__item">Employees</a>
+              <a class="v-sidenav__item">Escalations</a>
+              </div>
+              </nav>
+            <div class="vs-main">
+              <div class="vs-canvas" style="padding-bottom:var(--s-5);flex:none">
+                <div class="v-pagehead"><div class="v-pagehead__copy">
+                  <h1 class="v-pagehead__title">Org chart</h1>
+                  <p class="v-pagehead__sub">Six people and three AI employees. Two people are not placed.</p>
+                </div></div>
+                <div class="spread" style="margin-bottom:var(--s-5);flex-wrap:wrap;gap:var(--s-3)">
+              <div class="v-legend">
+                <span><i style="width:14px;height:1px;background:var(--border-strong);display:block"></i> Reports to</span>
+                <span><i style="width:14px;height:0;border-top:1px dashed var(--ai-bd);display:block"></i> Supervises an AI employee</span>
+              </div>
+              <div class="v-actions">
+                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
+                <button class="v-btn v-btn--primary v-btn--sm">Add a person</button>
+              </div>
+            </div>
+              </div>
+              <div class="vs-canvas vs-canvas--chart" style="padding-top:0">
+                <div class="vs-tree">
+              <div class="v-card vs-tree__node"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar">A</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Anita Rege</span><span class="v-badge v-badge--brand">You</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Owner · Rivergrove</div></div></div>
+                </div></div>
+              <div class="vs-tree__kids">
+                <div class="vs-tree__cell">
+                  <div class="v-card vs-tree__node"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar">R</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Rohan Pillai</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Sales lead</div></div></div>
+                </div></div>
+                  <div class="vs-tree__kids">
+                    <div class="vs-tree__cell"><div class="v-card vs-tree__node"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar">T</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Tara Menon</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Reservations</div></div></div>
+                </div></div></div>
+                    <div class="vs-tree__cell vs-tree__cell--ai"><div class="v-card vs-tree__node" style="background:var(--ai-bg);border-color:var(--ai-bd)"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--ai">V</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Sales Executive</span><span class="v-badge v-badge--ai">AI</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Books calls, qualifies</div></div></div><div class="t-meta muted row" style="gap:6px;margin-top:6px"><i class="v-dot v-dot--ok"></i>Working · 24 conversations</div>
+                </div></div></div>
+                  </div>
+                </div>
+                <div class="vs-tree__cell">
+                  <div class="v-card vs-tree__node"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar">I</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Imran Shaikh</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Operations lead</div></div></div>
+                </div></div>
+                  <div class="vs-tree__kids">
+                    <div class="vs-tree__cell"><div class="v-card vs-tree__node"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar">S</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Sneha Kulkarni</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Front desk</div></div></div>
+                </div></div></div>
+                    <div class="vs-tree__cell vs-tree__cell--ai"><div class="v-card vs-tree__node" style="background:var(--ai-bg);border-color:var(--ai-bd)"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--ai">V</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Support Executive</span><span class="v-badge v-badge--ai">AI</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Post-booking questions</div></div></div><div class="t-meta muted row" style="gap:6px;margin-top:6px"><i class="v-dot v-dot--danger"></i>Needs attention</div>
+                </div></div></div>
+                  </div>
+                </div>
+                <div class="vs-tree__cell vs-tree__cell--ai"><div class="v-card vs-tree__node" style="background:var(--ai-bg);border-color:var(--ai-bd)"><div class="v-card__body" style="padding:var(--s-3)">
+                  <div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--ai">V</span><div class="grow" style="min-width:0">
+                    <div class="row" style="gap:6px"><span class="t-small" style="font-weight:600">Marketing Executive</span><span class="v-badge v-badge--ai">AI</span></div>
+                    <div class="t-meta muted" style="margin-top:1px">Campaigns to past guests</div></div></div><div class="t-meta muted row" style="gap:6px;margin-top:6px"><i class="v-dot v-dot--muted"></i>Not configured</div>
+                </div></div></div>
+              </div>
+            </div>
+              </div>
+              <div class="vs-tray">
+              <div class="spread" style="margin-bottom:var(--s-3)">
+                <div><span class="t-small" style="font-weight:600">Not placed yet</span>
+                  <span class="t-meta muted" style="margin-left:8px">Drag onto the chart, or pick a manager</span></div>
+                <span class="v-badge v-badge--warn"><span class="num">2</span> people</span>
+              </div>
+              <div class="vs-tray__row">
+                <div class="v-selectchip"><span class="v-avatar v-avatar--sm">D</span>Dev Bhatia · Accounts</div>
+                <div class="v-selectchip"><span class="v-avatar v-avatar--sm">N</span>Nikhil Barve · Housekeeping</div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <section class="vs-frame vs-frame--h620" id="org-empty">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">58</span><span class="vs-frame__name">Org chart — nobody placed</span>
+      <span class="vs-frame__route">/org</span><span class="t-meta muted">Bespoke · empty state</span>
+    </div>
+    <p class="vs-frame__note"><b>This is what the live product shows today.</b> The captured screen was a blank canvas with no explanation. It now says what is missing, offers the two ways out, and keeps the eight real people visible in a tray rather than hiding them behind an empty rectangle.</p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <button class="v-rail__item" aria-label="Analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Analytics</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span><span class="v-rail__count">17</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span><span class="v-rail__count v-rail__count--attn">11</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Front desk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Front desk</span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">AI staff</div>
+          <button class="v-rail__item" aria-label="AI workforce"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cpu"/></svg><span class="v-rail__label">AI workforce</span><span class="v-rail__count">4</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Workflows"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg><span class="v-rail__label">Workflows</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">Organisation</div>
+          <button class="v-rail__item is-active" aria-label="Organisation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Organisation</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <button class="v-rail__item" aria-label="Billing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Billing</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Organisation</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Org chart</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav" aria-label="Organisation sections">
+              <div class="vs-sidenav__head"><div class="label">Organisation</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
+                  <input class="v-input" placeholder="Search people"></div></div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Organisation</div>
+              <a class="v-sidenav__item is-active">Org chart</a>
+              <a class="v-sidenav__item">Team &amp; access</a>
+              <a class="v-sidenav__item">Departments</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Hiring</div>
+              <a class="v-sidenav__item">Onboarding</a>
+              <a class="v-sidenav__item">Roles</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI workforce</div>
+              <a class="v-sidenav__item">Employees</a>
+              <a class="v-sidenav__item">Escalations</a>
+              </div>
+              </nav>
+            <div class="vs-main">
+              <div class="vs-canvas">
+                <div class="v-pagehead"><div class="v-pagehead__copy">
+                  <h1 class="v-pagehead__title">Org chart</h1>
+                  <p class="v-pagehead__sub">Nobody has a manager yet, so there is no tree to draw.</p>
+                </div></div>
+                <div class="v-empty" style="margin-top:var(--s-6)">
+                  <span class="v-empty__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg></span>
+                  <div class="v-empty__title">Eight people, no reporting lines</div>
+                  <p class="v-empty__body" style="max-width:52ch">
+                    A chart needs one person at the top and a manager on everyone else. Pick who the
+                    company reports to and the rest can be filled in by dragging — or Veerha can
+                    propose a structure from who books what.</p>
+                  <div class="v-actions" style="justify-content:center;margin-top:var(--s-5)">
+                    <button class="v-btn v-btn--primary">Choose who is at the top</button>
+                    <button class="v-btn v-btn--secondary">Let Veerha propose one</button>
+                  </div>
+                </div>
+                <div class="v-callout v-callout--info" style="margin-top:var(--s-6)">
+                  <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-info"/></svg></span>
+                  <div><b>This is the state the live product is in today.</b> Every person is
+                  unplaced, so the chart has never rendered — which is why this screen needed
+                  designing before the tree did.</div>
+                </div>
+                <div class="v-card" style="margin-top:var(--s-6)">
+                  <div class="v-card__head">
+                    <div><span class="t-strong">Not placed yet</span>
+                      <span class="t-meta muted" style="margin-left:8px">Everyone in the workspace</span></div>
+                    <span class="v-badge v-badge--warn"><span class="num">8</span> people</span>
+                  </div>
+                  <div class="v-card__body">
+                    <div class="vs-tray__row">
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">A</span>Anita Rege · Owner</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">R</span>Rohan Pillai · Sales lead</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">I</span>Imran Shaikh · Operations lead</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">T</span>Tara Menon · Reservations</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">S</span>Sneha Kulkarni · Front desk</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">D</span>Dev Bhatia · Accounts</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">N</span>Nikhil Barve · Housekeeping</div>
+                    <div class="v-selectchip"><span class="v-avatar v-avatar--sm">P</span>Priya Sule · Spa</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <section class="vs-frame vs-frame--h720" id="team">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">40</span><span class="vs-frame__name">Team &amp; access</span>
+      <span class="vs-frame__route">/org/team</span><span class="t-meta muted">A5 · index + roles</span>
+    </div>
+    <p class="vs-frame__note">Roles here govern what a <em>person</em> can reach. The note at the bottom exists because the obvious question on this screen — where are the AI employees? — has a real answer, and an unanswered version of it sends people hunting.</p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <button class="v-rail__item" aria-label="Analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Analytics</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span><span class="v-rail__count">17</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span><span class="v-rail__count v-rail__count--attn">11</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Front desk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Front desk</span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">AI staff</div>
+          <button class="v-rail__item" aria-label="AI workforce"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cpu"/></svg><span class="v-rail__label">AI workforce</span><span class="v-rail__count">4</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Workflows"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg><span class="v-rail__label">Workflows</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">Organisation</div>
+          <button class="v-rail__item is-active" aria-label="Organisation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Organisation</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <button class="v-rail__item" aria-label="Billing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Billing</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Organisation</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Team & access</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav" aria-label="Organisation sections">
+              <div class="vs-sidenav__head"><div class="label">Organisation</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
+                  <input class="v-input" placeholder="Search people"></div></div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Organisation</div>
+              <a class="v-sidenav__item">Org chart</a>
+              <a class="v-sidenav__item is-active">Team &amp; access</a>
+              <a class="v-sidenav__item">Departments</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Hiring</div>
+              <a class="v-sidenav__item">Onboarding</a>
+              <a class="v-sidenav__item">Roles</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI workforce</div>
+              <a class="v-sidenav__item">Employees</a>
+              <a class="v-sidenav__item">Escalations</a>
+              </div>
+              </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead"><div class="v-pagehead__copy">
+                <h1 class="v-pagehead__title">Team &amp; access</h1>
+                <p class="v-pagehead__sub">Six people. One invitation has never been opened.</p>
+              </div><div class="v-actions">
+                <button class="v-btn v-btn--secondary">Roles</button>
+                <button class="v-btn v-btn--primary">Invite someone</button>
+              </div></div>
+              <div class="v-callout v-callout--warn" style="margin-top:var(--s-5)">
+                <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
+                <div><b>Dev Bhatia was invited 11 days ago and has not signed in.</b>
+                  Invitations expire after 14 days.
+                  <a class="v-callout__link">Send it again</a></div>
+              </div>
+              <div class="v-tabs" style="margin-top:var(--s-5);margin-bottom:var(--s-4);flex-wrap:wrap">
+                <button class="v-tab is-active">All <span class="v-pill__n">6</span></button>
+                <button class="v-tab">Managers <span class="v-pill__n">2</span></button>
+                <button class="v-tab">Agents <span class="v-pill__n">2</span></button>
+                <button class="v-tab">Pending <span class="v-pill__n">1</span></button>
+                <span class="t-meta muted" style="margin-left:auto;align-self:center"><span class="num">6</span> results</span>
+              </div>
+              <div class="vs-filterbar">
+                <div class="v-search vs-filterbar__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
+                  <input class="v-input" placeholder="Search people"></div>
+                <button class="v-filterchip"><span class="v-filterchip__k">Role</span>
+                  <span class="v-filterchip__v">Any</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                <button class="v-filterchip"><span class="v-filterchip__k">Can reach</span>
+                  <span class="v-filterchip__v">Any</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                <button class="v-filterchip"><span class="v-filterchip__k">Last seen</span>
+                  <span class="v-filterchip__v">Any</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+              </div>
+              <div class="v-card"><table class="v-table">
+                  <thead><tr><th>Person</th><th>Role</th><th>Can reach</th><th>Last seen</th><th></th></tr></thead>
+                  <tbody><tr>
+                      <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">A</span>
+                        <div><div class="t-small" style="font-weight:600">Anita Rege</div>
+                        <div class="t-meta muted">anita@rivergrove.example.com</div></div></div></td>
+                      <td><span class="v-badge v-badge--neutral">Owner</span></td>
+                      <td class="t-small secondary">Full access</td>
+                      <td class="t-meta muted">—</td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Anita Rege"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                    </tr><tr>
+                      <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">R</span>
+                        <div><div class="t-small" style="font-weight:600">Rohan Pillai</div>
+                        <div class="t-meta muted">rohan@rivergrove.example.com</div></div></div></td>
+                      <td><span class="v-badge v-badge--neutral">Manager</span></td>
+                      <td class="t-small secondary">Sales, Bookings, AI</td>
+                      <td class="t-meta muted">Today, 9:12 AM</td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Rohan Pillai"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                    </tr><tr>
+                      <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">I</span>
+                        <div><div class="t-small" style="font-weight:600">Imran Shaikh</div>
+                        <div class="t-meta muted">imran@rivergrove.example.com</div></div></div></td>
+                      <td><span class="v-badge v-badge--neutral">Manager</span></td>
+                      <td class="t-small secondary">Operations, Calendar</td>
+                      <td class="t-meta muted">Yesterday</td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Imran Shaikh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                    </tr><tr>
+                      <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">T</span>
+                        <div><div class="t-small" style="font-weight:600">Tara Menon</div>
+                        <div class="t-meta muted">tara@rivergrove.example.com</div></div></div></td>
+                      <td><span class="v-badge v-badge--neutral">Agent</span></td>
+                      <td class="t-small secondary">Leads, Conversations</td>
+                      <td class="t-meta muted">Today, 8:40 AM</td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Tara Menon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                    </tr><tr>
+                      <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">S</span>
+                        <div><div class="t-small" style="font-weight:600">Sneha Kulkarni</div>
+                        <div class="t-meta muted">sneha@rivergrove.example.com</div></div></div></td>
+                      <td><span class="v-badge v-badge--neutral">Agent</span></td>
+                      <td class="t-small secondary">Conversations</td>
+                      <td class="t-meta muted">4 days ago</td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Sneha Kulkarni"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                    </tr><tr>
+                      <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">D</span>
+                        <div><div class="t-small" style="font-weight:600">Dev Bhatia</div>
+                        <div class="t-meta muted">dev@rivergrove.example.com</div></div></div></td>
+                      <td><span class="v-badge v-badge--warn">Invited</span></td>
+                      <td class="t-small secondary">Not set</td>
+                      <td class="t-meta muted">Never</td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Dev Bhatia"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                    </tr></tbody>
+                </table></div>
+              <p class="t-meta muted" style="margin-top:var(--s-4)">
+                AI employees are not listed here. They hold permissions of their own, set on
+                <span style="color:var(--brand)">AI workforce › Employees</span>.</p>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <section class="vs-frame vs-frame--h720" id="onboarding">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">59</span><span class="vs-frame__name">Onboarding</span>
+      <span class="vs-frame__route">/onboarding</span><span class="t-meta muted">A7 shape (c) · conversational</span>
+    </div>
+    <p class="vs-frame__note">The third and last wizard machine, after the top stepper (Import, Campaign) and the left step list (Property). It is a <em>transcript</em>, because a company that sells conversational AI should not onboard you with a form. The callout below the composer is the safeguard: it states in plain language what your sentence is about to configure, before it configures it.</p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <button class="v-rail__item" aria-label="Analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Analytics</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span><span class="v-rail__count">17</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span><span class="v-rail__count v-rail__count--attn">11</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Front desk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Front desk</span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">AI staff</div>
+          <button class="v-rail__item" aria-label="AI workforce"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cpu"/></svg><span class="v-rail__label">AI workforce</span><span class="v-rail__count">4</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Workflows"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg><span class="v-rail__label">Workflows</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">Organisation</div>
+          <button class="v-rail__item is-active" aria-label="Organisation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Organisation</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <button class="v-rail__item" aria-label="Billing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Billing</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Organisation</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Onboarding</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body">
+            <div class="vs-canvas vs-canvas--narrow" style="margin:0 auto">
+              <div class="v-stepper" style="margin-bottom:var(--s-6)">
+                <div class="v-stepper__step is-done"><span class="v-stepper__n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>Your business</div>
+                <span class="v-stepper__bar"></span>
+                <div class="v-stepper__step is-active"><span class="v-stepper__n num">2</span>How you sell</div>
+                <span class="v-stepper__bar"></span>
+                <div class="v-stepper__step"><span class="v-stepper__n num">3</span>Connect a channel</div>
+                <span class="v-stepper__bar"></span>
+                <div class="v-stepper__step"><span class="v-stepper__n num">4</span>Hire your first employee</div>
+              </div>
+              <div class="v-card">
+                <div class="v-card__head"><div class="row grow" style="gap:var(--s-3)">
+                  <span class="v-avatar v-avatar--ai">V</span>
+                  <div><div class="t-strong">Setting up with you</div>
+                    <div class="t-meta muted">Answer in your own words — no forms</div></div>
+                </div><span class="v-badge v-badge--ai">Step 2 of 4</span></div>
+                <div class="v-card__body" style="display:flex;flex-direction:column;gap:var(--s-4)">
+                  <div class="v-msg v-msg--in"><div class="v-msg__bubble">Thanks — a 14-room riverside resort. Who usually answers an enquiry first, and how long does that take on a normal day?</div><div class="v-msg__meta">Veerha · 10:02</div></div>
+                  <div class="v-msg v-msg--out"><div class="v-msg__bubble">Tara picks up WhatsApp, but only between 9 and 7. Nights go unanswered till morning.</div><div class="v-msg__meta">Anita · 10:03</div></div>
+                  <div class="v-msg v-msg--in"><div class="v-msg__bubble">That is the gap worth closing first. Two follow-ups and I have enough to configure your Sales Executive:<br><br><b>1.</b> Should it answer at night on its own, or draft a reply for Tara to send?<br><b>2.</b> When someone asks for a discount, what is the most you would let it give without asking you?</div><div class="v-msg__meta">Veerha · 10:03</div></div>
+                  <div class="v-card" style="background:var(--surface-subtle);box-shadow:none">
+                    <div class="v-card__body" style="padding:var(--s-4)">
+                      <div class="label">Your answer</div>
+                      <textarea class="v-textarea" style="margin-top:var(--s-2)" rows="3" placeholder="Type it however you would say it out loud…">Answer on its own at night. Discounts up to 10% are fine, anything more comes to me.</textarea>
+                      <div class="spread" style="margin-top:var(--s-3)">
+                        <span class="t-meta muted">Veerha turns this into settings you can edit later.</span>
+                        <button class="v-btn v-btn--primary v-btn--sm">Send</button>
+                      </div>
+                    </div></div>
+                  <div class="v-callout v-callout--ai">
+                    <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg></span>
+                    <div><b>What this will set.</b> Autonomy <b>on</b> between 7 PM and 9 AM ·
+                      discount ceiling <b>10%</b> · anything above it becomes a decision in
+                      <i>Waiting on you</i>. Nothing is locked — every one of these is a switch in settings.</div>
+                  </div>
+                </div>
+                <div class="v-card__foot">
+                  <button class="v-btn v-btn--ghost">Back</button>
+                  <div class="grow"></div>
+                  <span class="t-meta muted" style="margin-right:var(--s-3)">About 4 minutes left</span>
+                  <button class="v-btn v-btn--secondary">Skip — use sensible defaults</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+
+
+
+  <section class="vs-frame vs-frame--h720" id="departments">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">41</span><span class="vs-frame__name">Departments</span>
+      <span class="vs-frame__route">/departments</span><span class="t-meta muted">A5 · routing, testable</span>
+    </div>
+    <p class="vs-frame__note">The live screen leads with an always-open three-input form above a single record
+      that cannot be edited or deleted, routes on free text with no way to try it, and shows
+      <em>intake extraction</em> and <em>crm upkeep</em> as tags on a hotelier&rsquo;s screen. Here the data comes
+      first, the form sits under it, every department can be edited, and the routing rule is testable with a
+      sentence. The callout at the top exists because a department is <b>not</b> the access model — reporting
+      lines are.</p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <button class="v-rail__item" aria-label="Analytics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Analytics</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span><span class="v-rail__count">17</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span><span class="v-rail__count v-rail__count--attn">11</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Front desk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Front desk</span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <div class="v-rail__group">AI staff</div>
+          <button class="v-rail__item" aria-label="AI workforce"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cpu"/></svg><span class="v-rail__label">AI workforce</span><span class="v-rail__count">4</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Workflows"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg><span class="v-rail__label">Workflows</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">Organisation</div>
+          <button class="v-rail__item is-active" aria-label="Organisation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Organisation</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <button class="v-rail__item" aria-label="Billing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Billing</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Organisation</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Departments</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav" aria-label="Organisation sections">
+              <div class="vs-sidenav__head"><div class="label">Organisation</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
+                  <input class="v-input" placeholder="Search people"></div></div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Organisation</div>
+              <a class="v-sidenav__item">Org chart</a>
+              <a class="v-sidenav__item">Team &amp; access</a>
+              <a class="v-sidenav__item is-active">Departments</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Hiring</div>
+              <a class="v-sidenav__item">Onboarding</a>
+              <a class="v-sidenav__item">Roles</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI workforce</div>
+              <a class="v-sidenav__item">Employees</a>
+              <a class="v-sidenav__item">Escalations</a>
+              </div>
+              </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead"><div class="v-pagehead__copy">
+                <h1 class="v-pagehead__title">Departments</h1>
+                <p class="v-pagehead__sub">Four departments. Every request is routed to one of them by what it
+                  is about — 168 were routed last month.</p>
+              </div><div class="v-actions">
+                <button class="v-btn v-btn--primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> New department</button>
+              </div></div>
+
+              <div class="v-callout v-callout--info" style="margin-bottom:var(--s-5)">
+                <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-info"/></svg></span>
+                <div><b>A department decides who <i>handles</i> a request. It does not decide who can
+                  <i>see</i> one.</b> Visibility follows reporting lines — a manager sees everyone reporting to
+                  them, and anybody without a manager sees only their own customers. That is set on the org
+                  chart, not here. <a class="v-callout__link">Org chart › Reporting lines →</a></div>
+              </div>
+
+              <div class="v-tabs" style="margin-bottom:var(--s-4)">
+                <button class="v-tab is-active">All <span class="v-pill__n">4</span></button>
+                <button class="v-tab">With an AI employee <span class="v-pill__n">2</span></button>
+                <button class="v-tab">No AI employee <span class="v-pill__n">2</span></button>
+                <span class="t-meta muted" style="margin-left:auto;align-self:center"><span class="num">4</span> results</span>
+              </div>
+
+              <div class="vs-split vs-split--wide">
+                <div class="stack">
+                  <section class="v-card">
+                    <div class="v-card__head">
+                      <div class="v-card__ic" style="background:var(--ai-bg);color:var(--ai-ic);border:1px solid var(--ai-bd)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg></div>
+                      <div class="grow"><div class="v-card__title">Where would this go?</div>
+                        <p class="v-card__desc">Routing is a description and a handful of examples, so the only
+                          honest way to check it is to try a sentence. This is that.</p></div></div>
+                    <div class="v-card__body">
+                      <div class="row" style="gap:var(--s-2)">
+                        <input class="v-input" value="Hi, do you have a hall for 180 people in February?" style="min-width:0">
+                        <button class="v-btn v-btn--secondary">Test it</button></div>
+                      <div class="v-ai" style="margin-top:var(--s-4)">
+                        <div class="v-ai__label"><span class="v-ai__mark">V</span><span class="label">Result</span></div>
+                        <p class="v-read__conclusion">Events &amp; banquets</p>
+                        <p class="v-read__evidence">Matched <b>banquet</b> and <b>how many can you seat</b>, and
+                          the headcount reads as an event rather than a room count. Sales was the second guess and
+                          not a close one.</p>
+                        <p class="v-read__based">No AI employee in this department — it would go to Imran Shaikh,
+                          who is off shift until 9 AM</p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <div class="stack" style="display:flex;flex-direction:column;gap:var(--s-4)">
+                  <div class="v-record v-record--ok">
+                    <div class="v-record__body">
+                      <div class="v-record__title">Sales
+                        <span class="v-badge v-badge--ai"><i class="v-dot v-dot--ok"></i> Sales Executive</span>
+                        <span class="v-badge v-badge--neutral">2 people</span></div>
+                      <p class="v-record__desc" style="max-width:66ch">Answers a new enquiry on whichever channel it arrived on, qualifies it, and keeps the record current so nobody has to re-ask.</p>
+                      <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
+                      <div class="v-actions" style="margin-top:6px"><span class="v-badge v-badge--neutral">looking for</span> <span class="v-badge v-badge--neutral">interested in</span> <span class="v-badge v-badge--neutral">room availability</span> <span class="v-badge v-badge--neutral">what would it cost</span> <span class="v-badge v-badge--neutral">asking for a quote</span>
+                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div>
+                    </div>
+                    <div class="v-actions" style="flex:none;align-items:flex-start">
+                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Sales"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="v-record v-record--warn">
+                    <div class="v-record__body">
+                      <div class="v-record__title">Events &amp; banquets
+                        <span class="v-badge v-badge--neutral"><i class="v-dot v-dot--muted"></i> No AI employee</span>
+                        <span class="v-badge v-badge--neutral">1 person</span></div>
+                      <p class="v-record__desc" style="max-width:66ch">Weddings, conferences and anything with a headcount rather than a room count. Quotes here always need a person.</p>
+                      <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
+                      <div class="v-actions" style="margin-top:6px"><span class="v-badge v-badge--neutral">wedding</span> <span class="v-badge v-badge--neutral">banquet</span> <span class="v-badge v-badge--neutral">conference</span> <span class="v-badge v-badge--neutral">site visit</span> <span class="v-badge v-badge--neutral">how many can you seat</span>
+                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout v-callout--warn" style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Nobody is on shift out of hours.</b> These 9 enquiries went to Imran Shaikh, who answered 6 of them the next morning. <a class="v-callout__link">Hire an AI employee here &rarr;</a></div></div>
+                    </div>
+                    <div class="v-actions" style="flex:none;align-items:flex-start">
+                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Events &amp; banquets"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="v-record v-record--danger">
+                    <div class="v-record__body">
+                      <div class="v-record__title">Front desk
+                        <span class="v-badge v-badge--danger"><i class="v-dot v-dot--danger"></i> Support Executive</span>
+                        <span class="v-badge v-badge--neutral">3 people</span></div>
+                      <p class="v-record__desc" style="max-width:66ch">Guests who have already booked — arrival times, transfers, a change to a stay.</p>
+                      <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
+                      <div class="v-actions" style="margin-top:6px"><span class="v-badge v-badge--neutral">already booked</span> <span class="v-badge v-badge--neutral">check-in time</span> <span class="v-badge v-badge--neutral">airport pickup</span> <span class="v-badge v-badge--neutral">can I change my dates</span>
+                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout v-callout--danger" style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Support Executive is read-only while WhatsApp is disconnected.</b> 11 requests are waiting and nobody has been told. <a class="v-callout__link">Reconnect WhatsApp &rarr;</a></div></div>
+                    </div>
+                    <div class="v-actions" style="flex:none;align-items:flex-start">
+                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Front desk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                    </div>
+                  </div>
+                  <div class="v-record ">
+                    <div class="v-record__body">
+                      <div class="v-record__title">Marketing
+                        <span class="v-badge v-badge--neutral"><i class="v-dot v-dot--muted"></i> No AI employee</span>
+                        <span class="v-badge v-badge--neutral">0 people</span></div>
+                      <p class="v-record__desc" style="max-width:66ch">Campaigns to guests who have stayed before. Created during setup and never finished.</p>
+                      <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
+                      <div class="v-actions" style="margin-top:6px"><span class="t-meta faint">No examples yet — nothing will match this department</span>
+                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout " style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Nothing routes here.</b> Without an example or a description the router never picks this department, so it is invisible rather than broken. <a class="v-callout__link">Give it something to match &rarr;</a></div></div>
+                    </div>
+                    <div class="v-actions" style="flex:none;align-items:flex-start">
+                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Marketing"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                    </div>
+                  </div>
+                  </div>
+
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Add a department</div>
+                      <p class="v-card__desc">Two fields and a few examples. It starts routing the moment you
+                        save it, so it sits below the four that already work.</p></div></div>
+                    <div class="v-card__body">
+                      <div class="v-field" style="max-width:320px">
+                        <label class="v-field__label">Name</label>
+                        <input class="v-input" placeholder="Spa &amp; wellness"></div>
+                      <div class="v-field" style="margin-top:var(--s-4)">
+                        <label class="v-field__label">What it handles</label>
+                        <textarea class="v-textarea" rows="2" placeholder="New enquiries about treatments and day passes, including package pricing and therapist availability."></textarea>
+                        <span class="v-field__hint">Write it as you would explain the job to a new hire. The
+                          router reads this, so vague descriptions mis-route.</span></div>
+                      <div class="v-field" style="margin-top:var(--s-4)">
+                        <label class="v-field__label">Phrases that should land here</label>
+                        <div class="v-actions">
+                          <span class="v-selectchip">massage <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-x"/></svg></span>
+                          <span class="v-selectchip">spa package <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-x"/></svg></span>
+                          <input class="v-input" placeholder="Type a phrase and press enter" style="max-width:220px">
+                        </div>
+                        <span class="v-field__hint">One phrase per chip — how they are stored is our problem,
+                          not yours.</span></div>
+                      <div class="v-actions" style="margin-top:var(--s-5)">
+                        <button class="v-btn v-btn--primary">Add the department</button>
+                        <span class="t-meta muted">You can test it before anything reaches it.</span></div>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="stack">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Who sees what</div>
+                      <p class="v-card__desc">Set once for the workspace. Two switches, both with a consequence.</p></div></div>
+                    <div class="v-card__body">
+                      <div class="v-rows">
+                        <div style="display:flex;align-items:flex-start;gap:var(--s-3);padding-left:0;padding-right:0">
+                          <span class="grow"><span class="t-small">Limit what each role sees</span>
+                            <div class="t-meta muted">On. A member sees their own customers; a manager sees
+                              everyone reporting to them. Off, everyone in the workspace sees every lead,
+                              customer, opportunity and quotation.</div></span>
+                          <span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div>
+                        <div style="display:flex;align-items:flex-start;gap:var(--s-3);padding-left:0;padding-right:0">
+                          <span class="grow"><span class="t-small">Admins can read customers</span>
+                            <div class="t-meta muted">Off. An admin runs the workspace — reading its customers
+                              is a separate decision, so it is a separate switch.</div></span>
+                          <span class="v-toggle" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div>
+                      </div>
+                      <div class="v-kv" style="margin-top:var(--s-4)">
+                        <dt>Owner</dt><dd style="text-align:right;font-family:var(--ui)">Every customer</dd>
+                        <dt>Manager</dt><dd style="text-align:right;font-family:var(--ui)">Theirs, and their team&rsquo;s</dd>
+                        <dt>Member</dt><dd style="text-align:right;font-family:var(--ui)">Only what they own</dd>
+                        <dt>Viewer</dt><dd style="text-align:right;font-family:var(--ui)">Only what they own</dd>
+                        <dt>Admin</dt><dd style="text-align:right;font-family:var(--ui)">None</dd>
+                      </div>
+                      <p class="t-meta muted" style="margin-top:var(--s-3)">Anybody without a manager sees only
+                        their own customers — which is why an unplaced person on the org chart is an access
+                        problem, not a diagram problem.</p>
+                      <div class="v-actions" style="margin-top:var(--s-4)">
+                        <button class="v-btn v-btn--secondary v-btn--sm">Roles &amp; what they can do <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button></div>
+                    </div>
+                  </section>
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Who answers, by department</div>
+                      <p class="v-card__desc">Last 30 days · 168 routed requests</p></div></div>
+                    <div class="v-card__body">
+                      <div class="v-ranked">
+                        <div class="v-ranked__row"><span>Sales <span class="v-badge v-badge--ai">AI</span></span><span class="v-ranked__n">121</span></div>
+                        <div class="v-ranked__row"><span>Front desk <span class="v-badge v-badge--ai">AI</span></span><span class="v-ranked__n">33</span></div>
+                        <div class="v-ranked__row"><span>Events &amp; banquets</span><span class="v-ranked__n">9</span></div>
+                        <div class="v-ranked__row"><span>Nothing matched — went to Anita</span><span class="v-ranked__n">5</span></div>
+                        <div class="v-ranked__row"><span>Marketing</span><span class="v-ranked__n">0</span></div>
+                      </div>
+                      <p class="t-meta muted" style="margin-top:var(--s-3)">The five that matched nothing are the
+                        ones worth reading — each is a phrase your departments do not know yet.</p>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Screens · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span><a href="index.html" style="color:var(--brand)">← Contents</a></span>
+  </footer>
+
+</main>
+<script src="assets/behaviour.js"></script>
+</body>
+</html>
