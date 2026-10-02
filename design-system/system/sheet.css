@@ -1,0 +1,260 @@
+/* ============================================================================
+   VEERHA — INDIGO SLATE
+   Documentation chrome.
+
+   This is the design *file's* own UI — the navigation, the specimen frames,
+   the swatch grids. None of it is product CSS. The engineering team lifts
+   tokens.css, base.css and components.css; this file stays behind.
+   ============================================================================ */
+
+.sh-top {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.sh-top__in {
+  max-width: var(--page-max); margin: 0 auto;
+  padding: var(--s-3) var(--gutter);
+  display: flex; align-items: center; gap: var(--s-5);
+}
+.sh-brand { display: flex; align-items: center; gap: var(--s-3); }
+.sh-brand__mark {
+  width: 28px; height: 28px; border-radius: var(--r-md);
+  background: var(--brand); color: var(--brand-on);
+  display: grid; place-items: center; font-weight: 600; font-size: 13px;
+}
+.sh-brand__name { font-weight: 600; font-size: var(--t-small-s); }
+.sh-brand__sub { font-size: var(--t-meta-s); color: var(--text-muted); }
+
+.sh-nav { display: flex; gap: var(--s-1); margin-left: auto; flex-wrap: wrap; }
+.sh-nav a {
+  padding: 6px var(--s-3); border-radius: var(--r-sm);
+  font-size: var(--t-small-s); font-weight: 500; color: var(--text-muted);
+}
+.sh-nav a:hover { background: var(--surface-subtle); color: var(--text-secondary); }
+.sh-nav a[aria-current] { background: var(--brand-soft); color: var(--brand); }
+
+.sh-hero { padding: var(--s-16) 0 var(--s-10); border-bottom: 1px solid var(--border); }
+.sh-hero h1 { font-size: 40px; line-height: 48px; font-weight: 600; letter-spacing: -.028em; max-width: 20ch; }
+.sh-hero p { margin-top: var(--s-4); font-size: var(--t-card-s); line-height: 26px; color: var(--text-secondary); max-width: 62ch; }
+
+/* Section heading inside a documentation page */
+.sh-sec { padding-top: var(--s-12); scroll-margin-top: 80px; }
+.sh-sec__n { font-family: var(--num); color: var(--text-faint); font-size: var(--t-meta-s); }
+.sh-sec__h { font-size: var(--t-page-s); line-height: var(--t-page-l); font-weight: 600; letter-spacing: -.018em; margin-top: 4px; }
+.sh-sec__d { margin-top: var(--s-2); font-size: var(--t-body-s); color: var(--text-secondary); max-width: 68ch; }
+.sh-sec__rule { margin-top: var(--s-5); border: 0; border-top: 1px solid var(--border); }
+
+/* A component specimen: label, the live thing, the notes */
+.sh-spec { margin-top: var(--s-8); }
+.sh-spec__hd { display: flex; align-items: baseline; gap: var(--s-3); margin-bottom: var(--s-3); }
+.sh-spec__name { font-size: var(--t-card-s); font-weight: 600; letter-spacing: -.008em; }
+.sh-spec__cls { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-faint); }
+.sh-spec__note { font-size: var(--t-small-s); color: var(--text-muted); max-width: 70ch; margin-bottom: var(--s-3); }
+
+/* The frame a specimen sits in — the equivalent of a Figma frame */
+.sh-frame {
+  background: var(--canvas); border: 1px solid var(--border); border-radius: var(--r-card);
+  padding: var(--s-6); display: flex; flex-wrap: wrap; gap: var(--s-4); align-items: flex-start;
+}
+.sh-frame--surface { background: var(--surface); }
+.sh-frame--col { flex-direction: column; }
+.sh-frame--tight { padding: var(--s-4); }
+.sh-frame--flush { padding: 0; overflow: hidden; }
+
+/* A dense table cannot fit a phone. It scrolls inside its own frame rather
+   than pushing the page — with a right-edge fade, because a scroller with a
+   hidden scrollbar and no fade is just hidden content. */
+.sh-scroll {
+  /* min-width:0 is load-bearing: a flex item defaults to min-width:auto and
+     will not shrink below its content, so the table pushed the page instead
+     of scrolling inside the frame. */
+  min-width: 0; max-width: 100%; flex: 1;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+@media (min-width: 900px) { .sh-scroll { mask-image: none; -webkit-mask-image: none; } }
+
+/* State grid — every state drawn as its own cell */
+.sh-states { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr)); gap: var(--s-4); width: 100%; }
+.sh-state { display: flex; flex-direction: column; gap: var(--s-2); align-items: flex-start; }
+.sh-state__l {
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+  text-transform: uppercase; color: var(--text-faint);
+}
+
+/* Colour swatches */
+.sh-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(168px, 100%), 1fr)); gap: var(--s-3); width: 100%; }
+.sh-sw { border: 1px solid var(--border); border-radius: var(--r-tile); overflow: hidden; background: var(--surface); }
+.sh-sw__chip { height: 60px; border-bottom: 1px solid var(--border); }
+.sh-sw__meta { padding: var(--s-2) var(--s-3); }
+.sh-sw__name { font-size: var(--t-meta-s); font-weight: 600; }
+.sh-sw__val { font-family: var(--num); font-size: var(--t-micro-s); color: var(--text-muted); text-transform: uppercase; }
+.sh-sw__use { font-size: var(--t-micro-s); color: var(--text-faint); margin-top: 2px; }
+
+.sh-ramp { display: flex; width: 100%; border-radius: var(--r-tile); overflow: hidden; border: 1px solid var(--border); }
+.sh-ramp div { flex: 1; height: 56px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; font-size: 10px; font-family: var(--num); }
+
+/* Spec table */
+.sh-tbl { width: 100%; font-size: var(--t-small-s); margin-top: var(--s-3); }
+.sh-tbl th {
+  text-align: left; padding: var(--s-2) var(--s-3);
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+  text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border);
+}
+.sh-tbl td { padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--border); vertical-align: top; }
+.sh-tbl code, .sh-code { font-family: var(--num); font-size: var(--t-meta-s); color: var(--brand-700); background: var(--brand-50); padding: 1px 5px; border-radius: var(--r-xs); }
+
+/* Do / don't */
+.sh-rules { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); margin-top: var(--s-4); }
+.sh-rule { border: 1px solid var(--border); border-radius: var(--r-tile); padding: var(--s-4); background: var(--surface); }
+.sh-rule--do    { border-left: 3px solid var(--ok-ic); }
+.sh-rule--dont  { border-left: 3px solid var(--dn-ic); }
+.sh-rule__h { font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking); text-transform: uppercase; margin-bottom: 6px; }
+.sh-rule--do .sh-rule__h { color: var(--ok-tx); }
+.sh-rule--dont .sh-rule__h { color: var(--dn-tx); }
+.sh-rule p { font-size: var(--t-small-s); color: var(--text-secondary); }
+
+/* Callout inside the docs */
+.sh-note {
+  margin-top: var(--s-4); padding: var(--s-4);
+  border: 1px solid var(--border); border-left: 3px solid var(--brand);
+  border-radius: var(--r-tile); background: var(--surface); font-size: var(--t-small-s);
+}
+.sh-note strong { font-weight: 600; }
+.sh-note--warn { border-left-color: var(--wn-ic); background: var(--wn-bg); border-color: var(--wn-bd); color: var(--wn-tx); }
+
+/* Index cards on the cover */
+.sh-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr)); gap: var(--s-4); margin-top: var(--s-6); }
+.sh-card {
+  display: block; padding: var(--s-5); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r-card);
+  transition: border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease);
+}
+.sh-card:hover { border-color: var(--border-strong); box-shadow: var(--e2); }
+.sh-card__n { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-faint); }
+.sh-card__h { font-size: var(--t-card-s); font-weight: 600; margin-top: var(--s-2); }
+.sh-card__p { font-size: var(--t-small-s); color: var(--text-muted); margin-top: 6px; }
+
+.sh-foot { margin-top: var(--s-20); padding: var(--s-6) 0; border-top: 1px solid var(--border); font-size: var(--t-meta-s); color: var(--text-faint); display: flex; gap: var(--s-4); flex-wrap: wrap; }
+
+/* --- TYPEFACE SPECIMEN ----------------------------------------------------
+   Shows the font itself, not just the scale it is set at. */
+
+.sh-face {
+  border: 1px solid var(--border); border-radius: var(--r-card);
+  background: var(--surface); overflow: hidden; width: 100%;
+}
+.sh-face__hd {
+  display: flex; align-items: flex-end; gap: var(--s-4); flex-wrap: wrap;
+  padding: var(--s-5) var(--s-6) var(--s-4); border-bottom: 1px solid var(--border);
+}
+.sh-face__name { font-size: 44px; line-height: 1; font-weight: 600; letter-spacing: -.03em; }
+.sh-face__name--mono { font-family: var(--num); font-size: 38px; letter-spacing: -.02em; }
+.sh-face__meta { font-size: var(--t-meta-s); color: var(--text-muted); line-height: 18px; padding-bottom: 4px; }
+.sh-face__row { padding: var(--s-4) var(--s-6); border-bottom: 1px solid var(--border); }
+.sh-face__row:last-child { border-bottom: 0; }
+.sh-face__l {
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--s-2);
+}
+.sh-face__big { font-size: 34px; line-height: 44px; font-weight: 500; letter-spacing: -.022em; }
+.sh-face__glyphs {
+  font-size: 19px; line-height: 32px; letter-spacing: .02em;
+  color: var(--text-secondary); word-spacing: 2px;
+}
+.sh-face__glyphs--mono { font-family: var(--num); font-size: 17px; letter-spacing: 0; }
+.sh-face__w { display: flex; align-items: baseline; gap: var(--s-4); flex-wrap: wrap; }
+.sh-face__w + .sh-face__w { margin-top: var(--s-3); }
+.sh-face__wn { width: 104px; flex: none; font-size: var(--t-meta-s); color: var(--text-muted); }
+.sh-face__ws { font-size: 21px; line-height: 28px; letter-spacing: -.012em; }
+
+/* Side-by-side proof that figures need the mono face */
+.sh-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px,100%), 1fr)); gap: var(--s-5); }
+.sh-figs__col { min-width: 0; }
+.sh-figs table { width: 100%; font-size: 15px; }
+.sh-figs td { padding: 3px 0; border-bottom: 1px solid var(--border); }
+.sh-figs td:last-child { text-align: right; }
+.sh-figs--mono td:last-child { font-family: var(--num); font-variant-numeric: tabular-nums; }
+.sh-figs--prop td:last-child { font-variant-numeric: proportional-nums; }
+
+/* --- LONG-FORM PROSE ------------------------------------------------------
+   For the written spec and the departures document. Measure is capped at
+   ~76 characters; anything wider stops being readable. */
+
+.sh-prose { max-width: 76ch; }
+.sh-prose > * + * { margin-top: var(--s-4); }
+.sh-prose p, .sh-prose li { font-size: 15px; line-height: 25px; color: var(--text-secondary); }
+.sh-prose h2 {
+  font-size: var(--t-page-s); line-height: var(--t-page-l); font-weight: 600;
+  letter-spacing: -.018em; color: var(--text-primary);
+  margin-top: var(--s-12); padding-top: var(--s-5); border-top: 1px solid var(--border);
+  scroll-margin-top: 84px;
+}
+.sh-prose h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.sh-prose h3 {
+  font-size: var(--t-card-s); line-height: var(--t-card-l); font-weight: 600;
+  letter-spacing: -.008em; color: var(--text-primary); margin-top: var(--s-8);
+}
+.sh-prose h4 { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-top: var(--s-5); }
+.sh-prose ul { padding-left: var(--s-5); list-style: disc; }
+.sh-prose ol { padding-left: var(--s-5); list-style: decimal; }
+.sh-prose li { margin-top: var(--s-2); }
+.sh-prose li::marker { color: var(--text-faint); }
+.sh-prose strong { color: var(--text-primary); font-weight: 600; }
+.sh-prose a { color: var(--brand); font-weight: 500; }
+.sh-prose code {
+  font-family: var(--num); font-size: var(--t-meta-s);
+  color: var(--brand-700); background: var(--brand-50);
+  padding: 1px 5px; border-radius: var(--r-xs);
+  /* A token is one thing: `--ai-ic:#7C3AED` splitting across two lines reads
+     as two tokens. overflow-wrap keeps it atomic until it genuinely cannot
+     fit, at which point it breaks rather than pushing the page. */
+  white-space: nowrap; overflow-wrap: break-word;
+}
+@media (max-width: 560px) { .sh-prose code { white-space: normal; } }
+.sh-prose table { width: 100%; margin-top: var(--s-5); font-size: var(--t-small-s); }
+.sh-prose th {
+  text-align: left; padding: var(--s-2) var(--s-3);
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+  text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border);
+}
+.sh-prose td { padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-secondary); }
+.sh-prose--wide { max-width: none; }
+
+/* A quoted rule from design-system v2 */
+.sh-quote {
+  border-left: 3px solid var(--border-strong); padding: var(--s-1) 0 var(--s-1) var(--s-4);
+  color: var(--text-muted); font-size: var(--t-small-s); line-height: 21px;
+}
+.sh-quote p + p { margin-top: var(--s-2); }
+.sh-quote strong { color: var(--text-secondary); }
+
+/* Status pill used in the departures table and headings */
+.sh-status {
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+  height: 20px; padding: 0 7px; border-radius: var(--r-chip);
+  font-size: var(--t-micro-s); font-weight: 600; border: 1px solid transparent;
+}
+.sh-status--ok    { background: var(--ok-bg); border-color: var(--ok-bd); color: var(--ok-tx); }
+.sh-status--part  { background: var(--wn-bg); border-color: var(--wn-bd); color: var(--wn-tx); }
+.sh-status--dep   { background: var(--dn-bg); border-color: var(--dn-bd); color: var(--dn-tx); }
+.sh-status--defer { background: var(--surface-subtle); border-color: var(--border); color: var(--text-muted); }
+
+/* In-page contents list */
+.sh-toc { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-5); }
+.sh-toc a {
+  padding: 5px var(--s-3); border: 1px solid var(--border); border-radius: var(--r-ctrl);
+  background: var(--surface); font-size: var(--t-meta-s); font-weight: 500; color: var(--text-secondary);
+}
+.sh-toc a:hover { background: var(--surface-subtle); border-color: var(--field-border); }
+
+/* A device frame for showing a component at a fixed width */
+.sh-device { border: 1px solid var(--border-strong); border-radius: var(--r-card); overflow: hidden; background: var(--surface); }
+
+@media (max-width: 860px) {
+  .sh-rules { grid-template-columns: 1fr; }
+  .sh-top__in { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+  .sh-nav { margin-left: 0; }
+  .sh-hero h1 { font-size: 30px; line-height: 38px; }
+}
