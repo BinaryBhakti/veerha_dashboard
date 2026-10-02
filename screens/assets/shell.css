@@ -1,0 +1,248 @@
+/* ============================================================================
+   VEERHA — SCREENS
+   Shell composition.
+
+   The design system defines the shell's *parts* (.v-rail, .v-topbar,
+   .v-sidenav, .v-crumb, .v-pagehead). This file assembles them into the app
+   frame, and wraps each screen in the labelled frame the deliverable presents
+   them in.
+
+   Layout only. No colours, no radii, no type sizes that aren't tokens —
+   anything visual belongs in the design system, not here.
+   ============================================================================ */
+
+
+/* --- THE FRAME -----------------------------------------------------------
+   One screen = one frame. Label above, the app inside. The equivalent of an
+   artboard, and the reason this folder reads like a design file rather than
+   a website. */
+
+.vs-frame { margin-top: var(--s-12); scroll-margin-top: 76px; }
+.vs-frame:first-of-type { margin-top: var(--s-8); }
+
+.vs-frame__hd {
+  display: flex; align-items: baseline; gap: var(--s-3);
+  margin-bottom: var(--s-3); flex-wrap: wrap;
+}
+.vs-frame__n {
+  font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: var(--r-chip);
+  padding: 1px 6px; background: var(--surface);
+}
+.vs-frame__name { font-size: var(--t-card-s); font-weight: 600; letter-spacing: -.008em; }
+.vs-frame__route {
+  font-family: var(--num); font-size: var(--t-meta-s); color: var(--brand-700);
+  background: var(--brand-50); padding: 1px 6px; border-radius: var(--r-xs);
+}
+.vs-frame__note {
+  font-size: var(--t-small-s); color: var(--text-muted);
+  max-width: 86ch; margin-bottom: var(--s-3);
+}
+.vs-frame__box {
+  border: 1px solid var(--border-strong); border-radius: var(--r-card);
+  overflow: hidden; background: var(--canvas); box-shadow: var(--e1);
+}
+
+/* A frame that has to show a fixed viewport — the three-pane inbox, anything
+   whose panes only make sense at a real height. */
+.vs-frame--h720 .vs-app { height: 720px; }
+.vs-frame--h620 .vs-app { height: 620px; }
+.vs-frame--h520 .vs-app { height: 520px; }
+.vs-frame--h420 .vs-app { height: 420px; }
+
+
+/* --- THE APP -------------------------------------------------------------
+   Rail on the left, everything else in a column beside it. The rail stretches
+   to the full height of whatever the screen contains. */
+
+.vs-app {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+}
+/* Same rule for the frame shell: the rail is expanded by default, so the
+   grid column has to be --rail-open or the page slides under it. */
+.vs-app:has(> .v-rail.is-expanded) {
+  grid-template-columns: var(--rail-open) minmax(0, 1fr);
+  background: var(--canvas);
+  position: relative;
+}
+.vs-app > .v-rail { height: 100%; }
+
+.vs-main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+
+/* The scrolling region. On a fixed-height frame it scrolls; on an auto frame
+   it simply grows. */
+.vs-body { flex: 1; min-height: 0; overflow: auto; display: flex; min-width: 0; }
+
+/* The page canvas — where a screen's content lives. */
+.vs-canvas { flex: 1; min-width: 0; padding: var(--s-6) var(--s-8) var(--s-12); }
+.vs-canvas--flush { padding: 0; }
+.vs-canvas--narrow { max-width: 900px; }
+
+/* A screen with a second-level nav (Settings, Marketing, Catalog, AI). */
+.vs-body--sectioned > .v-sidenav { flex: none; }
+
+/* Full-bleed screens: the inbox, the builders — they manage their own columns
+   and must not get canvas padding. */
+.vs-body--panes { overflow: hidden; }
+
+
+/* --- TOP BAR EXTRAS ------------------------------------------------------
+   The design system's .v-topbar is the bar; these are the things that sit in
+   it on a real screen. */
+
+.vs-topbar__menu {
+  width: 32px; height: 32px; border-radius: var(--r-sm); flex: none;
+  display: grid; place-items: center; color: var(--text-muted);
+  background: none; border: 0; cursor: pointer;
+}
+.vs-topbar__menu:hover { background: var(--surface-subtle); color: var(--text-secondary); }
+.vs-topbar__search { flex: 1; max-width: 420px; }
+.vs-topbar__acts { display: flex; align-items: center; gap: var(--s-2); margin-left: auto; }
+
+
+/* --- SECOND-LEVEL NAV EXTRAS --------------------------------------------- */
+
+/* The section nav carries the module name only — the top bar already shows
+   the full path, and the two sitting 40px apart was the same information
+   twice. */
+.vs-sidenav__head { padding-bottom: var(--s-3); border-bottom: 1px solid var(--border); }
+.vs-sidenav__search { margin-top: var(--s-2); }
+
+
+/* --- TAB STRIP UNDER THE TOP BAR -----------------------------------------
+   A third navigation form the product uses: Today | Analytics,
+   WhatsApp | Customer Mail | Callbacks. It sits flush under the topbar and
+   spans the content column. */
+
+.vs-tabstrip {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 0 var(--s-8); flex: none;
+}
+.vs-tabstrip .v-tabs { border-bottom: 0; }
+
+
+/* --- PAGE-LEVEL LAYOUT HELPERS -------------------------------------------
+   Used by the archetype recipes. Grid only. */
+
+.vs-filterbar {
+  display: flex; align-items: center; gap: var(--s-3);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-tile); padding: var(--s-3) var(--s-4);
+  margin-bottom: var(--s-4); flex-wrap: wrap;
+}
+.vs-filterbar__search { flex: 1; min-width: 220px; }
+
+/* Two columns, main + rail. The drawer body and several detail screens. */
+.vs-split { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--s-5); align-items: start; }
+.vs-split--wide { grid-template-columns: minmax(0, 1fr) 380px; }
+
+/* Three panes — inbox, mail, the builders. */
+.vs-panes { display: grid; min-height: 0; width: 100%; }
+.vs-panes--inbox { grid-template-columns: 320px minmax(0, 1fr) 320px; }
+.vs-panes--builder { grid-template-columns: 200px minmax(0, 1fr) 300px; }
+.vs-pane { min-width: 0; min-height: 0; overflow: auto; border-right: 1px solid var(--border); background: var(--surface); }
+.vs-pane:last-child { border-right: 0; }
+.vs-pane--canvas { background: var(--canvas); }
+.vs-pane__hd {
+  padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--border);
+  background: var(--surface); position: sticky; top: 0; z-index: 2;
+}
+
+/* A drawer sitting over the screen behind it. Drawn, not animated. */
+.vs-overlay { position: absolute; inset: 0; display: flex; justify-content: flex-end; z-index: 5; }
+/* The point of a drawer over a modal is that the list stays readable behind
+   it. At 78% it was a sliver; 62% keeps enough of the table to see where you
+   are and what is next. */
+.vs-overlay .v-drawer { position: relative; z-index: 1; width: 980px; max-width: 62%; }
+.vs-overlay--modal { align-items: center; justify-content: center; }
+
+/* Card grids used by A6 and the dashboard. */
+.vs-cards { display: grid; gap: var(--s-4); }
+.vs-cards--2 { grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); }
+.vs-cards--3 { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+
+
+/* --- THE ORG TREE --------------------------------------------------------
+   Connectors only — the nodes themselves are .v-card from the design system.
+   Lines are 1px borders in token colours; nothing here is a new component,
+   it is the same reason .vs-panes exists: composition the system doesn't own.
+
+   Structure:  .vs-tree__node  +  .vs-tree__kids > .vs-tree__cell*
+   Each cell drops a stem into its node and contributes its half of the
+   horizontal bar, so the bar spans first-centre to last-centre automatically
+   however many children there are. */
+
+.vs-tree { display: flex; flex-direction: column; align-items: center;
+  width: max-content; margin: 0 auto; }
+.vs-tree__node { width: 188px; flex: none; }
+
+.vs-tree__kids {
+  display: flex; align-items: flex-start; justify-content: center;
+  gap: var(--s-3); position: relative; margin-top: var(--s-6);
+}
+/* stem down out of the parent, landing exactly on the bar */
+.vs-tree__kids::before {
+  content: ''; position: absolute; top: calc(-1 * var(--s-6)); left: 50%;
+  width: 1px; height: var(--s-6); background: var(--border-strong);
+}
+
+.vs-tree__cell {
+  position: relative; padding-top: var(--s-6);
+  display: flex; flex-direction: column; align-items: center;
+}
+.vs-tree__cell::after {                       /* the shared horizontal bar */
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 1px; background: var(--border-strong);
+}
+.vs-tree__cell:first-child::after { left: 50%; }
+.vs-tree__cell:last-child::after  { right: 50%; }
+.vs-tree__cell:only-child::after  { display: none; }
+.vs-tree__cell::before {                      /* drop into this node */
+  content: ''; position: absolute; top: 0; left: 50%;
+  width: 1px; height: var(--s-6); background: var(--border-strong);
+}
+
+/* A reporting line into an AI employee is drawn dashed — the org chart's one
+   piece of real information: which of these boxes is a person. */
+.vs-tree__cell--ai::before, .vs-tree__cell--ai::after { background: none; }
+.vs-tree__cell--ai::before { border-left: 1px dashed var(--ai-bd); }
+.vs-tree__cell--ai::after  { border-top: 1px dashed var(--ai-bd); }
+
+/* The tray of people nobody has placed yet. It sits under the canvas, not
+   inside it, because an unplaced person is not part of the tree. */
+.vs-tray {
+  border-top: 1px solid var(--border); background: var(--surface);
+  padding: var(--s-4) var(--s-6); flex: none;
+}
+.vs-tray__row { display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: center; }
+.vs-canvas--chart { overflow: auto; padding: var(--s-8); }
+
+
+/* --- THE CADENCE SPINE ---------------------------------------------------
+   A sequence is an ordered list of timed steps, so it is drawn as a spine:
+   a day marker on the rail, the step beside it, a connecting line between.
+   Same reasoning as the org tree -- the cards are .v-card, only the
+   connective tissue lives here. */
+
+.vs-spine { display: flex; flex-direction: column; }
+.vs-step {
+  display: grid; grid-template-columns: 54px 1fr; column-gap: var(--s-4);
+  position: relative; padding-bottom: var(--s-4);
+}
+.vs-step:last-child { padding-bottom: 0; }
+/* the line runs from under this step's marker to the next one */
+.vs-step:not(:last-child)::before {
+  content: ''; position: absolute; left: 27px; top: 34px; bottom: 0;
+  width: 1px; background: var(--border-strong);
+}
+.vs-step__mark {
+  grid-row: 1 / span 2; width: 34px; height: 34px; border-radius: var(--r-full);
+  border: 1px solid; display: grid; place-items: center; z-index: 1;
+  justify-self: center;
+}
+.vs-step__day {
+  grid-column: 1; grid-row: 3; text-align: center; margin-top: 4px;
+  color: var(--text-muted); white-space: nowrap;   /* "Day 30" must not stack */
+}
+.vs-step__card { grid-column: 2; grid-row: 1 / span 3; }
