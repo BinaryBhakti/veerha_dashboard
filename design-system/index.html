@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veerha Design System</title>
+<meta name="description" content="Indigo Slate — the design system and component library for Veerha's AI customer-operations platform.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="system/fonts.css">
+<link rel="stylesheet" href="system/tokens.css">
+<link rel="stylesheet" href="system/base.css">
+<link rel="stylesheet" href="system/components.css">
+<link rel="stylesheet" href="system/sheet.css">
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Design System</div>
+        <div class="sh-brand__sub">Indigo Slate · v1.0 · September 2026</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="spec.html">Written spec</a>
+      <a href="departures.html">Departures</a>
+      <a href="../screens/index.html">Screens ↗</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>A system, not a set of screens.</h1>
+    <p>
+      Veerha brings AI employees, customer conversations and business operations into one
+      workspace. The interface has to make that manageable — and it has to answer five questions
+      fast: what happened, what did Veerha do, why, what needs my attention, and what happens next.
+      This document defines the language that answers them consistently, so new screens can be
+      added without the product drifting.
+    </p>
+    <div class="v-actions" style="margin-top:var(--s-6)">
+      <a class="v-btn v-btn--primary" href="foundations.html">Start with foundations</a>
+      <a class="v-btn v-btn--secondary" href="patterns.html">See the signature patterns</a>
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">01</div>
+    <h2 class="sh-sec__h">What's in here</h2>
+    <p class="sh-sec__d">
+      Five documents. The first three are the design itself — foundations are the decisions
+      everything else inherits, components are the parts, patterns are the compositions that make
+      this Veerha and not a generic CRM. The last two are the reasoning: what the rules are, and
+      where we knowingly diverge from the governing spec.
+    </p>
+
+    <div class="sh-cards">
+      <a class="sh-card" href="foundations.html">
+        <div class="sh-card__n">01</div>
+        <div class="sh-card__h">Foundations</div>
+        <p class="sh-card__p">Colour, typography, spacing, radius, elevation, icons and motion. Every value that components are built from.</p>
+      </a>
+      <a class="sh-card" href="components.html">
+        <div class="sh-card__n">02</div>
+        <div class="sh-card__h">Components</div>
+        <p class="sh-card__p">The library — shell, navigation, data display, inputs, status, feedback and overlays, each with every state drawn.</p>
+      </a>
+      <a class="sh-card" href="patterns.html">
+        <div class="sh-card__n">03</div>
+        <div class="sh-card__h">Signature patterns</div>
+        <p class="sh-card__p">Veerha's Read, Recommended Next Step, Evidence, Veerha Is Working, Waiting on You, AI Employee.</p>
+      </a>
+      <a class="sh-card" href="spec.html">
+        <div class="sh-card__n">04</div>
+        <div class="sh-card__h">Written spec</div>
+        <p class="sh-card__p">The rules stated rather than shown — colour, type, shape, the four components the product is missing, and how to extend the system without drift.</p>
+      </a>
+      <a class="sh-card" href="departures.html">
+        <div class="sh-card__n">05</div>
+        <div class="sh-card__h">Departures from v2</div>
+        <p class="sh-card__p">Five places Indigo Slate meets design-system v2. Two complied with, two departed from, one deferred — each with the rule quoted and the reasoning.</p>
+      </a>
+    </div>
+
+    <div class="sh-note">
+      <strong>Both written documents also exist as Markdown</strong> in the folder —
+      <code>DESIGN-SYSTEM.md</code> and <code>DEPARTURES.md</code> — for reading in an editor or
+      pasting into a ticket. The HTML versions are the same content, laid out to read.
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">02</div>
+    <h2 class="sh-sec__h">The four principles</h2>
+    <p class="sh-sec__d">
+      Every decision in this system traces back to one of these. When a choice is unclear, the
+      principle decides it.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="grid" style="margin-top:var(--s-6)">
+      <div class="col-6">
+        <div class="v-card">
+          <div class="v-card__head">
+            <div class="v-card__ic" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <div class="grow">
+              <div class="v-card__title">Clarity before personality</div>
+              <p class="v-card__desc">
+                This is software a sales team keeps open eight hours a day. Hierarchy, density and
+                scannability come first; character comes after, and never at their expense.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="v-card">
+          <div class="v-card__head">
+            <div class="v-card__ic" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="grow">
+              <div class="v-card__title">Humans stay in the loop</div>
+              <p class="v-card__desc">
+                AI can move work forward, but the product must always show when it is acting,
+                waiting, asking for approval, or handing control back to a person.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="v-card">
+          <div class="v-card__head">
+            <div class="v-card__ic" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-5"/></svg>
+            </div>
+            <div class="grow">
+              <div class="v-card__title">Every claim shows its evidence</div>
+              <p class="v-card__desc">
+                A recommendation the user cannot interrogate is a recommendation they will not
+                trust. Insight, then evidence, then action — in that order, every time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="v-card">
+          <div class="v-card__head">
+            <div class="v-card__ic" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <div class="grow">
+              <div class="v-card__title">Repeated work uses shared patterns</div>
+              <p class="v-card__desc">
+                103 routes in the product collapse to 11 layouts. A screen that invents its own
+                structure is a screen that will drift — and one more thing to maintain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">03</div>
+    <h2 class="sh-sec__h">How to read this</h2>
+    <p class="sh-sec__d">
+      Components are shown with every state drawn as its own frame — default, hover, focus,
+      selected, disabled, loading, error — the way a Figma library shows variants. Nothing is
+      hidden behind an interaction, so everything can be reviewed by scrolling.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <table class="sh-tbl">
+      <thead><tr><th>Convention</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>--token-name</code></td><td>A value from <code>system/tokens.css</code>. Components never carry raw hex or raw pixel radii.</td></tr>
+        <tr><td><code>.v-component</code></td><td>The product class. Everything is <code>v-</code> prefixed to prevent collisions.</td></tr>
+        <tr><td><code>.is-state</code></td><td>A forced state, used so documentation can show what a hover or error looks like without hovering.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sh-note">
+      <strong>Scope of this version.</strong> Light mode, desktop. Tablet and mobile layouts and the
+      dark theme are the next phase — the tokens they will need are already declared, so nothing
+      has to be retrofitted. The 77-screen inventory itself follows once this language is approved.
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Design System · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span>Confidential</span>
+  </footer>
+
+</main>
+</body>
+</html>

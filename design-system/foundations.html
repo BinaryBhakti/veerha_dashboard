@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foundations · Veerha Design System</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="system/fonts.css">
+<link rel="stylesheet" href="system/tokens.css">
+<link rel="stylesheet" href="system/base.css">
+<link rel="stylesheet" href="system/components.css">
+<link rel="stylesheet" href="system/sheet.css">
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Design System</div>
+        <div class="sh-brand__sub">Indigo Slate · v1.0 · September 2026</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html">Overview</a>
+      <a href="foundations.html" aria-current="page">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="spec.html">Written spec</a>
+      <a href="departures.html">Departures</a>
+      <a href="../screens/index.html">Screens ↗</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>Foundations</h1>
+    <p>
+      The decisions everything else inherits. Change a value here and it moves everywhere it is
+      used — which is the point. Nothing in the product should reach past these.
+    </p>
+  </section>
+
+  <!-- ============================ COLOUR ============================ -->
+  <section class="sh-sec" id="colour">
+    <div class="sh-sec__n">01</div>
+    <h2 class="sh-sec__h">Colour</h2>
+    <p class="sh-sec__d">
+      Four independent layers: neutrals carry the structure, brand carries action and selection,
+      semantic carries meaning, and the AI layer marks what Veerha did. They do not borrow from
+      each other. Brand is never applied simply to make the interface look branded.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Neutrals</div><div class="sh-spec__cls">slate</div></div>
+      <p class="sh-spec__note">
+        The canvas is a cool slate. Surfaces separate from it by a hairline border rather than by
+        shadow — the product is mostly flat, and cards should not all appear to float.
+      </p>
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-swatches">
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--canvas)"></div><div class="sh-sw__meta"><div class="sh-sw__name">canvas</div><div class="sh-sw__val">#F8FAFC</div><div class="sh-sw__use">Application background</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--surface)"></div><div class="sh-sw__meta"><div class="sh-sw__name">surface</div><div class="sh-sw__val">#FFFFFF</div><div class="sh-sw__use">Cards, tables, panels</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--surface-subtle)"></div><div class="sh-sw__meta"><div class="sh-sw__name">surface-subtle</div><div class="sh-sw__val">#F1F5F9</div><div class="sh-sw__use">Secondary areas, hover</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--surface-muted)"></div><div class="sh-sw__meta"><div class="sh-sw__name">surface-muted</div><div class="sh-sw__val">#E2E8F0</div><div class="sh-sw__use">Disabled regions</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--border)"></div><div class="sh-sw__meta"><div class="sh-sw__name">border</div><div class="sh-sw__val">#E2E8F0</div><div class="sh-sw__use">Standard divider</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--border-strong)"></div><div class="sh-sw__meta"><div class="sh-sw__name">border-strong</div><div class="sh-sw__val">#CBD5E1</div><div class="sh-sw__use">Emphasis divider</div></div></div><div class="sh-sw"><div class="sh-sw__chip" style="background:var(--field-border)"></div><div class="sh-sw__meta"><div class="sh-sw__name">field-border</div><div class="sh-sw__val">#8690A3</div><div class="sh-sw__use">Control edges · 3.22:1</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--text-primary)"></div><div class="sh-sw__meta"><div class="sh-sw__name">text-primary</div><div class="sh-sw__val">#0F172A</div><div class="sh-sw__use">Headings, figures</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--text-secondary)"></div><div class="sh-sw__meta"><div class="sh-sw__name">text-secondary</div><div class="sh-sw__val">#334155</div><div class="sh-sw__use">Body copy</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--text-muted)"></div><div class="sh-sw__meta"><div class="sh-sw__name">text-muted</div><div class="sh-sw__val">#626F85</div><div class="sh-sw__use">Metadata, labels</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--text-faint)"></div><div class="sh-sw__meta"><div class="sh-sw__name">text-faint</div><div class="sh-sw__val">#7C8899</div><div class="sh-sw__use">Decorative only — not text</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Brand</div><div class="sh-spec__cls">indigo · 600 is the brand</div></div>
+      <p class="sh-spec__note">
+        Indigo carries action and selection — primary buttons, the active navigation item, the
+        selected row, links. It does not carry status. A full ramp exists so components have a
+        lighter or darker step to reach for instead of inventing one.
+      </p>
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <div class="sh-ramp">
+          <div style="background:var(--brand-50);color:var(--brand-900)">50</div>
+          <div style="background:var(--brand-100);color:var(--brand-900)">100</div>
+          <div style="background:var(--brand-200);color:var(--brand-900)">200</div>
+          <div style="background:var(--brand-300);color:var(--brand-900)">300</div>
+          <div style="background:var(--brand-400);color:#fff">400</div>
+          <div style="background:var(--brand-500);color:#fff">500</div>
+          <div style="background:var(--brand-600);color:#fff">600</div>
+          <div style="background:var(--brand-700);color:#fff">700</div>
+          <div style="background:var(--brand-800);color:#fff">800</div>
+          <div style="background:var(--brand-900);color:#fff">900</div>
+        </div>
+        <table class="sh-tbl">
+          <thead><tr><th>Token</th><th>Step</th><th>Used for</th></tr></thead>
+          <tbody>
+            <tr><td><code>--brand</code></td><td>600 · #4F46E5</td><td>Primary fill, active nav, links, focus</td></tr>
+            <tr><td><code>--brand-hover</code></td><td>700 · #4338CA</td><td>Primary hover</td></tr>
+            <tr><td><code>--brand-soft</code></td><td>50 · #EEF2FF</td><td>Selected row, active pill, tinted panel</td></tr>
+            <tr><td><code>--brand-soft-bd</code></td><td>200 · #C7D2FE</td><td>The border on those tinted surfaces</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">The AI system layer</div><div class="sh-spec__cls">warm greige — not purple</div></div>
+      <p class="sh-spec__note">
+        Everything Veerha itself produced — a read, an inference, an action it took — sits on this
+        layer. It is deliberately a warm neutral rather than a colour, because AI identity should
+        come from the mark, the wording and the evidence, not from a hue.
+      </p>
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <div class="sh-swatches">
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--ai-bg)"></div><div class="sh-sw__meta"><div class="sh-sw__name">ai-bg</div><div class="sh-sw__val">#F4F2EA</div><div class="sh-sw__use">Panel background</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--ai-bd)"></div><div class="sh-sw__meta"><div class="sh-sw__name">ai-bd</div><div class="sh-sw__val">#D9D4C7</div><div class="sh-sw__use">Panel border</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--ai-tx)"></div><div class="sh-sw__meta"><div class="sh-sw__name">ai-tx</div><div class="sh-sw__val">#5F5A4F</div><div class="sh-sw__use">Text · 6.12:1</div></div></div>
+          <div class="sh-sw"><div class="sh-sw__chip" style="background:var(--ai-ic)"></div><div class="sh-sw__meta"><div class="sh-sw__name">ai-ic</div><div class="sh-sw__val">#6E6758</div><div class="sh-sw__use">Mark and icons</div></div></div>
+        </div>
+        <div class="sh-note">
+          <strong>Why it is not violet.</strong> The earlier violet sat 19° from the brand hue at 83%
+          saturation — measurably the same colour family as indigo, so AI surfaces did not read as
+          distinct from ordinary brand chrome. This greige is 158° opposite at 11% saturation. Against
+          a cool slate canvas the warmth is unmistakably deliberate, which is what a system layer wants.
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Semantic</div><div class="sh-spec__cls">independent of brand</div></div>
+      <p class="sh-spec__note">
+        Four families, each with a background, border, text and icon value. Colour is never the
+        only signal — every status also carries a label, and most carry an icon.
+      </p>
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <div class="sh-states" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+          <div class="sh-state"><div class="sh-state__l">Success</div>
+            <div class="v-callout v-callout--ok" style="width:100%"><span class="v-callout__ic">✓</span><span>Qualified — now a deal</span></div></div>
+          <div class="sh-state"><div class="sh-state__l">Warning</div>
+            <div class="v-callout v-callout--warn" style="width:100%"><span class="v-callout__ic">!</span><span>Follow-up is overdue</span></div></div>
+          <div class="sh-state"><div class="sh-state__l">Danger</div>
+            <div class="v-callout v-callout--danger" style="width:100%"><span class="v-callout__ic">×</span><span>WhatsApp is disconnected</span></div></div>
+          <div class="sh-state"><div class="sh-state__l">Info</div>
+            <div class="v-callout v-callout--info" style="width:100%"><span class="v-callout__ic">i</span><span>Connect Google Calendar</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sh-rules">
+      <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+        <p>Use colour to communicate action, status, risk and attention. Pair every semantic colour with a label so it still works without colour vision.</p></div>
+      <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+        <p>Don't tint a surface indigo to signal "this is important", and don't give AI a colour of its own beyond the greige layer. Importance is hierarchy, not hue.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================ TYPE ============================ -->
+  <section class="sh-sec" id="type">
+    <div class="sh-sec__n">02</div>
+    <h2 class="sh-sec__h">Typography</h2>
+    <p class="sh-sec__d">
+      Geist for the interface, Geist Mono for figures so columns of numbers align. Three weights —
+      400, 500, 600. There is no 700: hierarchy comes from scale and spacing before it comes from
+      weight, and from weight before it comes from colour.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">The typefaces</div><div class="sh-spec__cls">Geist · Geist Mono</div></div>
+      <p class="sh-spec__note">
+        Two faces, both self-hosted in <code>system/fonts/</code> so the folder works with no
+        network. Geist is an open-source family (SIL Open Font License 1.1) built for interfaces —
+        its letterforms stay distinct at 12–14px, which is where most of this product lives.
+      </p>
+
+      <div class="sh-face">
+        <div class="sh-face__hd">
+          <div class="sh-face__name">Geist</div>
+          <div class="sh-face__meta">
+            The interface face · weights 400 / 500 / 600<br>
+            <code class="sh-code">--ui</code> · fallback Inter, system sans
+          </div>
+        </div>
+
+        <div class="sh-face__row">
+          <div class="sh-face__l">How it reads</div>
+          <div class="sh-face__big">Arjun asked for a callback about a two-adult booking.</div>
+        </div>
+
+        <div class="sh-face__row">
+          <div class="sh-face__l">Character set</div>
+          <div class="sh-face__glyphs">
+            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+            a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
+            0 1 2 3 4 5 6 7 8 9 &nbsp; ₹ $ € % &amp; @ # <br>
+            . , : ; · — – ( ) [ ] / ? ! → ✓ ×
+          </div>
+        </div>
+
+        <div class="sh-face__row">
+          <div class="sh-face__l">The three weights — there is no 700</div>
+          <div class="sh-face__w"><span class="sh-face__wn">400 · Regular</span>
+            <span class="sh-face__ws" style="font-weight:400">Ready for a callback, not another message.</span></div>
+          <div class="sh-face__w"><span class="sh-face__wn">500 · Medium</span>
+            <span class="sh-face__ws" style="font-weight:500">Ready for a callback, not another message.</span></div>
+          <div class="sh-face__w"><span class="sh-face__wn">600 · Semibold</span>
+            <span class="sh-face__ws" style="font-weight:600">Ready for a callback, not another message.</span></div>
+        </div>
+      </div>
+
+      <div class="sh-face" style="margin-top:var(--s-5)">
+        <div class="sh-face__hd">
+          <div class="sh-face__name sh-face__name--mono">Geist Mono</div>
+          <div class="sh-face__meta">
+            Figures only · weights 400 / 500<br>
+            <code class="sh-code">--num</code> · fallback ui-monospace, Menlo
+          </div>
+        </div>
+
+        <div class="sh-face__row">
+          <div class="sh-face__l">Character set</div>
+          <div class="sh-face__glyphs sh-face__glyphs--mono">
+            0 1 2 3 4 5 6 7 8 9 &nbsp; ₹ $ € % <br>
+            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+            a b c d e f g h i j k l m n o p q r s t u v w x y z
+          </div>
+        </div>
+
+        <div class="sh-face__row">
+          <div class="sh-face__l">Why a second face exists</div>
+          <div class="sh-figs">
+            <div class="sh-figs__col">
+              <div class="t-meta muted" style="margin-bottom:6px">Proportional figures — the interface face</div>
+              <table class="sh-figs--prop">
+                <tr><td>Arjun Mehta</td><td>₹43,700</td></tr>
+                <tr><td>Priya Nair</td><td>₹78,200</td></tr>
+                <tr><td>Vikram Rao</td><td>₹6,100</td></tr>
+                <tr><td>Kavya Reddy</td><td>₹121,450</td></tr>
+              </table>
+            </div>
+            <div class="sh-figs__col">
+              <div class="t-meta muted" style="margin-bottom:6px">Tabular figures — Geist Mono</div>
+              <table class="sh-figs--mono">
+                <tr><td>Arjun Mehta</td><td>₹43,700</td></tr>
+                <tr><td>Priya Nair</td><td>₹78,200</td></tr>
+                <tr><td>Vikram Rao</td><td>₹6,100</td></tr>
+                <tr><td>Kavya Reddy</td><td>₹121,450</td></tr>
+              </table>
+            </div>
+          </div>
+          <p class="t-small muted" style="margin-top:var(--s-3);max-width:70ch">
+            Every digit occupies the same width, so the rupee column lines up on the decimal and a
+            price can be compared by eye down the column. This is the entire reason for the second
+            face — it is used for figures, never for prose.
+          </p>
+        </div>
+      </div>
+
+      <div class="sh-note">
+        <strong>Money is never mono.</strong> The mono face is for identifiers and bare figures —
+        record codes, times, scores, durations. It is <em>never</em> for a formatted amount, anywhere:
+        a monospace comma takes a full character cell, so <code>₹8,69,500</code> renders as
+        <code>₹8 , 69 , 500</code>, and Indian grouping makes it worse. Three components set mono on
+        their numeric slot — <code>.v-stat__n</code>, <code>.v-table__num</code> and
+        <code>.v-kv dd</code> — so put <code class="sh-code">.amount</code> on anything carrying a
+        currency symbol and it returns to the UI face. That face already carries tabular numerals,
+        which is the only alignment a money column needs.
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface sh-frame--col" style="gap:var(--s-5)">
+        <div><div class="sh-state__l" style="margin-bottom:6px">Display · 32/40 · 600</div><div class="t-display">Good afternoon, Anita.</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Page title · 24/32 · 600</div><div class="t-page">Opportunities</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Section · 18/26 · 600</div><div class="t-section">Waiting on you</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Card title · 16/24 · 600</div><div class="t-card">Ready for a callback</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Body · 14/21 · 400</div><div class="t-body">Arjun asked for a callback about a two-adult booking for 15–17 October and has already chosen a room.</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Small · 13/19 · 400</div><div class="t-small muted">27 leads · who still needs qualifying</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Metadata · 12/18 · 500</div><div class="t-meta muted">Updated 2 days ago · WhatsApp</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Micro label · 11/16 · 600 · uppercase</div><div class="label">Recommended next step</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Figures · Geist Mono · tabular</div><div class="num" style="font-size:20px;font-weight:600">OPP-0061 · 91 · 10:42 · 15–17 Oct</div></div>
+        <div><div class="sh-state__l" style="margin-bottom:6px">Money · <code class="sh-code">.amount</code> · UI face, tabular</div><div class="amount" style="font-size:20px;font-weight:600">₹8,69,500 · ₹43,700 · ₹1,10,400</div>
+          <div class="t-meta muted" style="margin-top:6px">The same three amounts in mono: <span class="num">₹8,69,500 · ₹43,700 · ₹1,10,400</span></div></div>
+      </div>
+    </div>
+
+    <div class="sh-rules">
+      <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+        <p>Set identifiers, times and scores in Geist Mono so columns align. Set money in the UI face with <code class="sh-code">.amount</code> — it is already tabular, and mono breaks the grouping commas.</p></div>
+      <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+        <p>No serif anywhere in the interface. "Premium" and "editorial" are principles about clarity and restraint — they are not instructions to add a serif face.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================ SPACE ============================ -->
+  <section class="sh-sec" id="space">
+    <div class="sh-sec__n">03</div>
+    <h2 class="sh-sec__h">Spacing &amp; grid</h2>
+    <p class="sh-sec__d">
+      An 8px base. Twelve columns, 24px gutters between them, 32px at the page edge. Major page
+      elements align to that grid — nothing is positioned independently.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <table class="sh-tbl">
+          <thead><tr><th style="width:110px">Token</th><th style="width:70px">Value</th><th>Scale</th><th>Typical use</th></tr></thead>
+          <tbody>
+            <tr><td><code>--s-1</code></td><td>4px</td><td><div style="height:10px;width:4px;background:var(--brand-300)"></div></td><td>Icon-to-label gap</td></tr>
+            <tr><td><code>--s-2</code></td><td>8px</td><td><div style="height:10px;width:8px;background:var(--brand-300)"></div></td><td>Compact gaps, badge padding</td></tr>
+            <tr><td><code>--s-3</code></td><td>12px</td><td><div style="height:10px;width:12px;background:var(--brand-400)"></div></td><td>Table cell padding, control gaps</td></tr>
+            <tr><td><code>--s-4</code></td><td>16px</td><td><div style="height:10px;width:16px;background:var(--brand-400)"></div></td><td>Standard gap, card padding</td></tr>
+            <tr><td><code>--s-5</code></td><td>20px</td><td><div style="height:10px;width:20px;background:var(--brand-500)"></div></td><td>Section inner padding</td></tr>
+            <tr><td><code>--s-6</code></td><td>24px</td><td><div style="height:10px;width:24px;background:var(--brand-500)"></div></td><td>Column gap</td></tr>
+            <tr><td><code>--s-8</code></td><td>32px</td><td><div style="height:10px;width:32px;background:var(--brand-600)"></div></td><td>Between sections, page gutter</td></tr>
+            <tr><td><code>--s-10</code></td><td>40px</td><td><div style="height:10px;width:40px;background:var(--brand-600)"></div></td><td>Between major bands</td></tr>
+            <tr><td><code>--s-12</code></td><td>48px</td><td><div style="height:10px;width:48px;background:var(--brand-700)"></div></td><td>Empty-state padding</td></tr>
+            <tr><td><code>--s-16</code></td><td>64px</td><td><div style="height:10px;width:64px;background:var(--brand-700)"></div></td><td>Page-level separation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SHAPE ============================ -->
+  <section class="sh-sec" id="shape">
+    <div class="sh-sec__n">04</div>
+    <h2 class="sh-sec__h">Radius &amp; elevation</h2>
+    <p class="sh-sec__d">
+      One radius per role, the same at every breakpoint. Fully-round is reserved for avatars, dots
+      and compact semantic pills — the product is not pill-shaped. Elevation is mostly absent:
+      surfaces separate by border, and shadow is reserved for things that genuinely float.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface">
+        <div class="sh-states">
+          <div class="sh-state"><div class="sh-state__l">chip · 4px</div><div style="width:100%;height:52px;border:1px solid var(--border-strong);border-radius:var(--r-chip);background:var(--surface-subtle)"></div></div>
+          <div class="sh-state"><div class="sh-state__l">control · 6px</div><div style="width:100%;height:52px;border:1px solid var(--border-strong);border-radius:var(--r-ctrl);background:var(--surface-subtle)"></div></div>
+          <div class="sh-state"><div class="sh-state__l">tile · 10px</div><div style="width:100%;height:52px;border:1px solid var(--border-strong);border-radius:var(--r-tile);background:var(--surface-subtle)"></div></div>
+          <div class="sh-state"><div class="sh-state__l">card · 12px</div><div style="width:100%;height:52px;border:1px solid var(--border-strong);border-radius:var(--r-card);background:var(--surface-subtle)"></div></div>
+          <div class="sh-state"><div class="sh-state__l">full</div><div style="width:52px;height:52px;border:1px solid var(--border-strong);border-radius:var(--r-full);background:var(--surface-subtle)"></div></div>
+        </div>
+      </div>
+      <div class="sh-note sh-note--warn">
+        <strong>Reconciled from the prototype.</strong> Indigo Slate declared a 16px card radius but
+        only ever applied it on mobile — every desktop surface was actually 10px, so the card
+        changed shape between breakpoints for no reason. One value per role now, identical at
+        every width.
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Elevation</div><div class="sh-spec__cls">L0 is the default</div></div>
+      <div class="sh-frame">
+        <div class="sh-states">
+          <div class="sh-state"><div class="sh-state__l">L0 · flat</div><div style="width:100%;height:64px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile)"></div><div class="t-meta muted">Page, tables, sections</div></div>
+          <div class="sh-state"><div class="sh-state__l">L1</div><div style="width:100%;height:64px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile);box-shadow:var(--e1)"></div><div class="t-meta muted">Cards, hovered surfaces</div></div>
+          <div class="sh-state"><div class="sh-state__l">L2</div><div style="width:100%;height:64px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile);box-shadow:var(--e2)"></div><div class="t-meta muted">Menus, popovers</div></div>
+          <div class="sh-state"><div class="sh-state__l">L3</div><div style="width:100%;height:64px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-tile);box-shadow:var(--e3)"></div><div class="t-meta muted">Modals, drawers</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ICONS & MOTION ============================ -->
+  <section class="sh-sec" id="icons">
+    <div class="sh-sec__n">05</div>
+    <h2 class="sh-sec__h">Icons &amp; motion</h2>
+    <p class="sh-sec__d">
+      One icon family — Lucide, consistent stroke, never mixed with another set. Motion is short
+      and functional: it explains where something came from, and then gets out of the way.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <table class="sh-tbl">
+          <thead><tr><th>Size</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td>16px</td><td>Default — inside buttons, table cells, inline with body text</td></tr>
+            <tr><td>18px</td><td>Prominent — section headers, callout leading icons</td></tr>
+            <tr><td>20px</td><td>Navigation — the icon rail and section nav</td></tr>
+          </tbody>
+        </table>
+        <table class="sh-tbl">
+          <thead><tr><th>Motion</th><th>Duration</th><th>Applies to</th></tr></thead>
+          <tbody>
+            <tr><td><code>--m-hover</code></td><td>120ms</td><td>Hover and focus transitions</td></tr>
+            <tr><td><code>--m-dropdown</code></td><td>180ms</td><td>Menus, popovers, accordions</td></tr>
+            <tr><td><code>--m-modal</code></td><td>200ms</td><td>Modal entry</td></tr>
+            <tr><td><code>--m-drawer</code></td><td>220ms</td><td>Drawer slide</td></tr>
+          </tbody>
+        </table>
+        <div class="sh-note">
+          All motion is disabled under <code>prefers-reduced-motion</code>. There are no decorative
+          animations, no pulses and no floating objects anywhere in this system.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Design System · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span><a href="components.html" style="color:var(--brand)">Components →</a></span>
+  </footer>
+
+</main>
+</body>
+</html>
