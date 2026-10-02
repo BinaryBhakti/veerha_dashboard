@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veerha Screens</title>
+<meta name="description" content="77 product screens for Veerha, built on the Indigo Slate design system.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../design-system/system/fonts.css">
+<link rel="stylesheet" href="../design-system/system/tokens.css">
+<link rel="stylesheet" href="../design-system/system/base.css">
+<link rel="stylesheet" href="../design-system/system/components.css">
+<link rel="stylesheet" href="../design-system/system/sheet.css">
+<link rel="stylesheet" href="assets/shell.css">
+<style>
+  .ix { width: 100%; font-size: var(--t-small-s); }
+  /* Four fixed columns need about 430px. Below that the table scrolls inside its
+     own box rather than pushing the page sideways -- the figures stay readable
+     and nothing else on the page moves. */
+  .mod { overflow-x: auto; }
+  @media (max-width: 460px) { .ix { min-width: 430px; } }
+  .ix th { text-align: left; padding: var(--s-2) var(--s-3);
+    font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+    text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+  .ix td { padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .ix tr:hover td { background: var(--surface-subtle); }
+  .ix__n { font-family: var(--num); color: var(--text-muted); width: 44px; }
+  .ix__a { width: 52px; }
+  .ix__s { width: 96px; text-align: right; }
+  .ix__file { width: 190px; }
+  .ix__file a { color: var(--brand); font-weight: 500; }
+  .mod { margin-top: var(--s-10); }
+  .mod__hd { display: flex; align-items: baseline; gap: var(--s-3); margin-bottom: var(--s-3); }
+  .mod__n { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-faint); }
+  .mod__t { font-size: var(--t-card-s); font-weight: 600; letter-spacing: -.008em; }
+  .mod__c { margin-left: auto; font-size: var(--t-meta-s); color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Screens</div>
+        <div class="sh-brand__sub">Indigo Slate · desktop · light</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html" aria-current="page">Contents</a><a href="01-home.html">Home</a><a href="02-leads.html">Leads</a><a href="03-opportunities.html">Opportunities</a><a href="04-quotes.html">Quotes</a><a href="05-bookings.html">Bookings</a><a href="06-conversations.html">Conversations</a><a href="07-queues.html">Queues</a><a href="08-calendar.html">Calendar</a><a href="09-customers.html">Customers</a><a href="11-ai.html">AI</a><a href="10-campaigns.html">Campaigns</a><a href="12-catalog.html">Catalog</a><a href="13-org.html">Org</a><a href="14-settings.html">Settings</a><a href="15-billing.html">Billing</a><a href="16-auth.html">Auth</a><a href="17-public.html">Guest</a>
+      <a href="walkthrough.html">Walkthrough ▶</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../design-system/index.html">Design system ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>77 screens, 12 templates.</h1>
+    <p>
+      The product's 103 routes collapse to twelve layout archetypes plus a handful of genuinely
+      one-off pages. That collapse is what makes this tractable: the templates are designed
+      properly once, and most screens are then a column schema and some copy. Every screen below is
+      drawn against the
+      <a href="../design-system/index.html" style="color:var(--brand)">Indigo Slate design system</a>
+      — no screen introduces a colour, a radius or a component of its own.
+    </p>
+    <div class="v-actions" style="margin-top:var(--s-6)">
+      <a class="v-btn v-btn--primary v-btn--lg" href="walkthrough.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9z"/></svg>
+        Open the clickable walkthrough</a>
+      <a class="v-btn v-btn--secondary v-btn--lg" href="01-home.html">Browse the screens</a>
+    </div>
+    <div class="sh-note" style="margin-top:var(--s-5);max-width:76ch">
+      <strong>Two ways to review this.</strong> The <b>walkthrough</b> is the product as you would
+      use it — click the rail, open a lead, switch to the queue, hit <code class="sh-code">⌘K</code>.
+      The <b>screen set</b> below is the specification: every screen and every state laid out as
+      flat frames, including the ones a walkthrough cannot show you because you would have to break
+      something to reach them.
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">01</div>
+    <h2 class="sh-sec__h">Progress</h2>
+    <p class="sh-sec__d">
+      Built in a vertical slice first — the dashboard and the whole Leads module — so the
+      archetypes and the visual language can be reviewed on real density before sixty more screens
+      inherit anything.
+    </p>
+    <hr class="sh-sec__rule">
+    <div class="vs-cards vs-cards--3" style="margin-top:var(--s-5)">
+      <div class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
+        <div class="label">Slices 1–2 · in progress</div>
+        <div style="font-size:26px;font-weight:600;margin-top:6px;letter-spacing:-.02em">36 <span class="muted" style="font-size:16px;font-weight:400">frames</span></div>
+        <p class="t-small muted" style="margin-top:6px">Eleven modules. The workflow canvas and the AI-employee roster are both in — the last two signature patterns at full scale.</p>
+        <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill v-meter__fill--ok" style="width:100%"></div></div>
+      </div></div>
+      <div class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
+        <div class="label">Foundations · done</div>
+        <div style="font-size:26px;font-weight:600;margin-top:6px;letter-spacing:-.02em">Shell</div>
+        <p class="t-small muted" style="margin-top:6px">Rail, top bar, section nav and page header — built, verified and documented in the library.</p>
+        <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill v-meter__fill--ok" style="width:100%"></div></div>
+      </div></div>
+      <div class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
+        <div class="label">Still unseen</div>
+        <div style="font-size:26px;font-weight:600;margin-top:6px;letter-spacing:-.02em">2</div>
+        <p class="t-small muted" style="margin-top:6px">Down from 12. The ten guest pages are built — four from live captures, six from the product’s own field definitions. The OAuth return and the workflow canvas remain uncaptured.</p>
+        <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill v-meter__fill--ok" style="width:84%"></div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">02</div>
+    <h2 class="sh-sec__h">The screens</h2>
+    <p class="sh-sec__d">
+      Grouped as the client's own navigation groups them. The archetype column is the template a
+      screen is an instance of — everything sharing a letter shares a layout.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="mod">
+      <div class="mod__hd"><span class="mod__n">01</span><span class="mod__t">Home</span>
+        <span class="mod__c">3 built · 3 total</span></div>
+      <table class="ix">
+        <thead><tr><th class="ix__n">#</th><th>Screen</th><th class="ix__a">Arch</th><th class="ix__file">File</th><th class="ix__s">Status</th></tr></thead>
+        <tbody>
+          <tr><td class="ix__n">56</td><td>Dashboard — shift brief</td><td class="ix__a">A9</td>
+              <td class="ix__file"><a href="01-home.html#dashboard">01-home.html</a></td>
+              <td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">56b</td><td>Dashboard — loading</td><td class="ix__a">state</td>
+              <td class="ix__file"><a href="01-home.html#dashboard-loading">01-home.html</a></td>
+              <td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">60</td><td>Analytics &amp; Control Room</td><td class="ix__a">A9</td>
+              <td class="ix__file"><a href="01-home.html#analytics">01-home.html</a></td>
+              <td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mod">
+      <div class="mod__hd"><span class="mod__n">02</span><span class="mod__t">Leads</span>
+        <span class="mod__c">7 built · 7 total</span></div>
+      <table class="ix">
+        <thead><tr><th class="ix__n">#</th><th>Screen</th><th class="ix__a">Arch</th><th class="ix__file">File</th><th class="ix__s">Status</th></tr></thead>
+        <tbody>
+          <tr><td class="ix__n">1</td><td>Leads index</td><td class="ix__a">A1</td><td class="ix__file"><a href="02-leads.html#leads">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">2</td><td>Lead record drawer</td><td class="ix__a">A3</td><td class="ix__file"><a href="02-leads.html#lead-drawer">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">9</td><td>Contacts index</td><td class="ix__a">A1</td><td class="ix__file"><a href="02-leads.html#contacts">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">10</td><td>Segments</td><td class="ix__a">A6</td><td class="ix__file"><a href="02-leads.html#segments">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">11</td><td>Import wizard</td><td class="ix__a">A7</td><td class="ix__file"><a href="02-leads.html#import">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">12</td><td>Lead capture widget</td><td class="ix__a">A5</td><td class="ix__file"><a href="02-leads.html#capture">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td class="ix__n">—</td><td>Leads — queue, empty, error</td><td class="ix__a">states</td><td class="ix__file"><a href="02-leads.html#leads-queue">02-leads.html</a></td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mod">
+      <div class="mod__hd"><span class="mod__n">03–17</span><span class="mod__t">The remaining modules</span>
+        <span class="mod__c">68 screens</span></div>
+      <table class="ix">
+        <thead><tr><th>Module</th><th class="ix__a">Screens</th><th>Archetypes</th><th class="ix__s">Status</th></tr></thead>
+        <tbody>
+          <tr><td><a href="03-opportunities.html" style="color:var(--brand);font-weight:500">Opportunities</a></td><td class="ix__a">4</td><td class="muted">A1 · A3 · A8</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="04-quotes.html" style="color:var(--brand);font-weight:500">Quotes</a></td><td class="ix__a">2</td><td class="muted">A1</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="05-bookings.html" style="color:var(--brand);font-weight:500">Bookings</a></td><td class="ix__a">3</td><td class="muted">A10 · A3</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="06-conversations.html" style="color:var(--brand);font-weight:500">Conversations</a></td><td class="ix__a">6</td><td class="muted">A4 · A5 · A8</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="07-queues.html" style="color:var(--brand);font-weight:500">Work queues</a></td><td class="ix__a">5</td><td class="muted">A2 · A1</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="08-calendar.html" style="color:var(--brand);font-weight:500">Calendar</a></td><td class="ix__a">4</td><td class="muted">A10 · A5</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="09-customers.html" style="color:var(--brand);font-weight:500">Customers</a></td><td class="ix__a">2</td><td class="muted">A1</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="10-campaigns.html" style="color:var(--brand);font-weight:500">Campaigns</a></td><td class="ix__a">6</td><td class="muted">A7 · A8 · A9 · A2</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="11-ai.html" style="color:var(--brand);font-weight:500">AI workforce</a></td><td class="ix__a">10</td><td class="muted">A1 · A5 · A6 · A2 · A8</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="12-catalog.html" style="color:var(--brand);font-weight:500">Catalog</a></td><td class="ix__a">7</td><td class="muted">A1 · A7 · A5 · A6</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="13-org.html" style="color:var(--brand);font-weight:500">Org</a></td><td class="ix__a">5</td><td class="muted">A5 · A7 · bespoke</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="14-settings.html" style="color:var(--brand);font-weight:500">Settings</a></td><td class="ix__a">11</td><td class="muted">A5 · error</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="15-billing.html" style="color:var(--brand);font-weight:500">Billing</a></td><td class="ix__a">3</td><td class="muted">A5</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="16-auth.html" style="color:var(--brand);font-weight:500">Authentication</a></td><td class="ix__a">6</td><td class="muted">A11</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+          <tr><td><a href="17-public.html" style="color:var(--brand);font-weight:500">Public / guest pages</a></td><td class="ix__a">10</td><td class="muted">A12 — new</td><td class="ix__s"><span class="v-badge v-badge--ok">Built</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">03</div>
+    <h2 class="sh-sec__h">What still needs a decision</h2>
+    <hr class="sh-sec__rule">
+    <div class="v-callout v-callout--ok" style="margin-top:var(--s-5);max-width:76ch">
+      <span class="v-callout__ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span>
+      <div>
+        <b>The guest-page blocker is closed — and it was partly ours.</b> We reported these for weeks
+        as waiting on share links from the client. Sweeping the captured conversation threads turned up
+        three real stay-hub tokens that had been in the crawl all along, and a read-only pass inside the
+        product found an enquiry-form link. So four of the ten are now drawn against the live pages,
+        including the expired-link copy, which is quoted verbatim because it is the one piece of this
+        wording the product already had right.
+      </div>
+    </div>
+    <div class="v-callout v-callout--info" style="margin-top:var(--s-4);max-width:76ch">
+      <span class="v-callout__ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
+      <div>
+        <b>Two routes the contract names do not exist yet.</b> <code class="sh-code">/s/:token/review</code>
+        falls through to the marketing page, and <code class="sh-code">/book/:token</code> reports
+        <em>&ldquo;No bookable people yet&rdquo;</em>. <code class="sh-code">/q/</code> and
+        <code class="sh-code">/p/</code> render nothing because there is no data behind them, not because
+        the screens are withheld. Those six are designed from
+        <code class="sh-code">settings/fields</code> and <code class="sh-code">settings/hours</code>,
+        and every frame note says which of the two it is.
+      </div>
+    </div>
+    <div class="v-callout v-callout--warn" style="margin-top:var(--s-4);max-width:76ch">
+      <span class="v-callout__ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+      <div>
+        <b>Three screens are hiding the state that matters.</b> The proposal builder has only ever
+        rendered its empty basket, the org chart has every person unplaced so the tree has never
+        drawn, and the booking detail exists only in the variant that deliberately shows nothing.
+        Each is listed in <code class="sh-code">ADD-ONS.md</code>.
+      </div>
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Screens · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span>Confidential</span>
+  </footer>
+
+</main>
+<script src="assets/behaviour.js"></script>
+</body>
+</html>
