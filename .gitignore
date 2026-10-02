@@ -21,12 +21,9 @@ dist/
 # ---------------------------------------------------------------------------
 # Never commit: live customer data
 # ---------------------------------------------------------------------------
-# This repository is public. Everything below was captured from, or seeded
-# with, the client's production account and carries real customer names, phone
-# numbers, email addresses, share tokens and a workspace API key. See
-# "What is not in this repository" in README.md before changing these lines.
+# This repository is public. audit/ was captured from the client's production
+# account and carries real customer names, phone numbers, email addresses,
+# share tokens and a workspace API key. See "What is not in this repository"
+# in README.md before changing these lines.
 audit/
-veerha-dashboard.html
-veerha-dashboard copy.html
-HANDOFF.md
 WhatsApp Image *.jpeg
