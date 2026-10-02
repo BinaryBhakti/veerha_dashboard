@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# Never commit: credentials and local state
+# ---------------------------------------------------------------------------
+# .auth.json is the Playwright session for the live app (tools/crawl.cjs).
+# .vercel/ holds per-machine Vercel project links.
+# shots/ is the default output of tools/shot.js.
+.auth.json
+.env*
+.vercel/
+.DS_Store
+node_modules/
+shots/
+
+# ---------------------------------------------------------------------------
+# Never commit: build output
+# ---------------------------------------------------------------------------
+# dist/ is produced by tools/build-dist.sh. It is a copy of the tree, so a
+# committed copy would only go stale.
+dist/
+
+# ---------------------------------------------------------------------------
+# Never commit: live customer data
+# ---------------------------------------------------------------------------
+# This repository is public. Everything below was captured from, or seeded
+# with, the client's production account and carries real customer names, phone
+# numbers, email addresses, share tokens and a workspace API key. See
+# "What is not in this repository" in README.md before changing these lines.
+audit/
+veerha-dashboard.html
+veerha-dashboard copy.html
+HANDOFF.md
+WhatsApp Image *.jpeg
