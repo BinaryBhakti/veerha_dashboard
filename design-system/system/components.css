@@ -1,0 +1,986 @@
+/* ============================================================================
+   VEERHA — INDIGO SLATE
+   Component layer.
+
+   Every state is written twice: once as the real pseudo-class so the
+   component behaves, once as a forced `.is-*` class so the documentation can
+   draw the state as its own frame. `.v-btn:hover, .v-btn.is-hover { … }`.
+   That is what lets this folder work like a Figma file with no JavaScript.
+
+   Naming: every class is `v-` prefixed. The prototype taught this the hard
+   way — an unprefixed `.delta` collided with an existing one and silently
+   broke the desktop timeline. Grep before you name.
+   ============================================================================ */
+
+
+/* ==========================================================================
+   1 · SHELL
+   ========================================================================== */
+
+.v-shell { display: grid; grid-template-columns: var(--rail) 1fr; min-height: 100%; }
+.v-shell--sectioned { grid-template-columns: var(--rail) var(--sidenav) 1fr; }
+/* The rail ships expanded, so any container sized on --rail must follow it.
+   Without this the content renders underneath the sidebar. */
+.v-shell:has(> .v-rail.is-expanded) { grid-template-columns: var(--rail-open) 1fr; }
+.v-shell--sectioned:has(> .v-rail.is-expanded) { grid-template-columns: var(--rail-open) var(--sidenav) 1fr; }
+
+/* Icon rail — the persistent module switcher */
+.v-rail {
+  width: var(--rail); background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center;
+  padding: var(--s-3) 0; gap: var(--s-1);
+}
+.v-rail__mark {
+  width: 32px; height: 32px; border-radius: var(--r-md);
+  background: var(--brand); color: var(--brand-on);
+  display: grid; place-items: center; font-weight: 600; font-size: 14px;
+  margin-bottom: var(--s-3);
+}
+.v-rail__item {
+  position: relative; width: 36px; height: 36px; border-radius: var(--r-md);
+  display: grid; place-items: center; color: var(--text-muted);
+  background: none; border: 0; cursor: pointer;
+  transition: background var(--m-hover) var(--ease), color var(--m-hover) var(--ease);
+}
+.v-rail__item:hover, .v-rail__item.is-hover { background: var(--surface-subtle); color: var(--text-secondary); }
+.v-rail__item.is-active { background: var(--brand-soft); color: var(--brand); }
+.v-rail__item.is-active::before {
+  content: ""; position: absolute; left: -10px; top: 8px; bottom: 8px;
+  width: 2px; border-radius: var(--r-full); background: var(--brand);
+}
+.v-rail__spacer { flex: 1; }
+
+/* Expanded rail. v2 §16 puts the sidebar at 232–248px open and 64–72px
+   collapsed; this sits at 240 / 56. The label is always in the DOM so the
+   accessible name does not change when the rail collapses — only its
+   visibility does. */
+.v-rail__label {
+  font-size: var(--t-small-s); font-weight: 500; white-space: nowrap;
+  opacity: 0; width: 0; overflow: hidden;
+  transition: opacity var(--m-hover) var(--ease);
+}
+.v-rail.is-expanded {
+  width: var(--rail-open); align-items: stretch; padding: var(--s-3) var(--s-3);
+}
+.v-rail.is-expanded .v-rail__mark { margin-left: 2px; }
+.v-rail.is-expanded .v-rail__item {
+  width: 100%; justify-content: flex-start; grid-auto-flow: column;
+  display: flex; align-items: center; gap: var(--s-3); padding: 0 var(--s-3);
+}
+.v-rail.is-expanded .v-rail__label { opacity: 1; width: auto; }
+.v-rail.is-expanded .v-rail__item.is-active::before { left: -4px; }
+/* The count carries the signal when expanded, so the dot would just sit on
+   top of the number. Collapsed, the dot is all there is. */
+.v-rail.is-expanded .v-rail__item:has(.v-rail__count) .v-navdot { display: none; }
+.v-rail.is-expanded .v-navdot { top: 50%; right: var(--s-3); margin-top: -3px; }
+
+/* Status dot on a rail icon — pending work in that module */
+.v-navdot {
+  position: absolute; top: 5px; right: 5px; width: 6px; height: 6px;
+  border-radius: var(--r-full); background: var(--dn-ic);
+  box-shadow: 0 0 0 2px var(--surface);
+}
+
+/* Top bar — quiet by instruction (v2 §17) */
+.v-topbar {
+  height: var(--topbar); background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: var(--s-4);
+  padding: 0 var(--s-6);
+}
+.v-topbar__who { margin-left: auto; text-align: right; line-height: 1.25; }
+.v-topbar__name { font-size: var(--t-small-s); font-weight: 600; }
+.v-topbar__role { font-size: var(--t-meta-s); color: var(--text-muted); }
+
+/* Breadcrumb */
+.v-crumb { display: flex; align-items: center; gap: var(--s-2); font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-crumb__sep { color: var(--text-faint); }
+.v-crumb__current { color: var(--text-secondary); font-weight: 500; }
+
+/* Section navigation — the second-level sidebar */
+.v-sidenav {
+  width: var(--sidenav); background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-5);
+  overflow-y: auto;
+}
+.v-sidenav__group { display: flex; flex-direction: column; gap: 2px; }
+.v-sidenav__label { margin-bottom: var(--s-2); }
+.v-sidenav__item {
+  position: relative; display: flex; align-items: center; gap: var(--s-3);
+  padding: 7px var(--s-3); border-radius: var(--r-sm);
+  color: var(--text-secondary); font-size: var(--t-small-s);
+  transition: background var(--m-hover) var(--ease);
+}
+.v-sidenav__item:hover, .v-sidenav__item.is-hover { background: var(--surface-subtle); }
+.v-sidenav__item.is-active { background: var(--brand-soft); color: var(--brand); font-weight: 500; }
+.v-sidenav__item.is-active::before {
+  content: ""; position: absolute; left: 0; top: 6px; bottom: 6px;
+  width: 2px; border-radius: var(--r-full); background: var(--brand);
+}
+.v-sidenav__item svg { flex: none; color: var(--text-muted); }
+.v-sidenav__item.is-active svg { color: var(--brand); }
+
+
+/* ==========================================================================
+   2 · PAGE STRUCTURE
+   ========================================================================== */
+
+.v-pagehead { display: flex; align-items: flex-start; gap: var(--s-6); margin-bottom: var(--s-6); }
+.v-pagehead__copy { flex: 1; min-width: 0; }
+.v-pagehead__title { font-size: var(--t-page-s); line-height: var(--t-page-l); font-weight: var(--t-page-w); letter-spacing: var(--t-page-k); }
+.v-pagehead__sub { margin-top: var(--s-1); font-size: var(--t-small-s); color: var(--text-muted); }
+
+/* Section — a surface per block, with ruled rows inside. Grouping is at the
+   section level, never one card per number (standing client correction). */
+.v-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-card); box-shadow: var(--e1);
+}
+.v-card__head { padding: var(--s-4) var(--s-5) var(--s-3); display: flex; align-items: flex-start; gap: var(--s-3); }
+.v-card__head .v-card__title { font-size: 15px; line-height: 22px; font-weight: 600; letter-spacing: -.008em; }
+.v-card__desc { margin-top: 2px; font-size: var(--t-small-s); color: var(--text-muted); }
+.v-card__body { padding: 0 var(--s-5) var(--s-5); }
+.v-card__foot { padding: var(--s-3) var(--s-5); border-top: 1px solid var(--border); }
+.v-card__ic {
+  width: 30px; height: 30px; border-radius: var(--r-md); flex: none;
+  display: grid; place-items: center;
+  background: var(--surface-subtle); color: var(--text-muted);
+}
+
+/* Ruled rows inside a section — the alternative to nesting cards */
+.v-rows > * { padding: var(--s-3) var(--s-5); border-top: 1px solid var(--border); }
+.v-rows > *:first-child { border-top: 1px solid var(--border); }
+
+.v-accordion__trigger {
+  width: 100%; display: flex; align-items: center; gap: var(--s-3);
+  padding: var(--s-4) var(--s-5); background: none; border: 0; cursor: pointer; text-align: left;
+}
+.v-accordion__chev { margin-left: auto; color: var(--text-muted); transition: transform var(--m-dropdown) var(--ease); }
+.v-accordion.is-open .v-accordion__chev { transform: rotate(180deg); }
+.v-accordion__panel { padding: 0 var(--s-5) var(--s-5); border-top: 1px solid var(--border); padding-top: var(--s-4); }
+
+
+/* ==========================================================================
+   3 · BUTTONS
+   One dominant primary action per section. Not every action is a primary
+   button (v2 §20).
+   ========================================================================== */
+
+.v-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  height: 36px; padding: 0 var(--s-4);
+  border-radius: var(--r-ctrl); border: 1px solid transparent;
+  font-size: var(--t-small-s); font-weight: 500; white-space: nowrap;
+  cursor: pointer; background: none;
+  transition: background var(--m-hover) var(--ease), border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease);
+}
+.v-btn svg { flex: none; }
+.v-btn--sm { height: 30px; padding: 0 var(--s-3); font-size: var(--t-meta-s); }
+.v-btn--lg { height: 44px; padding: 0 var(--s-5); font-size: var(--t-body-s); }
+
+.v-btn--primary { background: var(--brand); color: var(--brand-on); }
+.v-btn--primary:hover, .v-btn--primary.is-hover { background: var(--brand-hover); }
+.v-btn--primary:active, .v-btn--primary.is-active { background: var(--brand-800); }
+
+.v-btn--secondary { background: var(--surface); border-color: var(--field-border); color: var(--text-secondary); }
+.v-btn--secondary:hover, .v-btn--secondary.is-hover { background: var(--surface-subtle); }
+.v-btn--secondary:active, .v-btn--secondary.is-active { background: var(--surface-muted); }
+
+.v-btn--ghost { color: var(--text-secondary); }
+.v-btn--ghost:hover, .v-btn--ghost.is-hover { background: var(--surface-subtle); }
+
+.v-btn--danger { background: var(--dn-ic); color: var(--on-solid); }
+.v-btn--danger:hover, .v-btn--danger.is-hover { background: var(--dn-tx); }
+
+.v-btn--danger-ghost {
+  background: transparent; color: var(--dn-tx); border-color: var(--dn-bd);
+}
+.v-btn--danger-ghost:hover, .v-btn--danger-ghost.is-hover {
+  background: var(--dn-bg); border-color: var(--dn-ic);
+}
+
+.v-btn--icon { width: 36px; padding: 0; color: var(--text-muted); border-color: var(--border); background: var(--surface); }
+.v-btn--icon:hover, .v-btn--icon.is-hover { background: var(--surface-subtle); color: var(--text-secondary); }
+
+.v-btn:focus-visible, .v-btn.is-focus { outline: none; box-shadow: var(--focus); }
+.v-btn:disabled, .v-btn.is-disabled { opacity: .45; cursor: not-allowed; pointer-events: none; }
+
+/* Loading — the label stays so the button does not resize */
+.v-btn.is-loading { pointer-events: none; position: relative; color: transparent; }
+.v-btn.is-loading::after {
+  content: ""; position: absolute; width: 14px; height: 14px; border-radius: var(--r-full);
+  border: 2px solid currentColor; border-top-color: transparent;
+  color: var(--brand-on); animation: v-spin .7s linear infinite;
+}
+.v-btn--secondary.is-loading::after, .v-btn--ghost.is-loading::after { color: var(--text-secondary); }
+@keyframes v-spin { to { transform: rotate(360deg); } }
+
+.v-actions { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+
+
+/* ==========================================================================
+   4 · FORM CONTROLS
+   ========================================================================== */
+
+.v-field { display: flex; flex-direction: column; gap: 6px; }
+.v-field__label { font-size: var(--t-small-s); font-weight: 500; color: var(--text-secondary); }
+.v-field__hint { font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-field__error { font-size: var(--t-meta-s); color: var(--dn-tx); display: flex; align-items: center; gap: 5px; }
+
+.v-input, .v-select, .v-textarea {
+  width: 100%; min-height: 36px; padding: 7px var(--s-3);
+  background: var(--surface); color: var(--text-primary);
+  border: 1px solid var(--field-border); border-radius: var(--r-ctrl);
+  font-size: var(--t-small-s);
+  transition: border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease);
+}
+.v-input::placeholder, .v-textarea::placeholder { color: var(--text-muted); }
+.v-input:hover, .v-input.is-hover, .v-select:hover, .v-textarea:hover { border-color: var(--field-border-hover); }
+.v-input:focus, .v-input.is-focus,
+.v-select:focus, .v-select.is-focus,
+.v-textarea:focus, .v-textarea.is-focus {
+  outline: none; border-color: var(--brand); box-shadow: var(--focus);
+}
+.v-input.is-error, .v-select.is-error, .v-textarea.is-error { border-color: var(--dn-ic); }
+.v-input.is-error:focus, .v-input.is-error.is-focus { box-shadow: 0 0 0 3px var(--dn-bd); }
+.v-input:disabled, .v-input.is-disabled { background: var(--surface-muted); color: var(--text-faint); cursor: not-allowed; }
+.v-textarea { min-height: 84px; resize: vertical; line-height: var(--t-body-l); }
+
+.v-select { appearance: none; padding-right: var(--s-8); cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right var(--s-3) center;
+}
+
+.v-search { position: relative; }
+.v-search .v-input { padding-left: var(--s-8); }
+.v-search__ic { position: absolute; left: var(--s-3); top: 50%; transform: translateY(-50%); color: var(--text-faint); pointer-events: none; }
+
+/* Checkbox and toggle — drawn, not native, so states can be shown */
+.v-check { display: inline-flex; align-items: center; gap: var(--s-2); cursor: pointer; font-size: var(--t-small-s); }
+.v-check__box {
+  width: 16px; height: 16px; flex: none; border-radius: var(--r-xs);
+  border: 1px solid var(--field-border); background: var(--surface);
+  display: grid; place-items: center; color: transparent;
+  transition: background var(--m-hover) var(--ease), border-color var(--m-hover) var(--ease);
+}
+.v-check:hover .v-check__box, .v-check.is-hover .v-check__box { border-color: var(--field-border-hover); }
+.v-check.is-checked .v-check__box { background: var(--brand); border-color: var(--brand); color: var(--brand-on); }
+.v-check.is-indeterminate .v-check__box { background: var(--brand); border-color: var(--brand); color: var(--brand-on); }
+.v-check.is-disabled { opacity: .45; cursor: not-allowed; }
+
+.v-toggle { display: inline-flex; align-items: center; gap: var(--s-3); cursor: pointer; }
+.v-toggle__track {
+  width: 36px; height: 20px; border-radius: var(--r-full); flex: none;
+  background: var(--surface-muted); position: relative;
+  transition: background var(--m-hover) var(--ease);
+}
+.v-toggle__thumb {
+  position: absolute; top: 2px; left: 2px; width: 16px; height: 16px;
+  border-radius: var(--r-full); background: var(--surface); box-shadow: var(--e1);
+  transition: transform var(--m-hover) var(--ease);
+}
+.v-toggle.is-on .v-toggle__track { background: var(--brand); }
+.v-toggle.is-on .v-toggle__thumb { transform: translateX(16px); }
+.v-toggle.is-disabled { opacity: .45; cursor: not-allowed; }
+
+/* Radio card — a bordered, selectable explanation block */
+.v-radiocard {
+  display: flex; gap: var(--s-3); padding: var(--s-4);
+  border: 1px solid var(--field-border); border-radius: var(--r-tile);
+  background: var(--surface); cursor: pointer;
+  transition: border-color var(--m-hover) var(--ease), background var(--m-hover) var(--ease);
+}
+.v-radiocard:hover, .v-radiocard.is-hover { border-color: var(--field-border-hover); }
+.v-radiocard.is-selected { border-color: var(--brand); background: var(--brand-soft); }
+.v-radiocard__dot {
+  width: 16px; height: 16px; flex: none; margin-top: 2px; border-radius: var(--r-full);
+  border: 1px solid var(--border-strong); background: var(--surface);
+}
+.v-radiocard.is-selected .v-radiocard__dot { border: 5px solid var(--brand); }
+
+/* Dropzone */
+.v-drop {
+  border: 1px dashed var(--field-border); border-radius: var(--r-tile);
+  background: var(--surface-subtle); padding: var(--s-10) var(--s-6);
+  text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--s-3);
+}
+.v-drop.is-hover { border-color: var(--brand); background: var(--brand-soft); }
+
+
+/* ==========================================================================
+   5 · NAVIGATION CONTROLS
+   ========================================================================== */
+
+.v-tabs { display: flex; gap: var(--s-5); border-bottom: 1px solid var(--border); }
+.v-tab {
+  padding: var(--s-3) 0; margin-bottom: -1px; background: none; border: 0; cursor: pointer;
+  font-size: var(--t-small-s); font-weight: 500; color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+}
+.v-tab:hover, .v-tab.is-hover { color: var(--text-secondary); }
+.v-tab.is-active { color: var(--brand); border-bottom-color: var(--brand); }
+
+.v-seg { display: inline-flex; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--r-ctrl); padding: 2px; }
+.v-seg__opt {
+  padding: 5px var(--s-3); border-radius: var(--r-xs); border: 0; background: none; cursor: pointer;
+  font-size: var(--t-meta-s); font-weight: 500; color: var(--text-muted);
+}
+.v-seg__opt.is-active { background: var(--surface); color: var(--text-primary); box-shadow: var(--e1); }
+
+.v-pilltabs { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.v-pill {
+  height: 30px; padding: 0 var(--s-3); display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--border); border-radius: var(--r-ctrl); background: var(--surface);
+  font-size: var(--t-meta-s); font-weight: 500; color: var(--text-secondary); cursor: pointer;
+}
+.v-pill:hover, .v-pill.is-hover { background: var(--surface-subtle); }
+.v-pill.is-active { background: var(--brand-soft); border-color: var(--brand-soft-bd); color: var(--brand); }
+.v-pill__n { color: var(--text-muted); font-family: var(--num); }
+.v-pill.is-active .v-pill__n { color: var(--brand); }
+
+.v-stepper { display: flex; align-items: center; gap: var(--s-3); }
+.v-stepper__step { display: flex; align-items: center; gap: var(--s-2); font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-stepper__n {
+  width: 20px; height: 20px; border-radius: var(--r-full); display: grid; place-items: center;
+  background: var(--surface-muted); color: var(--text-muted); font-size: var(--t-micro-s); font-weight: 600;
+}
+.v-stepper__step.is-active { color: var(--text-primary); font-weight: 500; }
+.v-stepper__step.is-active .v-stepper__n { background: var(--brand); color: var(--brand-on); }
+.v-stepper__step.is-done .v-stepper__n { background: var(--ok-ic); color: var(--on-solid); }
+.v-stepper__bar { flex: 1; height: 2px; background: var(--border); border-radius: var(--r-full); }
+
+.v-pager { display: flex; align-items: center; gap: var(--s-3); font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-pager__n { margin-left: auto; display: flex; align-items: center; gap: var(--s-1); }
+
+
+/* ==========================================================================
+   6 · STATUS
+   Colour is never the only signal — every status carries a label, and the
+   semantic ones carry an icon too (v2 §46).
+   ========================================================================== */
+
+.v-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 20px; padding: 0 7px; border-radius: var(--r-chip);
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: .02em;
+  border: 1px solid transparent; white-space: nowrap;
+}
+.v-badge--neutral { background: var(--surface-subtle); border-color: var(--border); color: var(--text-secondary); }
+.v-badge--ok      { background: var(--ok-bg);  border-color: var(--ok-bd);  color: var(--ok-tx); }
+.v-badge--warn    { background: var(--wn-bg);  border-color: var(--wn-bd);  color: var(--wn-tx); }
+.v-badge--danger  { background: var(--dn-bg);  border-color: var(--dn-bd);  color: var(--dn-tx); }
+.v-badge--info    { background: var(--in-bg);  border-color: var(--in-bd);  color: var(--in-tx); }
+.v-badge--brand   { background: var(--brand-soft); border-color: var(--brand-soft-bd); color: var(--brand); }
+.v-badge--ai      { background: var(--ai-bg);  border-color: var(--ai-bd);  color: var(--ai-tx); }
+
+.v-dot { width: 7px; height: 7px; border-radius: var(--r-full); flex: none; }
+.v-dot--ok { background: var(--ok-ic); } .v-dot--warn { background: var(--wn-ic); }
+.v-dot--danger { background: var(--dn-ic); } .v-dot--muted { background: var(--text-faint); }
+
+/* A badge that is also a control — inline record editing */
+.v-selectchip {
+  display: inline-flex; align-items: center; gap: 5px; height: 24px; padding: 0 7px;
+  white-space: nowrap; max-width: 100%;   /* a chip never wraps */
+  border: 1px solid var(--border); border-radius: var(--r-chip); background: var(--surface);
+  font-size: var(--t-meta-s); font-weight: 500; color: var(--text-secondary); cursor: pointer;
+}
+.v-selectchip:hover, .v-selectchip.is-hover { background: var(--surface-subtle); border-color: var(--border-strong); }
+.v-selectchip.is-active {
+  background: var(--brand-50); border-color: var(--brand);
+  color: var(--brand); font-weight: 600;
+}
+.v-selectchip.is-active:hover { background: var(--brand-100); }
+.v-selectchip.is-active svg { color: var(--brand); }
+.v-selectchip svg { color: var(--text-faint); }
+
+.v-legend { display: flex; gap: var(--s-4); flex-wrap: wrap; font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+
+/* ==========================================================================
+   7 · DATA DISPLAY
+   ========================================================================== */
+
+.v-avatar {
+  width: 32px; height: 32px; border-radius: var(--r-md); flex: none;
+  display: grid; place-items: center;
+  background: var(--brand-soft); color: var(--brand);
+  font-size: var(--t-meta-s); font-weight: 600;
+}
+.v-avatar--sm { width: 24px; height: 24px; font-size: var(--t-micro-s); border-radius: var(--r-sm); }
+.v-avatar--lg { width: 40px; height: 40px; font-size: var(--t-small-s); }
+.v-avatar--xl { width: 56px; height: 56px; font-size: var(--t-card-s); border-radius: var(--r-lg); }
+.v-avatar--ai { background: var(--ai-bg); color: var(--ai-ic); border: 1px solid var(--ai-bd); }
+
+/* Stat tile. Selectable — acts as a filter on index screens. */
+.v-stat {
+  flex: 1; min-width: 0; padding: var(--s-4);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-tile);
+  display: flex; flex-direction: column; gap: 6px; cursor: pointer; text-align: left;
+  transition: border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease);
+}
+.v-stat:hover, .v-stat.is-hover { border-color: var(--border-strong); box-shadow: var(--e1); }
+.v-stat.is-selected { border-color: var(--brand); box-shadow: 0 0 0 1px var(--brand); }
+.v-stat.is-attn { border-color: var(--dn-bd); background: var(--dn-bg); }
+.v-stat__ic { width: 24px; height: 24px; border-radius: var(--r-sm); display: grid; place-items: center; background: var(--surface-subtle); color: var(--text-muted); }
+.v-stat.is-attn .v-stat__ic { background: var(--dn-bg); color: var(--dn-ic); border: 1px solid var(--dn-bd); }
+.v-stat__n { font-family: var(--num); font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -.02em; }
+.v-stat__cap { font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-stats { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+/* A tile never squeezes below the width of the number it exists to show. */
+.v-stat { flex: 1 1 158px; }
+
+.v-delta { display: inline-flex; align-items: center; gap: 3px; font-size: var(--t-meta-s); font-weight: 500; }
+.v-delta--up { color: var(--ok-tx); } .v-delta--down { color: var(--dn-tx); }
+
+/* Table. Dense, strongly aligned, minimal borders (v2 §22). */
+.v-table { font-size: var(--t-small-s); }
+.v-table th {
+  text-align: left; padding: var(--s-2) var(--s-3);
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+  text-transform: uppercase; color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  /* A header that cannot wrap sets a floor on the table's width, which is
+     what made an 11-column table overrun its card and clip a column. */
+  white-space: normal; overflow-wrap: anywhere;
+}
+.v-table td { padding: var(--s-3); border-bottom: 1px solid var(--border); vertical-align: top; }
+.v-table tbody tr:hover, .v-table tbody tr.is-hover { background: var(--surface-subtle); }
+.v-table tbody tr.is-selected { background: var(--brand-soft); }
+.v-table tbody tr.is-selected td:first-child { box-shadow: inset 2px 0 0 var(--brand); }
+.v-table__num { font-family: var(--num); text-align: right; }
+/* `.v-table th` is more specific than `.v-table__num`, so a numeric column
+   header left-aligned over right-aligned cells until this was added. */
+.v-table th.v-table__num { text-align: right; }
+
+/* MONEY IS NEVER MONO.
+   A monospace comma occupies a full character cell, so "₹8,69,500" renders as
+   "₹8 , 69 , 500" — and Indian grouping ("₹1,10,400") makes it worse. Three
+   separate components set mono on their numeric slot (.v-stat__n, .v-table__num,
+   .v-kv dd), so this is one utility rather than a modifier on each: put `.amount`
+   on anything carrying a currency symbol, wherever it sits. The UI face already
+   carries tabular-nums, which is the only alignment a money column needs. */
+.amount,
+.v-kv dd.amount,
+td.v-table__num.amount { font-family: var(--ui); }
+
+/* The utility swaps the FACE and nothing else. It used to carry 22px/28px in the
+   same rule, which meant every `.amount` on the site rendered at 22px whatever it
+   was paired with: money in a table cell, in `.t-meta`, and in a `.t-display`
+   figure that got silently shrunk. The one place the swap genuinely needs a size
+   with it is the stat number — the UI face runs wider than the mono face, so 26px
+   of "₹1,13,044" overflows the card — and that belongs on the component. */
+.v-stat__n.amount { font-size: 22px; line-height: 28px; }
+
+.v-identity__name { font-weight: 600; }
+.v-identity__ref { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-identity__line { font-size: var(--t-meta-s); color: var(--text-muted); }
+
+.v-attrs { display: flex; flex-direction: column; gap: 3px; }
+.v-attrs__row { display: flex; align-items: center; gap: 6px; font-size: var(--t-meta-s); color: var(--text-secondary); }
+.v-attrs__row svg { color: var(--text-faint); flex: none; }
+
+.v-kv { display: grid; grid-template-columns: auto 1fr; gap: var(--s-2) var(--s-4); font-size: var(--t-small-s); }
+.v-kv dt { color: var(--text-muted); }
+.v-kv dd { text-align: right; font-family: var(--num); }
+
+/* Record card — the queue/list unit */
+.v-record {
+  position: relative; display: flex; gap: var(--s-4); padding: var(--s-4) var(--s-5);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-tile);
+  overflow: hidden;
+}
+.v-record::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--border-strong); }
+.v-record--danger::before { background: var(--dn-ic); }
+.v-record--warn::before   { background: var(--wn-ic); }
+.v-record--ok::before     { background: var(--ok-ic); }
+.v-record__body { flex: 1; min-width: 0; }
+.v-record__title { font-weight: 600; display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.v-record__desc { margin-top: 3px; font-size: var(--t-small-s); color: var(--text-muted); }
+
+.v-meter { height: 6px; border-radius: var(--r-full); background: var(--track); overflow: hidden; }
+.v-meter__fill { display: block; height: 100%; border-radius: var(--r-full); background: var(--brand); }
+/* `display:block` is load-bearing: height:100% is void on an inline box, so a
+   <span class="v-meter__fill"> rendered as an empty track with no warning. */
+.v-meter__fill--ok { background: var(--ok-ic); }
+.v-meter__fill--warn { background: var(--wn-ic); }
+
+.v-score { display: inline-grid; place-items: center; width: 44px; height: 44px; position: relative; }
+.v-score__n { font-family: var(--num); font-size: var(--t-card-s); font-weight: 600; }
+
+.v-ranked { display: flex; flex-direction: column; }
+.v-ranked__row { display: flex; align-items: center; gap: var(--s-3); padding: 7px 0; border-top: 1px solid var(--border); font-size: var(--t-small-s); }
+.v-ranked__row:first-child { border-top: 0; }
+.v-ranked__n { margin-left: auto; font-family: var(--num); color: var(--text-secondary); }
+
+
+/* ==========================================================================
+   8 · FEEDBACK
+   ========================================================================== */
+
+/* Empty state must answer: what is empty, why, what do I do (v2 §40). */
+.v-empty { text-align: center; padding: var(--s-12) var(--s-6); display: flex; flex-direction: column; align-items: center; gap: var(--s-3); }
+.v-empty__ic { width: 40px; height: 40px; border-radius: var(--r-tile); display: grid; place-items: center; background: var(--surface-subtle); color: var(--text-faint); }
+.v-empty__title { font-size: 15px; font-weight: 600; }
+.v-empty__body { font-size: var(--t-small-s); color: var(--text-muted); max-width: 42ch; }
+
+.v-callout {
+  display: flex; gap: var(--s-3); padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--border); border-radius: var(--r-tile);
+  background: var(--surface-subtle); font-size: var(--t-small-s);
+}
+.v-callout--ok     { background: var(--ok-bg); border-color: var(--ok-bd); color: var(--ok-tx); }
+.v-callout--warn   { background: var(--wn-bg); border-color: var(--wn-bd); color: var(--wn-tx); }
+.v-callout--danger { background: var(--dn-bg); border-color: var(--dn-bd); color: var(--dn-tx); }
+.v-callout--info   { background: var(--in-bg); border-color: var(--in-bd); color: var(--in-tx); }
+.v-callout--ai     { background: var(--ai-bg); border-color: var(--ai-bd); color: var(--ai-tx); }
+.v-callout__ic { flex: none; margin-top: 1px; }
+.v-callout__link { margin-left: auto; font-weight: 500; white-space: nowrap; }
+
+/* Errors are specific and always offer the next action (v2 §42). */
+.v-error { display: flex; gap: var(--s-3); padding: var(--s-4); border: 1px solid var(--dn-bd); border-radius: var(--r-tile); background: var(--dn-bg); }
+.v-error__title { font-weight: 600; color: var(--dn-tx); }
+.v-error__body { font-size: var(--t-small-s); color: var(--dn-tx); opacity: .85; margin-top: 2px; }
+
+/* Skeleton — preserves the eventual layout rather than being a grey block */
+.v-skel { background: var(--surface-muted); border-radius: var(--r-xs); position: relative; overflow: hidden; }
+.v-skel::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent);
+  animation: v-shimmer 1.4s infinite;
+}
+@keyframes v-shimmer { 100% { transform: translateX(100%); } }
+.v-skel--text { height: 11px; } .v-skel--title { height: 15px; width: 40%; }
+.v-skel--line { height: 11px; width: 100%; } .v-skel--short { height: 11px; width: 60%; }
+.v-skel--avatar { width: 32px; height: 32px; border-radius: var(--r-md); }
+
+.v-savebar {
+  display: inline-flex; align-items: center; gap: var(--s-3);
+  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-4);
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: var(--r-full); box-shadow: var(--e2); font-size: var(--t-small-s);
+}
+.v-savebar__state { display: inline-flex; align-items: center; gap: 6px; color: var(--ok-tx); }
+.v-savebar.is-dirty .v-savebar__state { color: var(--wn-tx); }
+
+
+/* ==========================================================================
+   9 · OVERLAY
+   Drawers preserve context; modals are for confirmation and destructive
+   actions (v2 §43).
+   ========================================================================== */
+
+.v-scrim { position: absolute; inset: 0; background: var(--scrim); }
+
+.v-drawer {
+  background: var(--surface); border-left: 1px solid var(--border);
+  box-shadow: var(--e3); display: flex; flex-direction: column;
+  width: 560px; max-width: 100%;
+}
+.v-drawer__head { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-4) var(--s-5); border-bottom: 1px solid var(--border); }
+.v-drawer__body { flex: 1; overflow-y: auto; padding: var(--s-5); }
+.v-drawer__foot { padding: var(--s-3) var(--s-5); border-top: 1px solid var(--border); display: flex; gap: var(--s-2); }
+
+.v-modal {
+  background: var(--surface); border-radius: var(--r-card); box-shadow: var(--e3);
+  width: 420px; max-width: 100%; padding: var(--s-5);
+  display: flex; flex-direction: column; gap: var(--s-3);
+}
+.v-modal__title { font-size: var(--t-card-s); font-weight: 600; }
+.v-modal__body { font-size: var(--t-small-s); color: var(--text-secondary); }
+.v-modal__foot { display: flex; justify-content: flex-end; gap: var(--s-2); margin-top: var(--s-2); }
+
+.v-footbar { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-3) var(--s-5); border-top: 1px solid var(--border); background: var(--surface); }
+
+
+/* ==========================================================================
+   10 · CONVERSATION
+   ========================================================================== */
+
+.v-convitem { display: flex; gap: var(--s-3); padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--border); cursor: pointer; }
+.v-convitem:hover, .v-convitem.is-hover { background: var(--surface-subtle); }
+.v-convitem.is-active { background: var(--brand-soft); box-shadow: inset 2px 0 0 var(--brand); }
+.v-convitem__top { display: flex; align-items: baseline; gap: var(--s-2); }
+.v-convitem__name { font-weight: 600; font-size: var(--t-small-s); }
+.v-convitem__time { margin-left: auto; font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-convitem__snip { font-size: var(--t-meta-s); color: var(--text-muted); margin-top: 2px; }
+.v-convitem__unread { min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-full); background: var(--brand); color: var(--brand-on); font-size: var(--t-micro-s); font-weight: 600; display: grid; place-items: center; }
+
+.v-msg { max-width: 68%; }
+.v-msg__bubble { padding: var(--s-3) var(--s-4); border-radius: var(--r-tile); font-size: var(--t-small-s); }
+.v-msg--in  .v-msg__bubble { background: var(--surface-subtle); border: 1px solid var(--border); border-bottom-left-radius: var(--r-xs); }
+.v-msg--out { margin-left: auto; }
+.v-msg--out .v-msg__bubble { background: var(--brand); color: var(--brand-on); border-bottom-right-radius: var(--r-xs); }
+.v-msg__meta { margin-top: 5px; font-size: var(--t-meta-s); color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+.v-msg--out .v-msg__meta { justify-content: flex-end; }
+
+.v-composer { display: flex; gap: var(--s-2); padding: var(--s-3) var(--s-4); border-top: 1px solid var(--border); background: var(--surface); }
+
+
+/* ==========================================================================
+   10b · CHARTS
+   Hand-authored inline SVG. No library, no runtime, one series colour.
+
+   Every chart carries four slots and is not finished without all four:
+     .label   context eyebrow    (Volume · Autonomy · Conversion · Sources)
+     h3       plain-language title
+     .v-card__desc  timeframe or denominator
+     takeaway one bolded conclusion + one explaining sentence
+
+   And a role="img" with an aria-label that states the data as a sentence —
+   an SVG of a line is nothing at all to a screen reader.
+   ========================================================================== */
+
+.g-grid   { stroke: var(--chart-grid); stroke-width: 1; }
+.g-axis   { font-family: var(--num); font-size: 11px; fill: var(--text-muted); }
+.g-name   { font-size: 12px; font-weight: 500; fill: var(--text-secondary); }
+.g-val    { font-family: var(--num); font-size: 12px; font-weight: 600; fill: var(--text-primary); }
+.g-line   { fill: none; stroke: var(--chart-1); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.g-area   { fill: var(--chart-fill); stroke: none; }
+.g-dot    { fill: var(--chart-1); stroke: var(--surface); stroke-width: 2; }
+.g-bar    { fill: var(--chart-1); rx: 4; }
+.g-target { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 3 3; }
+
+/* A sparkline is the same line with no furniture. */
+.g-spark  { fill: none; stroke: var(--chart-1); stroke-width: 1.5; stroke-linejoin: round; }
+
+
+/* ==========================================================================
+   11 · SIGNATURE PATTERNS
+   These are the product language — more recognisable than the palette
+   (v2 §57). Every one is built from the components above.
+   ========================================================================== */
+
+/* The AI system layer container, shared by the intelligence patterns */
+.v-ai {
+  background: var(--ai-bg); border: 1px solid var(--ai-bd);
+  border-radius: var(--r-tile); padding: var(--s-4);
+}
+.v-ai__label { display: flex; align-items: center; gap: 7px; color: var(--ai-tx); margin-bottom: var(--s-2); }
+.v-ai__mark {
+  width: 18px; height: 18px; border-radius: var(--r-xs); flex: none;
+  display: grid; place-items: center;
+  background: var(--ai-ic); color: var(--ai-bg);
+  font-size: 10px; font-weight: 600;
+}
+
+/* 1 · Veerha's Read — conclusion, evidence, attributes, provenance */
+.v-read__conclusion { font-size: 15px; line-height: 22px; font-weight: 600; }
+.v-read__evidence { font-size: var(--t-small-s); line-height: 19px; color: var(--ai-tx); margin-top: 5px; }
+.v-read__attrs { margin-top: var(--s-3); font-size: var(--t-meta-s); color: var(--ai-tx); }
+.v-read__based { margin-top: var(--s-2); padding-top: var(--s-2); border-top: 1px solid var(--ai-bd); font-size: var(--t-meta-s); color: var(--ai-ic); }
+
+/* 2 · Recommended Next Step — action with a time, and why */
+.v-next { background: var(--brand-soft); border: 1px solid var(--brand-soft-bd); border-radius: var(--r-tile); padding: var(--s-4); }
+.v-next__label { color: var(--brand); margin-bottom: var(--s-2); display: flex; align-items: center; gap: 7px; }
+.v-next__action { font-size: 15px; line-height: 22px; font-weight: 600; }
+.v-next__why { font-size: var(--t-small-s); color: var(--text-secondary); margin-top: 4px; }
+.v-next__acts { display: flex; gap: var(--s-2); margin-top: var(--s-3); }
+
+/* 3 · Evidence — a claim/source ledger. Every row is clickable. */
+.v-ev { width: 100%; font-size: var(--t-small-s); }
+.v-ev th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.v-ev td { padding: var(--s-2) 0; border-bottom: 1px solid var(--border); }
+.v-ev__claim { display: flex; align-items: flex-start; gap: var(--s-2); }
+.v-ev__glyph { flex: none; margin-top: 2px; }
+.v-ev__glyph--ok { color: var(--ok-ic); }
+.v-ev__glyph--gap { color: var(--wn-ic); }
+.v-ev__source { text-align: right; color: var(--brand); white-space: nowrap; font-weight: 500; }
+
+/* 4 · Veerha Is Working — a timeline, not decorative cards */
+.v-working__row { display: flex; gap: var(--s-4); padding: var(--s-2) 0; border-top: 1px solid var(--border); font-size: var(--t-small-s); }
+.v-working__row:first-child { border-top: 0; }
+.v-working__time { font-family: var(--num); color: var(--text-muted); flex: none; width: 48px; }
+.v-working__act { flex: 1; min-width: 0; }
+.v-working__obj { color: var(--text-muted); text-align: right; white-space: nowrap; }
+
+/* 5 · Waiting on You — the core relationship: AI autonomy + human judgment */
+/* "20 decisions" is a phrase, not a column figure — mono would set the word
+   in monospace too. Body already carries tabular-nums, which is all the
+   numeral needs. */
+.v-waiting__count { font-size: var(--t-page-s); line-height: var(--t-page-l); font-weight: 600; letter-spacing: -.018em; }
+.v-waiting__row { display: flex; align-items: center; gap: var(--s-4); padding: var(--s-3) 0; border-top: 1px solid var(--border); }
+.v-waiting__body { flex: 1; min-width: 0; }
+.v-waiting__title { font-size: var(--t-small-s); font-weight: 500; }
+.v-waiting__ctx { font-size: var(--t-meta-s); color: var(--text-muted); margin-top: 2px; }
+.v-waiting__verb { color: var(--brand); font-size: var(--t-small-s); font-weight: 500; white-space: nowrap; }
+
+/* 6 · AI Employee — a workforce member, not a bot */
+.v-employee__top { display: flex; gap: var(--s-3); align-items: flex-start; }
+.v-employee__role { font-size: 15px; font-weight: 600; }
+.v-employee__state { display: flex; align-items: center; gap: 6px; font-size: var(--t-meta-s); color: var(--text-muted); margin-top: 2px; }
+.v-employee__scope { font-size: var(--t-small-s); color: var(--text-muted); margin-top: var(--s-3); }
+.v-employee__stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: var(--r-md); margin-top: var(--s-4); overflow: hidden; }
+.v-employee__stat { padding: var(--s-2) var(--s-3); border-right: 1px solid var(--border); }
+.v-employee__stat:last-child { border-right: 0; }
+.v-employee__stat b { font-family: var(--num); font-size: var(--t-card-s); font-weight: 600; display: block; }
+.v-employee__stat span { font-size: var(--t-meta-s); color: var(--text-muted); }
+
+
+/* --- TOAST ---------------------------------------------------------------
+   Transient confirmation. Used where an action succeeds and there is nothing
+   to navigate to -- a copy, a bulk action, a saved filter. It states what
+   happened, never "Success". Four tones, matching the callout vocabulary. */
+.v-toasts {
+  position: fixed; left: 50%; bottom: var(--s-6); transform: translateX(-50%);
+  z-index: 200; display: flex; flex-direction: column; gap: var(--s-2);
+  pointer-events: none; width: min(460px, calc(100vw - 32px));
+}
+.v-toast {
+  display: flex; gap: var(--s-3); align-items: flex-start;
+  background: var(--text-primary); color: var(--surface);
+  border-radius: var(--r-tile); padding: var(--s-3) var(--s-4);
+  font-size: var(--t-small-s); line-height: 19px; box-shadow: var(--e3);
+  pointer-events: auto; opacity: 0; transform: translateY(8px);
+  transition: opacity var(--m-hover) var(--ease), transform var(--m-hover) var(--ease);
+}
+.v-toast.is-in { opacity: 1; transform: translateY(0); }
+.v-toast.is-leaving { opacity: 0; transform: translateY(6px); }
+.v-toast__ic { flex: none; margin-top: 1px; }
+.v-toast b { font-weight: 600; display: block; }
+.v-toast span { color: var(--border-strong); }
+.v-toast--ok   .v-toast__ic { color: var(--ok-ic); }
+.v-toast--warn .v-toast__ic { color: var(--wn-ic); }
+.v-toast--danger .v-toast__ic { color: var(--dn-ic); }
+@media (prefers-reduced-motion: reduce) { .v-toast { transition: none; } }
+
+/* --- BULK BAR ------------------------------------------------------------
+   Appears when rows are selected, and only then. It answers the question a
+   row checkbox raises and the live product never did: selected for what? */
+.v-bulkbar {
+  display: flex; align-items: center; gap: var(--s-3);
+  background: var(--brand-soft); border: 1px solid var(--brand-200);
+  border-radius: var(--r-tile); padding: var(--s-2) var(--s-4);
+  margin-bottom: var(--s-3);
+}
+.v-bulkbar__n { font-weight: 600; color: var(--brand-700); }
+.v-bulkbar[hidden] { display: none; }
+
+/* --- SORTABLE COLUMN ------------------------------------------------------ */
+.v-table th.is-sortable { cursor: pointer; user-select: none; }
+.v-table th.is-sortable:hover { color: var(--text-secondary); }
+.v-table th.is-sortable::after {
+  content: ""; display: inline-block; width: 0; height: 0; margin-left: 5px;
+  vertical-align: middle; opacity: 0;
+  border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
+  border-bottom: 4px solid currentColor;
+}
+.v-table th[aria-sort]::after { opacity: 1; }
+.v-table th[aria-sort="descending"]::after {
+  border-bottom: 0; border-top: 4px solid currentColor;
+}
+.v-table tr.is-selected > td { background: var(--brand-50); }
+
+
+/* --- SIDEBAR: GROUPS, COUNTS, ACCOUNT ------------------------------------
+   The rail ships EXPANDED by default. Sixteen unlabelled icons is not
+   navigation -- you cannot tell what any of them are without hovering, and the
+   collapsed rail is the exception you reach for when you want the room back.
+
+   Everything here is written so the collapsed state degrades cleanly: group
+   headers and counts fold to nothing, the account card becomes its avatar. */
+
+.v-rail__group {
+  font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
+  text-transform: uppercase; color: var(--text-faint);
+  padding: var(--s-4) var(--s-3) var(--s-2);
+  white-space: nowrap; overflow: hidden;
+  height: 0; opacity: 0; padding-top: 0; padding-bottom: 0;   /* collapsed: gone */
+  transition: opacity var(--m-hover) var(--ease);
+}
+.v-rail.is-expanded .v-rail__group { height: auto; opacity: 1; padding: var(--s-4) var(--s-3) var(--s-2); }
+.v-rail.is-expanded .v-rail__group:first-of-type { padding-top: var(--s-2); }
+
+/* A count is the reason to look at a nav item. Collapsed, it degrades to the
+   existing .v-navdot so the signal survives without the number. */
+.v-rail__count {
+  margin-left: auto; flex: none;
+  font-family: var(--num); font-size: 11px; line-height: 16px; font-weight: 500;
+  min-width: 18px; text-align: center; padding: 0 5px; border-radius: var(--r-full);
+  background: var(--surface-subtle); color: var(--text-muted);
+  opacity: 0; width: 0; padding: 0; overflow: hidden;
+  transition: opacity var(--m-hover) var(--ease);
+}
+.v-rail.is-expanded .v-rail__count { opacity: 1; width: auto; padding: 0 5px; }
+.v-rail__item.is-active .v-rail__count { background: var(--brand); color: var(--brand-on); }
+.v-rail__count--attn { background: var(--dn-bg); color: var(--dn-tx); }
+
+.v-rail__acct {
+  margin-top: auto; display: flex; align-items: center; gap: var(--s-3);
+  padding: var(--s-3); border-top: 1px solid var(--border);
+  margin-left: calc(-1 * var(--s-3)); margin-right: calc(-1 * var(--s-3));
+}
+.v-rail:not(.is-expanded) .v-rail__acct { margin: auto 0 0; justify-content: center; border-top: 0; }
+.v-rail__acct__who { min-width: 0; opacity: 0; width: 0; overflow: hidden; white-space: nowrap; }
+.v-rail.is-expanded .v-rail__acct__who { opacity: 1; width: auto; }
+.v-rail__acct__name { font-size: var(--t-small-s); font-weight: 600; }
+.v-rail__acct__sub  { font-size: var(--t-meta-s); color: var(--text-muted); }
+
+/* --- TOP BAR ICON BUTTON -------------------------------------------------
+   Notifications and help. The count sits on the glyph, not beside it. */
+.v-topbar__icon {
+  position: relative; width: 32px; height: 32px; flex: none;
+  display: grid; place-items: center; border: 0; background: none; cursor: pointer;
+  border-radius: var(--r-sm); color: var(--text-muted);
+}
+.v-topbar__icon:hover { background: var(--surface-subtle); color: var(--text-secondary); }
+.v-topbar__icon__n {
+  position: absolute; top: 2px; right: 1px;
+  font-family: var(--num); font-size: 9.5px; line-height: 14px; font-weight: 600;
+  min-width: 14px; padding: 0 3px; border-radius: var(--r-full);
+  background: var(--dn-ic); color: #fff; text-align: center;
+}
+
+/* --- FILTER CHIP ---------------------------------------------------------
+   A labelled filter, so you can see what is being filtered without opening
+   anything. Replaces a single unlabelled "Filters" button. */
+.v-filterchip {
+  display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px;
+  border: 1px solid var(--border); border-radius: var(--r-ctrl); background: var(--surface);
+  font-size: var(--t-small-s); color: var(--text-secondary); cursor: pointer; white-space: nowrap;
+}
+.v-filterchip:hover { border-color: var(--border-strong); }
+.v-filterchip.is-set { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-700); }
+.v-filterchip__k { color: var(--text-muted); }
+.v-filterchip.is-set .v-filterchip__k { color: var(--brand-700); }
+.v-filterchip__v { font-weight: 500; }
+.v-filterchip svg { color: var(--text-faint); flex: none; }
+.v-filterchip.is-set svg { color: var(--brand); }
+
+/* --- A SELECT INSIDE A TABLE CELL ----------------------------------------
+   "Proposal sent" wrapped to two lines and collided with its own chevron. A
+   control in a cell gets one line and truncates. */
+.v-table .v-select {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  min-width: 0; max-width: 100%;
+}
+
+/* The keyboard hint inside the command search. Mono, because it is a key. */
+.v-kbd {
+  flex: none; font-size: 10.5px; line-height: 16px; padding: 1px 5px;
+  border: 1px solid var(--border-strong); border-radius: var(--r-xs);
+  background: var(--surface); color: var(--text-muted);
+}
+.vs-topbar__search { flex: 1; max-width: 420px; }
+
+/* A table wider than its card must SCROLL, not clip. The 11-column Touchpoints
+   table overran its card by 83px at 1512 and 203px at 1280, so "Last touch"
+   was simply not there -- and because the page itself did not overflow, no
+   check caught it. Silent truncation is the worst failure a data table has. */
+/* !important is deliberate and the only thing that works here: these cards
+   carry an inline style="overflow:hidden", which no stylesheet rule can
+   outrank. A card clipping a data column is never the intent. */
+.v-card:has(> .v-table),
+.v-card:has(> .v-rows > .v-table) { overflow-x: auto !important; }
+/* Deliberately NOT min-width:max-content -- that forces every column to its
+   natural width and pushes the last data columns out of view. */
+
+/* Making wide tables scroll fixed the silent clipping but pushed the row-action
+   column out of view -- the least discoverable control, hidden. So the last
+   column pins to the right edge and the rest scrolls under it. It keeps the
+   row's own background so a selected row stays tinted, and takes a hairline on
+   its left so it reads as pinned rather than as part of the data. */
+.v-card:has(> .v-table) > .v-table tr > *:last-child {
+  position: sticky; right: 0; z-index: 1;
+  background: var(--surface); box-shadow: -1px 0 0 var(--border);
+}
+.v-card:has(> .v-table) > .v-table thead tr > *:last-child { background: var(--surface-subtle); }
+.v-card:has(> .v-table) > .v-table tr.is-selected > *:last-child { background: var(--brand-50); }
+
+
+/* --------------------------------------------------------------------------
+   Upload target
+   The guest check-in page asks for a government ID, and the only device in the
+   room is a phone. So it is one large tap target, it names the formats, and it
+   says what happens to the file -- people hand over an ID more readily when the
+   page admits how long it keeps it.
+   ========================================================================== */
+
+.v-upload {
+  border: 1.5px dashed var(--border-strong); border-radius: var(--r-md);
+  background: var(--surface-subtle); padding: var(--s-5) var(--s-4);
+  text-align: center; cursor: pointer;
+  transition: border-color var(--m-hover) var(--ease), background var(--m-hover) var(--ease);
+}
+.v-upload:hover, .v-upload.is-hover { border-color: var(--brand); background: var(--brand-50); }
+.v-upload.is-error { border-color: var(--dn-ic); background: var(--dn-bg); }
+.v-upload__ico {
+  width: 38px; height: 38px; margin: 0 auto var(--s-3);
+  border-radius: var(--r-full); background: var(--surface);
+  border: 1px solid var(--border); color: var(--text-muted);
+  display: grid; place-items: center;
+}
+.v-upload:hover .v-upload__ico { color: var(--brand); border-color: var(--brand-200); }
+
+/* ==========================================================================
+   A12 — GUEST PAGES
+   The tokenized pages a customer opens from a WhatsApp message. No app shell,
+   no navigation, no account: a single column on a phone, brand-themed from
+   Workspace -> Brand.
+
+   Built from the three real captures. The live page's own shape is the spec:
+   photo -> brand block -> stay summary -> detail cards -> optional input ->
+   trust lines. The trust triple at the foot is the point of the archetype --
+   a stranger needs to know what this link is before they touch it.
+   ========================================================================== */
+
+.v-guest {
+  max-width: 440px; margin: 0 auto; background: var(--canvas); min-height: 100%;
+  /* No bottom padding: the footer below is sticky, not fixed, so it already
+     takes flow space at the end of the page. */
+}
+.v-guest__photo { position: relative; aspect-ratio: 16/10; background: var(--surface-muted); overflow: hidden; }
+.v-guest__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.v-guest__photo__n {
+  position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%);
+  font-size: var(--t-meta-s); color: var(--text-muted);
+}
+
+/* The brand block: who this link is from. Never Veerha's branding -- the guest
+   has a relationship with the property, not with the platform. */
+.v-guest__brand { display: flex; gap: var(--s-3); align-items: flex-start; padding: var(--s-6) var(--s-5) var(--s-4); }
+.v-guest__mark {
+  width: 42px; height: 42px; flex: none; border-radius: var(--r-tile);
+  background: var(--brand); color: var(--brand-on);
+  display: grid; place-items: center; font-weight: 600; font-size: 15px;
+}
+.v-guest__name { font-size: 20px; line-height: 26px; font-weight: 600; letter-spacing: -.018em; }
+.v-guest__meta { font-size: var(--t-small-s); color: var(--text-secondary); margin-top: 2px; }
+.v-guest__times { font-size: var(--t-meta-s); color: var(--text-muted); margin-top: 4px; }
+
+.v-guest__card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-card);
+  margin: 0 var(--s-4) var(--s-4); overflow: hidden;
+}
+.v-guest__card__hd {
+  display: flex; align-items: center; gap: var(--s-2);
+  padding: var(--s-4) var(--s-4) var(--s-3); font-weight: 600; font-size: var(--t-card-s);
+}
+.v-guest__card__hd svg { color: var(--text-muted); flex: none; }
+.v-guest__card__bd { padding: 0 var(--s-4) var(--s-4); }
+.v-guest__card__bd > .rule { margin: var(--s-3) 0; }
+
+/* check-in -> check-out -> nights, the one thing a guest looks for first */
+.v-guest__span { display: grid; grid-template-columns: 1fr auto 1fr auto; gap: var(--s-3); align-items: end; }
+.v-guest__span .label { display: block; margin-bottom: 2px; }
+.v-guest__span__v { font-size: var(--t-small-s); font-weight: 600; }
+.v-guest__span__arrow { color: var(--text-faint); padding-bottom: 2px; }
+
+/* A sticky footer, because the action must be reachable without scrolling back. */
+.v-guest__foot {
+  position: sticky; bottom: 0; z-index: 5;
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-2);
+}
+.v-guest__foot .v-btn { width: 100%; }
+.v-guest__foot__note { font-size: var(--t-meta-s); color: var(--text-muted); text-align: center; }
+
+/* The trust triple. Quiet by design -- reassurance, not marketing. */
+.v-guest__trust { padding: var(--s-5) var(--s-5) var(--s-8); display: flex; flex-direction: column; gap: var(--s-3); }
+.v-guest__trust div { display: flex; gap: var(--s-3); align-items: flex-start; font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-guest__trust svg { flex: none; margin-top: 1px; color: var(--text-faint); }
+
+.v-guest__addr { padding: var(--s-4) var(--s-5); border-top: 1px solid var(--border); }
+.v-guest__addr div { display: flex; gap: var(--s-3); align-items: flex-start; font-size: var(--t-meta-s); color: var(--text-muted); margin-bottom: 6px; }
