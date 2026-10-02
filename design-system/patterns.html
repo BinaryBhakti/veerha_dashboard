@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signature patterns · Veerha Design System</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="system/fonts.css">
+<link rel="stylesheet" href="system/tokens.css">
+<link rel="stylesheet" href="system/base.css">
+<link rel="stylesheet" href="system/components.css">
+<link rel="stylesheet" href="system/sheet.css">
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Design System</div>
+        <div class="sh-brand__sub">Indigo Slate · v1.0 · September 2026</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html">Overview</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html" aria-current="page">Patterns</a>
+      <a href="spec.html">Written spec</a>
+      <a href="departures.html">Departures</a>
+      <a href="../screens/index.html">Screens ↗</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>Signature patterns</h1>
+    <p>
+      Six compositions that should become more recognisable than the colour palette. They are how
+      the product explains itself: what Veerha concluded, what it suggests, why it believes that,
+      what it has been doing, what it needs from you, and who did the work. Everything else in this
+      system exists to support them.
+    </p>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-sec__n">00</div>
+    <h2 class="sh-sec__h">The order that governs them</h2>
+    <p class="sh-sec__d">
+      Every AI surface follows the same progression — <b>insight, then evidence, then action</b>.
+      A conclusion with no evidence is a guess the user has no way to check; evidence with no
+      action is homework. Reversing this order is the most common way these patterns fail.
+    </p>
+    <hr class="sh-sec__rule">
+    <table class="sh-tbl">
+      <thead><tr><th style="width:44px">#</th><th>Emphasis</th><th>Answers</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>What needs action</td><td>What should I do right now?</td></tr>
+        <tr><td class="num">2</td><td>What changed</td><td>What moved since I last looked?</td></tr>
+        <tr><td class="num">3</td><td>What is important</td><td>What deserves my attention?</td></tr>
+        <tr><td class="num">4</td><td>What Veerha recommends</td><td>What does the system think?</td></tr>
+        <tr><td class="num">5</td><td>Why Veerha believes it</td><td>Can I check its reasoning?</td></tr>
+        <tr><td class="num">6</td><td>Detail</td><td>Everything else, on request</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 1 · VEERHA'S READ ============ -->
+  <section class="sh-sec" id="read">
+    <div class="sh-sec__n">01</div>
+    <h2 class="sh-sec__h">Veerha's Read</h2>
+    <p class="sh-sec__d">
+      The interpretation. A conclusion in plain language, the evidence behind it, the attributes it
+      inferred, and what it was based on. The intelligence should be obvious from the content —
+      never from the styling.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame" style="max-width:640px">
+        <div class="v-ai" style="width:100%">
+          <div class="label v-ai__label"><span class="v-ai__mark">V</span>Veerha's read</div>
+          <div class="v-read__conclusion">Ready for a callback, not another message.</div>
+          <p class="v-read__evidence">
+            Arjun asked for a callback about a two-adult booking for 15–17 October and has already
+            chosen the Premier River Retreat room. He has replied within the hour every time.
+          </p>
+          <div class="v-read__attrs">High intent · callback requested · price sensitive</div>
+          <div class="v-read__based">Based on: 4 replies · confirmed dates · 10 previous enquiries</div>
+        </div>
+      </div>
+      <table class="sh-tbl">
+        <thead><tr><th style="width:190px">Part</th><th>Rule</th></tr></thead>
+        <tbody>
+          <tr><td>Eyebrow</td><td>Always <code>VEERHA'S READ</code>, with the mark. Never a sparkle icon.</td></tr>
+          <tr><td>Conclusion</td><td>One sentence, and it must commit to something. "Ready for a callback, not another message" — not "This lead shows high engagement."</td></tr>
+          <tr><td>Evidence</td><td>Two or three sentences of the actual facts, in the customer's terms.</td></tr>
+          <tr><td>Attributes</td><td>Inferred qualities, separated by <code>·</code>. These are conclusions, not data fields.</td></tr>
+          <tr><td>Based on</td><td>The provenance line. What the read was computed from, so it can be doubted.</td></tr>
+        </tbody>
+      </table>
+      <div class="sh-rules">
+        <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+          <p>Write the conclusion the way a good colleague would say it across a desk.</p></div>
+        <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+          <p>Don't make this a purple AI card with a glow. The greige layer and the wording carry it; decoration would only make it look less trustworthy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2 · RECOMMENDED NEXT STEP ============ -->
+  <section class="sh-sec" id="next">
+    <div class="sh-sec__n">02</div>
+    <h2 class="sh-sec__h">Recommended Next Step</h2>
+    <p class="sh-sec__d">
+      The action. One of the most important components in the product: it is the thing that turns a
+      read into work done. It carries a time, a justification, and exactly two buttons.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame" style="max-width:640px">
+        <div class="v-next" style="width:100%">
+          <div class="label v-next__label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Recommended next step</div>
+          <div class="v-next__action">Call Arjun tomorrow at 11:00</div>
+          <p class="v-next__why">He asked for it, and has replied within the hour every time.</p>
+          <div class="v-next__acts">
+            <button class="v-btn v-btn--primary">Call now</button>
+            <button class="v-btn v-btn--secondary">Schedule</button>
+          </div>
+        </div>
+      </div>
+      <div class="sh-note">
+        <strong>Two buttons, never more.</strong> One does it now, one defers it. A third option
+        turns a recommendation back into a decision, which is the work this pattern exists to remove.
+        This is the one place brand indigo tints a surface — because it is the single most
+        actionable thing on the screen.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 · EVIDENCE ============ -->
+  <section class="sh-sec" id="evidence">
+    <div class="sh-sec__n">03</div>
+    <h2 class="sh-sec__h">Evidence</h2>
+    <p class="sh-sec__d">
+      The reasoning, as a ledger. Each row is a claim and where it came from, and every source is a
+      link — the user can always go and check. Crucially it includes the gaps, not only the
+      confirmations.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface" style="max-width:640px">
+        <table class="v-ev" style="width:100%">
+          <thead><tr><th class="label">Evidence</th><th class="label" style="text-align:right">Source</th></tr></thead>
+          <tbody>
+            <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              Settled on Premier River Retreat Room</span></td><td class="v-ev__source">Options →</td></tr>
+            <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--gap">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+              Nothing scheduled yet</span></td><td class="v-ev__source">Follow-ups →</td></tr>
+            <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              Replied 4 times, always within the hour</span></td><td class="v-ev__source">Conversation →</td></tr>
+            <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              Enquired 10 times before</span></td><td class="v-ev__source">Past dealings →</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sh-rules">
+        <div class="sh-rule sh-rule--do"><div class="sh-rule__h">Do</div>
+          <p>Include what's missing. "Nothing scheduled yet" is why the recommendation exists — hiding it makes the read look like magic instead of reasoning.</p></div>
+        <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
+          <p>Don't list raw field values. "source: whatsapp" is data; "Replied 4 times, always within the hour" is evidence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4 · VEERHA IS WORKING ============ -->
+  <section class="sh-sec" id="working">
+    <div class="sh-sec__n">04</div>
+    <h2 class="sh-sec__h">Veerha Is Working</h2>
+    <p class="sh-sec__d">
+      Autonomous activity, as a timeline: time, what it did, and what changed. This is what makes
+      the product feel alive — without a single animation.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface" style="max-width:640px">
+        <div style="width:100%">
+          <div class="label" style="margin-bottom:var(--s-3)">Veerha is working</div>
+          <div class="v-working__row"><span class="v-working__time">10:42</span><span class="v-working__act">Replied to Arjun</span><span class="v-working__obj">WhatsApp</span></div>
+          <div class="v-working__row"><span class="v-working__time">10:38</span><span class="v-working__act">Qualified Priya Nair</span><span class="v-working__obj num">Score 72 → 91</span></div>
+          <div class="v-working__row"><span class="v-working__time">10:21</span><span class="v-working__act">Booked a meeting</span><span class="v-working__obj">Tomorrow · 11:00</span></div>
+          <div class="v-working__row"><span class="v-working__time">09:58</span><span class="v-working__act">Sent a follow-up</span><span class="v-working__obj">Vikram Rao</span></div>
+        </div>
+      </div>
+      <div class="sh-note">
+        Every row names a real object, and the delta column is the point — <code>Score 72 → 91</code>
+        is the difference between "Veerha did something" and "Veerha did something that mattered".
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5 · WAITING ON YOU ============ -->
+  <section class="sh-sec" id="waiting">
+    <div class="sh-sec__n">05</div>
+    <h2 class="sh-sec__h">Waiting on You</h2>
+    <p class="sh-sec__d">
+      Human decisions. This is a first-class product concept, not a notification list — it
+      represents the core Veerha relationship: AI autonomy plus human judgment. Veerha stops here
+      and asks, rather than guessing on the user's behalf.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame" style="max-width:640px">
+        <div class="v-card" style="width:100%">
+          <div class="v-card__head">
+            <div class="grow">
+              <div class="label">Waiting on you</div>
+              <div class="v-waiting__count" style="margin-top:var(--s-2)">4 decisions</div>
+              <p class="v-card__desc">Veerha stops here and asks, rather than guessing on your behalf.</p>
+            </div>
+            <span class="t-meta" style="color:var(--brand);font-weight:500">Open queue →</span>
+          </div>
+          <div class="v-card__body">
+            <div class="v-waiting__row" style="border-top:0">
+              <span class="grow"><span class="v-waiting__title">Confirm call with Arjun</span>
+                <div class="v-waiting__ctx">Mon 21 Sep, 12:00 · agreed on WhatsApp</div></span>
+              <span class="v-waiting__verb">Take over →</span></div>
+            <div class="v-waiting__row">
+              <span class="grow"><span class="v-waiting__title">Approve quote for Vikram</span>
+                <div class="v-waiting__ctx">₹36,100 · Garden Suite, 20–22 Oct</div></span>
+              <span class="v-waiting__verb">Review →</span></div>
+            <div class="v-waiting__row">
+              <span class="grow"><span class="v-waiting__title">Customer asked for an expert</span>
+                <div class="v-waiting__ctx">Priya Nair · asked twice about accessibility</div></span>
+              <span class="v-waiting__verb">Take over →</span></div>
+            <div class="v-waiting__row">
+              <span class="grow"><span class="v-waiting__title">Refund request needs sign-off</span>
+                <div class="v-waiting__ctx">₹12,400 · booking BKG-4417</div></span>
+              <span class="v-waiting__verb">Decide →</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sh-note">
+        <strong>The verb is the link.</strong> "Take over", "Review", "Decide" — each says what will
+        happen when it is clicked. A row that ends in a chevron with no verb makes the user open it
+        to find out what is being asked.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6 · AI EMPLOYEE ============ -->
+  <section class="sh-sec" id="employee">
+    <div class="sh-sec__n">06</div>
+    <h2 class="sh-sec__h">AI Employee</h2>
+    <p class="sh-sec__d">
+      The worker responsible for the task. AI employees look like workforce members — a role, a
+      current state, a scope, and a performance record. Not bots, and never a robot illustration.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame">
+        <div class="v-card" style="width:300px">
+          <div class="v-card__body" style="padding:var(--s-5)">
+            <div class="v-employee__top">
+              <span class="v-avatar v-avatar--lg v-avatar--ai">V</span>
+              <div class="grow">
+                <div class="v-employee__role">Sales Executive</div>
+                <div class="v-employee__state"><i class="v-dot v-dot--ok"></i>Working · replying to Arjun</div>
+              </div>
+            </div>
+            <p class="v-employee__scope">Handles enquiries from WhatsApp and the website, qualifies them, and books meetings for the team.</p>
+            <div class="v-employee__stats">
+              <div class="v-employee__stat"><b>12</b><span>Conversations</span></div>
+              <div class="v-employee__stat"><b>7</b><span>Qualified</span></div>
+              <div class="v-employee__stat"><b>3</b><span>Meetings</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="v-card" style="width:300px">
+          <div class="v-card__body" style="padding:var(--s-5)">
+            <div class="v-employee__top">
+              <span class="v-avatar v-avatar--lg v-avatar--ai">V</span>
+              <div class="grow">
+                <div class="v-employee__role">Front Desk</div>
+                <div class="v-employee__state"><i class="v-dot v-dot--warn"></i>Waiting for approval</div>
+              </div>
+            </div>
+            <p class="v-employee__scope">Confirms arrivals, handles check-in questions, and escalates anything involving a refund.</p>
+            <div class="v-employee__stats">
+              <div class="v-employee__stat"><b>31</b><span>Check-ins</span></div>
+              <div class="v-employee__stat"><b>4</b><span>Escalated</span></div>
+              <div class="v-employee__stat"><b>0</b><span>Missed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="sh-tbl">
+        <thead><tr><th style="width:230px">An employee page must answer</th><th>Shown as</th></tr></thead>
+        <tbody>
+          <tr><td>What does this employee do?</td><td>Role title and scope line</td></tr>
+          <tr><td>What is it doing right now?</td><td>Status dot plus a specific current action</td></tr>
+          <tr><td>How well is it performing?</td><td>Three figures, never a wall of metrics</td></tr>
+          <tr><td>What does it know?</td><td>Knowledge and memory sections</td></tr>
+          <tr><td>What is it allowed to do?</td><td>Rules and automations</td></tr>
+          <tr><td>When does it hand over?</td><td>Human handoff conditions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ HANDOFF STATES ============ -->
+  <section class="sh-sec" id="handoff">
+    <div class="sh-sec__n">07</div>
+    <h2 class="sh-sec__h">Human handoff</h2>
+    <p class="sh-sec__d">
+      The states a conversation moves between, and the one line that must appear when a person
+      takes over. This has to be unmistakable — ambiguity about who is replying is the worst
+      failure this product can have.
+    </p>
+    <hr class="sh-sec__rule">
+
+    <div class="sh-spec">
+      <div class="sh-frame sh-frame--surface sh-frame--col">
+        <div class="row wrap">
+          <span class="v-badge v-badge--ai">AI handling</span>
+          <span class="v-badge v-badge--brand">Human handling</span>
+          <span class="v-badge v-badge--danger">Needs a human</span>
+          <span class="v-badge v-badge--warn">Waiting for approval</span>
+          <span class="v-badge v-badge--neutral">Paused</span>
+        </div>
+        <div class="v-callout v-callout--info" style="width:100%;max-width:560px">
+          <span class="v-callout__ic">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+          <span>You are handling this conversation. Veerha's automation is paused.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Design System · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span>Confidential</span>
+  </footer>
+
+</main>
+</body>
+</html>
