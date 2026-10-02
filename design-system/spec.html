@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Written spec · Veerha Design System</title>
+<meta name="description" content="The written companion to the Veerha Indigo Slate design system.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M8 10l8 13 8-13' stroke='white' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="system/fonts.css">
+<link rel="stylesheet" href="system/tokens.css">
+<link rel="stylesheet" href="system/base.css">
+<link rel="stylesheet" href="system/components.css">
+<link rel="stylesheet" href="system/sheet.css">
+</head>
+<body>
+
+<header class="sh-top">
+  <div class="sh-top__in">
+    <div class="sh-brand">
+      <div class="sh-brand__mark">V</div>
+      <div>
+        <div class="sh-brand__name">Veerha Design System</div>
+        <div class="sh-brand__sub">Indigo Slate · v1.0 · September 2026</div>
+      </div>
+    </div>
+    <nav class="sh-nav">
+      <a href="index.html">Overview</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="spec.html" aria-current="page">Written spec</a>
+      <a href="departures.html">Departures</a>
+      <a href="../screens/index.html">Screens ↗</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../hub.html">← Index</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="sh-hero">
+    <h1>The written spec</h1>
+    <p>
+      The reasoning behind the pages, in one place — for when you want the rules without a
+      browser, or you are implementing and need them stated rather than shown. Everything here is
+      also available as <code>DESIGN-SYSTEM.md</code> in the folder.
+    </p>
+    <div class="sh-toc">
+      <a href="#purpose">1 · What this is for</a>
+      <a href="#colour">2 · Colour</a>
+      <a href="#type">3 · Typography</a>
+      <a href="#shape">4 · Space, shape, depth</a>
+      <a href="#components">5 · Components</a>
+      <a href="#patterns">6 · Signature patterns</a>
+      <a href="#writing">7 · Writing</a>
+      <a href="#extending">8 · Extending this</a>
+      <a href="#scope">9 · Scope of v1.0</a>
+    </div>
+  </section>
+
+  <section class="sh-sec">
+    <div class="sh-prose">
+
+      <p class="t-meta muted">
+        Engagement KK/VEE/UX-2026-01 · Deliverable 02, <em>Design system alignment</em> ·
+        Kora Kaagaz · September 2026
+      </p>
+
+      <table>
+        <thead><tr><th style="width:36%">File</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><code>index.html</code></td><td>Cover and contents</td></tr>
+          <tr><td><code>foundations.html</code></td><td>Colour, type, spacing, radius, elevation, icons, motion</td></tr>
+          <tr><td><code>components.html</code></td><td>The component library, every state drawn</td></tr>
+          <tr><td><code>patterns.html</code></td><td>The six signature Veerha patterns</td></tr>
+          <tr><td><code>spec.html</code> · <code>DESIGN-SYSTEM.md</code></td><td>This document</td></tr>
+          <tr><td><code>departures.html</code> · <code>DEPARTURES.md</code></td><td>Where this diverges from design-system v2, and why</td></tr>
+          <tr><td><code>system/tokens.css</code></td><td>Every value in the system. The single source of truth</td></tr>
+          <tr><td><code>system/base.css</code></td><td>Reset, type roles, layout primitives</td></tr>
+          <tr><td><code>system/components.css</code></td><td>The component layer</td></tr>
+          <tr><td><code>system/sheet.css</code></td><td>Documentation chrome only — not product code</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sh-note">
+        <strong>For engineering:</strong> lift <code>tokens.css</code>, <code>base.css</code> and
+        <code>components.css</code>. Leave <code>sheet.css</code> — it styles this document, not
+        the product.
+      </div>
+
+      <h2 id="purpose">1 · What this system is for</h2>
+      <p>
+        Veerha is not a conventional CRM. It puts AI employees, customer conversations and business
+        operations in one workspace, and the interface has to make that manageable rather than
+        impressive. Five questions have to be answerable at a glance:
+      </p>
+      <div class="sh-quote">
+        <p>What happened? · What did Veerha do? · Why? · What needs my attention? · What happens next?</p>
+      </div>
+      <p>Everything here is in service of those. The four principles that decide close calls:</p>
+      <ol>
+        <li><strong>Clarity before personality.</strong> Sales teams keep this open eight hours a
+          day. Hierarchy, density and scannability first; character after, and never at their expense.</li>
+        <li><strong>Humans stay in the loop.</strong> The product always shows whether AI is acting,
+          waiting, asking for approval, or handing back.</li>
+        <li><strong>Every claim shows its evidence.</strong> A recommendation nobody can interrogate
+          is one nobody will trust.</li>
+        <li><strong>Repeated work uses shared patterns.</strong> The 103 routes in the live product
+          collapse to 11 layouts. A screen that invents its own structure is a screen that will drift.</li>
+      </ol>
+
+      <h2 id="colour">2 · Colour</h2>
+      <p>Four independent layers. They do not borrow from one another.</p>
+
+      <h3>Neutrals — structure</h3>
+      <p>
+        Cool slate. The canvas is <code>#F8FAFC</code>; surfaces are white and separate from it with
+        a 1px border rather than a shadow. The product is mostly flat.
+      </p>
+
+      <h3>Brand — action and selection</h3>
+      <p>
+        Indigo, <code>#4F46E5</code> at step 600, with a full 50–900 ramp so components have a
+        lighter or darker step to reach for. Brand marks primary buttons, the active nav item, the
+        selected row, and links.
+      </p>
+      <p>
+        <strong>Brand does not carry status,</strong> and it is never applied simply to make the
+        interface look branded. The one place it tints a whole surface is Recommended Next Step —
+        because that is the single most actionable thing on a screen.
+      </p>
+
+      <h3>AI — the system layer</h3>
+      <p>
+        Warm greige: <code>#F4F2EA</code> background, <code>#D9D4C7</code> border,
+        <code>#5F5A4F</code> text, <code>#6E6758</code> mark.
+      </p>
+      <p>
+        Everything Veerha itself produced sits here. <strong>It is deliberately not a colour.</strong>
+        The earlier violet measured 19° from the brand hue at 83% saturation — the same colour
+        family as indigo — so AI surfaces did not read as distinct from ordinary brand chrome, which
+        defeats the point of marking them at all. This greige is 158° opposite at 11% saturation.
+        Against a cool canvas the warmth is unmistakably deliberate.
+      </p>
+      <p>
+        AI identity comes from the Veerha mark, the wording, the evidence and the interaction
+        pattern. Colour is the quietest part of it.
+      </p>
+
+      <h3>Semantic — meaning</h3>
+      <p>
+        Success, warning, danger, info. Each has a background, border, text and icon value, and all
+        four are independent of the brand. <strong>Colour is never the only signal:</strong> every
+        status carries a label, and most carry an icon. "Hot" is legible with no colour vision at all.
+      </p>
+
+      <h3>Accessibility</h3>
+      <p>
+        All 30 foreground/background pairs in the system have been measured. Text clears 4.5:1;
+        non-text UI clears 3:1. Three values were changed from the prototype to get there:
+      </p>
+      <table>
+        <thead><tr><th>Token</th><th>Was</th><th>Now</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><code>--text-muted</code></td><td><code>#64748B</code></td><td><code>#626F85</code></td><td>4.34:1 on the subtle fill — under AA</td></tr>
+          <tr><td><code>--text-faint</code></td><td><code>#94A3B8</code></td><td><code>#7C8899</code></td><td>2.45:1 on canvas, and it was being used for placeholder text</td></tr>
+          <tr><td>control borders</td><td><code>#CBD5E1</code></td><td><code>#8690A3</code></td><td>1.48:1 — on a white card the border is the only thing identifying the field</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <code>--text-faint</code> is now <strong>decorative only</strong> — dividers, inactive
+        glyphs, disabled controls. Anything a person has to <em>read</em> uses
+        <code>--text-muted</code>.
+      </p>
+
+      <h2 id="type">3 · Typography</h2>
+      <p>
+        Two faces, both open source under the SIL Open Font License 1.1 and both self-hosted in
+        <code>system/fonts/</code> so the folder works with no network:
+      </p>
+      <table>
+        <thead><tr><th style="width:150px">Face</th><th style="width:110px">Token</th><th>Used for</th><th style="width:130px">Weights</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Geist</strong></td><td><code>--ui</code></td>
+              <td>The whole interface. Falls back to Inter, then the system sans</td><td>400 · 500 · 600</td></tr>
+          <tr><td><strong>Geist Mono</strong></td><td><code>--num</code></td>
+              <td>Figures only — table cells, stat numerals, scores, deltas. Falls back to <code>ui-monospace</code>, then Menlo</td><td>400 · 500</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Geist is built for interfaces — its letterforms stay distinct at 12–14px, which is where
+        most of this product lives. Geist Mono exists for one reason: every digit occupies the same
+        width, so a column of ₹ values lines up and can be compared by eye. A column of prices that
+        doesn't align is a column that can't be scanned.
+        <a href="foundations.html#type">See the full specimen</a> — character set, the three
+        weights, and the tabular-versus-proportional comparison.
+      </p>
+      <p>
+        Three weights: <strong>400, 500, 600.</strong> There is no 700. Hierarchy comes from scale
+        and spacing before weight, and from weight before colour.
+      </p>
+      <table>
+        <thead><tr><th>Role</th><th>Size / line</th><th>Weight</th><th>Used for</th></tr></thead>
+        <tbody>
+          <tr><td>Display</td><td>32 / 40</td><td>600</td><td>The daily brief headline</td></tr>
+          <tr><td>Page title</td><td>24 / 32</td><td>600</td><td>Page headers</td></tr>
+          <tr><td>Section</td><td>18 / 26</td><td>600</td><td>Section headings</td></tr>
+          <tr><td>Card title</td><td>16 / 24</td><td>600</td><td>Card and panel titles</td></tr>
+          <tr><td>Body</td><td>14 / 21</td><td>400</td><td>Default</td></tr>
+          <tr><td>Small</td><td>13 / 19</td><td>400</td><td>Table cells, secondary copy</td></tr>
+          <tr><td>Metadata</td><td>12 / 18</td><td>500</td><td>Timestamps, captions</td></tr>
+          <tr><td>Micro label</td><td>11 / 16</td><td>600</td><td>Uppercase eyebrows, <code>.075em</code> tracked</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>No serif anywhere in the interface.</strong> This is a standing client instruction,
+        and it comes from a real misread: "premium" and "editorial" are principles about clarity and
+        restraint, not instructions to add a serif face or a dark background.
+      </p>
+      <p>Fonts are self-hosted in <code>system/fonts/</code> so the folder works with no network.</p>
+
+      <h2 id="shape">4 · Space, shape, depth</h2>
+      <p>
+        <strong>Spacing</strong> is an 8px base: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80. Use the
+        token, not the number.
+      </p>
+      <p>
+        <strong>Grid</strong> is 12 columns, 24px between them, 32px at the page edge. Major elements
+        align to it — nothing is positioned independently.
+      </p>
+      <p><strong>Radius</strong>, one value per role, identical at every breakpoint:</p>
+      <table>
+        <thead><tr><th>Role</th><th>Value</th><th>Applies to</th></tr></thead>
+        <tbody>
+          <tr><td><code>--r-chip</code></td><td>4px</td><td>Badges, chips</td></tr>
+          <tr><td><code>--r-ctrl</code></td><td>6px</td><td>Buttons, inputs, selects</td></tr>
+          <tr><td><code>--r-tile</code></td><td>10px</td><td>Stat tiles, nested surfaces</td></tr>
+          <tr><td><code>--r-card</code></td><td>12px</td><td>Sections, panels, drawers</td></tr>
+          <tr><td><code>--r-full</code></td><td>—</td><td>Avatars, dots, compact semantic pills <strong>only</strong></td></tr>
+        </tbody>
+      </table>
+      <p>
+        The prototype declared a 16px card radius but applied it only on mobile — desktop surfaces
+        were actually 10px, so cards changed shape between breakpoints for no reason. That is now
+        reconciled.
+      </p>
+      <p>
+        <strong>Elevation</strong> is mostly absent. L0 (no shadow) is the default for pages, tables
+        and sections. L1 for cards, L2 for menus and popovers, L3 for modals and drawers. Cards
+        should not all appear to float.
+      </p>
+
+      <h2 id="components">5 · Components</h2>
+      <p>
+        <a href="components.html">The component library</a> is the reference. Every component is
+        shown with each of its states drawn as a separate frame — default, hover, pressed, focus,
+        selected, disabled, loading, error — because a state you can only reach by hovering is a
+        state nobody reviews.
+      </p>
+      <p>
+        Naming: every class is <code>v-</code> prefixed, and forced states use <code>.is-*</code>.
+        <code>.v-btn:hover, .v-btn.is-hover { … }</code> — the real pseudo-class for behaviour, the
+        class for documentation.
+      </p>
+
+      <h3>Four components that do not exist in the product today</h3>
+      <p>
+        The live app was crawled across 103 screens. These were absent, and they are designed here
+        rather than documented:
+      </p>
+      <ul>
+        <li><strong>Loading / skeletons.</strong> Not one instance anywhere, in a product whose AI
+          work genuinely takes seconds — generating creative, reading a listing, regenerating
+          settings. Skeletons preserve the layout that is coming so the page does not jump.</li>
+        <li><strong>Field validation.</strong> No error text and no invalid styling anywhere,
+          including registration and the property wizard. Error copy must be specific:
+          <em>"Add the domain — this address is missing its .com"</em>, not <em>"Invalid email"</em>.</li>
+        <li><strong>Confirmation dialog.</strong> None captured, yet destructive buttons exist — red
+          trash icons on workflows and tasks, cancel links on follow-ups.
+          <strong>Worth verifying in the live app</strong> whether those fire unconfirmed.</li>
+        <li><strong>Pipeline board.</strong> <code>/opportunities</code> offers a
+          <code>Table | Pipeline</code> toggle, but every pipeline view captured was an identical
+          table. <strong>Look at the live app before designing this</strong> — a kanban for 61 deals
+          designed blind is a bad bet.</li>
+      </ul>
+
+      <h3>Two structural fixes carried into the system</h3>
+      <ul>
+        <li><strong>The detail drawer has one header and one close button.</strong> The live drawer
+          has two of each — an outer drawer header and a second record header nested inside it — on
+          all twelve drawer screens.</li>
+        <li><strong>The save bar sits in the page footer, in flow.</strong> Today it is pinned
+          bottom-right on every settings screen and covers the content beneath it.</li>
+      </ul>
+
+      <h2 id="patterns">6 · The signature patterns</h2>
+      <p>
+        Six compositions that should become more recognisable than the palette.
+        <a href="patterns.html">The patterns page</a> has the full anatomy of each.
+      </p>
+      <table>
+        <thead><tr><th>Pattern</th><th>Carries</th><th>Must contain</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Veerha's Read</strong></td><td>Interpretation</td><td>Conclusion sentence · evidence paragraph · attribute line · "Based on:" provenance</td></tr>
+          <tr><td><strong>Recommended Next Step</strong></td><td>Action</td><td>The action with a time · one-line justification · exactly two buttons</td></tr>
+          <tr><td><strong>Evidence</strong></td><td>Reasoning</td><td>Claim/source ledger, gaps included, every source clickable</td></tr>
+          <tr><td><strong>Veerha Is Working</strong></td><td>Autonomy</td><td>Timeline of time / action / object-or-delta</td></tr>
+          <tr><td><strong>Waiting on You</strong></td><td>Human judgment</td><td>A count · ruled rows · a right-aligned verb link</td></tr>
+          <tr><td><strong>AI Employee</strong></td><td>Accountability</td><td>Role · live state · scope · three performance figures</td></tr>
+        </tbody>
+      </table>
+      <p>
+        They all obey one order: <strong>insight, then evidence, then action.</strong> A conclusion
+        with no evidence is a guess nobody can check; evidence with no action is homework. Reversing
+        that order is the most common way these patterns fail.
+      </p>
+      <p>
+        <strong>Human handoff</strong> has five states — AI handling, Human handling, Needs a human,
+        Waiting for approval, Paused — and when a person takes over the product says so in one
+        unmissable line: <em>"You are handling this conversation. Veerha's automation is paused."</em>
+        Ambiguity about who is replying is the worst failure this product can have.
+      </p>
+
+      <h2 id="writing">7 · Writing</h2>
+      <p>Short, direct, human, operational.</p>
+      <table>
+        <thead><tr><th style="width:52%">Use</th><th>Not</th></tr></thead>
+        <tbody>
+          <tr><td>"Needs your attention"</td><td>"Pending human intervention required"</td></tr>
+          <tr><td>"Veerha recommends a callback"</td><td>"AI-generated next-best-action recommendation"</td></tr>
+          <tr><td>"Take over"</td><td>"Initiate manual handling workflow"</td></tr>
+          <tr><td>"WhatsApp could not be connected. Your credentials expired on 18 September."</td><td>"Something went wrong."</td></tr>
+        </tbody>
+      </table>
+      <p>
+        No hype, no "magic", no exclamation marks, no fake certainty, no anthropomorphic claims about
+        what the AI "feels".
+      </p>
+
+      <h2 id="extending">8 · Extending this</h2>
+      <p>
+        New surfaces are composed from existing components before a new component is invented. When
+        one is genuinely needed:
+      </p>
+      <ol>
+        <li><strong>Grep the class name first.</strong> In the prototype an unprefixed
+          <code>.delta</code> collided with an existing one and silently broke the desktop timeline.
+          Assume a more specific rule already exists.</li>
+        <li><strong>Reach only for tokens.</strong> No raw hex, no bare pixel radius. This is
+          checkable — <code>grep -nE '#[0-9A-Fa-f]{3,8}' system/base.css system/components.css</code>
+          should return nothing.</li>
+        <li><strong>Draw every state</strong> it can be in, including empty, loading and error. If a
+          state has no design, it will get an accidental one.</li>
+        <li><strong>Measure the contrast</strong> of any new colour pair. Text 4.5:1, non-text UI 3:1.</li>
+        <li><strong>Use variants, not duplicates.</strong> A component with six looks is one component.</li>
+      </ol>
+
+      <h2 id="scope">9 · Scope of version 1.0</h2>
+      <p><strong>In:</strong> light mode, desktop, the foundations, the component library and the six patterns.</p>
+      <p>
+        <strong>Next:</strong> tablet and mobile (three bands — desktop, tablet at a 64px icon rail,
+        mobile as a full app shell), then the dark theme, then the 77-screen inventory itself.
+      </p>
+      <p>
+        The tokens the responsive layer will need are already declared — including <code>--k</code>,
+        the mobile scale factor, which stays at 1 everywhere until the mobile band lands — so nothing
+        has to be retrofitted.
+      </p>
+      <p>Two known gaps worth naming:</p>
+      <ul>
+        <li><strong>The mobile responsive specification is not in hand.</strong>
+          <em>VEERHA — MOBILE RESPONSIVE DESIGN GUIDELINES</em>, 60 numbered sections, is referenced
+          throughout the prototype handoff but is not on file. Worth requesting before the responsive
+          phase.</li>
+        <li><strong>Ten customer-facing screens have not been seen.</strong> The tokenized guest
+          pages — quote, proposal, stay, check-in, booking, form, preferences — need one real share
+          link each to capture.</li>
+      </ul>
+
+      <div class="sh-note">
+        See <a href="departures.html">Departures</a> for where this system knowingly diverges from
+        design-system v2.
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="sh-foot">
+    <span>Veerha Design System · Indigo Slate v1.0</span>
+    <span>Kora Kaagaz · September 2026</span>
+    <span><a href="departures.html" style="color:var(--brand)">Departures from v2 →</a></span>
+  </footer>
+
+</main>
+</body>
+</html>
