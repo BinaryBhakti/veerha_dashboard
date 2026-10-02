@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veerha — redesign prototype</title>
+<meta name="description" content="Clickable prototype of the redesigned Veerha workforce platform: dashboard, 52 screens, design system and a before/after map.">
+<link rel="stylesheet" href="design-system/system/fonts.css">
+<link rel="stylesheet" href="design-system/system/tokens.css">
+<link rel="stylesheet" href="design-system/system/base.css">
+<link rel="stylesheet" href="design-system/system/components.css">
+<style>
+  /* Hub-only composition. Every colour, radius and step is a design-system
+     token -- the front door has to be the clearest proof the system holds. */
+  body { background: var(--canvas); color: var(--text-primary); min-height: 100vh; }
+  .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: var(--s-10) 0 var(--s-12); }
+
+  .brand { display: flex; align-items: center; gap: var(--s-3); }
+  .brand__mark {
+    width: 34px; height: 34px; border-radius: var(--r-md); background: var(--brand);
+    color: var(--brand-on); display: grid; place-items: center; font-weight: 600; font-size: 15px;
+  }
+  .brand__name { font-weight: 600; letter-spacing: -.01em; }
+
+  .hero { margin-top: var(--s-8); }
+  .hero h1 {
+    font-size: clamp(30px, 4.4vw, 46px); line-height: 1.08; font-weight: 600;
+    letter-spacing: -.028em; max-width: 19ch; margin-top: var(--s-4);
+  }
+  .hero h1 em { font-style: normal; color: var(--brand); }
+  .hero p { font-size: 15px; line-height: 1.62; color: var(--text-secondary); max-width: 62ch; margin-top: var(--s-4); }
+
+  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--s-4); margin-top: var(--s-8); }
+  .tile {
+    display: flex; flex-direction: column; gap: var(--s-4); padding: var(--s-5);
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-card);
+    text-decoration: none; color: inherit; min-height: 188px;
+    transition: border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease), transform var(--m-hover) var(--ease);
+  }
+  .tile:hover { border-color: var(--border-strong); box-shadow: var(--e2); transform: translateY(-2px); }
+  .tile__ic {
+    width: 38px; height: 38px; border-radius: var(--r-tile); display: grid; place-items: center;
+    background: var(--brand-soft); color: var(--brand); flex: none;
+  }
+  .tile h2 { font-size: 18px; line-height: 26px; font-weight: 600; letter-spacing: -.012em; }
+  .tile p { font-size: 13px; line-height: 19px; color: var(--text-muted); margin-top: 5px; }
+  .tile__go { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; color: var(--brand); font-weight: 500; font-size: 13px; }
+  .tile__go svg { transition: transform var(--m-hover) var(--ease); }
+  .tile:hover .tile__go svg { transform: translateX(3px); }
+  .tile--primary { background: linear-gradient(150deg, var(--brand-50), var(--surface) 62%); border-color: var(--brand-200); }
+  .tile--primary .tile__ic { background: var(--brand); color: var(--brand-on); }
+
+  .sec { margin-top: var(--s-10); border-top: 1px solid var(--border); padding-top: var(--s-6); }
+  .sec > .label { margin-bottom: var(--s-4); }
+  .flows { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+  .flows a {
+    display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px;
+    border: 1px solid var(--border); border-radius: var(--r-full); background: var(--surface);
+    font-size: 13px; color: var(--text-secondary); text-decoration: none;
+    transition: border-color var(--m-hover) var(--ease), color var(--m-hover) var(--ease);
+  }
+  .flows a:hover { border-color: var(--brand); color: var(--brand); }
+  .flows a i { width: 5px; height: 5px; border-radius: var(--r-full); background: var(--brand-300); flex: none; }
+
+  .tips { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--s-4); }
+  .tip { background: var(--surface-subtle); border-radius: var(--r-tile); padding: var(--s-4); }
+  .tip h3 { font-size: 13px; font-weight: 600; }
+  .tip p { font-size: 12.5px; line-height: 18px; color: var(--text-muted); margin-top: 5px; }
+  kbd {
+    font-family: var(--num); font-size: 11px; padding: 1px 5px; border-radius: var(--r-xs);
+    border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-secondary);
+  }
+  .foot { margin-top: var(--s-10); padding-top: var(--s-5); border-top: 1px solid var(--border);
+          display: flex; gap: var(--s-6); flex-wrap: wrap; font-size: 12px; color: var(--text-muted); }
+  .foot b { color: var(--text-secondary); font-weight: 600; }
+
+  @media (max-width: 860px) { .tiles, .tips { grid-template-columns: 1fr; } .wrap { padding-top: var(--s-6); } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-grid"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></g>
+  <g id="i-layers"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></g>
+  <g id="i-compare"><rect x="3" y="4" width="7.5" height="16" rx="1.5"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.5"/></g>
+  <g id="i-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></g>
+  <g id="i-arr"><path d="M5 12h14M13 6l6 6-6 6"/></g>
+</defs></svg>
+
+<main class="wrap">
+  <div class="brand"><span class="brand__mark">V</span>
+    <div><div class="brand__name">Veerha</div>
+      <div class="t-meta muted">Redesign prototype &middot; September 2026</div></div>
+  </div>
+
+  <section class="hero">
+    <span class="v-badge v-badge--brand">Indigo Slate &middot; v1.0</span>
+    <h1>The AI workforce platform, <em>rebuilt</em>.</h1>
+    <p>
+      A clickable prototype of the redesigned Veerha. Four things live here: the interactive
+      dashboard, fifty-two high-fidelity screens across thirteen modules, the design system they
+      are all built from, and a screen-by-screen map of what changed. Everything is sample data.
+    </p>
+  </section>
+
+  <div class="tiles">
+    <a class="tile tile--primary" href="veerha-dashboard.html">
+      <span class="tile__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg></span>
+      <div><h2>The dashboard</h2>
+        <p>The interactive prototype &mdash; overview, leads, inbox, workforce, analytics and the command palette. Four visual directions, switchable live.</p></div>
+      <span class="tile__go">Open the dashboard
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arr"/></svg></span>
+    </a>
+
+    <a class="tile" href="screens/index.html">
+      <span class="tile__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-layers"/></svg></span>
+      <div><h2>All 52 screens</h2>
+        <p>Thirteen modules presented as labelled frames &mdash; every state drawn, including empty, loading and error. Plus a 45-screen clickable walkthrough.</p></div>
+      <span class="tile__go">Browse the screens
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arr"/></svg></span>
+    </a>
+
+    <a class="tile" href="audit/gallery.html">
+      <span class="tile__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-compare"/></svg></span>
+      <div><h2>Before &amp; after</h2>
+        <p>Every screen of the live app beside its redesign, with the key fixes named on each card. Hover to scroll a shot, click to open it full size.</p></div>
+      <span class="tile__go">See what changed
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arr"/></svg></span>
+    </a>
+
+    <a class="tile" href="design-system/index.html">
+      <span class="tile__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-book"/></svg></span>
+      <div><h2>Design system</h2>
+        <p>Foundations, every component with every state, the six signature patterns, the written spec and the departures from v2 &mdash; the Figma file, as a folder.</p></div>
+      <span class="tile__go">Open the system
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arr"/></svg></span>
+    </a>
+  </div>
+
+  <section class="sec">
+    <div class="label">Jump to a key flow</div>
+    <div class="flows">
+      <a href="screens/walkthrough.html#dashboard"><i></i>Daily brief</a>
+      <a href="screens/walkthrough.html#leads"><i></i>Leads &amp; the record drawer</a>
+      <a href="screens/walkthrough.html#inbox"><i></i>Shared inbox</a>
+      <a href="screens/walkthrough.html#pipeline"><i></i>Pipeline board</a>
+      <a href="screens/walkthrough.html#proposal"><i></i>Proposal builder</a>
+      <a href="screens/walkthrough.html#employees"><i></i>AI employees</a>
+      <a href="screens/walkthrough.html#sequences"><i></i>Nurture sequences</a>
+      <a href="screens/walkthrough.html#attribution"><i></i>Marketing attribution</a>
+      <a href="screens/walkthrough.html#org-chart"><i></i>Org chart</a>
+      <a href="screens/walkthrough.html#onboarding"><i></i>Conversational onboarding</a>
+      <a href="screens/16-auth.html"><i></i>Sign in &amp; onboarding</a>
+      <a href="screens/17-public.html"><i></i>Guest pages, on a phone</a>
+      <a href="design-system/foundations.html"><i></i>Type &amp; colour</a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="label">Worth knowing</div>
+    <div class="tips">
+      <div class="tip"><h3>Four directions, live</h3>
+        <p>In the dashboard, press <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> to switch between Warm Editorial, Cold Press, Bureau and Indigo Slate. Same screens, same data &mdash; only the visual language moves. <b>Indigo Slate is the one that was signed off</b>, and the one everything else here is built in.</p></div>
+      <div class="tip"><h3>Deep links</h3>
+        <p>Add <kbd>?dir=d</kbd> to open the dashboard directly in Indigo Slate (<kbd>a</kbd>&ndash;<kbd>d</kbd> for the four), and <kbd>?theme=dark</kbd> or <kbd>?theme=light</kbd> to pin the theme. A parameter overrides whatever the browser remembered, so a shared link lands where you meant it to.</p></div>
+      <div class="tip"><h3>The walkthrough</h3>
+        <p>In the screen set, <b>Walkthrough</b> is the driveable version: one app shell, 45 screens, a rail and a <kbd>&#8984;K</kbd> command palette. Click a lead row to open its drawer. Any screen is linkable by its hash.</p></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span><b>13</b> modules &middot; <b>52</b> frames &middot; <b>45</b> in the walkthrough</span>
+    <span><b>103</b> screens of the live app captured</span>
+    <span>Kora Kaagaz &middot; Indigo Slate v1.0</span>
+  </footer>
+</main>
+</body>
+</html>
