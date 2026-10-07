@@ -191,6 +191,8 @@ FRAME_IA = {
     'resource-drawer':  S('Shared Resources'),
     'pricing':          S('Pricing'),
     'pricing-empty':    S('Pricing'),
+    'synonyms':         S('AI synonyms'),
+    'property-detail':  S('Properties'),
     # 13 org
     'org-chart':   S('Org'),
     'org-empty':   S('Org'),
