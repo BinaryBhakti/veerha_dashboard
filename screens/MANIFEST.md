@@ -256,3 +256,9 @@ route exists but holds nothing in that workspace, so the populated state is desi
 | 59 | Onboarding becomes the **Setup Guide** steps |
 | 63 | Register offers all three editions |
 | 70 · 73 · 76 | Guest routes re-mapped: `/p/:token` is the After-stay page |
+| 5 | Stay workspace states where its rates come from and that a missing rate is unknown |
+| 18c | Chat — channel marker on every thread; composer modes for the 24-hour rule and public Instagram comments |
+| 20 | WhatsApp templates show In review and Rejected, with Meta's reason |
+| 59b | Setup Guide — Go live step |
+| 70b | Stay page — paid, failed and closed after the Razorpay window |
+| 81b · 81c · 82b · 82c · 83b · 84b · 87b · 88b · 89b · 89c · 91b · 94b | States and steps of the new screens |
