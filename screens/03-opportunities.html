@@ -409,6 +409,7 @@
       "Nothing picked yet" — so the state it actually exists for has never been seen. Left is what
       you are selling, right is what the guest will be asked to confirm. The basket is sticky
       because the number in it is the thing being negotiated.
+      The sitemap’s channel-manager rule is drawn above the rooms: where the rates came from and when, and that a missing rate is unknown, never zero.
     </p>
     <div class="vs-frame__box"><div class="vs-app">
         <nav class="v-rail is-expanded" aria-label="Sections">
@@ -469,6 +470,11 @@
                 <select class="v-select"><option>2 guests · 1 room</option></select></div>
               <button class="v-btn v-btn--secondary" style="align-self:flex-end">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg>Search rooms</button>
+            </div>
+
+            <div class="row" style="gap:var(--s-2);margin-bottom:var(--s-4);flex-wrap:wrap">
+              <span class="v-badge v-badge--ok">Rates live from Havenlink</span>
+              <span class="t-meta muted">read 6 minutes ago · every price below is the channel manager’s, not typed here · a room with no rate shows <b>—</b> and cannot be added, because blank means unknown, not free</span>
             </div>
 
             <div class="vs-split vs-split--wide">
