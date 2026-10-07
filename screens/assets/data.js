@@ -447,7 +447,7 @@ export const grow = [
   { name: 'Connect your calendar', does: 'Veerha books calls into free slots', cost: 'Included' },
   { name: 'Connect your mailbox',  does: 'Guest email lands beside WhatsApp, with drafted replies', cost: 'Included' },
   { name: 'Bring your old CRM',    does: 'Contacts, leads and owners in one go', cost: 'Included' },
-  { name: 'Have Veerha set it up', does: 'Our team configures the workspace with you on a call', cost: '₹9,000 once' },
+  { name: 'Have Veerha set it up', does: 'Our team configures the workspace with you on a call', cost: 'Quoted on a call' },
 ];
 
 /* --- CRM migration (#91) -------------------------------------------------- */
