@@ -553,7 +553,7 @@
                     <div class="v-card__head"><div class="grow">
                       <div class="v-card__title">Tax regime</div>
                       <p class="v-card__desc">How quotations and proformas print tax.</p></div></div>
-                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Regime</label><div class="v-pilltabs"><button class="v-pill is-active">India</button><button class="v-pill">International</button></div><span class="v-field__hint">India supports TCS; international has none.</span></div><div class="row" style="gap:var(--s-3);margin-top:var(--s-4)"><div class="v-field" style="width:160px"><label class="v-field__label">TCS rate (%)</label><input class="v-input" value="2"></div><div class="v-field grow"><label class="v-field__label">TCS</label><div class="row" style="gap:var(--s-2);min-height:36px"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span><span class="t-small">Enabled — a 2% TCS line applies on India invoices</span></div></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Supply state</label><select class="v-select"><option>Uttarakhand</option><option>Not set — print the rate whole</option><option>Delhi</option><option>Maharashtra</option></select><span class="v-field__hint">Same-state guests see CGST + SGST; everyone else sees IGST.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">GSTIN</label><input class="v-input" value="05ABCDE1234F1Z5"><span class="v-field__hint">Printed on quotations and proformas.</span></div></div>
+                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Regime</label><div class="v-pilltabs"><button class="v-pill is-active">India</button><button class="v-pill">International</button></div><span class="v-field__hint">India supports TCS; international has none.</span></div><div class="row" style="gap:var(--s-3);margin-top:var(--s-4)"><div class="v-field" style="width:160px"><label class="v-field__label">TCS rate (%)</label><input class="v-input" value="2"></div><div class="v-field grow"><label class="v-field__label">TCS</label><div class="row" style="gap:var(--s-2);min-height:36px"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span><span class="t-small">Enabled — a 2% TCS line applies on India invoices</span></div></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Supply state</label><select class="v-select"><option>Karnataka</option><option>Not set — print the rate whole</option><option>Delhi</option><option>Maharashtra</option></select><span class="v-field__hint">Same-state guests see CGST + SGST; everyone else sees IGST.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">GSTIN</label><input class="v-input" value="29AAACR1234R1Z5"><span class="v-field__hint">Printed on quotations and proformas.</span></div></div>
                   </section>
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
@@ -854,13 +854,14 @@
   <!-- ══════════════════ 45 · AI BEHAVIOUR ══════════════════ -->
   <section class="vs-frame" id="ai-behaviour">
     <div class="vs-frame__hd">
-      <span class="vs-frame__n">45</span><span class="vs-frame__name">AI behaviour</span>
+      <span class="vs-frame__n">45</span><span class="vs-frame__name">AI — Behaviour</span>
       <span class="vs-frame__route">/settings/ai</span><span class="t-meta muted">A5 · field stack</span>
     </div>
     <p class="vs-frame__note">
-      The most consequential settings screen in the product, so every control states
-      <b>what happens</b> rather than naming a mode. A segmented control whose options mean nothing
-      without their caption is the pattern here — the caption is part of the control, not help text.
+      The most consequential settings screen in the product, so every control states what happens
+      rather than naming a mode. Reconciled to the four live sections — <b>operating brief</b>,
+      autonomy, <b>quiet hours &amp; limits</b>, <b>qualified leads</b> — with the handover rules kept.
+      The on-call settings moved to Calling, where the live product has them.
     </p>
     <div class="vs-frame__box"><div class="vs-app">
         <nav class="v-rail is-expanded" aria-label="Sections">
@@ -959,11 +960,20 @@
             <div class="vs-canvas">
               <div class="v-pagehead">
                 <div class="v-pagehead__copy">
-                  <h2 class="v-pagehead__title">AI behaviour</h2>
+                  <h2 class="v-pagehead__title">Behaviour</h2>
                   <p class="v-pagehead__sub">What Veerha may do on its own, and where it stops and asks you</p></div>
               </div>
 
-              <section class="v-card">
+              <section class="v-card band">
+                <div class="v-card__head"><div class="grow"><div class="v-card__title">Operating brief</div>
+                  <p class="v-card__desc">Every conversation is grounded in this, so the AI answers as Rivergrove and not as a generic assistant.</p></div></div>
+                <div class="v-card__body"><textarea class="v-input" rows="5" style="width:100%;resize:vertical">Rivergrove Retreat is a 24-room wellness resort on the river, two hours from the city. Guests come for quiet weekends, anniversaries and small group retreats. Quote rooms from the live rate; never promise a room the channel manager shows as sold. Breakfast is included on every plan except Room only. Check-in from 2 PM, check-out by 11 AM; a late checkout is a request, not a promise.</textarea>
+                  <div class="row" style="gap:var(--s-3);margin-top:var(--s-3);align-items:center">
+                    <button class="v-btn v-btn--secondary v-btn--sm">Regenerate from business info</button>
+                    <span class="t-meta muted">Rebuilds the brief from Teach Veerha. Your edits above are replaced, so the old version is kept in the change log.</span></div></div>
+              </section>
+
+              <section class="v-card band">
                 <div class="v-card__head">
                   <div class="v-card__ic" style="background:var(--ai-bg);color:var(--ai-ic);border:1px solid var(--ai-bd)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><use href="#i-v"/></svg></div>
                   <div class="grow"><div class="v-card__title">Autonomy</div>
@@ -997,26 +1007,6 @@
 
               <section class="v-card band">
                 <div class="v-card__head"><div class="grow">
-                  <div class="v-card__title">On a call</div>
-                  <p class="v-card__desc">Each of these changes what the guest hears, so the consequence is on the control.</p></div></div>
-                <div class="v-card__body">
-                  <div class="v-rows">
-                    <div style="display:flex;align-items:flex-start;gap:var(--s-5);padding:var(--s-4) 0;border-top:1px solid var(--border)">
-                      <span class="grow" style="max-width:34ch"><span class="t-small">Reads details back</span></span>
-                      <div style="flex:1">
-                        <div class="v-pilltabs"><button class="v-pill is-active">Key details</button><button class="v-pill">Everything</button><button class="v-pill">Nothing</button></div>
-                        <p class="t-meta muted" style="margin-top:8px">Repeats a time, a name or a figure — the things that cost something if they are wrong. Never a preference.</p></div></div>
-                    <div style="display:flex;align-items:flex-start;gap:var(--s-5);padding:var(--s-4) 0;border-top:1px solid var(--border)">
-                      <span class="grow" style="max-width:34ch"><span class="t-small">Turn length</span></span>
-                      <div style="flex:1">
-                        <div class="v-pilltabs"><button class="v-pill is-active">Match them</button><button class="v-pill">Brief</button><button class="v-pill">Warmer</button></div>
-                        <p class="t-meta muted" style="margin-top:8px">A three-word answer gets a one-line reply. A talkative caller gets more.</p></div></div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="v-card band">
-                <div class="v-card__head"><div class="grow">
                   <div class="v-card__title">When it hands over</div>
                   <p class="v-card__desc">Each of these stops the automation and puts the thread in your queue.</p></div></div>
                 <div class="v-card__body">
@@ -1041,6 +1031,29 @@
                   <p class="t-meta muted" style="margin-top:var(--s-4)">31 handovers in 30 days. You answered 28 of them within the hour.</p>
                 </div>
               </section>
+
+              <section class="v-card band">
+                <div class="v-card__head"><div class="grow"><div class="v-card__title">Quiet hours &amp; limits</div>
+                  <p class="v-card__desc">When the AI stays off outbound channels, and how much it may send.</p></div></div>
+                <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                    <div class="v-field" style="width:150px"><label class="v-field__label">Quiet from</label><input class="v-input num" value="21:00"></div>
+                    <div class="v-field" style="width:150px"><label class="v-field__label">Until</label><input class="v-input num" value="08:00"></div>
+                    <span class="t-meta muted grow" style="padding-top:28px">Replies to a guest who writes in still go out — quiet hours stop <b>follow-ups and campaigns</b>, not answers.</span></div>
+                  <div class="row" style="gap:var(--s-3);margin-top:var(--s-4);align-items:flex-start">
+                    <div class="v-field" style="width:150px"><label class="v-field__label">Per guest, per day</label><input class="v-input num" value="3"></div>
+                    <div class="v-field" style="width:150px"><label class="v-field__label">Outbound per day</label><input class="v-input num" value="200"></div>
+                    <span class="t-meta muted grow" style="padding-top:28px">Yesterday the busiest guest got 2 messages and the workspace sent 64. Neither cap would have stopped anything.</span></div></div>
+              </section>
+
+              <section class="v-card band">
+                <div class="v-card__head"><div class="grow"><div class="v-card__title">Qualified leads</div>
+                  <p class="v-card__desc">Who promotes a fully answered lead into an opportunity.</p></div></div>
+                <div class="v-card__body"><div style="display:flex;flex-direction:column;gap:var(--s-2)">
+                    <label class="v-radiocard"><span class="v-radiocard__dot"></span><span><b class="t-small">Veerha promotes it</b> <span class="t-meta muted">· the moment every qualifying question is answered, and tells the owner</span></span></label>
+                    <label class="v-radiocard is-selected"><span class="v-radiocard__dot"></span><span><b class="t-small">A person promotes it</b> <span class="t-meta muted">· Veerha marks it ready and it waits in Waiting on you</span></span></label></div>
+                  <p class="t-meta muted" style="margin-top:var(--s-3)">5 leads are fully answered and waiting right now. What counts as qualified is set in Teach Veerha › Qualifying.</p></div>
+              </section>
+
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
                 <span class="t-meta muted grow">Last edited yesterday by Anita</span>
