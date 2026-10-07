@@ -44,6 +44,8 @@ PAGES=(index foundations components patterns spec departures)
 # Identifiers from the live-app crawl. If any reaches a deploy we have shipped real
 # customer data. This has been caught twice; it stays a hard gate.
 PII='gaurav|meera|anuj|rakesh|bharat|shalini|farah|poorav|ganga|amoha|gpurwar|desaiassociates|RNMDGS|98111|99870|90042|98204|88006|97401|98330|90045'
+# Names from later crawls live in a git-ignored file (the repo is public).
+[ -s "$ROOT/audit/oct/blocklist.txt" ] && PII="$PII|$(grep -v '^$' "$ROOT/audit/oct/blocklist.txt" | paste -sd'|' -)"
 
 red(){ printf '\033[31m%s\033[0m\n' "$*"; }; grn(){ printf '\033[32m%s\033[0m\n' "$*"; }
 fail(){ red "  FAIL — $*"; exit 1; }

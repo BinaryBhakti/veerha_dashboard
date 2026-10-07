@@ -17,6 +17,11 @@ PII='gaurav|meera|anuj|rakesh|bharat|shalini|farah|poorav|ganga|amoha|gpurwar|de
 PII="$PII|chanpreet|shrutika|lawand|hemant|shubhankar|mukherjee|sahurishi|neetu|catpl|purwar"
 PII="$PII|98111|99870|90042|98204|88006|97401|98330|90045|98819|99998|70802|82998"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# (3) names from the 7 Oct re-crawl. They live in a git-ignored file rather than
+#     here, because this repository is public and a list of real customers'
+#     names would itself be the leak. Present on any machine that holds audit/.
+LOCAL="$ROOT/audit/oct/blocklist.txt"
+[ -s "$LOCAL" ] && PII="$PII|$(grep -v '^$' "$LOCAL" | paste -sd'|' -)"
 targets=("${@:-$ROOT/screens $ROOT/design-system}")
 fail=0
 for dir in $targets; do
