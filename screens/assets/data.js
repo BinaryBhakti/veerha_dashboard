@@ -364,3 +364,113 @@ export const charts = {
            ['Phone', 3, null], ['Email', 2, null]],
     take: '<b>Nearly two in three arrive on WhatsApp</b> — the one channel Veerha can read but not answer. Reconnecting it is the highest-value fix on this page.' },
 };
+
+/* ============================================================================
+   OCTOBER ADDITIONS — screens #78–#99 (see PLAN-2026-10.md)
+   Same rules as everything above: invented, reserved domains, +91 90000 1xxxx.
+   ============================================================================ */
+
+/* --- Navigation ---------------------------------------------------------
+   The live sidebar badges only two rows. Tasks counts what a person owes;
+   Review Queue counts what the AI is asking permission to do and must agree
+   with totals.decisionsWaiting. */
+export const navBadges = { tasks: 10, review: 20 };
+
+/* A second persona. The owner never sees Front Desk (the live app hides it
+   for owner and admin, who see arrivals on Bookings), so Front Desk frames
+   are drawn as the person who does. */
+export const frontDeskUser = { name: 'Rohan Pillai', role: 'Manager', initial: 'R' };
+
+/* --- Google Reviews (#81) ------------------------------------------------ */
+export const reviews = [
+  { who: 'Meghna S.', stars: 5, when: '2 days ago', state: 'Draft ready',
+    text: 'The river-facing room was worth every rupee. Breakfast on the deck was the highlight.',
+    draft: 'Thank you, Meghna — we are glad the deck breakfasts made the stay. We hope to see you back by the river soon.' },
+  { who: 'Karan D.', stars: 3, when: '4 days ago', state: 'Needs you',
+    text: 'Lovely property, but check-in took forty minutes on a Friday evening.',
+    draft: null, why: 'Mentions a service failure — Veerha drafts nothing public about a complaint without you.' },
+  { who: 'Ishita P.', stars: 5, when: '1 week ago', state: 'Answered', text: 'Spa was excellent.', reply: 'Thank you, Ishita.' },
+];
+export const reviewTotals = { rating: 4.6, count: 128, unanswered: 2, answeredIn: '6 h median' };
+
+/* --- Marketing: contact lists (#83) -------------------------------------- */
+export const contactLists = [
+  { name: 'Diwali 2025 guests', desc: 'Stayed between 20 Oct and 5 Nov last year', people: 64, used: 'Campaign · 12 Sep' },
+  { name: 'Corporate offsite enquiries', desc: 'Asked about 10+ rooms on a weekday', people: 18, used: 'Never used' },
+  { name: 'Spa package buyers', desc: 'Added by hand at check-out', people: 41, used: 'Sequence · running' },
+];
+
+/* --- Automation (#80, #84, #87) ----------------------------------------- */
+export const tiers = { premiumAbove: 50000, vipAbove: 150000, inactiveAfterMonths: 9 };
+export const occasions = [
+  { name: 'Stay anniversary', date: 'One year after check-out', send: 'WhatsApp template · anniversary_offer', on: true,  reach: 212 },
+  { name: 'Birthday',         date: 'Guest birthday',          send: 'WhatsApp template · birthday_wish',    on: false, reach: 37, gap: 'Only 37 guests have a birthday on file' },
+  { name: 'Usual travel month', date: 'The month a guest has booked twice before', send: 'Email · come_back_season', on: false, reach: 19 },
+];
+export const entryPoints = [
+  { order: 1, match: 'Message contains “corporate” or “offsite”', journey: 'Group enquiry intake', source: 'Any channel', hits: 14 },
+  { order: 2, match: 'Comment on an Instagram post',               journey: 'Send rate card by DM',  source: 'Instagram', hits: 31 },
+  { order: 3, match: 'Click on ad “Monsoon escape”',                journey: 'Monsoon package nurture', source: 'Meta ad', hits: 9 },
+  { order: 4, match: 'Reply “STOP”',                                journey: 'Unsubscribe and confirm', source: 'WhatsApp', hits: 2 },
+];
+
+/* --- AI: synonyms, learning, teach (#85, #86, #89) ------------------------ */
+export const synonyms = [
+  { said: 'cottage',      maps: 'Garden Villa',          field: 'Room type', seen: 6, state: 'Pending' },
+  { said: 'river view',   maps: 'Premier Riverside Room', field: 'Room type', seen: 11, state: 'Pending' },
+  { said: 'honeymoon',    maps: 'Occasion · Anniversary', field: 'Occasion',  seen: 4, state: 'Approved' },
+];
+export const learning = [
+  { from: 'Review Queue · refused', lesson: 'Do not offer the Panorama Suite below ₹26,000 on weekends', state: 'Needs curation' },
+  { from: 'Review Queue · edited',  lesson: 'Say “check-in from 2 PM”, not “after lunch”',             state: 'In learning set' },
+];
+export const teach = {
+  business: { name: 'Rivergrove Retreat', site: 'rivergrove.example.com', industry: 'Hospitality',
+              what: 'A 24-room wellness resort on the river, two hours from the city.' },
+  waitsFor: ['Enquiry type', 'Check-in', 'Check-out', 'Guests', 'Children', 'Rooms', 'Occasion', 'Budget'],
+  talk: { assistant: 'Mira', tone: 'Warm', firstName: true, saysAI: true },
+};
+
+/* --- Integrations (#79) --------------------------------------------------- */
+export const connections = [
+  { name: 'AI engine',              state: 'Connected', note: 'Included in your plan — nothing to connect' },
+  { name: 'WhatsApp Cloud API',     state: 'Disconnected', note: 'Token expired 18 Sep — Veerha can read threads but not answer' },
+  { name: 'Razorpay',               state: 'Test mode', note: 'Payment links work but no money moves' },
+  { name: 'Channel manager',        state: 'Connected', note: 'Rates synced 6 min ago' },
+  { name: 'Elastic Email',          state: 'Not set',   note: null },
+  { name: 'External dialer webhook',state: 'Not set',   note: null },
+];
+
+/* --- Wallet and Grow (#50b, #90) ----------------------------------------- */
+export const walletLow = { balance: 140, burnPerDay: 95, daysLeft: 1 };
+export const grow = [
+  { name: 'Connect your calendar', does: 'Veerha books calls into free slots', cost: 'Included' },
+  { name: 'Connect your mailbox',  does: 'Guest email lands beside WhatsApp, with drafted replies', cost: 'Included' },
+  { name: 'Bring your old CRM',    does: 'Contacts, leads and owners in one go', cost: 'Included' },
+  { name: 'Have Veerha set it up', does: 'Our team configures the workspace with you on a call', cost: '₹9,000 once' },
+];
+
+/* --- CRM migration (#91) -------------------------------------------------- */
+export const migration = { from: 'Zoho CRM', people: 1840, deals: 212, dupes: 37, noConsent: 410,
+  stages: [['Prospect', 'New'], ['Contacted', 'Engaged'], ['Proposal', 'Proposal'], ['Closed Won', 'Won']] };
+
+/* --- E-commerce edition (#94–#97) — a different workspace -----------------
+   Designed from the sitemap, not observed: the Hotels workspace redirects
+   these routes. A separate fictional shop keeps the two editions apart. */
+export const shop = {
+  name: 'Riverbank Organics', domain: 'riverbank.example.com', user: { name: 'Neha', role: 'Owner', initial: 'N' },
+  products: [
+    { sku: 'RB-101', name: 'Cold-pressed groundnut oil, 1 L', price: 420, stock: 38 },
+    { sku: 'RB-114', name: 'Forest honey, 500 g',             price: 360, stock: 6 },
+    { sku: 'RB-120', name: 'Millet breakfast mix, 750 g',     price: 280, stock: 0 },
+    { sku: 'RB-133', name: 'A2 ghee, 500 ml',                 price: 890, stock: 21 },
+  ],
+  offers: [ { code: 'DIWALI10', what: '10% off over ₹1,000', used: 48, ends: '5 Nov' },
+            { code: 'FIRSTORDER', what: '₹150 off a first order', used: 112, ends: 'No end date' } ],
+  orders: [
+    { id: 'ORD-2208', who: 'Aditi Kulkarni', items: 3, total: 1570, pay: 'Paid · UPI', state: 'To pack',    via: 'WhatsApp' },
+    { id: 'ORD-2207', who: 'Sanjay Menon',   items: 1, total: 890,  pay: 'Cash on delivery', state: 'Shipped', via: 'Storefront' },
+    { id: 'ORD-2206', who: 'Walk-in',        items: 2, total: 700,  pay: 'Paid · card', state: 'Collected', via: 'Counter' },
+    { id: 'ORD-2205', who: 'Leela Thomas',   items: 4, total: 2140, pay: 'Payment failed', state: 'Needs action', via: 'WhatsApp' },
+  ],
+};
