@@ -245,7 +245,7 @@ def run(check_only=False):
             m = SEC_OPEN.search(blk)
             if m:
                 a, b = nav_span(blk, m.start())
-                variants['rail/' + m.group(1)][h(blk[a:b])] += 1
+                variants['rail/%s/%s' % (m.group(1), persona)][h(blk[a:b])] += 1   # editions differ
             if bool(ia['rail']) != bool(m):
                 notes.append('%s: section rail %s' % (fid, 'missing' if ia['rail'] else 'unexpected'))
         if not check_only:

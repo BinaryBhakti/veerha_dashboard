@@ -135,6 +135,7 @@ FRAME_IA = {
     'bookings':       F('Bookings', 'Operations'),
     'booking-detail': F('Bookings', 'Operations', 'Booking'),
     'front-desk':     F('Front Desk', 'Operations', persona='desk'),
+    'guest-record':   F('Front Desk', 'Operations', 'Guest', persona='desk'),
     # 06 conversations
     'inbox':        F('Conversations', 'Customer', 'Chat', tabs=('conversations', 'Chat')),
     'inbox-taken':  F('Conversations', 'Customer', 'Chat', tabs=('conversations', 'Chat')),
@@ -172,6 +173,7 @@ FRAME_IA = {
     'landing-pages':    M('Landing Pages'),
     'creative-studio':  M('Creative'),
     'attribution':      M('Attribution'),
+    'photo-studio':     dict(M('Photo Studio'), persona='shop'),
     # 11 ai
     'employees':         S('AI Employees'),
     'workflow':          Snorail('Workflows'),
@@ -197,6 +199,7 @@ FRAME_IA = {
     'pricing':          S('Pricing'),
     'pricing-empty':    S('Pricing'),
     'synonyms':         S('AI synonyms'),
+    'offers':           dict(S('Products & Services'), persona='shop'),
     'property-detail':  S('Properties'),
     # 13 org
     'org-chart':   S('Org'),
@@ -224,6 +227,7 @@ FRAME_IA = {
     'entry-points':     S('Entry points'),
     'entry-points-empty': S('Entry points'),
     'whatsapp-forms':   S('WhatsApp Forms'),
+    'whatsapp-form-builder': S('WhatsApp Forms'),
     'connections':      S('Connections'),
     'developers':       S('API & webhooks'),
     'developers-empty': S('API & webhooks'),
@@ -231,6 +235,11 @@ FRAME_IA = {
     'billing':       S('Billing'),
     'billing-empty': S('Billing'),
     'wallet':        S('Wallet'),
+    # 18 commerce — E-commerce edition, drawn as the shop's owner
+    'orders-index':  F('Orders', 'Operations', 'Orders', persona='shop'),
+    'order-drawer':  F('Orders', 'Operations', 'Orders', persona='shop'),
+    'counter':       F('Counter', 'Operations', 'Counter', persona='shop'),
+    'counter-paid':  F('Counter', 'Operations', 'Counter', persona='shop'),
     'wallet-low':    S('Wallet'),
     'grow':          S('Grow'),
 }

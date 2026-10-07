@@ -45,7 +45,7 @@ ROOT = '/Users/ashmit/Desktop/Projects/VEERHA/screens'
 MODULES = ['01-home.html','02-leads.html','03-opportunities.html','04-quotes.html',
            '05-bookings.html','06-conversations.html','07-queues.html','08-calendar.html',
            '09-customers.html','11-ai.html','10-campaigns.html','12-catalog.html',
-           '13-org.html','14-settings.html','15-billing.html','16-auth.html']
+           '13-org.html','14-settings.html','15-billing.html','16-auth.html','18-commerce.html']
 
 # Screens the walkthrough gained this batch. Everything else keeps the META the
 # walkthrough already carries.
