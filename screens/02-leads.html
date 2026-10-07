@@ -857,9 +857,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item is-active" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -953,6 +953,174 @@
     </div></div>
   </section>
 
+  <!-- ══════════════════ 83 · CONTACT LISTS ══════════════════ -->
+  <section class="vs-frame" id="contact-lists">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">83</span><span class="vs-frame__name">Contact Lists</span>
+      <span class="vs-frame__route">/contact-lists</span><span class="t-meta muted">A1 · index</span>
+    </div>
+    <p class="vs-frame__note">
+      Previously folded into Contacts; the sitemap makes every list Release 1. The live page’s own line — <i>an audience somebody wrote down, not a rule re-derived</i> — is kept as the subtitle, and the callout says when to use a list instead of a segment, because the two look identical in a campaign’s audience picker.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item is-active" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Marketing</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Contact Lists</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item is-active" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Contact Lists</h2>
+                <p class="v-pagehead__sub">An audience somebody wrote down, not a rule re-derived · 3 lists, 123 people</p></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Segments</button><button class="v-btn v-btn--primary v-btn--sm">New list</button></div>
+            </div>
+            <div class="v-card"><table class="v-table"><thead><tr><th>List</th><th class="v-table__num">People</th><th>Last used</th><th>Owner</th><th></th></tr></thead><tbody><tr><td><b class="t-small">Diwali 2025 guests</b><div class="t-meta muted">Stayed between 20 Oct and 5 Nov last year</div></td><td class="v-table__num">64</td><td class="t-small">Campaign · 12 Sep</td><td class="t-meta muted">Anita</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr><tr><td><b class="t-small">Corporate offsite enquiries</b><div class="t-meta muted">Asked about 10+ rooms on a weekday</div></td><td class="v-table__num">18</td><td class="t-small">Never used</td><td class="t-meta muted">Rohan</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr><tr><td><b class="t-small">Spa package buyers</b><div class="t-meta muted">Added by hand at check-out</div></td><td class="v-table__num">41</td><td class="t-small">Sequence · running</td><td class="t-meta muted">Tara</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr></tbody></table></div>
+            <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>A list is not a segment.</b> A segment re-runs its rules every time — “stayed twice, last visit over a year ago”. A list keeps exactly the people someone put in it, which is what you want for a guest list or a press list. People are added from Customers, or while importing a spreadsheet.</div></div>
+            </div></div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 83b · CONTACT LISTS — EMPTY ══════════════════ -->
+  <section class="vs-frame" id="contact-lists-empty">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">83b</span><span class="vs-frame__name">Contact Lists — empty</span>
+      <span class="vs-frame__route">/contact-lists</span><span class="t-meta muted">A1 · empty</span>
+    </div>
+    <p class="vs-frame__note">
+      The live empty state, which is the state the live workspace is in. Kept, with the one distinction that decides whether a list is even the right tool.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item is-active" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Marketing</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Contact Lists</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item is-active" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Contact Lists</h2>
+                <p class="v-pagehead__sub">An audience somebody wrote down, not a rule re-derived</p></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New list</button></div>
+            </div>
+            <div class="v-card">
+              <div class="v-empty" style="padding:var(--s-12) var(--s-6)">
+                <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg></div>
+                <div class="v-empty__title">No contact lists yet</div>
+                <p class="v-empty__body">Create one here, then add people to it from Customers or while importing a spreadsheet. Use a list when you know exactly who belongs — a guest list, a press list — and a segment when the rule should keep deciding.</p>
+                <div class="v-actions"><button class="v-btn v-btn--primary">New list</button><button class="v-btn v-btn--secondary">Import a spreadsheet</button></div>
+              </div>
+            </div>
+            </div></div>
+        </div>
+    </div></div>
+  </section>
+
   <!-- ══════════════════════════════════════════════════════════════════
        10 · SEGMENTS — A6
        ══════════════════════════════════════════════════════════════════ -->
@@ -1010,9 +1178,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item is-active" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -1139,9 +1307,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item is-active" data-go="import">Import</a>
+                <a class="v-sidenav__item is-active" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -1212,6 +1380,189 @@
     </div></div>
   </section>
 
+  <!-- ══════════════════ 91 · BRING YOUR CRM ══════════════════ -->
+  <section class="vs-frame" id="migrate">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">91</span><span class="vs-frame__name">Bring your CRM</span>
+      <span class="vs-frame__route">/imports/migrate</span><span class="t-meta muted">A7 · top stepper</span>
+    </div>
+    <p class="vs-frame__note">
+      New since September. Same top-stepper machine as Import, but six steps and seventeen source systems, all from the live page. Its promise — <i>nobody is messaged</i> — is the subtitle, because the fear with a migration is waking up eighteen hundred old contacts.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item is-active" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Marketing</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Import</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item is-active" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas vs-canvas--narrow">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Bring your CRM</h2>
+                <p class="v-pagehead__sub">Move customers, open deals and notes from your old system. Nobody is messaged.</p></div>
+            </div>
+            <div class="vs-filterbar" style="justify-content:center"><div class="v-stepper" style="flex:1"><span class="v-stepper__step is-active"><span class="v-stepper__n">1</span>Your CRM</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">2</span>Upload</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">3</span>Check</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">4</span>People</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">5</span>Stages</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">6</span>Consent</span></div></div>
+            <section class="v-card">
+              <div class="v-card__head"><div class="grow"><div class="v-card__title">Where are you coming from?</div>
+                <p class="v-card__desc">Choosing the system tells Veerha how its export is laid out, so most columns map themselves.</p></div></div>
+              <div class="v-card__body">
+                <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-2)"><label class="v-radiocard is-selected"><span class="v-radiocard__dot"></span><span class="t-small">Zoho CRM</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Bigin</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Salesforce</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">HubSpot</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Pipedrive</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Freshsales</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Shopify</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">WooCommerce</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Dynamics 365</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">SugarCRM</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Act!</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Capsule</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Insightly</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Highrise</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Maximizer</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Bitrix24</span></label></div>
+                <label class="v-radiocard" style="margin-top:var(--s-2)"><span class="v-radiocard__dot"></span><span class="t-small">Other, or a spreadsheet <span class="t-meta muted">· use Import for a plain CSV</span></span></label>
+                <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>From Zoho CRM:</b> export <i>Contacts</i>, <i>Deals</i> and <i>Notes</i> as three CSVs from Setup › Data Administration › Export. Owners come across by email address, so invite your team first if you want their records to stay theirs.</div></div>
+              </div>
+            </section>
+            <div class="row" style="margin-top:var(--s-4)"><span class="grow"></span><button class="v-btn v-btn--primary">Next</button></div>
+            <section class="v-card band"><div class="v-card__head"><div class="grow"><div class="v-card__title">Past migrations</div></div></div>
+              <div class="v-card__body"><p class="t-small muted">None yet. Each one stays listed here with what came across and what was left behind.</p></div></section>
+            </div></div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 91b · BRING YOUR CRM — STAGES ══════════════════ -->
+  <section class="vs-frame" id="migrate-stages">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">91b</span><span class="vs-frame__name">Bring your CRM — stages</span>
+      <span class="vs-frame__route">/imports/migrate</span><span class="t-meta muted">A7 · step 5 of 6</span>
+    </div>
+    <p class="vs-frame__note">
+      The step where migrations usually go wrong: old stages mapped onto new ones. Each row shows how many deals move, and the summary states the consent gap before the consent step, so nobody discovers it after a campaign goes out.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item is-active" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Marketing</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Import</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item is-active" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas vs-canvas--narrow">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Bring your CRM</h2>
+                <p class="v-pagehead__sub">Move customers, open deals and notes from your old system. Nobody is messaged.</p></div>
+            </div>
+            <div class="vs-filterbar" style="justify-content:center"><div class="v-stepper" style="flex:1"><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>Your CRM</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>Upload</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>Check</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>People</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-active"><span class="v-stepper__n">5</span>Stages</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">6</span>Consent</span></div></div>
+            <section class="v-card">
+              <div class="v-card__head"><div class="grow"><div class="v-card__title">Match your old stages to Veerha’s</div>
+                <p class="v-card__desc">Zoho had four deal stages; your pipeline has five. Records keep their history either way.</p></div></div>
+              <table class="v-table"><thead><tr><th>In Zoho CRM</th><th></th><th>In Veerha</th><th class="v-table__num">Deals</th></tr></thead><tbody><tr><td class="t-small">Prospect</td><td class="t-meta muted">→</td><td><select class="v-select"><option>New</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">612</td></tr><tr><td class="t-small">Contacted</td><td class="t-meta muted">→</td><td><select class="v-select"><option>Engaged</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">388</td></tr><tr><td class="t-small">Proposal</td><td class="t-meta muted">→</td><td><select class="v-select"><option>Proposal</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">121</td></tr><tr><td class="t-small">Closed Won</td><td class="t-meta muted">→</td><td><select class="v-select"><option>Won</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">91</td></tr></tbody></table>
+            </section>
+            <section class="v-card band">
+              <div class="v-card__head"><div class="grow"><div class="v-card__title">Before the last step</div></div></div>
+              <div class="v-card__body">
+                <dl class="v-kv"><dt>People</dt><dd class="num">1,840</dd><dt>Duplicates merged into existing customers</dt><dd class="num">37</dd><dt>Open deals</dt><dd class="num">212</dd><dt>People with no marketing consent on record</dt><dd class="num">410</dd></dl>
+                <p class="t-meta muted" style="margin-top:var(--s-3)">The 410 come across as customers but stay out of every campaign audience until they opt in. That is the next step, <b>Consent</b>.</p>
+              </div>
+            </section>
+            <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)"><button class="v-btn v-btn--ghost">Back</button><span class="grow"></span><button class="v-btn v-btn--primary">Next — consent</button></div>
+            </div></div>
+        </div>
+    </div></div>
+  </section>
+
   <!-- ══════════════════════════════════════════════════════════════════
        12 · LEAD CAPTURE — A5
        ══════════════════════════════════════════════════════════════════ -->
@@ -1270,9 +1621,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
