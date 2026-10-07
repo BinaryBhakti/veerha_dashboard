@@ -442,7 +442,7 @@ export const connections = [
 ];
 
 /* --- Wallet and Grow (#50b, #90) ----------------------------------------- */
-export const walletLow = { balance: 140, burnPerDay: 95, daysLeft: 1 };
+export const walletLow = { balance: 140, burnPerDay: 296, runsOut: "about 11 hours" };   // = #50b
 export const grow = [
   { name: 'Connect your calendar', does: 'Veerha books calls into free slots', cost: 'Included' },
   { name: 'Connect your mailbox',  does: 'Guest email lands beside WhatsApp, with drafted replies', cost: 'Included' },

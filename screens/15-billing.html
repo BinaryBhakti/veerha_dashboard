@@ -152,7 +152,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -160,7 +160,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -301,9 +301,12 @@
                       <div style="margin-top:var(--s-4);padding-top:var(--s-3);border-top:1px solid var(--border)">
                         <dl class="v-kv">
                           <dt>Invoices go to</dt><dd style="font-family:var(--ui);text-align:right">anita@rivergrove.example.com</dd>
+                          <dt>Legal name</dt><dd style="font-family:var(--ui);text-align:right">Rivergrove Hospitality Pvt Ltd</dd>
                           <dt>GSTIN</dt><dd class="num">29AAACR1234R1Z5</dd>
+                          <dt>PAN</dt><dd class="num">AAACR1234R</dd>
                           <dt>Billed to</dt><dd style="font-family:var(--ui);text-align:right">Rivergrove Retreat,<br>Coorg, Karnataka 571201</dd>
                         </dl>
+                        <p class="t-meta muted" style="margin-top:var(--s-2)"><span class="v-badge v-badge--ok">Legal identity complete</span> Required before any paid plan, seat or credit pack can be bought; the state decides CGST + SGST against IGST.</p>
                       </div>
                       <div class="v-callout v-callout--info" style="margin-top:var(--s-4)">
                         <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
@@ -565,7 +568,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -573,7 +576,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -765,7 +768,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -773,7 +776,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -1225,6 +1228,153 @@
                   </div>
                 </div>
               </section>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 50b · WALLET — LOW BALANCE ══════════════════ -->
+  <section class="vs-frame" id="wallet-low">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">50b</span><span class="vs-frame__name">Wallet — low balance</span>
+      <span class="vs-frame__route">/wallet</span><span class="t-meta muted">A5 · state</span>
+    </div>
+    <p class="vs-frame__note">
+      The state the sitemap asks for: AI usage is billed from the wallet, so <b>low and empty</b> need a design. The banner says what happens at zero in the same words the daily cap uses — finish the thread, start nothing new, hand the queue to a person — so the product behaves one way whichever limit it hits. That behaviour is a <b>design proposal to confirm</b>; the live wallet does not say. Pack prices are the live ones.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Wallet</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item is-active" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h1 class="v-pagehead__title">Wallet</h1>
+                  <p class="v-pagehead__sub">AI credits pay for the work your AI does. Every deduction names the work behind it, and credits never expire.</p></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary">Top up credits</button></div>
+              </div>
+
+              <div class="v-error" style="margin-bottom:var(--s-4)">
+                <span style="color:var(--dn-ic);flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
+                <div class="grow">
+                  <div class="v-error__title">140 credits left — at today’s pace, about 11 hours</div>
+                  <p class="v-error__body">When the wallet reaches zero Veerha finishes the conversation it is in, starts nothing new, and moves every waiting enquiry into <b>Waiting on you</b> with a note saying why. Guests are never left without a reply and without you knowing.</p>
+                  <div class="v-actions" style="margin-top:var(--s-3)"><button class="v-btn v-btn--danger v-btn--sm">Top up 2,500 credits · ₹1,700</button><button class="v-btn v-btn--ghost v-btn--sm">See what is using credits</button></div>
+                </div>
+              </div>
+
+              <div class="v-stats wrap">
+                <div class="v-stat"><div class="v-stat__cap">Balance</div><div class="v-stat__n num" style="color:var(--dn-tx)">140</div><div class="t-meta muted">credits · about <span class="amount">₹84</span></div></div>
+                <div class="v-stat"><div class="v-stat__cap">Spent today</div><div class="v-stat__n num">212</div><div class="t-meta muted">of a 600 daily cap</div></div>
+                <div class="v-stat"><div class="v-stat__cap">Pace</div><div class="v-stat__n num">296</div><div class="t-meta muted">credits a day, this period</div></div>
+                <div class="v-stat"><div class="v-stat__cap">Runs out</div><div class="v-stat__n">Tonight</div><div class="t-meta muted">about 11 hours · 12,000 arrive 1 October</div></div>
+              </div>
+
+              <section class="v-card" style="margin-top:var(--s-5)">
+                <div class="v-card__head"><div class="grow"><div class="v-card__title">Top up</div>
+                  <p class="v-card__desc">Credits never expire. The larger packs cost less a credit.</p></div></div>
+                <div class="v-card__body">
+                  <div class="row" style="gap:var(--s-3);align-items:stretch"><label class="v-radiocard" style="flex:1"><span class="v-radiocard__dot"></span><span><b class="t-small num">500 credits</b><br><span class="amount t-small">₹425</span> <span class="t-meta muted">· ₹0.85 a credit</span></span></label><label class="v-radiocard is-selected" style="flex:1"><span class="v-radiocard__dot"></span><span><b class="t-small num">2,500 credits</b><br><span class="amount t-small">₹1,700</span> <span class="t-meta muted">· ₹0.68 a credit</span></span></label><label class="v-radiocard" style="flex:1"><span class="v-radiocard__dot"></span><span><b class="t-small num">10,000 credits</b><br><span class="amount t-small">₹6,000</span> <span class="t-meta muted">· ₹0.60 a credit</span></span></label></div>
+                  <div class="row" style="gap:var(--s-3);margin-top:var(--s-4);align-items:center">
+                    <button class="v-btn v-btn--primary">Pay ₹1,700</button>
+                    <span class="t-meta muted">Paid by card or UPI. The invoice goes to the legal identity on Billing.</span></div>
+                </div>
+              </section>
+
+              <div class="v-callout v-callout--info" style="margin-top:var(--s-4)">
+                <div><b>The empty state is the same screen at zero.</b> The banner turns to “Veerha has stopped starting new work”, the runway reads “Out of credits since 06:10”, and the count of enquiries now waiting on you is the first figure on the page.</div>
+              </div>
             </div>
           </div>
         </div>
