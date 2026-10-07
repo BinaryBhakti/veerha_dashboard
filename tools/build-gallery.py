@@ -20,6 +20,7 @@ MODULES = {
  '12-catalog.html':'Catalogue', '13-org.html':'Organisation', '14-settings.html':'Settings',
  '16-auth.html':'Authentication',
  '17-public.html':'Guest pages',
+ '18-commerce.html':'Commerce',
  '04-quotes.html':'Quotations', '09-customers.html':'Customers',
  '15-billing.html':'Billing & wallet',
 }

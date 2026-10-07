@@ -47,7 +47,7 @@
       <div><div class="sh-brand__name">Veerha Screens</div>
         <div class="sh-brand__sub">Indigo Slate · desktop · 10 Campaigns</div></div></div>
     <nav class="sh-nav">
-      <a href="index.html">Contents</a><a href="01-home.html">Home</a><a href="02-leads.html">Leads</a><a href="03-opportunities.html">Opportunities</a><a href="04-quotes.html">Quotes</a><a href="05-bookings.html">Bookings</a><a href="06-conversations.html">Conversations</a><a href="07-queues.html">Queues</a><a href="08-calendar.html">Calendar</a><a href="09-customers.html">Customers</a><a href="11-ai.html">AI</a><a href="10-campaigns.html" aria-current="page">Campaigns</a><a href="12-catalog.html">Catalog</a><a href="13-org.html">Org</a><a href="14-settings.html">Settings</a><a href="15-billing.html">Billing</a><a href="16-auth.html">Auth</a><a href="17-public.html">Guest</a>
+      <a href="index.html">Contents</a><a href="01-home.html">Home</a><a href="02-leads.html">Leads</a><a href="03-opportunities.html">Opportunities</a><a href="04-quotes.html">Quotes</a><a href="05-bookings.html">Bookings</a><a href="06-conversations.html">Conversations</a><a href="07-queues.html">Queues</a><a href="08-calendar.html">Calendar</a><a href="09-customers.html">Customers</a><a href="11-ai.html">AI</a><a href="10-campaigns.html" aria-current="page">Campaigns</a><a href="12-catalog.html">Catalog</a><a href="13-org.html">Org</a><a href="14-settings.html">Settings</a><a href="15-billing.html">Billing</a><a href="16-auth.html">Auth</a><a href="17-public.html">Guest</a><a href="18-commerce.html">Commerce</a>
       <a href="walkthrough.html">Walkthrough ▶</a><a href="../veerha-dashboard.html">Dashboard ↗</a><a href="../design-system/index.html">Design system ↗</a><a href="../hub.html">← Index</a>
     </nav>
   </div>
@@ -114,9 +114,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item is-active" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -276,9 +276,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item is-active" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -452,21 +452,21 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
                 <a class="v-sidenav__item" data-go="billing">Billing</a>
                 <a class="v-sidenav__item" data-go="wallet">Wallet</a>
-                <a class="v-sidenav__item">Grow</a>
+                <a class="v-sidenav__item" data-go="grow">Grow</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
-                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="teach">Teach Veerha</a>
                 <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
                 <a class="v-sidenav__item" data-go="calling">Calling</a>
                 <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
                 <a class="v-sidenav__item" data-go="memory">Memory</a>
-                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="learning">Learning</a>
                 <a class="v-sidenav__item" data-go="employees">AI Employees</a>
                 <a class="v-sidenav__item" data-go="hire">Hire</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
                 <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
-                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="synonyms">AI synonyms</a>
                 <a class="v-sidenav__item" data-go="pricing">Pricing</a>
                 <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
                 <a class="v-sidenav__item" data-go="properties">Properties</a>
@@ -476,18 +476,18 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item is-active" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -649,9 +649,9 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -824,9 +824,9 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -851,6 +851,153 @@ Late checkout, subject to availability</textarea>
                   <button class="v-btn v-btn--primary">Save to library</button>
                 </div></div>
               </div>
+              <div class="vs-body vs-body--panes" style="gap:0">
+                <div class="vs-pane vs-pane--canvas" style="padding:var(--s-6);display:flex;flex-direction:column;align-items:center;gap:var(--s-4)">
+                  <div class="v-seg">
+                    <button class="v-seg__opt is-active">Post 1:1</button>
+                    <button class="v-seg__opt">Portrait 4:5</button>
+                    <button class="v-seg__opt">Story 9:16</button>
+                    <button class="v-seg__opt">Banner</button>
+                  </div>
+                  <div style="width:380px;height:380px;border-radius:var(--r-card);overflow:hidden;
+                              box-shadow:var(--e2);position:relative;
+                              background:linear-gradient(160deg, var(--brand-500), var(--brand-800));
+                              display:flex;flex-direction:column;justify-content:center;
+                              align-items:center;text-align:center;padding:var(--s-8)">
+                    <div style="color:#fff;font-size:30px;line-height:36px;font-weight:600;letter-spacing:-.022em">
+                      Two nights on the river</div>
+                    <div style="color:rgba(255,255,255,.88);font-size:14px;line-height:20px;margin-top:var(--s-3)">
+                      River-facing balcony · breakfast for two · late checkout</div>
+                    <span style="margin-top:var(--s-5);background:#fff;color:var(--brand-800);font-size:13px;
+                                 font-weight:600;padding:9px 18px;border-radius:var(--r-full)">Hold my room</span>
+                  </div>
+                  <p class="t-meta faint">1080 × 1080 · exports at 2×</p>
+                </div>
+
+                <div class="vs-pane" style="width:320px;flex:none">
+                  <div class="vs-pane__hd"><div class="label">Design</div></div>
+                  <div style="padding:var(--s-4)">
+                    <div class="v-callout v-callout--ai">
+                      <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg></span>
+                      <div><b>Generate a background</b>
+                        <div class="t-meta" style="margin-top:4px">Describe a scene and Veerha makes the image.</div></div>
+                    </div>
+                    <div class="v-field" style="margin-top:var(--s-3)">
+                      <textarea class="v-textarea" rows="2" placeholder="Monsoon light on a river at dusk, from a balcony…"></textarea>
+                      <span class="v-field__hint">Uses your brand colours. About 15 seconds.</span></div>
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-2)">Generate</button>
+                    <hr class="rule" style="margin:var(--s-4) 0">
+                    <div class="v-field"><label class="v-field__label">Headline</label>
+                      <input class="v-input" value="Two nights on the river"></div>
+                    <div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label">Subtext</label>
+                      <textarea class="v-textarea" rows="2">River-facing balcony · breakfast for two · late checkout</textarea></div>
+                    <div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label">Button</label>
+                      <input class="v-input" value="Hold my room"></div>
+                    <hr class="rule" style="margin:var(--s-4) 0">
+                    <div class="label">Colour</div>
+                    <p class="t-meta muted" style="margin-top:4px">Taken from Workspace › Brand. Change it there and every creative follows.</p>
+                    <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap">
+                      <span class="v-selectchip"><i style="width:13px;height:13px;border-radius:3px;background:var(--brand-600);display:inline-block"></i> Brand</span>
+                      <span class="v-selectchip"><i style="width:13px;height:13px;border-radius:3px;background:var(--brand-800);display:inline-block"></i> Deep</span>
+                      <span class="v-selectchip"><i style="width:13px;height:13px;border-radius:3px;background:var(--ai-bg);border:1px solid var(--ai-bd);display:inline-block"></i> Warm</span>
+                    </div>
+                    <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Text alignment</label>
+                      <div class="v-seg" style="margin-top:var(--s-2)">
+                        <button class="v-seg__opt">Left</button>
+                        <button class="v-seg__opt is-active">Centre</button>
+                      </div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 98 · CONTENT — PHOTO STUDIO ══════════════════ -->
+  <section class="vs-frame" id="photo-studio">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">98</span><span class="vs-frame__name">Content — Photo Studio</span>
+      <span class="vs-frame__route">/photo-studio</span><span class="t-meta muted">A8 · builder</span>
+    </div>
+    <p class="vs-frame__note">
+      From the sitemap: <i>product shots made from the business’s own real photos</i>. Redirects in the Hotels workspace, so <b>not observed</b> and drawn for the E-commerce shop. The rule that makes it trustworthy is stated on the page: backgrounds change, the product does not. Credit cost per version is a placeholder to confirm.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Counter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Counter</span></button>
+          <button class="v-rail__item" aria-label="Orders"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Orders</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item is-active" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">N</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Neha</div><div class="v-rail__acct__sub">Owner · Riverbank Organics</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Marketing</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Photo Studio</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Neha</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">N</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item is-active" data-go="photo-studio">Photo Studio</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav>
+            <div class="vs-main">
+              <div class="vs-canvas">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Photo Studio</h2>
+                <p class="v-pagehead__sub">Product shots made from your own real photos — the product stays exactly as it is.</p></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">Upload a photo</button></div>
+            </div>
+            <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Forest honey, 500 g</div><p class="v-card__desc">From one phone photo · 3 versions</p></div><span class="v-badge v-badge--ai">Made by Veerha</span></div>
+              <div class="v-card__body"><div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3)"><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Your photo</div><div class="t-meta muted">Phone shot, kitchen counter</div></div><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Clean white</div><div class="t-meta muted">Ready for the storefront</div></div><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Breakfast table</div><div class="t-meta muted">Lifestyle, warm light</div></div><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Gift box</div><div class="t-meta muted">For the Diwali offer</div></div></div>
+              <div class="row" style="gap:var(--s-2);margin-top:var(--s-4)"><button class="v-btn v-btn--primary v-btn--sm">Use on the storefront</button><button class="v-btn v-btn--secondary v-btn--sm">Make another</button><span class="grow"></span><span class="t-meta muted">Costs 4 credits a version · labels and jar shape are never redrawn</span></div></div></section>
+            <div class="v-callout v-callout--warn" style="margin-top:var(--s-4)"><div><b>Real product, new setting.</b> Photo Studio changes the background and the light, not the product. If a version alters the label, the jar or the colour of the honey, it is discarded before you see it — a customer should receive what the picture shows.</div></div>
+            </div>
               <div class="vs-body vs-body--panes" style="gap:0">
                 <div class="vs-pane vs-pane--canvas" style="padding:var(--s-6);display:flex;flex-direction:column;align-items:center;gap:var(--s-4)">
                   <div class="v-seg">
@@ -963,9 +1110,9 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
