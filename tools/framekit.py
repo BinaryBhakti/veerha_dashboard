@@ -56,7 +56,7 @@ def build(template_block, id, n, name, route, arch, note, canvas, height=None, c
     b = b[:a] + hd + b[z + len('</div>'):]
     b = re.sub(r'<p class="vs-frame__note">.*?</p>', '<p class="vs-frame__note">\n      %s\n    </p>' % note,
                b, count=1, flags=re.S)
-    c = re.search(r'<div class="vs-canvas[^"]*">', b)
+    c = re.search(r'<div class="vs-canvas[^"]*"[^>]*>', b)
     if c:
         i0, i1 = _div_inner_span(b, c.start())
         b = b[:c.start()] + '<div class="%s">\n%s\n            ' % (canvas_cls, canvas) + b[i1:]

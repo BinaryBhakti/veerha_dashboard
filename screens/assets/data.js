@@ -426,7 +426,7 @@ export const learning = [
 ];
 export const teach = {
   business: { name: 'Rivergrove Retreat', site: 'rivergrove.example.com', industry: 'Hospitality',
-              what: 'A 24-room wellness resort on the river, two hours from the city.' },
+              what: 'A 14-room wellness resort on the river, two hours from the city.' },
   waitsFor: ['Enquiry type', 'Check-in', 'Check-out', 'Guests', 'Children', 'Rooms', 'Occasion', 'Budget'],
   talk: { assistant: 'Mira', tone: 'Warm', firstName: true, saysAI: true },
 };
