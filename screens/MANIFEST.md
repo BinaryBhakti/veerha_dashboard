@@ -135,13 +135,13 @@ that page, and it collects exactly those four answers.
 |---|---|---|---|---|---|
 | 68 | Public enquiry form | `/f/:slug` | 17-public | live `/f/` capture — field set + layout | `forms.png` builds the field set; `onboarding.png` publishes the link |
 | 69 | Quotation — view & respond | `/q/:token` | 17-public | designed — `/q/` has no page yet | `quotes.png` has *Awaiting reply · Accepted · Rejected* |
-| 70 | Proposal — rooms, confirm | `/p/:token` | 17-public | designed — `/p/` empty in production | stay builder: *"one page they can confirm on"*; drawer shows an **Expired** chip |
+| 70 | Stay page — ready to confirm | `/s/:token` | 17-public | designed — `/p/` empty in production | stay builder: *"one page they can confirm on"*; drawer shows an **Expired** chip |
 | 71 | Meeting booking | `/book/:token` | 17-public | designed — *"No bookable people yet"* | `booking-links.png`; checked against `settings/hours` |
 | 72 | Reschedule / cancel | `/book/r/:token` | 17-public | designed | `calendar.png` rows offer Reschedule / Cancel |
-| 73 | Stay hub | `/s/:token` | 17-public | **live `/s/` capture** — structure verified | guest mirror of `front-desk-ID-*.png` |
+| 73 | Stay page — after booking | `/s/:token` | 17-public | **live `/s/` capture** — structure verified | guest mirror of `front-desk-ID-*.png` |
 | 74 | Online check-in | `/s/:token/check-in` | 17-public | **live `/s/…/check-in` capture** | front desk complains it *"holds nothing"* for outside bookings |
 | 75 | Preferences & consent | `/pref/:token` | 17-public | designed from `settings/fields` | `fields.png` — bed pref, allergies (Sensitive), birthday (PII), all at **0% filled** |
-| 76 | Rate your stay | `/s/:token/review` | 17-public | confirmed **absent** in production | contract names "review"; attribution closes on confirmed bookings |
+| 76 | After-stay page — rate your stay | `/p/:token` | 17-public | confirmed **absent** in production | contract names "review"; attribution closes on confirmed bookings |
 | 77 | Terminal states (thank-you / expired / actioned) | all tokenized | 17-public | **expired copy verbatim from live** | `landing-pages.png` thank-you field; Expired chip |
 
 ---
