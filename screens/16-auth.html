@@ -127,12 +127,12 @@
     </div>
   </section>
 
-  <section class="vs-frame vs-frame--h680" id="register">
+  <section class="vs-frame" id="register">
     <div class="vs-frame__hd">
       <span class="vs-frame__n">63</span><span class="vs-frame__name">Create your company</span>
       <span class="vs-frame__route">/register</span><span class="t-meta muted">A11</span>
     </div>
-    <p class="vs-frame__note">The widest variant. Asking what they run first is what lets the rest of onboarding skip questions — a hotel and a sales team need different fields, and guessing wrong costs a step.</p>
+    <p class="vs-frame__note">The widest variant. The edition comes first because it decides the product — the live app now offers three, and each one changes the menu. Every live field is kept: company, your name, contact number, email, industry and password. Industry is a separate question from edition: a travel agency runs Sales AI, not Hotels.</p>
     <div class="vs-frame__box">
       <div style="min-height:680px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
         <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
@@ -169,21 +169,32 @@
           <div style="flex:1;padding:var(--s-8);display:flex;flex-direction:column;justify-content:center;min-width:0">
             <h1 class="t-page">Set up your company</h1>
             <p class="t-small muted" style="margin-top:4px">Two minutes. Your AI employee starts after this.</p>
-            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">What are you running?</label>
-              <div class="row" style="align-items:stretch;gap:var(--s-3)">
-                <label class="v-radiocard is-selected grow"><span class="v-radiocard__dot"></span>
-                  <span><b class="t-small">Hotels &amp; stays</b><br><span class="t-meta muted">Rooms, rates, bookings</span></span></label>
-                <label class="v-radiocard grow"><span class="v-radiocard__dot"></span>
-                  <span><b class="t-small">Sales teams</b><br><span class="t-meta muted">Leads and deals</span></span></label>
-              </div></div>
+            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">What are you setting up?</label>
+              <div style="display:flex;flex-direction:column;gap:var(--s-2)">
+                <label class="v-radiocard"><span class="v-radiocard__dot"></span>
+                  <span><b class="t-small">Veerha for Sales AI</b> <span class="t-meta muted">· Leads, quotations, catalogs</span></span></label>
+                <label class="v-radiocard is-selected"><span class="v-radiocard__dot"></span>
+                  <span><b class="t-small">Veerha for Hotels</b> <span class="t-meta muted">· Rooms, live rates, banquet enquiries</span></span></label>
+                <label class="v-radiocard"><span class="v-radiocard__dot"></span>
+                  <span><b class="t-small">Veerha for E-commerce</b> <span class="t-meta muted">· Storefront, orders, counter sales</span></span></label>
+              </div>
+              <div class="v-field__hint">Decides which screens your team gets. Hotels adds Bookings, Front Desk and guest pages.</div></div>
             <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)">
-              <div class="v-field grow"><label class="v-field__label">Company</label><input class="v-input" value="Rivergrove Retreat"></div>
-              <div class="v-field" style="width:160px"><label class="v-field__label">Phone</label>
-                <div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input class="v-input" placeholder="90000 10000"></div></div>
+              <div class="v-field grow"><label class="v-field__label">Company name</label><input class="v-input" value="Rivergrove Retreat"></div>
+              <div class="v-field grow"><label class="v-field__label">Your name</label><input class="v-input" value="Anita"></div>
             </div>
-            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Work email</label>
+            <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)">
+              <div class="v-field grow"><label class="v-field__label">Contact number</label>
+                <div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input class="v-input" placeholder="90000 10000"></div></div>
+              <div class="v-field grow"><label class="v-field__label">Industry</label>
+                <select class="v-select"><option>Hospitality</option><option>Travel &amp; Tourism</option><option>Real Estate</option><option>Retail &amp; E-commerce</option><option>Other</option></select></div>
+            </div>
+            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Email address</label>
               <input class="v-input" value="anita@rivergrove.example.com"></div>
-            <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)">Create my workspace</button>
+            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Password</label>
+              <input class="v-input" type="password" value="xxxxxxxxxxxx">
+              <div class="v-field__hint">At least 8 characters. We send a link to confirm the address before Veerha goes live.</div></div>
+            <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)">Create company</button>
             <p class="t-meta muted" style="margin-top:var(--s-4);text-align:center">
               Already have an account? <span style="color:var(--brand);font-weight:500">Sign in</span></p>
           </div>
