@@ -137,6 +137,9 @@ FRAME_IA = {
     'mail':         F('Conversations', 'Customer', 'Customer Mail',
                       tabs=('conversations', 'Customer Mail')),
     'channels':     S('Status & test'),
+    'reviews':      F('Conversations', 'Customer', 'Google Reviews', tabs=('conversations', 'Google Reviews')),
+    'reviews-done': F('Conversations', 'Customer', 'Google Reviews', tabs=('conversations', 'Google Reviews')),
+    'reviews-off':  F('Conversations', 'Customer', 'Google Reviews', tabs=('conversations', 'Google Reviews')),
     'templates':    Snorail('WhatsApp Templates'),
     'email-studio': F('Marketing', 'Marketing', 'Email'),
     # 07 queues
