@@ -429,15 +429,17 @@
   <section class="vs-frame" id="channels">
     <div class="vs-frame__hd">
       <span class="vs-frame__n">19</span>
-      <span class="vs-frame__name">Channels &amp; speed-to-lead</span>
+      <span class="vs-frame__name">Status &amp; test</span>
       <span class="vs-frame__route">/channels</span>
       <span class="t-meta muted">A5</span>
     </div>
     <p class="vs-frame__note">
       Where the product's biggest current problem lives. A disconnected channel is not a settings
-      row — it is <b>seventeen of twenty-seven leads Veerha can read and cannot answer</b>, so the
-      cost is stated in the card rather than left as an inference. <code>/settings/integrations</code>
-      folds in here; same shell, same sections.
+      row — it is seventeen of twenty-seven leads Veerha can read and cannot answer, so the cost is
+      stated in the card. The live product now splits this from <b>Connections</b> (#79): this page
+      is per channel — is it live, send a test, how fast to answer — and Connections holds the
+      accounts and keys behind them. The four channels match live: WhatsApp, Email, Instagram &amp;
+      Messenger, Google Business Profile.
     </p>
     <div class="vs-frame__box"><div class="vs-app">
         <nav class="v-rail is-expanded" aria-label="Sections">
@@ -515,7 +517,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -523,7 +525,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item is-active" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -536,8 +538,8 @@
             <div class="vs-canvas">
               <div class="v-pagehead">
                 <div class="v-pagehead__copy">
-                  <h2 class="v-pagehead__title">Channels</h2>
-                  <p class="v-pagehead__sub">Where enquiries arrive, and what Veerha may do on each</p></div>
+                  <h2 class="v-pagehead__title">Status &amp; test</h2>
+                  <p class="v-pagehead__sub">Where enquiries arrive, and what Veerha may do on each. Until a channel is live, every message is simulated and logged — nothing reaches a guest.</p></div>
                 <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Add a channel</button></div>
               </div>
 
@@ -554,8 +556,9 @@
 
               <div class="v-tabs" style="margin-bottom:var(--s-4);flex-wrap:wrap">
                 <button class="v-tab is-active">All <span class="v-pill__n">4</span></button>
-                <button class="v-tab">Live <span class="v-pill__n">3</span></button>
+                <button class="v-tab">Live <span class="v-pill__n">1</span></button>
                 <button class="v-tab">Needs attention <span class="v-pill__n">1</span></button>
+                <button class="v-tab">Not connected <span class="v-pill__n">2</span></button>
                 <span class="t-meta muted" style="margin-left:auto;align-self:center"><span class="num">4</span> results</span>
               </div>
 
@@ -598,21 +601,27 @@
 
                 <section class="v-card">
                   <div class="v-card__head">
-                    <div class="v-card__ic" style="background:var(--ok-bg);color:var(--ok-ic);border:1px solid var(--ok-bd)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></div>
-                    <div class="grow"><div class="v-card__title">Voice</div>
-                      <p class="v-card__desc">Inbound calls transcribed and scored · 2 leads created this week</p></div>
-                    <span class="v-badge v-badge--ok">Live</span>
-                    <span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
+                    <div class="grow"><div class="v-card__title">Instagram &amp; Messenger</div>
+                      <p class="v-card__desc">DMs, post comments and story replies from your Facebook page</p></div>
+                    <span class="v-badge v-badge--neutral">Not connected</span>
+                    <button class="v-btn v-btn--secondary v-btn--sm">Connect</button>
+                  </div>
+                  <div class="v-card__body" style="padding-top:0">
+                    <p class="t-meta muted">Connect the Facebook page your Instagram account is linked to — both arrive together. A page with no Instagram account is a Messenger-only connection, not a failure.</p>
                   </div>
                 </section>
 
                 <section class="v-card">
                   <div class="v-card__head">
-                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg></div>
-                    <div class="grow"><div class="v-card__title">Website form</div>
-                      <p class="v-card__desc">5 leads this month · all qualified within the hour</p></div>
-                    <span class="v-badge v-badge--ok">Live</span>
-                    <span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></div>
+                    <div class="grow"><div class="v-card__title">Google Business Profile</div>
+                      <p class="v-card__desc">Reviews and questions left on your Google listing</p></div>
+                    <span class="v-badge v-badge--neutral">Not connected</span>
+                    <button class="v-btn v-btn--secondary v-btn--sm">Connect</button>
+                  </div>
+                  <div class="v-card__body" style="padding-top:0">
+                    <p class="t-meta muted">Once connected, reviews land in Conversations › Google Reviews with a drafted reply. Replies there are <b>public</b>, so nothing posts without you.</p>
                   </div>
                 </section>
               </div>
