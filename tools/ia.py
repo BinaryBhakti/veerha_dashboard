@@ -144,6 +144,10 @@ FRAME_IA = {
     'review':            F('Review Queue', 'Operations'),
     'callbacks':         F('Conversations', 'Customer', 'Callbacks',
                            tabs=('conversations', 'Callbacks')),
+    'callbacks-full':    F('Conversations', 'Customer', 'Callbacks',
+                           tabs=('conversations', 'Callbacks')),
+    'mail-empty':        F('Conversations', 'Customer', 'Customer Mail',
+                           tabs=('conversations', 'Customer Mail')),
     'touchpoints':       F('Customers', 'Customer', 'Touchpoints', tabs=('customers', 'Touchpoints')),
     'touchpoint-drawer': F('Customers', 'Customer', 'Touchpoints', tabs=('customers', 'Touchpoints')),
     # 08 calendar
@@ -207,6 +211,7 @@ FRAME_IA = {
     'billing':       S('Billing'),
     'billing-empty': S('Billing'),
     'wallet':        S('Wallet'),
+    'wallet-low':    S('Wallet'),
 }
 
 
