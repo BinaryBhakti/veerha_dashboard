@@ -9835,20 +9835,20 @@ Late checkout, subject to availability</textarea>
             </nav>
             <div class="vs-canvas vs-canvas--narrow" style="margin:0 auto">
               <div class="v-stepper" style="margin-bottom:var(--s-6)">
-                <div class="v-stepper__step is-done"><span class="v-stepper__n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>Your business</div>
+                <div class="v-stepper__step is-active"><span class="v-stepper__n num">1</span>Your business</div>
                 <span class="v-stepper__bar"></span>
-                <div class="v-stepper__step is-active"><span class="v-stepper__n num">2</span>How you sell</div>
+                <div class="v-stepper__step "><span class="v-stepper__n num">2</span>Review</div>
                 <span class="v-stepper__bar"></span>
-                <div class="v-stepper__step"><span class="v-stepper__n num">3</span>Connect a channel</div>
+                <div class="v-stepper__step "><span class="v-stepper__n num">3</span>Go live</div>
                 <span class="v-stepper__bar"></span>
-                <div class="v-stepper__step"><span class="v-stepper__n num">4</span>Hire your first employee</div>
+                <div class="v-stepper__step "><span class="v-stepper__n num">4</span>Done</div>
               </div>
               <div class="v-card">
                 <div class="v-card__head"><div class="row grow" style="gap:var(--s-3)">
                   <span class="v-avatar v-avatar--ai">V</span>
                   <div><div class="t-strong">Setting up with you</div>
-                    <div class="t-meta muted">Answer in your own words — no forms</div></div>
-                </div><span class="v-badge v-badge--ai">Step 2 of 4</span></div>
+                    <div class="t-meta muted">Answer in your own words — no forms · website read <span class="num">✓</span> · industry confirmed <span class="num">✓</span> · next: lead fields, then your AI employee’s name</div></div>
+                </div><span class="v-badge v-badge--ai">Step 1 of 4</span></div>
                 <div class="v-card__body" style="display:flex;flex-direction:column;gap:var(--s-4)">
                   <div class="v-msg v-msg--in"><div class="v-msg__bubble">Thanks — a 14-room riverside resort. Who usually answers an enquiry first, and how long does that take on a normal day?</div><div class="v-msg__meta">Veerha · 10:02</div></div>
                   <div class="v-msg v-msg--out"><div class="v-msg__bubble">Tara picks up WhatsApp, but only between 9 and 7. Nights go unanswered till morning.</div><div class="v-msg__meta">Anita · 10:03</div></div>
@@ -9875,6 +9875,102 @@ Late checkout, subject to availability</textarea>
                   <span class="t-meta muted" style="margin-right:var(--s-3)">About 4 minutes left</span>
                   <button class="v-btn v-btn--secondary">Skip — use sensible defaults</button>
                 </div>
+              </div>
+            </div>
+          </div>
+<div data-screen="setup-golive" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item is-active" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas vs-canvas--narrow" style="margin:0 auto">
+              <div class="v-stepper" style="margin-bottom:var(--s-6)">
+                <div class="v-stepper__step is-done"><span class="v-stepper__n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>Your business</div>
+                <span class="v-stepper__bar"></span>
+                <div class="v-stepper__step is-done"><span class="v-stepper__n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span>Review</div>
+                <span class="v-stepper__bar"></span>
+                <div class="v-stepper__step is-active"><span class="v-stepper__n num">3</span>Go live</div>
+                <span class="v-stepper__bar"></span>
+                <div class="v-stepper__step "><span class="v-stepper__n num">4</span>Done</div>
+              </div>
+              <div class="v-card">
+                <div class="v-card__head"><div class="grow"><div class="t-strong">Go live</div>
+                  <div class="t-meta muted">Connect where guests already write. Until a channel is live, Veerha simulates every message and logs it — nothing reaches a guest.</div></div>
+                  <span class="v-badge v-badge--ai">Step 3 of 4</span></div>
+                <div class="v-card__body">
+                  <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--border);align-items:flex-start">
+                    <div class="grow"><div class="t-small" style="font-weight:600">WhatsApp Business</div><div class="t-meta muted" style="margin-top:2px">Where 17 of your last 27 leads arrived.<ol style="margin:var(--s-2) 0 0;padding-left:var(--s-5)"><li class="t-meta" style="margin:2px 0"><b>✓</b> Sign in to Facebook Business</li><li class="t-meta" style="margin:2px 0"><b>✓</b> Choose the number guests write to</li><li class="t-meta" style="margin:2px 0"><span class="muted">○</span> Enter the code Meta texts to it</li><li class="t-meta" style="margin:2px 0"><span class="muted">○</span> Approve the first message template</li></ol></div></div>
+                    <span class="v-badge v-badge--warn">Step 2 of 4</span><button class="v-btn v-btn--primary v-btn--sm">Continue</button></div>
+                  <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--border);align-items:flex-start">
+                    <div class="grow"><div class="t-small" style="font-weight:600">Email</div><div class="t-meta muted" style="margin-top:2px">Connect the mailbox guests write to, so their email lands beside WhatsApp. Can be done later from Customer Mail.</div></div>
+                    <span class="v-badge v-badge--neutral">Optional</span><button class="v-btn v-btn--secondary v-btn--sm">Connect</button></div>
+                  <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--border);align-items:flex-start">
+                    <div class="grow"><div class="t-small" style="font-weight:600">Website widget</div><div class="t-meta muted" style="margin-top:2px">One line of code on your site. Optional — you can add it any time.</div></div>
+                    <span class="v-badge v-badge--neutral">Not started</span><button class="v-btn v-btn--secondary v-btn--sm">Copy snippet</button></div>
+                  <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>One channel is enough to go live.</b> Mira starts answering the moment WhatsApp is confirmed; email and the widget can join later without repeating this guide.</div></div>
+                </div>
+              </div>
+              <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)">
+                <button class="v-btn v-btn--ghost">Back to review</button>
+                <span class="grow"></span>
+                <span class="t-meta muted">Waiting on the WhatsApp code · about 2 minutes</span>
+                <button class="v-btn v-btn--primary" disabled>Go live</button>
               </div>
             </div>
           </div>
@@ -10716,7 +10812,7 @@ Late checkout, subject to availability</textarea>
               <section class="v-card band">
                 <div class="v-card__head"><div class="grow"><div class="v-card__title">Operating brief</div>
                   <p class="v-card__desc">Every conversation is grounded in this, so the AI answers as Rivergrove and not as a generic assistant.</p></div></div>
-                <div class="v-card__body"><textarea class="v-input" rows="5" style="width:100%;resize:vertical">Rivergrove Retreat is a 24-room wellness resort on the river, two hours from the city. Guests come for quiet weekends, anniversaries and small group retreats. Quote rooms from the live rate; never promise a room the channel manager shows as sold. Breakfast is included on every plan except Room only. Check-in from 2 PM, check-out by 11 AM; a late checkout is a request, not a promise.</textarea>
+                <div class="v-card__body"><textarea class="v-input" rows="5" style="width:100%;resize:vertical">Rivergrove Retreat is a 14-room wellness resort on the river, two hours from the city. Guests come for quiet weekends, anniversaries and small group retreats. Quote rooms from the live rate; never promise a room the channel manager shows as sold. Breakfast is included on every plan except Room only. Check-in from 2 PM, check-out by 11 AM; a late checkout is a request, not a promise.</textarea>
                   <div class="row" style="gap:var(--s-3);margin-top:var(--s-3);align-items:center">
                     <button class="v-btn v-btn--secondary v-btn--sm">Regenerate from business info</button>
                     <span class="t-meta muted">Rebuilds the brief from Teach Veerha. Your edits above are replaced, so the old version is kept in the change log.</span></div></div>
@@ -12734,7 +12830,7 @@ Late checkout, subject to availability</textarea>
                 <section class="v-card">
                   <div class="v-card__head">
                     <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg></div>
-                    <div class="grow"><div class="v-card__title">Channel manager</div><p class="v-card__desc">Rooms and rates are read from it. Last sync 6 minutes ago · 24 rooms · 3 rate plans.</p></div>
+                    <div class="grow"><div class="v-card__title">Channel manager</div><p class="v-card__desc">Rooms and rates are read from it. Last sync 6 minutes ago · 14 rooms · 3 rate plans.</p></div>
                     <span class="v-badge v-badge--ok">Connected</span><button class="v-btn v-btn--secondary v-btn--sm">Manage</button>
                   </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Property code</label><input class="v-input num" value="RVG-•••" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
                 </section>
@@ -13885,7 +13981,7 @@ Late checkout, subject to availability</textarea>
             <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></div>
             <div class="v-empty__title"><span id="wtSoonName">This module</span> is in the next slice</div>
             <p class="v-empty__body">
-              The walkthrough now covers 15 modules and 87 screens. What is left — Quotations,
+              The walkthrough now covers 15 modules and 88 screens. What is left — Quotations,
           Customers and Billing — is built from templates already visible here, so nothing in it is
           a new layout problem. The ten guest pages are built, but they are deliberately not staged
           in here: archetype A12 has no app shell, and putting a guest page inside this chrome would
@@ -14053,7 +14149,7 @@ Late checkout, subject to availability</textarea>
 
 <button class="wt-badge" id="wtToggle" aria-expanded="false">
   <span><b>Walkthrough</b> · 15 modules</span>
-  <span class="v-badge v-badge--brand"><span id="wtCount">87</span> screens</span>
+  <span class="v-badge v-badge--brand"><span id="wtCount">88</span> screens</span>
 </button>
 
 <!-- command palette ---------------------------------------------------------->
@@ -14068,7 +14164,7 @@ Late checkout, subject to availability</textarea>
 
 <script>
 (function () {
-  var META = {"dashboard": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "analytics": {"crumb": ["Workspace", "Analytics"], "rail": "dashboard", "tabs": ""}, "leads": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-queue": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "contacts": {"crumb": ["Marketing", "Contacts"], "rail": "campaign-builder", "tabs": ""}, "segments": {"crumb": ["Marketing", "Segments"], "rail": "campaign-builder", "tabs": ""}, "import": {"crumb": ["Marketing", "Import"], "rail": "campaign-builder", "tabs": ""}, "capture": {"crumb": ["Marketing", "Widget"], "rail": "campaign-builder", "tabs": ""}, "opportunities": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "pipeline": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "proposal": {"crumb": ["Customer", "Stay workspace"], "rail": "opportunities", "tabs": ""}, "bookings": {"crumb": ["Operations", "Bookings"], "rail": "bookings", "tabs": ""}, "booking-detail": {"crumb": ["Operations", "Booking"], "rail": "bookings", "tabs": ""}, "inbox": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "inbox-taken": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "channels": {"crumb": ["Settings", "Status & test"], "rail": "brand", "tabs": ""}, "templates": {"crumb": ["Settings", "WhatsApp Templates"], "rail": "brand", "tabs": ""}, "mail": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "email-studio": {"crumb": ["Marketing", "Email"], "rail": "campaign-builder", "tabs": ""}, "tasks": {"crumb": ["Operations", "Tasks"], "rail": "tasks", "tabs": ""}, "review": {"crumb": ["Operations", "Review Queue"], "rail": "review", "tabs": ""}, "callbacks": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "calendar": {"crumb": ["Operations", "Calendar"], "rail": "calendar", "tabs": ""}, "hours": {"crumb": ["Settings", "Working hours"], "rail": "brand", "tabs": ""}, "employees": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "workflow": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "catalogs": {"crumb": ["Settings", "Products & Services"], "rail": "brand", "tabs": ""}, "property-wizard": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "brand": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "ai-behaviour": {"crumb": ["Settings", "Behaviour"], "rail": "brand", "tabs": ""}, "system": {"crumb": ["Settings", "Infrastructure"], "rail": "gear", "tabs": ""}, "states": {"crumb": ["Settings", "No permission"], "rail": "brand", "tabs": ""}, "dashboard-loading": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "leads-empty": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-error": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "org-chart": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "org-empty": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "team": {"crumb": ["Settings", "Team"], "rail": "brand", "tabs": ""}, "onboarding": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}, "recommendations": {"crumb": ["Marketing", "Recommendations"], "rail": "campaign-builder", "tabs": ""}, "campaign-builder": {"crumb": ["Marketing", "Campaigns"], "rail": "campaign-builder", "tabs": ""}, "sequences": {"crumb": ["Settings", "Sequences"], "rail": "brand", "tabs": ""}, "landing-pages": {"crumb": ["Marketing", "Landing Pages"], "rail": "campaign-builder", "tabs": ""}, "creative-studio": {"crumb": ["Marketing", "Creative"], "rail": "campaign-builder", "tabs": ""}, "attribution": {"crumb": ["Marketing", "Attribution"], "rail": "campaign-builder", "tabs": ""}, "opportunity-drawer": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "quotes": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "quotes-empty": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "front-desk": {"crumb": ["Operations", "Front Desk"], "rail": "front-desk", "tabs": ""}, "touchpoints": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "touchpoint-drawer": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "booking-links": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "booking-links-empty": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "customers": {"crumb": ["Customer", "Customers"], "rail": "customers", "tabs": ""}, "customer-record": {"crumb": ["Customer", "Customer profile"], "rail": "customers", "tabs": ""}, "workflows": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "employee-new": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "hire": {"crumb": ["Settings", "Hire"], "rail": "brand", "tabs": ""}, "knowledge": {"crumb": ["Settings", "Knowledge"], "rail": "brand", "tabs": ""}, "memory": {"crumb": ["Settings", "Memory"], "rail": "brand", "tabs": ""}, "calling": {"crumb": ["Settings", "Calling"], "rail": "brand", "tabs": ""}, "deliveries": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "deliveries-failed": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "properties": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "shared-resources": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "resource-drawer": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "pricing": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "pricing-empty": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "departments": {"crumb": ["Settings", "Departments"], "rail": "brand", "tabs": ""}, "fields": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-profiles": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-changelog": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "forms": {"crumb": ["Settings", "Forms"], "rail": "brand", "tabs": ""}, "automation": {"crumb": ["Settings", "Lead Stages"], "rail": "brand", "tabs": ""}, "developers": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "developers-empty": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "billing": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "billing-empty": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "wallet": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "lead-drawer": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "brand-localization": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-tax": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-storage": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-access": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "rules": {"crumb": ["Settings", "Rules"], "rail": "brand", "tabs": ""}, "connections": {"crumb": ["Settings", "Connections"], "rail": "brand", "tabs": ""}, "callbacks-full": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "mail-empty": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "wallet-low": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}};
+  var META = {"dashboard": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "analytics": {"crumb": ["Workspace", "Analytics"], "rail": "dashboard", "tabs": ""}, "leads": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-queue": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "contacts": {"crumb": ["Marketing", "Contacts"], "rail": "campaign-builder", "tabs": ""}, "segments": {"crumb": ["Marketing", "Segments"], "rail": "campaign-builder", "tabs": ""}, "import": {"crumb": ["Marketing", "Import"], "rail": "campaign-builder", "tabs": ""}, "capture": {"crumb": ["Marketing", "Widget"], "rail": "campaign-builder", "tabs": ""}, "opportunities": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "pipeline": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "proposal": {"crumb": ["Customer", "Stay workspace"], "rail": "opportunities", "tabs": ""}, "bookings": {"crumb": ["Operations", "Bookings"], "rail": "bookings", "tabs": ""}, "booking-detail": {"crumb": ["Operations", "Booking"], "rail": "bookings", "tabs": ""}, "inbox": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "inbox-taken": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "channels": {"crumb": ["Settings", "Status & test"], "rail": "brand", "tabs": ""}, "templates": {"crumb": ["Settings", "WhatsApp Templates"], "rail": "brand", "tabs": ""}, "mail": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "email-studio": {"crumb": ["Marketing", "Email"], "rail": "campaign-builder", "tabs": ""}, "tasks": {"crumb": ["Operations", "Tasks"], "rail": "tasks", "tabs": ""}, "review": {"crumb": ["Operations", "Review Queue"], "rail": "review", "tabs": ""}, "callbacks": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "calendar": {"crumb": ["Operations", "Calendar"], "rail": "calendar", "tabs": ""}, "hours": {"crumb": ["Settings", "Working hours"], "rail": "brand", "tabs": ""}, "employees": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "workflow": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "catalogs": {"crumb": ["Settings", "Products & Services"], "rail": "brand", "tabs": ""}, "property-wizard": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "brand": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "ai-behaviour": {"crumb": ["Settings", "Behaviour"], "rail": "brand", "tabs": ""}, "system": {"crumb": ["Settings", "Infrastructure"], "rail": "gear", "tabs": ""}, "states": {"crumb": ["Settings", "No permission"], "rail": "brand", "tabs": ""}, "dashboard-loading": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "leads-empty": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-error": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "org-chart": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "org-empty": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "team": {"crumb": ["Settings", "Team"], "rail": "brand", "tabs": ""}, "onboarding": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}, "recommendations": {"crumb": ["Marketing", "Recommendations"], "rail": "campaign-builder", "tabs": ""}, "campaign-builder": {"crumb": ["Marketing", "Campaigns"], "rail": "campaign-builder", "tabs": ""}, "sequences": {"crumb": ["Settings", "Sequences"], "rail": "brand", "tabs": ""}, "landing-pages": {"crumb": ["Marketing", "Landing Pages"], "rail": "campaign-builder", "tabs": ""}, "creative-studio": {"crumb": ["Marketing", "Creative"], "rail": "campaign-builder", "tabs": ""}, "attribution": {"crumb": ["Marketing", "Attribution"], "rail": "campaign-builder", "tabs": ""}, "opportunity-drawer": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "quotes": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "quotes-empty": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "front-desk": {"crumb": ["Operations", "Front Desk"], "rail": "front-desk", "tabs": ""}, "touchpoints": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "touchpoint-drawer": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "booking-links": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "booking-links-empty": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "customers": {"crumb": ["Customer", "Customers"], "rail": "customers", "tabs": ""}, "customer-record": {"crumb": ["Customer", "Customer profile"], "rail": "customers", "tabs": ""}, "workflows": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "employee-new": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "hire": {"crumb": ["Settings", "Hire"], "rail": "brand", "tabs": ""}, "knowledge": {"crumb": ["Settings", "Knowledge"], "rail": "brand", "tabs": ""}, "memory": {"crumb": ["Settings", "Memory"], "rail": "brand", "tabs": ""}, "calling": {"crumb": ["Settings", "Calling"], "rail": "brand", "tabs": ""}, "deliveries": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "deliveries-failed": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "properties": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "shared-resources": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "resource-drawer": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "pricing": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "pricing-empty": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "departments": {"crumb": ["Settings", "Departments"], "rail": "brand", "tabs": ""}, "fields": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-profiles": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-changelog": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "forms": {"crumb": ["Settings", "Forms"], "rail": "brand", "tabs": ""}, "automation": {"crumb": ["Settings", "Lead Stages"], "rail": "brand", "tabs": ""}, "developers": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "developers-empty": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "billing": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "billing-empty": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "wallet": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "lead-drawer": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "brand-localization": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-tax": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-storage": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-access": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "rules": {"crumb": ["Settings", "Rules"], "rail": "brand", "tabs": ""}, "connections": {"crumb": ["Settings", "Connections"], "rail": "brand", "tabs": ""}, "callbacks-full": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "mail-empty": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "wallet-low": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "setup-golive": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}};
   var stage = document.getElementById('wtStage');
   var tabs  = document.getElementById('wtTabs');
   var crumbA = document.getElementById('wtCrumbA'), crumbB = document.getElementById('wtCrumbB');

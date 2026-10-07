@@ -189,6 +189,7 @@ FRAME_IA = {
     'org-empty':   S('Org'),
     'team':        S('Team'),
     'onboarding':  S('Setup Guide'),
+    'setup-golive': S('Setup Guide'),
     'departments': S('Departments'),
     # 14 settings
     'brand':            S('Branding & Localization'),
