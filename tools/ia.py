@@ -139,6 +139,7 @@ FRAME_IA = {
     # 06 conversations
     'inbox':        F('Conversations', 'Customer', 'Chat', tabs=('conversations', 'Chat')),
     'inbox-taken':  F('Conversations', 'Customer', 'Chat', tabs=('conversations', 'Chat')),
+    'inbox-modes':  F('Conversations', 'Customer', 'Chat', tabs=('conversations', 'Chat')),
     'mail':         F('Conversations', 'Customer', 'Customer Mail',
                       tabs=('conversations', 'Customer Mail')),
     'channels':     S('Status & test'),
