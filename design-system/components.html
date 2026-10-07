@@ -186,8 +186,32 @@
             <a class="v-sidenav__item">Knowledge</a>
           </div>
         </nav>
+        <nav class="v-sidenav v-sidenav--dense" style="height:420px" aria-label="Settings sections, dense">
+          <div class="v-sidenav__group">
+            <div class="label v-sidenav__label">Integrations</div>
+            <a class="v-sidenav__item is-active">Connections</a>
+            <a class="v-sidenav__item">Status &amp; test</a>
+            <a class="v-sidenav__item">WhatsApp Templates</a>
+            <a class="v-sidenav__item">WhatsApp Forms</a>
+          </div>
+          <div class="v-sidenav__group">
+            <div class="label v-sidenav__label">Developers</div>
+            <a class="v-sidenav__item">API &amp; webhooks</a>
+          </div>
+          <div class="v-sidenav__help">
+            <div class="t-small" style="font-weight:600">Need help?</div>
+            <p>Docs, quick starts and templates — everything you need to get the AI live.</p>
+            <div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div>
+          </div>
+        </nav>
         <div style="padding:var(--s-5);align-self:flex-start;max-width:42ch">
-          <div class="sh-state__l">Why it is here and not above the content</div>
+          <div class="sh-state__l"><code>.v-sidenav--dense</code> and <code>.v-sidenav__help</code></div>
+          <p class="t-small muted" style="margin-top:var(--s-2)">
+            The dense variant is for a rail that holds a whole area — the live Settings rail has
+            eight groups and about 36 destinations. The help card closes the rail and sits at its
+            foot whatever the rail's length.
+          </p>
+          <div class="sh-state__l" style="margin-top:var(--s-5)">Why it is here and not above the content</div>
           <p class="t-small muted" style="margin-top:var(--s-2)">
             In the live product this nav renders inline above the page on narrow viewports. On the
             Settings tree that is roughly 27 items — about 1,400px — so more than half the app

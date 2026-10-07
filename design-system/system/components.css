@@ -122,6 +122,26 @@
 .v-sidenav__item svg { flex: none; color: var(--text-muted); }
 .v-sidenav__item.is-active svg { color: var(--brand); }
 
+/* Dense — for a rail that holds a whole area. The live Settings rail carries
+   eight groups and ~36 destinations; at the default rhythm that is taller than
+   a laptop screen, so groups sit closer and items are a row shorter. Hit area
+   stays 30px. */
+.v-sidenav--dense { gap: var(--s-4); padding: var(--s-3); }
+.v-sidenav--dense .v-sidenav__group { gap: 0; }
+.v-sidenav--dense .v-sidenav__label { margin-bottom: var(--s-1); }
+.v-sidenav--dense .v-sidenav__item { padding: 5px var(--s-3); min-height: 30px; }
+
+/* The rail's last block: where to get help. Quiet by design — it is the
+   bottom of the nav, not a promotion. */
+.v-sidenav__help {
+  margin-top: auto; padding: var(--s-3); border: 1px solid var(--border);
+  border-radius: var(--r-tile); background: var(--surface-subtle);
+  display: flex; flex-direction: column; gap: var(--s-2);
+}
+.v-sidenav__help p { margin: 0; font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-sidenav__help__links { display: flex; gap: var(--s-3); font-size: var(--t-meta-s); }
+.v-sidenav__help__links a { color: var(--brand); font-weight: 500; }
+
 
 /* ==========================================================================
    2 · PAGE STRUCTURE
@@ -864,6 +884,10 @@ td.v-table__num.amount { font-family: var(--ui); }
   background: var(--surface); color: var(--text-muted);
 }
 .vs-topbar__search { flex: 1; max-width: 420px; }
+/* The hint sits INSIDE the field, at its right edge. Left in flow it wrapped
+   under the input on every frame, which read as a broken top bar. */
+.v-search .v-kbd { position: absolute; right: var(--s-2); top: 50%; transform: translateY(-50%); pointer-events: none; }
+.v-search:has(.v-kbd) .v-input { padding-right: var(--s-10); }
 
 /* A table wider than its card must SCROLL, not clip. The 11-column Touchpoints
    table overran its card by 83px at 1512 and 203px at 1280, so "Last touch"
