@@ -194,7 +194,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -202,7 +202,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -299,6 +299,558 @@
     </div></div>
   </section>
 
+  <!-- ══════════════════ 44b · WORKSPACE — LOCALIZATION ══════════════════ -->
+  <section class="vs-frame" id="brand-localization">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">44b</span><span class="vs-frame__name">Workspace — Localization</span>
+      <span class="vs-frame__route">/settings/workspace/localization</span><span class="t-meta muted">A5 · form</span>
+    </div>
+    <p class="vs-frame__note">
+      Live has four fields: currency, time zone, locale and default country code. The locale field does more than its label says — it sets the language the <b>AI caller opens in</b> — so the hint says so. The side card shows the same values as a guest and the database see them.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Branding &amp; Localization</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item is-active" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Workspace</h2>
+                  <p class="v-pagehead__sub">How Rivergrove appears to guests, and how the numbers behave</p></div>
+              </div>
+              <div class="v-pilltabs" style="margin-bottom:var(--s-4)"><button class="v-pill">Brand</button><button class="v-pill is-active">Localization</button><button class="v-pill">Tax</button><button class="v-pill">Storage</button><button class="v-pill">Access</button></div>
+              <div class="vs-split vs-split--wide">
+                <div class="stack">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Language and formats</div>
+                      <p class="v-card__desc">Used across the product, on quotes, and by the AI caller.</p></div></div>
+                    <div class="v-card__body"><div class="row" style="gap:var(--s-3)"><div class="v-field grow"><label class="v-field__label">Currency</label><select class="v-select"><option>INR — Indian rupee</option><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SGD</option><option>AUD</option></select></div><div class="v-field grow"><label class="v-field__label">Time zone</label><input class="v-input" value="Asia/Kolkata"></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Locale</label><select class="v-select"><option>English (India)</option><option>Hindi</option><option>Marathi</option><option>Tamil</option><option>English (UK)</option><option>Arabic</option></select><span class="v-field__hint">The language the AI caller opens in. It switches to whatever language the guest replies in.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Default country code</label><select class="v-select"><option>Auto — from the time zone (+91)</option><option>+91 India</option><option>+971 UAE</option><option>+44 United Kingdom</option></select><span class="v-field__hint">Applied to numbers saved without a code, so the same guest is never stored twice.</span></div></div>
+                  </section>
+              <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
+                <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
+                <span class="t-meta muted grow">Last edited 12 days ago by Anita</span>
+                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+              </div></div>
+                </div>
+                <div style="position:sticky;top:0">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow"><div class="label">What this changes</div>
+                      <div class="v-card__title" style="margin-top:4px">One number, three places</div></div></div>
+                    <div class="v-card__body"><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Quote total</span><span class="t-small" style="font-weight:600">₹55,578</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Arrival time</span><span class="t-small">15 Oct, 2:00 PM</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Phone, as typed</span><span class="t-small">90000 10001</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Phone, as saved</span><span class="t-small" style="font-weight:600">+91 90000 10001</span></div><p class="t-meta muted" style="margin-top:var(--s-3)">Changing currency does not convert existing quotes — they keep the currency they were sent in.</p></div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 44c · WORKSPACE — TAX ══════════════════ -->
+  <section class="vs-frame" id="brand-tax">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">44c</span><span class="vs-frame__name">Workspace — Tax</span>
+      <span class="vs-frame__route">/settings/workspace/tax</span><span class="t-meta muted">A5 · form</span>
+    </div>
+    <p class="vs-frame__note">
+      Regime, TCS and supply state change what a guest pays and how the line reads, so the side card computes a real quote from the fixture. The live page lists all 36 states and union territories in a plain select; that is kept — the field is set once.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Branding &amp; Localization</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item is-active" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Workspace</h2>
+                  <p class="v-pagehead__sub">How Rivergrove appears to guests, and how the numbers behave</p></div>
+              </div>
+              <div class="v-pilltabs" style="margin-bottom:var(--s-4)"><button class="v-pill">Brand</button><button class="v-pill">Localization</button><button class="v-pill is-active">Tax</button><button class="v-pill">Storage</button><button class="v-pill">Access</button></div>
+              <div class="vs-split vs-split--wide">
+                <div class="stack">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Tax regime</div>
+                      <p class="v-card__desc">How quotations and proformas print tax.</p></div></div>
+                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Regime</label><div class="v-pilltabs"><button class="v-pill is-active">India</button><button class="v-pill">International</button></div><span class="v-field__hint">India supports TCS; international has none.</span></div><div class="row" style="gap:var(--s-3);margin-top:var(--s-4)"><div class="v-field" style="width:160px"><label class="v-field__label">TCS rate (%)</label><input class="v-input" value="2"></div><div class="v-field grow"><label class="v-field__label">TCS</label><div class="row" style="gap:var(--s-2);min-height:36px"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span><span class="t-small">Enabled — a 2% TCS line applies on India invoices</span></div></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Supply state</label><select class="v-select"><option>Uttarakhand</option><option>Not set — print the rate whole</option><option>Delhi</option><option>Maharashtra</option></select><span class="v-field__hint">Same-state guests see CGST + SGST; everyone else sees IGST.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">GSTIN</label><input class="v-input" value="05ABCDE1234F1Z5"><span class="v-field__hint">Printed on quotations and proformas.</span></div></div>
+                  </section>
+              <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
+                <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
+                <span class="t-meta muted grow">Last edited 3 weeks ago by Anita</span>
+                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+              </div></div>
+                </div>
+                <div style="position:sticky;top:0">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow"><div class="label">On a quote</div>
+                      <div class="v-card__title" style="margin-top:4px">A room, as the guest reads it</div></div></div>
+                    <div class="v-card__body"><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Premier Riverside · 2 nights</span><span class="t-small">₹43,700</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">CGST 9%</span><span class="t-small">₹3,933</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">SGST 9%</span><span class="t-small">₹3,933</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">TCS 2%</span><span class="t-small">₹874</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Total</span><span class="t-small" style="font-weight:600">₹52,440</span></div><p class="t-meta muted" style="margin-top:var(--s-3)">A guest from Delhi would see one IGST 18% line instead of the two halves.</p></div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 44d · WORKSPACE — STORAGE ══════════════════ -->
+  <section class="vs-frame" id="brand-storage">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">44d</span><span class="vs-frame__name">Workspace — Storage</span>
+      <span class="vs-frame__route">/settings/workspace/storage</span><span class="t-meta muted">A5 · read-only</span>
+    </div>
+    <p class="vs-frame__note">
+      Live shows one line: usage against the plan, and that nothing is deleted automatically. Kept, plus the breakdown that makes the number actionable. The ID-retention note is a <b>design proposal</b> to confirm with the client — the live page says nothing about check-in uploads.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Branding &amp; Localization</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item is-active" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Workspace</h2>
+                  <p class="v-pagehead__sub">How Rivergrove appears to guests, and how the numbers behave</p></div>
+              </div>
+              <div class="v-pilltabs" style="margin-bottom:var(--s-4)"><button class="v-pill">Brand</button><button class="v-pill">Localization</button><button class="v-pill">Tax</button><button class="v-pill is-active">Storage</button><button class="v-pill">Access</button></div>
+              <div class="vs-split vs-split--wide">
+                <div class="stack">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Storage</div>
+                      <p class="v-card__desc">Catalog attachments and quotation files count against your plan.</p></div></div>
+                    <div class="v-card__body"><div class="row" style="justify-content:space-between;align-items:baseline"><span class="t-section">2.4 GB <span class="t-small muted" style="font-weight:400">of 100 GB</span></span><span class="v-badge v-badge--neutral">Enterprise plan</span></div><div class="v-meter" style="margin-top:var(--s-3)"><div class="v-meter__fill" style="width:2.4%"></div></div><div style="margin-top:var(--s-4)"><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Catalog photos and PDFs</span><span class="t-small">1.9 GB</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Sent quotations and proformas</span><span class="t-small">420 MB</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Guest uploads (check-in IDs)</span><span class="t-small">80 MB</span></div></div><p class="t-meta muted" style="margin-top:var(--s-3)">Nothing is ever deleted automatically. When you reach the limit, new uploads stop; nothing already stored is touched.</p></div>
+                  </section>
+              <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
+                <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
+                <span class="t-meta muted grow">Nothing to save on this tab</span>
+                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+              </div></div>
+                </div>
+                <div style="position:sticky;top:0">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow"><div class="label">Where it goes</div>
+                      <div class="v-card__title" style="margin-top:4px">Guest IDs are kept apart</div></div></div>
+                    <div class="v-card__body"><p class="t-small">ID photos collected at online check-in sit in their own store, are visible only to Front Desk, and are removed 30 days after check-out.</p><p class="t-meta muted" style="margin-top:var(--s-3)">That retention is a rule, not a setting: it is the one place Veerha deletes anything.</p></div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 44e · WORKSPACE — ACCESS ══════════════════ -->
+  <section class="vs-frame" id="brand-access">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">44e</span><span class="vs-frame__name">Workspace — Access</span>
+      <span class="vs-frame__route">/settings/workspace/access</span><span class="t-meta muted">A5 · form</span>
+    </div>
+    <p class="vs-frame__note">
+      One field live: allowed email domains. The design adds the consequence before the click — who in the current team the rule would have excluded — because a domain rule silently locks out the next freelancer or agency partner.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Branding &amp; Localization</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item is-active" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Workspace</h2>
+                  <p class="v-pagehead__sub">How Rivergrove appears to guests, and how the numbers behave</p></div>
+              </div>
+              <div class="v-pilltabs" style="margin-bottom:var(--s-4)"><button class="v-pill">Brand</button><button class="v-pill">Localization</button><button class="v-pill">Tax</button><button class="v-pill">Storage</button><button class="v-pill is-active">Access</button></div>
+              <div class="vs-split vs-split--wide">
+                <div class="stack">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow">
+                      <div class="v-card__title">Who may be invited</div>
+                      <p class="v-card__desc">Restrict the email addresses that can join this workspace.</p></div></div>
+                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Allowed email domains</label><input class="v-input" value="rivergrove.example.com"><span class="v-field__hint">Empty means no restriction — any address can be invited. Set this if colleagues should only ever join on a company address, never a personal one.</span></div><div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div>Two of your three people are on <b>rivergrove.example.com</b>. One is on a personal address and would not be invitable under this rule — existing members are never removed by it.</div></div></div>
+                  </section>
+              <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
+                <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
+                <span class="t-meta muted grow">Unsaved change</span>
+                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+              </div></div>
+                </div>
+                <div style="position:sticky;top:0">
+                  <section class="v-card">
+                    <div class="v-card__head"><div class="grow"><div class="label">Who is here now</div>
+                      <div class="v-card__title" style="margin-top:4px">3 people, 1 pending</div></div></div>
+                    <div class="v-card__body"><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Anita · Owner</span><span class="t-small">rivergrove.example.com</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Rohan · Manager</span><span class="t-small">rivergrove.example.com</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Tara · Member</span><span class="t-small">personal address</span></div><div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small muted">Invite pending</span><span class="t-small">vikas@rivergrove.example.com</span></div><p class="t-meta muted" style="margin-top:var(--s-3)">Roles and invites live in Team.</p></div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
   <!-- ══════════════════ 45 · AI BEHAVIOUR ══════════════════ -->
   <section class="vs-frame" id="ai-behaviour">
     <div class="vs-frame__hd">
@@ -386,7 +938,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -394,7 +946,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -649,7 +1201,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -657,7 +1209,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -1068,7 +1620,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -1076,7 +1628,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -1360,7 +1912,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -1368,7 +1920,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -1556,7 +2108,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -1564,7 +2116,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -1867,10 +2419,14 @@
   <!-- ══════════════════ 46 · SALES — PIPELINE STAGES &AMP; TIERS ══════════════════ -->
   <section class="vs-frame vs-frame--h720" id="automation">
     <div class="vs-frame__hd">
-      <span class="vs-frame__n">46</span><span class="vs-frame__name">Sales — pipeline stages &amp; tiers</span>
-      <span class="vs-frame__route">/settings/automation</span><span class="t-meta muted">A5 · thresholds with consequences</span>
+      <span class="vs-frame__n">46</span><span class="vs-frame__name">Sales — Lead Stages</span>
+      <span class="vs-frame__route">/settings/sales</span><span class="t-meta muted">A5 · thresholds with consequences</span>
     </div>
-    <p class="vs-frame__note">The page the sidebar called <b>Rules</b>, holding no rules — three bare integers, no currency symbol, no unit, and an enabled Save sitting beside the words <em>All changes saved</em>. Here the stages it was missing come first, each saying what puts a record in it; every threshold states how many customers are in it now and how many move if you save; and there is one save model, currently dirty.</p>
+    <p class="vs-frame__note">
+      The live product split this page in two: stages live here under Sales, and the customer
+      thresholds moved to <b>Rules</b> (#80) under Automation. The stages come first, each saying what
+      puts a record in it, and renaming one says what else it renames.
+    </p>
     <div class="vs-frame__box"><div class="vs-app">
         <nav class="v-rail is-expanded" aria-label="Sections">
           <div class="v-rail__mark">R</div>
@@ -1947,7 +2503,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -1955,7 +2511,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -1968,19 +2524,17 @@
             <div class="vs-canvas">
               <div class="v-pagehead">
                 <div class="v-pagehead__copy">
-                  <h2 class="v-pagehead__title">Pipeline &amp; automation</h2>
-                  <p class="v-pagehead__sub">The stages a lead moves through, and the two numbers your
-                    automations judge a customer by.</p></div>
+                  <h2 class="v-pagehead__title">Sales</h2>
+                  <p class="v-pagehead__sub">Pipelines, quote rules and the follow-up calendar your AI operates on.</p></div>
                 <div class="v-actions">
                   <button class="v-btn v-btn--secondary v-btn--sm">Entry points <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button></div>
               </div>
 
               <div class="v-callout v-callout--info" style="margin-bottom:var(--s-5)">
                 <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-info"/></svg></span>
-                <div><b>This page holds stages and thresholds — not rules.</b> What <i>starts</i> an
+                <div><b>This page holds stages, not automations.</b> What <i>starts</i> an
                   automation is a keyword and a journey, matched top to bottom on
-                  <b>Entry points</b>; sending and waiting live on Sequences and Workflows. This page used to
-                  be called Rules and contained none.
+                  <b>Entry points</b>; sending and waiting live on Sequences and Workflows.
                   <a class="v-callout__link">The 6 automation pages →</a></div>
               </div>
 
@@ -2079,6 +2633,129 @@
                 </div>
               </section>
 
+              <div class="v-savebar">
+                <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> All changes saved</span>
+                <button class="v-btn v-btn--primary v-btn--sm" disabled>Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 80 · AUTOMATION — RULES ══════════════════ -->
+  <section class="vs-frame" id="rules">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">80</span><span class="vs-frame__name">Automation — Rules</span>
+      <span class="vs-frame__route">/settings/automation</span><span class="t-meta muted">A5 · thresholds with consequences</span>
+    </div>
+    <p class="vs-frame__note">
+      The customer thresholds, moved out of Sales to match the live split. Every number says how many customers it moves before you save — the dirty state is drawn: raising VIP moves three customers, and the save bar says so.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Rules</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item is-active" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Rules</h2>
+                  <p class="v-pagehead__sub">The numbers your automations judge a customer by, in one place.</p></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Entry points</button></div>
+              </div>
+              <div class="v-callout v-callout--info" style="margin-bottom:var(--s-5)">
+                <div><b>This page holds thresholds — not triggers.</b> What starts an automation is a keyword and a journey on <b>Entry points</b>; sending and waiting live on Sequences and Workflows.</div>
+              </div>
               <section class="v-card" style="margin-bottom:var(--s-5)">
                 <div class="v-card__head"><div class="grow">
                   <div class="v-card__title">Customer tiers</div>
@@ -2226,7 +2903,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -2234,7 +2911,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -2516,7 +3193,7 @@
                 <a class="v-sidenav__item" data-go="hours">Working hours</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
-                <a class="v-sidenav__item">Rules</a>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
                 <a class="v-sidenav__item">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
                 <a class="v-sidenav__item">Entry points</a>
@@ -2524,7 +3201,7 @@
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
-                <a class="v-sidenav__item">Connections</a>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
                 <a class="v-sidenav__item">WhatsApp Forms</a>
@@ -2611,6 +3288,167 @@
                     <span class="v-field__error"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg> Meta refuses the callback URL while this is empty.</span></div>
                 </div>
               </section>
+            </div>
+          </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 79 · CONNECTIONS ══════════════════ -->
+  <section class="vs-frame" id="connections">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">79</span><span class="vs-frame__name">Connections</span>
+      <span class="vs-frame__route">/settings/integrations</span><span class="t-meta muted">A5 · list of accounts</span>
+    </div>
+    <p class="vs-frame__note">
+      Split out of Channels in the live product. This page holds the accounts and keys; Status &amp; test (#19) shows whether each channel is receiving. Secrets are masked and kept when left untouched — the live copy says exactly that. The AI engine is shown but not editable: <i>Connected · included in your plan</i>.
+    </p>
+    <div class="vs-frame__box"><div class="vs-app">
+        <nav class="v-rail is-expanded" aria-label="Sections">
+          <div class="v-rail__mark">R</div>
+          <div class="v-rail__group">Workspace</div>
+          <button class="v-rail__item" aria-label="Dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg><span class="v-rail__label">Dashboard</span></button>
+          <div class="v-rail__group">Customer</div>
+          <button class="v-rail__item" aria-label="Leads"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg><span class="v-rail__label">Leads</span></button>
+          <button class="v-rail__item" aria-label="Opportunities"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg><span class="v-rail__label">Opportunities</span></button>
+          <button class="v-rail__item" aria-label="Quotations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg><span class="v-rail__label">Quotations</span></button>
+          <button class="v-rail__item" aria-label="Customers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg><span class="v-rail__label">Customers</span></button>
+          <button class="v-rail__item" aria-label="Conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg><span class="v-rail__label">Conversations</span></button>
+          <div class="v-rail__group">Operations</div>
+          <button class="v-rail__item" aria-label="Bookings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg><span class="v-rail__label">Bookings</span></button>
+          <button class="v-rail__item" aria-label="Tasks"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg><span class="v-rail__label">Tasks</span><span class="v-rail__count">10</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Review Queue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg><span class="v-rail__label">Review Queue</span><span class="v-rail__count">20</span><span class="v-navdot"></span></button>
+          <button class="v-rail__item" aria-label="Calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg><span class="v-rail__label">Calendar</span></button>
+          <div class="v-rail__group">Growth</div>
+          <button class="v-rail__item" aria-label="Marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-wand"/></svg><span class="v-rail__label">Marketing</span></button>
+          <div class="v-rail__group">System</div>
+          <button class="v-rail__item is-active" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gear"/></svg><span class="v-rail__label">Settings</span></button>
+          <div class="v-rail__acct"><span class="v-avatar v-avatar--sm">A</span><div class="v-rail__acct__who"><div class="v-rail__acct__name">Anita</div><div class="v-rail__acct__sub">Owner · Rivergrove</div></div></div>
+        </nav>
+        <div class="vs-main">
+          <header class="v-topbar">
+            <button class="vs-topbar__menu" aria-label="Collapse the sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-menu"/></svg></button>
+            <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Connections</span></nav>
+            <div class="v-search vs-topbar__search"><span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search or run a command"><span class="v-kbd num">⌘K</span></div>
+            <div class="vs-topbar__acts">
+              <button class="v-topbar__icon" aria-label="Notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bell"/></svg><span class="v-topbar__icon__n">3</span></button>
+              <button class="v-topbar__icon" aria-label="Help"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></button>
+              <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
+              <span class="v-avatar">A</span></div>
+          </header>
+          <div class="vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item is-active" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Connections</h2>
+                  <p class="v-pagehead__sub">Your own accounts — WhatsApp, payments, email. The AI itself is ours to run.</p></div>
+              </div>
+              <div class="v-pilltabs" style="margin-bottom:var(--s-4)"><button class="v-pill is-active">All 6</button><button class="v-pill">Needs you 1</button><button class="v-pill">Test mode 1</button><button class="v-pill">Not set 2</button></div>
+              <div class="stack">
+                <section class="v-card">
+                  <div class="v-card__head">
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cpu"/></svg></div>
+                    <div class="grow"><div class="v-card__title">AI engine</div><p class="v-card__desc">Replies, summaries and voice run on Veerha’s models. Included in your plan — nothing to connect.</p></div>
+                    <span class="v-badge v-badge--ok">Connected</span>
+                  </div>
+                </section>
+                <section class="v-card">
+                  <div class="v-card__head">
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
+                    <div class="grow"><div class="v-card__title">WhatsApp Cloud API</div><p class="v-card__desc">Access token expired 18 Sep. Veerha can read threads but cannot answer — 17 of your last 27 leads are on WhatsApp.</p></div>
+                    <span class="v-badge v-badge--danger">Disconnected</span><button class="v-btn v-btn--danger v-btn--sm">Reconnect</button>
+                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Phone number ID</label><input class="v-input num" value="1049 •••• •••• 2210" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
+                </section>
+                <section class="v-card">
+                  <div class="v-card__head">
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></div>
+                    <div class="grow"><div class="v-card__title">Razorpay</div><p class="v-card__desc">Payment links work on the Stay page, but no money moves. Switch to live keys before a guest pays.</p></div>
+                    <span class="v-badge v-badge--warn">Test mode</span><button class="v-btn v-btn--secondary v-btn--sm">Manage</button>
+                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Key ID</label><input class="v-input num" value="rzp_test_••••••••3Fq1" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
+                </section>
+                <section class="v-card">
+                  <div class="v-card__head">
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg></div>
+                    <div class="grow"><div class="v-card__title">Channel manager</div><p class="v-card__desc">Rooms and rates are read from it. Last sync 6 minutes ago · 24 rooms · 3 rate plans.</p></div>
+                    <span class="v-badge v-badge--ok">Connected</span><button class="v-btn v-btn--secondary v-btn--sm">Manage</button>
+                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Property code</label><input class="v-input num" value="RVG-•••" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
+                </section>
+                <section class="v-card">
+                  <div class="v-card__head">
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
+                    <div class="grow"><div class="v-card__title">Elastic Email</div><p class="v-card__desc">Optional. Email currently sends through your own SMTP server.</p></div>
+                    <span class="v-badge v-badge--neutral">Not set</span><button class="v-btn v-btn--secondary v-btn--sm">Connect</button>
+                  </div>
+                </section>
+                <section class="v-card">
+                  <div class="v-card__head">
+                    <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></div>
+                    <div class="grow"><div class="v-card__title">External dialer webhook</div><p class="v-card__desc">Optional. Logs calls made from a dialer outside Veerha against the right lead.</p></div>
+                    <span class="v-badge v-badge--neutral">Not set</span><button class="v-btn v-btn--secondary v-btn--sm">Connect</button>
+                  </div>
+                </section>
+              </div>
+              <p class="t-meta muted" style="margin-top:var(--s-4)">Each account has four states — <b>not set</b>, <b>test mode</b> (works, sends nowhere real), <b>connected</b>, and <b>needs you</b> (expired or refused). Whether each channel is actually receiving is on <b>Status &amp; test</b>.</p>
             </div>
           </div>
         </div>

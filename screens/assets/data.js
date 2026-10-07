@@ -401,7 +401,7 @@ export const contactLists = [
 ];
 
 /* --- Automation (#80, #84, #87) ----------------------------------------- */
-export const tiers = { premiumAbove: 50000, vipAbove: 150000, inactiveAfterMonths: 9 };
+export const tiers = { premiumAbove: 50000, vipAbove: 150000, inactiveAfterMonths: 6 };   // = #80 Rules
 export const occasions = [
   { name: 'Stay anniversary', date: 'One year after check-out', send: 'WhatsApp template · anniversary_offer', on: true,  reach: 212 },
   { name: 'Birthday',         date: 'Guest birthday',          send: 'WhatsApp template · birthday_wish',    on: false, reach: 37, gap: 'Only 37 guests have a birthday on file' },

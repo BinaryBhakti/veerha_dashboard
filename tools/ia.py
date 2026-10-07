@@ -188,6 +188,10 @@ FRAME_IA = {
     'departments': S('Departments'),
     # 14 settings
     'brand':            S('Branding & Localization'),
+    'brand-localization': S('Branding & Localization'),
+    'brand-tax':        S('Branding & Localization'),
+    'brand-storage':    S('Branding & Localization'),
+    'brand-access':     S('Branding & Localization'),
     'ai-behaviour':     S('Behaviour'),
     'states':           F('Settings', 'Settings', 'No permission'),
     'fields':           S('Fields'),
@@ -195,6 +199,8 @@ FRAME_IA = {
     'fields-changelog': S('Fields'),
     'forms':            S('Forms'),
     'automation':       S('Lead Stages'),
+    'rules':            S('Rules'),
+    'connections':      S('Connections'),
     'developers':       S('API & webhooks'),
     'developers-empty': S('API & webhooks'),
     # 15 billing
