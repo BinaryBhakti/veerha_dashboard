@@ -79,7 +79,7 @@ this list; nothing on this list gets skipped without it moving to `ADD-ONS.md`.
 | 45 | AI Behaviour | `/settings/ai` | A5 | 14-settings | `settings-ai.png` |
 | 46 | Pipeline & automation | `/settings/sales` + `/settings/automation` | A5 | 14-settings | `settings-sales.png` + `settings-automation.png` (merged — stages and the thresholds that move them) |
 | 47 | Developers | `/settings/developers` | A5 | 14-settings | `settings-developers.png` |
-| 48 | System & Infrastructure | `/system` | A5 | 14-settings | `system.png` |
+| ~~48~~ | ~~System & Infrastructure~~ | `/system` | — | — | **Retired 7 Oct** — the platform-operator console; the October sitemap puts it out of scope. The number is not reused. |
 | 49 | Billing & Plan | `/billing` | A5 | 15-billing | `billing.png` |
 | 50 | Wallet | `/wallet` | A5 | 15-billing | `wallet.png` |
 | 51 | System states (403/404/500/loading) | global | error | 14-settings | `superadmin.png` |
@@ -201,3 +201,58 @@ state the product actually exists for:
 **Two states are known-broken in the live app** and should be designed as they ought to be, not as
 captured: `settings/workspace/localization` renders blank, and two captures returned rate-limit
 errors.
+
+---
+
+## October additions · #78–#99 — and what changed in the 77
+
+Source: the client sitemap of 2 Oct 2026 and a read-only re-crawl of the live app on 7 Oct
+(Hotels workspace, owner role; `audit/oct/`). Plan and findings: `PLAN-2026-10.md`.
+**#78–#99 are new scope** and are listed in `ADD-ONS.md`. Numbers continue; none is reused.
+
+**Evidence** says what each frame stands on: *live* = captured on 7 Oct; *live (empty)* = the
+route exists but holds nothing in that workspace, so the populated state is designed;
+*sitemap* = designed from the client's description, not observed.
+
+| # | Screen | Route | Arch | File | Evidence |
+|---|---|---|---|---|---|
+| 78 | Navigation by edition and role (spec) | global | spec | 14-settings | live sidebar + sitemap §0 |
+| 79 | Connections | `/settings/integrations` | A5 | 14-settings | live |
+| 80 | Rules — tiers and inactivity | `/settings/automation` | A5 | 14-settings | live |
+| 81 | Google Reviews (+ answered, not connected) | `/google-reviews` | A4 | 06-conversations | live (empty) |
+| 82 | Verify email (+ verified, expired) | `/verify-email` | A11 | 16-auth | live (missing-token copy) |
+| 83 | Contact Lists (+ empty) | `/contact-lists` | A1 | 02-leads | live (empty) |
+| 84 | Occasions (+ empty) | `/occasions` | A1 | 14-settings | live (empty) |
+| 85 | AI synonyms | `/catalog-synonyms` | A2 | 12-catalog | live (empty) |
+| 86 | Learning | `/learning` | A2 | 11-ai | live (empty) |
+| 87 | Entry points (+ empty) | `/entry-points` | A1 | 14-settings | live (empty) |
+| 88 | WhatsApp Forms (+ builder) | `/whatsapp-forms` | A1 / A8 | 14-settings | live (empty) |
+| 89 | Teach Veerha (Business, Qualifying, How to talk) | `/settings/teach/*` | A5 | 11-ai | live — **not in the sitemap** |
+| 90 | Grow | `/settings/grow` | A6 | 15-billing | live — **not in the sitemap** |
+| 91 | Bring your CRM (+ stages/consent step) | `/imports/migrate` | A7 | 02-leads | live |
+| 92 | AI Employee detail / edit | `/ai-employees/:id` | A3 | 11-ai | sitemap |
+| 93 | Property detail | `/properties/:id` | A3 | 12-catalog | sitemap |
+| 94 | Counter [E] (+ payment) | `/counter` | A10 | 18-commerce | sitemap — redirects in Hotels |
+| 95 | Orders [E] | `/orders` | A1 | 18-commerce | sitemap — redirects in Hotels |
+| 96 | Order drawer [E] | `/orders?open=` | A3 | 18-commerce | sitemap |
+| 97 | Offers & coupons [E] | `/catalogs/offers` | A1 | 12-catalog | sitemap — redirects in Hotels |
+| 98 | Photo Studio | `/photo-studio` | A8 | 10-campaigns | sitemap — redirects in Hotels |
+| 99 | Guest record [H] | `/front-desk/:id` | A3 | 05-bookings | sitemap |
+
+### Corrections to screens already in the 77
+
+| # | Change |
+|---|---|
+| all | Re-framed inside the live navigation: 11-row sidebar, top tabs, Marketing and Settings rails |
+| 8 · 14 · 55 · 60 | Re-homed under tabs: Touchpoints → Customers; Callbacks, Mail → Conversations; Analytics → Dashboard |
+| 14b | Callbacks, populated |
+| 19 | Becomes **Status & test**; the account half moves to #79 |
+| 44b–e | Workspace: Localization, Tax, Storage, Access |
+| 45 | AI behaviour reconciled to the four live sections |
+| 46 | Becomes **Lead Stages**; thresholds move to #80 |
+| 49 · 50b | Billing legal identity; Wallet low balance |
+| 55b | Mail with no mailbox connected |
+| 56 | Dashboard reconciled to the live shift brief |
+| 59 | Onboarding becomes the **Setup Guide** steps |
+| 63 | Register offers all three editions |
+| 70 · 73 · 76 | Guest routes re-mapped: `/p/:token` is the After-stay page |

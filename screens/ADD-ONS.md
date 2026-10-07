@@ -95,3 +95,37 @@ rather than inverting.
 Nothing in the crawl is out of scope because the product is bigger than the contract — the
 application is actually *smaller* than its route table suggests. The gap is duplicated routes and
 undesigned states, not missing modules.
+
+---
+
+## October 2026 — screens added to the product since the scope was fixed
+
+The client's sitemap of 2 October counts **90** customer-facing screens against the 77 agreed.
+A re-crawl of the live app on 7 October confirmed the difference. These are being designed now,
+at the client's direction, and are listed here so the additional effort can be agreed in writing
+alongside the work rather than after it. Manifest numbers #78–#99.
+
+| # | Screen | Why it is new |
+|---|---|---|
+| 78 | Navigation by edition and role | Three editions and five roles arrived after the scope was fixed |
+| 79 | Connections | Split out of Channels in the live product |
+| 80 | Rules | Split out of Sales settings in the live product |
+| 81 | Google Reviews | New channel |
+| 82 | Verify email | New auth step |
+| 83 | Contact Lists | Previously folded into Contacts; now Release 1 per the sitemap |
+| 84 | Occasions | Previously folded into Recommendations; now Release 1 |
+| 85 | AI synonyms | Previously folded into Recommendations; now Release 1 |
+| 86 | Learning | Previously folded into Review Queue; now Release 1 |
+| 87 | Entry points | New automation trigger |
+| 88 | WhatsApp Forms | New |
+| 89 | Teach Veerha | New — live, but **missing from the client's sitemap** |
+| 90 | Grow | New — live, but **missing from the client's sitemap** |
+| 91 | Bring your CRM | New migration wizard |
+| 92 | AI Employee detail | Listed in the sitemap; not in the 77 |
+| 93 | Property detail | Listed in the sitemap; not in the 77 |
+| 94–97 | Counter, Orders, Order drawer, Offers | New E-commerce edition — **designed from the sitemap**; not observable in the Hotels workspace |
+| 98 | Photo Studio | New |
+| 99 | Guest record | Listed in the sitemap; not in the 77 |
+
+The four folded screens (#83–#86) move out of Group 1 above: the sitemap makes every list and
+drawer Release 1, so leaving them folded no longer matches the brief.
