@@ -180,6 +180,11 @@ FRAME_IA = {
     'hire':              S('Hire'),
     'knowledge':         S('Knowledge'),
     'memory':            S('Memory'),
+    'learning':          S('Learning'),
+    'teach':             S('Teach Veerha'),
+    'teach-qualifying':  S('Teach Veerha'),
+    'teach-talk':        S('Teach Veerha'),
+    'employee-detail':   S('AI Employees'),
     'calling':           S('Calling'),
     'deliveries':        S('Deliveries'),
     'deliveries-failed': S('Deliveries'),
@@ -227,6 +232,7 @@ FRAME_IA = {
     'billing-empty': S('Billing'),
     'wallet':        S('Wallet'),
     'wallet-low':    S('Wallet'),
+    'grow':          S('Grow'),
 }
 
 
