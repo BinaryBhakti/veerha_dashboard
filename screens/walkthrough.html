@@ -1000,9 +1000,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item is-active" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -1092,6 +1092,82 @@
               </div>
             </div>
           </div></div>
+<div data-screen="contact-lists" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item is-active" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Contact Lists</h2>
+                <p class="v-pagehead__sub">An audience somebody wrote down, not a rule re-derived · 3 lists, 123 people</p></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Segments</button><button class="v-btn v-btn--primary v-btn--sm">New list</button></div>
+            </div>
+            <div class="v-card"><table class="v-table"><thead><tr><th>List</th><th class="v-table__num">People</th><th>Last used</th><th>Owner</th><th></th></tr></thead><tbody><tr><td><b class="t-small">Diwali 2025 guests</b><div class="t-meta muted">Stayed between 20 Oct and 5 Nov last year</div></td><td class="v-table__num">64</td><td class="t-small">Campaign · 12 Sep</td><td class="t-meta muted">Anita</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr><tr><td><b class="t-small">Corporate offsite enquiries</b><div class="t-meta muted">Asked about 10+ rooms on a weekday</div></td><td class="v-table__num">18</td><td class="t-small">Never used</td><td class="t-meta muted">Rohan</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr><tr><td><b class="t-small">Spa package buyers</b><div class="t-meta muted">Added by hand at check-out</div></td><td class="v-table__num">41</td><td class="t-small">Sequence · running</td><td class="t-meta muted">Tara</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr></tbody></table></div>
+            <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>A list is not a segment.</b> A segment re-runs its rules every time — “stayed twice, last visit over a year ago”. A list keeps exactly the people someone put in it, which is what you want for a guest list or a press list. People are added from Customers, or while importing a spreadsheet.</div></div>
+            </div></div>
+<div data-screen="contact-lists-empty" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item is-active" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Contact Lists</h2>
+                <p class="v-pagehead__sub">An audience somebody wrote down, not a rule re-derived</p></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New list</button></div>
+            </div>
+            <div class="v-card">
+              <div class="v-empty" style="padding:var(--s-12) var(--s-6)">
+                <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg></div>
+                <div class="v-empty__title">No contact lists yet</div>
+                <p class="v-empty__body">Create one here, then add people to it from Customers or while importing a spreadsheet. Use a list when you know exactly who belongs — a guest list, a press list — and a segment when the rule should keep deciding.</p>
+                <div class="v-actions"><button class="v-btn v-btn--primary">New list</button><button class="v-btn v-btn--secondary">Import a spreadsheet</button></div>
+              </div>
+            </div>
+            </div></div>
 <div data-screen="segments" class="wt-screen vs-body vs-body--sectioned">
             <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
               <div class="vs-sidenav__head">
@@ -1101,9 +1177,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item is-active" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -1177,9 +1253,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item is-active" data-go="import">Import</a>
+                <a class="v-sidenav__item is-active" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -1246,6 +1322,97 @@
               </div>
             </section>
           </div></div>
+<div data-screen="migrate" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item is-active" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas vs-canvas--narrow">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Bring your CRM</h2>
+                <p class="v-pagehead__sub">Move customers, open deals and notes from your old system. Nobody is messaged.</p></div>
+            </div>
+            <div class="vs-filterbar" style="justify-content:center"><div class="v-stepper" style="flex:1"><span class="v-stepper__step is-active"><span class="v-stepper__n">1</span>Your CRM</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">2</span>Upload</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">3</span>Check</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">4</span>People</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">5</span>Stages</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">6</span>Consent</span></div></div>
+            <section class="v-card">
+              <div class="v-card__head"><div class="grow"><div class="v-card__title">Where are you coming from?</div>
+                <p class="v-card__desc">Choosing the system tells Veerha how its export is laid out, so most columns map themselves.</p></div></div>
+              <div class="v-card__body">
+                <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-2)"><label class="v-radiocard is-selected"><span class="v-radiocard__dot"></span><span class="t-small">Zoho CRM</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Bigin</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Salesforce</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">HubSpot</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Pipedrive</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Freshsales</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Shopify</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">WooCommerce</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Dynamics 365</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">SugarCRM</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Act!</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Capsule</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Insightly</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Highrise</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Maximizer</span></label><label class="v-radiocard"><span class="v-radiocard__dot"></span><span class="t-small">Bitrix24</span></label></div>
+                <label class="v-radiocard" style="margin-top:var(--s-2)"><span class="v-radiocard__dot"></span><span class="t-small">Other, or a spreadsheet <span class="t-meta muted">· use Import for a plain CSV</span></span></label>
+                <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>From Zoho CRM:</b> export <i>Contacts</i>, <i>Deals</i> and <i>Notes</i> as three CSVs from Setup › Data Administration › Export. Owners come across by email address, so invite your team first if you want their records to stay theirs.</div></div>
+              </div>
+            </section>
+            <div class="row" style="margin-top:var(--s-4)"><span class="grow"></span><button class="v-btn v-btn--primary">Next</button></div>
+            <section class="v-card band"><div class="v-card__head"><div class="grow"><div class="v-card__title">Past migrations</div></div></div>
+              <div class="v-card__body"><p class="t-small muted">None yet. Each one stays listed here with what came across and what was left behind.</p></div></section>
+            </div></div>
+<div data-screen="migrate-stages" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Marketing</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search marketing"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
+                <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
+                <a class="v-sidenav__item" data-go="segments">Segments</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contacts">Contacts</a>
+                <a class="v-sidenav__item is-active" data-go="migrate">Import</a>
+                <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
+                <a class="v-sidenav__item">Email</a>
+                <a class="v-sidenav__item" data-go="creative-studio">Creative</a>
+                <a class="v-sidenav__item" data-go="landing-pages">Landing Pages</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Capture</div>
+                <a class="v-sidenav__item" data-go="capture">Widget</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Measure</div>
+                <a class="v-sidenav__item" data-go="attribution">Attribution</a>
+              </div>
+            </nav><div class="vs-canvas vs-canvas--narrow">
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Bring your CRM</h2>
+                <p class="v-pagehead__sub">Move customers, open deals and notes from your old system. Nobody is messaged.</p></div>
+            </div>
+            <div class="vs-filterbar" style="justify-content:center"><div class="v-stepper" style="flex:1"><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>Your CRM</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>Upload</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>Check</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-done"><span class="v-stepper__n">✓</span>People</span><span class="v-stepper__bar"></span><span class="v-stepper__step is-active"><span class="v-stepper__n">5</span>Stages</span><span class="v-stepper__bar"></span><span class="v-stepper__step"><span class="v-stepper__n">6</span>Consent</span></div></div>
+            <section class="v-card">
+              <div class="v-card__head"><div class="grow"><div class="v-card__title">Match your old stages to Veerha’s</div>
+                <p class="v-card__desc">Zoho had four deal stages; your pipeline has five. Records keep their history either way.</p></div></div>
+              <table class="v-table"><thead><tr><th>In Zoho CRM</th><th></th><th>In Veerha</th><th class="v-table__num">Deals</th></tr></thead><tbody><tr><td class="t-small">Prospect</td><td class="t-meta muted">→</td><td><select class="v-select"><option>New</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">612</td></tr><tr><td class="t-small">Contacted</td><td class="t-meta muted">→</td><td><select class="v-select"><option>Engaged</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">388</td></tr><tr><td class="t-small">Proposal</td><td class="t-meta muted">→</td><td><select class="v-select"><option>Proposal</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">121</td></tr><tr><td class="t-small">Closed Won</td><td class="t-meta muted">→</td><td><select class="v-select"><option>Won</option><option>New</option><option>Engaged</option><option>Qualified</option><option>Proposal</option><option>Won</option></select></td><td class="v-table__num">91</td></tr></tbody></table>
+            </section>
+            <section class="v-card band">
+              <div class="v-card__head"><div class="grow"><div class="v-card__title">Before the last step</div></div></div>
+              <div class="v-card__body">
+                <dl class="v-kv"><dt>People</dt><dd class="num">1,840</dd><dt>Duplicates merged into existing customers</dt><dd class="num">37</dd><dt>Open deals</dt><dd class="num">212</dd><dt>People with no marketing consent on record</dt><dd class="num">410</dd></dl>
+                <p class="t-meta muted" style="margin-top:var(--s-3)">The 410 come across as customers but stay out of every campaign audience until they opt in. That is the next step, <b>Consent</b>.</p>
+              </div>
+            </section>
+            <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)"><button class="v-btn v-btn--ghost">Back</button><span class="grow"></span><button class="v-btn v-btn--primary">Next — consent</button></div>
+            </div></div>
 <div data-screen="capture" class="wt-screen vs-body vs-body--sectioned">
 
             <nav class="v-sidenav v-sidenav--dense" aria-label="Marketing sections">
@@ -1256,9 +1423,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -2953,9 +3120,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -2963,7 +3130,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item is-active" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -4054,9 +4221,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -4064,7 +4231,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -4184,9 +4351,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -4194,7 +4361,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -4411,9 +4578,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -4421,7 +4588,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -4889,9 +5056,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -4899,7 +5066,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -5125,9 +5292,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item is-active" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -5135,7 +5302,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -5675,9 +5842,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -5685,7 +5852,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -5874,9 +6041,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -5884,7 +6051,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -6147,9 +6314,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -6157,7 +6324,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -6409,9 +6576,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -6419,7 +6586,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -6713,9 +6880,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item is-active" data-go="deliveries">Deliveries</a>
               </div>
@@ -6723,7 +6890,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -7117,9 +7284,9 @@
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item is-active" data-go="deliveries">Deliveries</a>
               </div>
@@ -7127,7 +7294,7 @@
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -7306,9 +7473,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item is-active" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -7425,9 +7592,9 @@
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item is-active" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -7583,9 +7750,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item is-active" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -7593,7 +7760,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -7712,9 +7879,9 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -7844,9 +8011,9 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -7940,9 +8107,9 @@ Late checkout, subject to availability</textarea>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Outbound</div>
                 <a class="v-sidenav__item" data-go="campaign-builder">Campaigns</a>
                 <a class="v-sidenav__item" data-go="segments">Segments</a>
-                <a class="v-sidenav__item">Contact Lists</a>
+                <a class="v-sidenav__item" data-go="contact-lists">Contact Lists</a>
                 <a class="v-sidenav__item" data-go="contacts">Contacts</a>
-                <a class="v-sidenav__item" data-go="import">Import</a>
+                <a class="v-sidenav__item" data-go="migrate">Import</a>
                 <a class="v-sidenav__item" data-go="recommendations">Recommendations</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Content</div>
@@ -8138,9 +8305,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -8148,7 +8315,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -8306,9 +8473,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -8316,7 +8483,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -8486,9 +8653,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -8496,7 +8663,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -8752,9 +8919,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -8762,7 +8929,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -9018,9 +9185,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -9028,7 +9195,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -9356,9 +9523,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -9366,7 +9533,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -9498,9 +9665,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -9508,7 +9675,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -9643,9 +9810,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -9653,7 +9820,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -9750,9 +9917,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -9760,7 +9927,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -9902,9 +10069,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -9912,7 +10079,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10008,9 +10175,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10018,7 +10185,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10104,9 +10271,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10114,7 +10281,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10359,9 +10526,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10369,7 +10536,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10503,9 +10670,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10513,7 +10680,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10595,9 +10762,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10605,7 +10772,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10687,9 +10854,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10697,7 +10864,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10779,9 +10946,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10789,7 +10956,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -10871,9 +11038,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -10881,7 +11048,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -11052,9 +11219,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -11062,7 +11229,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -11427,9 +11594,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -11437,7 +11604,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -11675,9 +11842,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -11685,7 +11852,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -11826,9 +11993,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -11836,7 +12003,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -12172,9 +12339,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -12182,7 +12349,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -12351,9 +12518,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item is-active" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -12361,7 +12528,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -12437,6 +12604,380 @@ Late checkout, subject to availability</textarea>
               </div>
             </div>
           </div>
+<div data-screen="occasions" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item is-active" data-go="occasions">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Occasions</h2>
+                  <p class="v-pagehead__sub">A message that goes out on a date you already hold. Everything here starts switched off.</p></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New occasion</button></div>
+              </div>
+              <section class="v-card">
+                <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg></div><div class="grow"><div class="v-card__title">Stay anniversary</div>
+                  <p class="v-card__desc">One year after check-out · WhatsApp template · anniversary_offer</p></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div>
+                <div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-4)"><span class="t-small">212 guests have a check-out date</span><span class="t-meta muted">Next send: 3 guests on 24 Sep</span><span class="grow"></span><button class="v-btn v-btn--ghost v-btn--sm">Edit message</button></div></div>
+              </section>
+              <section class="v-card band">
+                <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg></div><div class="grow"><div class="v-card__title">Birthday</div>
+                  <p class="v-card__desc">Guest birthday · WhatsApp template · birthday_wish</p></div><span class="v-toggle" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div>
+                <div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-4)"><span class="t-small">37 guests have a birthday on file</span><span class="t-meta muted">Off — nothing sends</span><span class="grow"></span><button class="v-btn v-btn--ghost v-btn--sm">Edit message</button></div><div class="v-callout v-callout--warn" style="margin-top:var(--s-3)"><div>Only 37 of 142 guests have a birthday on file. Collect it on the Preferences page first.</div></div></div>
+              </section>
+              <section class="v-card band">
+                <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg></div><div class="grow"><div class="v-card__title">Usual travel month</div>
+                  <p class="v-card__desc">The month a guest has booked twice before · Email · come_back_season</p></div><span class="v-toggle" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div>
+                <div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-4)"><span class="t-small">19 guests qualify</span><span class="t-meta muted">Off — nothing sends</span><span class="grow"></span><button class="v-btn v-btn--ghost v-btn--sm">Edit message</button></div></div>
+              </section>
+              <p class="t-meta muted" style="margin-top:var(--s-4)">Occasions respect quiet hours and the per-guest daily cap in Behaviour, and never message a guest who has opted out.</p>
+            </div>
+          </div>
+<div data-screen="occasions-empty" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item is-active" data-go="occasions">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Occasions</h2>
+                  <p class="v-pagehead__sub">A message that goes out on a date you already hold. Everything here starts switched off.</p></div>
+              </div>
+              <div class="v-card"><div class="v-empty" style="padding:var(--s-12) var(--s-6)">
+                <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg></div><div class="v-empty__title">No occasions yet</div>
+                <p class="v-empty__body">Pick a date you already hold about guests — a birthday, an anniversary, the month they usually travel — and say what should go out. Nothing sends until you switch it on.</p><button class="v-btn v-btn--primary">New occasion</button></div></div>
+            </div>
+          </div>
+<div data-screen="entry-points" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item is-active" data-go="entry-points">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Entry points</h2>
+                  <p class="v-pagehead__sub">What starts an automation. Every inbound message is checked against these once, top to bottom — the first rule that matches wins.</p></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New entry point</button></div>
+              </div>
+              <div class="v-card"><table class="v-table"><thead><tr><th>Order</th><th>When</th><th>Where</th><th>Starts journey</th><th class="v-table__num">Matched, 30 d</th><th></th></tr></thead><tbody><tr><td class="num t-small">1</td><td class="t-small">Message contains “corporate” or “offsite”</td><td><span class="v-badge v-badge--neutral">Any channel</span></td><td class="t-small">Group enquiry intake</td><td class="v-table__num">14</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td></tr><tr><td class="num t-small">2</td><td class="t-small">Comment on an Instagram post</td><td><span class="v-badge v-badge--neutral">Instagram</span></td><td class="t-small">Send rate card by DM</td><td class="v-table__num">31</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td></tr><tr><td class="num t-small">3</td><td class="t-small">Click on ad “Monsoon escape”</td><td><span class="v-badge v-badge--neutral">Meta ad</span></td><td class="t-small">Monsoon package nurture</td><td class="v-table__num">9</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td></tr><tr><td class="num t-small">4</td><td class="t-small">Reply “STOP”</td><td><span class="v-badge v-badge--neutral">WhatsApp</span></td><td class="t-small">Unsubscribe and confirm</td><td class="v-table__num">2</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td></tr></tbody></table></div>
+              <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>Order matters.</b> A guest who writes “corporate offsite, please STOP the offers” matches rule 1 and never reaches rule 4. Drag a rule up to let it win. A message that matches nothing gets Veerha’s normal reply.</div></div>
+            </div>
+          </div>
+<div data-screen="entry-points-empty" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item is-active" data-go="entry-points">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">Entry points</h2>
+                  <p class="v-pagehead__sub">What starts an automation. Checked top to bottom; the first rule that matches wins.</p></div>
+              </div>
+              <div class="v-card"><div class="v-empty" style="padding:var(--s-12) var(--s-6)">
+                <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg></div><div class="v-empty__title">Nothing starts an automation yet</div>
+                <p class="v-empty__body">Add a keyword and a journey, and the next guest who writes it gets that journey instead of an AI reply. Comments, story replies and ad clicks can start one too.</p><button class="v-btn v-btn--primary">New entry point</button></div></div>
+            </div>
+          </div>
+<div data-screen="whatsapp-forms" class="wt-screen vs-body vs-body--sectioned">
+            <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
+              <div class="vs-sidenav__head">
+                <div class="label">Settings</div>
+                <div class="v-search vs-sidenav__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search settings"></div>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Workspace</div>
+                <a class="v-sidenav__item" data-go="brand">Branding &amp; Localization</a>
+                <a class="v-sidenav__item" data-go="team">Team</a>
+                <a class="v-sidenav__item" data-go="onboarding">Setup Guide</a>
+                <a class="v-sidenav__item" data-go="org-chart">Org</a>
+                <a class="v-sidenav__item" data-go="departments">Departments</a>
+                <a class="v-sidenav__item" data-go="fields">Fields</a>
+                <a class="v-sidenav__item" data-go="forms">Forms</a>
+                <a class="v-sidenav__item" data-go="booking-links">Booking Links</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Accounts</div>
+                <a class="v-sidenav__item" data-go="billing">Billing</a>
+                <a class="v-sidenav__item" data-go="wallet">Wallet</a>
+                <a class="v-sidenav__item">Grow</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">AI</div>
+                <a class="v-sidenav__item">Teach Veerha</a>
+                <a class="v-sidenav__item" data-go="ai-behaviour">Behaviour</a>
+                <a class="v-sidenav__item" data-go="calling">Calling</a>
+                <a class="v-sidenav__item" data-go="knowledge">Knowledge</a>
+                <a class="v-sidenav__item" data-go="memory">Memory</a>
+                <a class="v-sidenav__item">Learning</a>
+                <a class="v-sidenav__item" data-go="employees">AI Employees</a>
+                <a class="v-sidenav__item" data-go="hire">Hire</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Products &amp; Services</div>
+                <a class="v-sidenav__item" data-go="catalogs">Products &amp; Services</a>
+                <a class="v-sidenav__item">AI synonyms</a>
+                <a class="v-sidenav__item" data-go="pricing">Pricing</a>
+                <a class="v-sidenav__item" data-go="shared-resources">Shared Resources</a>
+                <a class="v-sidenav__item" data-go="properties">Properties</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Sales</div>
+                <a class="v-sidenav__item" data-go="automation">Lead Stages</a>
+                <a class="v-sidenav__item" data-go="hours">Working hours</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
+                <a class="v-sidenav__item" data-go="rules">Rules</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
+                <a class="v-sidenav__item" data-go="sequences">Sequences</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
+                <a class="v-sidenav__item" data-go="workflows">Workflows</a>
+                <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Integrations</div>
+                <a class="v-sidenav__item" data-go="connections">Connections</a>
+                <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
+                <a class="v-sidenav__item">WhatsApp Templates</a>
+                <a class="v-sidenav__item is-active" data-go="whatsapp-forms">WhatsApp Forms</a>
+              </div>
+              <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
+                <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
+              </div>
+              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div><p>Docs, quick starts and templates — everything you need to get the AI live.</p><div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>
+            </nav>
+            <div class="vs-canvas">
+              <div class="v-pagehead">
+                <div class="v-pagehead__copy">
+                  <h2 class="v-pagehead__title">WhatsApp Forms</h2>
+                  <p class="v-pagehead__sub">A form your guest fills in without leaving WhatsApp — dropdowns, dates and text boxes, sent back in one go.</p></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New form</button></div>
+              </div>
+              <div class="v-card"><table class="v-table"><thead><tr><th>Form</th><th>Where it is used</th><th>Meta status</th><th></th></tr></thead><tbody><tr><td><b class="t-small">Group enquiry</b><div class="t-meta muted">5 questions · dates, rooms, guests, budget, occasion</div></td><td class="t-small">Used by Group enquiry intake</td><td><span class="v-badge v-badge--ok">Approved</span></td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td></tr><tr><td><b class="t-small">Pre-arrival preferences</b><div class="t-meta muted">4 questions · bed, diet, arrival time, occasion</div></td><td class="t-small">Used by Booking confirmed</td><td><span class="v-badge v-badge--warn">Pending Meta review</span></td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td></tr></tbody></table></div>
+              <p class="t-meta muted" style="margin-top:var(--s-3)">A question step in any journey can send a form instead of asking one thing at a time. Meta reviews every form before it can be sent; a pending form is skipped and the journey asks the questions one by one instead.</p>
+            </div>
+          </div>
 <div data-screen="developers" class="wt-screen vs-body vs-body--sectioned">
             <nav class="v-sidenav v-sidenav--dense" aria-label="Settings sections">
               <div class="vs-sidenav__head">
@@ -12481,9 +13022,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -12491,7 +13032,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item is-active" data-go="developers">API &amp; webhooks</a>
@@ -12727,9 +13268,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -12737,7 +13278,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item is-active" data-go="developers">API &amp; webhooks</a>
@@ -12867,9 +13408,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -12877,7 +13418,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item is-active" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -12982,9 +13523,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -12992,7 +13533,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -13349,9 +13890,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -13359,7 +13900,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -13499,9 +14040,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -13509,7 +14050,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -14004,9 +14545,9 @@ Late checkout, subject to availability</textarea>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Automation</div>
                 <a class="v-sidenav__item" data-go="rules">Rules</a>
-                <a class="v-sidenav__item">Occasions</a>
+                <a class="v-sidenav__item" data-go="occasions">Occasions</a>
                 <a class="v-sidenav__item" data-go="sequences">Sequences</a>
-                <a class="v-sidenav__item">Entry points</a>
+                <a class="v-sidenav__item" data-go="entry-points">Entry points</a>
                 <a class="v-sidenav__item" data-go="workflows">Workflows</a>
                 <a class="v-sidenav__item" data-go="deliveries">Deliveries</a>
               </div>
@@ -14014,7 +14555,7 @@ Late checkout, subject to availability</textarea>
                 <a class="v-sidenav__item" data-go="connections">Connections</a>
                 <a class="v-sidenav__item" data-go="channels">Status &amp; test</a>
                 <a class="v-sidenav__item">WhatsApp Templates</a>
-                <a class="v-sidenav__item">WhatsApp Forms</a>
+                <a class="v-sidenav__item" data-go="whatsapp-forms">WhatsApp Forms</a>
               </div>
               <div class="v-sidenav__group"><div class="label v-sidenav__label">Developers</div>
                 <a class="v-sidenav__item" data-go="developers">API &amp; webhooks</a>
@@ -14067,7 +14608,7 @@ Late checkout, subject to availability</textarea>
             <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></div>
             <div class="v-empty__title"><span id="wtSoonName">This module</span> is in the next slice</div>
             <p class="v-empty__body">
-              The walkthrough now covers 15 modules and 91 screens. What is left — Quotations,
+              The walkthrough now covers 15 modules and 100 screens. What is left — Quotations,
           Customers and Billing — is built from templates already visible here, so nothing in it is
           a new layout problem. The ten guest pages are built, but they are deliberately not staged
           in here: archetype A12 has no app shell, and putting a guest page inside this chrome would
@@ -14235,7 +14776,7 @@ Late checkout, subject to availability</textarea>
 
 <button class="wt-badge" id="wtToggle" aria-expanded="false">
   <span><b>Walkthrough</b> · 15 modules</span>
-  <span class="v-badge v-badge--brand"><span id="wtCount">91</span> screens</span>
+  <span class="v-badge v-badge--brand"><span id="wtCount">100</span> screens</span>
 </button>
 
 <!-- command palette ---------------------------------------------------------->
@@ -14250,7 +14791,7 @@ Late checkout, subject to availability</textarea>
 
 <script>
 (function () {
-  var META = {"dashboard": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "analytics": {"crumb": ["Workspace", "Analytics"], "rail": "dashboard", "tabs": ""}, "leads": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-queue": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "contacts": {"crumb": ["Marketing", "Contacts"], "rail": "campaign-builder", "tabs": ""}, "segments": {"crumb": ["Marketing", "Segments"], "rail": "campaign-builder", "tabs": ""}, "import": {"crumb": ["Marketing", "Import"], "rail": "campaign-builder", "tabs": ""}, "capture": {"crumb": ["Marketing", "Widget"], "rail": "campaign-builder", "tabs": ""}, "opportunities": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "pipeline": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "proposal": {"crumb": ["Customer", "Stay workspace"], "rail": "opportunities", "tabs": ""}, "bookings": {"crumb": ["Operations", "Bookings"], "rail": "bookings", "tabs": ""}, "booking-detail": {"crumb": ["Operations", "Booking"], "rail": "bookings", "tabs": ""}, "inbox": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "inbox-taken": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "channels": {"crumb": ["Settings", "Status & test"], "rail": "brand", "tabs": ""}, "templates": {"crumb": ["Settings", "WhatsApp Templates"], "rail": "brand", "tabs": ""}, "mail": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "email-studio": {"crumb": ["Marketing", "Email"], "rail": "campaign-builder", "tabs": ""}, "tasks": {"crumb": ["Operations", "Tasks"], "rail": "tasks", "tabs": ""}, "review": {"crumb": ["Operations", "Review Queue"], "rail": "review", "tabs": ""}, "callbacks": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "calendar": {"crumb": ["Operations", "Calendar"], "rail": "calendar", "tabs": ""}, "hours": {"crumb": ["Settings", "Working hours"], "rail": "brand", "tabs": ""}, "employees": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "workflow": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "catalogs": {"crumb": ["Settings", "Products & Services"], "rail": "brand", "tabs": ""}, "property-wizard": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "brand": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "ai-behaviour": {"crumb": ["Settings", "Behaviour"], "rail": "brand", "tabs": ""}, "system": {"crumb": ["Settings", "Infrastructure"], "rail": "gear", "tabs": ""}, "states": {"crumb": ["Settings", "No permission"], "rail": "brand", "tabs": ""}, "dashboard-loading": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "leads-empty": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-error": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "org-chart": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "org-empty": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "team": {"crumb": ["Settings", "Team"], "rail": "brand", "tabs": ""}, "onboarding": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}, "recommendations": {"crumb": ["Marketing", "Recommendations"], "rail": "campaign-builder", "tabs": ""}, "campaign-builder": {"crumb": ["Marketing", "Campaigns"], "rail": "campaign-builder", "tabs": ""}, "sequences": {"crumb": ["Settings", "Sequences"], "rail": "brand", "tabs": ""}, "landing-pages": {"crumb": ["Marketing", "Landing Pages"], "rail": "campaign-builder", "tabs": ""}, "creative-studio": {"crumb": ["Marketing", "Creative"], "rail": "campaign-builder", "tabs": ""}, "attribution": {"crumb": ["Marketing", "Attribution"], "rail": "campaign-builder", "tabs": ""}, "opportunity-drawer": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "quotes": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "quotes-empty": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "front-desk": {"crumb": ["Operations", "Front Desk"], "rail": "front-desk", "tabs": ""}, "touchpoints": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "touchpoint-drawer": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "booking-links": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "booking-links-empty": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "customers": {"crumb": ["Customer", "Customers"], "rail": "customers", "tabs": ""}, "customer-record": {"crumb": ["Customer", "Customer profile"], "rail": "customers", "tabs": ""}, "workflows": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "employee-new": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "hire": {"crumb": ["Settings", "Hire"], "rail": "brand", "tabs": ""}, "knowledge": {"crumb": ["Settings", "Knowledge"], "rail": "brand", "tabs": ""}, "memory": {"crumb": ["Settings", "Memory"], "rail": "brand", "tabs": ""}, "calling": {"crumb": ["Settings", "Calling"], "rail": "brand", "tabs": ""}, "deliveries": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "deliveries-failed": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "properties": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "shared-resources": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "resource-drawer": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "pricing": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "pricing-empty": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "departments": {"crumb": ["Settings", "Departments"], "rail": "brand", "tabs": ""}, "fields": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-profiles": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-changelog": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "forms": {"crumb": ["Settings", "Forms"], "rail": "brand", "tabs": ""}, "automation": {"crumb": ["Settings", "Lead Stages"], "rail": "brand", "tabs": ""}, "developers": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "developers-empty": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "billing": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "billing-empty": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "wallet": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "lead-drawer": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "brand-localization": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-tax": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-storage": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-access": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "rules": {"crumb": ["Settings", "Rules"], "rail": "brand", "tabs": ""}, "connections": {"crumb": ["Settings", "Connections"], "rail": "brand", "tabs": ""}, "callbacks-full": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "mail-empty": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "wallet-low": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "setup-golive": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}, "reviews": {"crumb": ["Customer", "Google Reviews"], "rail": "inbox", "tabs": ""}, "reviews-done": {"crumb": ["Customer", "Google Reviews"], "rail": "inbox", "tabs": ""}, "reviews-off": {"crumb": ["Customer", "Google Reviews"], "rail": "inbox", "tabs": ""}};
+  var META = {"dashboard": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "analytics": {"crumb": ["Workspace", "Analytics"], "rail": "dashboard", "tabs": ""}, "leads": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-queue": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "contacts": {"crumb": ["Marketing", "Contacts"], "rail": "campaign-builder", "tabs": ""}, "segments": {"crumb": ["Marketing", "Segments"], "rail": "campaign-builder", "tabs": ""}, "import": {"crumb": ["Marketing", "Import"], "rail": "campaign-builder", "tabs": ""}, "capture": {"crumb": ["Marketing", "Widget"], "rail": "campaign-builder", "tabs": ""}, "opportunities": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "pipeline": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "proposal": {"crumb": ["Customer", "Stay workspace"], "rail": "opportunities", "tabs": ""}, "bookings": {"crumb": ["Operations", "Bookings"], "rail": "bookings", "tabs": ""}, "booking-detail": {"crumb": ["Operations", "Booking"], "rail": "bookings", "tabs": ""}, "inbox": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "inbox-taken": {"crumb": ["Customer", "Chat"], "rail": "inbox", "tabs": ""}, "channels": {"crumb": ["Settings", "Status & test"], "rail": "brand", "tabs": ""}, "templates": {"crumb": ["Settings", "WhatsApp Templates"], "rail": "brand", "tabs": ""}, "mail": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "email-studio": {"crumb": ["Marketing", "Email"], "rail": "campaign-builder", "tabs": ""}, "tasks": {"crumb": ["Operations", "Tasks"], "rail": "tasks", "tabs": ""}, "review": {"crumb": ["Operations", "Review Queue"], "rail": "review", "tabs": ""}, "callbacks": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "calendar": {"crumb": ["Operations", "Calendar"], "rail": "calendar", "tabs": ""}, "hours": {"crumb": ["Settings", "Working hours"], "rail": "brand", "tabs": ""}, "employees": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "workflow": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "catalogs": {"crumb": ["Settings", "Products & Services"], "rail": "brand", "tabs": ""}, "property-wizard": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "brand": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "ai-behaviour": {"crumb": ["Settings", "Behaviour"], "rail": "brand", "tabs": ""}, "system": {"crumb": ["Settings", "Infrastructure"], "rail": "gear", "tabs": ""}, "states": {"crumb": ["Settings", "No permission"], "rail": "brand", "tabs": ""}, "dashboard-loading": {"crumb": ["Workspace", "Dashboard"], "rail": "dashboard", "tabs": ""}, "leads-empty": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "leads-error": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "org-chart": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "org-empty": {"crumb": ["Settings", "Org"], "rail": "brand", "tabs": ""}, "team": {"crumb": ["Settings", "Team"], "rail": "brand", "tabs": ""}, "onboarding": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}, "recommendations": {"crumb": ["Marketing", "Recommendations"], "rail": "campaign-builder", "tabs": ""}, "campaign-builder": {"crumb": ["Marketing", "Campaigns"], "rail": "campaign-builder", "tabs": ""}, "sequences": {"crumb": ["Settings", "Sequences"], "rail": "brand", "tabs": ""}, "landing-pages": {"crumb": ["Marketing", "Landing Pages"], "rail": "campaign-builder", "tabs": ""}, "creative-studio": {"crumb": ["Marketing", "Creative"], "rail": "campaign-builder", "tabs": ""}, "attribution": {"crumb": ["Marketing", "Attribution"], "rail": "campaign-builder", "tabs": ""}, "opportunity-drawer": {"crumb": ["Customer", "Opportunities"], "rail": "opportunities", "tabs": ""}, "quotes": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "quotes-empty": {"crumb": ["Customer", "Quotations"], "rail": "quotes", "tabs": ""}, "front-desk": {"crumb": ["Operations", "Front Desk"], "rail": "front-desk", "tabs": ""}, "touchpoints": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "touchpoint-drawer": {"crumb": ["Customer", "Touchpoints"], "rail": "customers", "tabs": ""}, "booking-links": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "booking-links-empty": {"crumb": ["Settings", "Booking Links"], "rail": "brand", "tabs": ""}, "customers": {"crumb": ["Customer", "Customers"], "rail": "customers", "tabs": ""}, "customer-record": {"crumb": ["Customer", "Customer profile"], "rail": "customers", "tabs": ""}, "workflows": {"crumb": ["Settings", "Workflows"], "rail": "brand", "tabs": ""}, "employee-new": {"crumb": ["Settings", "AI Employees"], "rail": "brand", "tabs": ""}, "hire": {"crumb": ["Settings", "Hire"], "rail": "brand", "tabs": ""}, "knowledge": {"crumb": ["Settings", "Knowledge"], "rail": "brand", "tabs": ""}, "memory": {"crumb": ["Settings", "Memory"], "rail": "brand", "tabs": ""}, "calling": {"crumb": ["Settings", "Calling"], "rail": "brand", "tabs": ""}, "deliveries": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "deliveries-failed": {"crumb": ["Settings", "Deliveries"], "rail": "brand", "tabs": ""}, "properties": {"crumb": ["Settings", "Properties"], "rail": "brand", "tabs": ""}, "shared-resources": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "resource-drawer": {"crumb": ["Settings", "Shared Resources"], "rail": "brand", "tabs": ""}, "pricing": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "pricing-empty": {"crumb": ["Settings", "Pricing"], "rail": "brand", "tabs": ""}, "departments": {"crumb": ["Settings", "Departments"], "rail": "brand", "tabs": ""}, "fields": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-profiles": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "fields-changelog": {"crumb": ["Settings", "Fields"], "rail": "brand", "tabs": ""}, "forms": {"crumb": ["Settings", "Forms"], "rail": "brand", "tabs": ""}, "automation": {"crumb": ["Settings", "Lead Stages"], "rail": "brand", "tabs": ""}, "developers": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "developers-empty": {"crumb": ["Settings", "API & webhooks"], "rail": "brand", "tabs": ""}, "billing": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "billing-empty": {"crumb": ["Settings", "Billing"], "rail": "brand", "tabs": ""}, "wallet": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "lead-drawer": {"crumb": ["Customer", "Leads"], "rail": "leads", "tabs": ""}, "brand-localization": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-tax": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-storage": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "brand-access": {"crumb": ["Settings", "Branding & Localization"], "rail": "brand", "tabs": ""}, "rules": {"crumb": ["Settings", "Rules"], "rail": "brand", "tabs": ""}, "connections": {"crumb": ["Settings", "Connections"], "rail": "brand", "tabs": ""}, "callbacks-full": {"crumb": ["Customer", "Callbacks"], "rail": "inbox", "tabs": ""}, "mail-empty": {"crumb": ["Customer", "Customer Mail"], "rail": "inbox", "tabs": ""}, "wallet-low": {"crumb": ["Settings", "Wallet"], "rail": "brand", "tabs": ""}, "setup-golive": {"crumb": ["Settings", "Setup Guide"], "rail": "brand", "tabs": ""}, "reviews": {"crumb": ["Customer", "Google Reviews"], "rail": "inbox", "tabs": ""}, "reviews-done": {"crumb": ["Customer", "Google Reviews"], "rail": "inbox", "tabs": ""}, "reviews-off": {"crumb": ["Customer", "Google Reviews"], "rail": "inbox", "tabs": ""}, "contact-lists": {"crumb": ["Marketing", "Contact Lists"], "rail": "campaign-builder", "tabs": ""}, "contact-lists-empty": {"crumb": ["Marketing", "Contact Lists"], "rail": "campaign-builder", "tabs": ""}, "migrate": {"crumb": ["Marketing", "Import"], "rail": "campaign-builder", "tabs": ""}, "migrate-stages": {"crumb": ["Marketing", "Import"], "rail": "campaign-builder", "tabs": ""}, "occasions": {"crumb": ["Settings", "Occasions"], "rail": "brand", "tabs": ""}, "occasions-empty": {"crumb": ["Settings", "Occasions"], "rail": "brand", "tabs": ""}, "entry-points": {"crumb": ["Settings", "Entry points"], "rail": "brand", "tabs": ""}, "entry-points-empty": {"crumb": ["Settings", "Entry points"], "rail": "brand", "tabs": ""}, "whatsapp-forms": {"crumb": ["Settings", "WhatsApp Forms"], "rail": "brand", "tabs": ""}};
   var stage = document.getElementById('wtStage');
   var tabs  = document.getElementById('wtTabs');
   var crumbA = document.getElementById('wtCrumbA'), crumbB = document.getElementById('wtCrumbB');
