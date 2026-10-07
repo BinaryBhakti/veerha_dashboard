@@ -44,7 +44,10 @@ def _div_inner_span(s, start):
     raise ValueError('unbalanced div')
 
 
-def build(template_block, id, n, name, route, arch, note, canvas, height=None, canvas_cls='vs-canvas'):
+def build(template_block, id, n, name, route, arch, note, canvas, height=None, canvas_cls='vs-canvas',
+          slot=None):
+    """slot: a regex for the opening <div> whose contents are replaced, for frames
+    with no vs-canvas (auth and guest pages). Its opening tag is kept as is."""
     b = template_block
     b = re.sub(r'<section class="vs-frame[^"]*" id="[^"]+">',
                '<section class="vs-frame%s" id="%s">' % (' vs-frame--' + height if height else '', id), b, count=1)
@@ -56,6 +59,12 @@ def build(template_block, id, n, name, route, arch, note, canvas, height=None, c
     b = b[:a] + hd + b[z + len('</div>'):]
     b = re.sub(r'<p class="vs-frame__note">.*?</p>', '<p class="vs-frame__note">\n      %s\n    </p>' % note,
                b, count=1, flags=re.S)
+    if slot:
+        c = re.search(slot, b)
+        if not c:
+            raise SystemExit('template has no slot matching %s' % slot)
+        i0, i1 = _div_inner_span(b, c.start())
+        return b[:i0] + '\n' + canvas + '\n          ' + b[i1:]
     c = re.search(r'<div class="vs-canvas[^"]*"[^>]*>', b)
     if c:
         i0, i1 = _div_inner_span(b, c.start())

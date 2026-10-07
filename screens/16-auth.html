@@ -73,7 +73,7 @@
     <p class="vs-frame__note">The template. Left panel sells, right panel works. The three claims on the left are the product’s actual measured numbers, not marketing — the same figures on the analytics screen.</p>
     <div class="vs-frame__box">
       <div style="min-height:620px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
-        <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
           <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
             <div class="row" style="gap:var(--s-3)">
               <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
@@ -135,7 +135,7 @@
     <p class="vs-frame__note">The widest variant. The edition comes first because it decides the product — the live app now offers three, and each one changes the menu. Every live field is kept: company, your name, contact number, email, industry and password. Industry is a separate question from edition: a travel agency runs Sales AI, not Hotels.</p>
     <div class="vs-frame__box">
       <div style="min-height:680px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
-        <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
           <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
             <div class="row" style="gap:var(--s-3)">
               <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
@@ -211,7 +211,7 @@
     <p class="vs-frame__note">Short form. The copy states the two things people actually want to know: it works once, and it expires in an hour.</p>
     <div class="vs-frame__box">
       <div style="min-height:560px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
-        <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
           <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
             <div class="row" style="gap:var(--s-3)">
               <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
@@ -265,7 +265,7 @@
     <p class="vs-frame__note">Shown mid-error, because that is the state worth reviewing. Validation appears <em>as you type</em> and the primary stays disabled until it passes — the live product has no field validation anywhere.</p>
     <div class="vs-frame__box">
       <div style="min-height:680px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
-        <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
           <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
             <div class="row" style="gap:var(--s-3)">
               <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
@@ -326,7 +326,7 @@
     <p class="vs-frame__note">The only auth screen the live app rendered, and it is a bare error. This one says what happened, confirms nothing was broken, and offers the two ways out.</p>
     <div class="vs-frame__box">
       <div style="min-height:620px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
-        <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
           <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
             <div class="row" style="gap:var(--s-3)">
               <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
@@ -379,6 +379,175 @@
     </div>
   </section>
 
+  <!-- ══════════════════ 82 · VERIFY EMAIL — LINK HAS NO TOKEN ══════════════════ -->
+  <section class="vs-frame" id="verify-email">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">82</span><span class="vs-frame__name">Verify email — link has no token</span>
+      <span class="vs-frame__route">/verify-email</span><span class="t-meta muted">A11</span>
+    </div>
+    <p class="vs-frame__note">
+      New since September. The live copy is kept word for word for the failure — <i>this link is missing its verification token</i> — and gets what activation already had: what went wrong in plain terms, and a way forward that does not need the email again.
+    </p>
+    <div class="vs-frame__box">
+      <div style="min-height:620px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
+          <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
+            <div class="row" style="gap:var(--s-3)">
+              <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
+              <div><div class="t-strong">Veerha</div><div class="t-meta muted">AI workforce platform</div></div>
+            </div>
+            <div style="margin-top:var(--s-10)">
+              <div class="label" style="color:var(--brand)">Human ambition · AI at scale</div>
+              <h2 style="font-size:28px;line-height:36px;font-weight:600;letter-spacing:-.022em;margin-top:var(--s-3)">Build your AI workforce.</h2>
+              <p class="t-small secondary" style="margin-top:var(--s-3);max-width:34ch">Veerha answers, qualifies and books — and hands you the decisions that are actually yours.</p>
+            </div>
+            <div style="margin-top:var(--s-8);display:flex;flex-direction:column;gap:var(--s-4)"><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Answers in 1m 40s</div>
+                  <div class="t-meta muted" style="margin-top:1px">On every channel, day or night</div></div>
+              </div><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Qualifies while you sleep</div>
+                  <div class="t-meta muted" style="margin-top:1px">46% of everything that comes in</div></div>
+              </div><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Stops when it should</div>
+                  <div class="t-meta muted" style="margin-top:1px">31 handovers, every one explained</div></div>
+              </div></div>
+            <div style="flex:1"></div>
+            <p class="t-meta muted">Smarter businesses build here.</p>
+            <div style="position:absolute;right:-70px;bottom:-70px;width:200px;height:200px;border-radius:var(--r-full);background:var(--brand-100);opacity:.7"></div>
+          </div>
+          <div style="flex:1;padding:var(--s-8);display:flex;flex-direction:column;justify-content:center;min-width:0">
+            <h1 class="t-page">Verify your email</h1>
+            <p class="t-small muted" style="margin-top:4px;max-width:46ch">This link is missing its verification token. Check the email again, or sign in and ask for it to be resent from your account settings.</p>
+            <div class="v-error" style="margin-top:var(--s-5)">
+              <span style="color:var(--dn-ic);flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
+              <div class="grow"><div class="v-error__title" style="font-size:13px">Nothing has changed yet</div>
+                <p class="v-error__body">Usually the link was cut off when it was copied. The full one ends in a long code after <span class="num">?token=</span>.</p></div></div>
+            <div class="v-actions" style="margin-top:var(--s-5)">
+              <button class="v-btn v-btn--primary grow">Send a new link</button>
+              <button class="v-btn v-btn--secondary grow">Sign in instead</button></div>
+            <p class="t-meta muted" style="margin-top:var(--s-4)">We will send it to the address you signed up with. Links work once and expire after 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ 82b · VERIFY EMAIL — CONFIRMED ══════════════════ -->
+  <section class="vs-frame" id="verify-email-done">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">82b</span><span class="vs-frame__name">Verify email — confirmed</span>
+      <span class="vs-frame__route">/verify-email?token=</span><span class="t-meta muted">A11</span>
+    </div>
+    <p class="vs-frame__note">
+      The success state hands straight on to the Setup Guide and says how long it takes, so signup flows into onboarding without a dead end.
+    </p>
+    <div class="vs-frame__box">
+      <div style="min-height:620px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
+          <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
+            <div class="row" style="gap:var(--s-3)">
+              <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
+              <div><div class="t-strong">Veerha</div><div class="t-meta muted">AI workforce platform</div></div>
+            </div>
+            <div style="margin-top:var(--s-10)">
+              <div class="label" style="color:var(--brand)">Human ambition · AI at scale</div>
+              <h2 style="font-size:28px;line-height:36px;font-weight:600;letter-spacing:-.022em;margin-top:var(--s-3)">Build your AI workforce.</h2>
+              <p class="t-small secondary" style="margin-top:var(--s-3);max-width:34ch">Veerha answers, qualifies and books — and hands you the decisions that are actually yours.</p>
+            </div>
+            <div style="margin-top:var(--s-8);display:flex;flex-direction:column;gap:var(--s-4)"><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Answers in 1m 40s</div>
+                  <div class="t-meta muted" style="margin-top:1px">On every channel, day or night</div></div>
+              </div><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Qualifies while you sleep</div>
+                  <div class="t-meta muted" style="margin-top:1px">46% of everything that comes in</div></div>
+              </div><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Stops when it should</div>
+                  <div class="t-meta muted" style="margin-top:1px">31 handovers, every one explained</div></div>
+              </div></div>
+            <div style="flex:1"></div>
+            <p class="t-meta muted">Smarter businesses build here.</p>
+            <div style="position:absolute;right:-70px;bottom:-70px;width:200px;height:200px;border-radius:var(--r-full);background:var(--brand-100);opacity:.7"></div>
+          </div>
+          <div style="flex:1;padding:var(--s-8);display:flex;flex-direction:column;justify-content:center;min-width:0">
+            <div style="width:44px;height:44px;border-radius:var(--r-full);background:var(--ok-bg);color:var(--ok-ic);display:grid;place-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h1 class="t-page" style="margin-top:var(--s-4)">Email confirmed</h1>
+            <p class="t-small muted" style="margin-top:4px;max-width:46ch"><b>anita@rivergrove.example.com</b> is verified. Next, the Setup Guide reads your website and asks a few questions — about four minutes — and your AI employee starts after that.</p>
+            <div class="v-actions" style="margin-top:var(--s-5)"><button class="v-btn v-btn--primary grow">Continue to the Setup Guide</button></div>
+            <p class="t-meta muted" style="margin-top:var(--s-4)">Nothing sends to a guest until you go live at the end of the guide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ 82c · VERIFY EMAIL — EXPIRED ══════════════════ -->
+  <section class="vs-frame" id="verify-email-expired">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">82c</span><span class="vs-frame__name">Verify email — expired</span>
+      <span class="vs-frame__route">/verify-email?token=</span><span class="t-meta muted">A11</span>
+    </div>
+    <p class="vs-frame__note">
+      Expired, with the address editable — a typo at signup is the most common reason a verification never arrives, and the fix should not need support.
+    </p>
+    <div class="vs-frame__box">
+      <div style="min-height:620px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
+          <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
+            <div class="row" style="gap:var(--s-3)">
+              <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
+              <div><div class="t-strong">Veerha</div><div class="t-meta muted">AI workforce platform</div></div>
+            </div>
+            <div style="margin-top:var(--s-10)">
+              <div class="label" style="color:var(--brand)">Human ambition · AI at scale</div>
+              <h2 style="font-size:28px;line-height:36px;font-weight:600;letter-spacing:-.022em;margin-top:var(--s-3)">Build your AI workforce.</h2>
+              <p class="t-small secondary" style="margin-top:var(--s-3);max-width:34ch">Veerha answers, qualifies and books — and hands you the decisions that are actually yours.</p>
+            </div>
+            <div style="margin-top:var(--s-8);display:flex;flex-direction:column;gap:var(--s-4)"><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Answers in 1m 40s</div>
+                  <div class="t-meta muted" style="margin-top:1px">On every channel, day or night</div></div>
+              </div><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Qualifies while you sleep</div>
+                  <div class="t-meta muted" style="margin-top:1px">46% of everything that comes in</div></div>
+              </div><div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div style="width:28px;height:28px;flex:none;border-radius:var(--r-sm);background:var(--surface);display:grid;place-items:center;color:var(--brand)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></div>
+                <div><div class="t-small" style="font-weight:600">Stops when it should</div>
+                  <div class="t-meta muted" style="margin-top:1px">31 handovers, every one explained</div></div>
+              </div></div>
+            <div style="flex:1"></div>
+            <p class="t-meta muted">Smarter businesses build here.</p>
+            <div style="position:absolute;right:-70px;bottom:-70px;width:200px;height:200px;border-radius:var(--r-full);background:var(--brand-100);opacity:.7"></div>
+          </div>
+          <div style="flex:1;padding:var(--s-8);display:flex;flex-direction:column;justify-content:center;min-width:0">
+            <h1 class="t-page">This link has expired</h1>
+            <p class="t-small muted" style="margin-top:4px;max-width:46ch">Verification links last 24 hours, and this one was sent on 19 September. Your workspace is safe — it is waiting for this one step.</p>
+            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">Send a fresh link to</label>
+              <input class="v-input" value="anita@rivergrove.example.com">
+              <span class="v-field__hint">Change it here if you signed up with a typo.</span></div>
+            <div class="v-actions" style="margin-top:var(--s-4)"><button class="v-btn v-btn--primary grow">Send a new link</button></div>
+            <p class="t-meta muted" style="margin-top:var(--s-4)">Sent links: 1 of 5 today. If none arrive, check spam for <b>verify@veerha.example.com</b>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="vs-frame vs-frame--h520" id="auth-callback">
     <div class="vs-frame__hd">
       <span class="vs-frame__n">67</span><span class="vs-frame__name">OAuth return</span>
@@ -387,7 +556,7 @@
     <p class="vs-frame__note"><b>Never captured — designed from the contract wording.</b> The moment between Google confirming and the dashboard loading. It exists so a slow session handshake looks deliberate rather than broken, and it offers a way out if it stalls.</p>
     <div class="vs-frame__box">
       <div style="min-height:520px;display:grid;place-items:center;padding:var(--s-8);background:var(--canvas)">
-        <div class="v-card" style="display:flex;width:896px;max-width:100%;overflow:hidden;box-shadow:var(--e3)">
+        <div class="v-card" style="display:flex;width:896px;max-width:100%;min-height:580px;overflow:hidden;box-shadow:var(--e3)">
           <div style="width:375px;flex:none;background:var(--brand-50);padding:var(--s-8);display:flex;flex-direction:column;position:relative;overflow:hidden">
             <div class="row" style="gap:var(--s-3)">
               <div style="width:34px;height:34px;border-radius:var(--r-md);background:var(--brand);color:var(--brand-on);display:grid;place-items:center;font-weight:600">V</div>
