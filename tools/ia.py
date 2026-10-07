@@ -208,3 +208,17 @@ FRAME_IA = {
     'billing-empty': S('Billing'),
     'wallet':        S('Wallet'),
 }
+
+
+def go_targets():
+    """Where each nav item leads in the walkthrough: the first frame placed there.
+    Shared by shell.py (which writes data-go / data-rail) and wtgen.py (whose
+    META must name the same keys, or the active sidebar row never lights)."""
+    row, rail, tab = {}, {}, {}
+    for fid, ia in FRAME_IA.items():
+        row.setdefault(ia['row'], fid)
+        if ia['rail']: rail.setdefault(ia['rail'], fid)
+        if ia['tabs']: tab.setdefault(ia['tabs'], fid)
+    row.update({'Dashboard': 'dashboard', 'Conversations': 'inbox', 'Customers': 'customers',
+                'Marketing': 'campaign-builder', 'Settings': 'brand'})
+    return row, rail, tab

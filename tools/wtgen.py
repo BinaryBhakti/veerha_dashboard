@@ -7,6 +7,8 @@ Frames without a .vs-body (the auth screens, which have no app shell) are skippe
 by design: the walkthrough is the in-product experience and auth sits outside it.
 """
 import re, json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from ia import FRAME_IA, go_targets
 
 # --- balanced-tag extraction (was /tmp/extract.py, which got cleaned away) ----
 TAG = re.compile(r'<(/?)(div|section|nav|aside|header|table|tbody|thead|tr|td|th|svg|defs|g|p|span|'
@@ -175,7 +177,9 @@ def frames(path):
         # A row with top tabs carries a generated strip between the top bar and
         # the body (tools/shell.py). The stage takes bodies only, so carry the
         # strip in with it or the walkthrough loses the tabs.
-        ts = s.find('<div class="vs-tabstrip">', m.end(), bi)
+        # Only the generated strip (one line, role=tablist) -- an in-page strip such
+        # as Email studio's Templates | Build is multi-line and stays out, as before.
+        ts = s.find('<div class="vs-tabstrip"><div class="v-tabs" role="tablist"', m.end(), bi)
         tabs = s[ts:s.index('</div></div>', ts) + len('</div></div>')] if ts != -1 else ''
         out.append((fid, cls, inner, tabs))
     return out
@@ -214,6 +218,13 @@ def main():
     # ---- META -----------------------------------------------------------
     mm = re.search(r'var META = (\{.*?\});\n', wt, re.S)
     meta = json.loads(mm.group(1)); meta.update(NEW_META)
+    # Crumb and active sidebar row come from tools/ia.py, the same table the
+    # module shells are generated from. `rail` must equal the sidebar button's
+    # data-rail (a screen id); the old hand-typed icon names never matched it.
+    # `tabs` stays empty: each tabbed screen carries its own generated strip.
+    go_row, _, _ = go_targets()
+    for fid, ia in FRAME_IA.items():
+        meta[fid] = {'crumb': list(ia['crumb']), 'rail': go_row.get(ia['row'], ''), 'tabs': ''}
     missing = [i for i in ids if i not in meta]
     if missing: raise SystemExit('no META for: %s' % missing)
     wt = wt[:mm.start(1)] + json.dumps(meta) + wt[mm.end(1):]

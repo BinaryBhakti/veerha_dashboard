@@ -18,7 +18,7 @@ assert that nothing has drifted back.
 """
 import re, sys, glob, os, hashlib, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ia import NAV, BADGES, PERSONAS, TABS, RAILS, FRAME_IA
+from ia import NAV, BADGES, PERSONAS, TABS, RAILS, FRAME_IA, go_targets
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
@@ -36,14 +36,7 @@ def shows(editions, hidden_for, persona):
     p = PERSONAS[persona]
     return (editions is None or p['edition'] in editions) and p['role'] not in hidden_for
 
-# Where a nav item leads, for the walkthrough: the first frame placed there.
-GO_ROW, GO_RAIL, GO_TAB = {}, {}, {}
-for fid, ia in FRAME_IA.items():
-    GO_ROW.setdefault(ia['row'], fid)
-    if ia['rail']: GO_RAIL.setdefault(ia['rail'], fid)
-    if ia['tabs']: GO_TAB.setdefault(ia['tabs'], fid)
-GO_ROW.update({'Dashboard': 'dashboard', 'Conversations': 'inbox', 'Customers': 'customers',
-               'Marketing': 'campaign-builder', 'Settings': 'brand'})
+GO_ROW, GO_RAIL, GO_TAB = go_targets()
 
 def go_attr(fid):
     return ' data-go="%s"' % fid if fid else ''
