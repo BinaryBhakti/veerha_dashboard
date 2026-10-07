@@ -172,7 +172,12 @@ def frames(path):
             print('  skip (no shell): %s' % fid); continue
         inner, _, opentag = block(s, bi)
         cls = re.search(r'class="([^"]*)"', opentag).group(1)
-        out.append((fid, cls, inner))
+        # A row with top tabs carries a generated strip between the top bar and
+        # the body (tools/shell.py). The stage takes bodies only, so carry the
+        # strip in with it or the walkthrough loses the tabs.
+        ts = s.find('<div class="vs-tabstrip">', m.end(), bi)
+        tabs = s[ts:s.index('</div></div>', ts) + len('</div></div>')] if ts != -1 else ''
+        out.append((fid, cls, inner, tabs))
     return out
 
 def main():
@@ -193,10 +198,14 @@ def main():
 
     ids, parts = [], []
     for f in MODULES:
-        for fid, cls, inner in frames(os.path.join(ROOT, f)):
+        for fid, cls, inner, tabs in frames(os.path.join(ROOT, f)):
             fid = RENAME.get(fid, fid)
             ids.append(fid)
-            parts.append('<div data-screen="%s" class="wt-screen %s">%s</div>' % (fid, cls, inner))
+            if tabs:
+                parts.append('<div data-screen="%s" class="wt-screen wt-screen--tabbed">%s<div class="%s">%s</div></div>'
+                             % (fid, tabs, cls, inner))
+            else:
+                parts.append('<div data-screen="%s" class="wt-screen %s">%s</div>' % (fid, cls, inner))
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes: raise SystemExit('duplicate screen ids: %s' % dupes)
 
