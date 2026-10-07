@@ -51,13 +51,14 @@ MODULES = ['01-home.html','02-leads.html','03-opportunities.html','04-quotes.htm
 # walkthrough already carries.
 # Frames that are not stage screens: the lead drawer is rendered as the overlay,
 # which lives in the hand-written tail of the stage.
-EXCLUDE = {'leads'}
-
-# The walkthrough's `leads` screen is the lead-drawer frame: same list, with the
-# drawer markup inside it. wt.js shows or hides that overlay. The overlay is a
-# CHILD of the leads screen, never a stage-level element -- treating it as one is
-# what closed the stage early and left a stale copy of half the screens behind.
-RENAME = {'lead-drawer': 'leads'}
+# The walkthrough's `leads` screen is the full Leads index, and the lead drawer
+# opens OVER it: the drawer frame's overlay is lifted out and appended to the
+# index. Using the drawer frame itself as the screen (as before) showed its
+# three-row, 45%-opacity backdrop whenever the drawer was closed -- a faded
+# stub where the main list should be.
+EXCLUDE = {'lead-drawer'}
+RENAME = {}
+OVERLAY_FROM = ('02-leads.html', 'lead-drawer', 'leads')   # (file, source frame, target screen)
 
 NEW_META = {
   'opportunity-drawer':  {'crumb': ['Customer','Opportunity'], 'rail': 'trend', 'tabs': ''},
@@ -200,10 +201,19 @@ def main():
     soon_end = wt.index(frag, sk) + len(frag) + len('</div>')
     soon_html = wt[sk:soon_end]
 
+    # lift the lead drawer's overlay out of its frame body
+    src = open(os.path.join(ROOT, OVERLAY_FROM[0]), encoding='utf-8').read()
+    fm = re.search(r'<section class="vs-frame[^"]*" id="%s">' % OVERLAY_FROM[1], src)
+    oi = src.index('<div class="vs-overlay', fm.end())
+    ov_inner, _, ov_open = block(src, oi)
+    overlay = ov_open + ov_inner + '</div>'
+
     ids, parts = [], []
     for f in MODULES:
         for fid, cls, inner, tabs in frames(os.path.join(ROOT, f)):
             fid = RENAME.get(fid, fid)
+            if fid == OVERLAY_FROM[2]:
+                inner = inner + '\n' + overlay
             ids.append(fid)
             if tabs:
                 parts.append('<div data-screen="%s" class="wt-screen wt-screen--tabbed">%s<div class="%s">%s</div></div>'

@@ -728,33 +728,198 @@
             </section>
 
           </div></div></div>
-<div data-screen="leads" class="wt-screen vs-body">
-            <div class="vs-canvas" style="opacity:.45">
-              <div class="v-pagehead">
-                <div class="v-pagehead__copy">
-                  <h2 class="v-pagehead__title">Leads</h2>
-                  <p class="v-pagehead__sub">27 leads · 5 have been waiting too long</p></div>
+<div data-screen="leads" class="wt-screen vs-body"><div class="vs-canvas">
+
+            <div class="v-pagehead">
+              <div class="v-pagehead__copy">
+                <h2 class="v-pagehead__title">Leads</h2>
+                <p class="v-pagehead__sub">27 leads · 5 have been waiting too long</p>
               </div>
-              <div class="v-stats" style="margin-bottom:var(--s-4)">
-                <button class="v-stat is-selected"><span class="label">All open</span><span class="v-stat__n">27</span></button>
-                <button class="v-stat"><span class="label">New</span><span class="v-stat__n">17</span></button>
-                <button class="v-stat"><span class="label">Hot</span><span class="v-stat__n">14</span></button>
-                <button class="v-stat is-attn"><span class="label">Overdue</span><span class="v-stat__n">5</span></button>
+              <div class="v-actions">
+                <div class="v-seg"><button class="v-seg__opt is-active">Table</button><button class="v-seg__opt">Queue</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm">Columns</button>
+                <button class="v-btn v-btn--secondary v-btn--sm">Auto-assign</button>
+                <button class="v-btn v-btn--secondary v-btn--sm">Import</button>
+                <button class="v-btn v-btn--icon v-btn--sm" aria-label="More"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button>
+                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New lead</button>
               </div>
-              <div class="v-card" style="overflow:hidden"><table class="v-table">
-                <thead><tr><th style="width:34px"></th><th>Customer</th><th>Requirement</th><th>Veerha's read</th></tr></thead>
-                <tbody>
-                  <tr class="is-selected"><td></td><td><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__ref">LEAD-0129</div></td>
-                    <td class="t-small">2 adults · 15–17 Oct</td><td class="t-small">Ready for a callback…</td></tr>
-                  <tr><td></td><td><div class="v-identity__name">Priya Nair</div><div class="v-identity__ref">LEAD-0131</div></td>
-                    <td class="t-small">16 guests · 12–14 Nov</td><td class="t-small">Wants a person…</td></tr>
-                  <tr><td></td><td><div class="v-identity__name">Devang Joshi</div><div class="v-identity__ref">LEAD-0124</div></td>
-                    <td class="t-small">2 adults · flexible</td><td class="t-small">Gone quiet…</td></tr>
-                </tbody></table></div>
             </div>
 
-            <!-- the drawer -->
-            <div class="vs-overlay">
+            <!-- scope tiles — selectable, they filter the table -->
+            <div class="v-stats" style="margin-bottom:var(--s-4)">
+              <button class="v-stat is-selected">
+                <span class="label">All open</span><span class="v-stat__n">27</span>
+                <span class="row-tight">
+                  <svg viewBox="0 0 80 24" width="80" height="24" role="img" aria-label="Open leads at the end of each of the last 14 days, rising from 24 to 27.">
+                    <path class="g-spark" d="M0,18 L13,17 L27,15 L40,16 L53,12 L67,10 L80,7"/></svg>
+                  <span class="v-delta v-delta--up">+3</span></span>
+                <span class="v-stat__cap">3 more than last month</span></button>
+              <button class="v-stat">
+                <span class="label">New</span><span class="v-stat__n">17</span>
+                <span class="v-stat__cap">None contacted yet</span></button>
+              <button class="v-stat">
+                <span class="label">Contacted</span><span class="v-stat__n">4</span>
+                <span class="v-stat__cap">In progress</span></button>
+              <button class="v-stat">
+                <span class="label">Hot</span><span class="v-stat__n">14</span>
+                <span class="v-stat__cap">Worth calling today</span></button>
+              <button class="v-stat is-attn">
+                <span class="v-stat__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-alert"/></svg></span>
+                <span class="label">Overdue follow-up</span><span class="v-stat__n">5</span>
+                <span class="row-tight">
+                  <svg viewBox="0 0 80 24" width="80" height="24" role="img" aria-label="Overdue follow-ups at the end of each of the last 14 days, falling from 9 to 5.">
+                    <path class="g-spark" d="M0,6 L13,5 L27,8 L40,10 L53,9 L67,13 L80,16"/></svg>
+                  <span class="v-delta v-delta--down">−4</span></span>
+                <span class="v-stat__cap">Need attention</span></button>
+              <button class="v-stat">
+                <span class="label">Mine</span><span class="v-stat__n">22</span>
+                <span class="v-stat__cap">5 unassigned</span></button>
+            </div>
+
+            <!-- saved views — the counts are the scope tiles, named -->
+            <div class="v-tabs" style="margin-bottom:var(--s-4)">
+              <button class="v-tab is-active">All open <span class="v-pill__n">27</span></button>
+              <button class="v-tab">Hot <span class="v-pill__n">14</span></button>
+              <button class="v-tab">Overdue <span class="v-pill__n">5</span></button>
+              <button class="v-tab">Mine <span class="v-pill__n">22</span></button>
+            </div>
+
+            <!-- filter bar — a labelled chip per filter, so the state is readable -->
+            <div class="vs-filterbar">
+              <div class="v-search vs-filterbar__search">
+                <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
+                <input class="v-input" placeholder="Search name, email, phone or lead ID"></div>
+              <button class="v-filterchip is-set"><span class="v-filterchip__k">Stage</span>
+                <span class="v-filterchip__v">Open</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+              <button class="v-filterchip"><span class="v-filterchip__k">Source</span>
+                <span class="v-filterchip__v">Any</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+              <button class="v-filterchip"><span class="v-filterchip__k">Follow-up</span>
+                <span class="v-filterchip__v">Any</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+              <button class="v-filterchip"><span class="v-filterchip__k">Value</span>
+                <span class="v-filterchip__v">Any</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+              <select class="v-select" style="width:auto;min-width:140px"><option>Newest first</option></select>
+              <span class="t-meta muted" style="margin-left:auto"><span class="num">27</span> results</span>
+            </div>
+
+            <!-- the table -->
+            <div class="v-card" style="overflow:hidden">
+              <table class="v-table">
+                <thead><tr>
+                  <th style="width:34px"><span class="v-check"><span class="v-check__box"></span></span></th>
+                  <th style="width:190px">Customer</th>
+                  <th style="width:160px">Requirement</th>
+                  <th style="width:104px">Source</th>
+                  <th>Veerha's read</th>
+                  <th style="width:120px">Follow-up</th>
+                  <th style="width:126px">Stage</th>
+                  <th style="width:110px;text-align:right">Value</th>
+                <th style="width:60px"></th></tr></thead>
+                <tbody>
+                  <tr class="is-selected">
+                    <td><span class="v-check is-checked"><span class="v-check__box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></span></td>
+                    <td><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__ref">LEAD-0129</div><div class="v-identity__line">+91 90000 10001</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">2 adults · 15–17 Oct</span><span class="v-attrs__row muted">Premier Riverside</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">WhatsApp</span><div class="t-meta muted" style="margin-top:4px">35 touches</div></td>
+                    <td><div class="t-strong">Ready for a callback, not another message.</div>
+                        <div class="t-meta muted" style="margin-top:3px">High intent · callback requested · price sensitive</div></td>
+                    <td><span class="v-badge v-badge--neutral">None set</span></td>
+                    <td><span class="v-selectchip">Proposal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="t-strong">₹43,700</div><div class="t-meta muted">Score <span class="num">80</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Arjun Mehta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr>
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Priya Nair</div><div class="v-identity__ref">LEAD-0131</div><div class="v-identity__line">+91 90000 10002</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">16 guests · 12–14 Nov</span><span class="v-attrs__row muted">Riverside block · 6 rooms</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">Website</span><div class="t-meta muted" style="margin-top:4px">9 touches</div></td>
+                    <td><div class="t-strong">Wants a person, and has the budget to justify one.</div>
+                        <div class="t-meta muted" style="margin-top:3px">Group booking · needs a person · comparing options</div></td>
+                    <td><div class="t-small">Today, 4:00 PM</div><div class="t-meta muted">Call agreed</div></td>
+                    <td><span class="v-selectchip">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="t-strong">₹1,64,800</div><div class="t-meta muted">Score <span class="num">91</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Priya Nair"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr>
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Devang Joshi</div><div class="v-identity__ref">LEAD-0124</div><div class="v-identity__line">+91 90000 10003</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">2 adults · dates flexible</span><span class="v-attrs__row muted">Anniversary package</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">WhatsApp</span><div class="t-meta muted" style="margin-top:4px">12 touches</div></td>
+                    <td><div class="t-strong">Gone quiet because we missed the call.</div>
+                        <div class="t-meta muted" style="margin-top:3px">Anniversary · dates open · call missed</div></td>
+                    <td><span class="v-badge v-badge--danger">Overdue 7d</span></td>
+                    <td><span class="v-selectchip">Contacted <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="t-strong">₹26,400</div><div class="t-meta muted">Score <span class="num">72</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Devang Joshi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr class="is-hover">
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Vikram Rao</div><div class="v-identity__ref">LEAD-0127</div><div class="v-identity__line">+91 90000 10004</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">4 adults · 22–26 Oct</span><span class="v-attrs__row muted">Panorama Suite</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">Phone</span><div class="t-meta muted" style="margin-top:4px">18 touches</div></td>
+                    <td><div class="t-strong">Will book, but only at a rate you have to approve.</div>
+                        <div class="t-meta muted" style="margin-top:3px">Price only · above policy · returning guest</div></td>
+                    <td><span class="v-badge v-badge--danger">Overdue 1d</span></td>
+                    <td><span class="v-selectchip">Negotiation <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="t-strong">₹28,320</div><div class="t-meta muted">Score <span class="num">58</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Vikram Rao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr>
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Kavya Reddy</div><div class="v-identity__ref">LEAD-0132</div><div class="v-identity__line">+91 90000 10006</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">5 guests · 2–5 Jan</span><span class="v-attrs__row muted">Riverside block · 2 rooms</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">Website</span><div class="t-meta muted" style="margin-top:4px">14 touches</div></td>
+                    <td><div class="t-strong">Ready to book, waiting on one answer.</div>
+                        <div class="t-meta muted" style="margin-top:3px">High intent · New Year · awaiting an answer</div></td>
+                    <td><div class="t-small">23 Sep, 11:00</div><div class="t-meta muted">Quote walkthrough</div></td>
+                    <td><span class="v-selectchip">Proposal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="t-strong">₹92,400</div><div class="t-meta muted">Score <span class="num">76</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Kavya Reddy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr>
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Nandini Gokhale</div><div class="v-identity__ref">LEAD-0128</div><div class="v-identity__line">+91 90000 10007</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">12 guests · 28 Sep</span><span class="v-attrs__row muted">Lawn and lunch</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">Phone</span><div class="t-meta muted" style="margin-top:4px">7 touches</div></td>
+                    <td><div class="t-strong">We owe her something, and never sent it.</div>
+                        <div class="t-meta muted" style="margin-top:3px">Day visit · we are late · lawn and lunch</div></td>
+                    <td><span class="v-badge v-badge--danger">Overdue 4d</span></td>
+                    <td><span class="v-selectchip">Contacted <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="t-strong">₹18,000</div><div class="t-meta muted">Score <span class="num">47</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Nandini Gokhale"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr>
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Farhan Qureshi</div><div class="v-identity__ref">LEAD-0133</div><div class="v-identity__line">+91 90000 10008</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row">6 guests · 19–22 Dec</span><span class="v-attrs__row muted">No room settled on yet</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">WhatsApp</span><div class="t-meta muted" style="margin-top:4px">5 touches</div></td>
+                    <td><div class="t-strong">Real dates, no budget, nobody assigned.</div>
+                        <div class="t-meta muted" style="margin-top:3px">Firm dates · unassigned · December</div></td>
+                    <td><span class="v-badge v-badge--neutral">None set</span></td>
+                    <td><span class="v-selectchip">New <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="muted">—</div><div class="t-meta muted">Score <span class="num">63</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Farhan Qureshi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                  <tr>
+                    <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                    <td><div class="v-identity__name">Sameer Bhat</div><div class="v-identity__ref">LEAD-0130</div><div class="v-identity__line">+91 90000 10005</div></td>
+                    <td><div class="v-attrs"><span class="v-attrs__row muted">No dates given</span><span class="v-attrs__row muted">Party not set</span></div></td>
+                    <td><span class="v-badge v-badge--neutral">WhatsApp</span><div class="t-meta muted" style="margin-top:4px">4 touches</div></td>
+                    <td><div class="t-strong">Browsing, not planning anything yet.</div>
+                        <div class="t-meta muted" style="margin-top:3px">Low intent · no dates · on a sequence</div></td>
+                    <td><div class="t-small">Tomorrow, 10:00</div><div class="t-meta muted">Sequence step 2</div></td>
+                    <td><span class="v-selectchip">New <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span></td>
+                    <td style="text-align:right"><div class="muted">—</div><div class="t-meta muted">Score <span class="num">34</span></div></td>
+                  <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Sameer Bhat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                </tbody>
+              </table>
+              <div class="v-card__foot v-pager">
+                <span>Showing 1–8 of 27</span>
+                <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>8 per page</option></select>
+                <span class="v-pager__n">
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+              </div>
+            </div>
+
+          </div>
+<div class="vs-overlay">
               <div class="v-scrim"></div>
               <aside class="v-drawer" role="dialog" aria-label="Arjun Mehta">
 
@@ -866,8 +1031,7 @@
                   <button class="v-btn v-btn--primary grow">Call now</button>
                 </div>
               </aside>
-            </div>
-          </div>
+            </div></div>
 <div data-screen="leads-queue" class="wt-screen vs-body"><div class="vs-canvas">
             <div class="v-pagehead">
               <div class="v-pagehead__copy">
@@ -15844,7 +16008,9 @@ Late checkout, subject to availability</textarea>
   }
 
   function setDrawer(open) {
-    var ov = stage.querySelector('.vs-overlay');
+    // Only the Leads screen has a drawer that opens and closes; every other
+    // overlay in the stage belongs to a drawer frame and stays as drawn.
+    var ov = stage.querySelector('[data-screen="leads"] .vs-overlay');
     if (ov) ov.style.display = open ? 'flex' : 'none';
   }
 
