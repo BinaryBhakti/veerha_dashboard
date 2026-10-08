@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="system/sheet.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="i-convert"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M9 13.5h6M12.5 11 15 13.5 12.5 16"/></g><g id="i-archive"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></g><g id="i-whatsapp"><path d="M3.5 20.5l1.3-4.1A8.5 8.5 0 1 1 8.1 19.6z"/><path d="M9.2 8.6c.2 2.9 2.4 5.2 5.3 5.6l1-1.3-1.7-.9-.9.7a3.6 3.6 0 0 1-2-2l.7-.9-.9-1.7z"/></g><g id="i-followup"><circle cx="11" cy="13" r="8"/><path d="M11 9v4l2.5 1.5"/><path d="M19 2v5M16.5 4.5h5"/></g><g id="i-sequence"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><path d="M5 8v8"/><path d="M10 6h10M10 12h7M10 18h10"/></g><g id="i-assign"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/></g><g id="i-stage"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></g><g id="i-trash"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5M14 11v5"/></g><g id="i-phone"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></g><g id="i-mail"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g><g id="i-star"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></g><g id="i-dots"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></g></defs></svg>
 
 <header class="sh-top">
   <div class="sh-top__in">
@@ -782,6 +783,49 @@
           <p>Label the action with the verb, not "OK". Say what is lost and whether it is recoverable.</p></div>
         <div class="sh-rule sh-rule--dont"><div class="sh-rule__h">Don't</div>
           <p>Don't use a modal for anything reversible. A toast with undo is less interruptive and usually kinder.</p></div>
+      </div>
+    </div>
+
+    <div class="sh-spec">
+      <div class="sh-spec__hd"><div class="sh-spec__name">Actions — labelled action, menu, tooltip</div><div class="sh-spec__cls">.v-action · .v-menu · [data-tip]</div></div>
+      <p class="sh-spec__note">
+        An action that changes a record says what it does on its face. The live app hangs WhatsApp,
+        Call, Email, Archive and Convert on unlabelled icons with the meaning in a tooltip; here the
+        word is always there, and the ··· menu holds the rest as verbs, destructive ones last.
+        A tooltip is kept for chrome that is genuinely icon-only.
+      </p>
+      <div class="sh-frame" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6);align-items:start">
+        <div>
+          <div class="sh-state__l">Row actions — rest, hover, focus, brand</div>
+          <div class="v-actions-row" style="margin-top:var(--s-3)">
+            <button class="v-action"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg> Call</button>
+            <button class="v-action is-hover"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-whatsapp"/></svg> WhatsApp</button>
+            <button class="v-action is-focus"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg> Email</button>
+            <button class="v-action v-action--brand"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-convert"/></svg> Convert</button>
+          </div>
+          <div class="sh-state__l" style="margin-top:var(--s-5)">Tooltip — icon-only chrome</div>
+          <div style="margin-top:var(--s-3);display:inline-flex;flex-direction:column;align-items:center;gap:6px">
+            <span class="v-tip">Star this lead</span>
+            <button class="v-btn v-btn--icon v-btn--sm" data-tip="Star this lead" aria-label="Star this lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></button>
+          </div>
+        </div>
+        <div>
+          <div class="sh-state__l">Action menu — open</div>
+          <div class="v-menu-host" style="margin-top:var(--s-3);height:330px;width:100%;justify-content:flex-end">
+            <button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" aria-expanded="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+            <div class="v-menu">
+              <div class="v-menu__label">Lead</div>
+              <button class="v-menu__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-convert"/></svg> Convert to opportunity</button>
+              <button class="v-menu__item is-hover"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-assign"/></svg> Assign owner<span class="v-menu__hint">Anita</span></button>
+              <button class="v-menu__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-stage"/></svg> Change stage<span class="v-menu__hint">Proposal</span></button>
+              <button class="v-menu__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg> Book a follow-up</button>
+              <button class="v-menu__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sequence"/></svg> Put on a sequence</button>
+              <div class="v-menu__sep"></div>
+              <button class="v-menu__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg> Archive lead</button>
+              <button class="v-menu__item v-menu__item--danger"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg> Delete lead</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

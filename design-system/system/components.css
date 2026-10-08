@@ -1008,3 +1008,65 @@ td.v-table__num.amount { font-family: var(--ui); }
 
 .v-guest__addr { padding: var(--s-4) var(--s-5); border-top: 1px solid var(--border); }
 .v-guest__addr div { display: flex; gap: var(--s-3); align-items: flex-start; font-size: var(--t-meta-s); color: var(--text-muted); margin-bottom: 6px; }
+
+/* ==========================================================================
+   12 · ACTIONS — labelled action, action menu, tooltip
+   The live app hangs every lead action on an unlabelled icon (WhatsApp, Call,
+   Email, Archive, Convert) and puts the meaning in a tooltip. An action that
+   changes a record is named on its face here; an icon alone is for chrome.
+   ========================================================================== */
+
+/* An icon and a word, small enough to sit in a table row. */
+.v-action {
+  display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px;
+  border: 1px solid var(--border); border-radius: var(--r-ctrl); background: var(--surface);
+  color: var(--text-secondary); font: inherit; font-size: var(--t-meta-s); font-weight: 500;
+  white-space: nowrap; cursor: pointer;
+  transition: background var(--m-hover) var(--ease), border-color var(--m-hover) var(--ease);
+}
+.v-action svg { flex: none; color: var(--text-muted); }
+.v-action:hover, .v-action.is-hover { background: var(--surface-subtle); border-color: var(--border-strong); color: var(--text-primary); }
+.v-action:focus-visible, .v-action.is-focus { outline: none; box-shadow: var(--focus); }
+.v-action--brand { color: var(--brand); border-color: var(--brand-200); background: var(--brand-soft); }
+.v-action--brand svg { color: var(--brand); }
+.v-action--brand:hover, .v-action--brand.is-hover { background: var(--brand-50); border-color: var(--brand); color: var(--brand-700); }
+.v-action--quiet { border-color: transparent; background: transparent; }
+.v-action--quiet:hover, .v-action--quiet.is-hover { background: var(--surface-subtle); border-color: transparent; }
+.v-actions-row { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+
+/* The ··· menu: every item a verb, the destructive ones last and set apart. */
+.v-menu-host { position: relative; display: inline-flex; }
+.v-menu {
+  position: absolute; top: calc(100% + 4px); right: 0; z-index: 30; min-width: 232px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-tile);
+  box-shadow: var(--e2); padding: var(--s-1); display: flex; flex-direction: column; text-align: left;
+}
+.v-menu[hidden] { display: none; }
+.v-menu--left { right: auto; left: 0; }
+.v-menu__label { padding: 6px 10px 2px; font-size: var(--t-micro-s); font-weight: 600; letter-spacing: .075em;
+  text-transform: uppercase; color: var(--text-muted); }
+.v-menu__item {
+  display: flex; align-items: center; gap: var(--s-3); width: 100%; padding: 7px 10px;
+  border: 0; border-radius: var(--r-sm); background: none; font: inherit; font-size: var(--t-small-s);
+  color: var(--text-secondary); text-align: left; cursor: pointer;
+}
+.v-menu__item svg { flex: none; color: var(--text-muted); }
+.v-menu__item:hover, .v-menu__item.is-hover { background: var(--surface-subtle); color: var(--text-primary); }
+.v-menu__item.is-active { color: var(--brand); font-weight: 500; }
+.v-menu__item.is-active svg { color: var(--brand); }
+.v-menu__hint { margin-left: auto; font-size: var(--t-meta-s); color: var(--text-muted); }
+.v-menu__item--danger, .v-menu__item--danger svg { color: var(--dn-tx); }
+.v-menu__item--danger:hover, .v-menu__item--danger.is-hover { background: var(--dn-bg); color: var(--dn-tx); }
+.v-menu__sep { height: 1px; background: var(--border); margin: var(--s-1) 0; }
+
+/* Tooltip — only for chrome that is genuinely icon-only. */
+[data-tip] { position: relative; }
+.v-tip, [data-tip]:hover::after, [data-tip]:focus-visible::after {
+  padding: 4px 8px; border-radius: var(--r-sm); background: var(--text-primary); color: var(--surface);
+  font-size: var(--t-meta-s); font-weight: 500; white-space: nowrap; pointer-events: none;
+}
+.v-tip { display: inline-block; }
+[data-tip]:hover::after, [data-tip]:focus-visible::after {
+  content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); z-index: 40;
+}
+
