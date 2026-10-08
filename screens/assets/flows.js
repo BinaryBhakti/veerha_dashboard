@@ -169,6 +169,152 @@
       return { toast: 'Saved', body: 'Your changes are live.' };
     }
   };
+
+  /* ------------------------------------------------- generic long tail -- */
+  // Behaviour for the buttons every screen shares, so none of them is dead.
+  function scopeCard(el) { return el.closest('.v-card, section, .v-record, tr, .v-callout') || el.parentNode; }
+  function rowOf(el) { return el.closest('tr, .v-record, .v-convitem, [data-card]'); }
+  function ico(n) { return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#' + n + '"/></svg>'; }
+  // a menu built on the spot next to its trigger (row ··· and filter chips)
+  function popMenu(trigger, html) {
+    closeMenus();
+    var host = trigger.parentNode, menu = document.createElement('div');
+    menu.className = 'v-menu'; menu.setAttribute('role', 'menu'); menu.setAttribute('data-generated', '');
+    menu.innerHTML = html; host.appendChild(menu);
+    var r = trigger.getBoundingClientRect();
+    menu.__host = host; portal(menu); menuOpenedAt = Date.now();
+    menu.style.position = 'fixed'; menu.style.zIndex = '60'; menu.style.top = (r.bottom + 4) + 'px';
+    menu.style.right = (window.innerWidth - r.right) + 'px'; menu.style.left = 'auto';
+    var mh = menu.getBoundingClientRect().height;
+    if (r.bottom + 4 + mh > window.innerHeight - 8) menu.style.top = Math.max(8, r.top - 4 - mh) + 'px';
+    menu.__trigger = trigger;
+    return menu;
+  }
+  var OPTIONS = {
+    status: ['Open', 'Won', 'Lost', 'Archived'], stage: ['New', 'Contacted', 'Qualified', 'Proposal', 'Negotiation'],
+    source: ['WhatsApp', 'Website', 'Phone', 'Email', 'Instagram', 'Walk-in'], owner: ['Anita', 'Rohan', 'Tara', 'Unassigned'],
+    channel: ['WhatsApp', 'Email', 'Instagram', 'Messenger', 'Voice'], 'follow-up': ['Overdue', 'Today', 'This week', 'None set'],
+    value: ['Under ₹25,000', '₹25,000–₹1,00,000', 'Over ₹1,00,000'], kind: ['Room', 'Package', 'Extra', 'Venue'],
+    marketing: ['Subscribed', 'Unsubscribed', 'No consent'], 'last seen': ['Today', 'This week', 'This month', 'Over 3 months']
+  };
+  Object.assign(ACTIONS, {
+    rowmenu: function (el) {
+      var row = rowOf(el), who = (el.getAttribute('aria-label') || '').replace(/^More actions( for)?\s*/i, '') || 'this item';
+      var html = '<div class="v-menu__label">' + who.replace(/</g, '&lt;') + '</div>' +
+        '<button class="v-menu__item" data-do="row-open">' + ico('i-arrow-r') + 'Open</button>' +
+        '<button class="v-menu__item" data-do="row-note" data-msg="Editing ' + who.replace(/"/g, '') + '">' + ico('i-note') + 'Edit</button>' +
+        '<button class="v-menu__item" data-do="row-note" data-msg="Duplicated ' + who.replace(/"/g, '') + '">' + ico('i-copy') + 'Duplicate</button>' +
+        '<div class="v-menu__sep"></div>' +
+        '<button class="v-menu__item" data-do="row-remove" data-verb="archived">' + ico('i-archive') + 'Archive</button>' +
+        '<button class="v-menu__item v-menu__item--danger" data-do="row-remove" data-verb="deleted">' + ico('i-trash') + 'Delete</button>';
+      var m = popMenu(el, html); m.__row = row; m.__who = who;
+      return {};
+    },
+    'row-open': function (el) {
+      var m = el.closest('.v-menu'), row = m && m.__row;
+      closeMenus();
+      if (row) { var t = row.querySelector('[data-open], [data-go]') || (row.hasAttribute('data-open') || row.hasAttribute('data-go') ? row : null);
+        if (t) { t.click(); return {}; } }
+      return { toast: 'Opened ' + ((m && m.__who) || 'the record'), body: 'Its full record is shown in this module.' };
+    },
+    'row-note': function (el) { closeMenus(); return { toast: el.getAttribute('data-msg') || 'Done' }; },
+    'row-remove': function (el) {
+      var m = el.closest('.v-menu'), row = m && m.__row, verb = el.getAttribute('data-verb'), who = (m && m.__who) || 'Item';
+      closeMenus();
+      if (row) { row.hidden = true; row.setAttribute('data-gone', ''); }
+      return { toast: who + ' ' + verb, body: verb === 'archived' ? 'Nothing is deleted; restore it from Archived.' : 'It has been removed.',
+               undo: function () { if (row) { row.hidden = false; row.removeAttribute('data-gone'); } } };
+    },
+    filterchip: function (el) {
+      var k = ((el.querySelector('.v-filterchip__k') || el).textContent || '').trim().toLowerCase();
+      var opts = OPTIONS[k] || ['Yes', 'No'];
+      var html = '<div class="v-menu__label">' + k + '</div><button class="v-menu__item" data-do="chip-pick" data-value="Any">Any</button>' +
+        opts.map(function (o) { return '<button class="v-menu__item" data-do="chip-pick" data-value="' + o + '">' + o + '</button>'; }).join('');
+      popMenu(el, html); return {};
+    },
+    'chip-pick': function (el) {
+      var m = el.closest('.v-menu'), chip = m && m.__trigger, v = el.getAttribute('data-value');
+      closeMenus();
+      if (chip) { var vv = chip.querySelector('.v-filterchip__v'); if (vv) vv.textContent = v; chip.classList.toggle('is-set', v !== 'Any'); }
+      return { toast: 'Filter: ' + ((chip && (chip.querySelector('.v-filterchip__k') || {}).textContent) || '') + ' ' + v, body: 'The list shows matching records.' };
+    },
+    edit: function (el) {
+      var c = scopeCard(el), f = c && c.querySelector('input, textarea, select');
+      if (f) f.focus();
+      return { toast: 'Editing', body: 'Change the fields, then save.' };
+    },
+    dismiss: function (el) {
+      // inside a dialog, Cancel / Keep it simply closes the dialog
+      var layer = el.closest('.wt-layer');
+      if (layer) return { close: layer.getAttribute('data-layer') };
+      var c = el.closest('.v-callout, [data-card], .v-record');
+      if (c && !el.closest('.v-modal')) { c.hidden = true; return { toast: 'Dismissed', undo: function () { c.hidden = false; } }; }
+      return { toast: 'Changes discarded', body: 'Everything is as it was.' };
+    },
+    copy: function (el) {
+      var c = scopeCard(el), v = c && c.querySelector('input, code, .num');
+      var t = v ? (v.value || v.textContent) : '';
+      try { navigator.clipboard && navigator.clipboard.writeText(t); } catch (e) {}
+      return { toast: 'Copied', body: t ? t.slice(0, 60) : 'On your clipboard.' };
+    },
+    export: function () { return { toast: 'Export started', body: 'A CSV of what is shown downloads in a moment.' }; },
+    'test-send': function () { return { toast: 'Test sent to your phone', body: 'It goes to +91 90000 10000 only. No customer receives it.' }; },
+    page: function (el) { return { toast: (label(el) || 'Page') + ' page', body: 'This prototype holds one page of data.' }; },
+    columns: function () { return { toast: 'Columns', body: 'Choose which columns the table shows; every field stays available.' }; },
+    rename: function (el) { var c = scopeCard(el), f = c && c.querySelector('input'); if (f) f.focus(); return { toast: 'Rename', body: 'Type the new name and press Enter.' }; },
+    play: function () { return { toast: 'Playing a sample', body: 'Twelve seconds of the selected voice.' }; },
+    notify: function () { return { toast: 'We will tell you', body: 'You will get a notification when it is ready.' }; },
+    generate: function () { return { toast: 'Generating', body: 'Veerha is drafting it now — usually under a minute. Nothing is published until you approve it.' }; },
+    reveal: function (el) {
+      var c = scopeCard(el), f = c && c.querySelector('input'); if (f) f.type = f.type === 'password' ? 'text' : 'password';
+      return { toast: 'Shown for 30 seconds', body: 'Revealing a secret is logged.' };
+    },
+    remove: function (el) {
+      var r = rowOf(el) || el.closest('.v-card');
+      if (r) { r.hidden = true; return { toast: 'Removed', undo: function () { r.hidden = false; } }; }
+      return { toast: 'Removed' };
+    },
+    step: function (el) { return { toast: label(el) === 'Previous' || label(el) === 'Back' ? 'Back a step' : 'Saved — next step', body: 'Each step saves as you go.' }; },
+    ack: function (el) { return { toast: el.getAttribute('data-msg') || label(el), body: el.getAttribute('data-body') || '' }; },
+    create: function (el) {
+      var thing = el.getAttribute('data-ctx-thing') || (label(el) || '').replace(/^(\+\s*)?(New|Add( an?)?|Create)\s*/i, '') || 'item';
+      STATE['ctx.thing'] = thing;
+      return { open: 'create' };
+    },
+    openrow: function (el) {
+      var row = rowOf(el), t = row && (row.querySelector('[data-open]:not([data-do]), [data-go]') || (row.hasAttribute('data-open') || row.hasAttribute('data-go') ? row : null));
+      if (t && t !== el) { t.click(); return {}; }
+      return { toast: 'Opened', body: 'The full record for ' + ((row && (row.querySelector('.v-identity__name, .v-record__title, b') || {}).textContent) || 'this item').trim() + '.' };
+    },
+    'approve-row': function (el) { var r = rowOf(el); if (r) r.hidden = true; return { toast: 'Approved', body: 'It takes effect now.', undo: function () { if (r) r.hidden = false; } }; },
+    'reject-row':  function (el) { var r = rowOf(el); if (r) r.hidden = true; return { toast: 'Rejected', body: 'Nothing changes; Veerha keeps today’s behaviour.', undo: function () { if (r) r.hidden = false; } }; },
+    checkin: function (el) { return { toast: 'Checked in', body: 'Room keys noted on the booking; the guest gets a welcome message.' }; },
+    star: function (el) { var on = el.classList.toggle('is-active'); el.setAttribute('aria-pressed', on); return { toast: on ? 'Starred' : 'Star removed', body: on ? 'It shows first in Starred.' : '' }; },
+    reorder: function (el) {
+      // the row is the nearest ancestor whose siblings also carry reorder buttons
+      var row = el.closest('tr, li, .v-record, .row, [data-card]');
+      for (var a = el; !row && a.parentElement; a = a.parentElement) {
+        var kids = [].filter.call(a.parentElement.children, function (k) { return k.querySelector('[data-do="reorder"]'); });
+        if (kids.length > 1) row = a;
+      }
+      if (!row) return {};
+      var up = /earlier|up$/i.test(el.getAttribute('aria-label') || el.textContent);
+      var sib = up ? row.previousElementSibling : row.nextElementSibling;
+      if (sib) { if (up) row.parentNode.insertBefore(row, sib); else row.parentNode.insertBefore(sib, row); }
+      return { toast: up ? 'Moved earlier' : 'Moved later', body: 'Veerha asks in this order from the next conversation.' };
+    },
+    'chat-send': function (el) {
+      var box = (el.closest('.v-composer, .vs-pane, .v-card') || document).querySelector('input.v-input, textarea.v-input');
+      var t = box && (box.value || box.placeholder || ''); if (box && box.value) box.value = '';
+      var lab = label(el);
+      return { toast: /public/i.test(lab) ? 'Posted publicly' : (/template/i.test(lab) ? 'Template sent' : 'Sent'), body: /DM|privately/i.test(lab) ? 'Sent as a private message.' : 'It is in the thread; Veerha stays paused while you are handling it.' };
+    },
+    topup: function () { return { toast: 'Payment window', body: 'Razorpay opens over this page — card or UPI. Credits arrive the moment it is paid.' }; },
+    'add-item': function (el) { return { toast: 'Added to the sale', body: ((el.querySelector('.t-small') || el).textContent || '').trim().slice(0, 50) }; },
+    golive: function () { return { go: 'dashboard', toast: 'Veerha is live', body: 'Mira is answering on WhatsApp. Everything you set can be changed in Settings.' }; },
+    'create-done': function () { return { closeAll: true, toast: 'Created: ' + (STATE['ctx.thing'] || 'item'), body: 'It is at the top of the list.' }; }
+  });
+
   function run(name, el) {
     var fn = ACTIONS[name];
     if (!fn) { toast(label(el) || name, 'This action is not wired yet.', 'warn'); return; }

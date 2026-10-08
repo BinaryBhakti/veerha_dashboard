@@ -84,7 +84,7 @@
   VF.action('mail-archive', clearThread('Archived'));
   VF.action('redraft', function (el) {
     var box = (el.closest('.vs-pane') || document).querySelector('textarea[data-bind="ctx.draft"]');
-    if (!box) return {};
+    if (!box) return { toast: 'Shorter draft', body: 'Rewritten in the same voice. Nothing has been sent.' };
     var old = box.value;
     box.value = old.split(' — ')[0].split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.') + ' — The team at Rivergrove';
     return { toast: 'Shorter draft', body: 'Rewritten in the same voice. Nothing has been sent.', undo: function () { box.value = old; } };
@@ -228,5 +228,13 @@
     bar.appendChild(nx); bar.appendChild(st);
   }
   VF.action('start-day', function () { showWalk(0); return { go: WALK[0][0] }; });
+
+  /* --- Google Reviews (06 #81) ------------------------------------------------ */
+  VF.action('review-post', function (el) {
+    var scr = el.closest('.wt-screen, .vs-frame') || document;
+    var item = scr.querySelector('button[aria-current="true"]'), badge = item && item.querySelector('.v-badge'), old = badge && badge.outerHTML;
+    if (badge) { badge.className = 'v-badge v-badge--ok'; badge.textContent = 'Answered'; }
+    return { toast: 'Reply posted on Google', body: 'It shows publicly under Meghna S.’s review.', undo: function () { if (badge) badge.outerHTML = old; } };
+  });
 
 })();
