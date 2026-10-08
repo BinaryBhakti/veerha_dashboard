@@ -28,7 +28,7 @@
   // Seed values agree with screens/assets/data.js and the drawn frames.
   var SEED = {
     leads: 27, leadsNew: 17, leadsHot: 14, leadsOverdue: 5,
-    opps: 61, waiting: 20, review: 20, tasks: 10,
+    opps: 60, waiting: 20,   // opps: Arjun becomes the 61st when he is converted review: 20, tasks: 10,
     needsReply: 4, highIntent: 2, awaiting: 3, mailNew: 1,
     chatNeedsReply: 3, chatHighIntent: 2,
     quotesAwaiting: 0,
@@ -45,7 +45,8 @@
   function render() {
     $$('[data-bind]').forEach(function (el) {
       var v = STATE[el.getAttribute('data-bind')];
-      if (v !== undefined) el.textContent = fmt(v);
+      if (v === undefined) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.value = fmt(v); else el.textContent = fmt(v);
     });
     $$('[data-when]').forEach(function (el) { el.hidden = !truthy(el.getAttribute('data-when')); });
     $$('[data-unless]').forEach(function (el) { el.hidden = truthy(el.getAttribute('data-unless')); });
@@ -73,7 +74,10 @@
       var u = document.createElement('button');
       u.className = 'v-btn v-btn--ghost v-btn--sm'; u.textContent = 'Undo'; u.style.marginLeft = 'auto';
       u.setAttribute('data-vf-undo', '');
-      u.addEventListener('click', function () { undo(); el.remove(); toast('Undone', title, 'info'); });
+      u.addEventListener('click', function (e) {
+        e.stopPropagation();                       // not a prototype action to announce
+        undo(); toast('Undone', title, 'info'); setTimeout(function () { el.remove(); }, 0);
+      });
       el.appendChild(u);
     }
     box.appendChild(el);
@@ -83,13 +87,28 @@
 
   /* ------------------------------------------------------------- layers -- */
   var stack = [];
+  // A trigger can hand the layer its subject: data-ctx-name="Priya Nair" sets
+  // STATE['ctx.name'], which the layer shows through data-bind="ctx.name".
+  // One Convert modal then serves every lead row.
+  function takeCtx(el) {
+    if (!el || !el.attributes) return;
+    Array.prototype.forEach.call(el.attributes, function (a) {
+      if (a.name.indexOf('data-ctx-') === 0) STATE['ctx.' + a.name.slice(9)] = a.value;
+    });
+    if (STATE['ctx.name']) STATE['ctx.first'] = STATE['ctx.name'].split(' ')[0];
+    if (STATE['ctx.name'] && STATE['ctx.req'])
+      STATE['ctx.deal'] = STATE['ctx.name'] + ' — ' + STATE['ctx.req'].split(' · ').slice(1).join(' · ');
+  }
   function open(id, opener) {
+    takeCtx(opener);
     var L = $('.wt-layer[data-layer="' + id + '"]');
     if (!L) { toast('Not drawn yet', 'The “' + id + '” layer has no frame.', 'warn'); return; }
     closeMenus();
     L.hidden = false;
     stack.push({ id: id, opener: opener || document.activeElement });
-    var f = $('input, textarea, select, button:not([aria-label="Close"])', L);
+    // A modal is a form: put the caret in its first field. A drawer is reading,
+    // so it takes no focus ring on open.
+    var f = $('.v-modal input, .v-modal textarea, .v-modal select', L);
     if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 30);
     render();
   }
@@ -103,8 +122,19 @@
   function closeAll() { while (stack.length) close(); }
 
   /* -------------------------------------------------------------- menus -- */
+  // An open menu is moved to <body> so no sticky cell or scrolling card can
+  // trap it underneath the next row; it goes back to its host when it closes.
+  function portal(menu) {
+    if (menu.__home) return;
+    menu.__home = menu.parentNode; menu.__next = menu.nextSibling;
+    document.body.appendChild(menu);
+  }
+  function unportal(menu) {
+    if (!menu.__home) return;
+    menu.__home.insertBefore(menu, menu.__next); menu.__home = null;
+  }
   function closeMenus(except) {
-    $$('.v-menu').forEach(function (m) { if (m !== except) m.hidden = true; });
+    $$('.v-menu').forEach(function (m) { if (m !== except) { m.hidden = true; unportal(m); } });
     $$('[data-menu][aria-expanded="true"]').forEach(function (b) {
       if (!except || b.parentNode !== except.parentNode) b.setAttribute('aria-expanded', 'false');
     });
@@ -113,6 +143,18 @@
   /* ------------------------------------------------------------ actions -- */
   // Each returns what should happen next: { toast, body, tone, undo, go, open, close }.
   var ACTIONS = {
+    // An item in a chip's menu becomes the chip's value: stage, owner, temperature.
+    pick: function (el) {
+      var host = el.closest('.v-menu-host') || (el.closest('.v-menu') || {}).__host;
+      var chip = host && $('[data-menu]', host);
+      var val = (el.getAttribute('data-value') || el.textContent).replace(/\s+/g, ' ').trim();
+      if (chip) {
+        var svg = $('svg', chip);
+        chip.textContent = val + ' '; if (svg) chip.appendChild(svg);
+      }
+      $$('.v-menu__item', host).forEach(function (x) { x.classList.toggle('is-active', x === el); });
+      return { toast: (el.getAttribute('data-what') || 'Changed') + ' to ' + val, body: STATE['ctx.name'] || '' };
+    },
     save: function (el) {
       var bar = el.closest('.v-savebar, .v-card');
       var st = bar && $('.v-savebar__state', bar);
@@ -163,6 +205,19 @@
         var willOpen = menu.hidden;
         closeMenus(willOpen ? menu : null);
         menu.hidden = !willOpen;
+        // Escape any scrolling table or card: pin the menu to the trigger on screen.
+        if (willOpen) {
+          menu.__host = m.parentNode;
+          portal(menu);
+          menuOpenedAt = Date.now();
+          var r = m.getBoundingClientRect(), left = menu.classList.contains('v-menu--left');
+          menu.style.position = 'fixed'; menu.style.zIndex = '60';
+          menu.style.top = (r.bottom + 4) + 'px';
+          if (left) { menu.style.left = r.left + 'px'; menu.style.right = 'auto'; }
+          else { menu.style.right = (window.innerWidth - r.right) + 'px'; menu.style.left = 'auto'; }
+          var mh = menu.getBoundingClientRect().height;
+          if (r.bottom + 4 + mh > window.innerHeight - 8) menu.style.top = Math.max(8, r.top - 4 - mh) + 'px';
+        }
         m.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
       }
       return;
@@ -197,6 +252,11 @@
   document.addEventListener('click', function (e) {
     if (e.target.closest('[data-go]') && !e.target.closest('.wt-layer')) { closeMenus(); }
   });
+
+  // a pinned menu would drift from its trigger on scroll; close it instead
+  // (a scroll that is still settling from the click that opened it does not count)
+  var menuOpenedAt = 0;
+  document.addEventListener('scroll', function () { if (Date.now() - menuOpenedAt > 400) closeMenus(); }, true);
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
 

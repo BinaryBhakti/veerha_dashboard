@@ -57,8 +57,8 @@ MODULES = ['01-home.html','02-leads.html','03-opportunities.html','04-quotes.htm
 # exist only to show a layer (tools/flows.py LAYER_ONLY) are not screens.
 # Before this, the lead drawer frame itself was the Leads screen, so the main
 # list showed as a faded three-row backdrop whenever the drawer was closed.
-from flows import LAYER_ONLY
-EXCLUDE = set(LAYER_ONLY)
+from flows import LAYER_ONLY, SHEET_ONLY
+EXCLUDE = set(LAYER_ONLY) | set(SHEET_ONLY)
 RENAME = {}
 LAYER_RX = re.compile(r'<div class="vs-overlay[^"]*"[^>]*data-layer="([^"]+)"')
 
@@ -307,6 +307,9 @@ def main():
     if 'behaviour.js' not in wt:
         wt = wt.replace('</body>', '<script src="assets/behaviour.js"></script>\n</body>', 1)
         print('  re-attached behaviour.js')
+    if '<script src="assets/journeys.js"' not in wt:
+        wt = wt.replace('</body>', '<script src="assets/journeys.js"></script>\n</body>', 1)
+        print('  attached journeys.js')
     if '<script src="assets/flows.js"' not in wt:
         wt = wt.replace('<script src="assets/behaviour.js"></script>', '<script src="assets/behaviour.js"></script>\n<script src="assets/flows.js"></script>', 1)
         print('  attached flows.js')

@@ -160,6 +160,7 @@
    are and what is next. */
 .vs-overlay .v-drawer { position: relative; z-index: 1; width: 980px; max-width: 62%; }
 .vs-overlay--modal { align-items: center; justify-content: center; }
+.vs-overlay .v-modal { position: relative; z-index: 1; max-height: calc(100% - 2 * var(--s-6)); overflow: auto; }
 
 /* Card grids used by A6 and the dashboard. */
 .vs-cards { display: grid; gap: var(--s-4); }
