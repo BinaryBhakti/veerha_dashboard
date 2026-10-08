@@ -114,8 +114,11 @@
               <span class="v-avatar">A</span></div>
           </header>
           <div class="vs-tabstrip"><div class="v-tabs" role="tablist" aria-label="Conversations"><button class="v-tab is-active" role="tab" data-go="inbox">Chat</button><button class="v-tab" role="tab" data-go="mail">Customer Mail</button><button class="v-tab" role="tab" data-go="callbacks">Callbacks</button><button class="v-tab" role="tab" data-go="reviews">Google Reviews</button></div></div>
-          <div class="vs-body vs-body--panes">
-            <div class="vs-panes vs-panes--inbox">
+          <div class="vs-body vs-body--panes vs-body--stack">
+            <div class="row" style="gap:var(--s-3);padding:0 var(--s-5);border-bottom:1px solid var(--border);background:var(--surface);flex:none">
+              <div class="v-tabs" role="tablist" aria-label="Chat views" style="border-bottom:0;flex-wrap:nowrap;overflow-x:auto"><button class="v-tab is-active" data-view-tab="all" role="tab" aria-selected="true">All <span class="v-pill__n">4</span></button><button class="v-tab" data-view-tab="needs-reply" role="tab" aria-selected="false">Needs reply <span class="v-pill__n" data-bind="chatNeedsReply">2</span></button><button class="v-tab" data-view-tab="high-intent" role="tab" aria-selected="false">High intent <span class="v-pill__n" data-bind="chatHighIntent">2</span></button><button class="v-tab" data-view-tab="ai-handling" role="tab" aria-selected="false">Veerha handling <span class="v-pill__n">2</span></button><button class="v-tab" data-view-tab="took-over" role="tab" aria-selected="false">You took over <span class="v-pill__n">1</span></button><button class="v-tab" data-view-tab="window-closed" role="tab" aria-selected="false">Window closed <span class="v-pill__n">1</span></button></div>
+            </div>
+            <div class="vs-panes vs-panes--inbox" style="flex:1;min-height:0">
 
               <div class="vs-pane">
                 <div class="vs-pane__hd">
@@ -124,7 +127,7 @@
                     <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                     <input class="v-input" placeholder="Search messages and people"></div>
                 </div>
-              <div class="v-convitem is-active">
+              <div data-views="ai-handling high-intent" data-go="inbox" role="link" tabindex="0" class="v-convitem is-active">
                 <span class="v-avatar v-avatar--sm">AM</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Arjun Mehta</span><span class="v-convitem__time">2m</span></div>
@@ -132,7 +135,7 @@
                   <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">WhatsApp</span><span class="v-badge v-badge--ai">AI</span></div>
                 </div>
               </div>
-              <div class="v-convitem">
+              <div data-views="needs-reply high-intent took-over" data-go="inbox-taken" role="link" tabindex="0" class="v-convitem">
                 <span class="v-avatar v-avatar--sm">PN</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Priya Nair</span><span class="v-convitem__time">22m</span></div>
@@ -140,7 +143,7 @@
                   <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Email</span><span class="v-badge v-badge--brand">You</span></div>
                 </div><span class="v-convitem__unread">2</span>
               </div>
-              <div class="v-convitem">
+              <div data-views="needs-reply" data-go="inbox-modes" role="link" tabindex="0" class="v-convitem">
                 <span class="v-avatar v-avatar--sm">VR</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Vikram Rao</span><span class="v-convitem__time">3h</span></div>
@@ -148,7 +151,7 @@
                   <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Phone</span><span class="v-badge v-badge--warn">Waiting</span></div>
                 </div><span class="v-convitem__unread">1</span>
               </div>
-              <div class="v-convitem">
+              <div data-views="ai-handling window-closed" data-go="inbox-modes" role="link" tabindex="0" class="v-convitem">
                 <span class="v-avatar v-avatar--sm">SB</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Sameer Bhat</span><span class="v-convitem__time">11h</span></div>
@@ -310,11 +313,14 @@
               <span class="v-avatar">A</span></div>
           </header>
           <div class="vs-tabstrip"><div class="v-tabs" role="tablist" aria-label="Conversations"><button class="v-tab is-active" role="tab" data-go="inbox">Chat</button><button class="v-tab" role="tab" data-go="mail">Customer Mail</button><button class="v-tab" role="tab" data-go="callbacks">Callbacks</button><button class="v-tab" role="tab" data-go="reviews">Google Reviews</button></div></div>
-          <div class="vs-body vs-body--panes">
-            <div class="vs-panes vs-panes--inbox">
+          <div class="vs-body vs-body--panes vs-body--stack">
+            <div class="row" style="gap:var(--s-3);padding:0 var(--s-5);border-bottom:1px solid var(--border);background:var(--surface);flex:none">
+              <div class="v-tabs" role="tablist" aria-label="Chat views" style="border-bottom:0;flex-wrap:nowrap;overflow-x:auto"><button class="v-tab is-active" data-view-tab="all" role="tab" aria-selected="true">All <span class="v-pill__n">4</span></button><button class="v-tab" data-view-tab="needs-reply" role="tab" aria-selected="false">Needs reply <span class="v-pill__n" data-bind="chatNeedsReply">2</span></button><button class="v-tab" data-view-tab="high-intent" role="tab" aria-selected="false">High intent <span class="v-pill__n" data-bind="chatHighIntent">2</span></button><button class="v-tab" data-view-tab="ai-handling" role="tab" aria-selected="false">Veerha handling <span class="v-pill__n">2</span></button><button class="v-tab" data-view-tab="took-over" role="tab" aria-selected="false">You took over <span class="v-pill__n">1</span></button><button class="v-tab" data-view-tab="window-closed" role="tab" aria-selected="false">Window closed <span class="v-pill__n">1</span></button></div>
+            </div>
+            <div class="vs-panes vs-panes--inbox" style="flex:1;min-height:0">
               <div class="vs-pane">
                 <div class="vs-pane__hd"><div class="spread"><span class="label">Inbox</span><span class="v-badge v-badge--brand">11</span></div></div>
-              <div class="v-convitem">
+              <div data-views="ai-handling high-intent" data-go="inbox" role="link" tabindex="0" class="v-convitem">
                 <span class="v-avatar v-avatar--sm">AM</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Arjun Mehta</span><span class="v-convitem__time">2m</span></div>
@@ -322,7 +328,7 @@
                   <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">WhatsApp</span><span class="v-badge v-badge--ai">AI</span></div>
                 </div>
               </div>
-              <div class="v-convitem is-active">
+              <div data-views="needs-reply high-intent took-over" data-go="inbox-taken" role="link" tabindex="0" class="v-convitem is-active">
                 <span class="v-avatar v-avatar--sm">PN</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Priya Nair</span><span class="v-convitem__time">22m</span></div>
@@ -330,7 +336,7 @@
                   <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Email</span><span class="v-badge v-badge--brand">You</span></div>
                 </div><span class="v-convitem__unread">2</span>
               </div>
-              <div class="v-convitem">
+              <div data-views="needs-reply" data-go="inbox-modes" role="link" tabindex="0" class="v-convitem">
                 <span class="v-avatar v-avatar--sm">VR</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Vikram Rao</span><span class="v-convitem__time">3h</span></div>
@@ -338,7 +344,7 @@
                   <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Phone</span><span class="v-badge v-badge--warn">Waiting</span></div>
                 </div><span class="v-convitem__unread">1</span>
               </div>
-              <div class="v-convitem">
+              <div data-views="ai-handling window-closed" data-go="inbox-modes" role="link" tabindex="0" class="v-convitem">
                 <span class="v-avatar v-avatar--sm">SB</span>
                 <div class="grow">
                   <div class="v-convitem__top"><span class="v-convitem__name">Sameer Bhat</span><span class="v-convitem__time">11h</span></div>
@@ -891,15 +897,17 @@
   <section class="vs-frame vs-frame--h620" id="mail">
     <div class="vs-frame__hd">
       <span class="vs-frame__n">55</span>
-      <span class="vs-frame__name">Mail</span>
+      <span class="vs-frame__name">Customer Mail — needs reply</span>
       <span class="vs-frame__route">/mail</span>
       <span class="t-meta muted">A4 variant · bespoke</span>
     </div>
     <p class="vs-frame__note">
-      The inbox layout with a folder rail added — a <em>second</em> 56px rail inside the first.
-      That is the only structural difference, which is why it is a variant rather than a new
-      archetype. It is the mailbox behind the Customer mail tab, for correspondence that is not
-      tied to a live enquiry.
+      Redesigned 8 Oct. The live product puts its useful views — Needs Reply, High Intent, New Leads,
+      Active Customers, Awaiting Customer, Today — in a left list under Inbox, where they are easy to
+      miss. Here they are <b>count tabs across the top</b>, opening on <b>Needs reply</b>; mailboxes and
+      provider folders move into two small menus. The reading pane carries Veerha’s draft addressed by
+      name, and sending moves the thread to Awaiting customer. The Dashboard’s Needs reply and High
+      intent numbers open this screen on that view.
     </p>
     <div class="vs-frame__box"><div class="vs-app">
         <nav class="v-rail is-expanded" aria-label="Sections">
@@ -935,74 +943,106 @@
               <span class="v-avatar">A</span></div>
           </header>
           <div class="vs-tabstrip"><div class="v-tabs" role="tablist" aria-label="Conversations"><button class="v-tab" role="tab" data-go="inbox">Chat</button><button class="v-tab is-active" role="tab" data-go="mail">Customer Mail</button><button class="v-tab" role="tab" data-go="callbacks">Callbacks</button><button class="v-tab" role="tab" data-go="reviews">Google Reviews</button></div></div>
-          <div class="vs-body vs-body--panes">
-            <div class="vs-panes" style="grid-template-columns:56px 300px minmax(0,1fr)">
-
-              <div class="vs-pane" style="background:var(--surface-subtle);display:flex;flex-direction:column;align-items:center;padding:var(--s-3) 0;gap:var(--s-1)">
-                <button class="v-rail__item is-active" aria-label="Inbox"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg><span class="v-navdot"></span></button>
-                <button class="v-rail__item" aria-label="Starred"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
-                <button class="v-rail__item" aria-label="Sent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button>
-                <button class="v-rail__item" aria-label="Archive"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></button>
-              </div>
-
-              <div class="vs-pane">
+          <div class="vs-body vs-body--panes vs-body--stack">
+            <div class="row" style="gap:var(--s-3);padding:0 var(--s-5);border-bottom:1px solid var(--border);background:var(--surface);flex:none">
+              <div class="v-tabs" role="tablist" aria-label="Mail views" style="border-bottom:0;flex-wrap:nowrap;overflow-x:auto"><button class="v-tab is-active" data-view-tab="needs-reply" data-view-name="Needs reply" role="tab" aria-selected="true">Needs reply <span class="v-pill__n" data-bind="needsReply">4</span></button><button class="v-tab" data-view-tab="high-intent" data-view-name="High intent" role="tab" aria-selected="false">High intent <span class="v-pill__n" data-bind="highIntent">2</span></button><button class="v-tab" data-view-tab="awaiting" data-view-name="Awaiting customer" role="tab" aria-selected="false">Awaiting customer <span class="v-pill__n" data-bind="awaiting">3</span></button><button class="v-tab" data-view-tab="new-lead" data-view-name="New leads" role="tab" aria-selected="false">New leads <span class="v-pill__n" data-bind="mailNew">1</span></button><button class="v-tab" data-view-tab="active-customer" data-view-name="Active customers" role="tab" aria-selected="false">Active customers <span class="v-pill__n">1</span></button><button class="v-tab" data-view-tab="today" data-view-name="Today" role="tab" aria-selected="false">Today <span class="v-pill__n">3</span></button></div>
+              <span class="grow"></span>
+              <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg> Folders <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><button class="v-menu__item" data-view-tab="all" data-view-name="Inbox — everything"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Inbox — everything</button><button class="v-menu__item" data-view-tab="awaiting" data-view-name="Sent, awaiting a reply"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Sent, awaiting a reply</button><button class="v-menu__item" data-view-tab="internal" data-view-name="Internal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg>Internal</button><div class="v-menu__sep"></div><div class="v-menu__label">Provider folders</div><button class="v-menu__item" data-inert="Shows the folders exactly as they are in Gmail"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>All provider mail</button><button class="v-menu__item" data-inert="Archived threads; nothing is deleted"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive</button><button class="v-menu__item" data-inert="Threads marked done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Done</button></div></span>
+              <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false">stay@rivergrove.example.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><div class="v-menu__label">Mailboxes</div><button class="v-menu__item is-active" data-do="pick" data-what="Mailbox">stay@rivergrove.example.com</button><button class="v-menu__item" data-do="pick" data-what="Mailbox">sales@rivergrove.example.com</button><div class="v-menu__sep"></div><button class="v-menu__item" data-inert="Opens the mailbox connection on Connections"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Connect another mailbox</button></div></span>
+              <button class="v-btn v-btn--primary v-btn--sm" data-open="compose"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>New message</button>
+            </div>
+            <div class="vs-panes" style="grid-template-columns:320px minmax(0,1fr) 280px;flex:1;min-height:0">
+              <div class="vs-pane" style="overflow:auto">
                 <div class="vs-pane__hd">
-                  <div class="spread"><span class="label">Inbox</span><span class="v-badge v-badge--brand">4</span></div>
-                  <div class="v-search" style="margin-top:var(--s-3)">
-                    <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                    <input class="v-input" placeholder="Search mail"></div>
+                  <div class="spread"><span class="label" data-view-label>Needs reply</span><span class="t-meta muted">oldest promise first</span></div>
+                  <div class="v-search" style="margin-top:var(--s-3)"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search mail"></div>
                 </div>
-                <div class="v-convitem is-active">
+                <div class="v-convitem is-active" data-thread data-views="needs-reply high-intent today" data-ctx-name="Priya Nair" data-ctx-email="priya.nair@example.com" data-ctx-subject="Group rate for 12–14 November" data-ctx-body="Hello, we’re a party of sixteen looking at 12–14 November — six rooms if you have them. Our budget is around ₹1.8L all in. I’ve had quotes from two other properties on the same stretch, so a competitive rate would help. Could someone call me about this rather than emailing back and forth? — Priya" data-ctx-draft="Hello Priya — thank you. Six rooms are free for 12–14 November, in the Riverside block. Anita will call you today at 4:00 PM to go through a group rate; if another time suits better, reply with it and she will move the call. — The team at Rivergrove" data-ctx-leadline="LEAD-0131 · score 91 · deal OPP-0058, ₹1,64,800 · asked for a person" data-ctx-time="22m" role="button" tabindex="0">
                   <span class="v-avatar v-avatar--sm">PN</span>
                   <div class="grow">
                     <div class="v-convitem__top"><span class="v-convitem__name">Priya Nair</span><span class="v-convitem__time">22m</span></div>
                     <div class="v-convitem__snip truncate">Group rate for 12–14 November</div>
-                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--brand">You</span></div></div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--danger">High intent</span></div></div>
                 </div>
-                <div class="v-convitem">
+                <div class="v-convitem" data-thread data-views="needs-reply high-intent today" data-ctx-name="Nandini Gokhale" data-ctx-email="nandini.gokhale@example.com" data-ctx-subject="Menus for the 28th?" data-ctx-body="Hi, you said you’d send the lunch menus for our lawn booking on the 28th. We need to choose by Friday. Can you send them today? — Nandini" data-ctx-draft="Hello Nandini — apologies, those should have reached you on the 17th. All three lunch menus are attached, with prices for twelve guests. If you choose by Thursday the kitchen can confirm the same day. — The team at Rivergrove" data-ctx-leadline="LEAD-0128 · deal OPP-0039, day visit for 12 · quotation QT-0100 never opened" data-ctx-time="3h" role="button" tabindex="0">
+                  <span class="v-avatar v-avatar--sm">NG</span>
+                  <div class="grow">
+                    <div class="v-convitem__top"><span class="v-convitem__name">Nandini Gokhale</span><span class="v-convitem__time">3h</span></div>
+                    <div class="v-convitem__snip truncate">Menus for the 28th?</div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--danger">High intent</span></div></div>
+                </div>
+                <div class="v-convitem" data-thread data-views="needs-reply new-lead today" data-ctx-name="Ishaan Varma" data-ctx-email="ishaan.varma@example.com" data-ctx-subject="Weekend for two in December" data-ctx-body="Hello, do you have a river-view room for the second weekend of December, for two adults? We would like to arrive Friday evening. — Ishaan" data-ctx-draft="Hello Ishaan — yes, the Premier Riverside Room is free on Friday 11 and Saturday 12 December, at ₹21,850 a night with breakfast. Shall I hold it for you until tomorrow evening? — The team at Rivergrove" data-ctx-leadline="New contact · no lead yet" data-ctx-time="5h" role="button" tabindex="0">
+                  <span class="v-avatar v-avatar--sm">IV</span>
+                  <div class="grow">
+                    <div class="v-convitem__top"><span class="v-convitem__name">Ishaan Varma</span><span class="v-convitem__time">5h</span></div>
+                    <div class="v-convitem__snip truncate">Weekend for two in December</div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--info">New lead</span></div></div>
+                </div>
+                <div class="v-convitem" data-thread data-views="needs-reply active-customer" data-ctx-name="Kavya Reddy" data-ctx-email="kavya.reddy@example.com" data-ctx-subject="Re: late checkout on the 5th" data-ctx-body="Hi, just checking the 2pm checkout on the 5th is still fine with you? We drive back to Hyderabad that afternoon. — Kavya" data-ctx-draft="Hello Kavya — yes, a 2pm checkout on 5 January is confirmed and noted on your booking. Safe drive back. — The team at Rivergrove" data-ctx-leadline="BKG-4417 · Riverside block · paid in full" data-ctx-time="1d" role="button" tabindex="0">
                   <span class="v-avatar v-avatar--sm">KR</span>
                   <div class="grow">
                     <div class="v-convitem__top"><span class="v-convitem__name">Kavya Reddy</span><span class="v-convitem__time">1d</span></div>
                     <div class="v-convitem__snip truncate">Re: late checkout on the 5th</div>
-                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--warn">Unanswered</span></div></div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--ok">Booked guest</span></div></div>
                 </div>
-                <div class="v-convitem">
+                <div class="v-convitem" data-thread data-views="awaiting" data-ctx-name="Arjun Mehta" data-ctx-email="arjun.mehta@example.com" data-ctx-subject="Re: Premier Riverside, 15–17 Oct" data-ctx-body="You wrote: the Premier Riverside is held for you until tomorrow at 6 PM. He has opened it twice and not replied." data-ctx-draft="Nothing to draft — this thread is waiting on them." data-ctx-leadline="LEAD-0129 · score 80 · callback agreed for 11:00" data-ctx-time="2d" hidden role="button" tabindex="0">
+                  <span class="v-avatar v-avatar--sm">AM</span>
+                  <div class="grow">
+                    <div class="v-convitem__top"><span class="v-convitem__name">Arjun Mehta</span><span class="v-convitem__time">2d</span></div>
+                    <div class="v-convitem__snip truncate">Re: Premier Riverside, 15–17 Oct</div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Waiting on him</span></div></div>
+                </div>
+                <div class="v-convitem" data-thread data-views="awaiting" data-ctx-name="Vikram Rao" data-ctx-email="vikram.rao@example.com" data-ctx-subject="Re: Panorama Suite, 22–26 Oct" data-ctx-body="You wrote: our best rate for the Panorama Suite is ₹26,400 a night. Waiting for his answer since yesterday." data-ctx-draft="Nothing to draft — this thread is waiting on them." data-ctx-leadline="LEAD-0127 · negotiating · 12% asked" data-ctx-time="1d" hidden role="button" tabindex="0">
+                  <span class="v-avatar v-avatar--sm">VR</span>
+                  <div class="grow">
+                    <div class="v-convitem__top"><span class="v-convitem__name">Vikram Rao</span><span class="v-convitem__time">1d</span></div>
+                    <div class="v-convitem__snip truncate">Re: Panorama Suite, 22–26 Oct</div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Waiting on him</span></div></div>
+                </div>
+                <div class="v-convitem" data-thread data-views="awaiting" data-ctx-name="Farhan Qureshi" data-ctx-email="farhan.qureshi@example.com" data-ctx-subject="Re: rates for a family of four" data-ctx-body="You wrote: two connecting rooms are free for 1–3 November. No reply in three days — a follow-up is due tomorrow." data-ctx-draft="Nothing to draft — this thread is waiting on them." data-ctx-leadline="LEAD-0133 · warm · follow-up due" data-ctx-time="3d" hidden role="button" tabindex="0">
+                  <span class="v-avatar v-avatar--sm">FQ</span>
+                  <div class="grow">
+                    <div class="v-convitem__top"><span class="v-convitem__name">Farhan Qureshi</span><span class="v-convitem__time">3d</span></div>
+                    <div class="v-convitem__snip truncate">Re: rates for a family of four</div>
+                    <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Waiting on him</span></div></div>
+                </div>
+                <div class="v-convitem" data-thread data-views="internal" data-ctx-name="Rivergrove Accounts" data-ctx-email="accounts@rivergrove.example.com" data-ctx-subject="September invoice summary" data-ctx-body="The monthly invoice summary for September is attached." data-ctx-draft="Nothing to draft — this thread is waiting on them." data-ctx-leadline="Internal" data-ctx-time="2d" hidden role="button" tabindex="0">
                   <span class="v-avatar v-avatar--sm">RG</span>
                   <div class="grow">
                     <div class="v-convitem__top"><span class="v-convitem__name">Rivergrove Accounts</span><span class="v-convitem__time">2d</span></div>
                     <div class="v-convitem__snip truncate">September invoice summary</div>
                     <div class="row" style="gap:5px;margin-top:6px"><span class="v-badge v-badge--neutral">Internal</span></div></div>
                 </div>
+                <div class="v-empty" data-view-empty="needs-reply" hidden style="padding:var(--s-8) var(--s-4)"><div class="v-empty__title">Nothing needs a reply</div><p class="v-empty__body">Every thread is answered or waiting on the customer.</p></div>
               </div>
-
               <div class="vs-pane vs-pane--canvas" style="display:flex;flex-direction:column">
                 <div class="vs-pane__hd">
                   <div class="row"><div class="grow">
-                    <div class="t-card">Group rate for 12–14 November</div>
-                    <div class="t-meta muted" style="margin-top:2px">Priya Nair &lt;priya.nair@example.com&gt; · to you · 10:09 AM</div></div>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Open lead</button>
-                    <button class="v-btn v-btn--icon v-btn--sm" aria-label="More"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button>
+                    <div class="t-card" data-bind="ctx.subject">Group rate for 12–14 November</div>
+                    <div class="t-meta muted" style="margin-top:2px"><span data-bind="ctx.name">Priya Nair</span> · <span data-bind="ctx.email">priya.nair@example.com</span> · <span data-bind="ctx.time">22m</span> ago</div></div>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-go="leads">Open lead</button>
+                    <span class="v-menu-host"><button class="v-btn v-btn--icon v-btn--sm" data-menu aria-haspopup="menu" aria-expanded="false" aria-label="More for this thread"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button><div class="v-menu" role="menu" hidden><button class="v-menu__item" data-do="mail-done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Mark done</button><button class="v-menu__item" data-open="followup"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg>Remind me</button><button class="v-menu__item" data-inert="Forwards the thread with its attachments"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-reply"/></svg>Forward</button><div class="v-menu__sep"></div><button class="v-menu__item" data-do="mail-archive"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive</button></div></span>
                   </div>
                 </div>
                 <div style="flex:1;overflow:auto;padding:var(--s-5)">
-                  <p class="t-body secondary" style="max-width:68ch">Hello,</p>
-                  <p class="t-body secondary" style="max-width:68ch;margin-top:var(--s-3)">
-                    We're a party of sixteen looking at 12–14 November — six rooms if you have them.
-                    Our budget is around ₹1.8L all in. I've had quotes from two other properties on
-                    the same stretch, so a competitive rate would help.</p>
-                  <p class="t-body secondary" style="max-width:68ch;margin-top:var(--s-3)">
-                    Could someone call me about this rather than emailing back and forth?</p>
-                  <p class="t-body secondary" style="max-width:68ch;margin-top:var(--s-3)">Priya</p>
-                  <div class="v-callout v-callout--ai" style="margin-top:var(--s-5);max-width:68ch">
-                    <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><use href="#i-v"/></svg></span>
-                    <div>Veerha matched this to <b>LEAD-0131</b> and raised it to your queue — group
-                      rates sit above what it may quote. It has not replied.</div>
-                  </div>
+                  <p class="t-body secondary" style="max-width:68ch" data-bind="ctx.body">Hello, we’re a party of sixteen looking at 12–14 November — six rooms if you have them. Our budget is around ₹1.8L all in. I’ve had quotes from two other properties on the same stretch, so a competitive rate would help. Could someone call me about this rather than emailing back and forth? — Priya</p>
                 </div>
-                <div class="v-composer">
-                  <input class="v-input" placeholder="Reply to Priya…">
-                  <button class="v-btn v-btn--secondary">Forward</button>
-                  <button class="v-btn v-btn--primary">Send</button>
+                <div style="border-top:1px solid var(--border);padding:var(--s-4) var(--s-5);background:var(--surface)">
+                  <div class="row" style="justify-content:space-between;margin-bottom:var(--s-2)"><span class="label" style="color:var(--ai-tx)">Veerha’s draft</span><span class="t-meta muted">To <b data-bind="ctx.email">priya.nair@example.com</b> · you send it, not Veerha</span></div>
+                  <textarea class="v-input" rows="3" style="width:100%" data-bind="ctx.draft">Hello Priya — thank you. Six rooms are free for 12–14 November, in the Riverside block. Anita will call you today at 4:00 PM to go through a group rate; if another time suits better, reply with it and she will move the call. — The team at Rivergrove</textarea>
+                  <div class="row" style="gap:var(--s-2);margin-top:var(--s-2)"><button class="v-btn v-btn--ghost v-btn--sm" data-do="redraft">Rewrite</button><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm" data-open="followup">Send later</button><button class="v-btn v-btn--primary v-btn--sm" data-do="mail-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send</button></div>
+                </div>
+              </div>
+              <div class="vs-pane" style="overflow:auto">
+                <div class="vs-pane__hd"><span class="label">Customer context</span></div>
+                <div style="padding:var(--s-4)">
+                  <div class="t-strong" data-bind="ctx.name">Priya Nair</div>
+                  <div class="t-meta muted" style="margin-top:4px" data-bind="ctx.leadline">LEAD-0131 · score 91 · deal OPP-0058, ₹1,64,800 · asked for a person</div>
+                  <div class="v-actions-row" style="margin-top:var(--s-4)">
+                    <button class="v-action" data-go="leads"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg>Open lead</button>
+                    <button class="v-action" data-open="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-logcall"/></svg>Log a call</button>
+                  </div>
+                  <p class="t-meta muted" style="margin-top:var(--s-4)">Everything known about whoever wrote shows here — their history, their deal, and the details worth keeping. A sender with no lead gets <b>Create a lead from this email</b>.</p>
                 </div>
               </div>
             </div>
