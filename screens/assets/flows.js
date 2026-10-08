@@ -33,7 +33,7 @@
     needsReply: 4, highIntent: 2, awaiting: 3, mailNew: 1,
     chatNeedsReply: 2, chatHighIntent: 2,
     quotesAwaiting: 0, reviewOpen: 6,
-    'arjun.converted': false, 'arjun.won': false
+    'arjun.converted': false, 'arjun.won': false, 'quote.sent': false, 'lead.added': false, 'arjun.taken': false
   };
   var STATE = JSON.parse(JSON.stringify(SEED));
 
@@ -103,6 +103,10 @@
   }
   function open(id, opener) {
     takeCtx(opener);
+    // A step button (Next / Back in a multi-step dialog) replaces its dialog
+    // instead of stacking a second one on top.
+    var from = opener && opener.closest && opener.closest('.wt-layer');
+    if (from && opener.hasAttribute('data-step')) close(from.getAttribute('data-layer'));
     var L = $('.wt-layer[data-layer="' + id + '"]');
     if (!L) { toast('Not drawn yet', 'The “' + id + '” layer has no frame.', 'warn'); return; }
     closeMenus();

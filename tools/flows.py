@@ -22,7 +22,7 @@ can be wired in its own markup when that is clearer.
 # lifted into the walkthrough's layer stack and the frame is not a screen.
 LAYER_ONLY = {
     'lead-drawer', 'lead-convert', 'lead-dialogs', 'queue-dialogs',
-    'opportunity-drawer', 'opp-dialogs',
+    'opportunity-drawer', 'opp-dialogs', 'quote-dialogs', 'conv-dialogs', 'stay-dialogs',
 }
 
 # Frames that show a state for the design sheet only (the walkthrough reaches the
@@ -32,6 +32,25 @@ SHEET_ONLY = {
 }
 
 RULES = [
+    # --- Dashboard (01-home) -----------------------------------------------------
+    ('dashboard', 'Start my day',      'do:start-day'),
+    ('dashboard', 'Add lead',          'open:new-lead'),
+    ('dashboard', 'WhatsApp',          'go:inbox'),
+    ('dashboard', 'Email',             'open:compose'),
+    ('dashboard', 'Schedule meeting',  'open:meeting'),
+    ('dashboard', 'Generate quote',    'open:new-quote'),
+    ('dashboard', 'Create opportunity', 'go:leads'),
+    ('dashboard', 'Create task',       'open:new-task'),
+    ('dashboard', {'exact': 'More'},   'inert:More quick actions — log a call, add a note, import a list'),
+    # --- Leads (02-leads) ---------------------------------------------------------
+    ('leads', 'New lead',    'open:new-lead'),
+    ('leads', 'Import',      'go:import'),
+    ('leads', 'Auto-assign', 'inert:Shares new leads across the team by round-robin, set in Team'),
+    ('leads', 'Columns',     'inert:Chooses which columns the table shows'),
+    # --- Stay workspace (03 proposal) ------------------------------------------------
+    ('proposal', 'Create link',      'open:stay-link'),
+    ('proposal', 'Save as draft',    'do:save-draft'),
+    ('proposal', 'Preview as guest', 'inert:Opens the Stay page as the guest will see it (guest pages, frame 70)'),
     # --- Opportunity drawer (03-opportunities) ---------------------------------
     ('opportunity-drawer', 'WhatsApp',          'go:inbox'),
     ('opportunity-drawer', 'Call',              'open:logcall'),

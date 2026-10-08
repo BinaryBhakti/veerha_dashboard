@@ -203,7 +203,7 @@
                     <div class="v-waiting__row" style="padding:9px 0;gap:var(--s-3);align-items:flex-start">
                       <span class="num t-meta faint" style="padding-top:2px">04</span><span class="grow t-small">Reconnect WhatsApp Business</span><span class="t-meta muted num" style="padding-top:2px">4 min</span></div>
                   </div>
-                  <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)">
+                  <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)" data-w data-do="start-day">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt"/></svg>Start my day</button>
                   <div class="t-meta muted" style="margin-top:9px;text-align:center">About <span class="num">23 min</span> of work</div>
                 </div>
@@ -211,14 +211,14 @@
 
               <!-- ── waiting on you  |  veerha is working ──────────────── -->
               <div class="row band" style="gap:var(--s-2);flex-wrap:wrap;align-items:center" aria-label="Quick actions">
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add lead</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>Email</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Schedule meeting</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Generate quote</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg>Create opportunity</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Create task</button>
-              <button class="v-btn v-btn--ghost v-btn--sm">More</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="new-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add lead</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="inbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="compose"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>Email</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="meeting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Schedule meeting</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="new-quote"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Generate quote</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="leads"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trend"/></svg>Create opportunity</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="new-task"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Create task</button>
+              <button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="More quick actions — log a call, add a note, import a list">More</button>
             </div>
 
             <div class="grid band">

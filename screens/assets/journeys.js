@@ -169,4 +169,64 @@
   VF.action('delete-deal',  closeDeal('deleted', 'The customer and their conversations stay.', true));
   VF.action('followup-cancel', simple('Follow-up cancelled', 'Veerha will not chase on that date.'));
 
+  /* --- J3 Quotation (04-quotes #6c) ------------------------------------------ */
+  VF.action('quote-send', function () {
+    var before = VF.snapshot();
+    S['quote.sent'] = true; VF.add('quotesAwaiting', 1);
+    return { closeAll: true, go: 'quotes', toast: 'QT-0105 sent to Priya Nair', body: 'You will see when she opens it.',
+             undo: function () { VF.restore(before); } };
+  });
+
+  /* --- J4 Take over and hand back (06 inbox) --------------------------------- */
+  VF.action('takeover', function () {
+    var before = VF.snapshot(); S['arjun.taken'] = true;
+    return { toast: 'You are handling Arjun’s conversation', body: 'Veerha’s automation is paused until you hand it back.', undo: function () { VF.restore(before); } };
+  });
+  VF.action('handback', function () {
+    var before = VF.snapshot(); S['arjun.taken'] = false;
+    return { toast: 'Handed back to Veerha', body: 'It picks up from your last message.', undo: function () { VF.restore(before); } };
+  });
+  VF.action('compose-send', simple('Sent to Ishaan Varma', 'From stay@rivergrove.example.com. The reply lands in Customer Mail.'));
+  VF.action('stay-send', function () {
+    var before = VF.snapshot(); VF.add('waiting', 1); VF.add('reviewOpen', 1);
+    return { closeAll: true, toast: 'Stay page ready for Arjun', body: 'Over the auto-send limit, so it is in the Review Queue for your approval first.', undo: function () { VF.restore(before); } };
+  });
+  VF.action('save-draft', simple('Saved as a draft', 'Nothing has been sent.'));
+
+  /* --- J9 Add a lead (02-leads #2d) ------------------------------------------ */
+  VF.action('lead-new', function () {
+    var before = VF.snapshot(); S['lead.added'] = true; VF.add('leads', 1); VF.add('leadsNew', 1);
+    return { closeAll: true, go: 'leads', toast: 'Ishaan Varma added', body: 'LEAD-0134 · Veerha will reply within the minute.', undo: function () { VF.restore(before); } };
+  });
+
+  /* --- J1 Start my day: walk the Suggested order ------------------------------ */
+  var WALK = [
+    ['review',      'Approve the quote for Arjun', '2 min'],
+    ['tasks',       'Clear 5 overdue call confirmations', '11 min'],
+    ['inbox-taken', 'Take over Priya — she asked for a person', '6 min'],
+    ['channels',    'Reconnect WhatsApp Business', '4 min']
+  ];
+  var bar = null;
+  function showWalk(i) {
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.className = 'v-card';
+      bar.setAttribute('role', 'status');
+      bar.style.cssText = 'position:fixed;left:50%;top:64px;transform:translateX(-50%);z-index:55;display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-4);box-shadow:var(--e3)';
+      document.body.appendChild(bar);
+    }
+    if (i >= WALK.length) { bar.remove(); bar = null; VF.toast('Your day is clear', 'All four suggested items are done.', 'ok'); return; }
+    var w = WALK[i];
+    bar.innerHTML = '';
+    var t = document.createElement('span'); t.className = 'label'; t.textContent = 'Start my day · ' + (i + 1) + ' of ' + WALK.length; bar.appendChild(t);
+    var n = document.createElement('b'); n.className = 't-small'; n.textContent = w[1]; bar.appendChild(n);
+    var m = document.createElement('span'); m.className = 't-meta muted'; m.textContent = w[2]; bar.appendChild(m);
+    var nx = document.createElement('button'); nx.className = 'v-btn v-btn--primary v-btn--sm'; nx.textContent = i + 1 < WALK.length ? 'Next' : 'Finish';
+    nx.addEventListener('click', function (e) { e.stopPropagation(); showWalk(i + 1); if (i + 1 < WALK.length) VF.go(WALK[i + 1][0]); });
+    var st = document.createElement('button'); st.className = 'v-btn v-btn--ghost v-btn--sm'; st.textContent = 'Stop';
+    st.addEventListener('click', function (e) { e.stopPropagation(); bar.remove(); bar = null; });
+    bar.appendChild(nx); bar.appendChild(st);
+  }
+  VF.action('start-day', function () { showWalk(0); return { go: WALK[0][0] }; });
+
 })();
