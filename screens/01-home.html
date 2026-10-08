@@ -147,30 +147,45 @@
 
                   <!-- figures ruled inside the section — never one card per number -->
                   <div style="display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border)">
-                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border)">
+                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border);cursor:pointer" data-go="inbox" role="link" tabindex="0" title="Open Conversations">
                       <div class="label">Conversations</div>
                       <div style="font-size:26px;line-height:32px;font-weight:600;margin-top:4px;letter-spacing:-.02em">24</div>
                       <div class="v-delta v-delta--up" style="margin-top:2px">▲ 18%</div>
                       <svg viewBox="0 0 80 24" style="width:100%;max-width:80px;height:24px;display:block;margin-top:6px" role="img" aria-label="Conversations handled each day over the last six days: 19, 20, 18, 22, 21, then 24 today — up 18 percent."><path class="g-spark" d="M0,16 L16,14 L32,18 L48,10 L64,12 L80,6"/></svg></div>
-                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border)">
+                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border);cursor:pointer" data-go="leads" role="link" tabindex="0" title="Open Captured">
                       <div class="label">Captured</div>
                       <div style="font-size:26px;line-height:32px;font-weight:600;margin-top:4px;letter-spacing:-.02em">7</div>
                       <div class="v-delta v-delta--up" style="margin-top:2px">▲ 2</div>
                       <svg viewBox="0 0 80 24" style="width:100%;max-width:80px;height:24px;display:block;margin-top:6px" role="img" aria-label="Leads captured each day over the last six days: 4, 5, 4, 6, 5, then 7 today — two more than yesterday."><path class="g-spark" d="M0,17 L16,14 L32,17 L48,10 L64,14 L80,7"/></svg></div>
-                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border)">
+                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border);cursor:pointer" data-go="leads" role="link" tabindex="0" title="Open Qualified">
                       <div class="label">Qualified</div>
                       <div style="font-size:26px;line-height:32px;font-weight:600;margin-top:4px;letter-spacing:-.02em">5</div>
                       <div class="v-delta v-delta--up" style="margin-top:2px">▲ 1</div>
                       <svg viewBox="0 0 80 24" style="width:100%;max-width:80px;height:24px;display:block;margin-top:6px" role="img" aria-label="Leads qualified each day over the last six days: 3, 4, 3, 4, 4, then 5 today — one more than yesterday."><path class="g-spark" d="M0,16 L16,12 L32,16 L48,12 L64,12 L80,8"/></svg></div>
-                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border)">
+                    <div style="padding:var(--s-4) var(--s-5);border-right:1px solid var(--border);cursor:pointer" data-go="calendar" role="link" tabindex="0" title="Open Meetings">
                       <div class="label">Meetings</div>
                       <div style="font-size:26px;line-height:32px;font-weight:600;margin-top:4px;letter-spacing:-.02em">3</div>
                       <div class="t-meta muted" style="margin-top:2px">No change</div>
                       <svg viewBox="0 0 80 24" style="width:100%;max-width:80px;height:24px;display:block;margin-top:6px" role="img" aria-label="Meetings booked each day over the last six days: 3, 2, 3, 3, 2, then 3 today — holding steady, no change."><path class="g-spark" d="M0,9 L16,15 L32,9 L48,9 L64,15 L80,9"/></svg></div>
-                    <div style="padding:var(--s-4) var(--s-5);background:var(--dn-bg)">
+                    <div style="padding:var(--s-4) var(--s-5);background:var(--dn-bg);cursor:pointer" data-go="review" role="link" tabindex="0" title="Open Waiting on you">
                       <div class="label" style="color:var(--dn-tx)">Waiting on you</div>
-                      <div style="font-size:26px;line-height:32px;font-weight:600;margin-top:4px;letter-spacing:-.02em;color:var(--dn-tx)">20</div>
+                      <div style="font-size:26px;line-height:32px;font-weight:600;margin-top:4px;letter-spacing:-.02em;color:var(--dn-tx)"><span data-bind="waiting">20</span></div>
                       <div class="v-delta" style="margin-top:2px;color:var(--dn-tx)">5 overdue</div></div>
+                  </div>
+                  <!-- inbox numbers: each opens its inbox on that view -->
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);background:var(--surface-subtle)">
+                    <div style="padding:var(--s-3) var(--s-5);border-right:1px solid var(--border);cursor:pointer" data-go="mail" data-view="needs-reply" role="link" tabindex="0">
+                      <div class="row" style="justify-content:space-between"><span class="label">Mail · needs reply</span><span class="t-meta" style="color:var(--brand)">Open →</span></div>
+                      <div class="row" style="gap:var(--s-2);align-items:baseline;margin-top:2px"><span style="font-size:22px;line-height:28px;font-weight:600" data-bind="needsReply">4</span><span class="t-meta muted">oldest waiting 1 day</span></div>
+                    </div>
+                    <div style="padding:var(--s-3) var(--s-5);border-right:1px solid var(--border);cursor:pointer" data-go="mail" data-view="high-intent" role="link" tabindex="0">
+                      <div class="row" style="justify-content:space-between"><span class="label">Mail · high intent</span><span class="t-meta" style="color:var(--brand)">Open →</span></div>
+                      <div class="row" style="gap:var(--s-2);align-items:baseline;margin-top:2px"><span style="font-size:22px;line-height:28px;font-weight:600" data-bind="highIntent">2</span><span class="t-meta muted">both asked for a person or a rate</span></div>
+                    </div>
+                    <div style="padding:var(--s-3) var(--s-5);cursor:pointer" data-go="inbox" data-view="needs-reply" role="link" tabindex="0">
+                      <div class="row" style="justify-content:space-between"><span class="label">Chat · needs reply</span><span class="t-meta" style="color:var(--brand)">Open →</span></div>
+                      <div class="row" style="gap:var(--s-2);align-items:baseline;margin-top:2px"><span style="font-size:22px;line-height:28px;font-weight:600" data-bind="chatNeedsReply">2</span><span class="t-meta muted">WhatsApp is read-only</span></div>
+                    </div>
                   </div>
                 </div>
 
