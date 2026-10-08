@@ -114,7 +114,7 @@
                 <p class="v-pagehead__sub">2 booked · 14 slots still free today</p></div>
               <div class="v-actions">
                 <div class="v-seg"><button class="v-seg__opt is-active">My day</button><button class="v-seg__opt">Team</button></div>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New meeting</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New meeting</button>
               </div>
             </div>
 
@@ -127,12 +127,12 @@
             </div>
 
             <div class="vs-filterbar">
-              <button class="v-btn v-btn--icon v-btn--sm" aria-label="Previous day"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button class="v-btn v-btn--icon v-btn--sm" aria-label="Previous day" data-w data-do="page"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
               <div class="grow"><div class="t-card">Monday, 21 September</div>
                 <div class="t-meta muted num">2026-09-21 · 09:00–18:00 · 30-min slots · Asia/Kolkata</div></div>
-              <button class="v-btn v-btn--icon v-btn--sm" aria-label="Next day"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+              <button class="v-btn v-btn--icon v-btn--sm" aria-label="Next day" data-w data-do="step"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
               <input class="v-input" value="21/09/2026" style="width:150px">
-              <button class="v-btn v-btn--secondary v-btn--sm">Today</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Today</button>
             </div>
 
             <div class="vs-split vs-split--wide">
@@ -156,8 +156,8 @@
                         <span class="t-small">Booked by Veerha at 3:15 PM yesterday · he confirmed on the thread</span></div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Open lead</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Cancel"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="leads">Open lead</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Cancel" data-w data-do="dismiss"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                   </div>
                   <div style="display:flex;gap:var(--s-4);padding:var(--s-4) 0;border-top:1px solid var(--border)">
                     <div style="width:64px;flex:none;text-align:right">
@@ -173,8 +173,8 @@
                         <span class="t-small">You took this thread over at 10:31 — Veerha is not replying on it</span></div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Open thread</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Cancel"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="inbox">Open thread</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Cancel" data-w data-do="dismiss"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                   </div>
                 </div>
               </section>
@@ -190,7 +190,7 @@
                     <div class="v-callout v-callout--warn" style="margin-top:var(--s-4)">
                       <span class="v-callout__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-alert"/></svg></span>
                       <span class="t-small">12:00–13:00 is held back as lunch. Veerha will not offer it.</span></div>
-                    <button class="v-btn v-btn--secondary" style="width:100%;margin-top:var(--s-3)">Change your hours</button>
+                    <button class="v-btn v-btn--secondary" style="width:100%;margin-top:var(--s-3)" data-w data-do="ack">Change your hours</button>
                   </div>
                 </section>
               </div>
@@ -353,24 +353,24 @@
             <section class="v-card band">
               <div class="v-card__head"><div class="grow"><div class="v-card__title">Held back</div>
                 <p class="v-card__desc">Time inside your hours that Veerha will never offer.</p></div>
-                <button class="v-btn v-btn--secondary v-btn--sm">Add</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="create">Add</button></div>
               <div class="v-card__body">
                 <div class="v-rows">
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span class="grow"><span class="t-small">Lunch</span>
                       <div class="t-meta muted">Every weekday, 12:00–13:00</div></span>
-                    <button class="v-btn v-btn--ghost v-btn--sm">Edit</button></div>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></div>
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span class="grow"><span class="t-small">Arrivals window</span>
                       <div class="t-meta muted">Every day, 14:00–15:00 · check-in rush</div></span>
-                    <button class="v-btn v-btn--ghost v-btn--sm">Edit</button></div>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></div>
                 </div>
               </div>
             </section>
             <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
               <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
               <span class="t-meta muted grow">14 slots free today under these hours</span>
-              <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+              <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button>
             </div></div>
           </div></div>
         </div>
@@ -492,7 +492,7 @@
                     Every booking is checked against that person's working hours, so nobody can be booked
                     outside them.</p></div>
                 <div class="v-actions">
-                  <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New link</button></div>
+                  <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New link</button></div>
               </div>
 
               <div class="v-callout v-callout--info" style="margin-bottom:var(--s-4)">
@@ -511,13 +511,13 @@
               </div>
 
               <div class="vs-filterbar">
-                <button class="v-filterchip"><span class="v-filterchip__k">Owner</span>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Owner</span>
                   <span class="v-filterchip__v">Anyone</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-                <button class="v-filterchip"><span class="v-filterchip__k">Duration</span>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Duration</span>
                   <span class="v-filterchip__v">Any</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-                <button class="v-filterchip is-set"><span class="v-filterchip__k">Activity</span>
+                <button class="v-filterchip is-set" data-w data-do="filterchip"><span class="v-filterchip__k">Activity</span>
                   <span class="v-filterchip__v">Last 30 days</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                 <span class="grow"></span>
@@ -544,13 +544,13 @@
                     <div class="grow">
                       <div class="row" style="gap:var(--s-2)">
                         <input class="v-input" readonly value="rivergrove.example.com/book/site-visit">
-                        <button class="v-btn v-btn--secondary v-btn--sm">Copy</button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy</button></div>
                       <div class="t-meta muted" style="margin-top:6px"><span class="num">12</span> booked in 30 days ·
                         last on 20 September · offers Mon–Fri <span class="num">09:00</span>–<span class="num">18:00</span></div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Site visit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Site visit" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div>
                   </div>
 
                   <div style="display:flex;gap:var(--s-4);padding:var(--s-4) var(--s-5);border-top:1px solid var(--border);align-items:flex-start">
@@ -562,13 +562,13 @@
                     <div class="grow">
                       <div class="row" style="gap:var(--s-2)">
                         <input class="v-input" readonly value="rivergrove.example.com/book/group-call">
-                        <button class="v-btn v-btn--secondary v-btn--sm">Copy</button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy</button></div>
                       <div class="t-meta muted" style="margin-top:6px"><span class="num">4</span> booked in 30 days ·
                         last on 19 September · sent with every group quotation</div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Group enquiry call"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Group enquiry call" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div>
                   </div>
 
                   <div style="display:flex;gap:var(--s-4);padding:var(--s-4) var(--s-5);border-top:1px solid var(--border);align-items:flex-start">
@@ -580,13 +580,13 @@
                     <div class="grow">
                       <div class="row" style="gap:var(--s-2)">
                         <input class="v-input is-disabled" readonly value="rivergrove.example.com/book/wedding-walkthrough">
-                        <button class="v-btn v-btn--secondary v-btn--sm">Copy</button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy</button></div>
                       <div class="t-meta muted" style="margin-top:6px">Paused on 12 September, so the link now shows
                         "not taking bookings" rather than an empty week. Anita has no free hour before 6 October.</div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Resume</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Wedding walkthrough"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="save">Resume</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Wedding walkthrough" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div>
                   </div>
 
                 </div>
@@ -644,7 +644,7 @@
               <div class="v-card band" style="margin-top:var(--s-4)"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
                 <span class="t-meta muted grow">Two live links are taking bookings right now.</span>
-                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button>
               </div></div>
 
             </div>
@@ -768,7 +768,7 @@
                     outside them.</p></div>
                 <div class="v-actions" style="align-items:flex-start">
                   <div style="text-align:right">
-                    <button class="v-btn v-btn--primary v-btn--sm is-disabled"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New link</button>
+                    <button class="v-btn v-btn--primary v-btn--sm is-disabled" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New link</button>
                     <div class="t-meta muted" style="margin-top:6px;max-width:190px">A link needs someone to
                       point at. Switch a person on first.</div>
                   </div>
@@ -782,7 +782,7 @@
                   <p class="v-empty__body">There are no links because a link has to point at somebody's
                     calendar, and nobody is switched on. Switch a person on below and Veerha will offer
                     only the time inside their working hours.</p>
-                  <button class="v-btn v-btn--primary">Switch someone on</button>
+                  <button class="v-btn v-btn--primary" data-w data-do="save">Switch someone on</button>
                 </div>
               </section>
 

@@ -212,12 +212,12 @@
                     <div class="label v-ai__label"><span class="v-ai__mark">V</span>Veerha suggests</div>
                     <p class="t-small" style="color:var(--ai-tx)">Booked you in for 11:00 tomorrow — I'll send a reminder an hour before. If the rate is the sticking point, mention it on the call and we can look at the weekday nights.</p>
                     <div class="row" style="margin-top:var(--s-3);gap:var(--s-2)">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Rewrite</button>
-                      <button class="v-btn v-btn--primary v-btn--sm">Use this</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="redraft">Rewrite</button>
+                      <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="chat-send">Use this</button></div>
                   </div>
                   <div class="v-composer" style="border:0;padding:var(--s-3) 0 0">
                     <input class="v-input" placeholder="Write a reply, or use the suggestion above…">
-                    <button class="v-btn v-btn--primary">Send</button></div>
+                    <button class="v-btn v-btn--primary" data-w data-do="chat-send">Send</button></div>
                 </div>
               </div>
 
@@ -369,8 +369,8 @@
                         <span class="v-badge v-badge--neutral">Email</span></div>
                       <div class="t-meta muted" style="margin-top:2px">You took this over at 10:31</div>
                     </div>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Hand back to Veerha</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Assign</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="handback">Hand back to Veerha</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="assign">Assign</button>
                   </div>
                 </div>
 
@@ -397,7 +397,7 @@
                 <div style="border-top:1px solid var(--border);background:var(--surface);padding:var(--s-3) var(--s-4)">
                   <div class="v-composer" style="border:0;padding:0">
                     <input class="v-input" placeholder="Write a reply…">
-                    <button class="v-btn v-btn--primary">Send</button></div>
+                    <button class="v-btn v-btn--primary" data-w data-do="chat-send">Send</button></div>
                   <p class="t-meta muted" style="margin-top:8px">
                     Veerha will not reply on this thread while you have it. Hand it back when you are done.</p>
                 </div>
@@ -489,7 +489,7 @@
                 <div class="row" style="gap:var(--s-2);margin-top:4px"><span class="v-badge v-badge--warn">Instagram · comment</span><span class="t-meta muted">Public — replies show under the post</span></div><p class="t-meta secondary" style="margin-top:4px">How much for a weekend for two?</p></div><div style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--border)"><div class="row" style="justify-content:space-between"><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">NK</span><b class="t-small">Neha K.</b></div><span class="t-meta muted">3h</span></div>
                 <div class="row" style="gap:var(--s-2);margin-top:4px"><span class="v-badge v-badge--neutral">Instagram · DM</span><span class="t-meta muted">Private</span></div><p class="t-meta secondary" style="margin-top:4px">Is the spa open to day visitors?</p></div><div style="padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--border)"><div class="row" style="justify-content:space-between"><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">IV</span><b class="t-small">Imran V.</b></div><span class="t-meta muted">5h</span></div>
                 <div class="row" style="gap:var(--s-2);margin-top:4px"><span class="v-badge v-badge--neutral">Messenger</span><span class="t-meta muted">Private</span></div><p class="t-meta secondary" style="margin-top:4px">Do you allow pets?</p></div></div>
-              <div class="stack"><section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Inside the 24-hour window</div></div><span class="v-badge v-badge--ok">Free text</span></div><div class="v-card__body"><textarea class="v-input" rows="2" style="width:100%">Booked you in for 11:00 tomorrow — I’ll send a reminder an hour before.</textarea><div class="row" style="margin-top:var(--s-2)"><span class="t-meta muted grow">Arjun wrote 1 h ago · the window closes at 09:41 tomorrow</span><button class="v-btn v-btn--primary v-btn--sm">Send</button></div></div></section><section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Outside the window</div></div><span class="v-badge v-badge--warn">Template only</span></div><div class="v-card__body"><p class="t-small secondary">Sameer last wrote 26 hours ago. WhatsApp only allows a Meta-approved template until he replies.</p><div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label">Approved template</label><select class="v-select"><option>Day 1 nudge — “Hi {{1}}, just checking you saw the rooms I sent…”</option><option>Rooms follow-up</option></select></div><div class="row" style="margin-top:var(--s-2)"><span class="t-meta muted grow">Free text unlocks the moment he replies.</span><button class="v-btn v-btn--primary v-btn--sm">Send template</button></div></div></section><section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Replying to an Instagram comment</div></div><span class="v-badge v-badge--danger">Public</span></div><div class="v-card__body"><p class="t-small secondary">This reply appears under the post for everyone. Prices and dates are better in a private message.</p><textarea class="v-input" rows="2" style="width:100%;margin-top:var(--s-2)">Thank you — we have sent you the weekend rates by DM.</textarea><div class="row" style="gap:var(--s-2);margin-top:var(--s-2)"><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm">Reply privately by DM</button><button class="v-btn v-btn--primary v-btn--sm">Post public reply</button></div></div></section></div>
+              <div class="stack"><section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Inside the 24-hour window</div></div><span class="v-badge v-badge--ok">Free text</span></div><div class="v-card__body"><textarea class="v-input" rows="2" style="width:100%">Booked you in for 11:00 tomorrow — I’ll send a reminder an hour before.</textarea><div class="row" style="margin-top:var(--s-2)"><span class="t-meta muted grow">Arjun wrote 1 h ago · the window closes at 09:41 tomorrow</span><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="chat-send">Send</button></div></div></section><section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Outside the window</div></div><span class="v-badge v-badge--warn">Template only</span></div><div class="v-card__body"><p class="t-small secondary">Sameer last wrote 26 hours ago. WhatsApp only allows a Meta-approved template until he replies.</p><div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label">Approved template</label><select class="v-select"><option>Day 1 nudge — “Hi {{1}}, just checking you saw the rooms I sent…”</option><option>Rooms follow-up</option></select></div><div class="row" style="margin-top:var(--s-2)"><span class="t-meta muted grow">Free text unlocks the moment he replies.</span><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="chat-send">Send template</button></div></div></section><section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Replying to an Instagram comment</div></div><span class="v-badge v-badge--danger">Public</span></div><div class="v-card__body"><p class="t-small secondary">This reply appears under the post for everyone. Prices and dates are better in a private message.</p><textarea class="v-input" rows="2" style="width:100%;margin-top:var(--s-2)">Thank you — we have sent you the weekend rates by DM.</textarea><div class="row" style="gap:var(--s-2);margin-top:var(--s-2)"><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="chat-send">Reply privately by DM</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="chat-send">Post public reply</button></div></div></section></div>
             </div>
             </div>
           </div>
@@ -612,7 +612,7 @@
                 <div class="v-pagehead__copy">
                   <h2 class="v-pagehead__title">Status &amp; test</h2>
                   <p class="v-pagehead__sub">Where enquiries arrive, and what Veerha may do on each. Until a channel is live, every message is simulated and logged — nothing reaches a guest.</p></div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Add a channel</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="create">Add a channel</button></div>
               </div>
 
               <div class="v-error" style="margin-bottom:var(--s-4)">
@@ -621,8 +621,8 @@
                   <div class="v-error__title">WhatsApp Business has been read-only for 3 days</div>
                   <p class="v-error__body">Credentials expired on 18 September. Veerha can still read those threads and score the leads, but it cannot reply — and 17 of your last 27 leads arrived here first.</p>
                   <div class="v-actions" style="margin-top:var(--s-3)">
-                    <button class="v-btn v-btn--danger v-btn--sm">Reconnect WhatsApp</button>
-                    <button class="v-btn v-btn--ghost v-btn--sm">See the 17 leads</button></div>
+                    <button class="v-btn v-btn--danger v-btn--sm" data-w data-inert="Opens the provider’s sign-in to connect this account">Reconnect WhatsApp</button>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="leads">See the 17 leads</button></div>
                 </div>
               </div>
 
@@ -677,7 +677,7 @@
                     <div class="grow"><div class="v-card__title">Instagram &amp; Messenger</div>
                       <p class="v-card__desc">DMs, post comments and story replies from your Facebook page</p></div>
                     <span class="v-badge v-badge--neutral">Not connected</span>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Connect</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Opens the provider’s sign-in to connect this account">Connect</button>
                   </div>
                   <div class="v-card__body" style="padding-top:0">
                     <p class="t-meta muted">Connect the Facebook page your Instagram account is linked to — both arrive together. A page with no Instagram account is a Messenger-only connection, not a failure.</p>
@@ -690,7 +690,7 @@
                     <div class="grow"><div class="v-card__title">Google Business Profile</div>
                       <p class="v-card__desc">Reviews and questions left on your Google listing</p></div>
                     <span class="v-badge v-badge--neutral">Not connected</span>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Connect</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Opens the provider’s sign-in to connect this account">Connect</button>
                   </div>
                   <div class="v-card__body" style="padding-top:0">
                     <p class="t-meta muted">Once connected, reviews land in Conversations › Google Reviews with a drafted reply. Replies there are <b>public</b>, so nothing posts without you.</p>
@@ -719,7 +719,7 @@
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
                 <span class="t-meta muted grow">Last edited 2 days ago</span>
-                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button>
               </div></div>
             </div>
           </div>
@@ -781,7 +781,7 @@
               <div class="vs-pane">
                 <div class="vs-pane__hd">
                   <div class="spread"><span class="label">Templates</span>
-                    <button class="v-btn v-btn--primary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New</button></div>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New</button></div>
                   <div class="v-search" style="margin-top:var(--s-3)">
                     <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                     <input class="v-input" placeholder="Search templates"></div>
@@ -832,8 +832,8 @@
                   <div class="row"><div class="grow">
                     <div class="t-card">Day 1 nudge</div>
                     <div class="t-meta muted" style="margin-top:2px">Approved 4 Sep · English · Marketing</div></div>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Duplicate</button>
-                    <button class="v-btn v-btn--icon v-btn--sm" aria-label="Delete"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--dn-ic)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Duplicate</button>
+                    <button class="v-btn v-btn--icon v-btn--sm" aria-label="Delete" data-w data-do="remove"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--dn-ic)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>
                   </div>
                 </div>
                 <div style="flex:1;overflow:auto;padding:var(--s-5)">
@@ -887,8 +887,8 @@
                 </div>
                 <div class="v-drawer__foot">
                   <span class="t-meta muted grow">Changes to an approved template send it back to Meta for review.</span>
-                  <button class="v-btn v-btn--secondary">Save as draft</button>
-                  <button class="v-btn v-btn--primary">Submit for approval</button>
+                  <button class="v-btn v-btn--secondary" data-w data-do="save">Save as draft</button>
+                  <button class="v-btn v-btn--primary" data-w data-do="save">Submit for approval</button>
                 </div>
               </div>
             </div>
@@ -1114,17 +1114,17 @@
                 <div class="vs-pane__hd"><span class="label">Blocks</span></div>
                 <div style="padding:var(--s-3)">
                   <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s-2)">
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px">
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px" data-w data-do="ack">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h7"/></svg>Heading</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px">
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px" data-w data-do="ack">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 10h16M4 14h16M4 18h10"/></svg>Text</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px">
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px" data-w data-do="ack">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 15 5-5 4 4 3-3 6 6"/></svg>Image</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px">
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px" data-w data-do="ack">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"/></svg>Button</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px">
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px" data-w data-do="ack">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg>Rooms</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px">
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="flex-direction:column;height:56px;gap:4px" data-w data-do="ack">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg>Divider</button>
                   </div>
                   <div class="v-callout v-callout--ai" style="margin-top:var(--s-4);display:block">
@@ -1186,7 +1186,7 @@
                   <div class="row" style="gap:var(--s-2);margin-bottom:var(--s-4)">
                     <span class="v-badge v-badge--brand">Rooms block</span>
                     <span class="t-meta muted grow">selected</span>
-                    <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dn-ic)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>
+                    <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dn-ic)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>
                   </div>
 
                   <div class="v-field"><label class="v-field__label">How many rooms to show</label>
@@ -1230,7 +1230,7 @@
     </p>
     <div class="vs-frame__box"><div class="vs-dialogs">
         <div class="vs-dialog"><div class="label">compose · New message</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="compose"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New message"><div class="v-modal__title">New message</div><p class="v-modal__sub">Sent from your own mailbox; the reply comes back to Customer Mail.</p><div class="v-field"><label class="v-field__label">To</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Subject</label><input class="v-input" value="Your weekend in December"></div><div class="v-field"><label class="v-field__label">Message</label><textarea class="v-input" rows="5" style="width:100%">Hello Ishaan — the Premier Riverside Room is free on 11 and 12 December, at ₹21,850 a night with breakfast. Shall I hold it for you until tomorrow evening? — Anita, Rivergrove</textarea></div><div class="row" style="gap:var(--s-2)"><button class="v-btn v-btn--ghost v-btn--sm" data-do="redraft">Ask Veerha to draft</button><span class="t-meta muted">From stay@rivergrove.example.com</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="compose-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="compose"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New message"><div class="v-modal__title">New message</div><p class="v-modal__sub">Sent from your own mailbox; the reply comes back to Customer Mail.</p><div class="v-field"><label class="v-field__label">To</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Subject</label><input class="v-input" value="Your weekend in December"></div><div class="v-field"><label class="v-field__label">Message</label><textarea class="v-input" rows="5" style="width:100%">Hello Ishaan — the Premier Riverside Room is free on 11 and 12 December, at ₹21,850 a night with breakfast. Shall I hold it for you until tomorrow evening? — Anita, Rivergrove</textarea></div><div class="row" style="gap:var(--s-2)"><button class="v-btn v-btn--ghost v-btn--sm" data-do="redraft">Ask Veerha to draft</button><span class="t-meta muted">From stay@rivergrove.example.com</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="compose-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send</button></div></div></div>
         </div>
     </div></div>
   </section>
@@ -1285,7 +1285,7 @@
                 <div class="label">Google Business Profile</div>
                 <h2 class="v-pagehead__title" style="margin-top:4px">Google Reviews</h2>
                 <p class="v-pagehead__sub">Public reviews and questions on your Google listing, with drafted replies</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Reply settings</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Reply settings</button></div>
             </div>
             <div class="v-stats" style="margin-bottom:var(--s-4)">
               <div class="v-stat"><span class="label">Rating</span><span class="v-stat__n num">4.6</span><span class="v-stat__cap">128 reviews on Google</span></div>
@@ -1295,13 +1295,13 @@
             <div style="display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:var(--s-5);align-items:start">
               <div class="v-card" style="overflow:hidden">
                 <div class="v-card__head" style="padding-bottom:var(--s-3)"><div class="grow"><div class="v-card__title">Reviews</div></div><div class="v-pilltabs"><button class="v-pill is-active">Waiting 2</button><button class="v-pill">All</button></div></div>
-                <button aria-current="true" style="display:block;width:100%;text-align:left;padding:var(--s-3) var(--s-4);border:0;border-bottom:1px solid var(--border);background:var(--brand-soft)">
+                <button aria-current="true" style="display:block;width:100%;text-align:left;padding:var(--s-3) var(--s-4);border:0;border-bottom:1px solid var(--border);background:var(--brand-soft)" data-w data-do="ack">
                   <div class="row" style="justify-content:space-between"><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">MS</span><b class="t-small">Meghna S.</b></div><span class="t-meta muted">2 days ago</span></div>
                   <div class="row" style="justify-content:space-between;margin-top:4px"><span class="row-tight" role="img" aria-label="5 out of 5 stars" style="color:var(--wn-ic)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></span><span class="v-badge v-badge--ai">Draft ready</span></div>
-                  <p class="t-meta secondary" style="margin-top:4px">The river-facing room was worth every rupee. Breakfast on the deck was the highlight.</p></button><button style="display:block;width:100%;text-align:left;padding:var(--s-3) var(--s-4);border:0;border-bottom:1px solid var(--border);background:var(--surface)">
+                  <p class="t-meta secondary" style="margin-top:4px">The river-facing room was worth every rupee. Breakfast on the deck was the highlight.</p></button><button style="display:block;width:100%;text-align:left;padding:var(--s-3) var(--s-4);border:0;border-bottom:1px solid var(--border);background:var(--surface)" data-w data-do="ack">
                   <div class="row" style="justify-content:space-between"><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">KD</span><b class="t-small">Karan D.</b></div><span class="t-meta muted">4 days ago</span></div>
                   <div class="row" style="justify-content:space-between;margin-top:4px"><span class="row-tight" role="img" aria-label="3 out of 5 stars" style="color:var(--wn-ic)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></span><span class="v-badge v-badge--warn">Needs you</span></div>
-                  <p class="t-meta secondary" style="margin-top:4px">Lovely property, but check-in took forty minutes on a Friday evening.</p></button><button style="display:block;width:100%;text-align:left;padding:var(--s-3) var(--s-4);border:0;border-bottom:1px solid var(--border);background:var(--surface)">
+                  <p class="t-meta secondary" style="margin-top:4px">Lovely property, but check-in took forty minutes on a Friday evening.</p></button><button style="display:block;width:100%;text-align:left;padding:var(--s-3) var(--s-4);border:0;border-bottom:1px solid var(--border);background:var(--surface)" data-w data-do="ack">
                   <div class="row" style="justify-content:space-between"><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">IP</span><b class="t-small">Ishita P.</b></div><span class="t-meta muted">1 week ago</span></div>
                   <div class="row" style="justify-content:space-between;margin-top:4px"><span class="row-tight" role="img" aria-label="5 out of 5 stars" style="color:var(--wn-ic)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></span><span class="v-badge v-badge--ok">Answered</span></div>
                   <p class="t-meta secondary" style="margin-top:4px">Spa was excellent.</p></button>
@@ -1309,7 +1309,7 @@
               <div class="stack">
                 <section class="v-card">
                 <div class="v-card__head"><div class="row grow" style="gap:var(--s-3)"><span class="v-avatar">MS</span><div><div class="t-strong">Meghna S.</div><div class="row" style="gap:var(--s-2)"><span class="row-tight" role="img" aria-label="5 out of 5 stars" style="color:var(--wn-ic)"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></span><span class="t-meta muted">2 days ago · stayed 12–14 Sep · Premier Riverside</span></div></div></div>
-                  <button class="v-btn v-btn--ghost v-btn--sm">Open on Google</button></div>
+                  <button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="Opens this review on your Google Business Profile">Open on Google</button></div>
                 <div class="v-card__body">
                   <p class="t-body">“The river-facing room was worth every rupee. Breakfast on the deck was the highlight.”</p>
                   <div style="margin-top:var(--s-5);padding:var(--s-4);border:1px solid var(--ai-bd);background:var(--ai-bg);border-radius:var(--r-tile)">
@@ -1317,7 +1317,7 @@
                     <textarea class="v-input" rows="3" style="width:100%;margin-top:var(--s-3);background:var(--surface)">Thank you, Meghna — we are glad the deck breakfasts made the stay. We hope to see you back by the river soon. — The team at Rivergrove</textarea>
                     <p class="t-meta muted" style="margin-top:var(--s-2)">Signed as the property, in your Warm voice. It names nothing the guest did not mention and no booking details.</p>
                   </div>
-                  <div class="row" style="gap:var(--s-2);margin-top:var(--s-4)"><button class="v-btn v-btn--primary">Post reply publicly</button><button class="v-btn v-btn--secondary">Rewrite</button><span class="grow"></span><span class="t-meta muted">Nothing posts until you press it.</span></div>
+                  <div class="row" style="gap:var(--s-2);margin-top:var(--s-4)"><button class="v-btn v-btn--primary" data-w data-do="review-post">Post reply publicly</button><button class="v-btn v-btn--secondary" data-w data-do="redraft">Rewrite</button><span class="grow"></span><span class="t-meta muted">Nothing posts until you press it.</span></div>
                 </div>
               </section>
                 <div class="v-callout v-callout--warn"><div><b>Karan’s 3-star review needs you.</b> It mentions a service failure — a forty-minute check-in — so Veerha drafts nothing public about it. It is in Waiting on you with the front-desk log for that evening.</div></div>
@@ -1386,7 +1386,7 @@
                 <div class="v-empty__ic" style="background:var(--ok-bg);color:var(--ok-ic)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></div>
                 <div class="v-empty__title">Every review has been answered</div>
                 <p class="v-empty__body">The last one was Ishita P.’s five stars, answered a week ago. New reviews appear here with a drafted reply, usually within minutes of Google publishing them.</p>
-                <button class="v-btn v-btn--secondary">See all 128 reviews</button>
+                <button class="v-btn v-btn--secondary" data-w data-go="reviews">See all 128 reviews</button>
               </div>
             </div>
             </div>
@@ -1452,7 +1452,7 @@
                 <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-star"/></svg></div>
                 <div class="v-empty__title">No Google listing connected</div>
                 <p class="v-empty__body">Connect your Google Business Profile and the reviews and questions left on your listing appear here, each with a drafted reply that you approve before it is posted.</p>
-                <button class="v-btn v-btn--primary">Connect Google Business Profile</button>
+                <button class="v-btn v-btn--primary" data-w data-inert="Opens the provider’s sign-in to connect this account">Connect Google Business Profile</button>
                 <p class="t-meta muted" style="margin-top:var(--s-3)">Or from Settings › Status &amp; test, where every channel is connected.</p>
               </div>
             </div>

@@ -126,8 +126,8 @@
               <h2 class="v-pagehead__title">Customers</h2>
               <p class="v-pagehead__sub">Everyone this company holds a record for — <span class="num">22</span> people, <span class="num">2</span> of whom have stayed</p></div>
             <div class="v-actions">
-              <button class="v-btn v-btn--secondary v-btn--sm">Columns</button>
-              <button class="v-btn v-btn--secondary v-btn--sm">
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="columns">Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="save">
                 Merge review <span class="v-badge v-badge--warn" style="margin-left:2px">1</span></button>
             </div>
           </div>
@@ -144,16 +144,16 @@
             <div class="v-search vs-filterbar__search">
               <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
               <input class="v-input" placeholder="Search name, email, phone"></div>
-            <button class="v-filterchip"><span class="v-filterchip__k">Status</span>
+            <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Status</span>
               <span class="v-filterchip__v">Any</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-            <button class="v-filterchip"><span class="v-filterchip__k">Marketing</span>
+            <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Marketing</span>
               <span class="v-filterchip__v">Any</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-            <button class="v-filterchip"><span class="v-filterchip__k">Lists</span>
+            <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Lists</span>
               <span class="v-filterchip__v">Any</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-            <button class="v-filterchip"><span class="v-filterchip__k">Since</span>
+            <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Since</span>
               <span class="v-filterchip__v">Any</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
             <select class="v-select" style="width:auto;min-width:140px"><option>Newest</option></select>
@@ -165,11 +165,11 @@
             <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
             <span class="grow"><b><span class="num">2</span> customers selected</b> — both are subscribed, so a campaign can go to both.</span>
             <div class="v-actions">
-              <button class="v-btn v-btn--secondary v-btn--sm">Add to a list</button>
-              <button class="v-btn v-btn--secondary v-btn--sm">Send a campaign</button>
-              <button class="v-btn v-btn--secondary v-btn--sm">Assign an owner</button>
-              <button class="v-btn v-btn--secondary v-btn--sm">Merge</button>
-              <button class="v-btn v-btn--ghost v-btn--sm">Clear</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="create">Add to a list</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="campaign-builder">Send a campaign</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="assign">Assign an owner</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="save">Merge</button>
+              <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="dismiss">Clear</button>
             </div>
           </div>
 
@@ -196,7 +196,7 @@
                   <td><span class="v-badge v-badge--neutral">New Year mailing</span>
                       <div class="t-meta muted" style="margin-top:4px">+1 more</div></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Nisha Sundaram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Nisha Sundaram" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr class="is-selected">
                   <td><span class="v-check is-checked"><span class="v-check__box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">RK</span><div class="grow"><div class="v-identity__name">Rohan Kulkarni</div><div class="v-identity__line">+91 90000 10012</div><div class="v-identity__line">rohan.kulkarni@example.com</div></div></div></td>
@@ -207,7 +207,7 @@
                   <td><span class="t-small faint">On no list</span>
                       <div class="t-meta muted">Add to one</div></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Rohan Kulkarni"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Rohan Kulkarni" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">AM</span><div class="grow"><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__line">+91 90000 10001</div><div class="v-identity__line">arjun.mehta@example.com</div></div></div></td>
@@ -217,7 +217,7 @@
                   <td class="t-small">3 Feb 2026</td>
                   <td><span class="v-badge v-badge--neutral">Repeat enquirers</span></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Arjun Mehta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Arjun Mehta" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr class="is-hover">
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">PN</span><div class="grow"><div class="v-identity__name">Priya Nair</div><div class="v-identity__line">+91 90000 10002</div><div class="v-identity__line">priya.nair@example.com</div></div></div></td>
@@ -227,7 +227,7 @@
                   <td class="t-small">12 Sep 2026</td>
                   <td><span class="v-badge v-badge--neutral">Group organisers</span></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Priya Nair"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Priya Nair" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">VR</span><div class="grow"><div class="v-identity__name">Vikram Rao</div><div class="v-identity__line">+91 90000 10004</div><div class="v-identity__line">vikram.rao@example.com</div></div></div></td>
@@ -237,7 +237,7 @@
                   <td class="t-small">8 Nov 2024</td>
                   <td><span class="v-badge v-badge--neutral">Returning guests</span></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Vikram Rao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Vikram Rao" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">KR</span><div class="grow"><div class="v-identity__name">Kavya Reddy</div><div class="v-identity__line">+91 90000 10006</div><div class="v-identity__line">kavya.reddy@example.com</div></div></div></td>
@@ -247,7 +247,7 @@
                   <td class="t-small">20 Sep 2026</td>
                   <td><span class="t-small faint">On no list</span><div class="t-meta muted">Add to one</div></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Kavya Reddy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Kavya Reddy" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">DJ</span><div class="grow"><div class="v-identity__name">Devang Joshi</div><div class="v-identity__line">+91 90000 10003</div><div class="v-identity__line">devang.joshi@example.com</div></div></div></td>
@@ -258,7 +258,7 @@
                   <td class="t-small">14 Aug 2026</td>
                   <td><span class="t-small faint">On no list</span><div class="t-meta muted">Excluded, unsubscribed</div></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Devang Joshi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Devang Joshi" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">NG</span><div class="grow"><div class="v-identity__name">Nandini Gokhale</div><div class="v-identity__line">+91 90000 10007</div><div class="v-identity__line">nandini.gokhale@example.com</div></div></div></td>
@@ -268,7 +268,7 @@
                   <td class="t-small">17 Sep 2026</td>
                   <td><span class="v-badge v-badge--neutral">Corporate day visits</span></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Nandini Gokhale"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Nandini Gokhale" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">FQ</span><div class="grow"><div class="v-identity__name">Farhan Qureshi</div><div class="v-identity__line">+91 90000 10008</div><div class="v-identity__line">farhan.qureshi@example.com</div></div></div></td>
@@ -278,7 +278,7 @@
                   <td class="t-small">21 Sep 2026</td>
                   <td><span class="t-small faint">On no list</span><div class="t-meta muted">Add to one</div></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Farhan Qureshi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Farhan Qureshi" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 <tr>
                   <td><span class="v-check"><span class="v-check__box"></span></span></td>
                   <td><div class="row" style="gap:var(--s-3);align-items:flex-start"><span class="v-avatar v-avatar--sm" style="flex:none">SB</span><div class="grow"><div class="v-identity__name">Sameer Bhat</div><div class="v-identity__line">+91 90000 10005</div><div class="v-identity__line">sameer.bhat@example.com</div></div></div></td>
@@ -288,16 +288,16 @@
                   <td class="t-small">20 Sep 2026</td>
                   <td><span class="t-small faint">On no list</span><div class="t-meta muted">Add to one</div></td>
                   <td style="text-align:right"><span class="t-meta" style="color:var(--brand)">View →</span></td>
-                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Sameer Bhat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Sameer Bhat" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
               </tbody>
             </table>
             <div class="v-card__foot v-pager">
               <span>Showing <span class="num">1–10</span> of <span class="num">22</span></span>
               <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>20 per page</option><option>50 per page</option><option>100 per page</option></select>
               <span class="v-pager__n">
-                <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Prev</button>
+                <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Prev</button>
                 <span class="t-meta muted">Page <span class="num">1</span> / <span class="num">2</span></span>
-                <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
             </div>
           </div>
 
@@ -376,9 +376,9 @@
               </div>
             </div>
             <div class="v-actions">
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Email</button>
-              <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Call</button>
-              <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="compose"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Email</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Call</button>
+              <button class="v-btn v-btn--primary v-btn--sm" data-w data-go="inbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
             </div>
           </div>
 
@@ -417,7 +417,7 @@
                 <div class="v-card__head">
                   <div class="grow"><div class="v-card__title">Activity</div>
                     <p class="v-card__desc">What moved this record, and who moved it</p></div>
-                  <button class="v-btn v-btn--ghost v-btn--sm">Open inbox →</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="inbox">Open inbox →</button>
                 </div>
                 <div class="v-card__body" style="padding-top:0">
                   <div class="v-working__row">

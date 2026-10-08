@@ -133,7 +133,7 @@
                 <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Chooses which columns the table shows">Columns</button>
                 <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Shares new leads across the team by round-robin, set in Team">Auto-assign</button>
                 <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="import">Import</button>
-                <button class="v-btn v-btn--icon v-btn--sm" aria-label="More"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button>
+                <button class="v-btn v-btn--icon v-btn--sm" aria-label="More" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button>
                 <button class="v-btn v-btn--primary v-btn--sm" data-w data-open="new-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New lead</button>
               </div>
             </div>
@@ -182,16 +182,16 @@
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                 <input class="v-input" placeholder="Search name, email, phone or lead ID"></div>
-              <button class="v-filterchip is-set"><span class="v-filterchip__k">Stage</span>
+              <button class="v-filterchip is-set" data-w data-do="filterchip"><span class="v-filterchip__k">Stage</span>
                 <span class="v-filterchip__v">Open</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Source</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Source</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Follow-up</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Follow-up</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Value</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Value</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
               <select class="v-select" style="width:auto;min-width:140px"><option>Newest first</option></select>
@@ -317,8 +317,8 @@
                 <span>Showing 1–8 of 27</span>
                 <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>8 per page</option></select>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
               </div>
             </div>
 
@@ -430,7 +430,7 @@
                     <div class="num" style="font-size:26px;font-weight:600;line-height:30px">80</div>
                     <div class="t-meta muted">High intent</div>
                   </div>
-                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead" data-w data-do="star"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
                   <button class="v-btn v-btn--icon v-btn--sm" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button>
                 </div>
 
@@ -502,7 +502,7 @@
                       <div class="v-empty" style="padding:var(--s-6) var(--s-4);border:1px solid var(--border);border-radius:var(--r-tile)">
                         <div class="v-empty__title t-small">Nothing scheduled</div>
                         <p class="v-empty__body t-meta">This lead has no next contact on the calendar.</p>
-                        <button class="v-btn v-btn--secondary v-btn--sm">Book a follow-up</button>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="followup">Book a follow-up</button>
                       </div>
                     </div>
                     <div>
@@ -525,8 +525,8 @@
 
                 <!-- the footer mirrors the recommendation's own two actions -->
                 <div class="v-drawer__foot">
-                  <button class="v-btn v-btn--secondary grow">Schedule</button>
-                  <button class="v-btn v-btn--primary grow">Call now</button>
+                  <button class="v-btn v-btn--secondary grow" data-w data-open="meeting">Schedule</button>
+                  <button class="v-btn v-btn--primary grow" data-w data-open="logcall">Call now</button>
                 </div>
               </aside>
             </div>
@@ -633,7 +633,7 @@
                     <div class="num" style="font-size:26px;font-weight:600;line-height:30px">80</div>
                     <div class="t-meta muted">High intent</div>
                   </div>
-                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead" data-w data-do="star"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
                   <button class="v-btn v-btn--icon v-btn--sm" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button>
                 </div>
 
@@ -705,7 +705,7 @@
                       <div class="v-empty" style="padding:var(--s-6) var(--s-4);border:1px solid var(--border);border-radius:var(--r-tile)">
                         <div class="v-empty__title t-small">Nothing scheduled</div>
                         <p class="v-empty__body t-meta">This lead has no next contact on the calendar.</p>
-                        <button class="v-btn v-btn--secondary v-btn--sm">Book a follow-up</button>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="followup">Book a follow-up</button>
                       </div>
                     </div>
                     <div>
@@ -728,8 +728,8 @@
 
                 <!-- the footer mirrors the recommendation's own two actions -->
                 <div class="v-drawer__foot">
-                  <button class="v-btn v-btn--secondary grow">Schedule</button>
-                  <button class="v-btn v-btn--primary grow">Call now</button>
+                  <button class="v-btn v-btn--secondary grow" data-w data-open="meeting">Schedule</button>
+                  <button class="v-btn v-btn--primary grow" data-w data-open="logcall">Call now</button>
                 </div>
               </aside>
             </div>
@@ -750,7 +750,7 @@
                 <span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
               </div>
               <div class="v-modal__foot">
-                <button class="v-btn v-btn--secondary">Cancel</button>
+                <button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button>
                 <button class="v-btn v-btn--primary" data-do="convert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-convert"/></svg>Convert to opportunity</button>
               </div>
             </div>
@@ -859,7 +859,7 @@
                     <div class="num" style="font-size:26px;font-weight:600;line-height:30px">80</div>
                     <div class="t-meta muted">High intent</div>
                   </div>
-                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead" data-w data-do="star"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
                   <button class="v-btn v-btn--icon v-btn--sm" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button>
                 </div>
 
@@ -931,7 +931,7 @@
                       <div class="v-empty" style="padding:var(--s-6) var(--s-4);border:1px solid var(--border);border-radius:var(--r-tile)">
                         <div class="v-empty__title t-small">Nothing scheduled</div>
                         <p class="v-empty__body t-meta">This lead has no next contact on the calendar.</p>
-                        <button class="v-btn v-btn--secondary v-btn--sm">Book a follow-up</button>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="followup">Book a follow-up</button>
                       </div>
                     </div>
                     <div>
@@ -954,8 +954,8 @@
 
                 <!-- the footer mirrors the recommendation's own two actions -->
                 <div class="v-drawer__foot">
-                  <button class="v-btn v-btn--secondary grow">Schedule</button>
-                  <button class="v-btn v-btn--primary grow">Call now</button>
+                  <button class="v-btn v-btn--secondary grow" data-w data-open="meeting">Schedule</button>
+                  <button class="v-btn v-btn--primary grow" data-w data-open="logcall">Call now</button>
                 </div>
               </aside>
             </div>
@@ -976,31 +976,31 @@
     </p>
     <div class="vs-frame__box"><div class="vs-dialogs">
         <div class="vs-dialog"><div class="label">logcall · Call, Log call, Call now</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="logcall"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Log a call with Arjun Mehta"><div class="v-modal__title">Log a call with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Calls happen on your phone; this records what was said.</p><div class="v-field"><label class="v-field__label">How did it go?</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Spoke</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">No answer</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Left a message</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Wrong number</span></label></div></div><div class="v-field"><label class="v-field__label">What was agreed</label><textarea class="v-input" rows="3" style="width:100%">Confirmed 15–17 October, two adults. He will decide on breakfast by tomorrow evening.</textarea><span class="v-field__hint">Veerha adds this to the lead’s activity and reads it before the next reply.</span></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Book the next step</div><div class="t-meta muted">Tomorrow 11:00 · call · with Anita</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-logcall"/></svg>Log call</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="logcall"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Log a call with Arjun Mehta"><div class="v-modal__title">Log a call with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Calls happen on your phone; this records what was said.</p><div class="v-field"><label class="v-field__label">How did it go?</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Spoke</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">No answer</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Left a message</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Wrong number</span></label></div></div><div class="v-field"><label class="v-field__label">What was agreed</label><textarea class="v-input" rows="3" style="width:100%">Confirmed 15–17 October, two adults. He will decide on breakfast by tomorrow evening.</textarea><span class="v-field__hint">Veerha adds this to the lead’s activity and reads it before the next reply.</span></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Book the next step</div><div class="t-meta muted">Tomorrow 11:00 · call · with Anita</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-logcall"/></svg>Log call</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">followup · Follow-up, Book a follow-up, Remind me</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="followup"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Book a follow-up with Arjun Mehta"><div class="v-modal__title">Book a follow-up with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">It appears in Tasks and on the Calendar, and Veerha will not chase him while it is pending.</p><div class="v-field"><label class="v-field__label">When</label><div class="v-pilltabs"><button class="v-pill">Today 4:00 PM</button><button class="v-pill is-active">Tomorrow 11:00</button><button class="v-pill">Monday 10:00</button><button class="v-pill">Pick a time</button></div></div><div class="v-field"><label class="v-field__label">How</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Call</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">WhatsApp</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Email</span></label></div></div><div class="v-field"><label class="v-field__label">What for</label><input class="v-input" value="Confirm breakfast and hold the room"></div><div class="row" style="gap:var(--s-3)"><div class="v-field"><label class="v-field__label">Who</label><select class="v-select"><option>Anita</option><option>Rohan</option><option>Tara</option></select></div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="followup"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg>Book follow-up</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="followup"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Book a follow-up with Arjun Mehta"><div class="v-modal__title">Book a follow-up with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">It appears in Tasks and on the Calendar, and Veerha will not chase him while it is pending.</p><div class="v-field"><label class="v-field__label">When</label><div class="v-pilltabs"><button class="v-pill">Today 4:00 PM</button><button class="v-pill is-active">Tomorrow 11:00</button><button class="v-pill">Monday 10:00</button><button class="v-pill">Pick a time</button></div></div><div class="v-field"><label class="v-field__label">How</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Call</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">WhatsApp</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Email</span></label></div></div><div class="v-field"><label class="v-field__label">What for</label><input class="v-input" value="Confirm breakfast and hold the room"></div><div class="row" style="gap:var(--s-3)"><div class="v-field"><label class="v-field__label">Who</label><select class="v-select"><option>Anita</option><option>Rohan</option><option>Tara</option></select></div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="followup"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg>Book follow-up</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">meeting · Meeting, Schedule</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="meeting"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Schedule a meeting with Arjun Mehta"><div class="v-modal__title">Schedule a meeting with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Only times free on your calendar and inside working hours are offered.</p><div class="v-field"><label class="v-field__label">Free today</label><div class="v-pilltabs"><button class="v-pill is-active">16:30</button><button class="v-pill">17:00</button><button class="v-pill">17:30</button><button class="v-pill">Tomorrow 11:00</button></div></div><div class="v-field"><label class="v-field__label">Kind</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Call</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Site visit</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Video call</span></label></div></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Send the invite on WhatsApp</div><div class="t-meta muted">He gets the time, a map link for a visit, and a way to move it.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="meeting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Book meeting</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="meeting"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Schedule a meeting with Arjun Mehta"><div class="v-modal__title">Schedule a meeting with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Only times free on your calendar and inside working hours are offered.</p><div class="v-field"><label class="v-field__label">Free today</label><div class="v-pilltabs"><button class="v-pill is-active">16:30</button><button class="v-pill">17:00</button><button class="v-pill">17:30</button><button class="v-pill">Tomorrow 11:00</button></div></div><div class="v-field"><label class="v-field__label">Kind</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Call</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Site visit</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Video call</span></label></div></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Send the invite on WhatsApp</div><div class="t-meta muted">He gets the time, a map link for a visit, and a way to move it.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="meeting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Book meeting</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">note · Note</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="note"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Add a note to Arjun Mehta"><div class="v-modal__title">Add a note to <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Notes are for your team. Veerha reads them; the guest never sees them.</p><div class="v-field"><label class="v-field__label">Note</label><textarea class="v-input" rows="4" style="width:100%">Prefers a call after 6 PM. Travelling with his wife; anniversary in October.</textarea></div><label class="v-check"><input type="checkbox" checked><span class="t-small">Pin to the top of the lead</span></label><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Save note</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="note"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Add a note to Arjun Mehta"><div class="v-modal__title">Add a note to <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Notes are for your team. Veerha reads them; the guest never sees them.</p><div class="v-field"><label class="v-field__label">Note</label><textarea class="v-input" rows="4" style="width:100%">Prefers a call after 6 PM. Travelling with his wife; anniversary in October.</textarea></div><label class="v-check"><input type="checkbox" checked><span class="t-small">Pin to the top of the lead</span></label><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Save note</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">assign · Assign owner</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="assign"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Assign Arjun Mehta"><div class="v-modal__title">Assign <span data-bind="ctx.name">Arjun Mehta</span></div><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Anita · owner</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Rohan · manager</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Tara · member</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Round-robin across the team</span></label></div><p class="t-meta muted">The new owner gets a notification, and Veerha introduces them by name if it replies next.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="assign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-assign"/></svg>Assign</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="assign"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Assign Arjun Mehta"><div class="v-modal__title">Assign <span data-bind="ctx.name">Arjun Mehta</span></div><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Anita · owner</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Rohan · manager</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Tara · member</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Round-robin across the team</span></label></div><p class="t-meta muted">The new owner gets a notification, and Veerha introduces them by name if it replies next.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="assign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-assign"/></svg>Assign</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">sequence · Put on a sequence</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="sequence"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Put Arjun Mehta on a sequence"><div class="v-modal__title">Put <span data-bind="ctx.name">Arjun Mehta</span> on a sequence</div><div class="v-field"><label class="v-field__label">Sequence</label><select class="v-select"><option>Lead nurture · default · 4 steps over 9 days</option><option>Post-quote follow-up · 3 steps</option><option>Monsoon package nurture · 5 steps</option></select></div><div class="v-callout v-callout--info"><div><b>First step tomorrow at 10:00:</b> a WhatsApp template, “Rooms for your dates”. It stops the moment he replies, books, or you take over.</div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="sequence"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sequence"/></svg>Start sequence</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="sequence"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Put Arjun Mehta on a sequence"><div class="v-modal__title">Put <span data-bind="ctx.name">Arjun Mehta</span> on a sequence</div><div class="v-field"><label class="v-field__label">Sequence</label><select class="v-select"><option>Lead nurture · default · 4 steps over 9 days</option><option>Post-quote follow-up · 3 steps</option><option>Monsoon package nurture · 5 steps</option></select></div><div class="v-callout v-callout--info"><div><b>First step tomorrow at 10:00:</b> a WhatsApp template, “Rooms for your dates”. It stops the moment he replies, books, or you take over.</div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="sequence"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sequence"/></svg>Start sequence</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">confirm-archive · Archive lead</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="confirm-archive"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Archive Arjun Mehta?"><div class="v-modal__title">Archive <span data-bind="ctx.name">Arjun Mehta</span>?</div><p class="v-modal__body">The lead leaves every list and Veerha stops following up. Nothing is deleted: it can be restored from Leads › Archived, and a new message from them reopens it.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--primary" data-do="archive-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive lead</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="confirm-archive"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Archive Arjun Mehta?"><div class="v-modal__title">Archive <span data-bind="ctx.name">Arjun Mehta</span>?</div><p class="v-modal__body">The lead leaves every list and Veerha stops following up. Nothing is deleted: it can be restored from Leads › Archived, and a new message from them reopens it.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Keep it</button><button class="v-btn v-btn--primary" data-do="archive-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive lead</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">confirm-delete · Delete lead</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="confirm-delete"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Delete Arjun Mehta?"><div class="v-modal__title">Delete <span data-bind="ctx.name">Arjun Mehta</span>?</div><p class="v-modal__body">Their conversations, notes, follow-ups and score are removed. This cannot be undone — archive instead if you might need them.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--danger" data-do="delete-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg>Delete lead</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="confirm-delete"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Delete Arjun Mehta?"><div class="v-modal__title">Delete <span data-bind="ctx.name">Arjun Mehta</span>?</div><p class="v-modal__body">Their conversations, notes, follow-ups and score are removed. This cannot be undone — archive instead if you might need them.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Keep it</button><button class="v-btn v-btn--danger" data-do="delete-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg>Delete lead</button></div></div></div>
         </div>
         <div class="vs-dialog"><div class="label">new-lead · New lead, Add lead</div>
-          <div class="vs-overlay vs-overlay--modal" data-layer="new-lead"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Add a lead"><div class="v-modal__title">Add a lead</div><p class="v-modal__sub">Only the name and one way to reach them are needed; Veerha asks for the rest.</p><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Name</label><input class="v-input" value="Ishaan Varma"></div><div class="v-field"><label class="v-field__label">Mobile</label><div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input class="v-input" value="90000 10034"></div></div></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Email</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Budget <span class="t-meta muted">· optional</span></label><input class="v-input" value="₹45,000"></div></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Source</label><select class="v-select"><option>Manual</option><option>Phone</option><option>Walk-in</option><option>Referral</option></select></div><div class="v-field"><label class="v-field__label">Band</label><select class="v-select"><option>Auto — from the score</option><option>Hot</option><option>Warm</option><option>Cold</option></select></div><div class="v-field"><label class="v-field__label">Enquiry type</label><select class="v-select"><option>Rooms</option><option>Banquet</option><option>Wedding</option><option>Corporate</option></select></div></div><div class="v-field"><label class="v-field__label">Notes <span class="t-meta muted">· optional</span></label><textarea class="v-input" rows="2" style="width:100%">River view, second weekend of December.</textarea><span class="v-field__hint">Seven more details can be added now or by Veerha in the conversation.</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="lead-new"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add lead</button></div></div></div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="new-lead"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Add a lead"><div class="v-modal__title">Add a lead</div><p class="v-modal__sub">Only the name and one way to reach them are needed; Veerha asks for the rest.</p><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Name</label><input class="v-input" value="Ishaan Varma"></div><div class="v-field"><label class="v-field__label">Mobile</label><div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input class="v-input" value="90000 10034"></div></div></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Email</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Budget <span class="t-meta muted">· optional</span></label><input class="v-input" value="₹45,000"></div></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Source</label><select class="v-select"><option>Manual</option><option>Phone</option><option>Walk-in</option><option>Referral</option></select></div><div class="v-field"><label class="v-field__label">Band</label><select class="v-select"><option>Auto — from the score</option><option>Hot</option><option>Warm</option><option>Cold</option></select></div><div class="v-field"><label class="v-field__label">Enquiry type</label><select class="v-select"><option>Rooms</option><option>Banquet</option><option>Wedding</option><option>Corporate</option></select></div></div><div class="v-field"><label class="v-field__label">Notes <span class="t-meta muted">· optional</span></label><textarea class="v-input" rows="2" style="width:100%">River view, second weekend of December.</textarea><span class="v-field__hint">Seven more details can be added now or by Veerha in the conversation.</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="lead-new"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add lead</button></div></div></div>
         </div>
     </div></div>
   </section>
@@ -1062,7 +1062,7 @@
                 <p class="v-pagehead__sub">In the order Veerha would work them · 5 have slipped</p></div>
               <div class="v-actions">
                 <div class="v-seg"><button class="v-seg__opt">Table</button><button class="v-seg__opt is-active">Queue</button></div>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New lead</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New lead</button>
               </div>
             </div>
 
@@ -1075,7 +1075,7 @@
                   <div class="v-record__title">Devang Joshi <span class="v-badge v-badge--danger">Overdue 7d</span><span class="v-badge v-badge--warn">Warm · 72</span></div>
                   <div class="v-record__desc">Gone quiet because we missed the call. The call on 14 Sep was never confirmed from our side.</div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Reschedule</button><button class="v-btn v-btn--primary v-btn--sm">Send message</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="reschedule">Reschedule</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-go="inbox">Send message</button></div>
               </div>
               <div class="v-record v-record--danger">
                 <span class="num t-meta muted" style="width:20px;flex:none;padding-top:2px">2</span>
@@ -1084,7 +1084,7 @@
                   <div class="v-record__title">Nandini Gokhale <span class="v-badge v-badge--danger">Overdue 4d</span><span class="v-badge v-badge--warn">Warm · 47</span></div>
                   <div class="v-record__desc">We owe her something, and never sent it. Menu options were promised on 17 Sep.</div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Open menus</button><button class="v-btn v-btn--primary v-btn--sm">Send now</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="mail">Open menus</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-go="review">Send now</button></div>
               </div>
               <div class="v-record v-record--danger">
                 <span class="num t-meta muted" style="width:20px;flex:none;padding-top:2px">3</span>
@@ -1093,7 +1093,7 @@
                   <div class="v-record__title">Vikram Rao <span class="v-badge v-badge--danger">Overdue 1d</span><span class="v-badge v-badge--warn">Warm · 58</span></div>
                   <div class="v-record__desc">Will book, but only at a rate you have to approve. Asking 12% against an 11% limit.</div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Counter</button><button class="v-btn v-btn--primary v-btn--sm">Review discount</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="review">Counter</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-go="review">Review discount</button></div>
               </div>
             </div>
 
@@ -1106,7 +1106,7 @@
                   <div class="v-record__title">Priya Nair <span class="v-badge v-badge--danger">Hot · 91</span></div>
                   <div class="v-record__desc">Wants a person, and has the budget to justify one. Group rates are above Veerha's limit.</div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Assign</button><button class="v-btn v-btn--primary v-btn--sm">Take over</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="assign">Assign</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-go="inbox-taken">Take over</button></div>
               </div>
               <div class="v-record">
                 <span class="num t-meta muted" style="width:20px;flex:none;padding-top:2px">5</span>
@@ -1115,7 +1115,7 @@
                   <div class="v-record__title">Arjun Mehta <span class="v-badge v-badge--danger">Hot · 80</span></div>
                   <div class="v-record__desc">Ready for a callback, not another message. He proposed 11:00 tomorrow.</div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Schedule</button><button class="v-btn v-btn--primary v-btn--sm">Call now</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="meeting">Schedule</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-open="logcall">Call now</button></div>
               </div>
             </div>
           </div></div>
@@ -1177,7 +1177,7 @@
             <div class="v-pagehead">
               <div class="v-pagehead__copy"><h2 class="v-pagehead__title">Leads</h2>
                 <p class="v-pagehead__sub">Nothing waiting to be qualified</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New lead</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New lead</button></div>
             </div>
             <div class="v-stats" style="margin-bottom:var(--s-4)">
               <button class="v-stat is-selected"><span class="label">All open</span><span class="v-stat__n">0</span><span class="v-stat__cap">Nothing open</span></button>
@@ -1191,8 +1191,8 @@
                 <div class="v-empty__title">No leads waiting to be qualified</div>
                 <p class="v-empty__body">Everything that came in has been handled. New enquiries from your connected channels will appear here as they arrive.</p>
                 <div class="v-actions" style="justify-content:center">
-                  <button class="v-btn v-btn--secondary">Connect a channel</button>
-                  <button class="v-btn v-btn--primary">New lead</button></div>
+                  <button class="v-btn v-btn--secondary" data-w data-inert="Opens the provider’s sign-in to connect this account">Connect a channel</button>
+                  <button class="v-btn v-btn--primary" data-w data-do="create">New lead</button></div>
               </div>
             </div>
           </div></div>
@@ -1260,8 +1260,8 @@
                 <div class="v-error__title">WhatsApp could not be connected</div>
                 <p class="v-error__body">Your credentials expired on 18 September. Seventeen of your last twenty-seven leads arrive on this channel — Veerha can read those threads but cannot answer them.</p>
                 <div class="v-actions" style="margin-top:var(--s-3)">
-                  <button class="v-btn v-btn--danger v-btn--sm">Reconnect WhatsApp</button>
-                  <button class="v-btn v-btn--ghost v-btn--sm">See affected leads</button></div>
+                  <button class="v-btn v-btn--danger v-btn--sm" data-w data-inert="Opens the provider’s sign-in to connect this account">Reconnect WhatsApp</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="leads">See affected leads</button></div>
               </div>
             </div>
             <div class="v-card" style="overflow:hidden"><table class="v-table">
@@ -1369,10 +1369,10 @@
                 <h2 class="v-pagehead__title">Contacts</h2>
                 <p class="v-pagehead__sub">Everyone you hold details for · 11 marketable</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Columns</button>
-                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                <button class="v-btn v-btn--secondary v-btn--sm">Import</button>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New contact</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="columns">Columns</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="import">Import</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New contact</button>
               </div>
             </div>
             <!-- saved views -->
@@ -1387,13 +1387,13 @@
               <div class="v-search vs-filterbar__search" style="max-width:260px">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                 <input class="v-input" placeholder="Search name, email or phone"></div>
-              <button class="v-filterchip"><span class="v-filterchip__k">Channel</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Channel</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Marketing</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Marketing</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Last seen</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Last seen</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
               <select class="v-select" style="width:auto;min-width:130px"><option>Newest first</option></select>
@@ -1410,32 +1410,32 @@
                     <td><span class="v-badge v-badge--neutral">WhatsApp</span></td>
                     <td><span class="v-badge v-badge--ok">Subscribed</span></td>
                     <td class="t-small muted">2m ago</td>
-                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Arjun Mehta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Arjun Mehta" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                   <tr><td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Priya Nair</div><div class="v-identity__line">priya.nair@example.com · +91 90000 10002</div></td>
                     <td><span class="v-badge v-badge--neutral">Email</span></td>
                     <td><span class="v-badge v-badge--ok">Subscribed</span></td>
                     <td class="t-small muted">22m ago</td>
-                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Priya Nair"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Priya Nair" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                   <tr><td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Vikram Rao</div><div class="v-identity__line">vikram.rao@example.com · +91 90000 10004</div></td>
                     <td><span class="v-badge v-badge--neutral">Phone</span></td>
                     <td><span class="v-badge v-badge--neutral">Not asked</span></td>
                     <td class="t-small muted">3h ago</td>
-                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Vikram Rao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Vikram Rao" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                   <tr><td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Kavya Reddy</div><div class="v-identity__line">kavya.reddy@example.com · +91 90000 10006</div></td>
                     <td><span class="v-badge v-badge--neutral">Email</span></td>
                     <td><span class="v-badge v-badge--danger">Opted out</span></td>
                     <td class="t-small muted">1d ago</td>
-                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Kavya Reddy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
+                    <td><span class="t-small" style="color:var(--brand);font-weight:500">View →</span></td><td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Kavya Reddy" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td></tr>
                 </tbody>
               </table>
               <div class="v-card__foot v-pager">
                 <span>Showing 1–4 of 14</span>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
               </div>
             </div>
           </div></div>
@@ -1515,9 +1515,9 @@
               <div class="v-pagehead__copy">
                 <h2 class="v-pagehead__title">Contact Lists</h2>
                 <p class="v-pagehead__sub">An audience somebody wrote down, not a rule re-derived · 3 lists, 123 people</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Segments</button><button class="v-btn v-btn--primary v-btn--sm">New list</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="segments">Segments</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">New list</button></div>
             </div>
-            <div class="v-card"><table class="v-table"><thead><tr><th>List</th><th class="v-table__num">People</th><th>Last used</th><th>Owner</th><th></th></tr></thead><tbody><tr><td><b class="t-small">Diwali 2025 guests</b><div class="t-meta muted">Stayed between 20 Oct and 5 Nov last year</div></td><td class="v-table__num">64</td><td class="t-small">Campaign · 12 Sep</td><td class="t-meta muted">Anita</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr><tr><td><b class="t-small">Corporate offsite enquiries</b><div class="t-meta muted">Asked about 10+ rooms on a weekday</div></td><td class="v-table__num">18</td><td class="t-small">Never used</td><td class="t-meta muted">Rohan</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr><tr><td><b class="t-small">Spa package buyers</b><div class="t-meta muted">Added by hand at check-out</div></td><td class="v-table__num">41</td><td class="t-small">Sequence · running</td><td class="t-meta muted">Tara</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Open</button></td></tr></tbody></table></div>
+            <div class="v-card"><table class="v-table"><thead><tr><th>List</th><th class="v-table__num">People</th><th>Last used</th><th>Owner</th><th></th></tr></thead><tbody><tr><td><b class="t-small">Diwali 2025 guests</b><div class="t-meta muted">Stayed between 20 Oct and 5 Nov last year</div></td><td class="v-table__num">64</td><td class="t-small">Campaign · 12 Sep</td><td class="t-meta muted">Anita</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="openrow">Open</button></td></tr><tr><td><b class="t-small">Corporate offsite enquiries</b><div class="t-meta muted">Asked about 10+ rooms on a weekday</div></td><td class="v-table__num">18</td><td class="t-small">Never used</td><td class="t-meta muted">Rohan</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="openrow">Open</button></td></tr><tr><td><b class="t-small">Spa package buyers</b><div class="t-meta muted">Added by hand at check-out</div></td><td class="v-table__num">41</td><td class="t-small">Sequence · running</td><td class="t-meta muted">Tara</td><td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="openrow">Open</button></td></tr></tbody></table></div>
             <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>A list is not a segment.</b> A segment re-runs its rules every time — “stayed twice, last visit over a year ago”. A list keeps exactly the people someone put in it, which is what you want for a guest list or a press list. People are added from Customers, or while importing a spreadsheet.</div></div>
             </div></div>
         </div>
@@ -1596,14 +1596,14 @@
               <div class="v-pagehead__copy">
                 <h2 class="v-pagehead__title">Contact Lists</h2>
                 <p class="v-pagehead__sub">An audience somebody wrote down, not a rule re-derived</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New list</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">New list</button></div>
             </div>
             <div class="v-card">
               <div class="v-empty" style="padding:var(--s-12) var(--s-6)">
                 <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg></div>
                 <div class="v-empty__title">No contact lists yet</div>
                 <p class="v-empty__body">Create one here, then add people to it from Customers or while importing a spreadsheet. Use a list when you know exactly who belongs — a guest list, a press list — and a segment when the rule should keep deciding.</p>
-                <div class="v-actions"><button class="v-btn v-btn--primary">New list</button><button class="v-btn v-btn--secondary">Import a spreadsheet</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary" data-w data-do="create">New list</button><button class="v-btn v-btn--secondary" data-w data-go="import">Import a spreadsheet</button></div>
               </div>
             </div>
             </div></div>
@@ -1690,7 +1690,7 @@
                 <h2 class="v-pagehead__title">Segments</h2>
                 <p class="v-pagehead__sub">Groups of people you can send to, by rule rather than by list</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New segment</button></div>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New segment</button></div>
             </div>
 
             <div class="label" style="margin-bottom:var(--s-3)">Yours</div>
@@ -1699,7 +1699,7 @@
                 <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-filter"/></svg></div>
                 <div class="v-empty__title">You haven't made a segment yet</div>
                 <p class="v-empty__body">A segment is a rule, not a list — it keeps itself up to date as people qualify, book or go cold. Start from a preset below, or write your own.</p>
-                <button class="v-btn v-btn--secondary">New segment</button>
+                <button class="v-btn v-btn--secondary" data-w data-do="create">New segment</button>
               </div>
             </div>
 
@@ -1849,20 +1849,20 @@
                   <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5-5 5 5M12 5v12"/></svg></div>
                   <div><b class="t-strong">Drop a CSV here</b>
                     <div class="t-small muted" style="margin-top:3px">Up to 5,000 rows. Columns are mapped in the next step, so headings do not have to match.</div></div>
-                  <button class="v-btn v-btn--secondary">Choose file</button>
+                  <button class="v-btn v-btn--secondary" data-w data-inert="Opens your computer’s file picker">Choose file</button>
                 </div>
 
                 <div class="row" style="margin-top:var(--s-5);gap:var(--s-3)">
                   <div class="v-field grow"><label class="v-field__label">Add everyone to a list</label>
                     <select class="v-select"><option>Don't add to a list</option></select></div>
-                  <button class="v-btn v-btn--secondary" style="align-self:flex-end"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New list</button>
+                  <button class="v-btn v-btn--secondary" style="align-self:flex-end" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New list</button>
                 </div>
                 <p class="t-meta muted" style="margin-top:var(--s-3)">
                   A list is a fixed set of people. If you want a group that keeps itself up to date, make a segment instead.</p>
               </div>
               <div class="v-card__foot" style="display:flex;justify-content:flex-end;gap:var(--s-2)">
-                <button class="v-btn v-btn--ghost is-disabled">Back</button>
-                <button class="v-btn v-btn--primary">Next: map columns →</button>
+                <button class="v-btn v-btn--ghost is-disabled" data-w data-do="step">Back</button>
+                <button class="v-btn v-btn--primary" data-w data-do="step">Next: map columns →</button>
               </div>
             </section>
           </div></div>
@@ -1953,7 +1953,7 @@
                 <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>From Zoho CRM:</b> export <i>Contacts</i>, <i>Deals</i> and <i>Notes</i> as three CSVs from Setup › Data Administration › Export. Owners come across by email address, so invite your team first if you want their records to stay theirs.</div></div>
               </div>
             </section>
-            <div class="row" style="margin-top:var(--s-4)"><span class="grow"></span><button class="v-btn v-btn--primary">Next</button></div>
+            <div class="row" style="margin-top:var(--s-4)"><span class="grow"></span><button class="v-btn v-btn--primary" data-w data-do="page">Next</button></div>
             <section class="v-card band"><div class="v-card__head"><div class="grow"><div class="v-card__title">Past migrations</div></div></div>
               <div class="v-card__body"><p class="t-small muted">None yet. Each one stays listed here with what came across and what was left behind.</p></div></section>
             </div></div>
@@ -2047,7 +2047,7 @@
                 <p class="t-meta muted" style="margin-top:var(--s-3)">The 410 come across as customers but stay out of every campaign audience until they opt in. That is the next step, <b>Consent</b>.</p>
               </div>
             </section>
-            <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)"><button class="v-btn v-btn--ghost">Back</button><span class="grow"></span><button class="v-btn v-btn--primary">Next — consent</button></div>
+            <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)"><button class="v-btn v-btn--ghost" data-w data-do="step">Back</button><span class="grow"></span><button class="v-btn v-btn--primary" data-w data-do="step">Next — consent</button></div>
             </div></div>
         </div>
     </div></div>
@@ -2200,8 +2200,8 @@
                 <span class="v-savebar__state">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
                 <span class="t-meta muted grow">Last edited 4 minutes ago by Anita</span>
-                <button class="v-btn v-btn--secondary v-btn--sm">Preview</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Shows it as the customer will see it">Preview</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button>
               </div></div>
             </div>
           </div>

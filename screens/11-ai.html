@@ -174,8 +174,8 @@
                 <h2 class="v-pagehead__title">AI workforce</h2>
                 <p class="v-pagehead__sub">Four on the roster · one needs attention</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Activity log</button>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>Hire</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="deliveries">Activity log</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-go="hire"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>Hire</button></div>
             </div>
             <div class="vs-cards vs-cards--2">
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -349,12 +349,12 @@
                 <div class="label">AI Employees</div>
                 <h2 class="v-pagehead__title" style="margin-top:4px">Sales Executive</h2>
                 <p class="v-pagehead__sub">Mira · answers enquiries on every channel, qualifies them, and books calls for you</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Pause</button><button class="v-btn v-btn--primary v-btn--sm">Edit</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Pauses this employee; its open conversations come to you">Pause</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="edit">Edit</button></div>
             </div>
             <div class="row" style="gap:var(--s-2);margin-bottom:var(--s-4)"><span class="v-badge v-badge--ok">Working · replying to Arjun</span><span class="v-badge v-badge--ai">Autonomous</span><span class="t-meta muted">on shift since 6:40 PM · 1 seat</span></div>
             <div class="v-stats"><div class="v-stat"><span class="label">Conversations</span><span class="v-stat__n num">24</span><span class="v-stat__cap">today</span></div><div class="v-stat"><span class="label">Qualified</span><span class="v-stat__n num">5</span><span class="v-stat__cap">today</span></div><div class="v-stat"><span class="label">Meetings booked</span><span class="v-stat__n num">3</span><span class="v-stat__cap">today</span></div><div class="v-stat"><span class="label">Waiting on you</span><span class="v-stat__n num">2</span><span class="v-stat__cap">decisions it stopped at</span></div></div>
             <div class="band" style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s-5);align-items:start">
-              <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">What it did today</div></div><button class="v-btn v-btn--ghost v-btn--sm">Full log</button></div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">10:42</span><span class="t-small grow">Replied to <b>Arjun Mehta</b> about weekend availability</span><span class="t-meta muted">WhatsApp</span></div><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">10:38</span><span class="t-small grow">Qualified <b>Priya Nair</b> after a nine-message exchange</span><span class="t-meta muted">72 → 91</span></div><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">10:21</span><span class="t-small grow">Booked a site call with <b>Devang Joshi</b></span><span class="t-meta muted">Tomorrow 11:00</span></div><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">09:44</span><span class="t-small grow">Paused on <b>Arjun Mehta</b> — the quote needs approval</span><span class="t-meta muted">Waiting</span></div></div></section>
+              <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">What it did today</div></div><button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="deliveries">Full log</button></div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">10:42</span><span class="t-small grow">Replied to <b>Arjun Mehta</b> about weekend availability</span><span class="t-meta muted">WhatsApp</span></div><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">10:38</span><span class="t-small grow">Qualified <b>Priya Nair</b> after a nine-message exchange</span><span class="t-meta muted">72 → 91</span></div><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">10:21</span><span class="t-small grow">Booked a site call with <b>Devang Joshi</b></span><span class="t-meta muted">Tomorrow 11:00</span></div><div class="row" style="gap:var(--s-4);padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="num t-small muted" style="width:44px">09:44</span><span class="t-small grow">Paused on <b>Arjun Mehta</b> — the quote needs approval</span><span class="t-meta muted">Waiting</span></div></div></section>
               <div class="stack">
                 <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Scope</div></div></div><div class="v-card__body"><dl class="v-kv"><dt>Channels</dt><dd style="font-family:var(--ui);text-align:right">WhatsApp · Email · Website</dd><dt>Hours</dt><dd style="font-family:var(--ui);text-align:right">Around the clock</dd><dt>Department</dt><dd style="font-family:var(--ui);text-align:right">Sales</dd><dt>Reports to</dt><dd style="font-family:var(--ui);text-align:right">Anita</dd></dl></div></section>
                 <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">What it may decide</div></div></div><div class="v-card__body"><p class="t-small secondary">Replies, shares live rooms, books and reschedules calls. Stops for any quote, a discount above 11%, group rates, or a guest who asks for a person.</p><p class="t-meta muted" style="margin-top:var(--s-2)">Set in Behaviour; this is a summary, not a second copy.</p></div></section>
@@ -421,7 +421,7 @@
                       <div class="t-card" style="margin-top:4px">Three-touch follow-up</div></div>
                     <span class="v-badge v-badge--warn">3 steps cannot send</span>
                     <span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Test run</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="test-send">Test run</button>
                   </div>
                 </div>
                 <div style="padding:var(--s-6) var(--s-8)">
@@ -461,7 +461,7 @@
                         <div class="v-error" style="margin-top:var(--s-3);padding:var(--s-3)">
                           <span style="color:var(--dn-ic);flex:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-alert"/></svg></span>
                           <div class="grow"><p class="v-error__body" style="margin:0">This step runs more than 24 hours after the last message, so WhatsApp will only accept an approved template. This one is free text.</p>
-                            <button class="v-btn v-btn--danger v-btn--sm" style="margin-top:var(--s-3)">Create a template from this step</button></div>
+                            <button class="v-btn v-btn--danger v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create">Create a template from this step</button></div>
                         </div>
                       </div></section>
                     </div>
@@ -631,8 +631,8 @@
                 <h2 class="v-pagehead__title">Workflows</h2>
                 <p class="v-pagehead__sub">What happens on its own when a lead arrives &middot; 1 running, 1 draft &middot; 8 runs need something</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Start from a template</button>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>New workflow</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Start from a template</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>New workflow</button></div>
             </div>
 
             <div class="v-stats" style="margin-bottom:var(--s-4)">
@@ -663,9 +663,9 @@
                   <div class="v-record__desc">When a new lead arrives &middot; <b>8 steps</b> &middot; 83 finished, 7 waiting, 1 failed in 30 days. Hands the thread to the Sales Executive on any reply.</div>
                 </div>
                 <div class="v-actions">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Test run</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Open</button>
-                  <button class="v-btn v-btn--ghost v-btn--sm">Delete&hellip;</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="test-send">Test run</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="openrow">Open</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Delete&hellip;</button></div>
               </div>
               <div class="v-record v-record--warn">
                 <span class="v-toggle" role="switch" aria-checked="false" aria-label="Untitled draft is off"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
@@ -674,9 +674,9 @@
                   <div class="v-record__desc">When a new lead arrives &middot; <b>no steps yet</b>. A draft never fires, but if you switch it on both workflows answer the same lead. Give it its own trigger first.</div>
                 </div>
                 <div class="v-actions">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Test run</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Open</button>
-                  <button class="v-btn v-btn--ghost v-btn--sm">Delete&hellip;</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="test-send">Test run</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="openrow">Open</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Delete&hellip;</button></div>
               </div>
             </div>
 
@@ -693,7 +693,7 @@
               <button class="v-tab">Stopped or failed <span class="v-pill__n">3</span></button>
               <span class="grow"></span>
               <span class="t-meta muted" style="align-self:center"><span class="num">94</span> results</span>
-              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
             </div>
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
@@ -703,7 +703,7 @@
               <select class="v-select" style="width:auto;min-width:150px"><option>Any status</option></select>
               <select class="v-select" style="width:auto;min-width:140px"><option>Last 7 days</option></select>
               <select class="v-select" style="width:auto;min-width:140px"><option>Newest first</option></select>
-              <button class="v-btn v-btn--secondary v-btn--sm">Group by lead</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Group by lead</button>
             </div>
 
             <div class="v-card" style="overflow:hidden">
@@ -727,7 +727,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Resumes tomorrow <span class="num">10:00</span> if he has not written back</div></td>
                     <td><span class="v-badge v-badge--warn">Waiting</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr class="is-hover">
                     <td><div class="t-small">Today <span class="num">17:44</span></div><div class="t-meta muted">New enquiry</div></td>
@@ -738,7 +738,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Parked <span class="num">26h</span>. Nothing else in the sequence runs until you decide.</div></td>
                     <td><span class="v-badge v-badge--danger">Needs you</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Decide &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">16:12</span></div><div class="t-meta muted">New enquiry</div></td>
@@ -749,7 +749,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Steps 4&ndash;8 skipped on purpose: a reply ends the sequence</div></td>
                     <td><span class="v-badge v-badge--ok">Finished</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">14:30</span></div><div class="t-meta muted">New enquiry</div></td>
@@ -760,7 +760,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Every run reaching step 5 fails the same way &mdash; 1 so far</div></td>
                     <td><span class="v-badge v-badge--danger">Failed</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Fix &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">11:05</span></div><div class="t-meta muted">New enquiry</div></td>
@@ -771,7 +771,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Third run for this lead this month</div></td>
                     <td><span class="v-badge v-badge--ok">Finished</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Yesterday <span class="num">18:20</span></div><div class="t-meta muted">New enquiry</div></td>
@@ -782,7 +782,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Stopped by Anita &middot; the lunch menus went out by hand</div></td>
                     <td><span class="v-badge v-badge--neutral">Stopped</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Yesterday <span class="num">09:15</span></div><div class="t-meta muted">New enquiry</div></td>
@@ -793,7 +793,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Resumes Friday <span class="num">10:00</span></div></td>
                     <td><span class="v-badge v-badge--warn">Waiting</span></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                 </tbody>
               </table>
@@ -801,8 +801,8 @@
                 <span>Showing 1&ndash;7 of 94</span>
                 <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>25 per page</option></select>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
               </div>
             </div>
 
@@ -1116,20 +1116,20 @@
                     <div style="display:flex;align-items:flex-start;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="grow"><span class="t-small">Answer every new enquiry within five minutes, day or night</span>
                         <div class="t-meta muted">A sentence you would say to a new hire. It is shown on their card and in the weekly summary.</div></span>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Remove</button></div>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Remove</button></div>
                   </div>
-                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add a goal</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add a goal</button>
 
                   <div class="label band" style="margin-bottom:var(--s-2)">Measures (KPIs) &middot; 1</div>
                   <div class="v-rows">
                     <div style="display:flex;align-items:flex-start;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="grow"><span class="t-small">Median first reply &mdash; target under <span class="num">5m</span>, measured weekly</span>
                         <div class="t-meta muted">A measure needs a number, a direction and a period. Yours reads: <b>lower is better</b>, checked every Monday.</div></span>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Remove</button></div>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Remove</button></div>
                   </div>
-                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add a measure</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add a measure</button>
                 </div>
               </section>
 
@@ -1142,18 +1142,18 @@
                     <div style="display:flex;align-items:flex-start;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="grow"><span class="t-small">When a group of ten or more enquires</span>
                         <div class="t-meta muted">Take the dates and the headcount, quote nothing, and book a call with Anita the same day.</div></span>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Remove</button></div>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Remove</button></div>
                   </div>
-                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add a playbook</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add a playbook</button>
                 </div>
               </section>
 
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap">
                 <span class="v-badge v-badge--warn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg>Needs a name before you can create them</span>
                 <span class="t-meta muted grow">They start paused. Nothing is sent to a guest until you switch them on.</span>
-                <button class="v-btn v-btn--secondary v-btn--sm">Cancel</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Create</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Cancel</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">Create</button>
               </div></div>
             </div>
           </div>
@@ -1267,7 +1267,7 @@
                 <h2 class="v-pagehead__title">Hire an AI employee</h2>
                 <p class="v-pagehead__sub">A module arrives with its tools and skills already set up &middot; 1 of 7 roles available today</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Build one from scratch instead</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Build one from scratch instead</button></div>
             </div>
 
             <section class="v-card">
@@ -1314,8 +1314,8 @@
                   <div><span class="t-card amount">$20</span><span class="t-meta muted"> /month per employee</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">400</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--primary v-btn--sm">Hire one</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Open the one working</button></div>
+                  <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="ack">Hire one</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Open the one working</button></div>
                 <div class="t-meta muted" style="margin-top:8px">1 working &middot; hired 4 August</div>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -1327,7 +1327,7 @@
                   <div><span class="t-card amount muted">$20</span><span class="t-meta muted"> /month at launch</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">500</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when it is ready</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when it is ready</button></div>
                 <div class="t-meta muted" style="margin-top:8px">Nothing is charged until you hire it.</div>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -1339,7 +1339,7 @@
                   <div><span class="t-card amount muted">$20</span><span class="t-meta muted"> /month at launch</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">450</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when it is ready</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when it is ready</button></div>
                 <div class="t-meta muted" style="margin-top:8px">Nothing is charged until you hire it.</div>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -1351,7 +1351,7 @@
                   <div><span class="t-card amount muted">$20</span><span class="t-meta muted"> /month at launch</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">300</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when it is ready</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when it is ready</button></div>
                 <div class="t-meta muted" style="margin-top:8px">Nothing is charged until you hire it.</div>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -1363,7 +1363,7 @@
                   <div><span class="t-card amount muted">$20</span><span class="t-meta muted"> /month at launch</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">300</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when it is ready</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when it is ready</button></div>
                 <div class="t-meta muted" style="margin-top:8px">Nothing is charged until you hire it.</div>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -1375,7 +1375,7 @@
                   <div><span class="t-card amount muted">$20</span><span class="t-meta muted"> /month at launch</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">250</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when it is ready</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when it is ready</button></div>
                 <div class="t-meta muted" style="margin-top:8px">Nothing is charged until you hire it.</div>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
@@ -1387,7 +1387,7 @@
                   <div><span class="t-card amount muted">$20</span><span class="t-meta muted"> /month at launch</span></div>
                   <div class="t-meta muted" style="margin-top:2px">plus about <span class="num">250</span> credits a month of work</div></div>
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when it is ready</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when it is ready</button></div>
                 <div class="t-meta muted" style="margin-top:8px">Nothing is charged until you hire it.</div>
               </div></section>
             </div>
@@ -1509,7 +1509,7 @@
                 <h2 class="v-pagehead__title">Knowledge</h2>
                 <p class="v-pagehead__sub">What your AI reads and cites when it answers a customer &middot; 4 documents, 2 of 6 kinds written</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add knowledge</button></div>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add knowledge</button></div>
             </div>
 
             <section class="v-card">
@@ -1523,15 +1523,15 @@
                   <div class="v-search grow">
                     <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
                     <input class="v-input" value="How long do refunds take?"></div>
-                  <button class="v-btn v-btn--primary">Ask</button>
+                  <button class="v-btn v-btn--primary" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button>
                 </div>
                 <div class="v-callout v-callout--warn" style="margin-top:var(--s-4);display:block">
                   <div class="row" style="gap:6px;margin-bottom:4px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg>
                     <b class="t-small">Nothing to cite &mdash; so it refuses</b></div>
                   <span class="t-small">&ldquo;I don&rsquo;t have the refund rule in writing, so I&rsquo;ve asked Anita and I&rsquo;ll come straight back.&rdquo; This question came up <b>7 times</b> in the last month and was answered by a person every time.</span>
                   <div class="v-actions" style="margin-top:var(--s-3)">
-                    <button class="v-btn v-btn--primary v-btn--sm">Write the refund rule</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm">See the 7 threads</button></div>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="ack">Write the refund rule</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Expands the full list in place">See the 7 threads</button></div>
                 </div>
                 <div class="v-rows band">
                   <div class="label" style="margin-bottom:var(--s-2)">Earlier answers</div>
@@ -1592,42 +1592,42 @@
                 <p class="t-small muted" style="margin-top:6px">Who you are, what you sell, and how you&rsquo;d describe the business.</p>
                 <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill v-meter__fill--ok" style="width:34%"></div></div>
                 <div class="t-meta muted" style="margin-top:6px">Written by onboarding on 4 August &middot; never reviewed</div>
-                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add company brief</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add company brief</button>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                 <div class="spread"><span class="t-card">Policies</span><span class="v-badge v-badge--ok">3 written</span></div>
                 <p class="t-small muted" style="margin-top:6px">Refunds, payments, cancellations &mdash; the rules you&rsquo;d quote a customer.</p>
                 <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill v-meter__fill--ok" style="width:100%"></div></div>
                 <div class="t-meta muted" style="margin-top:6px">Check-in, children and pets written &middot; refunds missing</div>
-                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add policies</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add policies</button>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                 <div class="spread"><span class="t-card">FAQ</span><span class="v-badge v-badge--warn">Nothing written</span></div>
                 <p class="t-small muted" style="margin-top:6px">Questions customers actually ask, each with its answer.</p>
                 <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill" style="width:0"></div></div>
                 <div class="t-meta muted" style="margin-top:6px">9 candidate questions found in your threads</div>
-                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add faq</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add faq</button>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                 <div class="spread"><span class="t-card">Listings</span><span class="v-badge v-badge--warn">Nothing written</span></div>
                 <p class="t-small muted" style="margin-top:6px">What you have available &mdash; properties, rooms, packages, products.</p>
                 <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill" style="width:0"></div></div>
                 <div class="t-meta muted" style="margin-top:6px">14 room types sit in the catalogue, unwritten</div>
-                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add listings</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add listings</button>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                 <div class="spread"><span class="t-card">How we work</span><span class="v-badge v-badge--warn">Nothing written</span></div>
                 <p class="t-small muted" style="margin-top:6px">Your process: what happens after an enquiry, who does what, by when.</p>
                 <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill" style="width:0"></div></div>
                 <div class="t-meta muted" style="margin-top:6px">The AI guesses the handover rule from workflow steps</div>
-                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add how we work</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add how we work</button>
               </div></section>
               <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                 <div class="spread"><span class="t-card">Something else</span><span class="v-badge v-badge--warn">Nothing written</span></div>
                 <p class="t-small muted" style="margin-top:6px">Anything the AI should know that none of the kinds above covers.</p>
                 <div class="v-meter" style="margin-top:var(--s-4)"><div class="v-meter__fill" style="width:0"></div></div>
                 <div class="t-meta muted" style="margin-top:6px">Empty, and better kept that way</div>
-                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add something else</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add something else</button>
               </div></section>
             </div>
 
@@ -1666,7 +1666,7 @@
                     <span>Indexed &middot; <span class="num">1</span> section, <span class="num">283</span> characters</span>
                     <span>Source <span class="num">onboarding/company-brief</span></span></div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">Rewrite in your words</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="edit">Rewrite in your words</button></div>
               </div>
               <div class="v-record">
                 <span class="v-avatar v-avatar--ai"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></span>
@@ -1681,7 +1681,7 @@
                     <span>Anita, 12 September</span>
                     <span>Indexed &middot; <span class="num">3</span> sections, 1,940 characters</span></div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Open</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="openrow">Open</button></div>
               </div>
               <div class="v-record">
                 <span class="v-avatar v-avatar--ai"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></span>
@@ -1696,7 +1696,7 @@
                     <span>Anita, 19 September</span>
                     <span>Indexed &middot; <span class="num">2</span> sections, <span class="num">760</span> characters</span></div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Open</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="openrow">Open</button></div>
               </div>
               <div class="v-record v-record--warn">
                 <span class="v-avatar v-avatar--ai"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></span>
@@ -1710,7 +1710,7 @@
                     <span>Started 22 September</span>
                     <span>Not indexed</span></div>
                 </div>
-                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">Finish and publish</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Finish and publish</button></div>
               </div>
             </div>
 
@@ -1825,8 +1825,8 @@
                   <h2 class="v-pagehead__title">What your AI remembers</h2>
                   <p class="v-pagehead__sub">94 facts across five scopes &middot; brought back only when they are relevant to the guest in front of it</p></div>
                 <div class="v-actions">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tidy up&hellip;</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Tidy up&hellip;</button></div>
               </div>
 
               <section class="v-card">
@@ -1839,15 +1839,15 @@
                       <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
                       <input class="v-input" value="What do we know about Arjun Mehta?"></div>
                     <select class="v-select" style="width:auto;min-width:160px"><option>Any guest</option></select>
-                    <button class="v-btn v-btn--primary">Ask</button>
+                    <button class="v-btn v-btn--primary" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button>
                   </div>
                   <div class="v-next band">
                     <div class="v-next__label label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><use href="#i-v"/></svg>What it would bring back</div>
                     <div class="v-next__action">Three facts, in this order</div>
                     <p class="v-next__why">Asked for a river-facing room both times he has stayed &middot; travels with his wife, no children &middot; rang off last October when the rate went past &#8377;50,000. Two hundred other facts about him were not used because nothing in this thread touches them.</p>
                     <div class="v-next__acts">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Show what was left out</button>
-                      <button class="v-btn v-btn--secondary v-btn--sm">Open his record</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Expands the full list in place">Show what was left out</button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="customer-record">Open his record</button></div>
                   </div>
                 </div>
               </section>
@@ -1871,8 +1871,8 @@
                           <span>Caught today, <span class="num">11:41</span></span>
                           <span>Value withheld &middot; <span class="num">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span></span></div>
                         <div class="v-actions" style="margin-top:var(--s-3)">
-                        <button class="v-btn v-btn--danger v-btn--sm">Delete it</button>
-                        <button class="v-btn v-btn--secondary v-btn--sm">It is safe, keep it</button></div>
+                        <button class="v-btn v-btn--danger v-btn--sm" data-w data-do="remove">Delete it</button>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">It is safe, keep it</button></div>
                       </div>
                     </div>
 
@@ -1888,8 +1888,8 @@
                           <span>First 2 September, latest today <span class="num">08:55</span></span>
                           <span>Weight <span class="num">0.6</span> of 1 &mdash; normal</span></div>
                         <div class="v-actions" style="margin-top:var(--s-3)">
-                        <button class="v-btn v-btn--secondary v-btn--sm">Show all 43</button>
-                        <button class="v-btn v-btn--primary v-btn--sm">Keep only the latest</button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Expands the full list in place">Show all 43</button>
+                        <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="ack">Keep only the latest</button></div>
                       </div>
                     </div>
 
@@ -1905,8 +1905,8 @@
                           <span>Weight <span class="num">0.9</span> of 1 &mdash; high</span>
                           <span>Used in <span class="num">4</span> replies</span></div>
                         <div class="v-actions" style="margin-top:var(--s-3)">
-                        <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                        <button class="v-btn v-btn--ghost v-btn--sm">Forget&hellip;</button></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Forget&hellip;</button></div>
                       </div>
                     </div>
 
@@ -1921,8 +1921,8 @@
                           <span>Today, <span class="num">15:12</span></span>
                           <span>Weight <span class="num">0.5</span> of 1 &mdash; normal</span></div>
                         <div class="v-actions" style="margin-top:var(--s-3)">
-                        <button class="v-btn v-btn--ghost v-btn--sm">Edit</button>
-                        <button class="v-btn v-btn--ghost v-btn--sm">Forget&hellip;</button></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Forget&hellip;</button></div>
                       </div>
                     </div>
 
@@ -1937,7 +1937,7 @@
                           <span>20 September, <span class="num">10:30</span></span>
                           <span>Weight <span class="num">0.8</span> of 1 &mdash; high</span></div>
                         <div class="v-actions" style="margin-top:var(--s-3)">
-                        <button class="v-btn v-btn--primary v-btn--sm">Write the rule</button></div>
+                        <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="ack">Write the rule</button></div>
                       </div>
                     </div>
 
@@ -1953,7 +1953,7 @@
                           <span>14 September</span>
                           <span>Weight <span class="num">0.6</span> of 1</span></div>
                         <div class="v-actions" style="margin-top:var(--s-3)">
-                        <button class="v-btn v-btn--secondary v-btn--sm">Delete all 10</button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="remove">Delete all 10</button></div>
                       </div>
                     </div>
 
@@ -1962,7 +1962,7 @@
                         <span class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg></span>
                         <div class="v-empty__title">Nothing at Department or Company scope yet</div>
                         <p class="v-empty__body">Both are empty because nothing has been written there &mdash; not because they are switched off. A <b>company</b> fact is true for every guest, like &ldquo;check-out is 11 am&rdquo;. A <b>department</b> fact is true for everyone in Sales, like &ldquo;Ravi handles group bookings&rdquo;.</p>
-                        <button class="v-btn v-btn--secondary v-btn--sm">Add the first company fact</button>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="create">Add the first company fact</button>
                       </div>
                     </div>
 
@@ -1970,8 +1970,8 @@
                   <div class="v-card" style="margin-top:var(--s-4)"><div class="v-card__foot v-pager">
                     <span>Showing 6 of 94 &middot; duplicates collapsed</span>
                     <span class="v-pager__n">
-                      <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                      <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                      <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
                   </div></div>
                 </div>
 
@@ -2006,7 +2006,7 @@
                           <button class="v-pill">Always mention it</button></div>
                         <span class="v-field__hint">Normal is <span class="num">0.6</span> of 1. <b>Always mention it</b> puts the fact in every reply about this guest, so it is for allergies and access needs, not preferences.</span>
                       </div>
-                      <button class="v-btn v-btn--primary" style="margin-top:var(--s-4);width:100%">Remember this</button>
+                      <button class="v-btn v-btn--primary" style="margin-top:var(--s-4);width:100%" data-w data-do="ack">Remember this</button>
                       <p class="t-meta muted" style="margin-top:var(--s-3)">Every AI employee with <b>Customer</b> memory switched on will be able to use it. Two of your four have it on.</p>
                     </div>
                   </section>
@@ -2133,15 +2133,15 @@
                 <h2 class="v-pagehead__title">Learning</h2>
                 <p class="v-pagehead__sub">Your corrections become examples the AI is steered by — but only the ones you approve.</p></div>
             </div>
-            <div class="row" style="gap:var(--s-3)"><div class="v-search grow"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" value="What would Veerha recall about weekend suite rates?"></div><button class="v-btn v-btn--secondary">Retrieve</button></div>
+            <div class="row" style="gap:var(--s-3)"><div class="v-search grow"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" value="What would Veerha recall about weekend suite rates?"></div><button class="v-btn v-btn--secondary" data-w data-do="ack">Retrieve</button></div>
             <div class="v-pilltabs" style="margin:var(--s-4) 0"><button class="v-pill is-active">Needs curation 2</button><button class="v-pill">Learning set 1</button><button class="v-pill">Discarded 0</button></div>
             <div class="v-card"><div class="v-card__body" style="padding-top:0;padding-bottom:0"><div class="row" style="gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                 <div class="grow"><div class="t-meta muted">Review Queue · you refused</div><div class="t-small" style="margin-top:4px"><s class="muted">Offered the Panorama Suite at ₹24,900 for a weekend</s></div><div class="t-small" style="margin-top:2px"><b>→ Do not offer the Panorama Suite below ₹26,000 on Fridays and Saturdays</b></div></div>
-                <span class="v-badge v-badge--warn">Needs curation</span><div class="row-tight"><button class="v-btn v-btn--secondary v-btn--sm">Discard</button><button class="v-btn v-btn--primary v-btn--sm">Add to learning set</button></div></div><div class="row" style="gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--border);align-items:flex-start">
+                <span class="v-badge v-badge--warn">Needs curation</span><div class="row-tight"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Discard</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="approve-row">Add to learning set</button></div></div><div class="row" style="gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                 <div class="grow"><div class="t-meta muted">Review Queue · you edited</div><div class="t-small" style="margin-top:4px"><s class="muted">“Check-in is after lunch”</s></div><div class="t-small" style="margin-top:2px"><b>→ Say “check-in is from 2 PM”, not “after lunch”</b></div></div>
-                <span class="v-badge v-badge--ok">In the learning set</span><button class="v-btn v-btn--ghost v-btn--sm">Remove</button></div><div class="row" style="gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--border);align-items:flex-start">
+                <span class="v-badge v-badge--ok">In the learning set</span><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="remove">Remove</button></div><div class="row" style="gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                 <div class="grow"><div class="t-meta muted">Review Queue · you edited</div><div class="t-small" style="margin-top:4px"><s class="muted">“We can arrange a cab”</s></div><div class="t-small" style="margin-top:2px"><b>→ Name the airport transfer and its price — ₹3,400 — when a guest asks about a cab</b></div></div>
-                <span class="v-badge v-badge--warn">Needs curation</span><div class="row-tight"><button class="v-btn v-btn--secondary v-btn--sm">Discard</button><button class="v-btn v-btn--primary v-btn--sm">Add to learning set</button></div></div></div></div>
+                <span class="v-badge v-badge--warn">Needs curation</span><div class="row-tight"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Discard</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="approve-row">Add to learning set</button></div></div></div></div>
             <p class="t-meta muted" style="margin-top:var(--s-3)">Every example comes from a decision in the Review Queue. Nothing here is learned silently: an edit you made becomes a suggestion, and only the learning set steers the AI.</p>
             </div>
           </div>
@@ -2264,7 +2264,7 @@
             </section>
             <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
               <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
-              <span class="t-meta muted grow">Last edited 3 days ago by Anita</span><button class="v-btn v-btn--primary v-btn--sm">Save</button></div></div>
+              <span class="t-meta muted grow">Last edited 3 days ago by Anita</span><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button></div></div>
             </div>
           </div>
         </div>
@@ -2394,7 +2394,7 @@
             </section>
             <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
               <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
-              <span class="t-meta muted grow">Last edited 3 days ago by Anita</span><button class="v-btn v-btn--primary v-btn--sm">Save</button></div></div>
+              <span class="t-meta muted grow">Last edited 3 days ago by Anita</span><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button></div></div>
             </div>
           </div>
         </div>
@@ -2524,7 +2524,7 @@
             </section>
             <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
               <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
-              <span class="t-meta muted grow">Unsaved: the closing line</span><button class="v-btn v-btn--primary v-btn--sm">Save</button></div></div>
+              <span class="t-meta muted grow">Unsaved: the closing line</span><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button></div></div>
             </div>
           </div>
         </div>
@@ -2649,7 +2649,7 @@
                   <div class="v-card__ic" style="background:var(--ai-bg);color:var(--ai-ic);border:1px solid var(--ai-bd)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></div>
                   <div class="grow"><div class="v-card__title">AI voice calling</div>
                     <p class="v-card__desc"><span class="row" style="gap:6px;display:inline-flex"><i class="v-dot v-dot--warn"></i>Hub running, WhatsApp Business connected &mdash; but the call adapter is in test mode</span></p></div>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Details</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Details</button>
                   <span class="v-toggle is-on" role="switch" aria-checked="true" aria-label="AI voice calling on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                 </div>
                 <div class="v-card__body">
@@ -2694,7 +2694,7 @@
                           <span class="v-badge v-badge--neutral">Booking link</span><span class="v-badge v-badge--neutral">Instagram</span>
                           <span class="v-badge v-badge--neutral">Facebook</span><span class="v-badge v-badge--neutral">Walk-in</span>
                           <span class="v-badge v-badge--neutral">Referral</span><span class="v-badge v-badge--neutral">Imported list</span></div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm">Customise</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Customise</button></div>
                     <div style="display:flex;align-items:flex-start;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="grow" style="max-width:36ch"><span class="t-small">Smallest budget worth quoting</span>
                         <div class="t-meta muted">Below this, the AI books a call with you instead of quoting or refusing.</div></span>
@@ -2791,22 +2791,22 @@
                       <span class="v-radiocard__dot" style="margin-top:0;border:5px solid var(--brand)"></span>
                       <span class="grow"><span class="t-small">Anika <span class="v-badge v-badge--brand">In use</span></span>
                         <div class="t-meta muted">Breezy, quick &mdash; the default, and the one on your 28 attempts</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                     <div style="display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Nisha</span>
                         <div class="t-meta muted">Firm and unhurried. Reads numbers most clearly.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                     <div style="display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Sara</span>
                         <div class="t-meta muted">Youthful, informal. Suits a short verification call.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                     <div style="display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Nisha</span>
                         <div class="t-meta muted">Bright and warm. Longer sentences carry well.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                   </div>
                   <div class="label band" style="margin-bottom:var(--s-2)">Male</div>
                   <div class="v-rows">
@@ -2814,24 +2814,24 @@
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Rohan</span>
                         <div class="t-meta muted">Upbeat, brisk.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                     <div style="display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Aditya</span>
                         <div class="t-meta muted">Even and factual. The least chatty of the eight.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                     <div style="display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Ishaan</span>
                         <div class="t-meta muted">Firm, low. Good on a poor line.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                     <div style="display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-radiocard__dot" style="margin-top:0"></span>
                       <span class="grow"><span class="t-small">Kabir</span>
                         <div class="t-meta muted">Lively, expressive. Can sound hurried on a long call.</div></span>
-                      <button class="v-btn v-btn--secondary v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Hear it</button></div>
                   </div>
-                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-4)">Hear the other 22<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-4)" data-w data-inert="Expands the full list in place">Hear the other 22<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                   <p class="t-meta muted" style="margin-top:var(--s-3)">All thirty speak English and Hindi. Nothing here names the engine that produces them &mdash; that is ours to change without changing your setup.</p>
                 </div>
               </section>
@@ -2848,7 +2848,7 @@
                       <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                         <span class="grow"><span class="t-small">Shows as</span>
                           <div class="t-meta muted">Your WhatsApp Business number &middot; <span class="num">+91 90000 99001</span></div></span>
-                        <button class="v-btn v-btn--secondary v-btn--sm">Change</button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Change</button></div>
                       <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                         <span class="grow"><span class="t-small">If nobody answers</span>
                           <div class="t-meta muted">Tries twice more, four hours apart, then sends a message instead</div></span>
@@ -2869,8 +2869,8 @@
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap">
                 <span class="v-badge v-badge--warn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg>2 unsaved changes</span>
                 <span class="t-meta muted grow">Smallest budget and turn length. Saved changes take effect on the next call, not the one in progress.</span>
-                <button class="v-btn v-btn--secondary v-btn--sm">Discard</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Save</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Discard</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button>
               </div></div>
             </div>
           </div>
@@ -2984,8 +2984,8 @@
                 <h2 class="v-pagehead__title">Deliveries &amp; tools</h2>
                 <p class="v-pagehead__sub"><b>36 of the last 100 things your AI &ldquo;sent&rdquo; reached a customer.</b> 61 were simulated and 3 failed.</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Switch tools live&hellip;</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Switch tools live&hellip;</button></div>
             </div>
 
             <div class="v-callout v-callout--warn">
@@ -3026,7 +3026,7 @@
                       <div class="t-meta muted">Replies and templates on the guest&rsquo;s own thread</div></span>
                     <span class="v-badge v-badge--ok">Live</span></div>
                   <div class="t-meta muted" style="margin-top:8px">36 sent in 7 days</div>
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3035,7 +3035,7 @@
                       <div class="t-meta muted">Builds the file &mdash; sending it is a separate step</div></span>
                     <span class="v-badge v-badge--ok">Live</span></div>
                   <div class="t-meta muted" style="margin-top:8px">18 built</div>
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3044,7 +3044,7 @@
                       <div class="t-meta muted">Turns an opportunity into a quote a guest can accept</div></span>
                     <span class="v-badge v-badge--ok">Live</span></div>
                   <div class="t-meta muted" style="margin-top:8px">11 built</div>
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3053,7 +3053,7 @@
                       <div class="t-meta muted">Rooms, nights and totals on one page</div></span>
                     <span class="v-badge v-badge--ok">Live</span></div>
                   <div class="t-meta muted" style="margin-top:8px">7 built</div>
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3062,7 +3062,7 @@
                       <div class="t-meta muted">Raised against a confirmed booking</div></span>
                     <span class="v-badge v-badge--ok">Live</span></div>
                   <div class="t-meta muted" style="margin-top:8px">4 built</div>
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
             </div>
             <div class="label band" style="margin-bottom:var(--s-2)">Test mode &mdash; these send nothing &middot; 12</div>
@@ -3074,7 +3074,7 @@
                       <div class="t-meta muted">Renders and stops. <b>36 rows below went nowhere.</b></div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3083,7 +3083,7 @@
                       <div class="t-meta muted">Dials nothing. <b>28 calls were simulated.</b></div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3092,7 +3092,7 @@
                       <div class="t-meta muted">Never used yet</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3101,7 +3101,7 @@
                       <div class="t-meta muted">No payment link has ever been issued</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3110,7 +3110,7 @@
                       <div class="t-meta muted">Not connected</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3119,7 +3119,7 @@
                       <div class="t-meta muted">Not connected</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3128,7 +3128,7 @@
                       <div class="t-meta muted">In-app only &mdash; staff, never guests</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3137,7 +3137,7 @@
                       <div class="t-meta muted">Nothing posted to the ledger</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3146,7 +3146,7 @@
                       <div class="t-meta muted">Writes stay inside Veerha, so test mode costs nothing</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3155,7 +3155,7 @@
                       <div class="t-meta muted">Holds are written but no invitation goes out</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3164,7 +3164,7 @@
                       <div class="t-meta muted">No document has been sent to sign</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-4)">
                   <div class="row" style="gap:var(--s-3)">
@@ -3173,7 +3173,7 @@
                       <div class="t-meta muted">Scheduled reports are generated, not emailed</div></span>
                     <span class="v-badge v-badge--warn">Test mode</span></div>
                   
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)">Send a test to yourself</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="test-send">Send a test to yourself</button>
                 </div></section>
             </div>
 
@@ -3188,25 +3188,25 @@
               <button class="v-tab">Failed <span class="v-pill__n">3</span></button>
               <span class="grow"></span>
               <span class="t-meta muted" style="align-self:center"><span class="num">100</span> results</span>
-              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
             </div>
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
                 <input class="v-input" placeholder="Search a guest, a number or an address"></div>
-              <button class="v-filterchip"><span class="v-filterchip__k">Tool</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Tool</span>
                 <span class="v-filterchip__v">All 17</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Outcome</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Outcome</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip is-set"><span class="v-filterchip__k">When</span>
+              <button class="v-filterchip is-set" data-w data-do="filterchip"><span class="v-filterchip__k">When</span>
                 <span class="v-filterchip__v">Last 7 days</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Mode</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Mode</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Sent by</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Sent by</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
             </div>
@@ -3231,7 +3231,7 @@
                       <div class="t-meta muted" style="margin-top:4px">live &middot; read at 16:57</div></td>
                     <td><div class="t-small">Room options for 15&ndash;17 Oct</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">View &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr class="is-hover">
                     <td><div class="t-small">Today <span class="num">16:41</span></div><div class="t-meta muted">send</div></td>
@@ -3241,7 +3241,7 @@
                       <div class="t-meta muted" style="margin-top:4px">live &middot; delivered, not read yet</div></td>
                     <td><div class="t-small">Six rooms held until Friday</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">View &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">15:12</span></div><div class="t-meta muted">send</div></td>
@@ -3251,7 +3251,7 @@
                       <div class="t-meta muted" style="margin-top:4px">dry-run &middot; rendered, never sent</div></td>
                     <td><div class="t-small">Answer about the 2 pm checkout</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">See the draft &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">14:58</span></div><div class="t-meta muted">send</div></td>
@@ -3261,7 +3261,7 @@
                       <div class="t-meta muted" style="margin-top:4px">dry-run &middot; no number was dialled</div></td>
                     <td><div class="t-small">Verification call, 4 questions</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">See the script &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">13:30</span></div><div class="t-meta muted">send</div></td>
@@ -3271,7 +3271,7 @@
                       <div class="t-meta muted" style="margin-top:4px">live &middot; WhatsApp rejected the number</div></td>
                     <td><div class="t-small">Day-3 nudge about dates</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Fix &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">12:04</span></div><div class="t-meta muted">send</div></td>
@@ -3281,7 +3281,7 @@
                       <div class="t-meta muted" style="margin-top:4px">live &middot; file created, then sent on WhatsApp</div></td>
                     <td><div class="t-small">Quote built and attached to his thread</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">View &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Today <span class="num">11:20</span></div><div class="t-meta muted">send</div></td>
@@ -3291,7 +3291,7 @@
                       <div class="t-meta muted" style="margin-top:4px">dry-run &middot; rendered, never sent</div></td>
                     <td><div class="t-small">Lunch menus for the day visit</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">See the draft &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">Yesterday <span class="num">18:02</span></div><div class="t-meta muted">send</div></td>
@@ -3301,7 +3301,7 @@
                       <div class="t-meta muted" style="margin-top:4px">live &middot; read at 18:40</div></td>
                     <td><div class="t-small">Booking link for a site visit</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">View &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                 </tbody>
               </table>
@@ -3309,8 +3309,8 @@
                 <span>Showing 1&ndash;8 of 100</span>
                 <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>25 per page</option></select>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
               </div>
             </div>
 
@@ -3431,8 +3431,8 @@
                 <h2 class="v-pagehead__title">Deliveries &amp; tools</h2>
                 <p class="v-pagehead__sub"><b>3 messages failed in the last 7 days</b> &middot; 2 of them to the same number</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Retry all 3</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="test-send">Retry all 3</button></div>
             </div>
 
             <div class="v-error">
@@ -3441,8 +3441,8 @@
                 <p class="v-error__title">Three guests did not get the message the AI thought it sent</p>
                 <p class="v-error__body">Two failures are one cause: the number on Sameer Bhat&rsquo;s record has no WhatsApp account, and the sequence has tried it twice. The third is a template WhatsApp has stopped accepting. Nothing retries on its own &mdash; a message that failed twelve hours ago is worse than no message, so Veerha asks you first.</p>
                 <div class="v-actions" style="margin-top:var(--s-3)">
-                  <button class="v-btn v-btn--danger v-btn--sm">Fix the number and retry</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm">Tell me when a delivery fails</button></div>
+                  <button class="v-btn v-btn--danger v-btn--sm" data-w data-do="edit">Fix the number and retry</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="notify">Tell me when a delivery fails</button></div>
               </div>
             </div>
 
@@ -3469,7 +3469,7 @@
               <button class="v-tab is-active">Failed <span class="v-pill__n">3</span></button>
               <span class="grow"></span>
               <span class="t-meta muted" style="align-self:center"><span class="num">3</span> results</span>
-              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
             </div>
             <div class="v-card" style="overflow:hidden">
               <table class="v-table">
@@ -3492,7 +3492,7 @@
                     <td><div class="t-strong">This number has no WhatsApp account</div>
                       <div class="t-meta muted" style="margin-top:3px">Second time in 4 days &middot; step <span class="num">5</span> of <span class="num">8</span> of his sequence is stuck behind it</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">21 Sep <span class="num">09:14</span></div><div class="t-meta muted">send</div></td>
@@ -3503,7 +3503,7 @@
                     <td><div class="t-small">Same number, same reason</div>
                       <div class="t-meta muted" style="margin-top:3px">Nobody was told, so it was tried again today</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Open &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="t-small">20 Sep <span class="num">17:02</span></div><div class="t-meta muted">send</div></td>
@@ -3514,14 +3514,14 @@
                     <td><div class="t-small">The day-3 template is no longer approved</div>
                       <div class="t-meta muted" style="margin-top:3px">Every run that reaches that step will fail the same way</div></td>
                     <td style="text-align:right"><span class="t-small" style="color:var(--brand);font-weight:500">Fix &rarr;</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                 </tbody>
               </table>
               <div class="v-card__foot v-pager">
                 <span>Showing all 3 failures</span>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Clear this filter</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Clear this filter</button></span>
               </div>
             </div>
 
@@ -3581,9 +3581,9 @@
                 </dl>
               </div>
               <div class="v-drawer__foot">
-                <button class="v-btn v-btn--primary v-btn--sm">Fix his number</button>
-                <button class="v-btn v-btn--secondary v-btn--sm">Call him instead</button>
-                <button class="v-btn v-btn--ghost v-btn--sm">Open his record</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="edit">Fix his number</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="logcall">Call him instead</button>
+                <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="customer-record">Open his record</button>
               </div>
             </aside>
           </div>

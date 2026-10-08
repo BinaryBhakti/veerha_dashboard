@@ -113,15 +113,15 @@
                 <h2 class="v-pagehead__title" style="margin-top:4px">Bookings</h2>
                 <p class="v-pagehead__sub">16 arrivals this month · 1 today</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                <button class="v-btn v-btn--primary v-btn--sm">New booking</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">New booking</button></div>
             </div>
             <div class="vs-split vs-split--wide">
               <section class="v-card">
                 <div class="v-card__head">
-                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Previous month"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Previous month" data-w data-do="page"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
                   <div class="grow" style="text-align:center"><div class="v-card__title">September 2026</div></div>
-                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Next month"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Next month" data-w data-do="step"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
                 </div>
                 <div class="v-card__body">
                   <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:6px">
@@ -290,8 +290,8 @@
                         <span class="t-small">She asked twice for a 2 PM checkout on the 24th and it was confirmed. Expect it.</span></div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Ask</button>
-                      <button class="v-btn v-btn--primary v-btn--sm">Check in</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button>
+                      <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="checkin">Check in</button></div>
                   </div>
 
                   <!-- booked elsewhere — the secondary state, stated once above -->
@@ -307,7 +307,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Riverside twin · 2 guests · 2 nights, until 23 September · no arrival time given</div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Ask</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button></div>
                   </div>
 
                   <div style="display:flex;gap:var(--s-4);padding:var(--s-4) 0;border-top:1px solid var(--border)">
@@ -322,7 +322,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Riverside twin · 1 guest · tonight only · no arrival time given</div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Ask</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button></div>
                   </div>
 
                   <!-- the pair that is indistinguishable in the live app: one name, two rooms -->
@@ -339,7 +339,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Garden twin · 2 guests · tonight only · travelling with room <span class="num">303</span></div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Ask</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button></div>
                   </div>
 
                   <div style="display:flex;gap:var(--s-4);padding:var(--s-4) 0;border-top:1px solid var(--border)">
@@ -355,7 +355,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Garden twin · 2 guests · tonight only · travelling with room <span class="num">302</span></div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Ask</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button></div>
                   </div>
 
                   <div style="display:flex;gap:var(--s-4);padding:var(--s-4) 0;border-top:1px solid var(--border)">
@@ -370,7 +370,7 @@
                       <div class="t-meta muted" style="margin-top:3px">Panorama suite · 3 guests · 4 nights, until 25 September · no arrival time given</div>
                     </div>
                     <div class="v-actions" style="align-self:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Ask</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button></div>
                   </div>
 
                 </div>
@@ -394,7 +394,7 @@
                         <button class="v-pill">Which rooms are free tonight?</button>
                         <button class="v-pill">Any allergies today?</button>
                       </div>
-                      <button class="v-btn v-btn--primary" style="width:100%;margin-top:var(--s-3)">Ask</button>
+                      <button class="v-btn v-btn--primary" style="width:100%;margin-top:var(--s-3)" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button>
                     </div>
                   </section>
 
@@ -475,8 +475,8 @@
                 <p class="v-pagehead__sub">Riverside block · rooms 204–205 · 21–24 September 2026</p></div>
               <div class="v-actions">
                 <span class="v-badge v-badge--ok">Arriving today</span>
-                <button class="v-btn v-btn--secondary v-btn--sm">Message</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Check in</button></div>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="inbox">Message</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="checkin">Check in</button></div>
             </div>
 
             <div class="vs-split">
@@ -605,10 +605,10 @@
                 <div class="label">← Front Desk</div>
                 <h2 class="v-pagehead__title" style="margin-top:4px">Kavya Reddy and party</h2>
                 <p class="v-pagehead__sub">BKG-4417 · Riverside block, rooms 204–205 · arriving today about 4:30 PM</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Message</button><button class="v-btn v-btn--primary v-btn--sm">Check in</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="inbox">Message</button><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="checkin">Check in</button></div>
             </div>
             <div class="v-callout v-callout--warn" style="margin-bottom:var(--s-4)"><div><b>2 of 4 adult IDs received.</b> Ask for the other two at the desk, or send the check-in link again — guests add them from their phone. IDs are seen only with the guest’s permission and deleted after the stay.</div></div>
-            <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Who is staying</div><p class="v-card__desc">From the online check-in page, 15 Sep</p></div><button class="v-btn v-btn--ghost v-btn--sm">Resend check-in link</button></div>
+            <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Who is staying</div><p class="v-card__desc">From the online check-in page, 15 Sep</p></div><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="test-send">Resend check-in link</button></div>
               <table class="v-table"><thead><tr><th>Guest</th><th></th><th>ID</th><th>What they told us</th></tr></thead><tbody><tr><td><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">KR</span><b class="t-small">Kavya Reddy</b></div></td><td class="t-meta muted">Adult · booker</td><td><span class="v-badge v-badge--ok">Received 15 Sep</span></td><td class="t-small">No peanuts — severe · kitchen notified</td></tr><tr><td><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">AR</span><b class="t-small">Arvind Reddy</b></div></td><td class="t-meta muted">Adult</td><td><span class="v-badge v-badge--ok">Received 15 Sep</span></td><td class="t-small">—</td></tr><tr><td><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">SI</span><b class="t-small">Sunita Iyengar</b></div></td><td class="t-meta muted">Adult</td><td><span class="v-badge v-badge--warn">Still needed</span></td><td class="t-small">Ground floor if possible</td></tr><tr><td><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">KI</span><b class="t-small">Karthik Iyengar</b></div></td><td class="t-meta muted">Adult</td><td><span class="v-badge v-badge--warn">Still needed</span></td><td class="t-small">—</td></tr><tr><td><div class="row" style="gap:var(--s-2)"><span class="v-avatar v-avatar--sm">IR</span><b class="t-small">Ira Reddy</b></div></td><td class="t-meta muted">Child, 7</td><td><span class="v-badge v-badge--neutral">Not needed</span></td><td class="t-small">Extra bed in 205</td></tr></tbody></table></section>
             <div class="band" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-5)">
               <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Arrival</div></div></div><div class="v-card__body"><dl class="v-kv"><dt>Arriving</dt><dd class="num">16:30</dd><dt>From</dt><dd style="font-family:var(--ui);text-align:right">Driving from Dehradun</dd><dt>Beds</dt><dd style="font-family:var(--ui);text-align:right">One king, one twin, extra bed</dd><dt>Checkout</dt><dd style="font-family:var(--ui);text-align:right">2 PM on the 24th, confirmed</dd></dl></div></section>

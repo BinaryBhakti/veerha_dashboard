@@ -26,10 +26,10 @@ CTRL_RX = re.compile(r'<(button|a)\b([^>]*)>(.*?)</\1>', re.S)
 # (?![-\w]) so data-w is never taken for the start of data-when, which once
 # stripped a hand-wired button's attributes.
 MANAGED = re.compile(r'\s(?:data-w|data-go|data-view|data-open|data-do|data-menu|data-inert)(?![-\w])(?:="[^"]*")?')
-WIRED = re.compile(r'\sdata-(?:go|open|do|menu|inert|close|rail|bulk)(?![-\w])')
+WIRED = re.compile(r'\sdata-(?:go|open|do|menu|inert|close|rail|bulk|view-tab|thread)(?![-\w])')
 OURS = re.compile(r'\sdata-w(?![-\w])')
 BUILTIN = re.compile(r'class="[^"]*\b(?:v-pill|v-tab|v-seg__opt|v-pager__n|v-stat|v-sidenav__item|v-rail__item|'
-                     r'v-topbar__icon|vs-topbar__menu|v-toggle|v-check|v-radiocard|v-filterchip__x)\b')
+                     r'v-topbar__icon|vs-topbar__menu|v-toggle|v-check|v-radiocard|v-filterchip__x|v-accordion__trigger)\b')
 
 def text_of(inner):
     return html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', inner))).strip()
@@ -51,17 +51,20 @@ def attrs_for(action):
     if kind == 'inert': return ' data-inert="%s"' % html.escape(arg, quote=True)
     raise ValueError('unknown action %r' % action)
 
-def matches(find, label, aria):
+def matches(find, label, aria, attrs=''):
     if isinstance(find, dict):
         if 'aria' in find: return aria.lower().startswith(find['aria'].lower())
         if 'exact' in find: return label.lower() == find['exact'].lower()
+        if 're' in find: return bool(re.search(find['re'], label or aria, re.I))   # icon-only: its aria-label
+        if 'aria_re' in find: return bool(re.search(find['aria_re'], aria, re.I))
+        if 'cls' in find: return bool(re.search(r'class="[^"]*\b%s\b' % re.escape(find['cls']), attrs))
         return False
     return label.lower().startswith(find.lower()) or (not label and aria.lower().startswith(find.lower()))
 
-def rule_for(fid, label, aria):
+def rule_for(fid, label, aria, attrs=''):
     for scope in (fid, '*'):
         for r in RULES:
-            if r[0] == scope and matches(r[1], label, aria):
+            if r[0] == scope and matches(r[1], label, aria, attrs):
                 return r[2]
     return None
 
@@ -84,7 +87,7 @@ def run(check):
                 hand = WIRED.search(attrs) and not OURS.search(attrs)
                 if hand: return m.group(0)
                 if BUILTIN.search(attrs) or aria in ('Close',): return m.group(0)
-                act = rule_for(fid, label, aria)
+                act = rule_for(fid, label, aria, attrs)
                 clean = MANAGED.sub('', attrs)
                 if act:
                     if not check: written += 1

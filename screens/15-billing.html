@@ -175,7 +175,7 @@
                 <div class="v-pagehead__copy">
                   <h1 class="v-pagehead__title">Plan &amp; invoices</h1>
                   <p class="v-pagehead__sub">What Rivergrove pays Veerha. Each AI employee holds a seat; runs and credits meter against the period below.</p></div>
-                <div class="v-actions"><button class="v-btn v-btn--secondary">Download all invoices (CSV)</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--secondary" data-w data-do="export">Download all invoices (CSV)</button></div>
               </div>
 
               <div class="vs-split vs-split--wide">
@@ -199,8 +199,8 @@
                           <div class="t-meta muted" style="margin-top:2px">Before tax. This is the only price for this plan — the tier card below repeats it and nothing else.</div>
                         </div>
                         <div class="v-actions">
-                          <button class="v-btn v-btn--secondary">Change plan</button>
-                          <button class="v-btn v-btn--ghost">Cancel</button>
+                          <button class="v-btn v-btn--secondary" data-w data-do="ack">Change plan</button>
+                          <button class="v-btn v-btn--ghost" data-w data-do="dismiss">Cancel</button>
                         </div>
                       </div>
 
@@ -297,7 +297,7 @@
                     <div class="v-card__body">
                       <div class="t-small" style="font-weight:600">Visa ending <span class="num">4417</span></div>
                       <div class="t-meta muted">Expires 08/2029 · charged on the 1st</div>
-                      <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)">Update card</button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="ack">Update card</button>
                       <div style="margin-top:var(--s-4);padding-top:var(--s-3);border-top:1px solid var(--border)">
                         <dl class="v-kv">
                           <dt>Invoices go to</dt><dd style="font-family:var(--ui);text-align:right">anita@rivergrove.example.com</dd>
@@ -324,7 +324,7 @@
                     <div class="v-card__body">
                       <div class="spread"><span class="t-small">Balance</span><span class="t-card">14,280</span></div>
                       <div class="t-meta muted" style="margin-top:2px">worth about <span class="amount">₹8,568</span> at the 10,000-credit rate</div>
-                      <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)">Open the wallet</button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" style="margin-top:var(--s-3)" data-w data-go="wallet">Open the wallet</button>
                     </div>
                   </section>
                 </div>
@@ -348,7 +348,7 @@
                           <div class="row" style="gap:var(--s-2);padding:6px 0"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-small grow">Included AI credits — 3,000 a month</span></div>
                           <div class="row" style="gap:var(--s-2);padding:6px 0"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-small grow">All live modules</span></div>
                         </div>
-                        <button class="v-btn v-btn--secondary" style="width:100%;margin-top:var(--s-4)">Move to Entry</button>
+                        <button class="v-btn v-btn--secondary" style="width:100%;margin-top:var(--s-4)" data-w data-do="ack">Move to Entry</button>
                         <p class="t-meta muted" style="margin-top:6px">Costs you 3 seats and workflows.</p>
                       </div>
                     </section>
@@ -364,7 +364,7 @@
                           <div class="row" style="gap:var(--s-2);padding:6px 0"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-small grow">Workflows + learning</span></div>
                           <div class="row" style="gap:var(--s-2);padding:6px 0"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-small grow">Email support</span></div>
                         </div>
-                        <button class="v-btn v-btn--secondary is-disabled" style="width:100%;margin-top:var(--s-4)">Your plan</button>
+                        <button class="v-btn v-btn--secondary is-disabled" style="width:100%;margin-top:var(--s-4)" data-w data-do="ack">Your plan</button>
                         <p class="t-meta muted" style="margin-top:6px">Renews 1 October at <span class="amount">₹10,030</span> with GST.</p>
                       </div>
                     </section>
@@ -380,7 +380,7 @@
                           <div class="row" style="gap:var(--s-2);padding:6px 0"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-small grow">SSO + audit exports</span></div>
                           <div class="row" style="gap:var(--s-2);padding:6px 0"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-small grow">Priority SLA</span></div>
                         </div>
-                        <button class="v-btn v-btn--primary" style="width:100%;margin-top:var(--s-4)">Talk to sales</button>
+                        <button class="v-btn v-btn--primary" style="width:100%;margin-top:var(--s-4)" data-w data-do="ack">Talk to sales</button>
                         <p class="t-meta muted" style="margin-top:6px">The only change on this page that adds capacity.</p>
                       </div>
                     </section>
@@ -392,7 +392,7 @@
                       Veerha would name the two employees it keeps, pause the other two, and show you the
                       confirmation before anything changes. Included credits would drop from 12,000 to 3,000 a month;
                       credits already in the wallet stay.
-                      <a class="v-callout__link">See what changes</a></div>
+                      <a class="v-callout__link" data-w data-inert="Expands the full list in place">See what changes</a></div>
                   </div>
                 </div>
               </section>
@@ -403,7 +403,7 @@
                   <div class="grow"><div class="v-card__title">Invoices</div>
                     <p class="v-card__desc">Every charge since 12 June 2026. Amounts include GST.</p></div>
                   <div class="v-actions">
-                    <button class="v-btn v-btn--secondary v-btn--sm">Generate current invoice</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="generate">Generate current invoice</button>
                   </div>
                 </div>
                 <table class="v-table">
@@ -418,7 +418,7 @@
                       <td class="num">8 Sep 2026</td>
                       <td class="v-table__num amount">₹4,012</td>
                       <td><span class="v-badge v-badge--ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paid</span></td>
-                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0058"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0058" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="num">INV-2026-0057</td>
@@ -427,7 +427,7 @@
                       <td class="num">1 Sep 2026</td>
                       <td class="v-table__num amount">₹10,030</td>
                       <td><span class="v-badge v-badge--ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paid</span></td>
-                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0057"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0057" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="num">INV-2026-0052</td>
@@ -436,7 +436,7 @@
                       <td class="num">1 Aug 2026</td>
                       <td class="v-table__num amount">₹10,030</td>
                       <td><span class="v-badge v-badge--ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paid</span></td>
-                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0052"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0052" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="num">INV-2026-0047</td>
@@ -445,7 +445,7 @@
                       <td class="num">1 Jul 2026</td>
                       <td class="v-table__num amount">₹10,030</td>
                       <td><span class="v-badge v-badge--ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paid</span></td>
-                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0047"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0047" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="num">INV-2026-0041</td>
@@ -455,7 +455,7 @@
                       <td class="num">12 Jun 2026</td>
                       <td class="v-table__num amount">₹6,352</td>
                       <td><span class="v-badge v-badge--ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paid</span></td>
-                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0041"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right;white-space:nowrap"><span class="t-meta" style="color:var(--brand);font-weight:500">PDF</span><button class="v-btn v-btn--icon v-btn--sm" style="margin-left:var(--s-2);vertical-align:middle" aria-label="More actions for invoice INV-2026-0041" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -463,9 +463,9 @@
                   <div class="v-pager">
                     <span>5 invoices · <span class="amount">₹40,454</span> paid since 12 June 2026</span>
                     <span class="v-pager__n">
-                      <button class="v-btn v-btn--sm v-btn--ghost is-disabled">‹</button>
+                      <button class="v-btn v-btn--sm v-btn--ghost is-disabled" data-w data-do="page">‹</button>
                       <span class="num">1 / 1</span>
-                      <button class="v-btn v-btn--sm v-btn--ghost is-disabled">›</button>
+                      <button class="v-btn v-btn--sm v-btn--ghost is-disabled" data-w data-do="page">›</button>
                     </span>
                   </div>
                 </div>
@@ -622,7 +622,7 @@
                       <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></div>
                       <div class="grow"><div class="v-card__title">Invoices</div>
                         <p class="v-card__desc">Issued on the 1st of each month, and emailed to Anita.</p></div>
-                      <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Generate current invoice</button></div>
+                      <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="generate">Generate current invoice</button></div>
                     </div>
                     <div class="v-card__body">
                       <div class="v-empty">
@@ -635,8 +635,8 @@
                           <span class="amount">₹867</span> GST — charged on 1 October, once a card is on file.
                         </p>
                         <div class="v-actions" style="justify-content:center">
-                          <button class="v-btn v-btn--secondary v-btn--sm">See what it will contain</button>
-                          <button class="v-btn v-btn--ghost v-btn--sm">Add a GSTIN first</button>
+                          <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Expands the full list in place">See what it will contain</button>
+                          <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="create">Add a GSTIN first</button>
                         </div>
                         <p class="t-meta muted" style="max-width:46ch">
                           A GSTIN added before the 1st appears on every invoice from the first one.
@@ -668,7 +668,7 @@
                     <div class="v-card__body">
                       <p class="t-small muted">Without a card, the 1 October charge fails and the workspace drops to
                         read-only on 8 October. Veerha will keep reading enquiries and stop answering them.</p>
-                      <button class="v-btn v-btn--primary v-btn--sm" style="margin-top:var(--s-3)">Add a card</button>
+                      <button class="v-btn v-btn--primary v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create">Add a card</button>
                     </div>
                   </section>
                 </div>
@@ -791,7 +791,7 @@
                 <div class="v-pagehead__copy">
                   <h1 class="v-pagehead__title">Wallet</h1>
                   <p class="v-pagehead__sub">AI credits pay for the work your AI does. Every deduction names the work behind it, and credits never expire.</p></div>
-                <div class="v-actions"><button class="v-btn v-btn--primary">Top up credits</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary" data-w data-do="topup">Top up credits</button></div>
               </div>
 
               <div class="v-stats wrap">
@@ -834,7 +834,7 @@
                         <div class="v-field" style="width:150px">
                           <label class="v-field__label">Credits a day</label>
                           <input class="v-input num" value="600"></div>
-                        <button class="v-btn v-btn--secondary">Set</button>
+                        <button class="v-btn v-btn--secondary" data-w data-do="save">Set</button>
                         <span class="t-meta muted grow" style="padding-bottom:9px">0 turns the cap off.</span>
                       </div>
                       <p class="t-small secondary" style="margin-top:var(--s-3)">
@@ -964,7 +964,7 @@
                       <div class="grow"><div class="v-card__title">On Growth</div>
                         <p class="v-card__desc"><span class="amount">₹8,500</span> a month, 12,000 credits included.</p></div></div>
                     <div class="v-card__body">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Plan &amp; invoices</button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="billing">Plan &amp; invoices</button>
                     </div>
                   </section>
                 </div>
@@ -975,7 +975,7 @@
                 <div class="v-card__head">
                   <div class="grow"><div class="v-card__title">Activity</div>
                     <p class="v-card__desc">Every charge, newest first, each one named exactly as it is priced below.</p></div>
-                  <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Export CSV</button></div>
+                  <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export CSV</button></div>
                 </div>
                 <div class="v-card__body" style="padding-bottom:0">
                   <div class="vs-filterbar" style="margin-bottom:0">
@@ -999,7 +999,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−4</td>
                       <td class="v-table__num num">14,280</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this quotation composed entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this quotation composed entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">AI employee run</div>
@@ -1009,7 +1009,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−3</td>
                       <td class="v-table__num num">14,284</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this ai employee run entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this ai employee run entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Reply drafted</div></td>
@@ -1018,7 +1018,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−2</td>
                       <td class="v-table__num num">14,287</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this reply drafted entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this reply drafted entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Lead qualification</div></td>
@@ -1027,7 +1027,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−1</td>
                       <td class="v-table__num num">14,289</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this lead qualification entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this lead qualification entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">AI voice call, per started minute</div>
@@ -1037,7 +1037,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−15</td>
                       <td class="v-table__num num">14,290</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this ai voice call, per started minute entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this ai voice call, per started minute entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Reading an enquiry</div></td>
@@ -1046,7 +1046,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−1</td>
                       <td class="v-table__num num">14,305</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this reading an enquiry entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this reading an enquiry entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Follow-up draft</div></td>
@@ -1055,7 +1055,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−2</td>
                       <td class="v-table__num num">14,306</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this follow-up draft entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this follow-up draft entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Thread summarised</div></td>
@@ -1064,7 +1064,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−1</td>
                       <td class="v-table__num num">14,308</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this thread summarised entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this thread summarised entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Front-desk answer</div></td>
@@ -1073,7 +1073,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−1</td>
                       <td class="v-table__num num">14,309</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this front-desk answer entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this front-desk answer entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Details captured</div></td>
@@ -1082,7 +1082,7 @@
                       <td><span class="v-badge v-badge--neutral">Spend</span></td>
                       <td class="v-table__num num">−2</td>
                       <td class="v-table__num num">14,310</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this details captured entry"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for this details captured entry" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -1090,9 +1090,9 @@
                   <div class="v-pager">
                     <span>Showing 1–10 of 4,062 entries · 6,217 credits spent this period</span>
                     <span class="v-pager__n">
-                      <button class="v-btn v-btn--sm v-btn--ghost is-disabled">‹</button>
+                      <button class="v-btn v-btn--sm v-btn--ghost is-disabled" data-w data-do="page">‹</button>
                       <span class="num">1 / 407</span>
-                      <button class="v-btn v-btn--sm v-btn--ghost">›</button>
+                      <button class="v-btn v-btn--sm v-btn--ghost" data-w data-do="page">›</button>
                     </span>
                   </div>
                 </div>
@@ -1342,7 +1342,7 @@
                 <div class="v-pagehead__copy">
                   <h1 class="v-pagehead__title">Wallet</h1>
                   <p class="v-pagehead__sub">AI credits pay for the work your AI does. Every deduction names the work behind it, and credits never expire.</p></div>
-                <div class="v-actions"><button class="v-btn v-btn--primary">Top up credits</button></div>
+                <div class="v-actions"><button class="v-btn v-btn--primary" data-w data-do="topup">Top up credits</button></div>
               </div>
 
               <div class="v-error" style="margin-bottom:var(--s-4)">
@@ -1350,7 +1350,7 @@
                 <div class="grow">
                   <div class="v-error__title">140 credits left — at today’s pace, about 11 hours</div>
                   <p class="v-error__body">When the wallet reaches zero Veerha finishes the conversation it is in, starts nothing new, and moves every waiting enquiry into <b>Waiting on you</b> with a note saying why. Guests are never left without a reply and without you knowing.</p>
-                  <div class="v-actions" style="margin-top:var(--s-3)"><button class="v-btn v-btn--danger v-btn--sm">Top up 2,500 credits · ₹1,700</button><button class="v-btn v-btn--ghost v-btn--sm">See what is using credits</button></div>
+                  <div class="v-actions" style="margin-top:var(--s-3)"><button class="v-btn v-btn--danger v-btn--sm" data-w data-do="topup">Top up 2,500 credits · ₹1,700</button><button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="Expands the full list in place">See what is using credits</button></div>
                 </div>
               </div>
 
@@ -1367,7 +1367,7 @@
                 <div class="v-card__body">
                   <div class="row" style="gap:var(--s-3);align-items:stretch"><label class="v-radiocard" style="flex:1"><span class="v-radiocard__dot"></span><span><b class="t-small num">500 credits</b><br><span class="amount t-small">₹425</span> <span class="t-meta muted">· ₹0.85 a credit</span></span></label><label class="v-radiocard is-selected" style="flex:1"><span class="v-radiocard__dot"></span><span><b class="t-small num">2,500 credits</b><br><span class="amount t-small">₹1,700</span> <span class="t-meta muted">· ₹0.68 a credit</span></span></label><label class="v-radiocard" style="flex:1"><span class="v-radiocard__dot"></span><span><b class="t-small num">10,000 credits</b><br><span class="amount t-small">₹6,000</span> <span class="t-meta muted">· ₹0.60 a credit</span></span></label></div>
                   <div class="row" style="gap:var(--s-3);margin-top:var(--s-4);align-items:center">
-                    <button class="v-btn v-btn--primary">Pay ₹1,700</button>
+                    <button class="v-btn v-btn--primary" data-w data-do="topup">Pay ₹1,700</button>
                     <span class="t-meta muted">Paid by card or UPI. The invoice goes to the legal identity on Billing.</span></div>
                 </div>
               </section>
@@ -1492,16 +1492,16 @@
               </div>
               <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-5)"><section class="v-card">
                 <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg></div><div class="grow"><div class="v-card__title">Connect your calendar</div><p class="v-card__desc">Veerha books calls and site visits straight into your free slots, and stops offering times you are busy.</p></div></div>
-                <div class="v-card__body" style="padding-top:0"><p class="t-meta" style="color:var(--wn-tx)">3 calls this week were offered at times you were already booked.</p><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--ok">Included in your plan</span><span class="grow"></span><button class="v-btn v-btn--primary v-btn--sm">Set up</button></div></div>
+                <div class="v-card__body" style="padding-top:0"><p class="t-meta" style="color:var(--wn-tx)">3 calls this week were offered at times you were already booked.</p><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--ok">Included in your plan</span><span class="grow"></span><button class="v-btn v-btn--primary v-btn--sm" data-w data-inert="Starts the set-up for this extra, step by step">Set up</button></div></div>
               </section><section class="v-card">
                 <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg></div><div class="grow"><div class="v-card__title">Connect your mailbox</div><p class="v-card__desc">Guest email lands beside WhatsApp, and Veerha drafts the replies.</p></div></div>
-                <div class="v-card__body" style="padding-top:0"><p class="t-meta" style="color:var(--wn-tx)">2 of your last 27 leads came by email and were never scored.</p><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--ok">Included in your plan</span><span class="grow"></span><button class="v-btn v-btn--primary v-btn--sm">Set up</button></div></div>
+                <div class="v-card__body" style="padding-top:0"><p class="t-meta" style="color:var(--wn-tx)">2 of your last 27 leads came by email and were never scored.</p><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--ok">Included in your plan</span><span class="grow"></span><button class="v-btn v-btn--primary v-btn--sm" data-w data-inert="Starts the set-up for this extra, step by step">Set up</button></div></div>
               </section><section class="v-card">
                 <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg></div><div class="grow"><div class="v-card__title">Bring your old CRM</div><p class="v-card__desc">Your contacts, leads and their owners come across in one go. Nobody is messaged.</p></div></div>
-                <div class="v-card__body" style="padding-top:0"><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--ok">Included in your plan</span><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm">Set up</button></div></div>
+                <div class="v-card__body" style="padding-top:0"><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--ok">Included in your plan</span><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Starts the set-up for this extra, step by step">Set up</button></div></div>
               </section><section class="v-card">
                 <div class="v-card__head"><div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-help"/></svg></div><div class="grow"><div class="v-card__title">Have Veerha set it up</div><p class="v-card__desc">Our team sets up your workspace with you on a call: channels, fields, the first sequence.</p></div></div>
-                <div class="v-card__body" style="padding-top:0"><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--neutral">Quoted on a call</span><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm">Book a call</button></div></div>
+                <div class="v-card__body" style="padding-top:0"><div class="row" style="margin-top:var(--s-3)"><span class="v-badge v-badge--neutral">Quoted on a call</span><span class="grow"></span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="meeting">Book a call</button></div></div>
               </section></div>
               <p class="t-meta muted" style="margin-top:var(--s-4)">Ordered by what is costing you now. An extra disappears from this page once it is set up.</p>
             </div>

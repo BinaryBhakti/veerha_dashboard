@@ -180,8 +180,8 @@
                 <span><i style="width:14px;height:0;border-top:1px dashed var(--ai-bd);display:block"></i> Supervises an AI employee</span>
               </div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Add a person</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">Add a person</button>
               </div>
             </div>
               </div>
@@ -370,8 +370,8 @@
                     company reports to and the rest can be filled in by dragging — or Veerha can
                     propose a structure from who books what.</p>
                   <div class="v-actions" style="justify-content:center;margin-top:var(--s-5)">
-                    <button class="v-btn v-btn--primary">Choose who is at the top</button>
-                    <button class="v-btn v-btn--secondary">Let Veerha propose one</button>
+                    <button class="v-btn v-btn--primary" data-w data-do="ack">Choose who is at the top</button>
+                    <button class="v-btn v-btn--secondary" data-w data-do="ack">Let Veerha propose one</button>
                   </div>
                 </div>
                 <div class="v-callout v-callout--info" style="margin-top:var(--s-6)">
@@ -511,14 +511,14 @@
                 <h1 class="v-pagehead__title">Team &amp; access</h1>
                 <p class="v-pagehead__sub">Six people. One invitation has never been opened.</p>
               </div><div class="v-actions">
-                <button class="v-btn v-btn--secondary">Roles</button>
-                <button class="v-btn v-btn--primary">Invite someone</button>
+                <button class="v-btn v-btn--secondary" data-w data-do="ack">Roles</button>
+                <button class="v-btn v-btn--primary" data-w data-do="ack">Invite someone</button>
               </div></div>
               <div class="v-callout v-callout--warn" style="margin-top:var(--s-5)">
                 <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
                 <div><b>Dev Bhatia was invited 11 days ago and has not signed in.</b>
                   Invitations expire after 14 days.
-                  <a class="v-callout__link">Send it again</a></div>
+                  <a class="v-callout__link" data-w data-do="test-send">Send it again</a></div>
               </div>
               <div class="v-tabs" style="margin-top:var(--s-5);margin-bottom:var(--s-4);flex-wrap:wrap">
                 <button class="v-tab is-active">All <span class="v-pill__n">6</span></button>
@@ -530,13 +530,13 @@
               <div class="vs-filterbar">
                 <div class="v-search vs-filterbar__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                   <input class="v-input" placeholder="Search people"></div>
-                <button class="v-filterchip"><span class="v-filterchip__k">Role</span>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Role</span>
                   <span class="v-filterchip__v">Any</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-                <button class="v-filterchip"><span class="v-filterchip__k">Can reach</span>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Can reach</span>
                   <span class="v-filterchip__v">Any</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-                <button class="v-filterchip"><span class="v-filterchip__k">Last seen</span>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Last seen</span>
                   <span class="v-filterchip__v">Any</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
               </div>
@@ -549,7 +549,7 @@
                       <td><span class="v-badge v-badge--neutral">Owner</span></td>
                       <td class="t-small secondary">Full access</td>
                       <td class="t-meta muted">—</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Anita Rege"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Anita Rege" data-w data-do="rowmenu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
                     </tr><tr>
                       <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">R</span>
                         <div><div class="t-small" style="font-weight:600">Rohan Pillai</div>
@@ -557,7 +557,7 @@
                       <td><span class="v-badge v-badge--neutral">Manager</span></td>
                       <td class="t-small secondary">Sales, Bookings, AI</td>
                       <td class="t-meta muted">Today, 9:12 AM</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Rohan Pillai"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Rohan Pillai" data-w data-do="rowmenu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
                     </tr><tr>
                       <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">I</span>
                         <div><div class="t-small" style="font-weight:600">Imran Shaikh</div>
@@ -565,7 +565,7 @@
                       <td><span class="v-badge v-badge--neutral">Manager</span></td>
                       <td class="t-small secondary">Operations, Calendar</td>
                       <td class="t-meta muted">Yesterday</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Imran Shaikh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Imran Shaikh" data-w data-do="rowmenu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
                     </tr><tr>
                       <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">T</span>
                         <div><div class="t-small" style="font-weight:600">Tara Menon</div>
@@ -573,7 +573,7 @@
                       <td><span class="v-badge v-badge--neutral">Agent</span></td>
                       <td class="t-small secondary">Leads, Conversations</td>
                       <td class="t-meta muted">Today, 8:40 AM</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Tara Menon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Tara Menon" data-w data-do="rowmenu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
                     </tr><tr>
                       <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">S</span>
                         <div><div class="t-small" style="font-weight:600">Sneha Kulkarni</div>
@@ -581,7 +581,7 @@
                       <td><span class="v-badge v-badge--neutral">Agent</span></td>
                       <td class="t-small secondary">Conversations</td>
                       <td class="t-meta muted">4 days ago</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Sneha Kulkarni"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Sneha Kulkarni" data-w data-do="rowmenu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
                     </tr><tr>
                       <td><div class="row" style="gap:var(--s-3)"><span class="v-avatar v-avatar--sm">D</span>
                         <div><div class="t-small" style="font-weight:600">Dev Bhatia</div>
@@ -589,7 +589,7 @@
                       <td><span class="v-badge v-badge--warn">Invited</span></td>
                       <td class="t-small secondary">Not set</td>
                       <td class="t-meta muted">Never</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Dev Bhatia"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm v-btn--icon" aria-label="Manage Dev Bhatia" data-w data-do="rowmenu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></td>
                     </tr></tbody>
                 </table></div>
               <p class="t-meta muted" style="margin-top:var(--s-4)">
@@ -734,7 +734,7 @@
                       <textarea class="v-textarea" style="margin-top:var(--s-2)" rows="3" placeholder="Type it however you would say it out loud…">Answer on its own at night. Discounts up to 10% are fine, anything more comes to me.</textarea>
                       <div class="spread" style="margin-top:var(--s-3)">
                         <span class="t-meta muted">Veerha turns this into settings you can edit later.</span>
-                        <button class="v-btn v-btn--primary v-btn--sm">Send</button>
+                        <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="chat-send">Send</button>
                       </div>
                     </div></div>
                   <div class="v-callout v-callout--ai">
@@ -745,10 +745,10 @@
                   </div>
                 </div>
                 <div class="v-card__foot">
-                  <button class="v-btn v-btn--ghost">Back</button>
+                  <button class="v-btn v-btn--ghost" data-w data-do="step">Back</button>
                   <div class="grow"></div>
                   <span class="t-meta muted" style="margin-right:var(--s-3)">About 4 minutes left</span>
-                  <button class="v-btn v-btn--secondary">Skip — use sensible defaults</button>
+                  <button class="v-btn v-btn--secondary" data-w data-go="setup-golive">Skip — use sensible defaults</button>
                 </div>
               </div>
             </div>
@@ -877,21 +877,21 @@
                 <div class="v-card__body">
                   <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                     <div class="grow"><div class="t-small" style="font-weight:600">WhatsApp Business</div><div class="t-meta muted" style="margin-top:2px">Where 17 of your last 27 leads arrived.<ol style="margin:var(--s-2) 0 0;padding-left:var(--s-5)"><li class="t-meta" style="margin:2px 0"><b>✓</b> Sign in to Facebook Business</li><li class="t-meta" style="margin:2px 0"><b>✓</b> Choose the number guests write to</li><li class="t-meta" style="margin:2px 0"><span class="muted">○</span> Enter the code Meta texts to it</li><li class="t-meta" style="margin:2px 0"><span class="muted">○</span> Approve the first message template</li></ol></div></div>
-                    <span class="v-badge v-badge--warn">Step 2 of 4</span><button class="v-btn v-btn--primary v-btn--sm">Continue</button></div>
+                    <span class="v-badge v-badge--warn">Step 2 of 4</span><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="step">Continue</button></div>
                   <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                     <div class="grow"><div class="t-small" style="font-weight:600">Email</div><div class="t-meta muted" style="margin-top:2px">Connect the mailbox guests write to, so their email lands beside WhatsApp. Can be done later from Customer Mail.</div></div>
-                    <span class="v-badge v-badge--neutral">Optional</span><button class="v-btn v-btn--secondary v-btn--sm">Connect</button></div>
+                    <span class="v-badge v-badge--neutral">Optional</span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Opens the provider’s sign-in to connect this account">Connect</button></div>
                   <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                     <div class="grow"><div class="t-small" style="font-weight:600">Website widget</div><div class="t-meta muted" style="margin-top:2px">One line of code on your site. Optional — you can add it any time.</div></div>
-                    <span class="v-badge v-badge--neutral">Not started</span><button class="v-btn v-btn--secondary v-btn--sm">Copy snippet</button></div>
+                    <span class="v-badge v-badge--neutral">Not started</span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy snippet</button></div>
                   <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>One channel is enough to go live.</b> Mira starts answering the moment WhatsApp is confirmed; email and the widget can join later without repeating this guide.</div></div>
                 </div>
               </div>
               <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)">
-                <button class="v-btn v-btn--ghost">Back to review</button>
+                <button class="v-btn v-btn--ghost" data-w data-go="onboarding">Back to review</button>
                 <span class="grow"></span>
                 <span class="t-meta muted">Waiting on the WhatsApp code · about 2 minutes</span>
-                <button class="v-btn v-btn--primary" disabled>Go live</button>
+                <button class="v-btn v-btn--primary" disabled data-w data-do="golive">Go live</button>
               </div>
             </div>
           </div>
@@ -1013,7 +1013,7 @@
                 <p class="v-pagehead__sub">Four departments. Every request is routed to one of them by what it
                   is about — 168 were routed last month.</p>
               </div><div class="v-actions">
-                <button class="v-btn v-btn--primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> New department</button>
+                <button class="v-btn v-btn--primary" data-w data-do="create"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> New department</button>
               </div></div>
 
               <div class="v-callout v-callout--info" style="margin-bottom:var(--s-5)">
@@ -1021,7 +1021,7 @@
                 <div><b>A department decides who <i>handles</i> a request. It does not decide who can
                   <i>see</i> one.</b> Visibility follows reporting lines — a manager sees everyone reporting to
                   them, and anybody without a manager sees only their own customers. That is set on the org
-                  chart, not here. <a class="v-callout__link">Org chart › Reporting lines →</a></div>
+                  chart, not here. <a class="v-callout__link" data-w data-go="org-chart">Org chart › Reporting lines →</a></div>
               </div>
 
               <div class="v-tabs" style="margin-bottom:var(--s-4)">
@@ -1042,7 +1042,7 @@
                     <div class="v-card__body">
                       <div class="row" style="gap:var(--s-2)">
                         <input class="v-input" value="Hi, do you have a hall for 180 people in February?" style="min-width:0">
-                        <button class="v-btn v-btn--secondary">Test it</button></div>
+                        <button class="v-btn v-btn--secondary" data-w data-do="ack">Test it</button></div>
                       <div class="v-ai" style="margin-top:var(--s-4)">
                         <div class="v-ai__label"><span class="v-ai__mark">V</span><span class="label">Result</span></div>
                         <p class="v-read__conclusion">Events &amp; banquets</p>
@@ -1064,11 +1064,11 @@
                       <p class="v-record__desc" style="max-width:66ch">Answers a new enquiry on whichever channel it arrived on, qualifies it, and keeps the record current so nobody has to re-ask.</p>
                       <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
                       <div class="v-actions" style="margin-top:6px"><span class="v-badge v-badge--neutral">looking for</span> <span class="v-badge v-badge--neutral">interested in</span> <span class="v-badge v-badge--neutral">room availability</span> <span class="v-badge v-badge--neutral">what would it cost</span> <span class="v-badge v-badge--neutral">asking for a quote</span>
-                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div>
                     </div>
                     <div class="v-actions" style="flex:none;align-items:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Sales"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Sales" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
                     </div>
                   </div>
                   <div class="v-record v-record--warn">
@@ -1079,11 +1079,11 @@
                       <p class="v-record__desc" style="max-width:66ch">Weddings, conferences and anything with a headcount rather than a room count. Quotes here always need a person.</p>
                       <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
                       <div class="v-actions" style="margin-top:6px"><span class="v-badge v-badge--neutral">wedding</span> <span class="v-badge v-badge--neutral">banquet</span> <span class="v-badge v-badge--neutral">conference</span> <span class="v-badge v-badge--neutral">site visit</span> <span class="v-badge v-badge--neutral">how many can you seat</span>
-                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout v-callout--warn" style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Nobody is on shift out of hours.</b> These 9 enquiries went to Imran Shaikh, who answered 6 of them the next morning. <a class="v-callout__link">Hire an AI employee here &rarr;</a></div></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout v-callout--warn" style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Nobody is on shift out of hours.</b> These 9 enquiries went to Imran Shaikh, who answered 6 of them the next morning. <a class="v-callout__link" data-w data-go="hire">Hire an AI employee here &rarr;</a></div></div>
                     </div>
                     <div class="v-actions" style="flex:none;align-items:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Events &amp; banquets"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Events &amp; banquets" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
                     </div>
                   </div>
                   <div class="v-record v-record--danger">
@@ -1094,11 +1094,11 @@
                       <p class="v-record__desc" style="max-width:66ch">Guests who have already booked — arrival times, transfers, a change to a stay.</p>
                       <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
                       <div class="v-actions" style="margin-top:6px"><span class="v-badge v-badge--neutral">already booked</span> <span class="v-badge v-badge--neutral">check-in time</span> <span class="v-badge v-badge--neutral">airport pickup</span> <span class="v-badge v-badge--neutral">can I change my dates</span>
-                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout v-callout--danger" style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Support Executive is read-only while WhatsApp is disconnected.</b> 11 requests are waiting and nobody has been told. <a class="v-callout__link">Reconnect WhatsApp &rarr;</a></div></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout v-callout--danger" style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Support Executive is read-only while WhatsApp is disconnected.</b> 11 requests are waiting and nobody has been told. <a class="v-callout__link" data-w data-inert="Opens the provider’s sign-in to connect this account">Reconnect WhatsApp &rarr;</a></div></div>
                     </div>
                     <div class="v-actions" style="flex:none;align-items:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Front desk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Front desk" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
                     </div>
                   </div>
                   <div class="v-record ">
@@ -1109,11 +1109,11 @@
                       <p class="v-record__desc" style="max-width:66ch">Campaigns to guests who have stayed before. Created during setup and never finished.</p>
                       <div class="label" style="margin-top:var(--s-3)">Routes here when a message is about</div>
                       <div class="v-actions" style="margin-top:6px"><span class="t-meta faint">No examples yet — nothing will match this department</span>
-                        <button class="v-btn v-btn--ghost v-btn--sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout " style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Nothing routes here.</b> Without an example or a description the router never picks this department, so it is invisible rather than broken. <a class="v-callout__link">Give it something to match &rarr;</a></div></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="create"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add an example</button></div><div class="v-callout " style="margin-top:var(--s-3)"><span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span><div><b>Nothing routes here.</b> Without an example or a description the router never picks this department, so it is invisible rather than broken. <a class="v-callout__link" data-w data-inert="Opens the linked page in Settings">Give it something to match &rarr;</a></div></div>
                     </div>
                     <div class="v-actions" style="flex:none;align-items:flex-start">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Edit</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Marketing"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="edit">Edit</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Marketing" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
                     </div>
                   </div>
                   </div>
@@ -1142,7 +1142,7 @@
                         <span class="v-field__hint">One phrase per chip — how they are stored is our problem,
                           not yours.</span></div>
                       <div class="v-actions" style="margin-top:var(--s-5)">
-                        <button class="v-btn v-btn--primary">Add the department</button>
+                        <button class="v-btn v-btn--primary" data-w data-do="create">Add the department</button>
                         <span class="t-meta muted">You can test it before anything reaches it.</span></div>
                     </div>
                   </section>
@@ -1178,7 +1178,7 @@
                         their own customers — which is why an unplaced person on the org chart is an access
                         problem, not a diagram problem.</p>
                       <div class="v-actions" style="margin-top:var(--s-4)">
-                        <button class="v-btn v-btn--secondary v-btn--sm">Roles &amp; what they can do <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button></div>
+                        <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Roles &amp; what they can do <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button></div>
                     </div>
                   </section>
                   <section class="v-card">

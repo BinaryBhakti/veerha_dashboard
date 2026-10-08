@@ -603,8 +603,8 @@
                 <p class="v-pagehead__sub">Last 30 days · 22 Aug – 21 Sep 2026, against the 30 before it</p></div>
               <div class="v-actions">
                 <select class="v-select" style="width:auto;min-width:150px"><option>Last 30 days</option></select>
-                <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
-                <button class="v-btn v-btn--icon v-btn--sm" aria-label="More"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="export">Export</button>
+                <button class="v-btn v-btn--icon v-btn--sm" aria-label="More" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button>
               </div>
             </div>
 
@@ -812,10 +812,26 @@
     </div>
   </section>
 
+  <!-- ══════════════════ 56c · SHARED DIALOGS ══════════════════ -->
+  <section class="vs-frame" id="global-dialogs">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">56c</span><span class="vs-frame__name">Shared dialogs</span>
+      <span class="vs-frame__route">dialogs</span><span class="t-meta muted">opened from buttons on this module’s screens</span>
+    </div>
+    <p class="vs-frame__note">
+      The one dialog every <b>New…</b> button opens when its object has no dedicated create flow yet — a list, a segment, a resource, a link. It asks for the name only and sets the rest on the record, so no create button in the product is a dead end.
+    </p>
+    <div class="vs-frame__box"><div class="vs-dialogs">
+        <div class="vs-dialog"><div class="label">create · any New… button</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="create"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New item"><div class="v-modal__title">New <span data-bind="ctx.thing">item</span></div><p class="v-modal__sub">The short version. Everything else is set on the record once it exists.</p><div class="v-field"><label class="v-field__label">Name</label><input class="v-input" placeholder="Give it a name your team will recognise"></div><div class="v-field"><label class="v-field__label">Description <span class="t-meta muted">· optional</span></label><textarea class="v-input" rows="2" style="width:100%" placeholder="What it is for"></textarea></div><div class="v-field"><label class="v-field__label">Owner</label><select class="v-select"><option>Anita</option><option>Rohan</option><option>Tara</option></select></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-w data-do="dismiss">Cancel</button><button class="v-btn v-btn--primary" data-do="create-done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Create</button></div></div></div>
+        </div>
+    </div></div>
+  </section>
+
   <footer class="sh-foot">
     <span>Veerha Screens · Indigo Slate v1.0</span>
     <span>Kora Kaagaz · September 2026</span>
-    <span><a href="02-leads.html" style="color:var(--brand)">Leads →</a></span>
+    <span><a href="02-leads.html" style="color:var(--brand)" data-w data-inert="Opens the linked page in Settings">Leads →</a></span>
   </footer>
 
 </main>

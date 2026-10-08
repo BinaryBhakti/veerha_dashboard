@@ -174,7 +174,7 @@
               <div class="v-pagehead__copy">
                 <h2 class="v-pagehead__title">Catalogues</h2>
                 <p class="v-pagehead__sub">What Veerha can sell · 14 room types across 1 property</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">Add a catalogue</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">Add a catalogue</button></div>
             </div>
 
             <section class="v-card">
@@ -307,9 +307,9 @@
                     <span class="v-field__hint">Veerha reads the public page only — rooms, rates, photos, amenities and policies.</span>
                   </div>
                   <div class="v-actions" style="margin-top:var(--s-4)">
-                    <button class="v-btn v-btn--primary">Read my listing</button>
-                    <button class="v-btn v-btn--ghost">Paste the page instead</button>
-                    <button class="v-btn v-btn--ghost">Start from scratch</button>
+                    <button class="v-btn v-btn--primary" data-w data-do="save">Read my listing</button>
+                    <button class="v-btn v-btn--ghost" data-w data-do="ack">Paste the page instead</button>
+                    <button class="v-btn v-btn--ghost" data-w data-do="ack">Start from scratch</button>
                   </div>
                   <div class="v-callout v-callout--ai" style="margin-top:var(--s-5)">
                     <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><use href="#i-v"/></svg></span>
@@ -319,8 +319,8 @@
                 </div>
               </section>
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;gap:var(--s-2);justify-content:flex-end">
-                <button class="v-btn v-btn--ghost is-disabled">Back</button>
-                <button class="v-btn v-btn--primary">Next: rooms and rates →</button>
+                <button class="v-btn v-btn--ghost is-disabled" data-w data-do="step">Back</button>
+                <button class="v-btn v-btn--primary" data-w data-do="step">Next: rooms and rates →</button>
               </div></div>
             </div>
           </div>
@@ -443,8 +443,8 @@
                 <p class="v-pagehead__sub">2 properties · 1 Veerha can sell from, 1 still a draft</p></div>
               <div class="v-actions">
                 <div class="v-seg"><button class="v-seg__opt is-active">Properties</button><button class="v-seg__opt">Shared resources</button></div>
-                <button class="v-btn v-btn--secondary v-btn--sm">Read again now</button>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>List a property</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="save">Read again now</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-go="property-wizard"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>List a property</button>
               </div>
             </div>
 
@@ -478,19 +478,19 @@
               <button class="v-tab">Reading is stale <span class="v-pill__n">0</span></button>
               <span class="grow"></span>
               <span class="t-meta muted" style="align-self:center"><span class="num">2</span> results</span>
-              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
             </div>
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                 <input class="v-input" placeholder="Search property name or town"></div>
-              <button class="v-filterchip"><span class="v-filterchip__k">Property</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Property</span>
                 <span class="v-filterchip__v">All 2</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Status</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Status</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Last read</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Last read</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
               <select class="v-select" style="width:auto;min-width:150px"><option>Read most recently</option></select>
@@ -523,8 +523,8 @@
                     <td style="text-align:right"><span class="num t-strong">14</span></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Connected</span></td>
                     <td style="text-align:right"><div class="row" style="gap:var(--s-1);justify-content:flex-end">
-                      <button class="v-btn v-btn--ghost v-btn--sm">Open<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Rivergrove Retreat"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div></td>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="openrow">Open<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Rivergrove Retreat" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div></td>
                   </tr>
                   <tr>
                     <td><div class="row" style="gap:var(--s-3)">
@@ -541,8 +541,8 @@
                     <td style="text-align:right"><span class="muted">—</span></td>
                     <td><span class="v-badge v-badge--warn"><span class="v-dot v-dot--warn"></span>Draft</span></td>
                     <td style="text-align:right"><div class="row" style="gap:var(--s-1);justify-content:flex-end">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Finish it</button>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Rivergrove Hillside"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div></td>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="save">Finish it</button>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Rivergrove Hillside" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></div></td>
                   </tr>
                 </tbody>
               </table>
@@ -550,8 +550,8 @@
                 <span>Showing both properties</span>
                 <span class="t-meta muted">Delete is in the ⋯ menu on every row, draft or connected, and asks first</span>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Next</button></span>
               </div>
             </div>
           </div></div>
@@ -673,7 +673,7 @@
                 <p class="v-pagehead__sub">4 resources · what guests share between them, counted here</p></div>
               <div class="v-actions">
                 <div class="v-seg"><button class="v-seg__opt">Properties</button><button class="v-seg__opt is-active">Shared resources</button></div>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New resource</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New resource</button>
               </div>
             </div>
 
@@ -707,19 +707,19 @@
               <button class="v-tab">Closed this week <span class="v-pill__n">1</span></button>
               <span class="grow"></span>
               <span class="t-meta muted" style="align-self:center"><span class="num">4</span> results</span>
-              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
             </div>
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                 <input class="v-input" placeholder="Search resource name"></div>
-              <button class="v-filterchip"><span class="v-filterchip__k">Resource</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Resource</span>
                 <span class="v-filterchip__v">All 4</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Kind</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Kind</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Status</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Status</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
               <select class="v-select" style="width:auto;min-width:150px"><option>Least left today</option></select>
@@ -766,7 +766,7 @@
                       </svg>
                       <div class="t-meta muted">Tightest: Saturday, <span class="num">41</span> left</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="v-identity__name">Riverside Lawn</div>
@@ -797,7 +797,7 @@
                       </svg>
                       <div class="t-meta muted"><span class="num">3</span> of the next <span class="num">7</span> days are taken</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="v-identity__name">Spa Therapy Room</div>
@@ -828,7 +828,7 @@
                       </svg>
                       <div class="t-meta muted">Closed Tuesday · tightest Saturday, <span class="num">1</span> left</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="v-identity__name">Bicycle Hire</div>
@@ -859,15 +859,15 @@
                       </svg>
                       <div class="t-meta muted">Tightest: Saturday, <span class="num">2</span> left</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                 </tbody>
               </table>
               <div class="v-card__foot v-pager">
                 <span>Showing all 4 resources</span>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Next</button></span>
               </div>
             </div>
           </div></div>
@@ -989,7 +989,7 @@
                 <p class="v-pagehead__sub">4 resources · what guests share between them, counted here</p></div>
               <div class="v-actions">
                 <div class="v-seg"><button class="v-seg__opt">Properties</button><button class="v-seg__opt is-active">Shared resources</button></div>
-                <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New resource</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New resource</button>
               </div>
             </div>
 
@@ -1023,19 +1023,19 @@
               <button class="v-tab">Closed this week <span class="v-pill__n">1</span></button>
               <span class="grow"></span>
               <span class="t-meta muted" style="align-self:center"><span class="num">4</span> results</span>
-              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
+              <button class="v-btn v-btn--secondary v-btn--sm" style="align-self:center" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button>
             </div>
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                 <input class="v-input" placeholder="Search resource name"></div>
-              <button class="v-filterchip"><span class="v-filterchip__k">Resource</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Resource</span>
                 <span class="v-filterchip__v">All 4</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Kind</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Kind</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <button class="v-filterchip"><span class="v-filterchip__k">Status</span>
+              <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Status</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
               <select class="v-select" style="width:auto;min-width:150px"><option>Least left today</option></select>
@@ -1082,7 +1082,7 @@
                       </svg>
                       <div class="t-meta muted">Tightest: Saturday, <span class="num">41</span> left</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="v-identity__name">Riverside Lawn</div>
@@ -1113,7 +1113,7 @@
                       </svg>
                       <div class="t-meta muted"><span class="num">3</span> of the next <span class="num">7</span> days are taken</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="v-identity__name">Spa Therapy Room</div>
@@ -1144,7 +1144,7 @@
                       </svg>
                       <div class="t-meta muted">Closed Tuesday · tightest Saturday, <span class="num">1</span> left</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                   <tr>
                     <td><div class="v-identity__name">Bicycle Hire</div>
@@ -1175,15 +1175,15 @@
                       </svg>
                       <div class="t-meta muted">Tightest: Saturday, <span class="num">2</span> left</div></td>
                     <td><span class="v-badge v-badge--ok"><span class="v-dot v-dot--ok"></span>Active</span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
                 </tbody>
               </table>
               <div class="v-card__foot v-pager">
                 <span>Showing all 4 resources</span>
                 <span class="v-pager__n">
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Next</button></span>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Next</button></span>
               </div>
             </div>
           </div></div>
@@ -1243,19 +1243,19 @@
                       <span class="v-btn v-btn--icon v-btn--sm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
                       <input class="v-input" value="11:00 am" style="width:140px">
                       <span class="t-meta muted grow"><span class="num">100</span> places · <span class="num">88</span> taken today</span>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 11:00 am sitting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 11:00 am sitting" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                     <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-btn v-btn--icon v-btn--sm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
                       <input class="v-input" value="12:00 pm" style="width:140px">
                       <span class="t-meta muted grow"><span class="num">100</span> places · <span class="num">0</span> taken today</span>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 12:00 pm sitting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 12:00 pm sitting" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                     <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-btn v-btn--icon v-btn--sm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
                       <input class="v-input" value="1:00 pm" style="width:140px">
                       <span class="t-meta muted grow"><span class="num">100</span> places · <span class="num">0</span> taken today</span>
-                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 1:00 pm sitting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
+                      <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 1:00 pm sitting" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                   </div>
-                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>Add a sitting</button>
+                  <button class="v-btn v-btn--ghost v-btn--sm" style="margin-top:var(--s-3)" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>Add a sitting</button>
                   <div class="v-callout v-callout--warn" style="margin-top:var(--s-4)">
                     <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
                     <div>Removing the 11:00 am sitting would leave <b>88 guests booked into a sitting that no longer exists</b>. You will be shown who they are before anything is saved.</div>
@@ -1282,8 +1282,8 @@
 
               <div class="v-drawer__foot">
                 <span class="t-meta muted grow">Saving re-counts today. Nothing already booked is cancelled.</span>
-                <button class="v-btn v-btn--ghost">Close</button>
-                <button class="v-btn v-btn--primary">Save changes</button>
+                <button class="v-btn v-btn--ghost" data-w data-go="shared-resources">Close</button>
+                <button class="v-btn v-btn--primary" data-w data-do="save">Save changes</button>
               </div>
             </aside>
           </div>
@@ -1399,7 +1399,7 @@
                 <div class="label">Properties</div>
                 <h2 class="v-pagehead__title" style="margin-top:4px">Rivergrove Retreat</h2>
                 <p class="v-pagehead__sub">PROP-01 · Riverbend valley, 42 km from Dehradun · 14 rooms in 5 types</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm">Read again now</button><button class="v-btn v-btn--secondary v-btn--sm">Edit listing</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="save">Read again now</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="property-wizard">Edit listing</button></div>
             </div>
             <div class="v-callout v-callout--info" style="margin-bottom:var(--s-4)"><div><b>Read from Havenlink, 12 minutes ago.</b> Rooms, rates and availability come from your channel manager and are never written back. Every rate below shows where it came from; change it in Havenlink and the next read, in about four minutes, picks it up.</div></div>
             <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Room types</div><p class="v-card__desc">Tonight’s best available rate, per room per night</p></div></div>
@@ -1529,8 +1529,8 @@
                   <h2 class="v-pagehead__title">Pricing</h2>
                   <p class="v-pagehead__sub">Your price list — one controlled source, kept exact. Veerha quotes these figures and no others.</p></div>
                 <div class="v-actions">
-                  <button class="v-btn v-btn--secondary v-btn--sm">Change log</button>
-                  <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>Add an item</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Change log</button>
+                  <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>Add an item</button>
                 </div>
               </div>
 
@@ -1559,7 +1559,7 @@
                     <div><b>One row was held back.</b> "Riverside lawn, half day" has the word
                       <i>on request</i> where its price should be, so it is not priced and Veerha will
                       not quote it. Every other row came through.
-                      <a class="v-callout__link">Show me the row →</a></div>
+                      <a class="v-callout__link" data-w data-inert="Expands the full list in place">Show me the row →</a></div>
                   </div>
 
                   <div class="row" style="gap:var(--s-4);align-items:flex-start;margin-top:var(--s-5)">
@@ -1575,16 +1575,16 @@
                     <div class="v-field grow"><label class="v-field__label">Google API key</label>
                       <div class="row" style="gap:var(--s-2)">
                         <input class="v-input" value="••••••••••••••••••••••••7c41" style="font-family:var(--num)">
-                        <button class="v-btn v-btn--secondary">Replace</button></div>
-                      <span class="v-field__hint">Stored encrypted and never shown again after you save it. <a class="v-callout__link">Where to get one →</a></span></div>
+                        <button class="v-btn v-btn--secondary" data-w data-do="ack">Replace</button></div>
+                      <span class="v-field__hint">Stored encrypted and never shown again after you save it. <a class="v-callout__link" data-w data-inert="Opens the linked page in Settings">Where to get one →</a></span></div>
                     <div class="v-field" style="width:260px"><label class="v-field__label">Re-read the sheet</label>
                       <select class="v-select"><option>Every 15 minutes</option></select>
                       <span class="v-field__hint">A price you change in the sheet reaches Veerha within 15 minutes.</span></div>
                   </div>
 
                   <div class="v-actions" style="margin-top:var(--s-5)">
-                    <button class="v-btn v-btn--primary">Save this source</button>
-                    <button class="v-btn v-btn--secondary">Read it now</button>
+                    <button class="v-btn v-btn--primary" data-w data-do="save">Save this source</button>
+                    <button class="v-btn v-btn--secondary" data-w data-do="save">Read it now</button>
                     <span class="t-meta muted">Save first — reading now uses what is saved, not what is on screen.</span>
                   </div>
                 </div>
@@ -1602,9 +1602,9 @@
                       and removed line and have to confirm before a single price moves.</div>
                   </div>
                   <div class="row" style="gap:var(--s-3);margin-top:var(--s-4);flex-wrap:wrap">
-                    <button class="v-btn v-btn--secondary">Choose a file</button>
+                    <button class="v-btn v-btn--secondary" data-w data-inert="Opens your computer’s file picker">Choose a file</button>
                     <span class="t-small muted grow">No file chosen · <code>.csv</code> or <code>.xlsx</code>, up to 2,000 rows</span>
-                    <button class="v-btn v-btn--ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Download the template</button>
+                    <button class="v-btn v-btn--ghost" data-w data-do="export"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Download the template</button>
                   </div>
 
                   <div class="label" style="margin-top:var(--s-5)">What the file must contain</div>
@@ -1641,7 +1641,7 @@
                   <div class="v-search" style="width:220px">
                     <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
                     <input class="v-input" placeholder="Search the list"></div>
-                  <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button></div>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button></div>
                 <div class="v-tabs" style="margin:0 var(--s-5) var(--s-4)">
                   <button class="v-tab is-active">Everything <span class="v-pill__n">24</span></button>
                   <button class="v-tab">Quotable <span class="v-pill__n">23</span></button>
@@ -1669,8 +1669,8 @@
                       <td class="v-table__num amount">₹7,080</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Premier Riverside Room</td>
@@ -1679,8 +1679,8 @@
                       <td class="v-table__num amount">₹6,400</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Riverside Twin</td>
@@ -1689,8 +1689,8 @@
                       <td class="v-table__num amount">₹5,200</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Garden View Room</td>
@@ -1699,8 +1699,8 @@
                       <td class="v-table__num amount">₹4,900</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Extra bed</td>
@@ -1709,8 +1709,8 @@
                       <td class="v-table__num amount">₹1,200</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Late checkout, to 2 pm</td>
@@ -1719,8 +1719,8 @@
                       <td class="v-table__num amount">₹900</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Airport transfer, Dehradun</td>
@@ -1729,8 +1729,8 @@
                       <td class="v-table__num amount">₹3,450</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Set dinner, vegetarian</td>
@@ -1739,8 +1739,8 @@
                       <td class="v-table__num amount">₹1,150</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Sunrise Yoga</td>
@@ -1749,8 +1749,8 @@
                       <td class="v-table__num amount">₹600</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Spa, 60-minute massage</td>
@@ -1759,8 +1759,8 @@
                       <td class="v-table__num amount">₹2,800</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Riverside lawn, full day</td>
@@ -1769,8 +1769,8 @@
                       <td class="v-table__num amount">₹42,000</td>
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td class="t-strong">Monsoon package, 3 nights<div class="t-meta muted" style="font-weight:400">Paused by Anita on 14 Sep</div></td>
@@ -1780,23 +1780,23 @@
                       <td class="t-small muted">INR</td>
                       <td><span class="v-toggle"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                         <div class="t-meta muted" style="margin-top:4px">Off the season</div></td>
-                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm">Edit</button></td>
-                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button></td>
+                        <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                   </tbody>
                 </table>
                 <div class="v-card__foot v-pager">
                   <span>Showing 1–12 of 24</span>
                   <span class="v-pager__n">
-                    <button class="v-btn v-btn--secondary v-btn--sm is-disabled">Previous</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm">Next</button></span>
+                    <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
                 </div>
               </section>
 
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Saved</span>
                 <span class="t-meta muted grow">A price changes what Veerha quotes the moment it is saved. Every change is kept in the change log with who made it.</span>
-                <button class="v-btn v-btn--ghost">Undo the last change</button>
+                <button class="v-btn v-btn--ghost" data-w data-do="dismiss">Undo the last change</button>
               </div></div>
             </div>
           </div>
@@ -1930,8 +1930,8 @@
                     guess. <b>Eleven leads have asked about price this month.</b> One item and one
                     number is enough to change that.</p>
                   <div class="v-actions" style="justify-content:center;flex-wrap:wrap">
-                    <button class="v-btn v-btn--primary">Add one item by hand</button>
-                    <button class="v-btn v-btn--ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Download the template</button>
+                    <button class="v-btn v-btn--primary" data-w data-do="create">Add one item by hand</button>
+                    <button class="v-btn v-btn--ghost" data-w data-do="export"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg>Download the template</button>
                   </div>
                   <p class="t-meta muted" style="margin-top:var(--s-3)">Or bring the whole list in from a sheet or a file, below.</p>
                 </div>
@@ -1948,10 +1948,10 @@
                       <input class="v-input" value="A:F"></div>
                     <div class="v-field grow"><label class="v-field__label">Google API key</label>
                       <input class="v-input" placeholder="Paste the key">
-                      <span class="v-field__hint">Stored encrypted, never shown again. <a class="v-callout__link">Where to get one →</a></span></div>
+                      <span class="v-field__hint">Stored encrypted, never shown again. <a class="v-callout__link" data-w data-inert="Opens the linked page in Settings">Where to get one →</a></span></div>
                   </div>
                   <div class="v-actions" style="margin-top:var(--s-4)">
-                    <button class="v-btn v-btn--primary">Save and read it</button></div>
+                    <button class="v-btn v-btn--primary" data-w data-do="save">Save and read it</button></div>
                 </div></section>
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                   <div class="spread"><span class="t-card">A file</span><span class="v-badge v-badge--neutral">One-off</span></div>
@@ -1984,7 +1984,7 @@
                       <span class="t-small muted grow">Blank means quotable</span></div>
                   </div>
                   <div class="row" style="gap:var(--s-3);margin-top:var(--s-4);flex-wrap:wrap">
-                    <button class="v-btn v-btn--secondary">Choose a file</button>
+                    <button class="v-btn v-btn--secondary" data-w data-inert="Opens your computer’s file picker">Choose a file</button>
                     <span class="t-small muted">No file chosen</span></div>
                 </div></section>
               </div>
@@ -2104,7 +2104,7 @@
                 <p class="v-pagehead__sub">When a guest uses a word that is not one of your declared values, Veerha proposes the closest match. Approve to teach the workspace; reject to keep today’s behaviour.</p></div>
             </div>
             <div class="v-pilltabs" style="margin-bottom:var(--s-4)"><button class="v-pill is-active">Pending 3</button><button class="v-pill">Approved 12</button><button class="v-pill">Rejected 2</button></div>
-            <div class="v-card"><table class="v-table"><thead><tr><th>The guest said</th><th></th><th>Veerha proposes</th><th class="v-table__num">Seen</th><th></th></tr></thead><tbody><tr><td><b class="t-small">“cottage”</b><div class="t-meta muted">“Do you have a cottage for two?” · 3 days ago</div></td><td class="t-meta muted">→</td><td class="t-small">Garden Villa<div class="t-meta muted">Room type</div></td><td class="v-table__num">6</td><td style="text-align:right;white-space:nowrap"><button class="v-btn v-btn--secondary v-btn--sm">Reject</button> <button class="v-btn v-btn--primary v-btn--sm">Approve</button></td></tr><tr><td><b class="t-small">“river view”</b><div class="t-meta muted">“Is the river view free on the 15th?” · today</div></td><td class="t-meta muted">→</td><td class="t-small">Premier Riverside Room<div class="t-meta muted">Room type</div></td><td class="v-table__num">11</td><td style="text-align:right;white-space:nowrap"><button class="v-btn v-btn--secondary v-btn--sm">Reject</button> <button class="v-btn v-btn--primary v-btn--sm">Approve</button></td></tr><tr><td><b class="t-small">“honeymoon”</b><div class="t-meta muted">“It’s our honeymoon” · last week</div></td><td class="t-meta muted">→</td><td class="t-small">Anniversary<div class="t-meta muted">Occasion</div></td><td class="v-table__num">4</td><td style="text-align:right;white-space:nowrap"><button class="v-btn v-btn--secondary v-btn--sm">Reject</button> <button class="v-btn v-btn--primary v-btn--sm">Approve</button></td></tr></tbody></table></div>
+            <div class="v-card"><table class="v-table"><thead><tr><th>The guest said</th><th></th><th>Veerha proposes</th><th class="v-table__num">Seen</th><th></th></tr></thead><tbody><tr><td><b class="t-small">“cottage”</b><div class="t-meta muted">“Do you have a cottage for two?” · 3 days ago</div></td><td class="t-meta muted">→</td><td class="t-small">Garden Villa<div class="t-meta muted">Room type</div></td><td class="v-table__num">6</td><td style="text-align:right;white-space:nowrap"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="reject-row">Reject</button> <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="approve-row">Approve</button></td></tr><tr><td><b class="t-small">“river view”</b><div class="t-meta muted">“Is the river view free on the 15th?” · today</div></td><td class="t-meta muted">→</td><td class="t-small">Premier Riverside Room<div class="t-meta muted">Room type</div></td><td class="v-table__num">11</td><td style="text-align:right;white-space:nowrap"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="reject-row">Reject</button> <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="approve-row">Approve</button></td></tr><tr><td><b class="t-small">“honeymoon”</b><div class="t-meta muted">“It’s our honeymoon” · last week</div></td><td class="t-meta muted">→</td><td class="t-small">Anniversary<div class="t-meta muted">Occasion</div></td><td class="v-table__num">4</td><td style="text-align:right;white-space:nowrap"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="reject-row">Reject</button> <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="approve-row">Approve</button></td></tr></tbody></table></div>
             <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>Until you decide, nothing changes.</b> Veerha keeps asking the guest which room they mean. Approving “cottage” means the next guest who says it is offered the Garden Villa straight away — and the 6 open threads that used it are not re-read.</div></div>
             </div>
           </div>
@@ -2220,7 +2220,7 @@
                 <div class="label">Products &amp; Services</div>
                 <h2 class="v-pagehead__title" style="margin-top:4px">Offers &amp; coupons</h2>
                 <p class="v-pagehead__sub">Codes a customer can use, and where — 2 running</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">New offer</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">New offer</button></div>
             </div>
             <div class="v-card"><table class="v-table"><thead><tr><th>Code</th><th>What it gives</th><th>Where it works</th><th class="v-table__num">Used</th><th>Runs</th><th></th></tr></thead><tbody><tr><td><b class="num t-small">DIWALI10</b></td><td class="t-small">10% off orders over ₹1,000</td><td class="t-meta muted">Storefront · WhatsApp · Counter</td><td class="v-table__num">48</td><td class="t-meta muted">Ends 5 Nov</td><td style="text-align:right"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td></tr><tr><td><b class="num t-small">FIRSTORDER</b></td><td class="t-small">₹150 off a first order</td><td class="t-meta muted">Storefront · WhatsApp</td><td class="v-table__num">112</td><td class="t-meta muted">No end date</td><td style="text-align:right"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td></tr><tr><td><b class="num t-small">HONEY2</b></td><td class="t-small">Second forest honey at half price</td><td class="t-meta muted">Counter</td><td class="v-table__num">3</td><td class="t-meta muted">Ended 30 Sep</td><td style="text-align:right"><span class="v-toggle" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></td></tr></tbody></table></div>
             <div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div><b>Veerha may mention a running offer, never invent one.</b> On WhatsApp it can tell a customer about DIWALI10 when their basket is close to ₹1,000; it cannot make up a discount, and a code typed at the counter is checked here before it applies.</div></div>

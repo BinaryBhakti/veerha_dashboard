@@ -136,7 +136,7 @@
                 <h1 class="v-pagehead__title">Recommendations</h1>
                 <p class="v-pagehead__sub">Things Veerha noticed that would earn money if you fixed them. Each one says what it saw.</p>
               </div><div class="v-actions">
-                <button class="v-btn v-btn--secondary">History</button>
+                <button class="v-btn v-btn--secondary" data-w data-do="ack">History</button>
               </div></div>
               <div class="v-stats" style="margin-top:var(--s-5)">
                 <div class="v-stat"><div class="v-stat__cap">Waiting on you</div><div class="v-stat__n num">4</div></div>
@@ -150,9 +150,9 @@
                 <button class="v-pill">Dismissed <span class="v-pill__n">2</span></button>
               </div>
               <div class="vs-filterbar" style="margin-top:var(--s-4);margin-bottom:0">
-                <button class="v-filterchip"><span class="v-filterchip__k">Kind</span><span class="v-filterchip__v">Any</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-                <button class="v-filterchip is-set"><span class="v-filterchip__k">Found</span><span class="v-filterchip__v">Last 30 days</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-                <button class="v-filterchip"><span class="v-filterchip__k">Enquiries touched</span><span class="v-filterchip__v">Any</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Kind</span><span class="v-filterchip__v">Any</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                <button class="v-filterchip is-set" data-w data-do="filterchip"><span class="v-filterchip__k">Found</span><span class="v-filterchip__v">Last 30 days</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Enquiries touched</span><span class="v-filterchip__v">Any</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                 <span class="grow"></span>
                 <span class="t-meta muted"><span class="num">4</span> results</span>
               </div>
@@ -168,8 +168,8 @@
                     <div class="t-meta faint" style="margin-top:6px">Evidence · <span class="num">14 enquiries</span></div>
                   </div>
                   <div class="v-actions">
-                    <button class="v-btn v-btn--secondary v-btn--sm">Not now</button>
-                    <button class="v-btn v-btn--primary v-btn--sm">Apply</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Not now</button>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Apply</button>
                   </div>
                 </div>
                 <div class="v-record v-record--warn">
@@ -183,8 +183,8 @@
                     <div class="t-meta faint" style="margin-top:6px">Evidence · <span class="num">6 enquiries</span></div>
                   </div>
                   <div class="v-actions">
-                    <button class="v-btn v-btn--secondary v-btn--sm">Not now</button>
-                    <button class="v-btn v-btn--primary v-btn--sm">Apply</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Not now</button>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Apply</button>
                   </div>
                 </div>
                 <div class="v-record v-record--danger">
@@ -198,8 +198,8 @@
                     <div class="t-meta faint" style="margin-top:6px">Evidence · <span class="num">9 handovers</span></div>
                   </div>
                   <div class="v-actions">
-                    <button class="v-btn v-btn--secondary v-btn--sm">Not now</button>
-                    <button class="v-btn v-btn--primary v-btn--sm">Apply</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Not now</button>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Apply</button>
                   </div>
                 </div>
                 <div class="v-record v-record--ok">
@@ -213,8 +213,8 @@
                     <div class="t-meta faint" style="margin-top:6px">Evidence · <span class="num">0 midweek sales</span></div>
                   </div>
                   <div class="v-actions">
-                    <button class="v-btn v-btn--secondary v-btn--sm">Not now</button>
-                    <button class="v-btn v-btn--primary v-btn--sm">Apply</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="dismiss">Not now</button>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Apply</button>
                   </div>
                 </div>
               </div>
@@ -299,7 +299,7 @@
                   <h1 class="v-pagehead__title">Campaigns</h1>
                   <p class="v-pagehead__sub">One offer in — an email, a landing page and a WhatsApp send. Every reply comes back as a lead.</p>
                 </div><div class="v-actions">
-                  <button class="v-btn v-btn--primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> New campaign</button>
+                  <button class="v-btn v-btn--primary" data-w data-do="create"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> New campaign</button>
                 </div></div>
               </div>
               <div class="vs-body" style="gap:0">
@@ -382,8 +382,8 @@ Late checkout, subject to availability</textarea>
                     <div class="v-card__foot">
                       <span class="t-meta muted">Saved just now</span>
                       <div class="grow"></div>
-                      <button class="v-btn v-btn--secondary">Save and close</button>
-                      <button class="v-btn v-btn--primary">Next — write the copy</button>
+                      <button class="v-btn v-btn--secondary" data-w data-do="save">Save and close</button>
+                      <button class="v-btn v-btn--primary" data-w data-do="step">Next — write the copy</button>
                     </div>
                   </div>
                 </div>
@@ -499,8 +499,8 @@ Late checkout, subject to availability</textarea>
                 <h1 class="v-pagehead__title">Lead nurture</h1>
                 <p class="v-pagehead__sub">Sent automatically after a lead arrives, and stopped the moment they reply or the deal closes.</p>
               </div><div class="v-actions">
-                <button class="v-btn v-btn--secondary">New sequence</button>
-                <button class="v-btn v-btn--secondary">Run due steps now</button>
+                <button class="v-btn v-btn--secondary" data-w data-do="create">New sequence</button>
+                <button class="v-btn v-btn--secondary" data-w data-do="save">Run due steps now</button>
               </div></div>
 
               <div class="v-error" style="margin-top:var(--s-5)">
@@ -512,8 +512,8 @@ Late checkout, subject to availability</textarea>
                     Every step after day 1 falls outside that window, so it needs an approved template
                     and does not have one. <b>36 sends have been skipped since 1 September.</b></p>
                   <div class="v-actions" style="margin-top:var(--s-3)">
-                    <button class="v-btn v-btn--primary v-btn--sm">Create templates from these steps</button>
-                    <button class="v-btn v-btn--secondary v-btn--sm">What is the 24-hour rule?</button>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="create">Create templates from these steps</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="WhatsApp lets a business send free text only within 24 hours of the customer’s last message; after that, only an approved template">What is the 24-hour rule?</button>
                   </div>
                 </div></div>
 
@@ -672,8 +672,8 @@ Late checkout, subject to availability</textarea>
                   <h1 class="v-pagehead__title">Landing page builder</h1>
                   <p class="v-pagehead__sub">Build the page block by block, share the link, and every submission becomes a lead.</p>
                 </div><div class="v-actions">
-                  <button class="v-btn v-btn--secondary">Preview</button>
-                  <button class="v-btn v-btn--primary">Publish</button>
+                  <button class="v-btn v-btn--secondary" data-w data-inert="Shows it as the customer will see it">Preview</button>
+                  <button class="v-btn v-btn--primary" data-w data-do="save">Publish</button>
                 </div></div>
                 <div class="vs-filterbar" style="margin-top:var(--s-4);margin-bottom:0">
                   <div class="v-field" style="margin:0;min-width:200px"><label class="v-field__label">Page</label>
@@ -738,7 +738,7 @@ Late checkout, subject to availability</textarea>
                         <div class="v-field"><label class="v-field__label">Full name</label><input class="v-input" placeholder=""></div>
                         <div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label">Mobile number</label><input class="v-input" placeholder=""></div>
                         <div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label">When are you coming?</label><input class="v-input" placeholder=""></div>
-                        <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-4)">Hold my room</button>
+                        <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-4)" data-w data-do="ack">Hold my room</button>
                       </div>
                     </div>
                   </div>
@@ -766,7 +766,7 @@ Late checkout, subject to availability</textarea>
                       <div class="spread"><span class="t-small">Mobile number</span><span class="v-badge v-badge--neutral">Required</span></div>
                       <div class="spread"><span class="t-small">When are you coming?</span><span class="v-badge v-badge--neutral">Optional</span></div>
                     </div>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-4)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add a field</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-4)" data-w data-do="create"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg> Add a field</button>
                   </div>
                 </div>
               </div>
@@ -847,8 +847,8 @@ Late checkout, subject to availability</textarea>
                   <h1 class="v-pagehead__title">Creative studio</h1>
                   <p class="v-pagehead__sub">A social-ready image in a minute. Pick a size, edit the words, export a PNG.</p>
                 </div><div class="v-actions">
-                  <button class="v-btn v-btn--secondary">Download PNG</button>
-                  <button class="v-btn v-btn--primary">Save to library</button>
+                  <button class="v-btn v-btn--secondary" data-w data-do="export">Download PNG</button>
+                  <button class="v-btn v-btn--primary" data-w data-do="save">Save to library</button>
                 </div></div>
               </div>
               <div class="vs-body vs-body--panes" style="gap:0">
@@ -885,7 +885,7 @@ Late checkout, subject to availability</textarea>
                     <div class="v-field" style="margin-top:var(--s-3)">
                       <textarea class="v-textarea" rows="2" placeholder="Monsoon light on a river at dusk, from a balcony…"></textarea>
                       <span class="v-field__hint">Uses your brand colours. About 15 seconds.</span></div>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-2)">Generate</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-2)" data-w data-do="generate">Generate</button>
                     <hr class="rule" style="margin:var(--s-4) 0">
                     <div class="v-field"><label class="v-field__label">Headline</label>
                       <input class="v-input" value="Two nights on the river"></div>
@@ -991,11 +991,11 @@ Late checkout, subject to availability</textarea>
               <div class="v-pagehead__copy">
                 <h2 class="v-pagehead__title">Photo Studio</h2>
                 <p class="v-pagehead__sub">Product shots made from your own real photos — the product stays exactly as it is.</p></div>
-              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm">Upload a photo</button></div>
+              <div class="v-actions"><button class="v-btn v-btn--primary v-btn--sm" data-w data-inert="Opens your computer’s file picker">Upload a photo</button></div>
             </div>
             <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Forest honey, 500 g</div><p class="v-card__desc">From one phone photo · 3 versions</p></div><span class="v-badge v-badge--ai">Made by Veerha</span></div>
               <div class="v-card__body"><div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3)"><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Your photo</div><div class="t-meta muted">Phone shot, kitchen counter</div></div><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Clean white</div><div class="t-meta muted">Ready for the storefront</div></div><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Breakfast table</div><div class="t-meta muted">Lifestyle, warm light</div></div><div class="v-card" style="padding:var(--s-3)"><div style="aspect-ratio:1/1;border-radius:var(--r-tile);background:var(--surface-subtle);display:grid;place-items:center;color:var(--text-faint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-image"/></svg></div><div class="t-meta" style="margin-top:var(--s-2)">Gift box</div><div class="t-meta muted">For the Diwali offer</div></div></div>
-              <div class="row" style="gap:var(--s-2);margin-top:var(--s-4)"><button class="v-btn v-btn--primary v-btn--sm">Use on the storefront</button><button class="v-btn v-btn--secondary v-btn--sm">Make another</button><span class="grow"></span><span class="t-meta muted">Costs 4 credits a version · labels and jar shape are never redrawn</span></div></div></section>
+              <div class="row" style="gap:var(--s-2);margin-top:var(--s-4)"><button class="v-btn v-btn--primary v-btn--sm" data-w data-do="ack">Use on the storefront</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Make another</button><span class="grow"></span><span class="t-meta muted">Costs 4 credits a version · labels and jar shape are never redrawn</span></div></div></section>
             <div class="v-callout v-callout--warn" style="margin-top:var(--s-4)"><div><b>Real product, new setting.</b> Photo Studio changes the background and the light, not the product. If a version alters the label, the jar or the colour of the honey, it is discarded before you see it — a customer should receive what the picture shows.</div></div>
             </div>
               <div class="vs-body vs-body--panes" style="gap:0">
@@ -1032,7 +1032,7 @@ Late checkout, subject to availability</textarea>
                     <div class="v-field" style="margin-top:var(--s-3)">
                       <textarea class="v-textarea" rows="2" placeholder="Monsoon light on a river at dusk, from a balcony…"></textarea>
                       <span class="v-field__hint">Uses your brand colours. About 15 seconds.</span></div>
-                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-2)">Generate</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" style="width:100%;margin-top:var(--s-2)" data-w data-do="generate">Generate</button>
                     <hr class="rule" style="margin:var(--s-4) 0">
                     <div class="v-field"><label class="v-field__label">Headline</label>
                       <input class="v-input" value="Two nights on the river"></div>
@@ -1156,7 +1156,7 @@ Late checkout, subject to availability</textarea>
                 <span class="v-callout__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
                 <div><b>Four of five sources have no ad spend entered, so ROAS is blank for them.</b>
                   Revenue is attributed either way — spend is the only missing half.
-                  <a class="v-callout__link">Enter spend</a></div>
+                  <a class="v-callout__link" data-w data-do="ack">Enter spend</a></div>
               </div>
 
               <div class="v-card" style="margin-top:var(--s-5)">
@@ -1207,7 +1207,7 @@ Late checkout, subject to availability</textarea>
                       <td class="v-table__num amount">₹18,000</td>
                       <td class="v-table__num amount">₹346</td>
                       <td class="v-table__num num">21.9×</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Website form"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Website form" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">WhatsApp</div><div class="t-meta" style="color:var(--wn-tx);margin-top:2px">Merged from <span class="num">Whatsapp_call</span> (30) and <span class="num">Whatsapp</span> (2)</div></td>
@@ -1218,7 +1218,7 @@ Late checkout, subject to availability</textarea>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num num">—</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for WhatsApp" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Referral</div></td>
@@ -1229,7 +1229,7 @@ Late checkout, subject to availability</textarea>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num num">—</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Referral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Referral" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Phone</div></td>
@@ -1240,7 +1240,7 @@ Late checkout, subject to availability</textarea>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num num">—</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Phone" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                     <tr>
                       <td><div class="t-small" style="font-weight:600">Walk-in</div></td>
@@ -1251,7 +1251,7 @@ Late checkout, subject to availability</textarea>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num">—</td>
                       <td class="v-table__num num">—</td>
-                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Walk-in"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
+                      <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Walk-in" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                     </tr>
                   </tbody>
                 </table>
