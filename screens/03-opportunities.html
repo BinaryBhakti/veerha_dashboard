@@ -452,8 +452,8 @@
                 <h2 class="v-pagehead__title">A proposal for Arjun</h2>
                 <p class="v-pagehead__sub">Pick the rooms and extras, and send him one page he can confirm on</p></div>
               <div class="v-actions">
-                <button class="v-btn v-btn--secondary v-btn--sm">Preview as guest</button>
-                <button class="v-btn v-btn--primary v-btn--sm">Create link</button>
+                <button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Opens the Stay page as the guest will see it (guest pages, frame 70)">Preview as guest</button>
+                <button class="v-btn v-btn--primary v-btn--sm" data-w data-open="stay-link">Create link</button>
               </div>
             </div>
 
@@ -585,8 +585,8 @@
                       <input class="v-input" value="24/09/2026">
                       <span class="v-field__hint">Rooms are released automatically and the guest is told.</span></div>
 
-                    <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-4)">Create link and send for approval</button>
-                    <button class="v-btn v-btn--ghost" style="width:100%;margin-top:6px">Save as draft</button>
+                    <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-4)" data-w data-open="stay-link">Create link and send for approval</button>
+                    <button class="v-btn v-btn--ghost" style="width:100%;margin-top:6px" data-w data-do="save-draft">Save as draft</button>
                   </div>
                 </section>
               </div>
@@ -981,6 +981,22 @@
         </div>
         <div class="vs-dialog"><div class="label">confirm-delete-deal · Delete deal</div>
           <div class="vs-overlay vs-overlay--modal" data-layer="confirm-delete-deal"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Delete this deal?"><div class="v-modal__title">Delete this deal?</div><p class="v-modal__body">The deal and its activity are removed; the customer and their conversations stay. This cannot be undone — archive instead to keep the history.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--danger" data-do="delete-deal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg>Delete deal</button></div></div></div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 5b · STAY WORKSPACE — SEND THE STAY PAGE ══════════════════ -->
+  <section class="vs-frame" id="stay-dialogs">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">5b</span><span class="vs-frame__name">Stay workspace — send the stay page</span>
+      <span class="vs-frame__route">dialogs</span><span class="t-meta muted">opened from buttons on this module’s screens</span>
+    </div>
+    <p class="vs-frame__note">
+      The step after picking rooms that the live capture never reached: the link, what goes with it, and — because this one is over the auto-send limit — that it waits for approval first.
+    </p>
+    <div class="vs-frame__box"><div class="vs-dialogs">
+        <div class="vs-dialog"><div class="label">stay-link · Create link</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="stay-link"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Send Arjun his stay page"><div class="v-modal__title">Send Arjun his stay page</div><p class="v-modal__sub">One page he can open, confirm and pay on. You will see when he opens it.</p><div class="v-callout v-callout--info"><div><b>rivergrove.example.com/s/k7Qm2</b> · Premier Riverside, 15–17 Oct · ₹43,700 · held until tomorrow 6 PM</div></div><div class="v-field"><label class="v-field__label">Send by</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">WhatsApp</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Email</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Both</span></label></div></div><div class="v-field"><label class="v-field__label">Message</label><textarea class="v-input" rows="3" style="width:100%">Hello Arjun — here is your stay for 15–17 October: the Premier Riverside Room, breakfast included. You can confirm and pay on the page. — Anita, Rivergrove</textarea></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Ask for approval first</div><div class="t-meta muted">₹43,700 is above the ₹40,000 auto-send limit, so it goes to the Review Queue before Arjun sees it.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="stay-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Create link and send</button></div></div></div>
         </div>
     </div></div>
   </section>

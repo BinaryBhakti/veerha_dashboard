@@ -174,15 +174,19 @@
                       </div>
                       <div class="t-meta muted" style="margin-top:2px">Last message 2 minutes ago · window open for 23 h</div>
                     </div>
-                    <button class="v-btn v-btn--secondary v-btn--sm">View lead</button>
-                    <button class="v-btn v-btn--primary v-btn--sm">Take over</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-go="leads">View lead</button>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-do="takeover" data-unless="arjun.taken">Take over</button>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-do="handback" data-when="arjun.taken" hidden>Hand back to Veerha</button>
                   </div>
                 </div>
 
-                <div class="v-callout v-callout--ai" style="margin:var(--s-4) var(--s-4) 0">
+                <div class="v-callout v-callout--ai" data-unless="arjun.taken" style="margin:var(--s-4) var(--s-4) 0">
                   <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><use href="#i-v"/></svg></span>
                   <div><b>Veerha is handling this conversation.</b> It will hand over the moment he
                     asks for a person, or asks for more than 11% off.</div>
+                </div>
+                <div class="v-callout v-callout--warn" data-when="arjun.taken" hidden style="margin:var(--s-4) var(--s-4) 0">
+                  <div><b>You are handling this conversation.</b> Veerha’s automation is paused until you hand it back.</div>
                 </div>
 
                 <div style="flex:1;overflow:auto;padding:var(--s-4);display:flex;flex-direction:column;gap:var(--s-4)">
@@ -948,7 +952,7 @@
               <div class="v-tabs" role="tablist" aria-label="Mail views" style="border-bottom:0;flex-wrap:nowrap;overflow-x:auto"><button class="v-tab is-active" data-view-tab="needs-reply" data-view-name="Needs reply" role="tab" aria-selected="true">Needs reply <span class="v-pill__n" data-bind="needsReply">4</span></button><button class="v-tab" data-view-tab="high-intent" data-view-name="High intent" role="tab" aria-selected="false">High intent <span class="v-pill__n" data-bind="highIntent">2</span></button><button class="v-tab" data-view-tab="awaiting" data-view-name="Awaiting customer" role="tab" aria-selected="false">Awaiting customer <span class="v-pill__n" data-bind="awaiting">3</span></button><button class="v-tab" data-view-tab="new-lead" data-view-name="New leads" role="tab" aria-selected="false">New leads <span class="v-pill__n" data-bind="mailNew">1</span></button><button class="v-tab" data-view-tab="active-customer" data-view-name="Active customers" role="tab" aria-selected="false">Active customers <span class="v-pill__n">1</span></button><button class="v-tab" data-view-tab="today" data-view-name="Today" role="tab" aria-selected="false">Today <span class="v-pill__n">3</span></button></div>
               <span class="grow"></span>
               <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg> Folders <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><button class="v-menu__item" data-view-tab="all" data-view-name="Inbox — everything"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Inbox — everything</button><button class="v-menu__item" data-view-tab="awaiting" data-view-name="Sent, awaiting a reply"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Sent, awaiting a reply</button><button class="v-menu__item" data-view-tab="internal" data-view-name="Internal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg>Internal</button><div class="v-menu__sep"></div><div class="v-menu__label">Provider folders</div><button class="v-menu__item" data-inert="Shows the folders exactly as they are in Gmail"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>All provider mail</button><button class="v-menu__item" data-inert="Archived threads; nothing is deleted"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive</button><button class="v-menu__item" data-inert="Threads marked done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Done</button></div></span>
-              <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false">stay@rivergrove.example.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><div class="v-menu__label">Mailboxes</div><button class="v-menu__item is-active" data-do="pick" data-what="Mailbox">stay@rivergrove.example.com</button><button class="v-menu__item" data-do="pick" data-what="Mailbox">sales@rivergrove.example.com</button><div class="v-menu__sep"></div><button class="v-menu__item" data-inert="Opens the mailbox connection on Connections"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Connect another mailbox</button></div></span>
+              <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false">stay@rivergrove.example.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><div class="v-menu__label">Mailboxes</div><button class="v-menu__item is-active"hat="Mailbox">stay@rivergrove.example.com</button><button class="v-menu__item"hat="Mailbox">sales@rivergrove.example.com</button><div class="v-menu__sep"></div><button class="v-menu__item" data-inert="Opens the mailbox connection on Connections"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Connect another mailbox</button></div></span>
               <button class="v-btn v-btn--primary v-btn--sm" data-open="compose"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>New message</button>
             </div>
             <div class="vs-panes" style="grid-template-columns:320px minmax(0,1fr) 280px;flex:1;min-height:0">
@@ -1211,6 +1215,22 @@
               </div>
             </div>
           </div>
+        </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 55e · CONVERSATIONS — DIALOGS ══════════════════ -->
+  <section class="vs-frame" id="conv-dialogs">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">55e</span><span class="vs-frame__name">Conversations — dialogs</span>
+      <span class="vs-frame__route">dialogs</span><span class="t-meta muted">opened from buttons on this module’s screens</span>
+    </div>
+    <p class="vs-frame__note">
+      New message from Customer Mail, sent from the connected mailbox so the reply lands back in the thread.
+    </p>
+    <div class="vs-frame__box"><div class="vs-dialogs">
+        <div class="vs-dialog"><div class="label">compose · New message</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="compose"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New message"><div class="v-modal__title">New message</div><p class="v-modal__sub">Sent from your own mailbox; the reply comes back to Customer Mail.</p><div class="v-field"><label class="v-field__label">To</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Subject</label><input class="v-input" value="Your weekend in December"></div><div class="v-field"><label class="v-field__label">Message</label><textarea class="v-input" rows="5" style="width:100%">Hello Ishaan — the Premier Riverside Room is free on 11 and 12 December, at ₹21,850 a night with breakfast. Shall I hold it for you until tomorrow evening? — Anita, Rivergrove</textarea></div><div class="row" style="gap:var(--s-2)"><button class="v-btn v-btn--ghost v-btn--sm" data-do="redraft">Ask Veerha to draft</button><span class="t-meta muted">From stay@rivergrove.example.com</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="compose-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send</button></div></div></div>
         </div>
     </div></div>
   </section>
