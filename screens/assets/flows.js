@@ -32,7 +32,7 @@
     opps: 60, waiting: 20, review: 20, tasks: 10,
     needsReply: 4, highIntent: 2, awaiting: 3, mailNew: 1,
     chatNeedsReply: 2, chatHighIntent: 2,
-    quotesAwaiting: 0,
+    quotesAwaiting: 0, reviewOpen: 6,
     'arjun.converted': false, 'arjun.won': false
   };
   var STATE = JSON.parse(JSON.stringify(SEED));
@@ -73,7 +73,8 @@
     el.appendChild(wrap);
     if (undo) {
       var u = document.createElement('button');
-      u.className = 'v-btn v-btn--ghost v-btn--sm'; u.textContent = 'Undo'; u.style.marginLeft = 'auto';
+      u.className = 'v-btn v-btn--ghost v-btn--sm'; u.textContent = 'Undo';
+      u.style.marginLeft = 'auto'; u.style.color = 'inherit'; u.style.textDecoration = 'underline'; u.style.fontWeight = '600';
       u.setAttribute('data-vf-undo', '');
       u.addEventListener('click', function (e) {
         e.stopPropagation();                       // not a prototype action to announce

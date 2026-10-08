@@ -117,4 +117,38 @@
   VF.action('archive-lead', removeLead('archived'));
   VF.action('delete-lead',  removeLead('deleted'));
 
+  /* --- J5 Review Queue and J7 Tasks (07-queues) ----------------------------- */
+  function card(id) { return id ? document.querySelector('.wt-screen [data-card="' + id + '"]') || document.querySelector('[data-card="' + id + '"]') : null; }
+  function settle(keys, title, body) {
+    return function (el) {
+      var id = el.getAttribute('data-ctx-card') || S['ctx.card'];
+      var c = card(id), before = VF.snapshot();
+      if (c) { c.hidden = true; c.setAttribute('data-gone', ''); }
+      keys.forEach(function (k) { VF.add(k, -1); });
+      var what = el.getAttribute('data-ctx-what') || el.getAttribute('data-ctx-task') || S['ctx.what'] || S['ctx.task'] || '';
+      return { closeAll: true, toast: title.replace('{what}', what), body: body,
+               undo: function () { if (c) { c.hidden = false; c.removeAttribute('data-gone'); } VF.restore(before); } };
+    };
+  }
+  VF.action('approve',        settle(['waiting', 'reviewOpen'], 'Approved: {what}', 'Sent exactly as shown, and logged in Deliveries and on the lead.'));
+  VF.action('approve-edited', settle(['waiting', 'reviewOpen'], 'Sent with your edit: {what}', 'Your change is a suggestion in Learning.'));
+  VF.action('counter',        settle(['waiting', 'reviewOpen'], 'Counter-offer sent', 'Veerha told him ₹26,400 is the best weekday rate.'));
+  VF.action('refuse',         settle(['waiting', 'reviewOpen'], 'Refused: {what}', 'Nothing was sent. The thread is back with you.'));
+  VF.action('task-done',      settle(['tasks'], 'Done: {what}', 'It has left your list.'));
+  VF.action('task-reschedule', settle([], 'Rescheduled: {what}', 'Moved to tomorrow at 11:00. The customer has been told.'));
+  VF.action('task-new', function () {
+    var before = VF.snapshot(); VF.add('tasks', 1);
+    return { closeAll: true, toast: 'Task added', body: 'Send Priya the group rate sheet · today 6:00 PM', undo: function () { VF.restore(before); } };
+  });
+  VF.action('approve-safe', function (el) {
+    var scr = el.closest('.wt-screen, .vs-frame') || document, before = VF.snapshot(), done = [];
+    Array.prototype.forEach.call(scr.querySelectorAll('[data-card] [data-do="approve"]'), function (b) {
+      var c = b.closest('[data-card]');
+      if (c && !c.hidden && !/v-record--(danger|warn)/.test(c.className)) { c.hidden = true; c.setAttribute('data-gone', ''); done.push(c); VF.add('waiting', -1); VF.add('reviewOpen', -1); }
+    });
+    return { toast: done.length ? 'Approved ' + done.length + ' safe item' + (done.length > 1 ? 's' : '') : 'Nothing safe to approve',
+             body: done.length ? 'Items above a limit still wait for you.' : 'Every open item is above a limit or policy.',
+             undo: function () { done.forEach(function (c) { c.hidden = false; c.removeAttribute('data-gone'); }); VF.restore(before); } };
+  });
+
 })();
