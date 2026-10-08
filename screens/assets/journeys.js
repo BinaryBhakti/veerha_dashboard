@@ -90,4 +90,31 @@
     return { toast: 'Shorter draft', body: 'Rewritten in the same voice. Nothing has been sent.', undo: function () { box.value = old; } };
   });
 
+  /* --- Lead action dialogs (02-leads #2d) ----------------------------------- */
+  function who() { return S['ctx.name'] || 'this lead'; }
+  function simple(title, body, extra) {
+    return function (el) {
+      var before = VF.snapshot();
+      if (extra) extra();
+      return { closeAll: true, toast: title.replace('{who}', who()), body: body,
+               undo: function () { VF.restore(before); } };
+    };
+  }
+  VF.action('logcall',  simple('Call with {who} logged', 'Added to the activity. Next step booked for tomorrow at 11:00.'));
+  VF.action('followup', simple('Follow-up booked with {who}', 'It is in Tasks and on the Calendar.', function () { VF.add('tasks', 1); }));
+  VF.action('meeting',  simple('Meeting booked with {who}', 'Invite sent on WhatsApp. It is on the Calendar.'));
+  VF.action('note',     simple('Note added to {who}', 'Pinned to the top of the lead.'));
+  VF.action('assign',   simple('{who} assigned', 'The new owner has been told.'));
+  VF.action('sequence', simple('{who} is on Lead nurture', 'First step tomorrow at 10:00. It stops when they reply.'));
+  function removeLead(verb) {
+    return function () {
+      var before = VF.snapshot(), id = S['ctx.lead'], unhide = id ? hideRows(id) : function () {};
+      VF.add('leads', -1);
+      return { closeAll: true, toast: who() + ' ' + verb, body: verb === 'archived' ? 'Restore it from Leads › Archived.' : 'Their history has been removed.',
+               undo: function () { unhide(); VF.restore(before); } };
+    };
+  }
+  VF.action('archive-lead', removeLead('archived'));
+  VF.action('delete-lead',  removeLead('deleted'));
+
 })();

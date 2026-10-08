@@ -21,7 +21,7 @@ can be wired in its own markup when that is clearer.
 # Frames that exist only to show a layer. Their overlay (marked data-layer) is
 # lifted into the walkthrough's layer stack and the frame is not a screen.
 LAYER_ONLY = {
-    'lead-drawer', 'lead-convert',
+    'lead-drawer', 'lead-convert', 'lead-dialogs',
 }
 
 # Frames that show a state for the design sheet only (the walkthrough reaches the
