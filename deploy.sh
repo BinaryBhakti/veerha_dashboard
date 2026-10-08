@@ -76,6 +76,14 @@ gate() {
   echo "$out" | grep -q 'no JS errors' || fail "walkthrough threw a JS error"
   echo "$out" | grep -q 'PROBLEM'      && fail "$(echo "$out" | grep 'PROBLEM' | head -1)"
 
+  # Every button in the walkthrough does something: wired by tools/flows.py,
+  # then the journeys click through the main stories and every wired control.
+  out=$(python3 "$TOOLS/wire.py" --check --strict 2>&1); rc=$?
+  echo "$out" | head -1 | sed 's/^/ /'
+  [ $rc -ne 0 ] && { echo "$out"; fail "a button does nothing -- add a rule to tools/flows.py"; }
+  out=$(node "$TOOLS/journeys.cjs" 2>&1) || { echo "$out" | grep -E 'FAIL|Error' | head -5; fail "a journey broke"; }
+  echo "$out" | tail -4 | sed 's/^/  /'
+
   hdr "3 · sidebar collapse"
   out=$(node "$TOOLS/rail.cjs" 2>&1)    || fail "rail test did not run"
   echo "$out" | tail -2 | sed 's/^/  /'
@@ -101,7 +109,7 @@ gate() {
     fail "live-app data found"
   fi
   out=$(grep -rIhoE '[a-z0-9._-]+@[a-z0-9.-]+' "$ROOT/screens" "$ROOT/design-system" 2>/dev/null \
-        | grep -vE '@([a-z0-9-]+\.)*(example|invalid|test|localhost)(\.(com|net|org))?$|@company\.com$' | sort -u)
+        | sed 's/\.*$//' | grep -vE '@([a-z0-9-]+\.)*(example|invalid|test|localhost)(\.(com|net|org))?$|@company\.com$' | sort -u)
   [ -n "$out" ] && { echo "$out" | sed 's/^/  /'; fail "email on a domain that is not reserved"; }
   echo "  clean — no crawled identifiers, every domain reserved"
   grn "
