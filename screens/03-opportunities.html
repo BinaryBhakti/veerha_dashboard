@@ -119,9 +119,9 @@
             <div class="v-pagehead">
               <div class="v-pagehead__copy">
                 <h2 class="v-pagehead__title">Opportunities</h2>
-                <p class="v-pagehead__sub">61 deals · ₹2.41L open · 5 close this month</p></div>
+                <p class="v-pagehead__sub"><span data-bind="opps">61</span> deals · ₹2.41L open · 5 close this month</p></div>
               <div class="v-actions">
-                <div class="v-seg"><button class="v-seg__opt is-active">Table</button><button class="v-seg__opt">Pipeline</button></div>
+                <div class="v-seg"><button class="v-seg__opt is-active" data-go="opportunities">Table</button><button class="v-seg__opt" data-go="pipeline">Pipeline</button></div>
                 <button class="v-btn v-btn--secondary v-btn--sm">Columns</button>
                 <button class="v-btn v-btn--secondary v-btn--sm">Export</button>
                 <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New deal</button>
@@ -166,9 +166,9 @@
                   <th style="width:44px"></th>
                 </tr></thead>
                 <tbody>
-                  <tr class="is-selected">
+                  <tr class="is-selected" data-when="arjun.converted">
                     <td><span class="v-check is-checked"><span class="v-check__box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></span></td>
-                    <td><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__ref">OPP-0061</div></td>
+                    <td><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__ref">OPP-0061 <span class="v-badge v-badge--ok" style="margin-left:4px">Just converted</span></div></td>
                     <td><div class="v-attrs"><span class="v-attrs__row">15–17 Oct · 2 nights</span><span class="v-attrs__row muted">Premier Riverside</span></div></td>
                     <td><div class="t-strong">Waiting on your approval, not on him.</div>
                         <div class="t-meta muted" style="margin-top:3px">Quote is ₹3,700 above the auto-send limit</div></td>
@@ -288,7 +288,7 @@
                 <h2 class="v-pagehead__title">Opportunities</h2>
                 <p class="v-pagehead__sub">61 deals · ₹2.41L open · 3 stalled</p></div>
               <div class="v-actions">
-                <div class="v-seg"><button class="v-seg__opt">Table</button><button class="v-seg__opt is-active">Pipeline</button></div>
+                <div class="v-seg"><button class="v-seg__opt" data-go="opportunities">Table</button><button class="v-seg__opt is-active" data-go="pipeline">Pipeline</button></div>
                 <select class="v-select" style="width:auto;min-width:130px"><option>All owners</option></select>
                 <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New deal</button>
               </div>

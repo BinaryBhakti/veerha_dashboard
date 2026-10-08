@@ -112,6 +112,8 @@ FRAME_IA = {
     # 02 leads
     'leads':        F('Leads', 'Customer'),
     'lead-drawer':  F('Leads', 'Customer'),
+    'lead-convert': F('Leads', 'Customer'),
+    'lead-converted': F('Leads', 'Customer'),
     'leads-queue':  F('Leads', 'Customer'),
     'leads-empty':  F('Leads', 'Customer'),
     'leads-error':  F('Leads', 'Customer'),

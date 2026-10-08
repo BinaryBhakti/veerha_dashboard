@@ -21,7 +21,13 @@ can be wired in its own markup when that is clearer.
 # Frames that exist only to show a layer. Their overlay (marked data-layer) is
 # lifted into the walkthrough's layer stack and the frame is not a screen.
 LAYER_ONLY = {
-    'lead-drawer',
+    'lead-drawer', 'lead-convert',
+}
+
+# Frames that show a state for the design sheet only (the walkthrough reaches the
+# same state live, through data-when / data-unless).
+SHEET_ONLY = {
+    'lead-converted',
 }
 
 RULES = [
