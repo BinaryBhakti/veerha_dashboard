@@ -250,3 +250,11 @@
   color: var(--text-muted); white-space: nowrap;   /* "Day 30" must not stack */
 }
 .vs-step__card { grid-column: 2; grid-row: 1 / span 3; }
+
+
+/* --- WALKTHROUGH LAYERS ----------------------------------------------------
+   A modal, drawer or confirm dialog lifted out of its frame by tools/wtgen.py
+   and opened by screens/assets/flows.js. Sits over the stage only, like the
+   drawers it replaces, so the sidebar and top bar stay usable behind it. */
+.wt-layer { position: absolute; inset: 0; z-index: 20; }
+.wt-layer[hidden] { display: none; }

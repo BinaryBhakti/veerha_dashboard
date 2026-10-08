@@ -1,0 +1,209 @@
+/* =============================================================================
+   VEERHA — flows
+   The runtime that makes the walkthrough behave like the product.
+
+   Buttons carry what they do as attributes, written by tools/wire.py from the
+   flow map in tools/flows.py (or by hand in a frame):
+
+     data-go="screen" [data-view="needs-reply"]   go to a screen, optionally a view
+     data-open="layer"                              open a modal / drawer / dialog
+     data-do="action"                               change state (convert, approve…)
+     data-menu                                      toggle the .v-menu beside it
+     data-inert="reason"                            explained, not wired (external…)
+
+   State is a small in-memory store. Anything with data-bind="key" shows its
+   value; data-when="key" / data-unless="key" show or hide on it. Everything
+   resets on reload — this is a prototype, and a reviewer should always be able
+   to start again from the same morning.
+
+   Loaded after behaviour.js. The walkthrough's own script exposes go() as
+   window.wtGo and routes its drawer calls through VF.open / VF.closeAll.
+   ============================================================================= */
+(function () {
+  'use strict';
+  var $  = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* -------------------------------------------------------------- state -- */
+  // Seed values agree with screens/assets/data.js and the drawn frames.
+  var SEED = {
+    leads: 27, leadsNew: 17, leadsHot: 14, leadsOverdue: 5,
+    opps: 61, waiting: 20, review: 20, tasks: 10,
+    needsReply: 4, highIntent: 2, awaiting: 3, mailNew: 1,
+    chatNeedsReply: 3, chatHighIntent: 2,
+    quotesAwaiting: 0,
+    'arjun.converted': false, 'arjun.won': false
+  };
+  var STATE = JSON.parse(JSON.stringify(SEED));
+
+  function truthy(expr) {
+    var neg = expr.charAt(0) === '!';
+    var v = STATE[neg ? expr.slice(1) : expr];
+    return neg ? !v : !!v;
+  }
+  function fmt(v) { return typeof v === 'number' ? v.toLocaleString('en-IN') : String(v); }
+  function render() {
+    $$('[data-bind]').forEach(function (el) {
+      var v = STATE[el.getAttribute('data-bind')];
+      if (v !== undefined) el.textContent = fmt(v);
+    });
+    $$('[data-when]').forEach(function (el) { el.hidden = !truthy(el.getAttribute('data-when')); });
+    $$('[data-unless]').forEach(function (el) { el.hidden = truthy(el.getAttribute('data-unless')); });
+  }
+  function set(k, v) { STATE[k] = v; render(); }
+  function add(k, n) { STATE[k] = (STATE[k] || 0) + n; render(); }
+  function snapshot() { return JSON.parse(JSON.stringify(STATE)); }
+  function restore(s) { Object.keys(STATE).forEach(function (k) { delete STATE[k]; }); Object.assign(STATE, s); render(); }
+
+  /* -------------------------------------------------------------- toast -- */
+  function toast(title, body, tone, undo) {
+    var box = $('.v-toasts');
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'v-toasts'; box.setAttribute('aria-live', 'polite');
+      document.body.appendChild(box);
+    }
+    var el = document.createElement('div');
+    el.className = 'v-toast v-toast--' + (tone || 'ok');
+    var wrap = document.createElement('div');
+    var t = document.createElement('b'); t.textContent = title; wrap.appendChild(t);
+    if (body) { var s = document.createElement('span'); s.textContent = body; wrap.appendChild(s); }
+    el.appendChild(wrap);
+    if (undo) {
+      var u = document.createElement('button');
+      u.className = 'v-btn v-btn--ghost v-btn--sm'; u.textContent = 'Undo'; u.style.marginLeft = 'auto';
+      u.setAttribute('data-vf-undo', '');
+      u.addEventListener('click', function () { undo(); el.remove(); toast('Undone', title, 'info'); });
+      el.appendChild(u);
+    }
+    box.appendChild(el);
+    requestAnimationFrame(function () { el.classList.add('is-in'); });
+    setTimeout(function () { el.classList.add('is-leaving'); setTimeout(function () { el.remove(); }, 250); }, undo ? 6000 : 3000);
+  }
+
+  /* ------------------------------------------------------------- layers -- */
+  var stack = [];
+  function open(id, opener) {
+    var L = $('.wt-layer[data-layer="' + id + '"]');
+    if (!L) { toast('Not drawn yet', 'The “' + id + '” layer has no frame.', 'warn'); return; }
+    closeMenus();
+    L.hidden = false;
+    stack.push({ id: id, opener: opener || document.activeElement });
+    var f = $('input, textarea, select, button:not([aria-label="Close"])', L);
+    if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 30);
+    render();
+  }
+  function close(id) {
+    var i = id ? stack.map(function (s) { return s.id; }).lastIndexOf(id) : stack.length - 1;
+    if (i < 0) return;
+    var top = stack.splice(i, 1)[0];
+    var L = $('.wt-layer[data-layer="' + top.id + '"]'); if (L) L.hidden = true;
+    if (top.opener && top.opener.focus) top.opener.focus({ preventScroll: true });
+  }
+  function closeAll() { while (stack.length) close(); }
+
+  /* -------------------------------------------------------------- menus -- */
+  function closeMenus(except) {
+    $$('.v-menu').forEach(function (m) { if (m !== except) m.hidden = true; });
+    $$('[data-menu][aria-expanded="true"]').forEach(function (b) {
+      if (!except || b.parentNode !== except.parentNode) b.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* ------------------------------------------------------------ actions -- */
+  // Each returns what should happen next: { toast, body, tone, undo, go, open, close }.
+  var ACTIONS = {
+    save: function (el) {
+      var bar = el.closest('.v-savebar, .v-card');
+      var st = bar && $('.v-savebar__state', bar);
+      if (st) st.lastChild.textContent = ' All changes saved';
+      if (bar) bar.classList.remove('is-dirty');
+      return { toast: 'Saved', body: 'Your changes are live.' };
+    }
+  };
+  function run(name, el) {
+    var fn = ACTIONS[name];
+    if (!fn) { toast(label(el) || name, 'This action is not wired yet.', 'warn'); return; }
+    var before = snapshot();
+    var r = fn(el, STATE) || {};
+    if (r.close) close(r.close === true ? undefined : r.close);
+    if (r.closeAll) closeAll();
+    if (r.go) go(r.go, r.view);
+    if (r.open) setTimeout(function () { open(r.open, el); }, r.go ? 80 : 0);
+    if (r.toast) toast(r.toast, r.body, r.tone, r.undo === false ? null : (r.undo || (r.reversible ? function () { restore(before); } : null)));
+    render();
+  }
+
+  /* ---------------------------------------------------------- navigation -- */
+  function go(id, view) {
+    closeAll();
+    if (window.wtGo) window.wtGo(id); else location.hash = id;
+    if (view) setTimeout(function () { selectView(view); }, 60);
+  }
+  // A view is a tab or pill in the active screen carrying data-view-tab.
+  function selectView(view) {
+    var scr = $('.wt-screen.is-on') || document;
+    var t = $('[data-view-tab="' + view + '"]', scr);
+    if (t) t.click();
+  }
+  function label(el) {
+    return (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 48);
+  }
+
+  /* ------------------------------------------------------------- wiring -- */
+  // Capture phase, so a flow click is handled before behaviour.js's toast and
+  // before the walkthrough's own handler; navigation (data-go without a view)
+  // is left to the walkthrough, which owns go().
+  document.addEventListener('click', function (e) {
+    var m = e.target.closest('[data-menu]');
+    if (m) {
+      e.preventDefault(); e.stopPropagation();
+      var menu = m.parentNode && $(':scope > .v-menu', m.parentNode);
+      if (menu) {
+        var willOpen = menu.hidden;
+        closeMenus(willOpen ? menu : null);
+        menu.hidden = !willOpen;
+        m.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      }
+      return;
+    }
+    if (!e.target.closest('.v-menu')) closeMenus();
+
+    var o = e.target.closest('[data-open]');
+    if (o) { e.preventDefault(); e.stopPropagation(); closeMenus(); open(o.getAttribute('data-open'), o); return; }
+
+    var d = e.target.closest('[data-do]');
+    if (d) { e.preventDefault(); e.stopPropagation(); closeMenus(); run(d.getAttribute('data-do'), d); return; }
+
+    var gv = e.target.closest('[data-go][data-view]');
+    if (gv) { e.preventDefault(); e.stopPropagation(); go(gv.getAttribute('data-go'), gv.getAttribute('data-view')); return; }
+
+    var inert = e.target.closest('[data-inert]');
+    if (inert) { e.preventDefault(); e.stopPropagation(); toast(label(inert), inert.getAttribute('data-inert'), 'info'); return; }
+
+    // closing a layer: its scrim, its Close button, or a Cancel inside it
+    var layer = e.target.closest('.wt-layer');
+    if (layer && (e.target.closest('.v-scrim') || e.target.closest('[aria-label="Close"], [data-close]') ||
+        /^cancel$/i.test(label(e.target.closest('button') || e.target)))) {
+      e.preventDefault(); e.stopPropagation(); close(layer.getAttribute('data-layer')); return;
+    }
+  }, true);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { if ($('.v-menu:not([hidden])')) closeMenus(); else if (stack.length) { close(); e.stopPropagation(); } }
+  }, true);
+
+  // A navigation elsewhere closes any open layer and menu.
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-go]') && !e.target.closest('.wt-layer')) { closeMenus(); }
+  });
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+
+  window.VF = {
+    state: STATE, seed: SEED, get: function (k) { return STATE[k]; }, set: set, add: add,
+    open: open, close: close, closeAll: closeAll, go: go, toast: toast, render: render,
+    snapshot: snapshot, restore: restore,
+    action: function (name, fn) { ACTIONS[name] = fn; }
+  };
+})();
