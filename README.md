@@ -338,6 +338,71 @@ bulk-select, drawer open/close, rail expand. Two properties to preserve:
   `el.closest('.vs-frame, .wt-screen')`, so filtering one table cannot touch another
   on the same sheet.
 
+### Behaviour — `tools/flows.py` → `tools/wire.py` → `flows.js` + `journeys.js`
+
+The walkthrough is the working product: every button in it does something. Behaviour is
+**data**, written onto the frames by a tool and checked by the gate, the same way navigation
+is (`ia.py` → `shell.py`).
+
+```
+tools/flows.py      RULES: (frame id | '*', how to find the control, action)
+      │             actions: go:<screen>[?view=…]  open:<layer>  do:<action>  menu  inert:<why>
+      ▼
+tools/wire.py       writes data-go / data-open / data-do / data-menu / data-inert onto
+      │             buttons in the module files, marked data-w so a re-run replaces them
+      ▼
+screens/NN-*.html   the attributes live in the frames; a button wired by hand (no data-w)
+      │             is never touched
+      ▼
+tools/wtgen.py      lifts every <div class="vs-overlay" data-layer="…"> out of the
+      │             LAYER_ONLY frames into the stage as a hidden .wt-layer
+      ▼
+walkthrough.html ── assets/flows.js     runtime (window.VF): navigation, layers, menus,
+                    assets/journeys.js  state, bindings, toasts with Undo; the story actions
+```
+
+**Finding a control in `flows.py`.** A plain string matches the start of the label (or the
+aria-label of an icon-only button). `{'exact': …}`, `{'aria': …}`, `{'re': …}`,
+`{'aria_re': …}` and `{'cls': …}` cover the rest. Frame-specific rules win over `'*'` rules.
+`LAYER_ONLY` frames are lifted as layers instead of shown as screens; `SHEET_ONLY` frames
+stay on the sheets.
+
+**State.** `flows.js` holds a small store (`SEED`: leads 27, deals 60, waiting 20, needs reply
+4 …). Markup reads it with `data-bind="leads"` (the number), `data-when="arjun.converted"` /
+`data-unless` (show or hide), and `data-ctx-*` on whatever opened a layer (the drawer shows the
+row you clicked). State resets on reload.
+
+**Actions.** `data-do="x"` runs `ACTIONS.x`. It returns what should happen next:
+`{go, view, open, close, closeAll, toast, body, undo}`. Story actions (convert, mail-send,
+approve, quote-send, takeover, start-day …) live in `journeys.js` and are registered with
+`VF.action(name, fn)`. Generic ones (row menus, filter chips, save, export, reorder, copy …)
+live in `flows.js`. Anything that removes or changes something offers **Undo**.
+
+**Dialogs.** Draw them with `framekit.dialog()` / `add_dialog_sheet()`. Give the overlay a
+`data-layer` name, add the frame id to `LAYER_ONLY`, and point a rule at it with `open:<name>`.
+`data-step` on a dialog button closes the current dialog before the next one opens.
+
+**Adding a button.** Draw it, run `python3 tools/wire.py --check -v`, add a rule for anything
+it lists, then `python3 tools/wire.py && python3 tools/wtgen.py`. The gate fails if any button
+in a shown frame is unwired.
+
+**Journeys you can try** (each one changes the numbers on other screens):
+
+| Journey | Start | What changes |
+|---|---|---|
+| Convert a lead | Leads → Arjun Mehta → *Convert to opportunity* | Leads 27 → 26, his deal appears in Opportunities (60 → 61), Undo restores both |
+| Triage mail | Dashboard → *Needs reply 4* | lands on Mail · Needs reply; Send moves the thread to Awaiting customer and the dashboard reads 3 |
+| Approve a decision | Review Queue → Approve / Edit / Refuse | Waiting on you drops in the sidebar and on the dashboard |
+| Finish a task | Tasks → Done / Reschedule | the Tasks badge drops |
+| Send a quotation | *New quotation* → items → review and send | the quote appears in Quotations as Sent |
+| Add a lead | *New lead* | Leads 27 → 28, the lead is at the top |
+| Start my day | Dashboard → *Start my day* | walks the suggested order one screen at a time |
+| Take over a chat | Shared inbox → *Take over* → *Hand back* | the AI pauses and resumes |
+| Win a deal | opportunity drawer → *Mark won* | the deal leaves the open list |
+
+`node tools/journeys.cjs` drives all of these and then clicks every wired control on every
+screen, failing on a JS error or a click that changes nothing.
+
 ---
 
 ## The dashboard prototype
@@ -453,6 +518,7 @@ timeline. Assume a more specific rule already exists.
 |---|---|---|
 | `screens/walkthrough.html` (the stage and palette) | `python3 tools/wtgen.py` | the frames in the module files |
 | Sidebar, top bar, top tabs and section rail inside every frame | `python3 tools/shell.py` | `tools/ia.py` — `NAV`, `TABS`, `RAILS`, `FRAME_IA` |
+| `data-go` / `data-open` / `data-do` / `data-menu` / `data-inert` marked `data-w` on buttons | `python3 tools/wire.py` | `tools/flows.py` — `RULES` |
 | `audit/gallery.html` | `python3 tools/build-gallery.py` | frames + `MANIFEST.md` + `tools/gallery_tags.py` |
 | `dist/` | `tools/build-dist.sh` | the whole tree |
 
@@ -478,6 +544,8 @@ Everything lives in `tools/`. Nothing here is needed to *view* the prototype.
 | `tokencheck.py` | Every `var(--name)` resolves to a defined token |
 | `piicheck.sh` | No identifier from the live-app capture appears in `screens/` or `design-system/` |
 | `shell.py --check` | Exactly one rail variant and one top-bar variant exist |
+| `wire.py --check --strict` | Every button in a walkthrough frame is wired or explained (`tools/flows.py`) |
+| `journeys.cjs` | Drives the main journeys with assertions on screens and numbers, then clicks every wired control (`--quick` for journeys only, `URL=` for a deploy) |
 
 ### While you work
 
@@ -497,6 +565,7 @@ Everything lives in `tools/`. Nothing here is needed to *view* the prototype.
 | `shell.py` | Renders `ia.py` into every frame: sidebar, top bar, tab strip, section rail |
 | `framekit.py` | Authoring helper: clones a reference frame's shell and swaps in a new header, note and canvas (or any `slot`) |
 | `wtgen.py` | Regenerates the walkthrough stage from the module files |
+| `flows.py` + `wire.py` | What every button does, as data, and the tool that writes it onto the frames |
 | `build-gallery.py` + `gallery_tags.py` | The before/after gallery; `gallery_tags.py` holds the hand-written "what changed" tags per screen |
 | `build-dist.sh` | Builds the client-facing bundle into `dist/`, with a secret scan and an exclusion check |
 
@@ -625,6 +694,9 @@ repository is public.
 
 ## Known rough edges
 
+- **One example deal behind every opportunity.** The opportunity drawer's header and value
+  follow the row you clicked; its body (timeline, stay, quotes) is always the same worked
+  example. Leads and Mail threads do follow the row.
 Honest notes, so you do not lose an afternoon to them.
 
 - **The Playwright path is hard-coded.** Most `tools/*.cjs` scripts `require()` an

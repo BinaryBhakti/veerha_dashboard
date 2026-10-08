@@ -262,3 +262,24 @@ route exists but holds nothing in that workspace, so the populated state is desi
 | 59b | Setup Guide — Go live step |
 | 70b | Stay page — paid, failed and closed after the Razorpay window |
 | 81b · 81c · 82b · 82c · 83b · 84b · 87b · 88b · 89b · 89c · 91b · 94b | States and steps of the new screens |
+
+## The working prototype · states and dialogs (8 Oct)
+
+The walkthrough is the product: every button in it does something. These frames are the
+modals and states that make that possible. They are **states of listed screens, not new
+scope**. In the walkthrough they open as layers over the screen; on the sheets each one is
+drawn as its own frame. Behaviours the live app never showed (Convert's landing, Mark won /
+lost, quote send, stay-link send, Start my day, draft approve / edit) are designed from the
+live copy and sitemap §6, and say so in their notes.
+
+| # | Frame | File | Opened from |
+|---|---|---|---|
+| 2b | Lead — convert to opportunity | 02-leads | lead drawer strip, row Convert, row `…` menu, Review Queue card |
+| 2c | Lead — now a deal | 02-leads | after Convert (sheet only) |
+| 2d | Lead — action dialogs: follow-up, log call, meeting, note, assign, sequence, archive, delete, add a lead | 02-leads | drawer action row, row menus, *New lead* |
+| 4b | Opportunity — mark won, mark lost, archive, delete | 03-opportunities | opportunity drawer |
+| 5b | Stay workspace — send the stay page | 03-opportunities | *Create link* |
+| 6c | Quotation — who is it for → items → review and send | 04-quotes | *New quotation* anywhere |
+| 15b | Work queues — edit before approving, new task, reschedule | 07-queues | Review Queue, Tasks |
+| 55e | Conversations — compose | 06-conversations | Mail *Compose*, `c` |
+| 56c | Shared dialogs — create anything | 01-home | top bar *Create* |
