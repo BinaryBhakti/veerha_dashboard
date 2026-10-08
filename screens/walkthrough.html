@@ -3211,7 +3211,7 @@
               <div class="v-tabs" role="tablist" aria-label="Mail views" style="border-bottom:0;flex-wrap:nowrap;overflow-x:auto"><button class="v-tab is-active" data-view-tab="needs-reply" data-view-name="Needs reply" role="tab" aria-selected="true">Needs reply <span class="v-pill__n" data-bind="needsReply">4</span></button><button class="v-tab" data-view-tab="high-intent" data-view-name="High intent" role="tab" aria-selected="false">High intent <span class="v-pill__n" data-bind="highIntent">2</span></button><button class="v-tab" data-view-tab="awaiting" data-view-name="Awaiting customer" role="tab" aria-selected="false">Awaiting customer <span class="v-pill__n" data-bind="awaiting">3</span></button><button class="v-tab" data-view-tab="new-lead" data-view-name="New leads" role="tab" aria-selected="false">New leads <span class="v-pill__n" data-bind="mailNew">1</span></button><button class="v-tab" data-view-tab="active-customer" data-view-name="Active customers" role="tab" aria-selected="false">Active customers <span class="v-pill__n">1</span></button><button class="v-tab" data-view-tab="today" data-view-name="Today" role="tab" aria-selected="false">Today <span class="v-pill__n">3</span></button></div>
               <span class="grow"></span>
               <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg> Folders <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><button class="v-menu__item" data-view-tab="all" data-view-name="Inbox — everything"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Inbox — everything</button><button class="v-menu__item" data-view-tab="awaiting" data-view-name="Sent, awaiting a reply"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Sent, awaiting a reply</button><button class="v-menu__item" data-view-tab="internal" data-view-name="Internal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-users"/></svg>Internal</button><div class="v-menu__sep"></div><div class="v-menu__label">Provider folders</div><button class="v-menu__item" data-inert="Shows the folders exactly as they are in Gmail"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>All provider mail</button><button class="v-menu__item" data-inert="Archived threads; nothing is deleted"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive</button><button class="v-menu__item" data-inert="Threads marked done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Done</button></div></span>
-              <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false">stay@rivergrove.example.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><div class="v-menu__label">Mailboxes</div><button class="v-menu__item is-active"hat="Mailbox">stay@rivergrove.example.com</button><button class="v-menu__item"hat="Mailbox">sales@rivergrove.example.com</button><div class="v-menu__sep"></div><button class="v-menu__item" data-inert="Opens the mailbox connection on Connections"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Connect another mailbox</button></div></span>
+              <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false">stay@rivergrove.example.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu" role="menu" hidden><div class="v-menu__label">Mailboxes</div><button class="v-menu__item is-active" data-do="pick" data-what="Mailbox">stay@rivergrove.example.com</button><button class="v-menu__item" data-do="pick" data-what="Mailbox">sales@rivergrove.example.com</button><div class="v-menu__sep"></div><button class="v-menu__item" data-inert="Opens the mailbox connection on Connections"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Connect another mailbox</button></div></span>
               <button class="v-btn v-btn--primary v-btn--sm" data-open="compose"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>New message</button>
             </div>
             <div class="vs-panes" style="grid-template-columns:320px minmax(0,1fr) 280px;flex:1;min-height:0">
@@ -15464,6 +15464,447 @@ Late checkout, subject to availability</textarea>
           </div>
         </div>
       </div>
+<div class="wt-layer" data-layer="lead" hidden><div class="vs-overlay" data-layer="lead">
+              <div class="v-scrim"></div>
+              <aside class="v-drawer" role="dialog" aria-label="Arjun Mehta">
+
+                <div class="v-drawer__head">
+                  <span class="v-avatar v-avatar--lg">AM</span>
+                  <div class="grow">
+                    <div class="row" style="gap:var(--s-2)">
+                      <span class="t-card">Arjun Mehta</span>
+                      <span class="v-badge v-badge--danger">Hot</span>
+                      <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false" aria-label="Stage: Proposal">Proposal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu v-menu--left" role="menu" hidden><div class="v-menu__label">Stage</div><button class="v-menu__item" data-do="pick" data-what="Stage">New</button><button class="v-menu__item" data-do="pick" data-what="Stage">Contacted</button><button class="v-menu__item" data-do="pick" data-what="Stage">Qualified</button><button class="v-menu__item is-active" data-do="pick" data-what="Stage">Proposal</button><button class="v-menu__item" data-do="pick" data-what="Stage">Not reachable</button><button class="v-menu__item" data-do="pick" data-what="Stage">Lost</button></div></span>
+                      <span class="v-menu-host"><button class="v-selectchip" data-menu aria-haspopup="menu" aria-expanded="false" aria-label="Owner: Anita">Anita <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></button><div class="v-menu v-menu--left" role="menu" hidden><div class="v-menu__label">Owner</div><button class="v-menu__item is-active" data-do="pick" data-what="Owner">Anita</button><button class="v-menu__item" data-do="pick" data-what="Owner">Rohan</button><button class="v-menu__item" data-do="pick" data-what="Owner">Tara</button><button class="v-menu__item" data-do="pick" data-what="Owner">Unassigned</button></div></span>
+                    </div>
+                    <div class="t-meta muted" style="margin-top:4px">
+                      +91 90000 10001 · arjun.mehta@example.com · <span class="num">LEAD-0129</span></div>
+                    <div class="t-meta muted" style="margin-top:2px">
+                      WhatsApp · 35 touchpoints · 10th enquiry · last active 2m ago</div>
+                  </div>
+                  <div style="text-align:right;flex:none">
+                    <div class="label">Score</div>
+                    <div class="num" style="font-size:26px;font-weight:600;line-height:30px">80</div>
+                    <div class="t-meta muted">High intent</div>
+                  </div>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this lead"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
+                  <button class="v-btn v-btn--icon v-btn--sm" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button>
+                </div>
+
+                <div class="v-drawer__body">
+                  <div class="row" data-unless="arjun.converted" style="justify-content:space-between;gap:var(--s-4);padding:var(--s-3) var(--s-4);margin-bottom:var(--s-4);border:1px solid var(--brand-200);border-radius:var(--r-tile);background:var(--brand-soft)">
+                    <div><div class="t-small" style="font-weight:600">Ready to become a deal?</div><div class="t-meta muted">Veerha is still asking for one detail — convert it yourself any time.</div></div>
+                    <button class="v-btn v-btn--primary v-btn--sm" data-open="convert" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-convert"/></svg>Convert to opportunity</button>
+                  </div>
+                  <div class="v-callout v-callout--ok" data-when="arjun.converted" hidden style="margin-bottom:var(--s-4)">
+                    <div class="grow"><b>Qualified — now a deal.</b> It no longer shows in the Leads list. The deal reads its data from here.</div>
+                    <button class="v-btn v-btn--secondary v-btn--sm" data-go="opportunities">Open deal →</button>
+                  </div>
+
+                  <!-- 1 · what to do -->
+                  <div class="v-next">
+                    <div class="label v-next__label">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                      Recommended next step</div>
+                    <div class="v-next__action">Call Arjun tomorrow at 11:00</div>
+                    <p class="v-next__why">He asked for it, and he has replied within the hour every time.</p>
+                    <div class="v-next__acts">
+                      <button class="v-btn v-btn--primary" data-open="logcall" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside">Call now</button>
+                      <button class="v-btn v-btn--secondary" data-open="meeting" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside">Schedule</button></div>
+                  </div>
+
+                  <!-- contact rail, below the recommendation -->
+                  <div class="v-actions-row" style="margin-top:var(--s-4)">
+                    <button class="v-action" data-go="inbox" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-whatsapp"/></svg>WhatsApp</button>
+                    <button class="v-action" data-open="logcall" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Call</button>
+                    <button class="v-action" data-go="mail" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Email</button>
+                    <button class="v-action" data-open="followup" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg>Follow-up</button>
+                    <button class="v-action" data-open="logcall" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-logcall"/></svg>Log call</button>
+                    <button class="v-action" data-open="meeting" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Meeting</button>
+                    <button class="v-action" data-open="note" data-ctx-name="Arjun Mehta" data-ctx-lead="LEAD-0129" data-ctx-value="₹43,700" data-ctx-req="2 adults · 15–17 Oct · Premier Riverside"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Note</button>
+                  </div>
+
+                  <!-- 2 · why -->
+                  <div class="v-ai" style="margin-top:var(--s-5)">
+                    <div class="label v-ai__label"><span class="v-ai__mark">V</span>Veerha's read</div>
+                    <div class="v-read__conclusion">Ready for a callback, not another message.</div>
+                    <p class="v-read__evidence">
+                      Arjun asked for a callback about a two-adult booking for 15–17 October and has
+                      already settled on the Premier Riverside Room. He is negotiating on price for a
+                      personal trip, not a corporate one, and has enquired ten times before without
+                      booking. He proposed 11:00 tomorrow.
+                    </p>
+                    <div class="v-read__attrs">High intent · callback requested · price sensitive</div>
+                    <div class="v-read__based">Based on: 4 replies · confirmed dates · a chosen room · 10 previous enquiries</div>
+                  </div>
+
+                  <!-- 3 · the evidence -->
+                  <div style="margin-top:var(--s-5)">
+                    <div class="label" style="margin-bottom:var(--s-2)">Evidence</div>
+                    <table class="v-ev">
+                      <tbody>
+                        <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Settled on <b>Premier Riverside Room</b></span></td><td class="v-ev__source">Options →</td></tr>
+                        <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--gap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><use href="#i-alert"/></svg></span>Nothing scheduled with him yet</span></td><td class="v-ev__source">Follow-ups →</td></tr>
+                        <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Replied 4 times, always within the hour</span></td><td class="v-ev__source">Conversation →</td></tr>
+                        <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Enquired <b>10 times</b> before, never booked</span></td><td class="v-ev__source">Past dealings →</td></tr>
+                        <tr><td><span class="v-ev__claim"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Asked twice for a better rate</span></td><td class="v-ev__source">Conversation →</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- 4 · the detail -->
+                  <div class="vs-split" style="margin-top:var(--s-6);grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+                    <div>
+                      <div class="label" style="margin-bottom:var(--s-2)">Follow-ups</div>
+                      <div class="v-empty" style="padding:var(--s-6) var(--s-4);border:1px solid var(--border);border-radius:var(--r-tile)">
+                        <div class="v-empty__title t-small">Nothing scheduled</div>
+                        <p class="v-empty__body t-meta">This lead has no next contact on the calendar.</p>
+                        <button class="v-btn v-btn--secondary v-btn--sm">Book a follow-up</button>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="label" style="margin-bottom:var(--s-2)">Facts</div>
+                      <dl class="v-kv">
+                        <dt>Enquiry</dt><dd>Rooms</dd>
+                        <dt>Check-in</dt><dd>15 Oct 2026</dd>
+                        <dt>Check-out</dt><dd>17 Oct 2026</dd>
+                        <dt>Guests</dt><dd>2 adults</dd>
+                        <dt>Rooms</dt><dd>1</dd>
+                        <dt>Occasion</dt><dd>Personal trip</dd>
+                        <dt>Budget</dt><dd class="faint">Not given</dd>
+                        <dt>Source</dt><dd>WhatsApp</dd>
+                      </dl>
+                      <p class="t-meta faint" style="margin-top:var(--s-3)">Confirmed by Veerha in conversation.</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- the footer mirrors the recommendation's own two actions -->
+                <div class="v-drawer__foot">
+                  <button class="v-btn v-btn--secondary grow">Schedule</button>
+                  <button class="v-btn v-btn--primary grow">Call now</button>
+                </div>
+              </aside>
+            </div></div>
+<div class="wt-layer" data-layer="convert" hidden><div class="vs-overlay vs-overlay--modal" data-layer="convert">
+            <div class="v-scrim"></div>
+            <div class="v-modal v-modal--wide" role="dialog" aria-label="Convert to opportunity">
+              <div class="v-modal__title">Convert <span data-bind="ctx.name">Arjun Mehta</span> to an opportunity</div>
+              <p class="v-modal__sub">The lead leaves the Leads list and becomes a deal you can quote against. Nothing is sent unless you say so below.</p>
+              <div class="v-field"><label class="v-field__label">Deal name</label><input class="v-input" data-bind="ctx.deal" value="Arjun Mehta — 15–17 Oct · Premier Riverside"></div>
+              <div class="row" style="gap:var(--s-3);align-items:flex-start">
+                <div class="v-field grow"><label class="v-field__label">Value</label><input class="v-input" data-bind="ctx.value" value="₹43,700"><span class="v-field__hint">From the room and dates already chosen.</span></div>
+                <div class="v-field grow"><label class="v-field__label">Stage</label><select class="v-select"><option>Open</option><option>Proposal sent</option><option>With sales</option><option>Negotiation</option></select></div>
+                <div class="v-field grow"><label class="v-field__label">Owner</label><select class="v-select"><option>Anita</option><option>Rohan</option><option>Tara</option></select></div>
+              </div>
+              <div class="v-callout v-callout--warn"><div><b>Veerha is still asking for one detail.</b> The deal can go ahead without it — a quotation will warn you before it goes out, and you can add it on the lead.</div></div>
+              <div class="row" style="justify-content:space-between;gap:var(--s-4)">
+                <div><div class="t-small" style="font-weight:600">Send the guest a stay page now</div><div class="t-meta muted">One page with the room, the dates and a way to confirm — the same step the live product takes after converting.</div></div>
+                <span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+              </div>
+              <div class="v-modal__foot">
+                <button class="v-btn v-btn--secondary">Cancel</button>
+                <button class="v-btn v-btn--primary" data-do="convert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-convert"/></svg>Convert to opportunity</button>
+              </div>
+            </div>
+          </div></div>
+<div class="wt-layer" data-layer="new-lead" hidden><div class="vs-overlay vs-overlay--modal" data-layer="new-lead"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Add a lead"><div class="v-modal__title">Add a lead</div><p class="v-modal__sub">Only the name and one way to reach them are needed; Veerha asks for the rest.</p><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Name</label><input class="v-input" value="Ishaan Varma"></div><div class="v-field"><label class="v-field__label">Mobile</label><div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input class="v-input" value="90000 10034"></div></div></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Email</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Budget <span class="t-meta muted">· optional</span></label><input class="v-input" value="₹45,000"></div></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Source</label><select class="v-select"><option>Manual</option><option>Phone</option><option>Walk-in</option><option>Referral</option></select></div><div class="v-field"><label class="v-field__label">Band</label><select class="v-select"><option>Auto — from the score</option><option>Hot</option><option>Warm</option><option>Cold</option></select></div><div class="v-field"><label class="v-field__label">Enquiry type</label><select class="v-select"><option>Rooms</option><option>Banquet</option><option>Wedding</option><option>Corporate</option></select></div></div><div class="v-field"><label class="v-field__label">Notes <span class="t-meta muted">· optional</span></label><textarea class="v-input" rows="2" style="width:100%">River view, second weekend of December.</textarea><span class="v-field__hint">Seven more details can be added now or by Veerha in the conversation.</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="lead-new"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add lead</button></div></div></div></div>
+<div class="wt-layer" data-layer="confirm-delete" hidden><div class="vs-overlay vs-overlay--modal" data-layer="confirm-delete"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Delete Arjun Mehta?"><div class="v-modal__title">Delete <span data-bind="ctx.name">Arjun Mehta</span>?</div><p class="v-modal__body">Their conversations, notes, follow-ups and score are removed. This cannot be undone — archive instead if you might need them.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--danger" data-do="delete-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg>Delete lead</button></div></div></div></div>
+<div class="wt-layer" data-layer="confirm-archive" hidden><div class="vs-overlay vs-overlay--modal" data-layer="confirm-archive"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Archive Arjun Mehta?"><div class="v-modal__title">Archive <span data-bind="ctx.name">Arjun Mehta</span>?</div><p class="v-modal__body">The lead leaves every list and Veerha stops following up. Nothing is deleted: it can be restored from Leads › Archived, and a new message from them reopens it.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--primary" data-do="archive-lead"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive lead</button></div></div></div></div>
+<div class="wt-layer" data-layer="sequence" hidden><div class="vs-overlay vs-overlay--modal" data-layer="sequence"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Put Arjun Mehta on a sequence"><div class="v-modal__title">Put <span data-bind="ctx.name">Arjun Mehta</span> on a sequence</div><div class="v-field"><label class="v-field__label">Sequence</label><select class="v-select"><option>Lead nurture · default · 4 steps over 9 days</option><option>Post-quote follow-up · 3 steps</option><option>Monsoon package nurture · 5 steps</option></select></div><div class="v-callout v-callout--info"><div><b>First step tomorrow at 10:00:</b> a WhatsApp template, “Rooms for your dates”. It stops the moment he replies, books, or you take over.</div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="sequence"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sequence"/></svg>Start sequence</button></div></div></div></div>
+<div class="wt-layer" data-layer="assign" hidden><div class="vs-overlay vs-overlay--modal" data-layer="assign"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Assign Arjun Mehta"><div class="v-modal__title">Assign <span data-bind="ctx.name">Arjun Mehta</span></div><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Anita · owner</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Rohan · manager</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Tara · member</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Round-robin across the team</span></label></div><p class="t-meta muted">The new owner gets a notification, and Veerha introduces them by name if it replies next.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="assign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-assign"/></svg>Assign</button></div></div></div></div>
+<div class="wt-layer" data-layer="note" hidden><div class="vs-overlay vs-overlay--modal" data-layer="note"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Add a note to Arjun Mehta"><div class="v-modal__title">Add a note to <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Notes are for your team. Veerha reads them; the guest never sees them.</p><div class="v-field"><label class="v-field__label">Note</label><textarea class="v-input" rows="4" style="width:100%">Prefers a call after 6 PM. Travelling with his wife; anniversary in October.</textarea></div><label class="v-check"><input type="checkbox" checked><span class="t-small">Pin to the top of the lead</span></label><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Save note</button></div></div></div></div>
+<div class="wt-layer" data-layer="meeting" hidden><div class="vs-overlay vs-overlay--modal" data-layer="meeting"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Schedule a meeting with Arjun Mehta"><div class="v-modal__title">Schedule a meeting with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Only times free on your calendar and inside working hours are offered.</p><div class="v-field"><label class="v-field__label">Free today</label><div class="v-pilltabs"><button class="v-pill is-active">16:30</button><button class="v-pill">17:00</button><button class="v-pill">17:30</button><button class="v-pill">Tomorrow 11:00</button></div></div><div class="v-field"><label class="v-field__label">Kind</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Call</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Site visit</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Video call</span></label></div></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Send the invite on WhatsApp</div><div class="t-meta muted">He gets the time, a map link for a visit, and a way to move it.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="meeting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Book meeting</button></div></div></div></div>
+<div class="wt-layer" data-layer="followup" hidden><div class="vs-overlay vs-overlay--modal" data-layer="followup"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Book a follow-up with Arjun Mehta"><div class="v-modal__title">Book a follow-up with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">It appears in Tasks and on the Calendar, and Veerha will not chase him while it is pending.</p><div class="v-field"><label class="v-field__label">When</label><div class="v-pilltabs"><button class="v-pill">Today 4:00 PM</button><button class="v-pill is-active">Tomorrow 11:00</button><button class="v-pill">Monday 10:00</button><button class="v-pill">Pick a time</button></div></div><div class="v-field"><label class="v-field__label">How</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Call</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">WhatsApp</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Email</span></label></div></div><div class="v-field"><label class="v-field__label">What for</label><input class="v-input" value="Confirm breakfast and hold the room"></div><div class="row" style="gap:var(--s-3)"><div class="v-field"><label class="v-field__label">Who</label><select class="v-select"><option>Anita</option><option>Rohan</option><option>Tara</option></select></div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="followup"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg>Book follow-up</button></div></div></div></div>
+<div class="wt-layer" data-layer="logcall" hidden><div class="vs-overlay vs-overlay--modal" data-layer="logcall"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Log a call with Arjun Mehta"><div class="v-modal__title">Log a call with <span data-bind="ctx.name">Arjun Mehta</span></div><p class="v-modal__sub">Calls happen on your phone; this records what was said.</p><div class="v-field"><label class="v-field__label">How did it go?</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Spoke</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">No answer</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Left a message</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Wrong number</span></label></div></div><div class="v-field"><label class="v-field__label">What was agreed</label><textarea class="v-input" rows="3" style="width:100%">Confirmed 15–17 October, two adults. He will decide on breakfast by tomorrow evening.</textarea><span class="v-field__hint">Veerha adds this to the lead’s activity and reads it before the next reply.</span></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Book the next step</div><div class="t-meta muted">Tomorrow 11:00 · call · with Anita</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-logcall"/></svg>Log call</button></div></div></div></div>
+<div class="wt-layer" data-layer="opportunity" hidden><div class="vs-overlay" data-layer="opportunity">
+            <div class="v-scrim"></div>
+            <aside class="v-drawer" role="dialog" aria-label="Deal">
+
+              <!-- ONE header, ONE close. The live drawer stacks two of each. -->
+              <div class="v-drawer__head">
+                <span class="v-avatar v-avatar--lg" data-bind="ctx.ini">DJ</span>
+                <div class="grow">
+                  <div class="row" style="gap:var(--s-2)">
+                    <span class="t-card" data-bind="ctx.name">Devang Joshi</span>
+                    <span class="v-badge v-badge--warn">Warm</span>
+                    <span class="v-selectchip">Proposal sent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span>
+                    <span class="v-selectchip">Anita <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span>
+                  </div>
+                  <div class="t-meta muted" style="margin-top:4px">
+                    <span data-bind="ctx.contact">+91 90000 10003 · devang.joshi@example.com</span> · <span class="num" data-bind="ctx.opp">OPP-0047</span></div>
+                  <div class="t-meta muted" style="margin-top:2px">
+                    WhatsApp · 12 touchpoints · 2nd enquiry · last active 7 days ago</div>
+                </div>
+                <div style="text-align:right;flex:none">
+                  <div class="label">AI score</div>
+                  <div class="num" style="font-size:26px;font-weight:600;line-height:30px">72</div>
+                  <div class="t-meta muted">out of 100 · <b>Warm</b></div>
+                </div>
+                <button class="v-btn v-btn--icon v-btn--sm" aria-label="Star this deal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><use href="#i-star"/></svg></button>
+                <button class="v-btn v-btn--icon v-btn--sm" aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button>
+              </div>
+
+              <div class="v-drawer__body">
+
+                <!-- stage. Four steps, one indicator type. -->
+                <div class="v-stepper">
+                  <span class="v-stepper__step is-done"><span class="v-stepper__n">1</span>Open</span>
+                  <span class="v-stepper__bar"></span>
+                  <span class="v-stepper__step is-active"><span class="v-stepper__n">2</span>Proposal sent</span>
+                  <span class="v-stepper__bar"></span>
+                  <span class="v-stepper__step"><span class="v-stepper__n">3</span>With sales</span>
+                  <span class="v-stepper__bar"></span>
+                  <span class="v-stepper__step"><span class="v-stepper__n">4</span>Negotiation</span>
+                </div>
+                <p class="t-meta faint" style="margin-top:6px">
+                  Ends in <b>Won</b> or <b>Lost</b>. <b>Archived</b> takes it off every list without
+                  deciding either way.</p>
+
+                <!-- the leak the audit flags first: a null date in the loudest component -->
+                <div class="v-error" style="margin-top:var(--s-4)">
+                  <span style="color:var(--dn-ic);flex:none">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-alert"/></svg></span>
+                  <div class="grow">
+                    <div class="label" style="color:var(--dn-tx)">Overdue</div>
+                    <div class="v-error__title" style="margin-top:2px">
+                      The call you set for Sunday, 14 September at 1:30 PM was never confirmed — seven days ago.</div>
+                    <p class="v-error__body">
+                      He has not written since. Nobody is coming back to this on their own: move it,
+                      or do it.</p>
+                    <div class="v-actions" style="margin-top:var(--s-3)">
+                      <button class="v-btn v-btn--danger v-btn--sm" data-w data-open="logcall">Call him now</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="tasks">Open follow-ups</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- the four-up strip. Edit sits on the value it edits, not under all four. -->
+                <div class="v-card" style="margin-top:var(--s-4);padding:var(--s-4) var(--s-5)">
+                  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4)">
+                    <div>
+                      <div class="label">Deal value</div>
+                      <div class="row" style="gap:var(--s-2)">
+                        <span class="t-card amount"><span data-bind="ctx.value">₹26,400</span></span>
+                        <button class="v-btn v-btn--ghost v-btn--sm" style="height:22px;padding:0 6px" data-w data-inert="Opens the deal’s details for editing — value, dates and owner">Edit</button></div>
+                      <div class="t-meta faint">2 nights, anniversary package</div>
+                    </div>
+                    <div>
+                      <div class="label">Next follow-up</div>
+                      <div class="t-card faint">No date set</div>
+                      <div class="t-meta" style="color:var(--dn-tx)">Nothing on the calendar</div>
+                    </div>
+                    <div>
+                      <div class="label">Owner</div>
+                      <div class="t-card">Anita</div>
+                      <div class="t-meta faint">Since 14 August</div>
+                    </div>
+                    <div>
+                      <div class="label">Temperature</div>
+                      <div class="row" style="gap:var(--s-2)"><span class="v-badge v-badge--warn">Warm</span></div>
+                      <div class="t-meta faint">Was Hot until the missed call</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- what to do -->
+                <div class="v-next" style="margin-top:var(--s-4)">
+                  <div class="label v-next__label">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Recommended next step</div>
+                  <div class="v-next__action">Apologise for the missed call and offer two slots</div>
+                  <p class="v-next__why">
+                    The drop-off starts the day we missed the call, not before it. His dates are
+                    still open, which is the only reason this is recoverable at all.</p>
+                  <div class="v-next__acts">
+                    <button class="v-btn v-btn--primary" data-w data-go="inbox">Send message</button>
+                    <button class="v-btn v-btn--secondary" data-w data-open="reschedule">Reschedule</button></div>
+                </div>
+
+                <div class="v-actions" style="margin-top:var(--s-4)">
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="inbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Call</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="mail"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Email</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="meeting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Meeting</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Note</button>
+                </div>
+
+                <!-- the proposal -->
+                <div style="margin-top:var(--s-6)">
+                  <div class="spread" style="margin-bottom:var(--s-2)">
+                    <span class="label">The proposal</span>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="proposal">Send another</button></div>
+                  <div class="v-record v-record--warn">
+                    <div class="v-record__body">
+                      <div class="v-record__title">Anniversary package
+                        <span class="v-badge v-badge--warn"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><use href="#i-alert"/></svg>Expired</span></div>
+                      <div class="v-record__desc">
+                        19–21 Sep 2026 · <span class="amount">₹26,400</span> · rates were held until
+                        18 September</div>
+                      <p class="t-meta muted" style="margin-top:6px">
+                        It lapsed before he confirmed. The rooms went back into inventory and he was
+                        told — so a new proposal has to be priced, not re-sent.</p>
+                    </div>
+                    <button class="v-btn v-btn--icon v-btn--sm" style="flex:none" aria-label="Dismiss this proposal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-x"/></svg></button>
+                  </div>
+                </div>
+
+                <!-- quotations. One label for one action — the live app uses two. -->
+                <div style="margin-top:var(--s-6)">
+                  <div class="spread" style="margin-bottom:var(--s-2)">
+                    <span class="label">Quotations</span>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-open="new-quote">Build a quotation</button></div>
+                  <div class="v-card">
+                    <div class="v-empty" style="padding:var(--s-8) var(--s-6)">
+                      <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></div>
+                      <div class="v-empty__title t-small">No quotation yet</div>
+                      <p class="v-empty__body t-meta">
+                        The proposal above was a held price, not a document. Build one from your
+                        catalogue items and he gets the quotation and its attachments — and it
+                        appears on <span style="color:var(--brand)">/quotes</span> as well as here.</p>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="new-quote">Build a quotation</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- follow-ups -->
+                <div style="margin-top:var(--s-6)">
+                  <div class="spread" style="margin-bottom:var(--s-2)">
+                    <span class="label">Follow-ups (<span class="num">2</span>)</span>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-open="followup">Book another</button></div>
+                  <div class="v-card" style="overflow:hidden">
+                    <div class="v-rows">
+                      <div class="row" style="align-items:flex-start;gap:var(--s-3)">
+                        <span class="v-dot v-dot--danger" style="margin-top:6px"></span>
+                        <div class="grow">
+                          <div class="t-strong">Site call with Devang</div>
+                          <div class="t-meta muted">Was due Sunday, 14 September at 1:30 PM · never confirmed from our side</div>
+                        </div>
+                        <div class="v-actions">
+                          <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="reschedule">Reschedule</button>
+                          <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="followup-cancel">Cancel</button></div>
+                      </div>
+                      <div class="row" style="align-items:flex-start;gap:var(--s-3)">
+                        <span class="v-dot v-dot--muted" style="margin-top:6px"></span>
+                        <div class="grow">
+                          <div class="t-strong">Chase the thread if he has not replied</div>
+                          <div class="t-meta muted">
+                            <span class="faint">No date set</span> — Veerha raised this from its
+                            ten-minute no-reply rule and never put a date on it.</div>
+                        </div>
+                        <div class="v-actions">
+                          <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="followup">Set a date</button>
+                          <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="followup-cancel">Cancel</button></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- the detail -->
+                <div class="vs-split" style="margin-top:var(--s-6);grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+                  <div>
+                    <div class="spread" style="margin-bottom:var(--s-2)">
+                      <span class="label">Customer details</span>
+                      <span class="row" style="gap:var(--s-2)">
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="Expands the full list of customer details">Show all 9</button>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="Opens the deal’s details for editing — value, dates and owner">Edit</button></span></div>
+                    <dl class="v-kv">
+                      <dt>Source</dt><dd>WhatsApp call</dd>
+                      <dt>Budget on the lead</dt><dd class="faint">Not given</dd>
+                      <dt>Enquiry</dt><dd>Rooms</dd>
+                      <dt>Check-in</dt><dd class="faint">Dates flexible</dd>
+                      <dt>Check-out</dt><dd class="faint">Dates flexible</dd>
+                      <dt>Guests</dt><dd>2 adults</dd>
+                      <dt>Rooms</dt><dd>1</dd>
+                      <dt>Occasion</dt><dd>Anniversary</dd>
+                    </dl>
+                    <p class="t-meta faint" style="margin-top:var(--s-3)">
+                      <span class="num">7</span> more details on file. The live record shows this
+                      source as <em>whatsapp_call</em>, straight out of the database.</p>
+                  </div>
+                  <div>
+                    <div class="label" style="margin-bottom:var(--s-2)">In their words</div>
+                    <div class="v-ai">
+                      <div class="label v-ai__label"><span class="v-ai__mark">V</span>What he asked for</div>
+                      <p class="v-read__evidence">
+                        "Looking for somewhere quiet for our anniversary — we can move the dates
+                        either side of the 20th if that helps. Is the spa open in the evening, and
+                        can we eat in the room?"</p>
+                      <div class="v-read__based">Taken from 12 messages between 8 and 14 September</div>
+                    </div>
+                    <div class="v-callout" style="margin-top:var(--s-3)">
+                      <span class="v-callout__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></span>
+                      <span><b><span class="num">12</span> touchpoints logged</b> — all on WhatsApp,
+                        none since 14 September.</span>
+                      <span class="v-callout__link" style="color:var(--brand)">Open inbox →</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- activity. Label and value are two things. -->
+                <div style="margin-top:var(--s-6)">
+                  <div class="label" style="margin-bottom:var(--s-2)">Activity</div>
+                  <div class="v-card" style="padding:var(--s-3) var(--s-5) var(--s-4)">
+                    <div class="v-working__row">
+                      <span class="v-working__time num">14 Sep</span>
+                      <span class="v-working__act"><b>Stage · Proposal sent</b>
+                        <div class="t-meta muted">Anniversary package held at <span class="amount">₹26,400</span> until 18 September</div></span>
+                      <span class="v-working__obj">AI Sales Employee</span></div>
+                    <div class="v-working__row">
+                      <span class="v-working__time num">14 Sep</span>
+                      <span class="v-working__act"><b>Stage · Converted</b>
+                        <div class="t-meta muted">Lead LEAD-0124 became this deal</div></span>
+                      <span class="v-working__obj">Veerha</span></div>
+                    <div class="v-working__row">
+                      <span class="v-working__time num">12 Sep</span>
+                      <span class="v-working__act"><b>Qualified</b>
+                        <div class="t-meta muted">Occasion and party size confirmed; dates left open at his request</div></span>
+                      <span class="v-working__obj">AI Calling Employee</span></div>
+                    <div class="v-working__row">
+                      <span class="v-working__time num">8 Sep</span>
+                      <span class="v-working__act"><b>Assigned</b>
+                        <div class="t-meta muted">Routed to Anita on the round-robin rule</div></span>
+                      <span class="v-working__obj">Auto-assign</span></div>
+                  </div>
+                </div>
+
+                <!-- destructive, grouped and guarded -->
+                <div class="v-callout v-callout--danger" style="margin-top:var(--s-6)">
+                  <span class="v-callout__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><use href="#i-alert"/></svg></span>
+                  <div class="grow">
+                    <div class="t-strong" style="font-size:13px">Take this deal off the board</div>
+                    <p class="t-meta" style="margin-top:2px">
+                      Archiving hides it from every list and keeps the history. Deleting removes the
+                      record, its proposal and its twelve messages, and cannot be undone — you will
+                      be asked to confirm.</p>
+                    <div class="v-actions" style="margin-top:var(--s-3)">
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="confirm-archive-deal">Archive deal</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-open="confirm-delete-deal">Delete deal…</button></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="v-drawer__foot">
+                <button class="v-btn v-btn--secondary" data-w data-open="mark-lost">Mark lost</button>
+                <button class="v-btn v-btn--secondary grow" data-w data-open="followup">Book a follow-up</button>
+                <button class="v-btn v-btn--primary grow" data-w data-open="mark-won">Mark won</button>
+              </div>
+            </aside>
+          </div></div>
+<div class="wt-layer" data-layer="confirm-delete-deal" hidden><div class="vs-overlay vs-overlay--modal" data-layer="confirm-delete-deal"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Delete this deal?"><div class="v-modal__title">Delete this deal?</div><p class="v-modal__body">The deal and its activity are removed; the customer and their conversations stay. This cannot be undone — archive instead to keep the history.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--danger" data-do="delete-deal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg>Delete deal</button></div></div></div></div>
+<div class="wt-layer" data-layer="confirm-archive-deal" hidden><div class="vs-overlay vs-overlay--modal" data-layer="confirm-archive-deal"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Archive this deal?"><div class="v-modal__title">Archive this deal?</div><p class="v-modal__body">It leaves the pipeline and its follow-ups stop. Nothing is deleted — the customer, the conversation and any quotation stay, and the deal can be restored.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--primary" data-do="archive-deal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive deal</button></div></div></div></div>
+<div class="wt-layer" data-layer="mark-lost" hidden><div class="vs-overlay vs-overlay--modal" data-layer="mark-lost"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Why was the deal with Arjun Mehta lost?"><div class="v-modal__title">Why was the deal with <span data-bind="ctx.name">Arjun Mehta</span> lost?</div><p class="v-modal__sub">The reason shows on Analytics, so lost deals teach something.</p><div class="v-field"><label class="v-field__label">Reason</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Price</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Dates not available</span></label><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Went elsewhere</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">No reply</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Something else</span></label></div></div><div class="v-field"><label class="v-field__label">Anything worth remembering</label><input class="v-input" placeholder="e.g. booked a property with a pool"></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Keep them on a nurture sequence</div><div class="t-meta muted">A gentle note in three months, the season they travel.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="mark-lost">Mark lost</button></div></div></div></div>
+<div class="wt-layer" data-layer="mark-won" hidden><div class="vs-overlay vs-overlay--modal" data-layer="mark-won"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Mark the deal with Arjun Mehta as won"><div class="v-modal__title">Mark the deal with <span data-bind="ctx.name">Arjun Mehta</span> as won</div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Final value</label><input class="v-input" data-bind="ctx.value" value="₹43,700"></div><div class="v-field"><label class="v-field__label">Closed by</label><select class="v-select"><option>Paid on the stay page</option><option>Confirmed by phone</option><option>Paid at the hotel</option></select></div></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Create the booking now</div><div class="t-meta muted">Rooms, dates and guests come from the deal. The guest gets the stay page to check in online.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><p class="t-meta muted">Won deals leave the pipeline and count towards Attribution for the channel they came from.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="mark-won"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Mark won</button></div></div></div></div>
+<div class="wt-layer" data-layer="stay-link" hidden><div class="vs-overlay vs-overlay--modal" data-layer="stay-link"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Send Arjun his stay page"><div class="v-modal__title">Send Arjun his stay page</div><p class="v-modal__sub">One page he can open, confirm and pay on. You will see when he opens it.</p><div class="v-callout v-callout--info"><div><b>rivergrove.example.com/s/k7Qm2</b> · Premier Riverside, 15–17 Oct · ₹43,700 · held until tomorrow 6 PM</div></div><div class="v-field"><label class="v-field__label">Send by</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">WhatsApp</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Email</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Both</span></label></div></div><div class="v-field"><label class="v-field__label">Message</label><textarea class="v-input" rows="3" style="width:100%">Hello Arjun — here is your stay for 15–17 October: the Premier Riverside Room, breakfast included. You can confirm and pay on the page. — Anita, Rivergrove</textarea></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Ask for approval first</div><div class="t-meta muted">₹43,700 is above the ₹40,000 auto-send limit, so it goes to the Review Queue before Arjun sees it.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="stay-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Create link and send</button></div></div></div></div>
+<div class="wt-layer" data-layer="quote-send" hidden><div class="vs-overlay vs-overlay--modal" data-layer="quote-send"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Send QT-0105 to Priya Nair"><div class="v-modal__title">Send QT-0105 to Priya Nair</div><div class="t-meta muted">Step 3 of 3 · Review and send</div><dl class="v-kv"><dt>To</dt><dd style="font-family:var(--ui);text-align:right">priya.nair@example.com · WhatsApp +91 90000 10002</dd><dt>Valid until</dt><dd style="font-family:var(--ui);text-align:right">15 October 2026</dd><dt>Total</dt><dd style="text-align:right"><span class="amount">₹1,64,800</span> + GST</dd></dl><div class="v-field"><label class="v-field__label">Message that goes with it</label><textarea class="v-input" rows="3" style="width:100%">Hello Priya — here is the group quotation for 12–14 November: six rooms in the Riverside block, breakfast both mornings and a welcome dinner. You can confirm on the page itself. — Anita, Rivergrove</textarea></div><p class="t-meta muted">She gets one page she can open, accept or ask about. You will see when she opens it.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-open="quote-items" data-step>Back</button><button class="v-btn v-btn--primary" data-do="quote-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send quotation</button></div></div></div></div>
+<div class="wt-layer" data-layer="quote-items" hidden><div class="vs-overlay vs-overlay--modal" data-layer="quote-items"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Quotation for Priya Nair — what it includes"><div class="v-modal__title">Quotation for Priya Nair — what it includes</div><div class="t-meta muted">Step 2 of 3 · What it includes</div><table class="v-table"><tbody><tr><td class="t-small">Riverside block · 2 nights</td><td class="t-meta muted">6 rooms</td><td style="text-align:right"><span class="amount t-small">₹1,38,000</span></td></tr><tr><td class="t-small">Breakfast for 16</td><td class="t-meta muted">2 mornings</td><td style="text-align:right"><span class="amount t-small">₹13,600</span></td></tr><tr><td class="t-small">Group welcome dinner</td><td class="t-meta muted">1 evening</td><td style="text-align:right"><span class="amount t-small">₹13,200</span></td></tr><tr><td class="t-small"><b>Total before tax</b></td><td></td><td style="text-align:right"><b class="amount t-small">₹1,64,800</b></td></tr></tbody></table><div class="row" style="gap:var(--s-2)"><button class="v-btn v-btn--secondary v-btn--sm" data-inert="Adds a room, package or extra from Products &amp; Services"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add from catalog</button><span class="t-meta muted">Rates are read from Havenlink, 6 minutes ago.</span></div><div class="v-callout v-callout--warn"><div><b>Group rate:</b> ₹1,64,800 is 8% under rack. That is inside your 11% discount limit, so no approval is needed.</div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-open="new-quote" data-step>Back</button><button class="v-btn v-btn--primary" data-open="quote-send" data-step>Next — review and send</button></div></div></div></div>
+<div class="wt-layer" data-layer="new-quote" hidden><div class="vs-overlay vs-overlay--modal" data-layer="new-quote"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New quotation — who is it for?"><div class="v-modal__title">New quotation — who is it for?</div><div class="t-meta muted">Step 1 of 3 · Who it is for</div><div class="v-search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search customers and deals"></div><div style="display:flex;flex-direction:column;gap:var(--s-2)"><label class="v-radiocard is-selected" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Priya Nair</b></span><span class="t-meta muted">OPP-0058 · 12–14 Nov · 6 rooms</span></label><label class="v-radiocard" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Vikram Rao</b></span><span class="t-meta muted">OPP-0044 · 22–26 Oct</span></label><label class="v-radiocard" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Kavya Reddy</b></span><span class="t-meta muted">OPP-0052 · 2–5 Jan</span></label><label class="v-radiocard" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Ishaan Varma</b></span><span class="t-meta muted">No open deal — one will be created</span></label></div><p class="t-meta muted">If the customer has no open deal, one is created so the quotation has somewhere to live — marked as coming from a quotation.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-open="quote-items" data-step>Next — what it includes</button></div></div></div></div>
+<div class="wt-layer" data-layer="compose" hidden><div class="vs-overlay vs-overlay--modal" data-layer="compose"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New message"><div class="v-modal__title">New message</div><p class="v-modal__sub">Sent from your own mailbox; the reply comes back to Customer Mail.</p><div class="v-field"><label class="v-field__label">To</label><input class="v-input" value="ishaan.varma@example.com"></div><div class="v-field"><label class="v-field__label">Subject</label><input class="v-input" value="Your weekend in December"></div><div class="v-field"><label class="v-field__label">Message</label><textarea class="v-input" rows="5" style="width:100%">Hello Ishaan — the Premier Riverside Room is free on 11 and 12 December, at ₹21,850 a night with breakfast. Shall I hold it for you until tomorrow evening? — Anita, Rivergrove</textarea></div><div class="row" style="gap:var(--s-2)"><button class="v-btn v-btn--ghost v-btn--sm" data-do="redraft">Ask Veerha to draft</button><span class="t-meta muted">From stay@rivergrove.example.com</span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="compose-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send</button></div></div></div></div>
+<div class="wt-layer" data-layer="new-task" hidden><div class="vs-overlay vs-overlay--modal" data-layer="new-task"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New task"><div class="v-modal__title">New task</div><p class="v-modal__sub">A task is what a person owes. What the AI is asking permission for is in the Review Queue.</p><div class="v-field"><label class="v-field__label">What needs doing</label><input class="v-input" value="Send Priya the group rate sheet"></div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Due</label><select class="v-select"><option>Today 6:00 PM</option><option>Tomorrow</option><option>No date</option></select></div><div class="v-field"><label class="v-field__label">Who</label><select class="v-select"><option>Anita</option><option>Rohan</option><option>Tara</option></select></div><div class="v-field"><label class="v-field__label">About</label><select class="v-select"><option>Priya Nair · LEAD-0131</option><option>No customer</option></select></div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="task-new"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add task</button></div></div></div></div>
+<div class="wt-layer" data-layer="reschedule" hidden><div class="vs-overlay vs-overlay--modal" data-layer="reschedule"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Reschedule — Confirm the call with Devang Joshi"><div class="v-modal__title">Reschedule — <span data-bind="ctx.task">Confirm the call with Devang Joshi</span></div><div class="v-field"><label class="v-field__label">New time</label><div class="v-pilltabs"><button class="v-pill">Today 5:00 PM</button><button class="v-pill is-active">Tomorrow 11:00</button><button class="v-pill">Monday 10:00</button><button class="v-pill">Pick a time</button></div></div><label class="v-check"><input type="checkbox" checked><span class="t-small">Tell the customer on WhatsApp</span></label><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="task-reschedule"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-followup"/></svg>Reschedule</button></div></div></div></div>
+<div class="wt-layer" data-layer="review-edit" hidden><div class="vs-overlay vs-overlay--modal" data-layer="review-edit"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Edit before it goes — Quote for Arjun Mehta"><div class="v-modal__title">Edit before it goes — <span data-bind="ctx.what">Quote for Arjun Mehta</span></div><p class="v-modal__sub">Nothing reaches the customer until you press send.</p><div class="v-field"><label class="v-field__label">What will be sent</label><textarea class="v-input" rows="5" style="width:100%" data-bind="ctx.content">₹43,700 for two nights in the Premier Riverside, breakfast included.</textarea><span class="v-field__hint">Exactly this text, to this customer, on the channel they wrote on.</span></div><label class="v-check"><input type="checkbox" checked><span class="t-small">Teach Veerha from this change</span></label><p class="t-meta muted">Your edit becomes a suggestion in Learning; only examples you approve there steer it.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="approve-edited"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send edited</button></div></div></div></div>
 <div class="wt-layer" data-layer="lead" hidden><div class="vs-overlay" data-layer="lead">
               <div class="v-scrim"></div>
               <aside class="v-drawer" role="dialog" aria-label="Arjun Mehta">
