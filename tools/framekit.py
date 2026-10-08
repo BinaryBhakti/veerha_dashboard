@@ -89,3 +89,38 @@ def add_frame(path, template, after, **kw):
     s = s[:az] + '\n\n  <!-- ══════════════════ %s · %s ══════════════════ -->\n  ' % (kw['n'], kw['name'].upper()) + block + s[az:]
     open(path, 'w', encoding='utf-8').write(s)
     return kw['id']
+
+
+# ---- dialogs ------------------------------------------------------------------
+# A dialog is a real overlay marked data-layer, so tools/wtgen.py lifts it into
+# the walkthrough and screens/assets/flows.js opens it from any data-open. On a
+# design sheet several sit side by side in a .vs-dialogs frame.
+
+def dialog(layer, title, body, foot, wide=True, sub=None, role='dialog'):
+    return ('<div class="vs-overlay vs-overlay--modal" data-layer="%s"><div class="v-scrim"></div>'
+            '<div class="v-modal%s" role="%s" aria-label="%s">'
+            '<div class="v-modal__title">%s</div>%s%s<div class="v-modal__foot">%s</div></div></div>'
+            % (layer, ' v-modal--wide' if wide else '', role, re.sub(r'<[^>]+>', '', title), title,
+               ('<p class="v-modal__sub">%s</p>' % sub) if sub else '', body, foot))
+
+
+def add_dialog_sheet(path, after, id, n, name, note, dialogs):
+    """dialogs: list of (caption, dialog_html). Replaces the frame on re-run."""
+    s = open(path, encoding='utf-8').read()
+    if re.search(r'id="%s"' % re.escape(id), s):
+        a, z = _frame_span(s, id)
+        c = s.rfind('<!--', 0, a)
+        if c != -1 and s[c:a].strip().endswith('-->') and '<section' not in s[c:a]:
+            a = c
+        s = s[:a].rstrip() + s[z:]
+    tiles = ''.join('\n        <div class="vs-dialog"><div class="label">%s</div>\n          %s\n        </div>' % (cap, d)
+                    for cap, d in dialogs)
+    frame = ('<section class="vs-frame" id="%s">\n    <div class="vs-frame__hd">\n      <span class="vs-frame__n">%s</span>'
+             '<span class="vs-frame__name">%s</span>\n      <span class="vs-frame__route">dialogs</span>'
+             '<span class="t-meta muted">opened from buttons on this module’s screens</span>\n    </div>\n'
+             '    <p class="vs-frame__note">\n      %s\n    </p>\n    <div class="vs-frame__box"><div class="vs-dialogs">%s\n    </div></div>\n  </section>'
+             % (id, n, name, note, tiles))
+    aa, az = _frame_span(s, after)
+    s = s[:az] + '\n\n  <!-- ══════════════════ %s · %s ══════════════════ -->\n  ' % (n, name.upper()) + frame + s[az:]
+    open(path, 'w', encoding='utf-8').write(s)
+    return id

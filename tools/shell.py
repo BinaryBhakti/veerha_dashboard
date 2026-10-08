@@ -54,7 +54,9 @@ def rail(active, persona='owner', wt=False):
         for label, icon, badge, _, _ in rows:
             cls = 'v-rail__item is-active' if (label == active and not wt) else 'v-rail__item'
             n = BADGES.get(badge)
-            cnt = '<span class="v-rail__count">%s</span>' % n if n else ''
+            # bound to the walkthrough's state, so the badge drops as work is done
+            bind = {'tasks': 'tasks', 'review': 'waiting'}.get(badge)
+            cnt = ('<span class="v-rail__count"%s>%s</span>' % (' data-bind="%s"' % bind if bind else '', n)) if n else ''
             dot = '<span class="v-navdot"></span>' if n else ''
             hook = ''
             if wt:

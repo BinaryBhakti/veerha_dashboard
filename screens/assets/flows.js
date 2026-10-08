@@ -28,7 +28,8 @@
   // Seed values agree with screens/assets/data.js and the drawn frames.
   var SEED = {
     leads: 27, leadsNew: 17, leadsHot: 14, leadsOverdue: 5,
-    opps: 60, waiting: 20,   // opps: Arjun becomes the 61st when he is converted review: 20, tasks: 10,
+    // opps: Arjun becomes the 61st when he is converted
+    opps: 60, waiting: 20, review: 20, tasks: 10,
     needsReply: 4, highIntent: 2, awaiting: 3, mailNew: 1,
     chatNeedsReply: 2, chatHighIntent: 2,
     quotesAwaiting: 0,

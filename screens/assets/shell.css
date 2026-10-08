@@ -263,3 +263,12 @@
    drawers it replaces, so the sidebar and top bar stay usable behind it. */
 .wt-layer { position: absolute; inset: 0; z-index: 20; }
 .wt-layer[hidden] { display: none; }
+
+/* --- DIALOG SHEETS ---------------------------------------------------------
+   A design-sheet frame that lays a module's small dialogs side by side. Each
+   dialog is a real overlay (data-layer) so the walkthrough can lift it out and
+   open it over a screen; inside the sheet it sits static in its own tile. */
+.vs-dialogs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(560px, 100%), 1fr)); gap: var(--s-5); padding: var(--s-6); background: var(--surface-muted); }
+.vs-dialogs > .vs-dialog { display: flex; flex-direction: column; gap: var(--s-2); }
+.vs-dialogs .vs-overlay { position: relative; inset: auto; min-height: 100%; padding: var(--s-5) 0; border-radius: var(--r-card); }
+.vs-dialogs .vs-overlay .v-scrim { border-radius: var(--r-card); }
