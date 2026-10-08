@@ -23,8 +23,11 @@ os.chdir(ROOT)
 
 FRAME_RX = re.compile(r'(?=<section class="vs-frame)')
 CTRL_RX = re.compile(r'<(button|a)\b([^>]*)>(.*?)</\1>', re.S)
-MANAGED = re.compile(r'\s(?:data-w|data-go|data-view|data-open|data-do|data-menu|data-inert)(?:="[^"]*")?')
-WIRED = re.compile(r'\sdata-(?:go|open|do|menu|inert|close|rail|bulk)\b')
+# (?![-\w]) so data-w is never taken for the start of data-when, which once
+# stripped a hand-wired button's attributes.
+MANAGED = re.compile(r'\s(?:data-w|data-go|data-view|data-open|data-do|data-menu|data-inert)(?![-\w])(?:="[^"]*")?')
+WIRED = re.compile(r'\sdata-(?:go|open|do|menu|inert|close|rail|bulk)(?![-\w])')
+OURS = re.compile(r'\sdata-w(?![-\w])')
 BUILTIN = re.compile(r'class="[^"]*\b(?:v-pill|v-tab|v-seg__opt|v-pager__n|v-stat|v-sidenav__item|v-rail__item|'
                      r'v-topbar__icon|vs-topbar__menu|v-toggle|v-check|v-radiocard|v-filterchip__x)\b')
 
@@ -78,7 +81,7 @@ def run(check):
                 nonlocal written
                 tag, attrs, inner = m.group(1), m.group(2), m.group(3)
                 label, aria = text_of(inner), aria_of(attrs)
-                hand = WIRED.search(attrs) and ' data-w' not in attrs
+                hand = WIRED.search(attrs) and not OURS.search(attrs)
                 if hand: return m.group(0)
                 if BUILTIN.search(attrs) or aria in ('Close',): return m.group(0)
                 act = rule_for(fid, label, aria)
@@ -89,7 +92,7 @@ def run(check):
                 if tag == 'a' and re.search(r'href="(?!#)[^"]+"', attrs):   # a real link
                     return m.group(0)
                 unwired[(f, fid)].append(label or aria or '(unlabelled)')
-                return '<%s%s>%s</%s>' % (tag, clean, inner, tag) if ' data-w' in attrs else m.group(0)
+                return '<%s%s>%s</%s>' % (tag, clean, inner, tag) if OURS.search(attrs) else m.group(0)
             parts[i] = CTRL_RX.sub(sub, blk)
         if not check:
             open(f, 'w', encoding='utf-8').write(''.join(parts))
