@@ -407,6 +407,7 @@
   font-size: var(--t-meta-s); font-weight: 500; color: var(--text-secondary); cursor: pointer;
 }
 .v-selectchip:hover, .v-selectchip.is-hover { background: var(--surface-subtle); border-color: var(--border-strong); }
+button.v-selectchip { font-family: inherit; line-height: 1; }   /* a chip that opens a menu */
 .v-selectchip.is-active {
   background: var(--brand-50); border-color: var(--brand);
   color: var(--brand); font-weight: 600;
@@ -611,6 +612,9 @@ td.v-table__num.amount { font-family: var(--ui); }
 .v-modal__title { font-size: var(--t-card-s); font-weight: 600; }
 .v-modal__body { font-size: var(--t-small-s); color: var(--text-secondary); }
 .v-modal__foot { display: flex; justify-content: flex-end; gap: var(--s-2); margin-top: var(--s-2); }
+/* A modal that holds a short form — convert, book a follow-up, log a call. */
+.v-modal--wide { width: 560px; }
+.v-modal__sub { font-size: var(--t-small-s); color: var(--text-muted); margin-top: -6px; }
 
 .v-footbar { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-3) var(--s-5); border-top: 1px solid var(--border); background: var(--surface); }
 

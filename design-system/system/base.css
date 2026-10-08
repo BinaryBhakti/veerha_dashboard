@@ -9,6 +9,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* hidden means hidden. Without this, any component that sets display (a flex
+   callout, a grid card) silently overrides the attribute and stays on screen. */
+[hidden] { display: none !important; }
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
