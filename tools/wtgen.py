@@ -111,7 +111,6 @@ NEW_META = {
 NEW_PANEL3 = ('Records', [
   ('quotes','Quotations', None), ('quotes-empty','Quotations — empty', None),
   ('customers','Customers', None), ('customer-record','Customer record', None),
-  ('opportunity-drawer','Opportunity drawer', None),
 ])
 NEW_PANEL4 = ('Operations', [
   ('front-desk','Front desk', None), ('touchpoints','Touchpoints', None),

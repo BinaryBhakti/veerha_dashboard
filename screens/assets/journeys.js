@@ -151,4 +151,22 @@
              undo: function () { done.forEach(function (c) { c.hidden = false; c.removeAttribute('data-gone'); }); VF.restore(before); } };
   });
 
+  /* --- J2 Opportunity drawer and its dialogs (03-opportunities #4b) --------- */
+  function oppRows() { return Array.prototype.slice.call(document.querySelectorAll('[data-open="opportunity"][data-ctx-opp="' + S['ctx.opp'] + '"]')); }
+  function closeDeal(verb, body, count) {
+    return function () {
+      var before = VF.snapshot(), rows = oppRows();
+      rows.forEach(function (r) { r.hidden = true; r.setAttribute('data-gone', ''); });
+      if (count) VF.add('opps', -1);
+      if (S['ctx.opp'] === 'OPP-0061' && verb === 'won') S['arjun.won'] = true;
+      return { closeAll: true, toast: (S['ctx.name'] || 'The deal') + ' — ' + verb, body: body,
+               undo: function () { rows.forEach(function (r) { r.hidden = false; r.removeAttribute('data-gone'); }); VF.restore(before); } };
+    };
+  }
+  VF.action('mark-won',     closeDeal('won', 'The booking is created and the stay page has gone to the guest.', true));
+  VF.action('mark-lost',    closeDeal('lost', 'Reason recorded. They are on a gentle nurture sequence.', true));
+  VF.action('archive-deal', closeDeal('archived', 'Restore it from Opportunities › Archived.', true));
+  VF.action('delete-deal',  closeDeal('deleted', 'The customer and their conversations stay.', true));
+  VF.action('followup-cancel', simple('Follow-up cancelled', 'Veerha will not chase on that date.'));
+
 })();

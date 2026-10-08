@@ -166,7 +166,7 @@
                   <th style="width:44px"></th>
                 </tr></thead>
                 <tbody>
-                  <tr class="is-selected" data-when="arjun.converted">
+                  <tr class="is-selected" data-when="arjun.converted" data-open="opportunity" data-ctx-name="Arjun Mehta" data-ctx-first="Arjun" data-ctx-ini="AM" data-ctx-opp="OPP-0061" data-ctx-value="₹3,700" data-ctx-contact="+91 90000 10001 · arjun.mehta@example.com" style="cursor:pointer">
                     <td><span class="v-check is-checked"><span class="v-check__box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></span></td>
                     <td><div class="v-identity__name">Arjun Mehta</div><div class="v-identity__ref">OPP-0061 <span class="v-badge v-badge--ok" style="margin-left:4px">Just converted</span></div></td>
                     <td><div class="v-attrs"><span class="v-attrs__row">15–17 Oct · 2 nights</span><span class="v-attrs__row muted">Premier Riverside</span></div></td>
@@ -177,7 +177,7 @@
                     <td style="text-align:right"><div class="t-strong">₹43,700</div></td>
                     <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Arjun Mehta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
-                  <tr>
+                  <tr data-open="opportunity" data-ctx-name="Priya Nair" data-ctx-first="Priya" data-ctx-ini="PN" data-ctx-opp="OPP-0058" data-ctx-value="₹1,64,800" data-ctx-contact="+91 90000 10002 · priya.nair@example.com" style="cursor:pointer">
                     <td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Priya Nair</div><div class="v-identity__ref">OPP-0058</div></td>
                     <td><div class="v-attrs"><span class="v-attrs__row">12–14 Nov · 6 rooms</span><span class="v-attrs__row muted">Riverside block</span></div></td>
@@ -188,7 +188,7 @@
                     <td style="text-align:right"><div class="t-strong">₹1,64,800</div></td>
                     <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Priya Nair"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
-                  <tr>
+                  <tr data-open="opportunity" data-ctx-name="Vikram Rao" data-ctx-first="Vikram" data-ctx-ini="VR" data-ctx-opp="OPP-0044" data-ctx-value="₹28,320" data-ctx-contact="+91 90000 10004 · vikram.rao@example.com" style="cursor:pointer">
                     <td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Vikram Rao</div><div class="v-identity__ref">OPP-0044</div></td>
                     <td><div class="v-attrs"><span class="v-attrs__row">22–26 Oct · 4 nights</span><span class="v-attrs__row muted">Panorama Suite</span></div></td>
@@ -199,7 +199,7 @@
                     <td style="text-align:right"><div class="t-strong">₹28,320</div><div class="t-meta muted">asked ₹24,900</div></td>
                     <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Vikram Rao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
-                  <tr>
+                  <tr data-open="opportunity" data-ctx-name="Kavya Reddy" data-ctx-first="Kavya" data-ctx-ini="KR" data-ctx-opp="OPP-0052" data-ctx-value="₹92,400" data-ctx-contact="+91 90000 10006 · kavya.reddy@example.com" style="cursor:pointer">
                     <td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Kavya Reddy</div><div class="v-identity__ref">OPP-0052</div></td>
                     <td><div class="v-attrs"><span class="v-attrs__row">2–5 Jan · 3 nights</span><span class="v-attrs__row muted">Riverside block · 2</span></div></td>
@@ -210,7 +210,7 @@
                     <td style="text-align:right"><div class="t-strong">₹92,400</div></td>
                     <td style="text-align:right"><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Kavya Reddy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
                   </tr>
-                  <tr>
+                  <tr data-open="opportunity" data-ctx-name="Nandini Gokhale" data-ctx-first="Nandini" data-ctx-ini="NG" data-ctx-opp="OPP-0039" data-ctx-value="₹18,000" data-ctx-contact="+91 90000 10007 · nandini.gokhale@example.com" style="cursor:pointer">
                     <td><span class="v-check"><span class="v-check__box"></span></span></td>
                     <td><div class="v-identity__name">Nandini Gokhale</div><div class="v-identity__ref">OPP-0039</div></td>
                     <td><div class="v-attrs"><span class="v-attrs__row">28 Sep · day visit</span><span class="v-attrs__row muted">Lawn and lunch · 12</span></div></td>
@@ -617,6 +617,7 @@
       value; label and value are now separate things. The stepper also stops mixing a tick, a dot
       and two numerals across four steps, and the destructive pair is grouped and guarded instead of
       sitting in the same list style as the reversible actions above it.
+      In the walkthrough every deal row opens this drawer: the header and value follow the row; the body below is one drawn example deal.
     </p>
 
     <div class="vs-frame__box"><div class="vs-app">
@@ -679,22 +680,22 @@
               </tbody></table></div>
           </div>
 
-          <div class="vs-overlay">
+          <div class="vs-overlay" data-layer="opportunity">
             <div class="v-scrim"></div>
-            <aside class="v-drawer" role="dialog" aria-label="Devang Joshi · OPP-0047">
+            <aside class="v-drawer" role="dialog" aria-label="Deal">
 
               <!-- ONE header, ONE close. The live drawer stacks two of each. -->
               <div class="v-drawer__head">
-                <span class="v-avatar v-avatar--lg">DJ</span>
+                <span class="v-avatar v-avatar--lg" data-bind="ctx.ini">DJ</span>
                 <div class="grow">
                   <div class="row" style="gap:var(--s-2)">
-                    <span class="t-card">Devang Joshi</span>
+                    <span class="t-card" data-bind="ctx.name">Devang Joshi</span>
                     <span class="v-badge v-badge--warn">Warm</span>
                     <span class="v-selectchip">Proposal sent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span>
                     <span class="v-selectchip">Anita <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-down"/></svg></span>
                   </div>
                   <div class="t-meta muted" style="margin-top:4px">
-                    +91 90000 10003 · devang.joshi@example.com · <span class="num">OPP-0047</span></div>
+                    <span data-bind="ctx.contact">+91 90000 10003 · devang.joshi@example.com</span> · <span class="num" data-bind="ctx.opp">OPP-0047</span></div>
                   <div class="t-meta muted" style="margin-top:2px">
                     WhatsApp · 12 touchpoints · 2nd enquiry · last active 7 days ago</div>
                 </div>
@@ -735,8 +736,8 @@
                       He has not written since. Nobody is coming back to this on their own: move it,
                       or do it.</p>
                     <div class="v-actions" style="margin-top:var(--s-3)">
-                      <button class="v-btn v-btn--danger v-btn--sm">Call him now</button>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Open follow-ups</button>
+                      <button class="v-btn v-btn--danger v-btn--sm" data-w data-open="logcall">Call him now</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="tasks">Open follow-ups</button>
                     </div>
                   </div>
                 </div>
@@ -747,8 +748,8 @@
                     <div>
                       <div class="label">Deal value</div>
                       <div class="row" style="gap:var(--s-2)">
-                        <span class="t-card amount">₹26,400</span>
-                        <button class="v-btn v-btn--ghost v-btn--sm" style="height:22px;padding:0 6px">Edit</button></div>
+                        <span class="t-card amount"><span data-bind="ctx.value">₹26,400</span></span>
+                        <button class="v-btn v-btn--ghost v-btn--sm" style="height:22px;padding:0 6px" data-w data-inert="Opens the deal’s details for editing — value, dates and owner">Edit</button></div>
                       <div class="t-meta faint">2 nights, anniversary package</div>
                     </div>
                     <div>
@@ -779,23 +780,23 @@
                     The drop-off starts the day we missed the call, not before it. His dates are
                     still open, which is the only reason this is recoverable at all.</p>
                   <div class="v-next__acts">
-                    <button class="v-btn v-btn--primary">Send message</button>
-                    <button class="v-btn v-btn--secondary">Reschedule</button></div>
+                    <button class="v-btn v-btn--primary" data-w data-go="inbox">Send message</button>
+                    <button class="v-btn v-btn--secondary" data-w data-open="reschedule">Reschedule</button></div>
                 </div>
 
                 <div class="v-actions" style="margin-top:var(--s-4)">
-                  <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Call</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Email</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Meeting</button>
-                  <button class="v-btn v-btn--secondary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Note</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="inbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg>WhatsApp</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="logcall"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>Call</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-go="mail"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg>Email</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="meeting"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-cal"/></svg>Meeting</button>
+                  <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-note"/></svg>Note</button>
                 </div>
 
                 <!-- the proposal -->
                 <div style="margin-top:var(--s-6)">
                   <div class="spread" style="margin-bottom:var(--s-2)">
                     <span class="label">The proposal</span>
-                    <button class="v-btn v-btn--ghost v-btn--sm">Send another</button></div>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-go="proposal">Send another</button></div>
                   <div class="v-record v-record--warn">
                     <div class="v-record__body">
                       <div class="v-record__title">Anniversary package
@@ -815,7 +816,7 @@
                 <div style="margin-top:var(--s-6)">
                   <div class="spread" style="margin-bottom:var(--s-2)">
                     <span class="label">Quotations</span>
-                    <button class="v-btn v-btn--ghost v-btn--sm">Build a quotation</button></div>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-open="new-quote">Build a quotation</button></div>
                   <div class="v-card">
                     <div class="v-empty" style="padding:var(--s-8) var(--s-6)">
                       <div class="v-empty__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></div>
@@ -824,7 +825,7 @@
                         The proposal above was a held price, not a document. Build one from your
                         catalogue items and he gets the quotation and its attachments — and it
                         appears on <span style="color:var(--brand)">/quotes</span> as well as here.</p>
-                      <button class="v-btn v-btn--secondary v-btn--sm">Build a quotation</button>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="new-quote">Build a quotation</button>
                     </div>
                   </div>
                 </div>
@@ -833,7 +834,7 @@
                 <div style="margin-top:var(--s-6)">
                   <div class="spread" style="margin-bottom:var(--s-2)">
                     <span class="label">Follow-ups (<span class="num">2</span>)</span>
-                    <button class="v-btn v-btn--ghost v-btn--sm">Book another</button></div>
+                    <button class="v-btn v-btn--ghost v-btn--sm" data-w data-open="followup">Book another</button></div>
                   <div class="v-card" style="overflow:hidden">
                     <div class="v-rows">
                       <div class="row" style="align-items:flex-start;gap:var(--s-3)">
@@ -843,8 +844,8 @@
                           <div class="t-meta muted">Was due Sunday, 14 September at 1:30 PM · never confirmed from our side</div>
                         </div>
                         <div class="v-actions">
-                          <button class="v-btn v-btn--secondary v-btn--sm">Reschedule</button>
-                          <button class="v-btn v-btn--ghost v-btn--sm">Cancel</button></div>
+                          <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="reschedule">Reschedule</button>
+                          <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="followup-cancel">Cancel</button></div>
                       </div>
                       <div class="row" style="align-items:flex-start;gap:var(--s-3)">
                         <span class="v-dot v-dot--muted" style="margin-top:6px"></span>
@@ -855,8 +856,8 @@
                             ten-minute no-reply rule and never put a date on it.</div>
                         </div>
                         <div class="v-actions">
-                          <button class="v-btn v-btn--secondary v-btn--sm">Set a date</button>
-                          <button class="v-btn v-btn--ghost v-btn--sm">Cancel</button></div>
+                          <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="followup">Set a date</button>
+                          <button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="followup-cancel">Cancel</button></div>
                       </div>
                     </div>
                   </div>
@@ -868,8 +869,8 @@
                     <div class="spread" style="margin-bottom:var(--s-2)">
                       <span class="label">Customer details</span>
                       <span class="row" style="gap:var(--s-2)">
-                        <button class="v-btn v-btn--ghost v-btn--sm">Show all 9</button>
-                        <button class="v-btn v-btn--ghost v-btn--sm">Edit</button></span></div>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="Expands the full list of customer details">Show all 9</button>
+                        <button class="v-btn v-btn--ghost v-btn--sm" data-w data-inert="Opens the deal’s details for editing — value, dates and owner">Edit</button></span></div>
                     <dl class="v-kv">
                       <dt>Source</dt><dd>WhatsApp call</dd>
                       <dt>Budget on the lead</dt><dd class="faint">Not given</dd>
@@ -940,22 +941,47 @@
                       record, its proposal and its twelve messages, and cannot be undone — you will
                       be asked to confirm.</p>
                     <div class="v-actions" style="margin-top:var(--s-3)">
-                      <button class="v-btn v-btn--secondary v-btn--sm">Archive deal</button>
-                      <button class="v-btn v-btn--ghost v-btn--sm">Delete deal…</button></div>
+                      <button class="v-btn v-btn--secondary v-btn--sm" data-w data-open="confirm-archive-deal">Archive deal</button>
+                      <button class="v-btn v-btn--ghost v-btn--sm" data-w data-open="confirm-delete-deal">Delete deal…</button></div>
                   </div>
                 </div>
 
               </div>
 
               <div class="v-drawer__foot">
-                <button class="v-btn v-btn--secondary">Mark lost</button>
-                <button class="v-btn v-btn--secondary grow">Book a follow-up</button>
-                <button class="v-btn v-btn--primary grow">Mark won</button>
+                <button class="v-btn v-btn--secondary" data-w data-open="mark-lost">Mark lost</button>
+                <button class="v-btn v-btn--secondary grow" data-w data-open="followup">Book a follow-up</button>
+                <button class="v-btn v-btn--primary grow" data-w data-open="mark-won">Mark won</button>
               </div>
             </aside>
           </div>
         </div>
       </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 4b · OPPORTUNITY — DIALOGS ══════════════════ -->
+  <section class="vs-frame" id="opp-dialogs">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">4b</span><span class="vs-frame__name">Opportunity — dialogs</span>
+      <span class="vs-frame__route">dialogs</span><span class="t-meta muted">opened from buttons on this module’s screens</span>
+    </div>
+    <p class="vs-frame__note">
+      Closing a deal either way asks one question that the live product never asks: <b>why</b>. Won creates the booking from the deal; Lost records a reason that Analytics can count and can keep the customer on a gentle sequence. The live drawer offers Archive and Delete with no confirmation; both get one here.
+    </p>
+    <div class="vs-frame__box"><div class="vs-dialogs">
+        <div class="vs-dialog"><div class="label">mark-won · Mark won</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="mark-won"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Mark the deal with Arjun Mehta as won"><div class="v-modal__title">Mark the deal with <span data-bind="ctx.name">Arjun Mehta</span> as won</div><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field"><label class="v-field__label">Final value</label><input class="v-input" data-bind="ctx.value" value="₹43,700"></div><div class="v-field"><label class="v-field__label">Closed by</label><select class="v-select"><option>Paid on the stay page</option><option>Confirmed by phone</option><option>Paid at the hotel</option></select></div></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Create the booking now</div><div class="t-meta muted">Rooms, dates and guests come from the deal. The guest gets the stay page to check in online.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><p class="t-meta muted">Won deals leave the pipeline and count towards Attribution for the channel they came from.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="mark-won"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg>Mark won</button></div></div></div>
+        </div>
+        <div class="vs-dialog"><div class="label">mark-lost · Mark lost</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="mark-lost"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Why was the deal with Arjun Mehta lost?"><div class="v-modal__title">Why was the deal with <span data-bind="ctx.name">Arjun Mehta</span> lost?</div><p class="v-modal__sub">The reason shows on Analytics, so lost deals teach something.</p><div class="v-field"><label class="v-field__label">Reason</label><div class="row" style="gap:var(--s-2);flex-wrap:wrap"><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Price</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Dates not available</span></label><label class="v-radiocard is-selected" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Went elsewhere</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">No reply</span></label><label class="v-radiocard" style="padding:var(--s-2) var(--s-3)"><span class="v-radiocard__dot"></span><span class="t-small">Something else</span></label></div></div><div class="v-field"><label class="v-field__label">Anything worth remembering</label><input class="v-input" placeholder="e.g. booked a property with a pool"></div><div class="row" style="justify-content:space-between;gap:var(--s-4)"><div><div class="t-small" style="font-weight:600">Keep them on a nurture sequence</div><div class="t-meta muted">A gentle note in three months, the season they travel.</div></div><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-do="mark-lost">Mark lost</button></div></div></div>
+        </div>
+        <div class="vs-dialog"><div class="label">confirm-archive-deal · Archive deal</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="confirm-archive-deal"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Archive this deal?"><div class="v-modal__title">Archive this deal?</div><p class="v-modal__body">It leaves the pipeline and its follow-ups stop. Nothing is deleted — the customer, the conversation and any quotation stay, and the deal can be restored.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--primary" data-do="archive-deal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-archive"/></svg>Archive deal</button></div></div></div>
+        </div>
+        <div class="vs-dialog"><div class="label">confirm-delete-deal · Delete deal</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="confirm-delete-deal"><div class="v-scrim"></div><div class="v-modal" role="alertdialog" aria-label="Delete this deal?"><div class="v-modal__title">Delete this deal?</div><p class="v-modal__body">The deal and its activity are removed; the customer and their conversations stay. This cannot be undone — archive instead to keep the history.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Keep it</button><button class="v-btn v-btn--danger" data-do="delete-deal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-trash"/></svg>Delete deal</button></div></div></div>
+        </div>
     </div></div>
   </section>
 

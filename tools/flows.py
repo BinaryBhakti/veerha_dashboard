@@ -22,6 +22,7 @@ can be wired in its own markup when that is clearer.
 # lifted into the walkthrough's layer stack and the frame is not a screen.
 LAYER_ONLY = {
     'lead-drawer', 'lead-convert', 'lead-dialogs', 'queue-dialogs',
+    'opportunity-drawer', 'opp-dialogs',
 }
 
 # Frames that show a state for the design sheet only (the walkthrough reaches the
@@ -31,5 +32,27 @@ SHEET_ONLY = {
 }
 
 RULES = [
+    # --- Opportunity drawer (03-opportunities) ---------------------------------
+    ('opportunity-drawer', 'WhatsApp',          'go:inbox'),
+    ('opportunity-drawer', 'Call',              'open:logcall'),
+    ('opportunity-drawer', 'Email',             'go:mail'),
+    ('opportunity-drawer', 'Meeting',           'open:meeting'),
+    ('opportunity-drawer', 'Note',              'open:note'),
+    ('opportunity-drawer', 'Build a quotation', 'open:new-quote'),
+    ('opportunity-drawer', 'Send another',      'go:proposal'),
+    ('opportunity-drawer', 'Mark won',          'open:mark-won'),
+    ('opportunity-drawer', 'Mark lost',         'open:mark-lost'),
+    ('opportunity-drawer', 'Archive deal',      'open:confirm-archive-deal'),
+    ('opportunity-drawer', 'Delete deal',       'open:confirm-delete-deal'),
+    ('opportunity-drawer', 'Book a follow-up',  'open:followup'),
+    ('opportunity-drawer', 'Book another',      'open:followup'),
+    ('opportunity-drawer', 'Set a date',        'open:followup'),
+    ('opportunity-drawer', 'Reschedule',        'open:reschedule'),
+    ('opportunity-drawer', 'Call him now',      'open:logcall'),
+    ('opportunity-drawer', 'Open follow-ups',   'go:tasks'),
+    ('opportunity-drawer', 'Send message',      'go:inbox'),
+    ('opportunity-drawer', {'exact': 'Cancel'}, 'do:followup-cancel'),
+    ('opportunity-drawer', 'Edit',              'inert:Opens the deal’s details for editing — value, dates and owner'),
+    ('opportunity-drawer', 'Show all',          'inert:Expands the full list of customer details'),
     # --- Workstream A and the journeys add their rules here, grouped by screen ---
 ]
