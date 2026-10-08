@@ -127,7 +127,7 @@
               <p class="v-pagehead__sub">Every priced offer this company has made · 11 in the last 30 days</p></div>
             <div class="v-actions">
               <button class="v-btn v-btn--secondary v-btn--sm">Columns</button>
-              <button class="v-btn v-btn--primary v-btn--sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New quotation</button>
+              <button class="v-btn v-btn--primary v-btn--sm" data-open="new-quote"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-plus"/></svg>New quotation</button>
             </div>
           </div>
 
@@ -225,6 +225,18 @@
                 <th style="width:64px"></th>
               <th style="width:60px"></th></tr></thead>
               <tbody>
+                <tr data-when="quote.sent" hidden>
+                  <td><span class="v-check"><span class="v-check__box"></span></span></td>
+                  <td><span class="num">QT-0105</span><div class="t-meta muted">Just now</div></td>
+                  <td><div class="v-identity__name">Priya Nair</div><div class="v-identity__ref">OPP-0058</div></td>
+                  <td><span class="v-badge v-badge--info">Sent · awaiting reply</span><div class="t-meta muted" style="margin-top:4px">WhatsApp and email</div></td>
+                  <td class="t-small">Anita</td>
+                  <td><div class="t-small">Until 15 Oct 2026</div><div class="t-meta muted"><span class="num">7</span> days left</div></td>
+                  <td><span class="t-small faint">Not raised</span><div class="t-meta muted">Raised on acceptance</div></td>
+                  <td style="text-align:right"><div class="t-strong amount">₹1,64,800</div><div class="t-meta muted">2 nights, 6 rooms</div></td>
+                  <td style="text-align:right"><span class="v-badge v-badge--ok">New</span></td>
+                <td></td></tr>
+                
                 <tr class="is-selected">
                   <td><span class="v-check is-checked"><span class="v-check__box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></span></td>
                   <td><span class="num">QT-0104</span><div class="t-meta muted">21 Sep 2026</div></td>
@@ -460,6 +472,28 @@
           </div>
         </div></div>
       </div>
+    </div></div>
+  </section>
+
+  <!-- ══════════════════ 6c · QUOTATION — BUILD AND SEND ══════════════════ -->
+  <section class="vs-frame" id="quote-dialogs">
+    <div class="vs-frame__hd">
+      <span class="vs-frame__n">6c</span><span class="vs-frame__name">Quotation — build and send</span>
+      <span class="vs-frame__route">dialogs</span><span class="t-meta muted">opened from buttons on this module’s screens</span>
+    </div>
+    <p class="vs-frame__note">
+      The live product starts a quotation with <i>Who is it for?</i> and creates a deal when there is none; the steps after that were never captured. Drawn here as three steps in one dialog — customer, contents, then a review that shows <b>exactly what goes, to whom, until when</b> — before anything is sent. Opened from New quotation, the Dashboard’s Generate quote, and Build a quotation on a deal.
+    </p>
+    <div class="vs-frame__box"><div class="vs-dialogs">
+        <div class="vs-dialog"><div class="label">new-quote · step 1</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="new-quote"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="New quotation — who is it for?"><div class="v-modal__title">New quotation — who is it for?</div><div class="t-meta muted">Step 1 of 3 · Who it is for</div><div class="v-search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" placeholder="Search customers and deals"></div><div style="display:flex;flex-direction:column;gap:var(--s-2)"><label class="v-radiocard is-selected" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Priya Nair</b></span><span class="t-meta muted">OPP-0058 · 12–14 Nov · 6 rooms</span></label><label class="v-radiocard" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Vikram Rao</b></span><span class="t-meta muted">OPP-0044 · 22–26 Oct</span></label><label class="v-radiocard" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Kavya Reddy</b></span><span class="t-meta muted">OPP-0052 · 2–5 Jan</span></label><label class="v-radiocard" style="justify-content:space-between"><span class="row" style="gap:var(--s-2)"><span class="v-radiocard__dot"></span><b class="t-small">Ishaan Varma</b></span><span class="t-meta muted">No open deal — one will be created</span></label></div><p class="t-meta muted">If the customer has no open deal, one is created so the quotation has somewhere to live — marked as coming from a quotation.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary">Cancel</button><button class="v-btn v-btn--primary" data-open="quote-items" data-step>Next — what it includes</button></div></div></div>
+        </div>
+        <div class="vs-dialog"><div class="label">quote-items · step 2</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="quote-items"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Quotation for Priya Nair — what it includes"><div class="v-modal__title">Quotation for Priya Nair — what it includes</div><div class="t-meta muted">Step 2 of 3 · What it includes</div><table class="v-table"><tbody><tr><td class="t-small">Riverside block · 2 nights</td><td class="t-meta muted">6 rooms</td><td style="text-align:right"><span class="amount t-small">₹1,38,000</span></td></tr><tr><td class="t-small">Breakfast for 16</td><td class="t-meta muted">2 mornings</td><td style="text-align:right"><span class="amount t-small">₹13,600</span></td></tr><tr><td class="t-small">Group welcome dinner</td><td class="t-meta muted">1 evening</td><td style="text-align:right"><span class="amount t-small">₹13,200</span></td></tr><tr><td class="t-small"><b>Total before tax</b></td><td></td><td style="text-align:right"><b class="amount t-small">₹1,64,800</b></td></tr></tbody></table><div class="row" style="gap:var(--s-2)"><button class="v-btn v-btn--secondary v-btn--sm" data-inert="Adds a room, package or extra from Products &amp; Services"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-plus"/></svg>Add from catalog</button><span class="t-meta muted">Rates are read from Havenlink, 6 minutes ago.</span></div><div class="v-callout v-callout--warn"><div><b>Group rate:</b> ₹1,64,800 is 8% under rack. That is inside your 11% discount limit, so no approval is needed.</div></div><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-open="new-quote" data-step>Back</button><button class="v-btn v-btn--primary" data-open="quote-send" data-step>Next — review and send</button></div></div></div>
+        </div>
+        <div class="vs-dialog"><div class="label">quote-send · step 3</div>
+          <div class="vs-overlay vs-overlay--modal" data-layer="quote-send"><div class="v-scrim"></div><div class="v-modal v-modal--wide" role="dialog" aria-label="Send QT-0105 to Priya Nair"><div class="v-modal__title">Send QT-0105 to Priya Nair</div><div class="t-meta muted">Step 3 of 3 · Review and send</div><dl class="v-kv"><dt>To</dt><dd style="font-family:var(--ui);text-align:right">priya.nair@example.com · WhatsApp +91 90000 10002</dd><dt>Valid until</dt><dd style="font-family:var(--ui);text-align:right">15 October 2026</dd><dt>Total</dt><dd style="text-align:right"><span class="amount">₹1,64,800</span> + GST</dd></dl><div class="v-field"><label class="v-field__label">Message that goes with it</label><textarea class="v-input" rows="3" style="width:100%">Hello Priya — here is the group quotation for 12–14 November: six rooms in the Riverside block, breakfast both mornings and a welcome dinner. You can confirm on the page itself. — Anita, Rivergrove</textarea></div><p class="t-meta muted">She gets one page she can open, accept or ask about. You will see when she opens it.</p><div class="v-modal__foot"><button class="v-btn v-btn--secondary" data-open="quote-items" data-step>Back</button><button class="v-btn v-btn--primary" data-do="quote-send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-send"/></svg>Send quotation</button></div></div></div>
+        </div>
     </div></div>
   </section>
 
