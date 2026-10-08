@@ -51,14 +51,16 @@ MODULES = ['01-home.html','02-leads.html','03-opportunities.html','04-quotes.htm
 # walkthrough already carries.
 # Frames that are not stage screens: the lead drawer is rendered as the overlay,
 # which lives in the hand-written tail of the stage.
-# The walkthrough's `leads` screen is the full Leads index, and the lead drawer
-# opens OVER it: the drawer frame's overlay is lifted out and appended to the
-# index. Using the drawer frame itself as the screen (as before) showed its
-# three-row, 45%-opacity backdrop whenever the drawer was closed -- a faded
-# stub where the main list should be.
-EXCLUDE = {'lead-drawer'}
+# Layers. Any overlay in any frame marked data-layer="id" (a modal, a drawer, a
+# confirm dialog) is lifted out of its frame into the walkthrough's layer stack,
+# hidden until a data-open targets it (screens/assets/flows.js). Frames that
+# exist only to show a layer (tools/flows.py LAYER_ONLY) are not screens.
+# Before this, the lead drawer frame itself was the Leads screen, so the main
+# list showed as a faded three-row backdrop whenever the drawer was closed.
+from flows import LAYER_ONLY
+EXCLUDE = set(LAYER_ONLY)
 RENAME = {}
-OVERLAY_FROM = ('02-leads.html', 'lead-drawer', 'leads')   # (file, source frame, target screen)
+LAYER_RX = re.compile(r'<div class="vs-overlay[^"]*"[^>]*data-layer="([^"]+)"')
 
 NEW_META = {
   'opportunity-drawer':  {'crumb': ['Customer','Opportunity'], 'rail': 'trend', 'tabs': ''},
@@ -201,19 +203,29 @@ def main():
     soon_end = wt.index(frag, sk) + len(frag) + len('</div>')
     soon_html = wt[sk:soon_end]
 
-    # lift the lead drawer's overlay out of its frame body
-    src = open(os.path.join(ROOT, OVERLAY_FROM[0]), encoding='utf-8').read()
-    fm = re.search(r'<section class="vs-frame[^"]*" id="%s">' % OVERLAY_FROM[1], src)
-    oi = src.index('<div class="vs-overlay', fm.end())
-    ov_inner, _, ov_open = block(src, oi)
-    overlay = ov_open + ov_inner + '</div>'
+    # collect every data-layer overlay from every frame, and strip it from screens
+    layers, seen_layers = [], set()
+    def lift(inner):
+        out = inner
+        for m in list(LAYER_RX.finditer(inner))[::-1]:
+            lid = m.group(1)
+            ov_inner, end, ov_open = block(inner, m.start())
+            if lid not in seen_layers:
+                seen_layers.add(lid)
+                layers.append('<div class="wt-layer" data-layer="%s" hidden>%s%s</div></div>' % (lid, ov_open, ov_inner))
+            out = out[:m.start()] + out[end:]
+        return out
+    for f in MODULES:
+        src_f = open(os.path.join(ROOT, f), encoding='utf-8').read()
+        for fm in re.finditer(r'<section class="vs-frame[^"]*" id="([^"]+)">', src_f):
+            nxt = src_f.find('<section class="vs-frame', fm.end()); seg = src_f[fm.end(): nxt if nxt != -1 else len(src_f)]
+            if fm.group(1) in LAYER_ONLY: lift(seg)
 
     ids, parts = [], []
     for f in MODULES:
         for fid, cls, inner, tabs in frames(os.path.join(ROOT, f)):
             fid = RENAME.get(fid, fid)
-            if fid == OVERLAY_FROM[2]:
-                inner = inner + '\n' + overlay
+            inner = lift(inner)
             ids.append(fid)
             if tabs:
                 parts.append('<div data-screen="%s" class="wt-screen wt-screen--tabbed">%s<div class="%s">%s</div></div>'
@@ -223,7 +235,8 @@ def main():
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes: raise SystemExit('duplicate screen ids: %s' % dupes)
 
-    wt = wt[:si] + opentag + '\n' + '\n'.join(parts) + '\n' + soon_html + wt[soon_end:]
+    wt = wt[:si] + opentag + '\n' + '\n'.join(parts) + '\n' + soon_html + '\n' + '\n'.join(layers) + wt[soon_end:]
+    print('  layers: %s' % (', '.join(sorted(seen_layers)) or 'none'))
 
     # ---- META -----------------------------------------------------------
     mm = re.search(r'var META = (\{.*?\});\n', wt, re.S)
@@ -294,6 +307,9 @@ def main():
     if 'behaviour.js' not in wt:
         wt = wt.replace('</body>', '<script src="assets/behaviour.js"></script>\n</body>', 1)
         print('  re-attached behaviour.js')
+    if '<script src="assets/flows.js"' not in wt:
+        wt = wt.replace('<script src="assets/behaviour.js"></script>', '<script src="assets/behaviour.js"></script>\n<script src="assets/flows.js"></script>', 1)
+        print('  attached flows.js')
 
     open(os.path.join(ROOT,'walkthrough.html'),'w',encoding='utf-8').write(wt)
     print('walkthrough: %d screens, %d palette items' % (len(ids), len(items)))
