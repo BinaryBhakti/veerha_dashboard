@@ -30,7 +30,7 @@
     leads: 27, leadsNew: 17, leadsHot: 14, leadsOverdue: 5,
     opps: 60, waiting: 20,   // opps: Arjun becomes the 61st when he is converted review: 20, tasks: 10,
     needsReply: 4, highIntent: 2, awaiting: 3, mailNew: 1,
-    chatNeedsReply: 3, chatHighIntent: 2,
+    chatNeedsReply: 2, chatHighIntent: 2,
     quotesAwaiting: 0,
     'arjun.converted': false, 'arjun.won': false
   };
@@ -182,11 +182,41 @@
     if (window.wtGo) window.wtGo(id); else location.hash = id;
     if (view) setTimeout(function () { selectView(view); }, 60);
   }
-  // A view is a tab or pill in the active screen carrying data-view-tab.
-  function selectView(view) {
-    var scr = $('.wt-screen.is-on') || document;
+  // A view is a tab in the active screen carrying data-view-tab="key". Items
+  // tagged data-views="key other" show when their key is selected; "all" shows
+  // everything; [data-view-empty="key"] is that view's empty state.
+  function selectView(view, scope) {
+    var scr = scope || $('.wt-screen.is-on') || document;
     var t = $('[data-view-tab="' + view + '"]', scr);
-    if (t) t.click();
+    if (t) applyView(t);
+  }
+  function scopeOf(el) { return el.closest('.wt-screen, .vs-frame') || document; }
+  function applyView(tab) {
+    var scr = scopeOf(tab), key = tab.getAttribute('data-view-tab');
+    $$('[data-view-tab]', scr).forEach(function (x) {
+      var on = x.getAttribute('data-view-tab') === key && !x.closest('.v-menu');
+      x.classList.toggle('is-active', on);
+      if (x.hasAttribute('aria-selected')) x.setAttribute('aria-selected', on);
+    });
+    var shown = 0;
+    $$('[data-views]', scr).forEach(function (it) {
+      var ok = key === 'all' || (' ' + it.getAttribute('data-views') + ' ').indexOf(' ' + key + ' ') !== -1;
+      it.hidden = !ok || it.hasAttribute('data-gone'); if (!it.hidden) shown++;
+    });
+    $$('[data-view-empty]', scr).forEach(function (e) { e.hidden = !(e.getAttribute('data-view-empty') === key && !shown); });
+    var lbl = $('[data-view-label]', scr);
+    if (lbl) lbl.textContent = (tab.getAttribute('data-view-name') || tab.textContent).replace(/\s*\d[\d,]*\s*$/, '').trim();
+    STATE['view'] = key;
+    // keep the reading pane on something in this view
+    var cur = $('[data-thread].is-active', scr);
+    if (!cur || cur.hidden) { var first = $('[data-thread]:not([hidden])', scr); if (first) selectThread(first, true); }
+  }
+  // A thread item carries its content as data-ctx-*; selecting it fills the
+  // reading pane and the context panel through data-bind="ctx.…".
+  function selectThread(item, quiet) {
+    var scr = scopeOf(item);
+    $$('[data-thread]', scr).forEach(function (x) { x.classList.toggle('is-active', x === item); });
+    takeCtx(item); render();
   }
   function label(el) {
     return (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 48);
@@ -224,6 +254,12 @@
     }
     if (!e.target.closest('.v-menu')) closeMenus();
 
+    var vt = e.target.closest('[data-view-tab]');
+    if (vt) { e.preventDefault(); e.stopPropagation(); closeMenus(); applyView(vt); return; }
+
+    var th = e.target.closest('[data-thread]');
+    if (th && !e.target.closest('button:not([data-thread]), a, input')) { e.preventDefault(); selectThread(th); return; }
+
     var o = e.target.closest('[data-open]');
     if (o) { e.preventDefault(); e.stopPropagation(); closeMenus(); open(o.getAttribute('data-open'), o); return; }
 
@@ -258,11 +294,19 @@
   var menuOpenedAt = 0;
   document.addEventListener('scroll', function () { if (Date.now() - menuOpenedAt > 400) closeMenus(); }, true);
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+  function boot() {
+    render();
+    // each screen opens on its default view (the tab drawn as is-active)
+    $$('.wt-screen, .vs-frame').forEach(function (scr) {
+      var t = $('[data-view-tab].is-active', scr); if (t && !t.closest('.v-menu')) applyView(t);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 
   window.VF = {
     state: STATE, seed: SEED, get: function (k) { return STATE[k]; }, set: set, add: add,
     open: open, close: close, closeAll: closeAll, go: go, toast: toast, render: render,
+    applyView: applyView, selectView: selectView, selectThread: selectThread,
     snapshot: snapshot, restore: restore,
     action: function (name, fn) { ACTIONS[name] = fn; }
   };

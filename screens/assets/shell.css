@@ -86,6 +86,10 @@
 /* Full-bleed screens: the inbox, the builders — they manage their own columns
    and must not get canvas padding. */
 .vs-body--panes { overflow: hidden; }
+/* A bar above the panes (Mail and Chat views): the body stacks, panes fill. A
+   class, not an inline style, because the walkthrough copies classes only. */
+.vs-body--stack { flex-direction: column; }
+.vs-body--stack > .vs-panes { flex: 1; min-height: 0; }
 
 
 /* --- TOP BAR EXTRAS ------------------------------------------------------
