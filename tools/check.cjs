@@ -53,7 +53,7 @@ const FILES = fs.readdirSync(path.join(ROOT, 'screens'))
           return over > 2 ? ((t.closest('.vs-frame') || {}).id || '?') + ' +' + over + 'px' : null;
         }).filter(Boolean),
         mono: [...document.querySelectorAll('*')].filter(e => {
-          if (e.children.length) return false;
+          if (e.children.length || e.closest('[data-mono-ok]')) return false;   // a specimen of the mistake
           const t = (e.textContent || '').trim();
           if (!/[₹$€£]\s?\d[\d,]*,\d/.test(t)) return false;
           return /mono/i.test(getComputedStyle(e).fontFamily);

@@ -154,17 +154,17 @@
 .vs-pane--canvas { background: var(--canvas); }
 .vs-pane__hd {
   padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--border);
-  background: var(--surface); position: sticky; top: 0; z-index: 2;
+  background: var(--surface); position: sticky; top: 0; z-index: var(--z-sticky);
 }
 
 /* A drawer sitting over the screen behind it. Drawn, not animated. */
-.vs-overlay { position: absolute; inset: 0; display: flex; justify-content: flex-end; z-index: 5; }
+.vs-overlay { position: absolute; inset: 0; display: flex; justify-content: flex-end; z-index: var(--z-overlay); }
 /* The point of a drawer over a modal is that the list stays readable behind
    it. At 78% it was a sliver; 62% keeps enough of the table to see where you
    are and what is next. */
-.vs-overlay .v-drawer { position: relative; z-index: 1; width: 980px; max-width: 62%; }
+.vs-overlay .v-drawer { position: relative; z-index: var(--z-raised); width: 980px; max-width: 62%; }
 .vs-overlay--modal { align-items: center; justify-content: center; }
-.vs-overlay .v-modal { position: relative; z-index: 1; max-height: calc(100% - 2 * var(--s-6)); overflow: auto; }
+.vs-overlay .v-modal { position: relative; z-index: var(--z-raised); max-height: calc(100% - 2 * var(--s-6)); overflow: auto; }
 
 /* Card grids used by A6 and the dashboard. */
 .vs-cards { display: grid; gap: var(--s-4); }
@@ -247,7 +247,7 @@
 }
 .vs-step__mark {
   grid-row: 1 / span 2; width: 34px; height: 34px; border-radius: var(--r-full);
-  border: 1px solid; display: grid; place-items: center; z-index: 1;
+  border: 1px solid; display: grid; place-items: center; z-index: var(--z-raised);
   justify-self: center;
 }
 .vs-step__day {
@@ -261,7 +261,7 @@
    A modal, drawer or confirm dialog lifted out of its frame by tools/wtgen.py
    and opened by screens/assets/flows.js. Sits over the stage only, like the
    drawers it replaces, so the sidebar and top bar stay usable behind it. */
-.wt-layer { position: absolute; inset: 0; z-index: 20; }
+.wt-layer { position: absolute; inset: 0; z-index: var(--z-layer); }
 .wt-layer[hidden] { display: none; }
 
 /* --- DIALOG SHEETS ---------------------------------------------------------

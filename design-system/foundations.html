@@ -241,16 +241,16 @@
                 <tr><td>Arjun Mehta</td><td>₹43,700</td></tr>
                 <tr><td>Priya Nair</td><td>₹78,200</td></tr>
                 <tr><td>Vikram Rao</td><td>₹6,100</td></tr>
-                <tr><td>Kavya Reddy</td><td>₹121,450</td></tr>
+                <tr><td>Kavya Reddy</td><td>₹1,21,450</td></tr>
               </table>
             </div>
             <div class="sh-figs__col">
               <div class="t-meta muted" style="margin-bottom:6px">Tabular figures — Geist Mono</div>
-              <table class="sh-figs--mono">
+              <table class="sh-figs--mono" data-mono-ok>
                 <tr><td>Arjun Mehta</td><td>₹43,700</td></tr>
                 <tr><td>Priya Nair</td><td>₹78,200</td></tr>
                 <tr><td>Vikram Rao</td><td>₹6,100</td></tr>
-                <tr><td>Kavya Reddy</td><td>₹121,450</td></tr>
+                <tr><td>Kavya Reddy</td><td>₹1,21,450</td></tr>
               </table>
             </div>
           </div>
@@ -265,7 +265,7 @@
       <div class="sh-note">
         <strong>Money is never mono.</strong> The mono face is for identifiers and bare figures —
         record codes, times, scores, durations. It is <em>never</em> for a formatted amount, anywhere:
-        a monospace comma takes a full character cell, so <code>₹8,69,500</code> renders as
+        a monospace comma takes a full character cell, so <code data-mono-ok>₹8,69,500</code> renders as
         <code>₹8 , 69 , 500</code>, and Indian grouping makes it worse. Three components set mono on
         their numeric slot — <code>.v-stat__n</code>, <code>.v-table__num</code> and
         <code>.v-kv dd</code> — so put <code class="sh-code">.amount</code> on anything carrying a
@@ -286,7 +286,7 @@
         <div><div class="sh-state__l" style="margin-bottom:6px">Micro label · 11/16 · 600 · uppercase</div><div class="label">Recommended next step</div></div>
         <div><div class="sh-state__l" style="margin-bottom:6px">Figures · Geist Mono · tabular</div><div class="num" style="font-size:20px;font-weight:600">OPP-0061 · 91 · 10:42 · 15–17 Oct</div></div>
         <div><div class="sh-state__l" style="margin-bottom:6px">Money · <code class="sh-code">.amount</code> · UI face, tabular</div><div class="amount" style="font-size:20px;font-weight:600">₹8,69,500 · ₹43,700 · ₹1,10,400</div>
-          <div class="t-meta muted" style="margin-top:6px">The same three amounts in mono: <span class="num">₹8,69,500 · ₹43,700 · ₹1,10,400</span></div></div>
+          <div class="t-meta muted" style="margin-top:6px">The same three amounts in mono: <span class="num" data-mono-ok>₹8,69,500 · ₹43,700 · ₹1,10,400</span></div></div>
       </div>
     </div>
 

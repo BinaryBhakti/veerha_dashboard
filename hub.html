@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Veerha — redesign prototype</title>
-<meta name="description" content="Clickable prototype of the redesigned Veerha workforce platform: dashboard, 148 screen frames and the design system.">
+<meta name="description" content="Clickable prototype of the redesigned Veerha workforce platform: dashboard, 156 screen frames and the design system.">
 <link rel="stylesheet" href="design-system/system/fonts.css">
 <link rel="stylesheet" href="design-system/system/tokens.css">
 <link rel="stylesheet" href="design-system/system/base.css">
@@ -13,7 +13,7 @@
   /* Hub-only composition. Every colour, radius and step is a design-system
      token -- the front door has to be the clearest proof the system holds. */
   body { background: var(--canvas); color: var(--text-primary); min-height: 100vh; }
-  .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: var(--s-10) 0 var(--s-12); }
+  .hub-wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: var(--s-10) 0 var(--s-12); }
 
   .brand { display: flex; align-items: center; gap: var(--s-3); }
   .brand__mark {
@@ -74,7 +74,7 @@
           display: flex; gap: var(--s-6); flex-wrap: wrap; font-size: 12px; color: var(--text-muted); }
   .foot b { color: var(--text-secondary); font-weight: 600; }
 
-  @media (max-width: 860px) { .tiles, .tips { grid-template-columns: 1fr; } .wrap { padding-top: var(--s-6); } }
+  @media (max-width: 860px) { .tiles, .tips { grid-template-columns: 1fr; } .hub-wrap { padding-top: var(--s-6); } }
 </style>
 </head>
 <body>
@@ -86,7 +86,7 @@
   <g id="i-arr"><path d="M5 12h14M13 6l6 6-6 6"/></g>
 </defs></svg>
 
-<main class="wrap">
+<main class="hub-wrap">
   <div class="brand"><span class="brand__mark">V</span>
     <div><div class="brand__name">Veerha</div>
       <div class="t-meta muted">Redesign prototype &middot; September 2026</div></div>
@@ -113,8 +113,8 @@
 
     <a class="tile" href="screens/index.html">
       <span class="tile__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-layers"/></svg></span>
-      <div><h2>All 148 screen frames</h2>
-        <p>Eighteen modules presented as labelled frames &mdash; every state drawn, including empty, loading and error. Plus a 116-screen walkthrough where every button works.</p></div>
+      <div><h2>All 156 screen frames</h2>
+        <p>Eighteen modules presented as labelled frames &mdash; every state drawn, including empty, loading and error. Plus a 124-screen walkthrough where every button works.</p></div>
       <span class="tile__go">Browse the screens
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arr"/></svg></span>
     </a>
@@ -175,7 +175,7 @@
   </section>
 
   <footer class="foot">
-    <span><b>18</b> modules &middot; <b>148</b> frames &middot; <b>116</b> in the walkthrough</span>
+    <span><b>18</b> modules &middot; <b>156</b> frames &middot; <b>124</b> in the walkthrough</span>
     <span><b>103</b> screens of the live app captured</span>
     <span>Kora Kaagaz &middot; Indigo Slate v1.0</span>
   </footer>

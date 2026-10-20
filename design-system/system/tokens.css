@@ -113,7 +113,7 @@
      charts. Grid and axis sit well below the data so the line is the thing
      the eye lands on. */
 
-  --chart-1:    #4F46E5;               /* the series. Same indigo as brand.   */
+  --chart-1:    var(--brand-600);      /* the series. Same indigo as brand.   */
   --chart-fill: rgba(79, 70, 229, .12);/* the area under a line               */
   --chart-grid: #EAEEF3;               /* gridlines — quieter than --border   */
 
@@ -127,6 +127,8 @@
   --num:   "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Scale — v2 §10. size / line-height / weight / tracking */
+  --t-figure-s:  26px;  --t-figure-l:  32px;   /* a KPI's number; set in --num   */
+  --t-lead-s:    15px;  --t-lead-l:    22px;   /* intro paragraphs, card leads   */
   --t-display-s: 32px;  --t-display-l: 40px;  --t-display-w: 600;  --t-display-k: -.024em;
   --t-page-s:    24px;  --t-page-l:    32px;  --t-page-w:    600;  --t-page-k:    -.018em;
   --t-section-s: 18px;  --t-section-l: 26px;  --t-section-w: 600;  --t-section-k: -.012em;
@@ -145,6 +147,26 @@
   --s-1:   4px;   --s-2:   8px;   --s-3:  12px;   --s-4:  16px;
   --s-5:  20px;   --s-6:  24px;   --s-8:  32px;   --s-10: 40px;
   --s-12: 48px;   --s-16: 64px;   --s-20: 80px;
+
+
+  /* --- 6b · LAYERS -------------------------------------------------------
+     One stacking order. Before this, z-indexes were picked per component
+     (1, 2, 5, 20, 30, 40, 60, 200) and nothing said which beat which. */
+
+  --z-raised:  1;    /* sticky table column, a card lifted over its neighbour */
+  --z-sticky:  2;    /* pane headers                                          */
+  --z-overlay: 5;    /* in-frame drawer and its scrim, save bar               */
+  --z-layer:   20;   /* walkthrough layers, the sheet header                  */
+  --z-menu:    30;   /* menus anchored to a trigger                           */
+  --z-tip:     40;   /* tooltips                                              */
+  --z-pinned:  60;   /* menus pinned over everything, walkthrough chrome      */
+  --z-toast:   200;  /* toasts sit above all of it                            */
+
+  /* Inverse surface: toasts, tooltips, the AI mark. A token of its own so a
+     dark theme can flip it without touching text-primary. */
+  --inverse-bg: var(--text-primary);
+  --inverse-tx: var(--surface);
+  --shimmer:    rgba(255, 255, 255, .65);  /* the skeleton's passing highlight */
 
 
   /* --- 7 · RADIUS ---------------------------------------------------------

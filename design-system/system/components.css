@@ -159,7 +159,7 @@
   border-radius: var(--r-card); box-shadow: var(--e1);
 }
 .v-card__head { padding: var(--s-4) var(--s-5) var(--s-3); display: flex; align-items: flex-start; gap: var(--s-3); }
-.v-card__head .v-card__title { font-size: 15px; line-height: 22px; font-weight: 600; letter-spacing: -.008em; }
+.v-card__head .v-card__title { font-size: var(--t-lead-s); line-height: var(--t-lead-l); font-weight: 600; letter-spacing: -.008em; }
 .v-card__desc { margin-top: 2px; font-size: var(--t-small-s); color: var(--text-muted); }
 .v-card__body { padding: 0 var(--s-5) var(--s-5); }
 .v-card__foot { padding: var(--s-3) var(--s-5); border-top: 1px solid var(--border); }
@@ -280,7 +280,7 @@
 .v-textarea { min-height: 84px; resize: vertical; line-height: var(--t-body-l); }
 
 .v-select { appearance: none; padding-right: var(--s-8); cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23626F85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right var(--s-3) center;
 }
 
@@ -466,7 +466,7 @@ button.v-selectchip { font-family: inherit; line-height: 1; }   /* a chip that o
 .v-stat.is-attn { border-color: var(--dn-bd); background: var(--dn-bg); }
 .v-stat__ic { width: 24px; height: 24px; border-radius: var(--r-sm); display: grid; place-items: center; background: var(--surface-subtle); color: var(--text-muted); }
 .v-stat.is-attn .v-stat__ic { background: var(--dn-bg); color: var(--dn-ic); border: 1px solid var(--dn-bd); }
-.v-stat__n { font-family: var(--num); font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -.02em; }
+.v-stat__n { font-family: var(--num); font-size: var(--t-figure-s); line-height: var(--t-figure-l); font-weight: 600; letter-spacing: -.02em; }
 .v-stat__cap { font-size: var(--t-meta-s); color: var(--text-muted); }
 .v-stats { display: flex; gap: var(--s-3); flex-wrap: wrap; }
 /* A tile never squeezes below the width of the number it exists to show. */
@@ -565,7 +565,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 /* Empty state must answer: what is empty, why, what do I do (v2 §40). */
 .v-empty { text-align: center; padding: var(--s-12) var(--s-6); display: flex; flex-direction: column; align-items: center; gap: var(--s-3); }
 .v-empty__ic { width: 40px; height: 40px; border-radius: var(--r-tile); display: grid; place-items: center; background: var(--surface-subtle); color: var(--text-faint); }
-.v-empty__title { font-size: 15px; font-weight: 600; }
+.v-empty__title { font-size: var(--t-lead-s); font-weight: 600; }
 .v-empty__body { font-size: var(--t-small-s); color: var(--text-muted); max-width: 42ch; }
 
 .v-callout {
@@ -590,7 +590,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 .v-skel { background: var(--surface-muted); border-radius: var(--r-xs); position: relative; overflow: hidden; }
 .v-skel::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent);
+  background: linear-gradient(90deg, transparent, var(--shimmer), transparent);
   animation: v-shimmer 1.4s infinite;
 }
 @keyframes v-shimmer { 100% { transform: translateX(100%); } }
@@ -715,7 +715,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 }
 
 /* 1 · Veerha's Read — conclusion, evidence, attributes, provenance */
-.v-read__conclusion { font-size: 15px; line-height: 22px; font-weight: 600; }
+.v-read__conclusion { font-size: var(--t-lead-s); line-height: var(--t-lead-l); font-weight: 600; }
 .v-read__evidence { font-size: var(--t-small-s); line-height: 19px; color: var(--ai-tx); margin-top: 5px; }
 .v-read__attrs { margin-top: var(--s-3); font-size: var(--t-meta-s); color: var(--ai-tx); }
 .v-read__based { margin-top: var(--s-2); padding-top: var(--s-2); border-top: 1px solid var(--ai-bd); font-size: var(--t-meta-s); color: var(--ai-ic); }
@@ -723,7 +723,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 /* 2 · Recommended Next Step — action with a time, and why */
 .v-next { background: var(--brand-soft); border: 1px solid var(--brand-soft-bd); border-radius: var(--r-tile); padding: var(--s-4); }
 .v-next__label { color: var(--brand); margin-bottom: var(--s-2); display: flex; align-items: center; gap: 7px; }
-.v-next__action { font-size: 15px; line-height: 22px; font-weight: 600; }
+.v-next__action { font-size: var(--t-lead-s); line-height: var(--t-lead-l); font-weight: 600; }
 .v-next__why { font-size: var(--t-small-s); color: var(--text-secondary); margin-top: 4px; }
 .v-next__acts { display: flex; gap: var(--s-2); margin-top: var(--s-3); }
 
@@ -757,7 +757,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 
 /* 6 · AI Employee — a workforce member, not a bot */
 .v-employee__top { display: flex; gap: var(--s-3); align-items: flex-start; }
-.v-employee__role { font-size: 15px; font-weight: 600; }
+.v-employee__role { font-size: var(--t-lead-s); font-weight: 600; }
 .v-employee__state { display: flex; align-items: center; gap: 6px; font-size: var(--t-meta-s); color: var(--text-muted); margin-top: 2px; }
 .v-employee__scope { font-size: var(--t-small-s); color: var(--text-muted); margin-top: var(--s-3); }
 .v-employee__stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: var(--r-md); margin-top: var(--s-4); overflow: hidden; }
@@ -773,12 +773,12 @@ td.v-table__num.amount { font-family: var(--ui); }
    happened, never "Success". Four tones, matching the callout vocabulary. */
 .v-toasts {
   position: fixed; left: 50%; bottom: var(--s-6); transform: translateX(-50%);
-  z-index: 200; display: flex; flex-direction: column; gap: var(--s-2);
+  z-index: var(--z-toast); display: flex; flex-direction: column; gap: var(--s-2);
   pointer-events: none; width: min(460px, calc(100vw - 32px));
 }
 .v-toast {
   display: flex; gap: var(--s-3); align-items: flex-start;
-  background: var(--text-primary); color: var(--surface);
+  background: var(--inverse-bg); color: var(--inverse-tx);
   border-radius: var(--r-tile); padding: var(--s-3) var(--s-4);
   font-size: var(--t-small-s); line-height: 19px; box-shadow: var(--e3);
   pointer-events: auto; opacity: 0; transform: translateY(8px);
@@ -937,7 +937,7 @@ td.v-table__num.amount { font-family: var(--ui); }
    row's own background so a selected row stays tinted, and takes a hairline on
    its left so it reads as pinned rather than as part of the data. */
 .v-card:has(> .v-table) > .v-table tr > *:last-child {
-  position: sticky; right: 0; z-index: 1;
+  position: sticky; right: 0; z-index: var(--z-raised);
   background: var(--surface); box-shadow: -1px 0 0 var(--border);
 }
 .v-card:has(> .v-table) > .v-table thead tr > *:last-child { background: var(--surface-subtle); }
@@ -987,10 +987,6 @@ td.v-table__num.amount { font-family: var(--ui); }
 }
 .v-guest__photo { position: relative; aspect-ratio: 16/10; background: var(--surface-muted); overflow: hidden; }
 .v-guest__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.v-guest__photo__n {
-  position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%);
-  font-size: var(--t-meta-s); color: var(--text-muted);
-}
 
 /* The brand block: who this link is from. Never Veerha's branding -- the guest
    has a relationship with the property, not with the platform. */
@@ -998,7 +994,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 .v-guest__mark {
   width: 42px; height: 42px; flex: none; border-radius: var(--r-tile);
   background: var(--brand); color: var(--brand-on);
-  display: grid; place-items: center; font-weight: 600; font-size: 15px;
+  display: grid; place-items: center; font-weight: 600; font-size: var(--t-lead-s);
 }
 .v-guest__name { font-size: 20px; line-height: 26px; font-weight: 600; letter-spacing: -.018em; }
 .v-guest__meta { font-size: var(--t-small-s); color: var(--text-secondary); margin-top: 2px; }
@@ -1024,7 +1020,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 
 /* A sticky footer, because the action must be reachable without scrolling back. */
 .v-guest__foot {
-  position: sticky; bottom: 0; z-index: 5;
+  position: sticky; bottom: 0; z-index: var(--z-overlay);
   background: var(--surface); border-top: 1px solid var(--border);
   padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-2);
 }
@@ -1067,7 +1063,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 /* The ··· menu: every item a verb, the destructive ones last and set apart. */
 .v-menu-host { position: relative; display: inline-flex; }
 .v-menu {
-  position: absolute; top: calc(100% + 4px); right: 0; z-index: 30; min-width: 232px;
+  position: absolute; top: calc(100% + 4px); right: 0; z-index: var(--z-menu); min-width: 232px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-tile);
   box-shadow: var(--e2); padding: var(--s-1); display: flex; flex-direction: column; text-align: left;
 }
@@ -1092,12 +1088,12 @@ td.v-table__num.amount { font-family: var(--ui); }
 /* Tooltip — only for chrome that is genuinely icon-only. */
 [data-tip] { position: relative; }
 .v-tip, [data-tip]:hover::after, [data-tip]:focus-visible::after {
-  padding: 4px 8px; border-radius: var(--r-sm); background: var(--text-primary); color: var(--surface);
+  padding: 4px 8px; border-radius: var(--r-sm); background: var(--inverse-bg); color: var(--inverse-tx);
   font-size: var(--t-meta-s); font-weight: 500; white-space: nowrap; pointer-events: none;
 }
 .v-tip { display: inline-block; }
 [data-tip]:hover::after, [data-tip]:focus-visible::after {
-  content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); z-index: 40;
+  content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); z-index: var(--z-tip);
 }
 
 

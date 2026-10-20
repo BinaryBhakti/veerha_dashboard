@@ -8,7 +8,7 @@
    ============================================================================ */
 
 .sh-top {
-  position: sticky; top: 0; z-index: 20;
+  position: sticky; top: 0; z-index: var(--z-layer);
   background: var(--surface); border-bottom: 1px solid var(--border);
 }
 .sh-top__in {
@@ -70,8 +70,8 @@
      of scrolling inside the frame. */
   min-width: 0; max-width: 100%; flex: 1;
   overflow-x: auto; -webkit-overflow-scrolling: touch;
-  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, black calc(100% - 28px), transparent);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent);
 }
 @media (min-width: 900px) { .sh-scroll { mask-image: none; -webkit-mask-image: none; } }
 
@@ -207,7 +207,7 @@
   font-family: var(--num); font-size: var(--t-meta-s);
   color: var(--brand-700); background: var(--brand-50);
   padding: 1px 5px; border-radius: var(--r-xs);
-  /* A token is one thing: `--ai-ic:#7C3AED` splitting across two lines reads
+  /* A token is one thing: `--ai-ic` with its value splitting across two lines reads
      as two tokens. overflow-wrap keeps it atomic until it genuinely cannot
      fit, at which point it breaks rather than pushing the page. */
   white-space: nowrap; overflow-wrap: break-word;

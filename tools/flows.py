@@ -100,6 +100,9 @@ RULES = [
     ('workflows',   {'re': r'^(Decide|Fix) →$'}, 'go:workflow'),
     ('catalogs',    {'re': r'^(Decide|Fix) →$'}, 'do:edit'),
     ('pricing',     'Where to get one',    'inert:Opens the provider’s guide to creating an API key'),
+    # state frames (error / empty)
+    ('*', {'exact': 'Try again'},      'inert:Loads the list again; nothing you had open is lost'),
+    ('*', {'exact': 'See service status'}, 'inert:Opens Veerha’s status page in a new tab'),
     ('pricing-empty', 'Where to get one',  'inert:Opens the provider’s guide to creating an API key'),
 
     # --- Everywhere ('*'): the buttons every screen shares ---------------------------

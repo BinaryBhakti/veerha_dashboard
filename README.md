@@ -67,7 +67,7 @@ Where to look first:
 |---|---|
 | `hub.html` | The entry point the client sees |
 | `design-system/index.html` | The design system, rendered |
-| `screens/index.html` | All 18 module files, 148 frames |
+| `screens/index.html` | All 18 module files, 156 frames |
 | `screens/walkthrough.html` | The same screens as one clickable product |
 | `veerha-dashboard.html` | The original prototype: 7 screens in 4 visual directions |
 

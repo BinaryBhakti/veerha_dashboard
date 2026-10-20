@@ -95,8 +95,11 @@ gate() {
   [ $rc -ne 0 ] && fail "a screen uses a class the design system does not define"
 
   hdr "5 · token discipline"
-  grep -qE '#[0-9A-Fa-f]{3,8}' "$ROOT"/screens/assets/*.css && fail "raw hex in screens css"
-  grep -qE 'border-radius: *[0-9]+px' "$ROOT"/screens/assets/*.css && fail "bare px radius in screens css"
+  # tokens.css and fonts.css are where raw values live; everything else uses them.
+  local CSS=("$ROOT"/screens/assets/*.css "$ROOT"/design-system/system/{components,base,sheet}.css)
+  out=$(grep -nE '#[0-9A-Fa-f]{3,8}\b' "${CSS[@]}" | grep -v '%23')   # %23 = an encoded data-URI colour
+  [ -n "$out" ] && { echo "$out" | head -5 | sed 's/^/  /'; fail "raw hex outside tokens.css"; }
+  grep -qE 'border-radius: *[0-9]+px' "${CSS[@]}" && fail "bare px radius outside tokens.css"
   echo "  no raw hex, no bare radius"
   # A misremembered token name is not hex and not a radius, so the two checks
   # above sail past it -- and var(--success-50) renders as nothing at all.

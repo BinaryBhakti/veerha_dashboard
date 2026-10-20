@@ -30,11 +30,17 @@ const srv = http.createServer((q, r) => {
       });
       const u = [...document.querySelectorAll('use')]
         .filter(x => { const i = x.getAttribute('href'); return i && !document.querySelector(i); }).length;
-      return { ov, u, g: document.fonts.check('12px Geist') };
+      // rule 4: money is never monospace -- the same probe check.cjs runs on screens
+      const mono = [...document.querySelectorAll('*')].filter(e => {
+        if (e.children.length || e.closest('[data-mono-ok]')) return false;   // a specimen of the mistake
+        if (!/[₹$€£]\s?\d[\d,]*,\d/.test((e.textContent || '').trim())) return false;
+        return /mono/i.test(getComputedStyle(e).fontFamily);
+      }).map(e => (e.textContent || '').trim().slice(0, 24));
+      return { ov, u, mono, g: document.fonts.check('12px Geist') };
     });
-    const ok = !res.ov && !res.u && res.g && !errs.length && !fails.length;
+    const ok = !res.ov && !res.u && !res.mono.length && res.g && !errs.length && !fails.length;
     if (!ok) bad++;
-    console.log(` ${ok ? 'ok  ' : 'FAIL'} ${f.padEnd(13)} overflow:${res.ov} unresolved-use:${res.u} font:${res.g} errs:${errs.length} failedReq:${fails.length}`);
+    console.log(` ${ok ? 'ok  ' : 'FAIL'} ${f.padEnd(13)} overflow:${res.ov} unresolved-use:${res.u} mono-money:${res.mono.length ? res.mono.join('|') : 0} font:${res.g} errs:${errs.length} failedReq:${fails.length}`);
     await p.close();
   }
   console.log(bad ? `  ${bad} PROBLEM(S)` : '  design-system: all pages clean');
