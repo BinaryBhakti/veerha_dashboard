@@ -10,7 +10,7 @@
  *   MODE=login     log in, save .auth.json, list routes -> audit/routes.json
  *   MODE=capture   full capture using the saved session
  */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const fs = require('fs'), path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');

@@ -1,5 +1,5 @@
 // Usage: node tools/shoot.cjs dashboard/overview.html [more.html ...]  -> scratch screenshots + checks
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const path = require('path'); const fs = require('fs');
 const OUT = process.env.OUT || '/private/tmp/claude-501/-Users-ashmit-Desktop-Projects-VEERHA/e9143def-b723-4cca-bb9a-12191a9bc062/scratchpad/out';
 fs.mkdirSync(OUT, { recursive: true });

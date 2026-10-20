@@ -1,4 +1,4 @@
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const BASE = process.argv[2];
 (async () => { const b = await chromium.launch({ channel: 'chrome' }); const ctx = await b.newContext();
   const seen = new Set(), q = [BASE + '/'], bad = [], errs = [];

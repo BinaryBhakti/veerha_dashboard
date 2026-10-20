@@ -5,7 +5,7 @@
 # system and the before/after gallery with both sets of screenshots.
 # Excludes: notes and internal docs (HANDOFF.md, MANIFEST.md, ADD-ONS.md — that
 # last one is a pricing document), the tooling, the WhatsApp reference image,
-# the byte-identical "copy" of the dashboard, the unused mobile captures, and
+# the archived dashboard snapshot (archive/), the unused mobile captures, and
 # the internal audit index that gallery.html replaces.
 set -e
 cd "$(dirname "$0")/.."
@@ -65,7 +65,7 @@ rm -f  dist/screens/_partials.html
 find dist \( -name '*.md' -o -name '*.cjs' -o -name '*.py' -o -name '.DS_Store' \
           -o -name '* copy.html' -o -name '.env*' -o -name '.auth.json' -o -name '*.tmp.*' \) \
      -not -path 'dist/.vercelignore' -delete 2>/dev/null || true
-rm -rf dist/tools dist/.vercel/cache
+rm -rf dist/tools dist/archive dist/.vercel/cache
 # design-system/ and screens/ are their own Vercel projects; their .vercel links
 # and vercel.json must not travel into this bundle. A nested .vercel has already
 # caused a deploy to retarget the wrong project once.
@@ -89,7 +89,7 @@ png=$(find dist -name '*.png'  | wc -l | tr -d ' ')
 echo "dist: ${html} html · ${png} png · $(du -sh dist | cut -f1)"
 
 # these must never appear in a client-facing bundle
-for bad in HANDOFF.md MANIFEST.md ADD-ONS.md 'veerha-dashboard copy.html' .auth.json AUDIT.md \
+for bad in HANDOFF.md MANIFEST.md ADD-ONS.md veerha-dashboard-snapshot.html .auth.json AUDIT.md \
            FEATURES.md features.html interactions.json .inter-done.json .inter-done.hollow.json \
            guest-links.json; do
   found=$(find dist -name "$bad" | head -1)

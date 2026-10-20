@@ -1,6 +1,6 @@
 /* Drive the walkthrough: every panel link must resolve, the panel must fit the
    viewport, the drawer and palette must open, and nothing may throw. */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const path = require('path');
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });

@@ -40,7 +40,7 @@ def block(s, start):
             return s[open_end:m.start()], m.end(), s[start:open_end]
 
 
-ROOT = '/Users/ashmit/Desktop/Projects/VEERHA/screens'
+ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'screens')
 
 MODULES = ['01-home.html','02-leads.html','03-opportunities.html','04-quotes.html',
            '05-bookings.html','06-conversations.html','07-queues.html','08-calendar.html',
@@ -201,6 +201,13 @@ def main():
     frag, _, _ = block(wt, sk)
     soon_end = wt.index(frag, sk) + len(frag) + len('</div>')
     soon_html = wt[sk:soon_end]
+    # The previous run's layers sit straight after the placeholder. Skip them, or
+    # every regeneration appends another full copy of each overlay.
+    while True:
+        lm = re.match(r'\s*<div class="wt-layer" ', wt[soon_end:])
+        if not lm: break
+        _, lend, _ = block(wt, soon_end + lm.end() - len('<div class="wt-layer" '))
+        soon_end = lend
 
     # collect every data-layer overlay from every frame, and strip it from screens
     layers, seen_layers = [], set()

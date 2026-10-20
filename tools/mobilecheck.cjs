@@ -1,5 +1,5 @@
 // Overflow + JS-error check at 390/1024/1280 for given pages (parallel).
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const path = require('path');
 (async () => {
   const b = await chromium.launch({ channel: 'chrome' });

@@ -1,6 +1,6 @@
 /* Render-check the design-system pages. Lived in the scratchpad and was lost
    when that got cleaned, so it belongs in tools/ with everything else. */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const MT = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8',

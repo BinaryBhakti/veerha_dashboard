@@ -8,8 +8,7 @@
 
    A click "does something" if it changes the screen, opens a layer or menu, or
    shows a toast. */
-const { chromium } = require(process.env.PLAYWRIGHT_PATH ||
-  '/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const path = require('path');
 const BASE = process.env.URL || 'file://' + path.resolve(__dirname, '..', 'screens/walkthrough.html');
 

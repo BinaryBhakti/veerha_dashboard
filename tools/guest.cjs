@@ -7,7 +7,7 @@
  *
  * It never submits anything: no check-in, no review, no accepting a quotation.
  */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const links = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/guest-links.json'), 'utf8'));

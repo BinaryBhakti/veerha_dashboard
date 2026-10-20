@@ -4,7 +4,7 @@
  * setting. Share URLs live in text, in readonly inputs, in href attributes and
  * in data-copy payloads, so all four are swept.
  */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..'), BASE = 'https://app.veerha.com';
 const AUTH = path.join(ROOT, '.auth.json');

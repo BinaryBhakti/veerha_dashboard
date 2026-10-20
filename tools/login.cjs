@@ -10,8 +10,7 @@
  *
  * Delete .auth.json when the capture is finished.
  */
-const { chromium } = require(process.env.PLAYWRIGHT_PATH ||
-  '/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const path = require('path'), readline = require('readline');
 const ROOT = path.resolve(__dirname, '..');
 const BASE = process.env.BASE || 'https://app.veerha.com';

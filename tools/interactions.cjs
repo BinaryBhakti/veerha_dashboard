@@ -10,7 +10,7 @@
  * MUTATES is recorded in the skip list and NOT clicked -- that list is itself
  * a deliverable: it is the inventory of every destructive action in the product.
  */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..'), BASE = 'https://app.veerha.com';
 const AUTH = path.join(ROOT, '.auth.json');

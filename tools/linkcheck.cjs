@@ -1,5 +1,5 @@
 // Crawl from hub.html over file:// after JS render; report broken local links and unreachable pages.
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const path = require('path'), fs = require('fs');
 const ROOT = path.resolve(__dirname, '..');
 (async () => {
@@ -25,9 +25,9 @@ const ROOT = path.resolve(__dirname, '..');
   // Veerha's pages: one dashboard at the root, plus screens/, design-system/ and audit/.
   // _partials.html is an authoring reference and never ships, so it is not expected to be reachable.
   // Not expected to be reachable, and not shipped: _partials is an authoring
-  // reference, the dashboard copy is byte-identical to the original, and
+  // reference, archive/ holds an older snapshot of the dashboard, and
   // audit/index.html is the internal inventory that gallery.html replaces.
-  const SKIP = new Set(['screens/_partials.html', 'veerha-dashboard copy.html',
+  const SKIP = new Set(['screens/_partials.html', 'archive/veerha-dashboard-snapshot.html',
                         'audit/index.html', 'audit/features.html']);
   const dir = d => { try { return fs.readdirSync(path.join(ROOT, d)).map(f => d + '/' + f); } catch { return []; } };
   const all = [...fs.readdirSync(ROOT), ...dir('screens'), ...dir('design-system'), ...dir('audit')]

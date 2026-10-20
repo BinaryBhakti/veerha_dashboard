@@ -1,7 +1,7 @@
 /* Render-check every screen file at desktop and laptop width.
    Fails on: horizontal overflow, unresolved <use>, fonts not loading, JS
    errors, failed requests, and currency set in a monospace face. */
-const { chromium } = require('/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const MT = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8',

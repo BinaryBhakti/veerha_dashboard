@@ -6,8 +6,7 @@
 // is not a direct child -- and the break is invisible in a static screenshot of a
 // collapsed rail. So this asserts the measured pixel width of both states rather
 // than the presence of a class.
-const { chromium } = require(process.env.PLAYWRIGHT_PATH ||
-  '/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');

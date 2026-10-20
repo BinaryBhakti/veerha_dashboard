@@ -67,7 +67,7 @@ Where to look first:
 |---|---|
 | `hub.html` | The entry point the client sees |
 | `design-system/index.html` | The design system, rendered |
-| `screens/index.html` | All 18 module files, 139 frames |
+| `screens/index.html` | All 18 module files, 148 frames |
 | `screens/walkthrough.html` | The same screens as one clickable product |
 | `veerha-dashboard.html` | The original prototype: 7 screens in 4 visual directions |
 
@@ -84,7 +84,7 @@ Requirements for the tooling only: Node 20+, Python 3, Google Chrome, and Playwr
 ├── deploy.sh                   The only supported way to deploy (gate → deploy → verify)
 ├── BUILD_NOTES.md              Conventions for building a screen. Short; read it
 ├── veerha-dashboard.html       The original single-file prototype (4 directions, responsive)
-├── veerha-dashboard copy.html  An earlier snapshot of it, kept for reference
+├── archive/                    An earlier snapshot of the dashboard (stale; never ships)
 ├── HANDOFF.md                  Engineering notes for that prototype
 │
 ├── design-system/              Indigo Slate — the system and its documentation

@@ -11,8 +11,7 @@
  *
  *   node tools/recon.cjs            ROUTES="/a,/b" limits step 3 to those routes
  */
-const { chromium } = require(process.env.PLAYWRIGHT_PATH ||
-  '/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..'), BASE = 'https://app.veerha.com';
 const AUTH = path.join(ROOT, '.auth.json'), OUT = path.join(ROOT, 'audit/oct');
