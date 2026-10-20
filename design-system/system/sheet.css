@@ -212,7 +212,7 @@
      fit, at which point it breaks rather than pushing the page. */
   white-space: nowrap; overflow-wrap: break-word;
 }
-@media (max-width: 560px) { .sh-prose code { white-space: normal; } }
+@media (max-width: 900px) { .sh-prose code { white-space: normal; } }
 .sh-prose table { width: 100%; margin-top: var(--s-5); font-size: var(--t-small-s); }
 .sh-prose th {
   text-align: left; padding: var(--s-2) var(--s-3);
@@ -255,6 +255,12 @@
 @media (max-width: 860px) {
   .sh-rules { grid-template-columns: 1fr; }
   .sh-top__in { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
-  .sh-nav { margin-left: 0; }
+  /* 23 links wrapped into six rows of a sticky header that covered half a
+     phone screen. One row that scrolls sideways instead. */
+  .sh-top__in { align-items: stretch; }
+  .sh-nav { margin-left: 0; flex-wrap: nowrap; overflow-x: auto; max-width: 100%;
+            scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .sh-nav::-webkit-scrollbar { display: none; }
+  .sh-nav a { flex: none; }
   .sh-hero h1 { font-size: 30px; line-height: 38px; }
 }

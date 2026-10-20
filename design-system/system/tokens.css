@@ -187,6 +187,10 @@
 
   --rail:      56px;            /* icon rail, collapsed                      */
   --rail-open:240px;            /* icon rail, expanded with labels           */
+  /* Breakpoints. Documentation only -- a custom property cannot be read by a
+     media query, so shell.css and the walkthrough repeat these numbers. */
+  --bp-tablet: 1024px;
+  --bp-phone:  760px;
   --sidenav:  260px;            /* section navigation                        */
   --topbar:    56px;
   --gutter:    32px;            /* page horizontal padding                   */

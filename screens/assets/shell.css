@@ -272,3 +272,63 @@
 .vs-dialogs > .vs-dialog { display: flex; flex-direction: column; gap: var(--s-2); }
 .vs-dialogs .vs-overlay { position: relative; inset: auto; min-height: 100%; padding: var(--s-5) 0; border-radius: var(--r-card); }
 .vs-dialogs .vs-overlay .v-scrim { border-radius: var(--r-card); }
+
+
+/* --- NARROW SCREENS ------------------------------------------------------
+   The frames are drawn at desktop width, but the walkthrough is the product
+   and a reviewer opens it on a phone. Two bands, matching --bp-tablet and
+   --bp-phone in tokens.css (custom properties cannot be used in a media
+   query, so the numbers are repeated here and nowhere else).
+
+   Inline grids carry their columns in a style attribute, which only
+   !important can outrank. The selector is scoped to app bodies, so the guest
+   pages (built 390-first) and the seven-column calendars keep their columns. */
+
+@media (max-width: 1024px) {
+  .vs-canvas { padding: var(--s-5) var(--s-5) var(--s-10); }
+  .vs-tabstrip { padding: 0 var(--s-5); overflow-x: auto; }
+  .vs-split, .vs-split--wide { grid-template-columns: minmax(0, 1fr); }
+  .vs-panes--inbox { grid-template-columns: 280px minmax(0, 1fr); }
+  .vs-panes--builder { grid-template-columns: 180px minmax(0, 1fr); }
+  .vs-panes--inbox > .vs-pane:nth-child(3),
+  .vs-panes--builder > .vs-pane:nth-child(3) { grid-column: 1 / -1; border-top: 1px solid var(--border); }
+  .vs-body--panes { overflow: auto; }
+  .vs-overlay .v-drawer { max-width: 88%; }
+  .vs-topbar__search { max-width: 280px; }
+}
+
+@media (max-width: 760px) {
+  /* frames: the rail would take two thirds of the screen; the walkthrough
+     turns it into an off-canvas menu instead (walkthrough.html) */
+  .vs-app, .vs-app:has(> .v-rail.is-expanded) { grid-template-columns: minmax(0, 1fr); }
+  .vs-app > .v-rail { display: none; }
+
+  .vs-canvas { padding: var(--s-4) var(--s-4) var(--s-8); }
+  .vs-tabstrip { padding: 0 var(--s-4); }
+  .vs-body--sectioned { flex-direction: column; }
+  .vs-body--sectioned > .v-sidenav { width: auto; max-height: 40vh; border-right: 0; border-bottom: 1px solid var(--border); }
+
+  .vs-panes, .vs-panes--inbox, .vs-panes--builder { grid-template-columns: minmax(0, 1fr) !important; }
+  /* stacked panes take their natural height; the body scrolls, not each pane */
+  .vs-pane { border-right: 0; border-bottom: 1px solid var(--border); overflow: visible; }
+  .vs-panes { flex: none !important; height: auto !important; min-height: 0 !important; align-content: start; }
+  .vs-body [style*="grid-template-columns"]:not([style*="repeat(7"]):not(.vs-pane) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .vs-filterbar__search { min-width: 0; flex-basis: 100%; }
+
+  .vs-topbar__search, .v-topbar__who { display: none; }
+  .vs-overlay .v-drawer { width: 100%; max-width: 100%; }
+  .vs-overlay .v-modal { width: calc(100% - 2 * var(--s-4)); }
+  .vs-tree { width: auto; }
+}
+
+/* Sign-in and its siblings: the brand panel stacks above the form on a phone
+   and gives up its decorative bullets, so the form is the first thing seen. */
+@media (max-width: 760px) {
+  :has(> .vs-auth) { grid-template-columns: minmax(0, 1fr); padding: var(--s-4) !important; min-height: 0 !important; }
+  .vs-auth { flex-direction: column; width: auto !important; min-height: 0 !important; }
+  .vs-auth__aside { width: auto !important; padding: var(--s-5) !important; }
+  .vs-auth__aside > :not(:first-child) { display: none !important; }
+  .vs-auth > :last-child { padding: var(--s-5) !important; }
+}

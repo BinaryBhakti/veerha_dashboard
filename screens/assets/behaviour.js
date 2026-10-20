@@ -428,6 +428,7 @@
     if (el.closest('.v-field, label')) return;              // a form label is not an action
     if (el.tagName !== 'BUTTON' && el.tagName !== 'A' && !el.hasAttribute('role')) return;
     if (el.hasAttribute('data-go') || el.hasAttribute('data-rail') || el.hasAttribute('data-close')) return;
+    if (window.wtGo && el.closest('.vs-topbar__menu, #wtToggle, #wtSearch')) return;   // walkthrough chrome
     if (el.tagName === 'A') {
       var h = el.getAttribute('href');
       if (h && h !== '#' && h.charAt(0) !== '#') return;

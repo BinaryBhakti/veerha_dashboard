@@ -483,8 +483,10 @@ button.v-selectchip { font-family: inherit; line-height: 1; }   /* a chip that o
   text-transform: uppercase; color: var(--text-muted);
   border-bottom: 1px solid var(--border);
   /* A header that cannot wrap sets a floor on the table's width, which is
-     what made an 11-column table overrun its card and clip a column. */
-  white-space: normal; overflow-wrap: anywhere;
+     what made an 11-column table overrun its card and clip a column. It wraps
+     between words only: "anywhere" split CUSTOMER into CUSTO / MER, and the
+     card now scrolls a table that is still too wide. */
+  white-space: normal; overflow-wrap: break-word;
 }
 .v-table td { padding: var(--s-3); border-bottom: 1px solid var(--border); vertical-align: top; }
 .v-table tbody tr:hover, .v-table tbody tr.is-hover { background: var(--surface-subtle); }
@@ -1098,3 +1100,16 @@ td.v-table__num.amount { font-family: var(--ui); }
   content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); z-index: 40;
 }
 
+
+
+/* --- NARROW SCREENS ------------------------------------------------------
+   Components stay the same components on a phone; only what has to give
+   gives. Breakpoint numbers: --bp-phone in tokens.css. */
+@media (max-width: 760px) {
+  .v-topbar { padding: 0 var(--s-4); gap: var(--s-2); }
+  .v-pagehead { flex-wrap: wrap; gap: var(--s-3); }
+  .v-pagehead > .v-actions { width: 100%; }
+  .v-stat { flex-basis: 132px; }
+  .v-modal, .v-modal--wide { max-width: 100%; }
+  .v-drawer { max-width: 100%; }
+}
