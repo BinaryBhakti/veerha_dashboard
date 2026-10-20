@@ -113,9 +113,15 @@
     L.hidden = false;
     stack.push({ id: id, opener: opener || document.activeElement });
     // A modal is a form: put the caret in its first field. A drawer is reading,
-    // so it takes no focus ring on open.
+    // so focus goes to the panel itself -- a screen reader lands inside it, and
+    // a programmatic focus after a click draws no ring.
+    var dlg = $('[role="dialog"]', L);
+    if (dlg) {
+      dlg.setAttribute('aria-modal', 'true');
+      if (!dlg.hasAttribute('tabindex')) dlg.tabIndex = -1;
+    }
     var f = $('.v-modal input, .v-modal textarea, .v-modal select', L);
-    if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 30);
+    setTimeout(function () { (f || dlg) && (f || dlg).focus({ preventScroll: true }); }, 30);
     render();
   }
   function close(id) {

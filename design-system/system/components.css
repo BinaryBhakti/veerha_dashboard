@@ -237,6 +237,17 @@
 .v-btn--secondary.is-loading::after, .v-btn--ghost.is-loading::after { color: var(--text-secondary); }
 @keyframes v-spin { to { transform: rotate(360deg); } }
 
+/* Link — an inline action that reads as text ("Open →", "View people →").
+   A real <button>, so it is focusable and announced; it takes its size from
+   whatever type class sits beside it. */
+.v-link {
+  display: inline; padding: 0; border: 0; background: none; cursor: pointer;
+  color: var(--brand); font-weight: 500; white-space: nowrap; text-align: inherit;
+  border-radius: var(--r-xs);
+}
+.v-link:hover, .v-link.is-hover { color: var(--brand-hover); text-decoration: underline; text-underline-offset: 2px; }
+.v-link:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
 .v-actions { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
 
 

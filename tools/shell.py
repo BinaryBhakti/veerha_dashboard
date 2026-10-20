@@ -25,7 +25,7 @@ os.chdir(ROOT)
 
 
 def ico(n, s=18):
-    return ('<svg width="%d" height="%d" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    return ('<svg aria-hidden="true" width="%d" height="%d" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
             'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#%s"/></svg>'
             % (s, s, n))
 
@@ -53,6 +53,7 @@ def rail(active, persona='owner', wt=False):
         out.append(ind + '<div class="v-rail__group">%s</div>' % group)
         for label, icon, badge, _, _ in rows:
             cls = 'v-rail__item is-active' if (label == active and not wt) else 'v-rail__item'
+            cur = ' aria-current="page"' if (label == active and not wt) else ''
             n = BADGES.get(badge)
             # bound to the walkthrough's state, so the badge drops as work is done
             bind = {'tasks': 'tasks', 'review': 'waiting'}.get(badge)
@@ -62,8 +63,8 @@ def rail(active, persona='owner', wt=False):
             if wt:
                 g = GO_ROW.get(label)
                 hook = ' data-rail="%s" data-go="%s"' % (g, g) if g else ''
-            out.append(ind + '<button class="%s"%s aria-label="%s">%s<span class="v-rail__label">%s</span>%s%s</button>'
-                       % (cls, hook, esc(label), ico(icon), esc(label), cnt, dot))
+            out.append(ind + '<button class="%s"%s%s aria-label="%s">%s<span class="v-rail__label">%s</span>%s%s</button>'
+                       % (cls, hook, cur, esc(label), ico(icon), esc(label), cnt, dot))
     out.append(ind + '<div class="v-rail__acct"><span class="v-avatar v-avatar--sm">%s</span>'
                '<div class="v-rail__acct__who"><div class="v-rail__acct__name">%s</div>'
                '<div class="v-rail__acct__sub">%s · %s</div></div></div>'
@@ -75,10 +76,10 @@ def topbar(root, leaf, persona='owner'):
     p = PERSONAS[persona]
     return ('<header class="v-topbar">\n'
             '            <button class="vs-topbar__menu" aria-label="Collapse the sidebar">%s</button>\n'
-            '            <nav class="v-crumb"><span>%s</span><span class="v-crumb__sep">›</span>'
+            '            <nav class="v-crumb" aria-label="Breadcrumb"><span>%s</span><span class="v-crumb__sep">›</span>'
             '<span class="v-crumb__current">%s</span></nav>\n'
             '            <div class="v-search vs-topbar__search"><span class="v-search__ic">%s</span>'
-            '<input class="v-input" placeholder="Search or run a command">'
+            '<input class="v-input" type="search" placeholder="Search or run a command" aria-label="Search or run a command">'
             '<span class="v-kbd num">⌘K</span></div>\n'
             '            <div class="vs-topbar__acts">\n'
             '              <button class="v-topbar__icon" aria-label="Notifications">%s'
@@ -92,8 +93,9 @@ def topbar(root, leaf, persona='owner'):
                p['name'], p['role'], p['initial']))
 
 def page_tabs(key, active):
-    btns = ''.join('<button class="v-tab%s" role="tab"%s>%s</button>'
-                   % (' is-active' if t == active else '', go_attr(GO_TAB.get((key, t))), esc(t))
+    btns = ''.join('<button class="v-tab%s" role="tab" aria-selected="%s"%s>%s</button>'
+                   % (' is-active' if t == active else '', 'true' if t == active else 'false',
+                      go_attr(GO_TAB.get((key, t))), esc(t))
                    for t in TABS[key])
     return ('<div class="vs-tabstrip"><div class="v-tabs" role="tablist" aria-label="%s">%s</div></div>'
             % (key.capitalize(), btns))
@@ -105,19 +107,22 @@ def section_rail(key, active, persona='owner'):
            '              <div class="vs-sidenav__head">',
            '                <div class="label">%s</div>' % title,
            '                <div class="v-search vs-sidenav__search"><span class="v-search__ic">%s</span>'
-           '<input class="v-input" placeholder="Search %s"></div>' % (ico('i-search', 14), title.lower()),
+           '<input class="v-input" type="search" placeholder="Search %s" aria-label="Search %s"></div>'
+           % (ico('i-search', 14), title.lower(), title.lower()),
            '              </div>']
     for g, items in groups:
         rows = [(l, e) for l, e in items if e is None or ed in e]
         out.append('              <div class="v-sidenav__group"><div class="label v-sidenav__label">%s</div>' % esc(g))
         for label, _ in rows:
-            out.append('                <a class="v-sidenav__item%s"%s>%s</a>'
-                       % (' is-active' if label == active else '', go_attr(GO_RAIL.get((key, label))), esc(label)))
+            on = label == active
+            out.append('                <a class="v-sidenav__item%s" href="#"%s%s>%s</a>'
+                       % (' is-active' if on else '', ' aria-current="page"' if on else '',
+                          go_attr(GO_RAIL.get((key, label))), esc(label)))
         out.append('              </div>')
     if key == 'settings':
         out.append('              <div class="v-sidenav__help"><div class="t-small" style="font-weight:600">Need help?</div>'
                    '<p>Docs, quick starts and templates — everything you need to get the AI live.</p>'
-                   '<div class="v-sidenav__help__links"><a>Documentation</a><a>Support</a></div></div>')
+                   '<div class="v-sidenav__help__links"><a href="#">Documentation</a><a href="#">Support</a></div></div>')
     out.append('            </nav>')
     return '\n'.join(out)
 
@@ -204,6 +209,8 @@ def norm(x):
     """Normalise away what SHOULD differ per frame, so a hash measures structure."""
     x = re.sub(r'\s+', ' ', x)
     x = re.sub(r' is-active', '', x)
+    x = re.sub(r' aria-current="page"', '', x)
+    x = re.sub(r' aria-selected="(true|false)"', '', x)
     x = re.sub(r'(<span>)[^<]*(</span><span class="v-crumb__sep">)', r'\1\2', x)
     x = re.sub(r'(<span class="v-crumb__current">)[^<]*', r'\1', x)
     return x

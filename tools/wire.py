@@ -52,10 +52,13 @@ def attrs_for(action):
     raise ValueError('unknown action %r' % action)
 
 def matches(find, label, aria, attrs=''):
+    # "Open →" is the same action as "Open": the arrow is decoration. Only a
+    # regex rule sees the raw label, so r'→$' can still catch link-style text.
+    raw, label = label, re.sub(r'\s*[→↗]$', '', label)
     if isinstance(find, dict):
         if 'aria' in find: return aria.lower().startswith(find['aria'].lower())
         if 'exact' in find: return label.lower() == find['exact'].lower()
-        if 're' in find: return bool(re.search(find['re'], label or aria, re.I))   # icon-only: its aria-label
+        if 're' in find: return bool(re.search(find['re'], raw or aria, re.I))   # icon-only: its aria-label
         if 'aria_re' in find: return bool(re.search(find['aria_re'], aria, re.I))
         if 'cls' in find: return bool(re.search(r'class="[^"]*\b%s\b' % re.escape(find['cls']), attrs))
         return False

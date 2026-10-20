@@ -66,9 +66,10 @@
   }
   function rowsOf(scope) {
     var body = listOf(scope); if (!body) return [];
-    return $$(':scope > tr, :scope > .v-record', body).length
+    var rows = $$(':scope > tr, :scope > .v-record', body).length
       ? $$(':scope > tr, :scope > .v-record', body)
       : $$('tr, .v-record', body);
+    return rows.filter(function (r) { return !r.hasAttribute('data-v-nomatch'); });
   }
   function applyFilters(scope) {
     var st = scope.__vf || (scope.__vf = {});
@@ -109,8 +110,11 @@
       if (ok) ok = active.every(function (f) { return txt.indexOf(f) !== -1; });
       r.hidden = !ok; if (ok) shown++;
     });
+    // st.facet was never set (the slots live in st.facets), so a tab or pill
+    // narrowed the list without saying so. Only a facet that narrows counts.
+    var filtering = !!(st.q || active.length);
     var note = $('[data-v-note]', scope);
-    if (!note && (st.q || st.facet)) {
+    if (!note && filtering) {
       var host = (listOf(scope) || {}).closest ? listOf(scope).closest('.v-card') : null;
       note = document.createElement('p');
       note.className = 't-meta muted'; note.setAttribute('data-v-note', '');
@@ -118,14 +122,65 @@
       (host && host.parentNode ? host.parentNode : scope).appendChild(note);
     }
     if (note) {
-      note.textContent = (st.q || st.facet)
+      note.textContent = filtering
         ? shown + ' of ' + rows.length + ' shown' +
           (st.label ? ' · ' + st.label : '') + (st.q ? ' · matching “' + st.qRaw + '”' : '')
         : '';
     }
     var empty = $('.v-empty', scope);
     if (empty && rows.length) empty.hidden = shown > 0;
+    else if (rows.length) noMatches(scope, shown === 0);
     return shown;
+  }
+
+  // A frame without a drawn empty state still must not leave a blank table.
+  function noMatches(scope, on) {
+    var body = listOf(scope); if (!body) return;
+    var el = $('[data-v-nomatch]', body);
+    if (!on) { if (el) el.remove(); return; }
+    if (el) return;
+    if (body.tagName === 'TBODY') {
+      var cols = $$('thead th', body.closest('table')).length || 1;
+      el = document.createElement('tr');
+      var td = document.createElement('td'); td.colSpan = cols;
+      td.className = 't-small muted'; td.style.textAlign = 'center'; td.style.padding = 'var(--s-8) var(--s-4)';
+      td.textContent = 'Nothing matches these filters. Clear the search or pick another tab.';
+      el.appendChild(td);
+    } else {
+      el = document.createElement('p');
+      el.className = 't-small muted'; el.style.padding = 'var(--s-8) var(--s-4)'; el.style.textAlign = 'center';
+      el.textContent = 'Nothing matches these filters. Clear the search or pick another tab.';
+    }
+    el.setAttribute('data-v-nomatch', '');
+    body.appendChild(el);
+  }
+
+  // textContent runs "Stay page" and "One page with…" together; join the
+  // text nodes with a space so a generated label reads as words.
+  function words(el) {
+    var out = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (w.nextNode()) { var t = w.currentNode.nodeValue.trim(); if (t) out.push(t); }
+    return out.join(' ');
+  }
+  // A control drawn as a span still has to be reachable and announced.
+  function control(el, role, on) {
+    if (!el.hasAttribute('role')) el.setAttribute('role', role);
+    if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
+    el.setAttribute('aria-checked', !!on);
+    if (!el.hasAttribute('aria-label') && !el.hasAttribute('aria-labelledby')) {
+      var t, tr = el.closest('tr');
+      if (role === 'checkbox' && el.closest('thead')) t = 'Select all rows';
+      else if (role === 'checkbox' && tr) {
+        var who = $('.v-identity__name, .t-strong, b', tr);
+        t = 'Select ' + (who ? words(who) : 'row');
+      } else {
+        var host = el.closest('label, .spread, .row') || el.parentNode;
+        var title = host && host !== el && host.firstElementChild !== el ? host.firstElementChild : null;
+        t = words(title && !title.contains(el) ? title : (host && host !== el ? host : el));
+      }
+      t = (t || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+      if (t) el.setAttribute('aria-label', t);
+    }
   }
 
   /* ------------------------------------------------------------ one group -- */
@@ -193,16 +248,25 @@
     /* toggles */
     $$('.v-toggle', scope).forEach(function (t) {
       if (t.dataset.vWired) return; t.dataset.vWired = '1';
+      control(t, 'switch', t.classList.contains('is-on'));
       t.addEventListener('click', function () {
         var on = t.classList.toggle('is-on');
+        t.setAttribute('aria-checked', on);
         var lbl = (t.parentNode.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 48);
         toast(on ? 'Turned on' : 'Turned off', lbl, on ? 'ok' : 'info');
       });
     });
 
     /* radio cards */
-    $$('.v-radiocard', scope).length > 1 &&
-      single(scope, $$('.v-radiocard', scope), 'is-selected');
+    var cards = $$('.v-radiocard', scope);
+    cards.forEach(function (c) { if (!c.querySelector('input')) control(c, 'radio', c.classList.contains('is-selected')); });
+    cards.length > 1 && single(scope, cards, 'is-selected', function (it) {
+      cards.forEach(function (c) { if (c.hasAttribute('role')) c.setAttribute('aria-checked', c === it); });
+    });
+    /* checkboxes drawn as spans (the ones with a native input need nothing) */
+    $$('.v-check', scope).forEach(function (c) {
+      if (!c.querySelector('input')) control(c, 'checkbox', c.classList.contains('is-checked'));
+    });
 
     /* accordions */
     $$('.v-accordion__trigger', scope).forEach(function (b) {
@@ -221,19 +285,31 @@
     /* drawer open/close */
     var drawer = $('.vs-overlay', scope);
     if (drawer) {
+      var opener = null;
+      var shut = function () {
+        drawer.style.display = 'none';
+        if (opener && opener.focus) opener.focus({ preventScroll: true });
+      };
+      var show = function (from) {
+        opener = from; drawer.style.display = 'flex';
+        var box = $('.v-drawer, .v-modal', drawer);
+        if (box) {
+          if (!box.hasAttribute('tabindex')) box.tabIndex = -1;
+          box.setAttribute('aria-modal', 'true');
+          box.focus({ preventScroll: true });
+        }
+      };
       rowsOf(scope).forEach(function (r) {
         if (r.dataset.vRow) return; r.dataset.vRow = '1';
+        if (!r.hasAttribute('tabindex')) r.tabIndex = 0;
         r.addEventListener('click', function (e) {
           if (e.target.closest('.v-check, .v-selectchip, button, a, input')) return;
-          drawer.style.display = 'flex';
+          show(r);
         });
       });
-      $$('.v-scrim, [data-close]', drawer).forEach(function (x) {
-        x.addEventListener('click', function () { drawer.style.display = 'none'; });
-      });
-      $$('.v-drawer [aria-label="Close"]', drawer).forEach(function (x) {
-        x.addEventListener('click', function () { drawer.style.display = 'none'; });
-      });
+      $$('.v-scrim, [data-close]', drawer).forEach(function (x) { x.addEventListener('click', shut); });
+      $$('.v-drawer [aria-label="Close"]', drawer).forEach(function (x) { x.addEventListener('click', shut); });
+      drawer.addEventListener('keydown', function (e) { if (e.key === 'Escape') { e.stopPropagation(); shut(); } });
     }
 
     /* pager */
@@ -244,7 +320,8 @@
   }
 
   /* ------------------------------------------------------------- tables --- */
-  var MONEY_LEAD = /^[₹$€£]\s*(-?[\d,]+(?:\.\d+)?)/;
+  var MONEY_LEAD = /^[₹$€£]\s*(-?[\d,]+(?:\.\d+)?)\s*(Cr|L|K)?\b/i;
+  var MONEY_UNIT = { cr: 1e7, l: 1e5, k: 1e3 };
   var NUM_ONLY   = /^-?[\d,]+(\.\d+)?$/;
   var DATE_ONLY  = /^(\d{1,2}[-/ ][A-Za-z]{3,9}[-/ ]\d{2,4}|[A-Za-z]{3,9} \d{1,2},? \d{4}|\d{4}-\d{2}-\d{2})$/;
   var TIME_ONLY  = /^(\d{1,2}):(\d{2})(\s?[ap]m)?$/i;
@@ -254,7 +331,8 @@
       var d = cell.dataset.sort; return isNaN(+d) ? String(d).toLowerCase() : +d;
     }
     var first = cell.textContent.trim().split('\n')[0].trim();
-    var m = first.match(MONEY_LEAD); if (m) return +m[1].replace(/,/g, '');
+    var m = first.match(MONEY_LEAD);
+    if (m) return +m[1].replace(/,/g, '') * (m[2] ? MONEY_UNIT[m[2].toLowerCase()] : 1);
     if (NUM_ONLY.test(first)) return +first.replace(/,/g, '');
     var tm = first.match(TIME_ONLY);
     if (tm) return (+tm[1] % 12 + (/pm/i.test(tm[3] || '') ? 12 : 0)) * 60 + +tm[2];
@@ -268,6 +346,7 @@
     ths.forEach(function (th, i) {
       if (!th.textContent.trim() || $('.v-check', th)) return;
       th.classList.add('is-sortable');
+      if (!th.hasAttribute('tabindex')) th.tabIndex = 0;
       th.addEventListener('click', function () {
         var dir = th.getAttribute('aria-sort') === 'ascending' ? 'descending' : 'ascending';
         ths.forEach(function (x) { x.removeAttribute('aria-sort'); });
@@ -289,6 +368,7 @@
     var head = $('thead .v-check', table);
     var paint = function (c, on) {
       c.classList.toggle('is-checked', on);
+      if (c.hasAttribute('role')) c.setAttribute('aria-checked', on);
       var box = $('.v-check__box', c); if (box) box.innerHTML = on ? TICK : '';
     };
     if (head) {
@@ -347,6 +427,33 @@
     var label = (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 44);
     if (!label || QUIET.test(label)) return;
     toast(label, 'Prototype — nothing is changed.', 'info');
+  });
+
+  /* ----------------------------------------------------------- keyboard ---- */
+  // Anything drawn as a div or span that acts as a control answers Enter, and
+  // Space unless it is a link -- what a native button or link would do.
+  var KEYED = '[role="button"], [role="link"], [role="checkbox"], [role="switch"], [role="radio"], ' +
+              '[role="tab"], [role="menuitem"], th.is-sortable, tr[tabindex], [data-go][tabindex]';
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var el = e.target;
+    if (!el.matches || !el.matches(KEYED)) return;
+    if (/^(BUTTON|A|INPUT|TEXTAREA|SELECT|SUMMARY)$/.test(el.tagName)) return;
+    if (e.key === ' ' && el.getAttribute('role') === 'link') return;
+    e.preventDefault();
+    el.click();
+  });
+
+  /* -------------------------------------------- standalone navigation ---- */
+  // The module files are design sheets, not the app: a control that goes to
+  // another screen opens that screen in the walkthrough instead of doing nothing.
+  document.addEventListener('click', function (e) {
+    if (window.wtGo || e.defaultPrevented) return;
+    var g = e.target.closest('[data-go]');
+    if (!g || g.closest('.wt-layer')) return;
+    if (g.tagName === 'A' && g.getAttribute('href') && g.getAttribute('href').charAt(0) !== '#') return;
+    e.preventDefault();
+    location.href = 'walkthrough.html#' + g.getAttribute('data-go');
   });
 
   /* ------------------------------------------------------------ bootstrap -- */
