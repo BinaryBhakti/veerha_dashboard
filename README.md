@@ -72,7 +72,7 @@ Where to look first:
 | `veerha-dashboard.html` | The original prototype: 7 screens in 4 visual directions |
 
 Requirements for the tooling only: Node 20+, Python 3, Google Chrome, and Playwright
-(see [Known rough edges](#known-rough-edges) — the scripts need one path fixed first).
+(`npm i --no-save playwright`; see [Known rough edges](#known-rough-edges)).
 
 ---
 
@@ -682,7 +682,7 @@ git-ignored:
 
 Consequences you will notice:
 
-- `hub.html` links to `audit/gallery.html`, which is a dead link in a fresh clone.
+- `hub.html` no longer links the gallery; open `audit/gallery.html` directly if you have it.
 - `tools/build-gallery.py`, `tools/build-dist.sh` and the capture scripts expect
   `audit/` to exist and will fail without it.
 - `MANIFEST.md` cites `audit/` screenshots as the reference for each screen.
@@ -694,32 +694,34 @@ repository is public.
 
 ## Known rough edges
 
+Honest notes, so you do not lose an afternoon to them.
+
 - **One example deal behind every opportunity.** The opportunity drawer's header and value
   follow the row you clicked; its body (timeline, stay, quotes) is always the same worked
   example. Leads and Mail threads do follow the row.
-Honest notes, so you do not lose an afternoon to them.
-
-- **The Playwright path is hard-coded.** Most `tools/*.cjs` scripts `require()` an
-  absolute path on the original author's machine
-  (`/Users/ashmit/.npm/_npx/…/node_modules/playwright`). Only `shot.js` and `rail.cjs`
-  honour `PLAYWRIGHT_PATH`. Before the gate will run for you:
+- **Playwright is resolved, not bundled.** The `tools/*.cjs` scripts load
+  `process.env.PLAYWRIGHT_PATH || 'playwright'`. Before the gate will run:
 
   ```bash
-  npm i -D playwright
-  sed -i '' "s#'/Users/ashmit/.npm/_npx/e41f203b7505f1fb/node_modules/playwright'#'playwright'#" tools/*.cjs
+  npm i --no-save playwright
   ```
 
-  (drop the `''` after `-i` on Linux). The scripts launch the installed Chrome with
-  `channel: 'chrome'`, so no browser download is needed.
-- **`tools/wtgen.py` hard-codes `ROOT`** to an absolute path. Change it to resolve
-  from `__file__`, as the other Python tools do.
+  The scripts launch the installed Chrome with `channel: 'chrome'`, so no browser
+  download is needed.
 - **`tools/shoot.cjs` defaults `OUT`** to a temporary directory that no longer exists.
   Set `OUT=./shots` when you run it.
 - **`deploy.sh` uses `md5 -q`**, which is macOS-only.
 - **`data.js` is kept in sync by hand.** There is no generator from fixture to HTML.
-- **Light mode and desktop only.** Dark theme is deferred. Tablet and mobile bands are
-  specified (see below) but only the guest pages in `17-public.html` are built
-  mobile-first.
+- **Light mode only.** Dark theme is deferred; `--inverse-bg` / `--inverse-tx` exist so
+  it can flip toasts and tooltips without touching text tokens.
+- **Responsive is one layer, not a redesign.** `screens/assets/shell.css` and the end of
+  `components.css` carry two bands (`--bp-tablet` 1024px, `--bp-phone` 760px): panes and
+  inline grids stack, the walkthrough rail becomes an off-canvas menu. The frames are
+  still drawn at desktop width; only the guest pages are designed phone-first.
+- **Inline spacing has half-steps.** About 500 inline `margin-top:2px/3px/6px`-style
+  values sit between tokens on purpose; the exact token values were converted.
+- **Filters match on row text.** A tab whose word appears in every row (e.g. "Hot" in the
+  temperature menu) narrows nothing, so its "N of M shown" note stays hidden.
 - **`dscheck.cjs` binds port 8809**; the other checks pick a free port.
 
 ---
