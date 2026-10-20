@@ -529,7 +529,7 @@
               </div>
               <div class="vs-filterbar">
                 <div class="v-search vs-filterbar__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                  <input class="v-input" placeholder="Search people"></div>
+                  <input class="v-input" placeholder="Search people" aria-label="Search people"></div>
                 <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Role</span>
                   <span class="v-filterchip__v">Any</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
@@ -731,7 +731,7 @@
                   <div class="v-card" style="background:var(--surface-subtle);box-shadow:none">
                     <div class="v-card__body" style="padding:var(--s-4)">
                       <div class="label">Your answer</div>
-                      <textarea class="v-textarea" style="margin-top:var(--s-2)" rows="3" placeholder="Type it however you would say it out loud…">Answer on its own at night. Discounts up to 10% are fine, anything more comes to me.</textarea>
+                      <textarea class="v-textarea" style="margin-top:var(--s-2)" rows="3" placeholder="Type it however you would say it out loud…" aria-label="Type it however you would say it out loud">Answer on its own at night. Discounts up to 10% are fine, anything more comes to me.</textarea>
                       <div class="spread" style="margin-top:var(--s-3)">
                         <span class="t-meta muted">Veerha turns this into settings you can edit later.</span>
                         <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="chat-send">Send</button>
@@ -1041,7 +1041,7 @@
                           honest way to check it is to try a sentence. This is that.</p></div></div>
                     <div class="v-card__body">
                       <div class="row" style="gap:var(--s-2)">
-                        <input class="v-input" value="Hi, do you have a hall for 180 people in February?" style="min-width:0">
+                        <input class="v-input" value="Hi, do you have a hall for 180 people in February?" style="min-width:0" aria-label="Try a question">
                         <button class="v-btn v-btn--secondary" data-w data-do="ack">Test it</button></div>
                       <div class="v-ai" style="margin-top:var(--s-4)">
                         <div class="v-ai__label"><span class="v-ai__mark">V</span><span class="label">Result</span></div>
@@ -1125,19 +1125,19 @@
                         save it, so it sits below the four that already work.</p></div></div>
                     <div class="v-card__body">
                       <div class="v-field" style="max-width:320px">
-                        <label class="v-field__label">Name</label>
-                        <input class="v-input" placeholder="Spa &amp; wellness"></div>
+                        <label class="v-field__label" for="f-13org-1">Name</label>
+                        <input id="f-13org-1" class="v-input" placeholder="Spa &amp; wellness"></div>
                       <div class="v-field" style="margin-top:var(--s-4)">
-                        <label class="v-field__label">What it handles</label>
-                        <textarea class="v-textarea" rows="2" placeholder="New enquiries about treatments and day passes, including package pricing and therapist availability."></textarea>
+                        <label class="v-field__label" for="f-13org-2">What it handles</label>
+                        <textarea id="f-13org-2" class="v-textarea" rows="2" placeholder="New enquiries about treatments and day passes, including package pricing and therapist availability."></textarea>
                         <span class="v-field__hint">Write it as you would explain the job to a new hire. The
                           router reads this, so vague descriptions mis-route.</span></div>
                       <div class="v-field" style="margin-top:var(--s-4)">
-                        <label class="v-field__label">Phrases that should land here</label>
+                        <label class="v-field__label" for="f-13org-3">Phrases that should land here</label>
                         <div class="v-actions">
-                          <span class="v-selectchip">massage <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-x"/></svg></span>
-                          <span class="v-selectchip">spa package <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-x"/></svg></span>
-                          <input class="v-input" placeholder="Type a phrase and press enter" style="max-width:220px">
+                          <button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">massage <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-x"/></svg></button>
+                          <button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">spa package <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-x"/></svg></button>
+                          <input id="f-13org-3" class="v-input" placeholder="Type a phrase and press enter" style="max-width:220px">
                         </div>
                         <span class="v-field__hint">One phrase per chip — how they are stored is our problem,
                           not yours.</span></div>

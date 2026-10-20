@@ -230,16 +230,16 @@
                       <div class="v-card__title">Identity</div>
                       <p class="v-card__desc">Used on quotes, proposals, booking pages and every email Veerha sends.</p></div></div>
                     <div class="v-card__body">
-                      <div class="v-field"><label class="v-field__label">Property name</label>
-                        <input class="v-input" value="Rivergrove Retreat"></div>
-                      <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Reply-to address</label>
-                        <input class="v-input" value="stay@rivergrove.example.com">
+                      <div class="v-field"><label class="v-field__label" for="f-14settin-1">Property name</label>
+                        <input id="f-14settin-1" class="v-input" value="Rivergrove Retreat"></div>
+                      <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-2">Reply-to address</label>
+                        <input id="f-14settin-2" class="v-input" value="stay@rivergrove.example.com">
                         <span class="v-field__hint">Guest replies land in Mail, not in someone's personal inbox.</span></div>
                       <div class="row" style="margin-top:var(--s-4);gap:var(--s-4);align-items:flex-end">
-                        <div class="v-field" style="width:180px"><label class="v-field__label">Brand colour</label>
+                        <div class="v-field" style="width:180px"><label class="v-field__label" for="f-14settin-3">Brand colour</label>
                           <div class="row" style="gap:var(--s-2)">
                             <span style="width:34px;height:34px;border-radius:var(--r-ctrl);background:var(--brand);border:1px solid var(--border-strong);flex:none"></span>
-                            <input class="v-input" value="#4F46E5"></div></div>
+                            <input id="f-14settin-3" class="v-input" value="#4F46E5"></div></div>
                         <div class="v-field grow"><label class="v-field__label">Logo</label>
                           <button class="v-btn v-btn--secondary" style="width:100%" data-w data-inert="Opens your computer’s file picker">Upload a PNG or SVG</button>
                           <span class="v-field__hint">Shown at 120px wide. Transparent background works best.</span></div>
@@ -255,8 +255,8 @@
                       <div class="v-field"><label class="v-field__label">Voice</label>
                         <div class="v-pilltabs"><button class="v-pill is-active">Warm</button><button class="v-pill">Neutral</button><button class="v-pill">Formal</button></div>
                         <span class="v-field__hint">Warm still says "we"; it does not use exclamation marks or emoji.</span></div>
-                      <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Sign-off</label>
-                        <input class="v-input" value="The team at Rivergrove"></div>
+                      <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-4">Sign-off</label>
+                        <input id="f-14settin-4" class="v-input" value="The team at Rivergrove"></div>
                     </div>
                   </section>
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
@@ -415,7 +415,7 @@
                     <div class="v-card__head"><div class="grow">
                       <div class="v-card__title">Language and formats</div>
                       <p class="v-card__desc">Used across the product, on quotes, and by the AI caller.</p></div></div>
-                    <div class="v-card__body"><div class="row" style="gap:var(--s-3)"><div class="v-field grow"><label class="v-field__label">Currency</label><select class="v-select"><option>INR — Indian rupee</option><option>USD — US dollar</option><option>EUR — Euro</option><option>GBP — Pound sterling</option><option>AED — UAE dirham</option><option>SGD — Singapore dollar</option><option>AUD — Australian dollar</option></select></div><div class="v-field grow"><label class="v-field__label">Time zone</label><input class="v-input" value="Asia/Kolkata"></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Locale</label><select class="v-select"><option>English (India)</option><option>Hindi</option><option>Marathi</option><option>Tamil</option><option>English (UK)</option><option>Arabic</option></select><span class="v-field__hint">The language the AI caller opens in. It switches to whatever language the guest replies in.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Default country code</label><select class="v-select"><option>Auto — from the time zone (+91)</option><option>+91 India</option><option>+971 UAE</option><option>+44 United Kingdom</option></select><span class="v-field__hint">Applied to numbers saved without a code, so the same guest is never stored twice.</span></div></div>
+                    <div class="v-card__body"><div class="row" style="gap:var(--s-3)"><div class="v-field grow"><label class="v-field__label" for="f-14settin-5">Currency</label><select id="f-14settin-5" class="v-select"><option>INR — Indian rupee</option><option>USD — US dollar</option><option>EUR — Euro</option><option>GBP — Pound sterling</option><option>AED — UAE dirham</option><option>SGD — Singapore dollar</option><option>AUD — Australian dollar</option></select></div><div class="v-field grow"><label class="v-field__label" for="f-14settin-6">Time zone</label><input id="f-14settin-6" class="v-input" value="Asia/Kolkata"></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-7">Locale</label><select id="f-14settin-7" class="v-select"><option>English (India)</option><option>Hindi</option><option>Marathi</option><option>Tamil</option><option>English (UK)</option><option>Arabic</option></select><span class="v-field__hint">The language the AI caller opens in. It switches to whatever language the guest replies in.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-8">Default country code</label><select id="f-14settin-8" class="v-select"><option>Auto — from the time zone (+91)</option><option>+91 India</option><option>+971 UAE</option><option>+44 United Kingdom</option></select><span class="v-field__hint">Applied to numbers saved without a code, so the same guest is never stored twice.</span></div></div>
                   </section>
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
@@ -553,7 +553,7 @@
                     <div class="v-card__head"><div class="grow">
                       <div class="v-card__title">Tax regime</div>
                       <p class="v-card__desc">How quotations and proformas print tax.</p></div></div>
-                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Regime</label><div class="v-pilltabs"><button class="v-pill is-active">India</button><button class="v-pill">International</button></div><span class="v-field__hint">India supports TCS; international has none.</span></div><div class="row" style="gap:var(--s-3);margin-top:var(--s-4)"><div class="v-field" style="width:160px"><label class="v-field__label">TCS rate (%)</label><input class="v-input" value="2"></div><div class="v-field grow"><label class="v-field__label">TCS</label><div class="row" style="gap:var(--s-2);min-height:36px"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span><span class="t-small">Enabled — a 2% TCS line applies on India invoices</span></div></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Supply state</label><select class="v-select"><option>Karnataka</option><option>Not set — print the rate whole</option><option>Delhi</option><option>Maharashtra</option></select><span class="v-field__hint">Same-state guests see CGST + SGST; everyone else sees IGST.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">GSTIN</label><input class="v-input" value="29AAACR1234R1Z5"><span class="v-field__hint">Printed on quotations and proformas.</span></div></div>
+                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Regime</label><div class="v-pilltabs"><button class="v-pill is-active">India</button><button class="v-pill">International</button></div><span class="v-field__hint">India supports TCS; international has none.</span></div><div class="row" style="gap:var(--s-3);margin-top:var(--s-4)"><div class="v-field" style="width:160px"><label class="v-field__label" for="f-14settin-9">TCS rate (%)</label><input id="f-14settin-9" class="v-input" value="2"></div><div class="v-field grow"><label class="v-field__label">TCS</label><div class="row" style="gap:var(--s-2);min-height:36px"><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span><span class="t-small">Enabled — a 2% TCS line applies on India invoices</span></div></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-10">Supply state</label><select id="f-14settin-10" class="v-select"><option>Karnataka</option><option>Not set — print the rate whole</option><option>Delhi</option><option>Maharashtra</option></select><span class="v-field__hint">Same-state guests see CGST + SGST; everyone else sees IGST.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-11">GSTIN</label><input id="f-14settin-11" class="v-input" value="29AAACR1234R1Z5"><span class="v-field__hint">Printed on quotations and proformas.</span></div></div>
                   </section>
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
@@ -829,7 +829,7 @@
                     <div class="v-card__head"><div class="grow">
                       <div class="v-card__title">Who may be invited</div>
                       <p class="v-card__desc">Restrict the email addresses that can join this workspace.</p></div></div>
-                    <div class="v-card__body"><div class="v-field"><label class="v-field__label">Allowed email domains</label><input class="v-input" value="rivergrove.example.com"><span class="v-field__hint">Empty means no restriction — any address can be invited. Set this if colleagues should only ever join on a company address, never a personal one.</span></div><div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div>Two of your three people are on <b>rivergrove.example.com</b>. One is on a personal address and would not be invitable under this rule — existing members are never removed by it.</div></div></div>
+                    <div class="v-card__body"><div class="v-field"><label class="v-field__label" for="f-14settin-12">Allowed email domains</label><input id="f-14settin-12" class="v-input" value="rivergrove.example.com"><span class="v-field__hint">Empty means no restriction — any address can be invited. Set this if colleagues should only ever join on a company address, never a personal one.</span></div><div class="v-callout v-callout--info" style="margin-top:var(--s-4)"><div>Two of your three people are on <b>rivergrove.example.com</b>. One is on a personal address and would not be invitable under this rule — existing members are never removed by it.</div></div></div>
                   </section>
               <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
                 <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
@@ -967,7 +967,7 @@
               <section class="v-card band">
                 <div class="v-card__head"><div class="grow"><div class="v-card__title">Operating brief</div>
                   <p class="v-card__desc">Every conversation is grounded in this, so the AI answers as Rivergrove and not as a generic assistant.</p></div></div>
-                <div class="v-card__body"><textarea class="v-input" rows="5" style="width:100%;resize:vertical">Rivergrove Retreat is a 14-room wellness resort on the river, two hours from the city. Guests come for quiet weekends, anniversaries and small group retreats. Quote rooms from the live rate; never promise a room the channel manager shows as sold. Breakfast is included on every plan except Room only. Check-in from 2 PM, check-out by 11 AM; a late checkout is a request, not a promise.</textarea>
+                <div class="v-card__body"><textarea class="v-input" rows="5" style="width:100%;resize:vertical" aria-label="Message">Rivergrove Retreat is a 14-room wellness resort on the river, two hours from the city. Guests come for quiet weekends, anniversaries and small group retreats. Quote rooms from the live rate; never promise a room the channel manager shows as sold. Breakfast is included on every plan except Room only. Check-in from 2 PM, check-out by 11 AM; a late checkout is a request, not a promise.</textarea>
                   <div class="row" style="gap:var(--s-3);margin-top:var(--s-3);align-items:center">
                     <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="generate">Regenerate from business info</button>
                     <span class="t-meta muted">Rebuilds the brief from Teach Veerha. Your edits above are replaced, so the old version is kept in the change log.</span></div></div>
@@ -1036,12 +1036,12 @@
                 <div class="v-card__head"><div class="grow"><div class="v-card__title">Quiet hours &amp; limits</div>
                   <p class="v-card__desc">When the AI stays off outbound channels, and how much it may send.</p></div></div>
                 <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start">
-                    <div class="v-field" style="width:150px"><label class="v-field__label">Quiet from</label><input class="v-input num" value="21:00"></div>
-                    <div class="v-field" style="width:150px"><label class="v-field__label">Until</label><input class="v-input num" value="08:00"></div>
+                    <div class="v-field" style="width:150px"><label class="v-field__label" for="f-14settin-13">Quiet from</label><input id="f-14settin-13" class="v-input num" value="21:00"></div>
+                    <div class="v-field" style="width:150px"><label class="v-field__label" for="f-14settin-14">Until</label><input id="f-14settin-14" class="v-input num" value="08:00"></div>
                     <span class="t-meta muted grow" style="padding-top:28px">Replies to a guest who writes in still go out — quiet hours stop <b>follow-ups and campaigns</b>, not answers.</span></div>
                   <div class="row" style="gap:var(--s-3);margin-top:var(--s-4);align-items:flex-start">
-                    <div class="v-field" style="width:150px"><label class="v-field__label">Per guest, per day</label><input class="v-input num" value="3"></div>
-                    <div class="v-field" style="width:150px"><label class="v-field__label">Outbound per day</label><input class="v-input num" value="200"></div>
+                    <div class="v-field" style="width:150px"><label class="v-field__label" for="f-14settin-15">Per guest, per day</label><input id="f-14settin-15" class="v-input num" value="3"></div>
+                    <div class="v-field" style="width:150px"><label class="v-field__label" for="f-14settin-16">Outbound per day</label><input id="f-14settin-16" class="v-input num" value="200"></div>
                     <span class="t-meta muted grow" style="padding-top:28px">Yesterday the busiest guest got 2 messages and the workspace sent 64. Neither cap would have stopped anything.</span></div></div>
               </section>
 
@@ -1253,7 +1253,7 @@
               </div>
               <div class="vs-filterbar" style="margin-bottom:var(--s-4)">
                 <div class="v-search vs-filterbar__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                  <input class="v-input" placeholder="Search questions"></div>
+                  <input class="v-input" placeholder="Search questions" aria-label="Search questions"></div>
                 <div class="v-pilltabs">
                   <button class="v-pill is-active">All <span class="v-pill__n">25</span></button>
                   <button class="v-pill">On a form <span class="v-pill__n">12</span></button>
@@ -1410,7 +1410,7 @@
                       <td><div class="t-small" style="font-weight:600">Name</div>
                         <div class="t-meta muted num">name</div></td>
                       <td class="t-small secondary">Text</td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Enquiry form</td>
                       <td class="v-table__num t-small">142 of 142<div class="t-meta muted" style="font-family:var(--ui)">100%</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Name" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1419,7 +1419,7 @@
                       <td><div class="t-small" style="font-weight:600">Phone</div>
                         <div class="t-meta muted num">phone</div></td>
                       <td class="t-small secondary">Phone</td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Enquiry form</td>
                       <td class="v-table__num t-small">140 of 142<div class="t-meta muted" style="font-family:var(--ui)">99%</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Phone" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1428,7 +1428,7 @@
                       <td><div class="t-small" style="font-weight:600">Email</div>
                         <div class="t-meta muted num">email</div></td>
                       <td class="t-small secondary">Email</td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Enquiry form</td>
                       <td class="v-table__num t-small">118 of 142<div class="t-meta muted" style="font-family:var(--ui)">83%</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Email" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1437,7 +1437,7 @@
                       <td><div class="t-small" style="font-weight:600">Meal preference</div>
                         <div class="t-meta muted num">meal_preference</div><div class="t-meta muted" style="margin-top:5px;max-width:44ch"><b style="font-weight:600">Tells the AI:</b> kitchen acts on this before a stay — ask it once, never twice</div></td>
                       <td class="t-small secondary">One choice<div class="t-meta muted">Vegetarian · Non-vegetarian · Jain · Swaminarayan · Vegan · Halal · Eggetarian</div></td>
-                      <td><span class="v-selectchip">Sensitive <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Sensitive <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Asked by the AI when it fits</td>
                       <td class="v-table__num t-small">13 of 142<div class="t-meta muted" style="font-family:var(--ui)">9% · last on 1 Sep</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Meal preference" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1446,7 +1446,7 @@
                       <td><div class="t-small" style="font-weight:600">Allergies</div>
                         <div class="t-meta muted num">allergies</div><div class="t-meta muted" style="margin-top:5px;max-width:44ch"><b style="font-weight:600">Tells the AI:</b> kitchen and housekeeping act on this — safety, not comfort</div></td>
                       <td class="t-small secondary">Text</td>
-                      <td><span class="v-selectchip">Sensitive <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Sensitive <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Allergies" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1455,7 +1455,7 @@
                       <td><div class="t-small" style="font-weight:600">Nationality</div>
                         <div class="t-meta muted num">nationality</div><div class="t-meta muted" style="margin-top:5px;max-width:44ch"><b style="font-weight:600">Tells the AI:</b> decides which ID a guest is asked for at check-in</div></td>
                       <td class="t-small secondary">Text</td>
-                      <td><span class="v-selectchip">Personal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Personal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Nationality" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1464,7 +1464,7 @@
                       <td><div class="t-small" style="font-weight:600">Birthday</div>
                         <div class="t-meta muted num">birthday</div></td>
                       <td class="t-small secondary">Date</td>
-                      <td><span class="v-selectchip">Personal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Personal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Birthday" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1473,7 +1473,7 @@
                       <td><div class="t-small" style="font-weight:600">Anniversary</div>
                         <div class="t-meta muted num">wedding_anniversary</div></td>
                       <td class="t-small secondary">Date</td>
-                      <td><span class="v-selectchip">Personal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Personal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Anniversary" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1482,7 +1482,7 @@
                       <td><div class="t-small" style="font-weight:600">Bed preference</div>
                         <div class="t-meta muted num">bed_preference</div></td>
                       <td class="t-small secondary">One choice<div class="t-meta muted">Twin · Double · King · Extra bed</div></td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Bed preference" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1491,7 +1491,7 @@
                       <td><div class="t-small" style="font-weight:600">Room location</div>
                         <div class="t-meta muted num">room_location_preference</div></td>
                       <td class="t-small secondary">Several choices<div class="t-meta muted">High floor · Low floor · Quiet · Away from the lift · Corner · Pool view · Garden view</div></td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Room location" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1500,7 +1500,7 @@
                       <td><div class="t-small" style="font-weight:600">Smoking</div>
                         <div class="t-meta muted num">smoking_preference</div></td>
                       <td class="t-small secondary">One choice<div class="t-meta muted">Smoking · Non-smoking</div></td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Smoking" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1509,7 +1509,7 @@
                       <td><div class="t-small" style="font-weight:600">Airport transfer</div>
                         <div class="t-meta muted num">airport_transfer</div></td>
                       <td class="t-small secondary">One choice<div class="t-meta muted">Usually needs one · Never needs one · Arranges their own</div></td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Airport transfer" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1518,7 +1518,7 @@
                       <td><div class="t-small" style="font-weight:600">Preferred channel</div>
                         <div class="t-meta muted num">preferred_contact_channel</div></td>
                       <td class="t-small secondary">One choice<div class="t-meta muted">WhatsApp · Email · Phone · SMS</div></td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Preferred channel" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1527,7 +1527,7 @@
                       <td><div class="t-small" style="font-weight:600">Language</div>
                         <div class="t-meta muted num">preferred_language</div></td>
                       <td class="t-small secondary">One choice<div class="t-meta muted">English · Hindi · Gujarati · Marathi · Bengali · Tamil · Telugu · Kannada · Malayalam · Punjabi</div></td>
-                      <td><span class="v-selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></td>
+                      <td><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">None <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button></td>
                       <td class="t-small secondary">Never asked</td>
                       <td class="v-table__num t-small">0 of 142<div class="t-meta muted" style="font-family:var(--ui)">not collected anywhere</div></td>
                       <td style="text-align:right"><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="edit">Edit</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for Language" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></td>
@@ -1775,7 +1775,7 @@
                             <div class="t-meta muted">Counted per question, not per conversation.</div></span>
                           <div style="flex:1">
                             <div class="row" style="gap:var(--s-2)">
-                              <input class="v-input num" value="3" style="width:72px;text-align:center">
+                              <input class="v-input num" value="3" style="width:72px;text-align:center" aria-label="Number">
                               <span class="t-meta muted">follow-ups, then it lets the question go</span></div>
                             <p class="t-meta muted" style="margin-top:8px">A fourth ask reads as pestering on WhatsApp.
                               At 3, the AI settled 87–94% of every chased question last month.</p></div></div>
@@ -1785,7 +1785,7 @@
                             <div class="t-meta muted">From the first message, not the last.</div></span>
                           <div style="flex:1">
                             <div class="row" style="gap:var(--s-2)">
-                              <input class="v-input num" value="2" style="width:72px;text-align:center">
+                              <input class="v-input num" value="2" style="width:72px;text-align:center" aria-label="Number">
                               <span class="t-meta muted">days</span></div>
                             <p class="t-meta muted" style="margin-top:8px">After that the lead stays in
                               <b>Qualifying</b> with whatever was settled, and appears in
@@ -1963,7 +1963,7 @@
               </div>
               <div class="vs-filterbar" style="margin-bottom:var(--s-4)">
                 <div class="v-search vs-filterbar__search"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                  <input class="v-input" placeholder="Search the record"></div>
+                  <input class="v-input" placeholder="Search the record" aria-label="Search the record"></div>
                 <div class="v-pilltabs">
                   <button class="v-pill is-active">All <span class="v-pill__n">6</span></button>
                   <button class="v-pill">By a person <span class="v-pill__n">3</span></button>
@@ -2168,8 +2168,8 @@
                     </div>
                     <div class="v-card__body">
                       <div class="v-field" style="max-width:320px;margin-bottom:var(--s-4)">
-                        <label class="v-field__label">Form name</label>
-                        <input class="v-input" value="Enquiry">
+                        <label class="v-field__label" for="f-14settin-17">Form name</label>
+                        <input id="f-14settin-17" class="v-input" value="Enquiry">
                         <span class="v-field__hint">Guests never see this — it is how you tell your forms apart.</span>
                       </div>
                       <div class="v-rows">
@@ -2181,7 +2181,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Text <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted">Every form asks this — a lead nobody can be called back is not a lead.</div><div class="t-meta faint" style="margin-top:4px">No hint — the AI reads it from context</div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Required <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Required <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Name" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2193,7 +2193,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Phone <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted">Every form asks this. Email is optional and sits under it.</div><div class="t-meta faint" style="margin-top:4px">No hint — the AI reads it from context</div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Required <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Required <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Phone" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2205,7 +2205,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">One choice · 5 options <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> rooms for an individual stay; banquet or wedding for an event; corporate for a company account; travel agent for a reseller <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Required <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Enquiry type earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Enquiry type later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Required <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Enquiry type earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Enquiry type later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Enquiry type" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2217,7 +2217,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Date <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> the arrival date; for an event, the date of the event <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-in earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-in later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-in earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-in later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Check-in" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2229,7 +2229,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Date <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> the departure date, if they give one <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-out earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-out later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-out earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Check-out later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Check-out" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2241,7 +2241,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Number <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> how many people — for a banquet or a wedding this is the headcount <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Guests earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Guests later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Guests earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Guests later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Guests" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2253,7 +2253,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Number <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> how many of the guests are children, if they said <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Children earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Children later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Keeps asking <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Children earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Children later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Children" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2265,7 +2265,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Number <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> how many rooms they need — one unless they say otherwise <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Rooms earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Rooms later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Rooms earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Rooms later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Rooms" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2277,7 +2277,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Number, shown as money (₹) <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> a plain number — per night for rooms, the total for an event. &ldquo;2.5L&rdquo; is read as 250000. <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Budget earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Budget later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Budget earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Budget later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Budget" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2289,7 +2289,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Text <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted">Shown only when Children is 1 or more</div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> each child&rsquo;s age, e.g. 6, 9 <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Ages of the children earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Ages of the children later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Ages of the children earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Ages of the children later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Ages of the children" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2301,7 +2301,7 @@
                           </div>
                           <div style="margin-left:30px">
                             <div class="t-meta muted" style="margin-top:3px">Text <span class="faint">&middot; set in Fields</span></div><div class="t-meta muted" style="margin-top:4px;max-width:52ch"><b style="font-weight:600">Tells the AI:</b> why they are travelling — a honeymoon, a site visit, an anniversary <span class="faint">· edit in Fields</span></div>
-                            <div class="v-actions" style="margin-top:var(--s-2)"><span class="v-selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><span class="v-selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Occasion earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Occasion later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
+                            <div class="v-actions" style="margin-top:var(--s-2)"><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Optional <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button type="button" class="v-selectchip" aria-haspopup="menu" data-w data-do="selectchip">Asks once <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Occasion earlier" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-up"/></svg></button><button class="v-btn v-btn--icon v-btn--sm" aria-label="Ask Occasion later" data-w data-do="reorder"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
                               <button class="v-btn v-btn--icon v-btn--sm" aria-label="More for Occasion" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></div>
                           </div>
                         </div>
@@ -2337,7 +2337,7 @@
                               <span class="v-badge v-badge--ok"><i class="v-dot v-dot--ok"></i> Live</span></span>
                             <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Turn off</button></div>
                           <div class="row" style="gap:var(--s-2)">
-                            <input class="v-input num" readonly value="rivergrove.example.com/enquiry" style="min-width:0">
+                            <input class="v-input num" readonly value="rivergrove.example.com/enquiry" style="min-width:0" aria-label="Enquiry page link">
                             <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button>
                             <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="openrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ext"/></svg> Open</button></div>
                           <p class="t-meta muted" style="margin-top:6px">Brand, logo and colours come from
@@ -2345,7 +2345,7 @@
                         </div>
                         <div>
                           <div class="t-small" style="font-weight:600;margin-bottom:var(--s-3)">On your own website</div>
-                          <textarea class="v-textarea num" readonly rows="2" style="min-height:0">&lt;script src="https://forms.veerha.com/embed.js"
+                          <textarea class="v-textarea num" readonly rows="2" style="min-height:0" aria-label="Message">&lt;script src="https://forms.veerha.com/embed.js"
         data-form="enquiry" data-site="rivergrove"&gt;&lt;/script&gt;</textarea>
                           <div class="v-actions" style="margin-top:var(--s-2)">
                             <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button>
@@ -2399,18 +2399,18 @@
                         <div class="t-card" style="margin-top:var(--s-3)">Enquire about a stay</div>
                         <p class="t-meta muted">We reply on WhatsApp within a few minutes.</p>
                         <div class="stack-sm" style="margin-top:var(--s-4);display:flex;flex-direction:column;gap:var(--s-3)">
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Your name <span style="color:var(--dn-tx)">*</span></label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="Priya"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Phone <span style="color:var(--dn-tx)">*</span></label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="+91"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Email</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="optional"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">What is the enquiry about <span style="color:var(--dn-tx)">*</span></label><select class="v-select" style="min-height:30px;padding:4px var(--s-3)"><option>rooms</option></select></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Check-in</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="dd/mm/yyyy"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Check-out</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="dd/mm/yyyy"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Guests</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="2"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Children</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="0"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Rooms</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="1"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Budget per night</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="₹"></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Ages of the children</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="6, 9"><div class="t-meta faint" style="margin-top:3px">appears once Children is 1 or more</div></div>
-                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta">Occasion</label><input class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="anniversary, site visit…"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-18">Your name <span style="color:var(--dn-tx)">*</span></label><input id="f-14settin-18" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="Priya"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-19">Phone <span style="color:var(--dn-tx)">*</span></label><input id="f-14settin-19" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="+91"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-20">Email</label><input id="f-14settin-20" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="optional"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-21">What is the enquiry about <span style="color:var(--dn-tx)">*</span></label><select id="f-14settin-21" class="v-select" style="min-height:30px;padding:4px var(--s-3)"><option>rooms</option></select></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-22">Check-in</label><input id="f-14settin-22" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="dd/mm/yyyy"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-23">Check-out</label><input id="f-14settin-23" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="dd/mm/yyyy"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-24">Guests</label><input id="f-14settin-24" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="2"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-25">Children</label><input id="f-14settin-25" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="0"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-26">Rooms</label><input id="f-14settin-26" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="1"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-27">Budget per night</label><input id="f-14settin-27" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="₹"></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-28">Ages of the children</label><input id="f-14settin-28" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="6, 9"><div class="t-meta faint" style="margin-top:3px">appears once Children is 1 or more</div></div>
+                        <div class="v-field" style="gap:3px"><label class="v-field__label t-meta" for="f-14settin-29">Occasion</label><input id="f-14settin-29" class="v-input" style="min-height:30px;padding:4px var(--s-3)" placeholder="anniversary, site visit…"></div>
                         </div>
                         <div style="text-align:center;margin-top:var(--s-4)">
                           <span style="display:inline-block;background:var(--brand);color:var(--brand-on);padding:8px 18px;border-radius:var(--r-ctrl);font-size:13px;font-weight:500">Send my enquiry</span></div>
@@ -2783,7 +2783,7 @@
                       <div style="flex:1;min-width:220px">
                         <div class="row" style="gap:var(--s-2)">
                           <span class="t-small muted" style="width:14px">₹</span>
-                          <input class="v-input amount" value="50,000" style="width:130px;text-align:right">
+                          <input class="v-input amount" value="50,000" style="width:130px;text-align:right" aria-label="Amount">
                           <span class="t-meta muted">and above</span></div>
                         <p class="t-meta muted" style="margin-top:8px"><b>18 customers are Premium today.</b>
                           Sequences may offer them a returning-guest rate without asking you.</p></div></div>
@@ -2794,7 +2794,7 @@
                       <div style="flex:1;min-width:220px">
                         <div class="row" style="gap:var(--s-2)">
                           <span class="t-small muted" style="width:14px">₹</span>
-                          <input class="v-input amount is-focus" value="1,50,000" style="width:130px;text-align:right">
+                          <input class="v-input amount is-focus" value="1,50,000" style="width:130px;text-align:right" aria-label="Amount">
                           <span class="t-meta muted">and above</span></div>
                         <div class="v-callout v-callout--warn" style="margin-top:var(--s-3)">
                           <span class="v-callout__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg></span>
@@ -2807,7 +2807,7 @@
                         <div class="t-meta muted">Any reply, call or booking clears it immediately.</div></span>
                       <div style="flex:1;min-width:220px">
                         <div class="row" style="gap:var(--s-2)">
-                          <input class="v-input num" value="6" style="width:72px;text-align:center">
+                          <input class="v-input num" value="6" style="width:72px;text-align:center" aria-label="Number">
                           <span class="t-small secondary">months of no contact</span></div>
                         <p class="t-meta muted" style="margin-top:8px"><b>23 of 142 customers are inactive
                           at 6 months.</b> They drop out of campaign audiences and stop counting towards
@@ -3551,9 +3551,9 @@
               <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Questions</div><p class="v-card__desc">In the order the guest sees them</p></div><button class="v-btn v-btn--ghost v-btn--sm" data-w data-do="create">Add a question</button></div><div class="v-card__body"><div class="row" style="gap:var(--s-3);padding:var(--s-3);border:1px solid var(--border);border-radius:var(--r-ctrl);margin-bottom:var(--s-2)"><span class="num t-meta muted">1</span><div class="grow"><div class="t-small" style="font-weight:600">Dates</div><div class="t-meta muted">Date range · Check-in and check-out</div></div><span class="v-badge v-badge--info">Required</span></div><div class="row" style="gap:var(--s-3);padding:var(--s-3);border:1px solid var(--border);border-radius:var(--r-ctrl);margin-bottom:var(--s-2)"><span class="num t-meta muted">2</span><div class="grow"><div class="t-small" style="font-weight:600">Rooms</div><div class="t-meta muted">Number · 1–10</div></div><span class="v-badge v-badge--info">Required</span></div><div class="row" style="gap:var(--s-3);padding:var(--s-3);border:1px solid var(--border);border-radius:var(--r-ctrl);margin-bottom:var(--s-2)"><span class="num t-meta muted">3</span><div class="grow"><div class="t-small" style="font-weight:600">Guests</div><div class="t-meta muted">Number · Adults, then children</div></div><span class="v-badge v-badge--info">Required</span></div><div class="row" style="gap:var(--s-3);padding:var(--s-3);border:1px solid var(--border);border-radius:var(--r-ctrl);margin-bottom:var(--s-2);background:var(--brand-soft);border-color:var(--brand-200)"><span class="num t-meta muted">4</span><div class="grow"><div class="t-small" style="font-weight:600">Occasion</div><div class="t-meta muted">Dropdown · Anniversary · Birthday · Retreat · None</div></div><span class="v-badge v-badge--neutral">Optional</span></div><div class="row" style="gap:var(--s-3);padding:var(--s-3);border:1px solid var(--border);border-radius:var(--r-ctrl);margin-bottom:var(--s-2)"><span class="num t-meta muted">5</span><div class="grow"><div class="t-small" style="font-weight:600">Budget per night</div><div class="t-meta muted">Dropdown · Under ₹10,000 · ₹10–20,000 · Over ₹20,000</div></div><span class="v-badge v-badge--neutral">Optional</span></div></div></section>
               <section class="v-card"><div class="v-card__head"><div class="grow"><div class="v-card__title">Occasion</div><p class="v-card__desc">Question 4 · dropdown</p></div></div>
                 <div class="v-card__body">
-                  <div class="v-field"><label class="v-field__label">Question</label><input class="v-input" value="Is it for a special occasion?"></div>
-                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Choices</label><input class="v-input" value="Anniversary, Birthday, Retreat, None"></div>
-                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Saves to</label><select class="v-select"><option>Lead field · Occasion</option></select><span class="v-field__hint">An answer fills the lead field directly — no AI reading needed.</span></div>
+                  <div class="v-field"><label class="v-field__label" for="f-14settin-30">Question</label><input id="f-14settin-30" class="v-input" value="Is it for a special occasion?"></div>
+                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-31">Choices</label><input id="f-14settin-31" class="v-input" value="Anniversary, Birthday, Retreat, None"></div>
+                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-14settin-32">Saves to</label><select id="f-14settin-32" class="v-select"><option>Lead field · Occasion</option></select><span class="v-field__hint">An answer fills the lead field directly — no AI reading needed.</span></div>
                   <div class="row" style="justify-content:space-between;margin-top:var(--s-4)"><span class="t-small">Required</span><span class="v-toggle" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div>
                   <p class="t-meta muted" style="margin-top:var(--s-2)">Optional fields stay optional on screen; a guest can send the form without them.</p>
                 </div></section>
@@ -3698,7 +3698,7 @@
                         <span class="row" style="gap:var(--s-2)"><span class="t-small" style="font-weight:600">Workspace key</span>
                           <span class="v-badge v-badge--ok">In use</span></span>
                         <div class="t-meta muted" style="margin-top:3px;max-width:58ch">Identifies this workspace to the chat widget and the intake webhook. It travels in an <span class="num">X-Veerha-Key</span> header — never in a URL, where it would land in browser history, your server logs and every referrer.</div>
-                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="vk_live_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 7Q4X" style="max-width:280px;letter-spacing:.04em"></div>
+                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="vk_live_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 7Q4X" style="max-width:280px;letter-spacing:.04em" aria-label="API key"></div>
                         <div class="t-meta faint" style="margin-top:6px">Created 1 Sep · last used 2 minutes ago · revealed twice, both by Anita</div>
                       </span>
                       <span class="v-actions" style="flex:none"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="reveal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-eye"/></svg> Reveal</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Issues a new key; the old one keeps working for 24 hours"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-refresh"/></svg> Rotate</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More for the workspace key" data-w data-do="rowmenu"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button></span>
@@ -3709,7 +3709,7 @@
                         <span class="row" style="gap:var(--s-2)"><span class="t-small" style="font-weight:600">Storefront key — rivergrove.example.com</span>
                           <span class="v-badge v-badge--ok">In use</span></span>
                         <div class="t-meta muted" style="margin-top:3px;max-width:58ch">What your own website uses to read your catalogue and send you orders. Sent as the <span class="num">X-Storefront-Key</span> header. One key per site, revocable on its own.<div style="margin-top:6px"><span class="v-badge v-badge--neutral">Reads your catalogue</span> <span class="v-badge v-badge--neutral">Takes orders</span></div></div>
-                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="sf_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; B2M9" style="max-width:280px;letter-spacing:.04em"></div>
+                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="sf_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; B2M9" style="max-width:280px;letter-spacing:.04em" aria-label="API key"></div>
                         <div class="t-meta faint" style="margin-top:6px">Created 18 Sep · last used 6 minutes ago · 412 calls today</div>
                       </span>
                       <span class="v-actions" style="flex:none"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="reveal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-eye"/></svg> Reveal</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button><button class="v-btn v-btn--ghost v-btn--sm" style="color:var(--dn-tx)" data-w data-do="ack">Revoke</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for the storefront key" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></span>
@@ -3720,7 +3720,7 @@
                         <span class="row" style="gap:var(--s-2)"><span class="t-small" style="font-weight:600">WhatsApp verify token</span>
                           <span class="v-badge v-badge--ok">Verified</span></span>
                         <div class="t-meta muted" style="margin-top:3px;max-width:58ch">Whatever you typed into Meta, so Meta can prove the callback URL is yours. It is checked once, when you press Verify there.</div>
-                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="wv_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; K3TD" style="max-width:280px;letter-spacing:.04em"></div>
+                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="wv_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; K3TD" style="max-width:280px;letter-spacing:.04em" aria-label="API key"></div>
                         <div class="t-meta faint" style="margin-top:6px">Saved 12 Sep · Meta verified the callback the same minute</div>
                       </span>
                       <span class="v-actions" style="flex:none"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="generate"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-refresh"/></svg> Regenerate</button><button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions for the WhatsApp verify token" data-w data-do="rowmenu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg></button></span>
@@ -3755,7 +3755,7 @@
                     the AI answers them live.</p></div>
                   <span class="v-badge v-badge--ok"><i class="v-dot v-dot--ok"></i> Live on 1 site</span></div>
                 <div class="v-card__body">
-                  <textarea class="v-textarea num" readonly rows="2" style="min-height:0">&lt;script src="https://widget.veerha.com/embed.js"
+                  <textarea class="v-textarea num" readonly rows="2" style="min-height:0" aria-label="Message">&lt;script src="https://widget.veerha.com/embed.js"
         data-site="rivergrove" async&gt;&lt;/script&gt;</textarea>
                   <div class="v-actions" style="margin-top:var(--s-2)">
                     <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button>
@@ -3772,9 +3772,9 @@
                   <span class="v-badge v-badge--ok">126 received</span></div>
                 <div class="v-card__body">
                   <div class="v-field">
-                    <label class="v-field__label">Your endpoint</label>
+                    <label class="v-field__label" for="f-14settin-33">Your endpoint</label>
                     <div class="row" style="gap:var(--s-2)">
-                      <input class="v-input num" readonly value="https://api.veerha.com/v1/leads/intake" style="min-width:0">
+                      <input id="f-14settin-33" class="v-input num" readonly value="https://api.veerha.com/v1/leads/intake" style="min-width:0">
                       <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button></div>
                     <span class="v-field__hint">Send your workspace key as the
                       <span class="num">X-Veerha-Key</span> header. The URL carries nothing secret, so it is
@@ -3784,7 +3784,7 @@
                       <span class="t-small" style="font-weight:600">Example request</span>
                       <span class="v-accordion__chev"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></button>
                     <div class="v-accordion__panel" style="padding:var(--s-4)">
-                      <textarea class="v-textarea num" readonly rows="4" style="min-height:0">curl https://api.veerha.com/v1/leads/intake \
+                      <textarea class="v-textarea num" readonly rows="4" style="min-height:0" aria-label="Message">curl https://api.veerha.com/v1/leads/intake \
   -H "X-Veerha-Key: $VEERHA_WORKSPACE_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"Priya","phone":"+91 90000 10011","enquiry_kind":"rooms"}'</textarea>
@@ -3801,9 +3801,9 @@
                   <span class="v-badge v-badge--ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg> Verified</span></div>
                 <div class="v-card__body">
                   <div class="v-field">
-                    <label class="v-field__label">Callback URL</label>
+                    <label class="v-field__label" for="f-14settin-34">Callback URL</label>
                     <div class="row" style="gap:var(--s-2)">
-                      <input class="v-input num" readonly value="https://api.veerha.com/v1/inbound/whatsapp" style="min-width:0">
+                      <input id="f-14settin-34" class="v-input num" readonly value="https://api.veerha.com/v1/inbound/whatsapp" style="min-width:0">
                       <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button></div>
                     <span class="v-field__hint">Paste this and your verify token into
                       Meta › WhatsApp › Configuration, then press Verify and save.</span></div>
@@ -3820,9 +3820,9 @@
                     <span class="v-accordion__chev"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></span></button>
                   <div class="v-accordion__panel">
                     <div class="v-field" style="margin-bottom:var(--s-4)">
-                      <label class="v-field__label">Base address</label>
+                      <label class="v-field__label" for="f-14settin-35">Base address</label>
                       <div class="row" style="gap:var(--s-2)">
-                        <input class="v-input num" readonly value="https://api.veerha.com/v1/storefront" style="max-width:360px">
+                        <input id="f-14settin-35" class="v-input num" readonly value="https://api.veerha.com/v1/storefront" style="max-width:360px">
                         <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button></div></div>
                     <div style="overflow-x:auto"><table class="v-table" style="width:100%;min-width:620px">
                       <thead><tr><th>Method</th><th>Path</th><th>What it does</th><th>Needs</th></tr></thead>
@@ -3989,7 +3989,7 @@
                         <span class="row" style="gap:var(--s-2)"><span class="t-small" style="font-weight:600">Workspace key</span>
                           <span class="v-badge v-badge--neutral">Never revealed</span></span>
                         <div class="t-meta muted" style="margin-top:3px;max-width:58ch">Identifies this workspace to the widget and the intake webhook, in an <span class="num">X-Veerha-Key</span> header.</div>
-                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="vk_live_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 7Q4X" style="max-width:280px;letter-spacing:.04em"></div>
+                        <div class="row" style="gap:var(--s-2);margin-top:var(--s-3);flex-wrap:wrap"><input class="v-input num" readonly value="vk_live_&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 7Q4X" style="max-width:280px;letter-spacing:.04em" aria-label="API key"></div>
                         <div class="t-meta faint" style="margin-top:6px">Created 1 Sep · never used · never revealed</div>
                       </span>
                       <span class="v-actions" style="flex:none"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="reveal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-eye"/></svg> Reveal</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Issues a new key; the old one keeps working for 24 hours"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-refresh"/></svg> Rotate</button></span>
@@ -4019,18 +4019,18 @@
                   <span class="v-badge v-badge--danger"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg> Not verified</span></div>
                 <div class="v-card__body">
                   <div class="v-field" style="margin-bottom:var(--s-4)">
-                    <label class="v-field__label">Callback URL</label>
+                    <label class="v-field__label" for="f-14settin-36">Callback URL</label>
                     <div class="row" style="gap:var(--s-2)">
-                      <input class="v-input num" readonly value="https://api.veerha.com/v1/inbound/whatsapp" style="min-width:0">
+                      <input id="f-14settin-36" class="v-input num" readonly value="https://api.veerha.com/v1/inbound/whatsapp" style="min-width:0">
                       <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-copy"/></svg> Copy</button></div>
                     <span class="v-field__hint">Ready to paste. Nothing secret travels in it.</span></div>
                   <div class="v-field">
-                    <label class="v-field__label">Verify token</label>
+                    <label class="v-field__label" for="f-14settin-37">Verify token</label>
                     <div class="row" style="gap:var(--s-2)">
-                      <input class="v-input is-error" placeholder="Paste what you typed into Meta, or generate one" style="min-width:0">
+                      <input id="f-14settin-37" class="v-input is-error" placeholder="Paste what you typed into Meta, or generate one" style="min-width:0" aria-invalid="true" aria-describedby="err-14-1">
                       <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="generate"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-refresh"/></svg> Generate</button>
                       <button class="v-btn v-btn--primary v-btn--sm" data-w data-do="save">Save</button></div>
-                    <span class="v-field__error"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg> Meta refuses the callback URL while this is empty.</span></div>
+                    <span class="v-field__error" id="err-14-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg> Meta refuses the callback URL while this is empty.</span></div>
                 </div>
               </section>
             </div>
@@ -4162,21 +4162,21 @@
                     <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-msg"/></svg></div>
                     <div class="grow"><div class="v-card__title">WhatsApp Cloud API</div><p class="v-card__desc">Access token expired 18 Sep. Veerha can read threads but cannot answer — 17 of your last 27 leads are on WhatsApp.</p></div>
                     <span class="v-badge v-badge--danger">Disconnected</span><button class="v-btn v-btn--danger v-btn--sm" data-w data-inert="Opens the provider’s sign-in to connect this account">Reconnect</button>
-                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Phone number ID</label><input class="v-input num" value="1049 •••• •••• 2210" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
+                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label" for="f-14settin-38">Phone number ID</label><input id="f-14settin-38" class="v-input num" value="1049 •••• •••• 2210" readonly></div><div class="v-field grow"><label class="v-field__label" for="f-14settin-39">Secret</label><input id="f-14settin-39" class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
                 </section>
                 <section class="v-card">
                   <div class="v-card__head">
                     <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-file"/></svg></div>
                     <div class="grow"><div class="v-card__title">Razorpay</div><p class="v-card__desc">Payment links work on the Stay page, but no money moves. Switch to live keys before a guest pays.</p></div>
                     <span class="v-badge v-badge--warn">Test mode</span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Opens this account’s settings on Connections">Manage</button>
-                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Key ID</label><input class="v-input num" value="rzp_test_••••••••3Fq1" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
+                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label" for="f-14settin-40">Key ID</label><input id="f-14settin-40" class="v-input num" value="rzp_test_••••••••3Fq1" readonly></div><div class="v-field grow"><label class="v-field__label" for="f-14settin-41">Secret</label><input id="f-14settin-41" class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
                 </section>
                 <section class="v-card">
                   <div class="v-card__head">
                     <div class="v-card__ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bed"/></svg></div>
                     <div class="grow"><div class="v-card__title">Channel manager</div><p class="v-card__desc">Rooms and rates are read from it. Last sync 6 minutes ago · 14 rooms · 3 rate plans.</p></div>
                     <span class="v-badge v-badge--ok">Connected</span><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="Opens this account’s settings on Connections">Manage</button>
-                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Property code</label><input class="v-input num" value="RVG-•••" readonly></div><div class="v-field grow"><label class="v-field__label">Secret</label><input class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
+                  </div><div class="v-card__body" style="padding-top:0"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label" for="f-14settin-42">Property code</label><input id="f-14settin-42" class="v-input num" value="RVG-•••" readonly></div><div class="v-field grow"><label class="v-field__label" for="f-14settin-43">Secret</label><input id="f-14settin-43" class="v-input num" value="•••••••••••• kept" readonly><span class="v-field__hint">Leave it untouched to keep it. You never have to see it again.</span></div></div></div>
                 </section>
                 <section class="v-card">
                   <div class="v-card__head">

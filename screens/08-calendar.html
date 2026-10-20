@@ -131,7 +131,7 @@
               <div class="grow"><div class="t-card">Monday, 21 September</div>
                 <div class="t-meta muted num">2026-09-21 · 09:00–18:00 · 30-min slots · Asia/Kolkata</div></div>
               <button class="v-btn v-btn--icon v-btn--sm" aria-label="Next day" data-w data-do="step"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
-              <input class="v-input" value="21/09/2026" style="width:150px">
+              <input class="v-input" value="21/09/2026" style="width:150px" aria-label="Date">
               <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Today</button>
             </div>
 
@@ -321,23 +321,23 @@
                 <div class="v-rows">
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span style="width:110px;flex:none" class="t-small">Monday</span>
-                    <input class="v-input" value="09:00" style="width:110px"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <input class="v-input" value="09:00" style="width:110px" aria-label="Monday opens"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px" aria-label="Monday closes"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                   </div>
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span style="width:110px;flex:none" class="t-small">Tuesday</span>
-                    <input class="v-input" value="09:00" style="width:110px"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <input class="v-input" value="09:00" style="width:110px" aria-label="Tuesday opens"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px" aria-label="Tuesday closes"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                   </div>
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span style="width:110px;flex:none" class="t-small">Wednesday</span>
-                    <input class="v-input" value="09:00" style="width:110px"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <input class="v-input" value="09:00" style="width:110px" aria-label="Wednesday opens"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px" aria-label="Wednesday closes"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                   </div>
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span style="width:110px;flex:none" class="t-small">Thursday</span>
-                    <input class="v-input" value="09:00" style="width:110px"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <input class="v-input" value="09:00" style="width:110px" aria-label="Thursday opens"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px" aria-label="Thursday closes"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                   </div>
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span style="width:110px;flex:none" class="t-small">Friday</span>
-                    <input class="v-input" value="09:00" style="width:110px"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
+                    <input class="v-input" value="09:00" style="width:110px" aria-label="Friday opens"><span class="t-meta muted">to</span><input class="v-input" value="18:00" style="width:110px" aria-label="Friday closes"><span class="grow"></span><span class="v-toggle is-on"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span>
                   </div>
                   <div style="display:flex;align-items:center;gap:var(--s-4);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                     <span style="width:110px;flex:none" class="t-small">Saturday</span>
@@ -543,7 +543,7 @@
                     </div>
                     <div class="grow">
                       <div class="row" style="gap:var(--s-2)">
-                        <input class="v-input" readonly value="rivergrove.example.com/book/site-visit">
+                        <input class="v-input" readonly value="rivergrove.example.com/book/site-visit" aria-label="Booking link">
                         <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy</button></div>
                       <div class="t-meta muted" style="margin-top:6px"><span class="num">12</span> booked in 30 days ·
                         last on 20 September · offers Mon–Fri <span class="num">09:00</span>–<span class="num">18:00</span></div>
@@ -561,7 +561,7 @@
                     </div>
                     <div class="grow">
                       <div class="row" style="gap:var(--s-2)">
-                        <input class="v-input" readonly value="rivergrove.example.com/book/group-call">
+                        <input class="v-input" readonly value="rivergrove.example.com/book/group-call" aria-label="Booking link">
                         <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy</button></div>
                       <div class="t-meta muted" style="margin-top:6px"><span class="num">4</span> booked in 30 days ·
                         last on 19 September · sent with every group quotation</div>
@@ -579,7 +579,7 @@
                     </div>
                     <div class="grow">
                       <div class="row" style="gap:var(--s-2)">
-                        <input class="v-input is-disabled" readonly value="rivergrove.example.com/book/wedding-walkthrough">
+                        <input class="v-input is-disabled" readonly value="rivergrove.example.com/book/wedding-walkthrough" aria-label="Booking link">
                         <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="copy">Copy</button></div>
                       <div class="t-meta muted" style="margin-top:6px">Paused on 12 September, so the link now shows
                         "not taking bookings" rather than an empty week. Anita has no free hour before 6 October.</div>

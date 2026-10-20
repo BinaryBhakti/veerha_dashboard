@@ -145,7 +145,7 @@
           <div style="display:flex;align-items:center;gap:var(--s-3);margin-left:auto">
             <div class="v-search" style="width:240px">
               <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-              <input class="v-input" placeholder="Search or run a command"></div>
+              <input class="v-input" placeholder="Search or run a command" aria-label="Search or run a command"></div>
             <div class="v-topbar__who"><div class="v-topbar__name">Anita</div><div class="v-topbar__role">Owner</div></div>
             <span class="v-avatar">A</span>
           </div>
@@ -166,7 +166,7 @@
             <nav class="v-crumb"><span>Settings</span><span class="v-crumb__sep">›</span><span class="v-crumb__current">Workspace</span></nav>
             <div class="v-search" style="margin-top:var(--s-3)">
               <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-              <input class="v-input" placeholder="Search settings"></div>
+              <input class="v-input" placeholder="Search settings" aria-label="Search settings"></div>
           </div>
           <div class="v-sidenav__group">
             <div class="label v-sidenav__label">Workspace</div>
@@ -342,27 +342,27 @@
       <div class="sh-frame sh-frame--surface">
         <div class="sh-states" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Default</div>
-            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
-            <input class="v-input" placeholder="you@company.com"></div></div>
+            <div class="v-field" style="width:100%"><label class="v-field__label" for="f-componen-1">Work email</label>
+            <input id="f-componen-1" class="v-input" placeholder="you@company.com"></div></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Filled</div>
-            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
-            <input class="v-input" value="anita@rivergrove.example.com"></div></div>
+            <div class="v-field" style="width:100%"><label class="v-field__label" for="f-componen-2">Work email</label>
+            <input id="f-componen-2" class="v-input" value="anita@rivergrove.example.com"></div></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Focus</div>
-            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
-            <input class="v-input is-focus" value="anita@rivergrove.example.com"></div></div>
+            <div class="v-field" style="width:100%"><label class="v-field__label" for="f-componen-3">Work email</label>
+            <input id="f-componen-3" class="v-input is-focus" value="anita@rivergrove.example.com"></div></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">With hint</div>
-            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
-            <input class="v-input" value="anita@rivergrove.example.com">
+            <div class="v-field" style="width:100%"><label class="v-field__label" for="f-componen-4">Work email</label>
+            <input id="f-componen-4" class="v-input" value="anita@rivergrove.example.com">
             <span class="v-field__hint">Used for booking confirmations.</span></div></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Error</div>
-            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
-            <input class="v-input is-error" value="anita@rivergrove.example">
-            <span class="v-field__error">
+            <div class="v-field" style="width:100%"><label class="v-field__label" for="f-componen-5">Work email</label>
+            <input id="f-componen-5" class="v-input is-error" value="anita@rivergrove.example" aria-invalid="true" aria-describedby="err-co-1">
+            <span class="v-field__error" id="err-co-1">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
               Add the domain — this address is missing its .com</span></div></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Disabled</div>
-            <div class="v-field" style="width:100%"><label class="v-field__label">Work email</label>
-            <input class="v-input is-disabled" value="anita@rivergrove.example.com" disabled></div></div>
+            <div class="v-field" style="width:100%"><label class="v-field__label" for="f-componen-6">Work email</label>
+            <input id="f-componen-6" class="v-input is-disabled" value="anita@rivergrove.example.com" disabled></div></div>
         </div>
       </div>
       <div class="sh-note">
@@ -376,13 +376,13 @@
       <div class="sh-frame sh-frame--surface">
         <div class="sh-states" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Select</div>
-            <select class="v-select"><option>All open (61)</option><option>Qualified</option></select></div>
+            <select class="v-select" aria-label="Filter"><option>All open (61)</option><option>Qualified</option></select></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Search</div>
             <div class="v-search" style="width:100%">
               <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-              <input class="v-input" placeholder="Search name, email, phone"></div></div>
+              <input class="v-input" placeholder="Search name, email, phone" aria-label="Search name, email, phone"></div></div>
           <div class="sh-state" style="width:100%"><div class="sh-state__l">Textarea</div>
-            <textarea class="v-textarea" placeholder="Describe what this AI employee should handle…"></textarea></div>
+            <textarea class="v-textarea" placeholder="Describe what this AI employee should handle…" aria-label="Describe what this AI employee should handle"></textarea></div>
         </div>
       </div>
     </div>
@@ -490,7 +490,7 @@
           <div class="sh-state__l" style="margin-bottom:var(--s-3)">Pagination</div>
           <div class="v-pager">
             <span>Showing 1–25 of 61</span>
-            <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>25 per page</option></select>
+            <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)" aria-label="Rows per page"><option>25 per page</option></select>
             <span class="v-pager__n">
               <button class="v-btn v-btn--secondary v-btn--sm">Previous</button>
               <button class="v-btn v-btn--secondary v-btn--sm">Next</button>
@@ -541,12 +541,12 @@
         guest has already given is still legible to someone who cannot separate the two colours.
       </p>
       <div class="sh-frame sh-frame--surface">
-        <span class="v-selectchip">Qualified
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        <span class="v-selectchip is-hover">Anita
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        <span class="v-selectchip is-active">One king, one twin</span>
-        <span class="v-selectchip">Two kings</span>
+        <button type="button" class="v-selectchip" aria-haspopup="menu">Qualified
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button" class="v-selectchip is-hover" aria-haspopup="menu">Anita
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button" class="v-selectchip is-active" aria-haspopup="menu">One king, one twin</button>
+        <button type="button" class="v-selectchip" aria-haspopup="menu">Two kings</button>
         <span class="v-legend" style="margin-left:var(--s-5)">
           <span><i class="v-dot v-dot--ok"></i>Working</span>
           <span><i class="v-dot v-dot--warn"></i>Waiting</span>
@@ -607,7 +607,7 @@
                 <span class="v-attrs__row">2 adults · 15–17 Oct</span>
                 <span class="v-attrs__row muted">Premier River Retreat</span></div></td>
               <td><span class="v-badge v-badge--neutral">WhatsApp</span></td>
-              <td><span class="v-selectchip">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></td>
+              <td><button type="button" class="v-selectchip" aria-haspopup="menu">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></td>
               <td class="v-table__num">₹43,700</td>
               <td><span class="v-badge v-badge--danger">Overdue</span></td>
             </tr>
@@ -616,7 +616,7 @@
               <td><div class="v-identity__name">Priya Nair</div><div class="v-identity__ref">OPP-0058</div><div class="v-identity__line">+91 90000 10002</div></td>
               <td><div class="v-attrs"><span class="v-attrs__row">4 adults · 2–5 Nov</span><span class="v-attrs__row muted">Not chosen yet</span></div></td>
               <td><span class="v-badge v-badge--neutral">Website</span></td>
-              <td><span class="v-selectchip">New <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></td>
+              <td><button type="button" class="v-selectchip" aria-haspopup="menu">New <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></td>
               <td class="v-table__num">₹78,200</td>
               <td class="muted">Tomorrow</td>
             </tr>
@@ -625,7 +625,7 @@
               <td><div class="v-identity__name">Vikram Rao</div><div class="v-identity__ref">OPP-0044</div><div class="v-identity__line">+91 90000 10003</div></td>
               <td><div class="v-attrs"><span class="v-attrs__row">2 adults · 20–22 Oct</span><span class="v-attrs__row muted">Garden Suite</span></div></td>
               <td><span class="v-badge v-badge--neutral">Referral</span></td>
-              <td><span class="v-selectchip">Proposal sent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span></td>
+              <td><button type="button" class="v-selectchip" aria-haspopup="menu">Proposal sent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></td>
               <td class="v-table__num">₹36,100</td>
               <td class="muted">Fri, 26 Sep</td>
             </tr>
@@ -779,8 +779,8 @@
         pattern for them: name the consequence, and make the destructive verb the one on the button.
       </p>
       <div class="sh-frame" style="justify-content:center;position:relative;padding:var(--s-10)">
-        <div class="v-modal">
-          <div class="v-modal__title">Delete this workflow?</div>
+        <div class="v-modal" role="dialog" aria-modal="true" aria-labelledby="spec-modal-t">
+          <div class="v-modal__title" id="spec-modal-t">Delete this workflow?</div>
           <p class="v-modal__body">“Overdue follow-up nudge” has run 231 times and is currently active for 27 leads. Deleting it stops those follow-ups immediately. This cannot be undone.</p>
           <div class="v-modal__foot">
             <button class="v-btn v-btn--secondary">Keep it</button>
@@ -823,7 +823,7 @@
           <div class="sh-state__l">Action menu — open</div>
           <div class="v-menu-host" style="margin-top:var(--s-3);height:330px;width:100%;justify-content:flex-end">
             <button class="v-btn v-btn--icon v-btn--sm" aria-label="More actions" aria-expanded="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-dots"/></svg></button>
-            <div class="v-menu">
+            <div class="v-menu" role="menu">
               <div class="v-menu__label">Lead</div>
               <button class="v-menu__item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-convert"/></svg> Convert to opportunity</button>
               <button class="v-menu__item is-hover"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-assign"/></svg> Assign owner<span class="v-menu__hint">Anita</span></button>
@@ -846,7 +846,7 @@
         a second record header nested inside it — on all twelve drawer screens.
       </p>
       <div class="sh-frame sh-frame--flush" style="justify-content:flex-end">
-        <div class="v-drawer" style="width:440px;height:340px">
+        <div class="v-drawer" role="dialog" aria-modal="true" aria-label="Arjun Mehta" style="width:440px;height:340px">
           <div class="v-drawer__head">
             <span class="v-avatar">AM</span>
             <div class="grow">
@@ -859,7 +859,7 @@
           <div class="v-drawer__body">
             <div class="row wrap" style="margin-bottom:var(--s-4)">
               <span class="v-badge v-badge--danger">Hot</span>
-              <span class="v-selectchip">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></span>
+              <button type="button" class="v-selectchip" aria-haspopup="menu">Qualified <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
               <span class="t-meta muted">Score</span><span class="num t-strong">91</span>
             </div>
             <div class="v-next">
@@ -973,7 +973,7 @@
             Veerha · 3:01 PM</div>
         </div>
         <div class="v-composer" style="width:100%;border-radius:var(--r-tile);border:1px solid var(--border)">
-          <input class="v-input" placeholder="Write a reply…">
+          <input class="v-input" placeholder="Write a reply…" aria-label="Write a reply">
           <button class="v-btn v-btn--primary">Send</button>
         </div>
       </div>

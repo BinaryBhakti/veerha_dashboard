@@ -257,6 +257,15 @@
       });
     });
 
+    /* choice chips: a pressed/unpressed pair, not a menu */
+    $$('.v-selectchip[aria-pressed]', scope).forEach(function (c) {
+      if (c.dataset.vWired) return; c.dataset.vWired = '1';
+      c.addEventListener('click', function () {
+        var on = c.getAttribute('aria-pressed') !== 'true';
+        c.setAttribute('aria-pressed', on); c.classList.toggle('is-active', on);
+      });
+    });
+
     /* radio cards */
     var cards = $$('.v-radiocard', scope);
     cards.forEach(function (c) { if (!c.querySelector('input')) control(c, 'radio', c.classList.contains('is-selected')); });

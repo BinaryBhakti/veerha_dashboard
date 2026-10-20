@@ -106,6 +106,7 @@ RULES = [
     ('*', {'exact': 'Documentation'},  'inert:Opens the Veerha help centre in a new tab'),
     ('*', {'exact': 'Support'},        'inert:Opens a chat with Veerha support'),
     ('*', {'cls': 'v-filterchip'},     'do:filterchip'),
+    ('*', {'cls': 'v-selectchip'},     'do:selectchip'),
     ('*', {'aria': 'More actions'},    'do:rowmenu'),
     ('*', {'aria': 'More'},            'do:rowmenu'),
     ('*', {'exact': 'Edit'},           'do:edit'),

@@ -832,8 +832,8 @@
                     <div class="v-card__body">
                       <div class="row wrap" style="gap:var(--s-3);align-items:flex-end">
                         <div class="v-field" style="width:150px">
-                          <label class="v-field__label">Credits a day</label>
-                          <input class="v-input num" value="600"></div>
+                          <label class="v-field__label" for="f-15billin-1">Credits a day</label>
+                          <input id="f-15billin-1" class="v-input num" value="600"></div>
                         <button class="v-btn v-btn--secondary" data-w data-do="save">Set</button>
                         <span class="t-meta muted grow" style="padding-bottom:9px">0 turns the cap off.</span>
                       </div>
@@ -981,10 +981,10 @@
                   <div class="vs-filterbar" style="margin-bottom:0">
                     <div class="v-search vs-filterbar__search">
                       <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                      <input class="v-input" placeholder="Search by work or customer"></div>
-                    <select class="v-select" style="width:150px"><option>1–21 Sep 2026</option><option>August</option><option>Last 7 days</option></select>
-                    <select class="v-select" style="width:130px"><option>All types</option><option>Spend</option><option>Top-up</option><option>Included</option><option>Refund</option></select>
-                    <select class="v-select" style="width:150px"><option>All AI employees</option><option>Sales Executive</option><option>Support Executive</option></select>
+                      <input class="v-input" placeholder="Search by work or customer" aria-label="Search by work or customer"></div>
+                    <select class="v-select" style="width:150px" aria-label="Date range"><option>1–21 Sep 2026</option><option>August</option><option>Last 7 days</option></select>
+                    <select class="v-select" style="width:130px" aria-label="Filter"><option>All types</option><option>Spend</option><option>Top-up</option><option>Included</option><option>Refund</option></select>
+                    <select class="v-select" style="width:150px" aria-label="Filter"><option>All AI employees</option><option>Sales Executive</option><option>Support Executive</option></select>
                   </div>
                 </div>
                 <table class="v-table">

@@ -300,11 +300,16 @@
 .v-check.is-checked .v-check__box { background: var(--brand); border-color: var(--brand); color: var(--brand-on); }
 .v-check.is-indeterminate .v-check__box { background: var(--brand); border-color: var(--brand); color: var(--brand-on); }
 .v-check.is-disabled { opacity: .45; cursor: not-allowed; }
+/* Drawn controls are focusable (role + tabindex, or a hidden native input),
+   so each shows the same ring a button does. */
+.v-check:focus-visible { outline: none; }
+.v-check:focus-visible .v-check__box, .v-check input:focus-visible + .v-check__box { box-shadow: var(--focus); }
+.v-check input:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 
 .v-toggle { display: inline-flex; align-items: center; gap: var(--s-3); cursor: pointer; }
 .v-toggle__track {
   width: 36px; height: 20px; border-radius: var(--r-full); flex: none;
-  background: var(--surface-muted); position: relative;
+  background: var(--field-border); position: relative;
   transition: background var(--m-hover) var(--ease);
 }
 .v-toggle__thumb {
@@ -315,6 +320,8 @@
 .v-toggle.is-on .v-toggle__track { background: var(--brand); }
 .v-toggle.is-on .v-toggle__thumb { transform: translateX(16px); }
 .v-toggle.is-disabled { opacity: .45; cursor: not-allowed; }
+.v-toggle:focus-visible { outline: none; }
+.v-toggle:focus-visible .v-toggle__track { box-shadow: var(--focus); }
 
 /* Radio card — a bordered, selectable explanation block */
 .v-radiocard {
@@ -325,9 +332,10 @@
 }
 .v-radiocard:hover, .v-radiocard.is-hover { border-color: var(--field-border-hover); }
 .v-radiocard.is-selected { border-color: var(--brand); background: var(--brand-soft); }
+.v-radiocard:focus-visible, .v-radiocard:has(input:focus-visible) { outline: none; box-shadow: var(--focus); }
 .v-radiocard__dot {
   width: 16px; height: 16px; flex: none; margin-top: 2px; border-radius: var(--r-full);
-  border: 1px solid var(--border-strong); background: var(--surface);
+  border: 1px solid var(--field-border); background: var(--surface);
 }
 .v-radiocard.is-selected .v-radiocard__dot { border: 5px solid var(--brand); }
 
@@ -375,7 +383,7 @@
 .v-stepper__step { display: flex; align-items: center; gap: var(--s-2); font-size: var(--t-meta-s); color: var(--text-muted); }
 .v-stepper__n {
   width: 20px; height: 20px; border-radius: var(--r-full); display: grid; place-items: center;
-  background: var(--surface-muted); color: var(--text-muted); font-size: var(--t-micro-s); font-weight: 600;
+  background: var(--surface-muted); color: var(--text-secondary); font-size: var(--t-micro-s); font-weight: 600;
 }
 .v-stepper__step.is-active { color: var(--text-primary); font-weight: 500; }
 .v-stepper__step.is-active .v-stepper__n { background: var(--brand); color: var(--brand-on); }
@@ -584,6 +592,9 @@ td.v-table__num.amount { font-family: var(--ui); }
   animation: v-shimmer 1.4s infinite;
 }
 @keyframes v-shimmer { 100% { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .v-skel::after, .v-btn.is-loading::after { animation: none; }
+}
 .v-skel--text { height: 11px; } .v-skel--title { height: 15px; width: 40%; }
 .v-skel--line { height: 11px; width: 100%; } .v-skel--short { height: 11px; width: 60%; }
 .v-skel--avatar { width: 32px; height: 32px; border-radius: var(--r-md); }
@@ -796,6 +807,8 @@ td.v-table__num.amount { font-family: var(--ui); }
 /* --- SORTABLE COLUMN ------------------------------------------------------ */
 .v-table th.is-sortable { cursor: pointer; user-select: none; }
 .v-table th.is-sortable:hover { color: var(--text-secondary); }
+.v-table th.is-sortable:focus-visible { outline: 2px solid var(--brand); outline-offset: -2px; }
+.v-table tr[tabindex]:focus-visible { outline: 2px solid var(--brand); outline-offset: -2px; }
 .v-table th.is-sortable::after {
   content: ""; display: inline-block; width: 0; height: 0; margin-left: 5px;
   vertical-align: middle; opacity: 0;
@@ -819,7 +832,7 @@ td.v-table__num.amount { font-family: var(--ui); }
 
 .v-rail__group {
   font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
-  text-transform: uppercase; color: var(--text-faint);
+  text-transform: uppercase; color: var(--text-muted);
   padding: var(--s-4) var(--s-3) var(--s-2);
   white-space: nowrap; overflow: hidden;
   height: 0; opacity: 0; padding-top: 0; padding-bottom: 0;   /* collapsed: gone */
@@ -865,7 +878,7 @@ td.v-table__num.amount { font-family: var(--ui); }
   position: absolute; top: 2px; right: 1px;
   font-family: var(--num); font-size: 9.5px; line-height: 14px; font-weight: 600;
   min-width: 14px; padding: 0 3px; border-radius: var(--r-full);
-  background: var(--dn-ic); color: #fff; text-align: center;
+  background: var(--dn-ic); color: var(--on-solid); text-align: center;
 }
 
 /* --- FILTER CHIP ---------------------------------------------------------

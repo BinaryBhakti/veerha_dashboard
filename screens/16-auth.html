@@ -109,18 +109,18 @@
               <div><h1 class="t-page">Welcome back</h1>
                 <p class="t-small muted" style="margin-top:4px">Sign in to your workspace</p></div>
             </div>
-            <div class="v-field"><label class="v-field__label">Work email</label>
-              <input class="v-input" placeholder="you@company.com"></div>
+            <div class="v-field"><label class="v-field__label" for="f-16auth-1">Work email</label>
+              <input id="f-16auth-1" class="v-input" placeholder="you@company.com" type="email" name="email" autocomplete="email" required></div>
             <div class="v-field" style="margin-top:var(--s-4)">
-              <div class="spread"><label class="v-field__label">Password</label>
-                <span class="t-meta" style="color:var(--brand);font-weight:500">Forgot password?</span></div>
-              <input class="v-input" type="password" value="............"></div>
+              <div class="spread"><label class="v-field__label" for="f-16auth-2">Password</label>
+                <a class="v-link t-meta" href="#forgot-password">Forgot password?</a></div>
+              <input id="f-16auth-2" class="v-input" type="password" value="............" name="password" autocomplete="current-password" required></div>
             <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)">Sign in</button>
             <div class="row" style="margin:var(--s-5) 0;gap:var(--s-3)">
               <hr class="rule grow"><span class="t-meta faint">OR</span><hr class="rule grow"></div>
             <button class="v-btn v-btn--secondary v-btn--lg" style="width:100%">Continue with Google</button>
             <p class="t-small muted" style="margin-top:var(--s-6);text-align:center">
-              New to Veerha? <span style="color:var(--brand);font-weight:500">Create a company</span></p>
+              New to Veerha? <a class="v-link" href="#register">Create a company</a></p>
           </div>
         </div>
       </div>
@@ -171,32 +171,32 @@
             <p class="t-small muted" style="margin-top:4px">Two minutes. Your AI employee starts after this.</p>
             <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">What are you setting up?</label>
               <div style="display:flex;flex-direction:column;gap:var(--s-2)">
-                <label class="v-radiocard"><span class="v-radiocard__dot"></span>
+                <label class="v-radiocard"><input type="radio" class="sr-only" name="edition"><span class="v-radiocard__dot"></span>
                   <span><b class="t-small">Veerha for Sales AI</b> <span class="t-meta muted">· Leads, quotations, catalogs</span></span></label>
-                <label class="v-radiocard is-selected"><span class="v-radiocard__dot"></span>
+                <label class="v-radiocard is-selected"><input type="radio" class="sr-only" name="edition" checked><span class="v-radiocard__dot"></span>
                   <span><b class="t-small">Veerha for Hotels</b> <span class="t-meta muted">· Rooms, live rates, banquet enquiries</span></span></label>
-                <label class="v-radiocard"><span class="v-radiocard__dot"></span>
+                <label class="v-radiocard"><input type="radio" class="sr-only" name="edition"><span class="v-radiocard__dot"></span>
                   <span><b class="t-small">Veerha for E-commerce</b> <span class="t-meta muted">· Storefront, orders, counter sales</span></span></label>
               </div>
               <div class="v-field__hint">Decides which screens your team gets. Hotels adds Bookings, Front Desk and guest pages.</div></div>
             <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)">
-              <div class="v-field grow"><label class="v-field__label">Company name</label><input class="v-input" value="Rivergrove Retreat"></div>
-              <div class="v-field grow"><label class="v-field__label">Your name</label><input class="v-input" value="Anita"></div>
+              <div class="v-field grow"><label class="v-field__label" for="f-16auth-3">Company name</label><input id="f-16auth-3" class="v-input" value="Rivergrove Retreat" name="company" autocomplete="organization" required></div>
+              <div class="v-field grow"><label class="v-field__label" for="f-16auth-4">Your name</label><input id="f-16auth-4" class="v-input" value="Anita" name="name" autocomplete="name" required></div>
             </div>
             <div class="row" style="margin-top:var(--s-4);gap:var(--s-3)">
-              <div class="v-field grow"><label class="v-field__label">Contact number</label>
-                <div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input class="v-input" placeholder="90000 10000"></div></div>
-              <div class="v-field grow"><label class="v-field__label">Industry</label>
-                <select class="v-select"><option>Hospitality</option><option>Travel &amp; Tourism</option><option>Real Estate</option><option>Retail &amp; E-commerce</option><option>Other</option></select></div>
+              <div class="v-field grow"><label class="v-field__label" for="f-16auth-5">Contact number</label>
+                <div class="row" style="gap:6px"><span class="v-badge v-badge--neutral">+91</span><input id="f-16auth-5" class="v-input" placeholder="90000 10000" type="tel" name="phone" autocomplete="tel-national" inputmode="tel" required></div></div>
+              <div class="v-field grow"><label class="v-field__label" for="f-16auth-6">Industry</label>
+                <select id="f-16auth-6" class="v-select" name="industry"><option>Hospitality</option><option>Travel &amp; Tourism</option><option>Real Estate</option><option>Retail &amp; E-commerce</option><option>Other</option></select></div>
             </div>
-            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Email address</label>
-              <input class="v-input" value="anita@rivergrove.example.com"></div>
-            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Password</label>
-              <input class="v-input" type="password" value="xxxxxxxxxxxx">
+            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-16auth-7">Email address</label>
+              <input id="f-16auth-7" class="v-input" value="anita@rivergrove.example.com" type="email" name="email" autocomplete="email" required></div>
+            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-16auth-8">Password</label>
+              <input id="f-16auth-8" class="v-input" type="password" value="xxxxxxxxxxxx" name="password" autocomplete="new-password" required>
               <div class="v-field__hint">At least 8 characters. We send a link to confirm the address before Veerha goes live.</div></div>
             <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)">Create company</button>
             <p class="t-meta muted" style="margin-top:var(--s-4);text-align:center">
-              Already have an account? <span style="color:var(--brand);font-weight:500">Sign in</span></p>
+              Already have an account? <a class="v-link" href="#login">Sign in</a></p>
           </div>
         </div>
       </div>
@@ -246,11 +246,11 @@
             <h1 class="t-page">Forgot your password?</h1>
             <p class="t-small muted" style="margin-top:4px;max-width:44ch">
               Give us the email you sign in with and we will send a link. It works once and expires in an hour.</p>
-            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">Work email</label>
-              <input class="v-input" placeholder="you@company.com"></div>
+            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label" for="f-16auth-9">Work email</label>
+              <input id="f-16auth-9" class="v-input" placeholder="you@company.com" type="email" name="email" autocomplete="email" required></div>
             <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-5)">Send the link</button>
             <p class="t-small muted" style="margin-top:var(--s-5);text-align:center">
-              <span style="color:var(--brand);font-weight:500">← Back to sign in</span></p>
+              <a class="v-link" href="#login">← Back to sign in</a></p>
           </div>
         </div>
       </div>
@@ -299,11 +299,11 @@
           <div style="flex:1;padding:var(--s-8);display:flex;flex-direction:column;justify-content:center;min-width:0">
             <h1 class="t-page">Set a new password</h1>
             <p class="t-small muted" style="margin-top:4px">For anita@rivergrove.example.com</p>
-            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">New password</label>
-              <input class="v-input is-focus" type="password" value="........"></div>
-            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Confirm it</label>
-              <input class="v-input is-error" type="password" value=".....">
-              <span class="v-field__error">
+            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label" for="f-16auth-10">New password</label>
+              <input id="f-16auth-10" class="v-input is-focus" type="password" value="........" name="new-password" autocomplete="new-password" required></div>
+            <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-16auth-11">Confirm it</label>
+              <input id="f-16auth-11" class="v-input is-error" type="password" value="....." name="confirm-password" autocomplete="new-password" required aria-invalid="true" aria-describedby="err-16-1">
+              <span class="v-field__error" id="err-16-1">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
                 These do not match yet</span></div>
             <div class="v-card" style="margin-top:var(--s-4);background:var(--surface-subtle);box-shadow:none">
@@ -311,7 +311,7 @@
                 <div class="row" style="gap:8px"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-meta">At least 8 characters</span></div>
                 <div class="row" style="gap:8px;margin-top:6px"><span class="v-ev__glyph v-ev__glyph--ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="t-meta">Not a password you have used here</span></div>
               </div></div>
-            <button class="v-btn v-btn--primary v-btn--lg is-disabled" style="width:100%;margin-top:var(--s-5)">Set password and sign in</button>
+            <button class="v-btn v-btn--primary v-btn--lg is-disabled" disabled aria-disabled="true" style="width:100%;margin-top:var(--s-5)">Set password and sign in</button>
           </div>
         </div>
       </div>
@@ -537,8 +537,8 @@
           <div style="flex:1;padding:var(--s-8);display:flex;flex-direction:column;justify-content:center;min-width:0">
             <h1 class="t-page">This link has expired</h1>
             <p class="t-small muted" style="margin-top:4px;max-width:46ch">Verification links last 24 hours, and this one was sent on 19 September. Your workspace is safe — it is waiting for this one step.</p>
-            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label">Send a fresh link to</label>
-              <input class="v-input" value="anita@rivergrove.example.com">
+            <div class="v-field" style="margin-top:var(--s-5)"><label class="v-field__label" for="f-16auth-12">Send a fresh link to</label>
+              <input id="f-16auth-12" class="v-input" value="anita@rivergrove.example.com" type="email" name="email" autocomplete="email" required>
               <span class="v-field__hint">Change it here if you signed up with a typo.</span></div>
             <div class="v-actions" style="margin-top:var(--s-4)"><button class="v-btn v-btn--primary grow">Send a new link</button></div>
             <p class="t-meta muted" style="margin-top:var(--s-4)">Sent links: 1 of 5 today. If none arrive, check spam for <b>verify@veerha.example.com</b>.</p>
@@ -597,7 +597,7 @@
               <div class="v-meter" style="margin-top:var(--s-5);max-width:240px;margin-left:auto;margin-right:auto">
                 <div class="v-meter__fill" style="width:72%"></div></div>
               <p class="t-meta faint" style="margin-top:var(--s-5)">
-                Not working? <span style="color:var(--brand);font-weight:500">Sign in with a password</span></p>
+                Not working? <a class="v-link" href="#login">Sign in with a password</a></p>
             </div>
           </div>
         </div>

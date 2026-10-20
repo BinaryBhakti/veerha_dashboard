@@ -698,11 +698,11 @@
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                <input class="v-input" placeholder="Search by lead, workflow or step"></div>
-              <select class="v-select" style="width:auto;min-width:170px"><option>All workflows (2)</option></select>
-              <select class="v-select" style="width:auto;min-width:150px"><option>Any status</option></select>
-              <select class="v-select" style="width:auto;min-width:140px"><option>Last 7 days</option></select>
-              <select class="v-select" style="width:auto;min-width:140px"><option>Newest first</option></select>
+                <input class="v-input" placeholder="Search by lead, workflow or step" aria-label="Search by lead, workflow or step"></div>
+              <select class="v-select" style="width:auto;min-width:170px" aria-label="Filter"><option>All workflows (2)</option></select>
+              <select class="v-select" style="width:auto;min-width:150px" aria-label="Filter"><option>Any status</option></select>
+              <select class="v-select" style="width:auto;min-width:140px" aria-label="Date range"><option>Last 7 days</option></select>
+              <select class="v-select" style="width:auto;min-width:140px" aria-label="Sort by"><option>Newest first</option></select>
               <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="ack">Group by lead</button>
             </div>
 
@@ -799,7 +799,7 @@
               </table>
               <div class="v-card__foot v-pager">
                 <span>Showing 1&ndash;7 of 94</span>
-                <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>25 per page</option></select>
+                <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)" aria-label="Rows per page"><option>25 per page</option></select>
                 <span class="v-pager__n">
                   <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
                   <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>
@@ -897,18 +897,18 @@
                 <div class="v-card__body">
                   <div class="grid">
                     <div class="col-6"><div class="v-field">
-                      <label class="v-field__label">Name</label>
-                      <input class="v-input" placeholder="Nisha" style="border-color:var(--dn-bd)">
+                      <label class="v-field__label" for="f-11ai-1">Name</label>
+                      <input id="f-11ai-1" class="v-input" placeholder="Nisha" style="border-color:var(--dn-bd)">
                       <span class="v-field__error"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-alert"/></svg>Needed &mdash; it appears at the end of every message and on every call.</span>
                     </div></div>
                     <div class="col-6"><div class="v-field">
-                      <label class="v-field__label">Role title</label>
-                      <input class="v-input" placeholder="e.g. Reservations Executive">
+                      <label class="v-field__label" for="f-11ai-2">Role title</label>
+                      <input id="f-11ai-2" class="v-input" placeholder="e.g. Reservations Executive">
                       <span class="v-field__hint">What a guest is told they are speaking to.</span>
                     </div></div>
                     <div class="col-6"><div class="v-field">
-                      <label class="v-field__label">Department</label>
-                      <select class="v-select"><option>Sales</option><option>Support</option><option>Operations</option><option>Finance</option><option>Marketing</option></select>
+                      <label class="v-field__label" for="f-11ai-3">Department</label>
+                      <select id="f-11ai-3" class="v-select"><option>Sales</option><option>Support</option><option>Operations</option><option>Finance</option><option>Marketing</option></select>
                       <span class="v-field__hint">Decides whose queue their handovers land in. Sales is Anita and Ravi.</span>
                     </div></div>
                     <div class="col-6"><div class="v-field">
@@ -955,8 +955,8 @@
                         <div class="t-meta muted">Provider and model. Changing this changes cost and speed, not what they are allowed to do.</div></span>
                       <div style="flex:1">
                         <div class="row" style="gap:var(--s-2)">
-                          <select class="v-select" style="flex:1"><option>Veerha cloud (Gemini)</option><option>On your own hardware</option></select>
-                          <select class="v-select" style="flex:1"><option>Fast &mdash; the default</option><option>Careful &mdash; slower, about 3&times; the credits</option></select></div>
+                          <select class="v-select" style="flex:1" aria-label="Where the AI runs"><option>Veerha cloud (Gemini)</option><option>On your own hardware</option></select>
+                          <select class="v-select" style="flex:1" aria-label="Speed"><option>Fast &mdash; the default</option><option>Careful &mdash; slower, about 3&times; the credits</option></select></div>
                         <p class="t-meta muted" style="margin-top:8px">Fast answers in about <span class="num">1.6 s</span> and costs roughly <span class="num">1</span> credit a reply. The model name is no longer typed by hand &mdash; a typo used to produce an employee that could not think at all.</p></div></div>
                   </div>
                 </div>
@@ -968,7 +968,7 @@
                   <p class="v-card__desc">Read before every reply. Keep it to things that are always true &mdash; anything about one guest belongs in Memory.</p></div></div>
                 <div class="v-card__body">
                   <div class="v-field">
-                    <textarea class="v-textarea" rows="4">You work the front desk at Rivergrove Retreat. Answer in the language the guest wrote in. Quote rates and policies only from Knowledge; if it is not written down, say you will check and hand the thread to Anita.</textarea>
+                    <textarea class="v-textarea" rows="4" aria-label="Message">You work the front desk at Rivergrove Retreat. Answer in the language the guest wrote in. Quote rates and policies only from Knowledge; if it is not written down, say you will check and hand the thread to Anita.</textarea>
                     <span class="v-field__hint">318 characters. Longer is not better &mdash; every line is read on every reply and counts against the credit cost above.</span>
                   </div>
                 </div>
@@ -1522,7 +1522,7 @@
                 <div class="row" style="gap:var(--s-2)">
                   <div class="v-search grow">
                     <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                    <input class="v-input" value="How long do refunds take?"></div>
+                    <input class="v-input" value="How long do refunds take?" aria-label="Try a question"></div>
                   <button class="v-btn v-btn--primary" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button>
                 </div>
                 <div class="v-callout v-callout--warn" style="margin-top:var(--s-4);display:block">
@@ -1646,9 +1646,9 @@
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                <input class="v-input" placeholder="Search inside your knowledge"></div>
-              <select class="v-select" style="width:auto;min-width:160px"><option>All 6 kinds</option></select>
-              <select class="v-select" style="width:auto;min-width:160px"><option>Most cited first</option></select>
+                <input class="v-input" placeholder="Search inside your knowledge" aria-label="Search inside your knowledge"></div>
+              <select class="v-select" style="width:auto;min-width:160px" aria-label="Filter"><option>All 6 kinds</option></select>
+              <select class="v-select" style="width:auto;min-width:160px" aria-label="Sort by"><option>Most cited first</option></select>
             </div>
 
             <div class="stack">
@@ -1837,8 +1837,8 @@
                   <div class="row band" style="gap:var(--s-2)">
                     <div class="v-search grow">
                       <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                      <input class="v-input" value="What do we know about Arjun Mehta?"></div>
-                    <select class="v-select" style="width:auto;min-width:160px"><option>Any guest</option></select>
+                      <input class="v-input" value="What do we know about Arjun Mehta?" aria-label="Try a question"></div>
+                    <select class="v-select" style="width:auto;min-width:160px" aria-label="Guest"><option>Any guest</option></select>
                     <button class="v-btn v-btn--primary" data-w data-inert="Asks Veerha about this guest; the answer appears beside the card">Ask</button>
                   </div>
                   <div class="v-next band">
@@ -1856,7 +1856,7 @@
                 <div>
                   <div class="spread" style="margin-bottom:var(--s-3)">
                     <span class="label">Memories &middot; 94</span>
-                    <select class="v-select" style="width:auto;min-width:150px;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>Most recent first</option></select>
+                    <select class="v-select" style="width:auto;min-width:150px;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)" aria-label="Sort by"><option>Most recent first</option></select>
                   </div>
                   <div class="stack">
 
@@ -1982,20 +1982,20 @@
                       <p class="v-card__desc">Something the AI should know that it cannot work out from the records.</p></div></div>
                     <div class="v-card__body">
                       <div class="v-field">
-                        <label class="v-field__label">Who it is about</label>
-                        <select class="v-select"><option>Customer &mdash; one guest</option><option>Long term &mdash; outlives the thread</option><option>Conversation &mdash; this thread only</option><option>Department &mdash; everyone in Sales</option><option>Company &mdash; every guest</option></select>
+                        <label class="v-field__label" for="f-11ai-4">Who it is about</label>
+                        <select id="f-11ai-4" class="v-select"><option>Customer &mdash; one guest</option><option>Long term &mdash; outlives the thread</option><option>Conversation &mdash; this thread only</option><option>Department &mdash; everyone in Sales</option><option>Company &mdash; every guest</option></select>
                         <span class="v-field__hint">Customer is the default because it is the narrowest. <b>Company</b> reaches every conversation the AI has, so it asks you to confirm.</span>
                       </div>
                       <div class="v-field band">
-                        <label class="v-field__label">Which guest</label>
+                        <label class="v-field__label" for="f-11ai-5">Which guest</label>
                         <div class="v-search">
                           <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                          <input class="v-input" placeholder="Search a guest or lead"></div>
+                          <input id="f-11ai-5" class="v-input" placeholder="Search a guest or lead"></div>
                         <span class="v-field__hint">A fact without a guest cannot be brought back for one.</span>
                       </div>
                       <div class="v-field band">
-                        <label class="v-field__label">The fact</label>
-                        <textarea class="v-textarea" rows="3" placeholder="e.g. Allergic to nuts &mdash; tell the kitchen on every booking"></textarea>
+                        <label class="v-field__label" for="f-11ai-6">The fact</label>
+                        <textarea id="f-11ai-6" class="v-textarea" rows="3" placeholder="e.g. Allergic to nuts &mdash; tell the kitchen on every booking"></textarea>
                         <span class="v-field__hint">Write it as you would tell a colleague. Never paste a password, a key or a link with one in it &mdash; anything that looks like a secret is held back.</span>
                       </div>
                       <div class="v-field band">
@@ -2133,7 +2133,7 @@
                 <h2 class="v-pagehead__title">Learning</h2>
                 <p class="v-pagehead__sub">Your corrections become examples the AI is steered by — but only the ones you approve.</p></div>
             </div>
-            <div class="row" style="gap:var(--s-3)"><div class="v-search grow"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" value="What would Veerha recall about weekend suite rates?"></div><button class="v-btn v-btn--secondary" data-w data-do="ack">Retrieve</button></div>
+            <div class="row" style="gap:var(--s-3)"><div class="v-search grow"><span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span><input class="v-input" value="What would Veerha recall about weekend suite rates?" aria-label="Try a question"></div><button class="v-btn v-btn--secondary" data-w data-do="ack">Retrieve</button></div>
             <div class="v-pilltabs" style="margin:var(--s-4) 0"><button class="v-pill is-active">Needs curation 2</button><button class="v-pill">Learning set 1</button><button class="v-pill">Discarded 0</button></div>
             <div class="v-card"><div class="v-card__body" style="padding-top:0;padding-bottom:0"><div class="row" style="gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--border);align-items:flex-start">
                 <div class="grow"><div class="t-meta muted">Review Queue · you refused</div><div class="t-small" style="margin-top:4px"><s class="muted">Offered the Panorama Suite at ₹24,900 for a weekend</s></div><div class="t-small" style="margin-top:2px"><b>→ Do not offer the Panorama Suite below ₹26,000 on Fridays and Saturdays</b></div></div>
@@ -2260,7 +2260,7 @@
             </div>
 <div class="v-tabs" style="margin-bottom:var(--s-4)"><button class="v-tab is-active">Business</button><button class="v-tab">What you sell</button><button class="v-tab">Where you work</button><button class="v-tab">Qualifying</button><button class="v-tab">How to talk</button><button class="v-tab">Answers &amp; rules</button><button class="v-tab">Goals</button></div>            <section class="v-card">
               <div class="v-card__head"><div class="grow"><div class="v-card__title">About the business</div><p class="v-card__desc">Used in every conversation and to write the operating brief in Behaviour.</p></div></div>
-              <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Business name</label><input class="v-input" value="Rivergrove Retreat"></div><div class="v-field grow"><label class="v-field__label">Website</label><input class="v-input" value="rivergrove.example.com"><span class="v-field__hint">Read during setup; read again weekly.</span></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Industry</label><select class="v-select"><option>Hospitality</option><option>Travel &amp; Tourism</option></select></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">What you do</label><textarea class="v-input" rows="3" style="width:100%">A 14-room wellness resort on the river, two hours from the city. Quiet weekends, anniversaries and small group retreats.</textarea><span class="v-field__hint">One or two sentences, the way you would say it on the phone.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">More about you <span class="t-meta muted">· optional</span></label><textarea class="v-input" rows="2" style="width:100%">Family-run since 2009. The spa and the deck breakfast are what guests mention most.</textarea></div></div>
+              <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label" for="f-11ai-7">Business name</label><input id="f-11ai-7" class="v-input" value="Rivergrove Retreat"></div><div class="v-field grow"><label class="v-field__label" for="f-11ai-8">Website</label><input id="f-11ai-8" class="v-input" value="rivergrove.example.com"><span class="v-field__hint">Read during setup; read again weekly.</span></div></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-11ai-9">Industry</label><select id="f-11ai-9" class="v-select"><option>Hospitality</option><option>Travel &amp; Tourism</option></select></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-11ai-10">What you do</label><textarea id="f-11ai-10" class="v-input" rows="3" style="width:100%">A 14-room wellness resort on the river, two hours from the city. Quiet weekends, anniversaries and small group retreats.</textarea><span class="v-field__hint">One or two sentences, the way you would say it on the phone.</span></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-11ai-11">More about you <span class="t-meta muted">· optional</span></label><textarea id="f-11ai-11" class="v-input" rows="2" style="width:100%">Family-run since 2009. The spa and the deck breakfast are what guests mention most.</textarea></div></div>
             </section>
             <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
               <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
@@ -2512,15 +2512,15 @@
             </div>
 <div class="v-tabs" style="margin-bottom:var(--s-4)"><button class="v-tab">Business</button><button class="v-tab">What you sell</button><button class="v-tab">Where you work</button><button class="v-tab">Qualifying</button><button class="v-tab is-active">How to talk</button><button class="v-tab">Answers &amp; rules</button><button class="v-tab">Goals</button></div>            <section class="v-card">
               <div class="v-card__head"><div class="grow"><div class="v-card__title">Voice</div></div></div>
-              <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field" style="width:220px"><label class="v-field__label">Assistant’s name</label><input class="v-input" value="Mira"><span class="v-field__hint">What guests see it sign as.</span></div><div class="v-field grow"><label class="v-field__label">Tone</label><div class="v-pilltabs"><button class="v-pill is-active">Warm</button><button class="v-pill">Friendly</button><button class="v-pill">Professional</button><button class="v-pill">Formal</button></div><span class="v-field__hint">Warm still says “we”; no exclamation marks, no emoji.</span></div></div><div class="row" style="justify-content:space-between;margin-top:var(--s-4)"><span class="t-small">Use the guest’s first name</span><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div></div>
+              <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field" style="width:220px"><label class="v-field__label" for="f-11ai-12">Assistant’s name</label><input id="f-11ai-12" class="v-input" value="Mira"><span class="v-field__hint">What guests see it sign as.</span></div><div class="v-field grow"><label class="v-field__label">Tone</label><div class="v-pilltabs"><button class="v-pill is-active">Warm</button><button class="v-pill">Friendly</button><button class="v-pill">Professional</button><button class="v-pill">Formal</button></div><span class="v-field__hint">Warm still says “we”; no exclamation marks, no emoji.</span></div></div><div class="row" style="justify-content:space-between;margin-top:var(--s-4)"><span class="t-small">Use the guest’s first name</span><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div></div>
             </section>
             <section class="v-card band">
               <div class="v-card__head"><div class="grow"><div class="v-card__title">Greeting and closing</div><p class="v-card__desc">Different on a chat and on a call.</p></div></div>
-              <div class="v-card__body"><div class="v-pilltabs" style="margin-bottom:var(--s-3)"><button class="v-pill is-active">Chat</button><button class="v-pill">Call</button></div><div class="v-field"><label class="v-field__label">Greeting</label><input class="v-input" value="Hello {first name} — this is Mira at Rivergrove."></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Closing</label><input class="v-input" value="Speak soon — the team at Rivergrove."></div></div>
+              <div class="v-card__body"><div class="v-pilltabs" style="margin-bottom:var(--s-3)"><button class="v-pill is-active">Chat</button><button class="v-pill">Call</button></div><div class="v-field"><label class="v-field__label" for="f-11ai-13">Greeting</label><input id="f-11ai-13" class="v-input" value="Hello {first name} — this is Mira at Rivergrove."></div><div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-11ai-14">Closing</label><input id="f-11ai-14" class="v-input" value="Speak soon — the team at Rivergrove."></div></div>
             </section>
             <section class="v-card band">
               <div class="v-card__head"><div class="grow"><div class="v-card__title">Never</div></div></div>
-              <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label">Never say</label><textarea class="v-input" rows="2" style="width:100%">“Guaranteed”, “cheapest”, anything about other properties</textarea></div><div class="v-field grow"><label class="v-field__label">Never share</label><textarea class="v-input" rows="2" style="width:100%">Room numbers before check-in, other guests’ names, staff phone numbers</textarea></div></div><div class="row" style="justify-content:space-between;margin-top:var(--s-4)"><span class="t-small">Say it is an AI when introducing itself</span><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><p class="t-meta muted">Asked directly, Veerha always says it is an AI — this switch only decides whether it says so first.</p></div>
+              <div class="v-card__body"><div class="row" style="gap:var(--s-3);align-items:flex-start"><div class="v-field grow"><label class="v-field__label" for="f-11ai-15">Never say</label><textarea id="f-11ai-15" class="v-input" rows="2" style="width:100%">“Guaranteed”, “cheapest”, anything about other properties</textarea></div><div class="v-field grow"><label class="v-field__label" for="f-11ai-16">Never share</label><textarea id="f-11ai-16" class="v-input" rows="2" style="width:100%">Room numbers before check-in, other guests’ names, staff phone numbers</textarea></div></div><div class="row" style="justify-content:space-between;margin-top:var(--s-4)"><span class="t-small">Say it is an AI when introducing itself</span><span class="v-toggle is-on" style="flex:none"><span class="v-toggle__track"><span class="v-toggle__thumb"></span></span></span></div><p class="t-meta muted">Asked directly, Veerha always says it is an AI — this switch only decides whether it says so first.</p></div>
             </section>
             <div class="v-card band"><div class="v-card__body" style="padding:var(--s-3) var(--s-5);display:flex;align-items:center;gap:var(--s-3)">
               <span class="v-savebar__state"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All changes saved</span>
@@ -2701,7 +2701,7 @@
                       <div style="flex:1">
                         <div class="row" style="gap:var(--s-2)">
                           <span class="t-card amount">&#8377;</span>
-                          <input class="v-input amount" value="12,000" style="max-width:160px">
+                          <input class="v-input amount" value="12,000" style="max-width:160px" aria-label="Amount">
                           <span class="t-meta muted">per stay</span></div>
                         <p class="t-meta muted" style="margin-top:8px">&#8377;<span class="amount">12,000</span> is about two nights in your cheapest room. Leave it at <span class="num">0</span> and every under-budget enquiry books a call.</p></div></div>
                   </div>
@@ -3193,7 +3193,7 @@
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-search"/></svg></span>
-                <input class="v-input" placeholder="Search a guest, a number or an address"></div>
+                <input class="v-input" placeholder="Search a guest, a number or an address" aria-label="Search a guest, a number or an address"></div>
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Tool</span>
                 <span class="v-filterchip__v">All 17</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
@@ -3307,7 +3307,7 @@
               </table>
               <div class="v-card__foot v-pager">
                 <span>Showing 1&ndash;8 of 100</span>
-                <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)"><option>25 per page</option></select>
+                <select class="v-select" style="width:auto;min-height:30px;padding:3px var(--s-8) 3px var(--s-3)" aria-label="Rows per page"><option>25 per page</option></select>
                 <span class="v-pager__n">
                   <button class="v-btn v-btn--secondary v-btn--sm is-disabled" data-w data-do="page">Previous</button>
                   <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="page">Next</button></span>

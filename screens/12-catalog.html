@@ -302,8 +302,8 @@
               <section class="v-card">
                 <div class="v-card__body" style="padding:var(--s-5)">
                   <div class="v-field">
-                    <label class="v-field__label">Listing address</label>
-                    <input class="v-input" placeholder="Paste a link to your page on any booking site">
+                    <label class="v-field__label" for="f-12catalo-1">Listing address</label>
+                    <input id="f-12catalo-1" class="v-input" placeholder="Paste a link to your page on any booking site">
                     <span class="v-field__hint">Veerha reads the public page only — rooms, rates, photos, amenities and policies.</span>
                   </div>
                   <div class="v-actions" style="margin-top:var(--s-4)">
@@ -483,7 +483,7 @@
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                <input class="v-input" placeholder="Search property name or town"></div>
+                <input class="v-input" placeholder="Search property name or town" aria-label="Search property name or town"></div>
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Property</span>
                 <span class="v-filterchip__v">All 2</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
@@ -493,7 +493,7 @@
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Last read</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <select class="v-select" style="width:auto;min-width:150px"><option>Read most recently</option></select>
+              <select class="v-select" style="width:auto;min-width:150px" aria-label="Sort by"><option>Read most recently</option></select>
             </div>
 
             <div class="v-card" style="overflow:hidden">
@@ -712,7 +712,7 @@
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                <input class="v-input" placeholder="Search resource name"></div>
+                <input class="v-input" placeholder="Search resource name" aria-label="Search resource name"></div>
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Resource</span>
                 <span class="v-filterchip__v">All 4</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
@@ -722,7 +722,7 @@
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Status</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <select class="v-select" style="width:auto;min-width:150px"><option>Least left today</option></select>
+              <select class="v-select" style="width:auto;min-width:150px" aria-label="Sort by"><option>Least left today</option></select>
             </div>
 
             <div class="v-card" style="overflow:hidden">
@@ -1028,7 +1028,7 @@
             <div class="vs-filterbar">
               <div class="v-search vs-filterbar__search">
                 <span class="v-search__ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                <input class="v-input" placeholder="Search resource name"></div>
+                <input class="v-input" placeholder="Search resource name" aria-label="Search resource name"></div>
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Resource</span>
                 <span class="v-filterchip__v">All 4</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
@@ -1038,7 +1038,7 @@
               <button class="v-filterchip" data-w data-do="filterchip"><span class="v-filterchip__k">Status</span>
                 <span class="v-filterchip__v">Any</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-down"/></svg></button>
-              <select class="v-select" style="width:auto;min-width:150px"><option>Least left today</option></select>
+              <select class="v-select" style="width:auto;min-width:150px" aria-label="Sort by"><option>Least left today</option></select>
             </div>
 
             <div class="v-card" style="overflow:hidden">
@@ -1213,24 +1213,24 @@
                 <div class="label">How much of it there is</div>
                 <section class="v-card" style="margin-top:var(--s-3)"><div class="v-card__body" style="padding:var(--s-5)">
                   <div class="row" style="gap:var(--s-4);align-items:flex-start">
-                    <div class="v-field grow"><label class="v-field__label">Places in each sitting</label>
-                      <input class="v-input" value="100">
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-2">Places in each sitting</label>
+                      <input id="f-12catalo-2" class="v-input" value="100">
                       <span class="v-field__hint">Per sitting, not per day. Three sittings makes the day's total 300.</span></div>
-                    <div class="v-field grow"><label class="v-field__label">Sell this many extra</label>
-                      <input class="v-input" value="0">
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-3">Sell this many extra</label>
+                      <input id="f-12catalo-3" class="v-input" value="0">
                       <span class="v-field__hint">On purpose, to cover no-shows. Never applies to a closed day.</span></div>
                   </div>
                   <div class="row" style="gap:var(--s-4);align-items:flex-start;margin-top:var(--s-4)">
-                    <div class="v-field grow"><label class="v-field__label">New arrivals allowed each day</label>
-                      <input class="v-input" placeholder="No limit">
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-4">New arrivals allowed each day</label>
+                      <input id="f-12catalo-4" class="v-input" placeholder="No limit">
                       <span class="v-field__hint">Counts arrivals on their first day only. Blank means as many as there is room for.</span></div>
-                    <div class="v-field grow"><label class="v-field__label">Keep a place while somebody books</label>
-                      <input class="v-input" value="0">
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-5">Keep a place while somebody books</label>
+                      <input id="f-12catalo-5" class="v-input" value="0">
                       <span class="v-field__hint">0 sets nothing aside, so two guests can both be part-way through the last place.</span></div>
                   </div>
-                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">No more than, a day</label>
+                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-12catalo-6">No more than, a day</label>
                     <div class="row" style="gap:var(--s-3)">
-                      <input class="v-input" value="300" style="width:120px">
+                      <input id="f-12catalo-6" class="v-input" value="300" style="width:120px">
                       <span class="t-meta muted">Sittings already come to <span class="num">300</span></span></div>
                     <span class="v-field__hint">A number below 300 wins and closes the day early. A number above it does nothing — the sittings are the real limit.</span></div>
                 </div></section>
@@ -1241,17 +1241,17 @@
                   <div class="v-rows">
                     <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-btn v-btn--icon v-btn--sm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
-                      <input class="v-input" value="11:00 am" style="width:140px">
+                      <input class="v-input" value="11:00 am" style="width:140px" aria-label="Time slot">
                       <span class="t-meta muted grow"><span class="num">100</span> places · <span class="num">88</span> taken today</span>
                       <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 11:00 am sitting" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                     <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-btn v-btn--icon v-btn--sm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
-                      <input class="v-input" value="12:00 pm" style="width:140px">
+                      <input class="v-input" value="12:00 pm" style="width:140px" aria-label="Time slot">
                       <span class="t-meta muted grow"><span class="num">100</span> places · <span class="num">0</span> taken today</span>
                       <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 12:00 pm sitting" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                     <div class="row" style="gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--border)">
                       <span class="v-btn v-btn--icon v-btn--sm" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
-                      <input class="v-input" value="1:00 pm" style="width:140px">
+                      <input class="v-input" value="1:00 pm" style="width:140px" aria-label="Time slot">
                       <span class="t-meta muted grow"><span class="num">100</span> places · <span class="num">0</span> taken today</span>
                       <button class="v-btn v-btn--icon v-btn--sm" aria-label="Remove the 1:00 pm sitting" data-w data-do="remove"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="#i-x"/></svg></button></div>
                   </div>
@@ -1563,22 +1563,22 @@
                   </div>
 
                   <div class="row" style="gap:var(--s-4);align-items:flex-start;margin-top:var(--s-5)">
-                    <div class="v-field grow"><label class="v-field__label">Sheet</label>
-                      <input class="v-input" value="Rivergrove rates 2026–27">
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-7">Sheet</label>
+                      <input id="f-12catalo-7" class="v-input" value="Rivergrove rates 2026–27">
                       <span class="v-field__hint">Read-only access. Veerha never writes to your sheet.</span></div>
-                    <div class="v-field" style="width:200px"><label class="v-field__label">Columns to read</label>
-                      <input class="v-input" value="A:F">
+                    <div class="v-field" style="width:200px"><label class="v-field__label" for="f-12catalo-8">Columns to read</label>
+                      <input id="f-12catalo-8" class="v-input" value="A:F">
                       <span class="v-field__hint">Your sheet has seven columns. Column G, "Notes", is not read.</span></div>
                   </div>
 
                   <div class="row" style="gap:var(--s-4);align-items:flex-start;margin-top:var(--s-4)">
-                    <div class="v-field grow"><label class="v-field__label">Google API key</label>
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-9">Google API key</label>
                       <div class="row" style="gap:var(--s-2)">
-                        <input class="v-input" value="••••••••••••••••••••••••7c41" style="font-family:var(--num)">
+                        <input id="f-12catalo-9" class="v-input" value="••••••••••••••••••••••••7c41" style="font-family:var(--num)">
                         <button class="v-btn v-btn--secondary" data-w data-do="ack">Replace</button></div>
                       <span class="v-field__hint">Stored encrypted and never shown again after you save it. <a class="v-callout__link" data-w data-inert="Opens the provider’s guide to creating an API key">Where to get one →</a></span></div>
-                    <div class="v-field" style="width:260px"><label class="v-field__label">Re-read the sheet</label>
-                      <select class="v-select"><option>Every 15 minutes</option></select>
+                    <div class="v-field" style="width:260px"><label class="v-field__label" for="f-12catalo-10">Re-read the sheet</label>
+                      <select id="f-12catalo-10" class="v-select"><option>Every 15 minutes</option></select>
                       <span class="v-field__hint">A price you change in the sheet reaches Veerha within 15 minutes.</span></div>
                   </div>
 
@@ -1640,7 +1640,7 @@
                   <p class="v-card__desc">24 items · 23 Veerha may quote, 1 paused by you, 1 held back by the sheet</p></div>
                   <div class="v-search" style="width:220px">
                     <span class="v-search__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><use href="#i-search"/></svg></span>
-                    <input class="v-input" placeholder="Search the list"></div>
+                    <input class="v-input" placeholder="Search the list" aria-label="Search the list"></div>
                   <button class="v-btn v-btn--secondary v-btn--sm" data-w data-do="columns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-grid"/></svg>Columns</button></div>
                 <div class="v-tabs" style="margin:0 var(--s-5) var(--s-4)">
                   <button class="v-tab is-active">Everything <span class="v-pill__n">24</span></button>
@@ -1941,13 +1941,13 @@
                 <section class="v-card"><div class="v-card__body" style="padding:var(--s-5)">
                   <div class="spread"><span class="t-card">A Google Sheet</span><span class="v-badge v-badge--neutral">Not connected</span></div>
                   <p class="t-small muted" style="margin-top:6px">Best if your rates already live in a sheet somebody maintains. Veerha re-reads it every 15 minutes and tells you what it found each time.</p>
-                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label">Sheet link or ID</label>
-                    <input class="v-input" placeholder="Paste the sheet's link"></div>
+                  <div class="v-field" style="margin-top:var(--s-4)"><label class="v-field__label" for="f-12catalo-11">Sheet link or ID</label>
+                    <input id="f-12catalo-11" class="v-input" placeholder="Paste the sheet's link"></div>
                   <div class="row" style="gap:var(--s-4);align-items:flex-start;margin-top:var(--s-4)">
-                    <div class="v-field" style="width:120px"><label class="v-field__label">Columns</label>
-                      <input class="v-input" value="A:F"></div>
-                    <div class="v-field grow"><label class="v-field__label">Google API key</label>
-                      <input class="v-input" placeholder="Paste the key">
+                    <div class="v-field" style="width:120px"><label class="v-field__label" for="f-12catalo-12">Columns</label>
+                      <input id="f-12catalo-12" class="v-input" value="A:F"></div>
+                    <div class="v-field grow"><label class="v-field__label" for="f-12catalo-13">Google API key</label>
+                      <input id="f-12catalo-13" class="v-input" placeholder="Paste the key">
                       <span class="v-field__hint">Stored encrypted, never shown again. <a class="v-callout__link" data-w data-inert="Opens the provider’s guide to creating an API key">Where to get one →</a></span></div>
                   </div>
                   <div class="v-actions" style="margin-top:var(--s-4)">

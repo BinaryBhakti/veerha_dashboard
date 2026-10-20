@@ -238,6 +238,36 @@
         opts.map(function (o) { return '<button class="v-menu__item" data-do="chip-pick" data-value="' + o + '">' + o + '</button>'; }).join('');
       popMenu(el, html); return {};
     },
+    // A value chip in a table cell or a card: its menu offers the values the
+    // same column already uses, plus the known list the value belongs to.
+    selectchip: function (el) {
+      var cur = label(el), td = el.closest('td'), scope = el.closest('table') || scopeOf(el);
+      var vals = [];
+      $$('.v-selectchip', scope).forEach(function (c) {
+        var ctd = c.closest('td');
+        if (td && (!ctd || ctd.cellIndex !== td.cellIndex)) return;
+        var v = label(c); if (v && vals.indexOf(v) === -1) vals.push(v);
+      });
+      Object.keys(OPTIONS).forEach(function (k) {
+        if (OPTIONS[k].indexOf(cur) !== -1) OPTIONS[k].forEach(function (v) { if (vals.indexOf(v) === -1) vals.push(v); });
+      });
+      if (vals.length < 2) return { toast: cur, body: 'Choose a new value from the list.' };
+      var html = vals.map(function (v) {
+        return '<button class="v-menu__item' + (v === cur ? ' is-active' : '') + '" data-do="selectchip-pick" data-value="' +
+          v.replace(/"/g, '&quot;') + '">' + v.replace(/</g, '&lt;') + '</button>';
+      }).join('');
+      popMenu(el, html); el.setAttribute('aria-expanded', 'true'); return {};
+    },
+    'selectchip-pick': function (el) {
+      var m = el.closest('.v-menu'), chip = m && m.__trigger, v = el.getAttribute('data-value');
+      closeMenus();
+      if (chip) {
+        var svg = $('svg', chip);
+        chip.textContent = v + ' '; if (svg) chip.appendChild(svg);
+        chip.setAttribute('aria-expanded', 'false');
+      }
+      return { toast: 'Changed to ' + v, body: '' };
+    },
     'chip-pick': function (el) {
       var m = el.closest('.v-menu'), chip = m && m.__trigger, v = el.getAttribute('data-value');
       closeMenus();

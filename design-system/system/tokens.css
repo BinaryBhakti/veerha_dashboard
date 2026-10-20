@@ -194,7 +194,9 @@
   --sect-gap:  32px;            /* between sections                          */
   --page-max: 1400px;
 
-  --focus: 0 0 0 3px var(--brand-200);
+  /* A 2px brand ring outside a 2px gap: visible on white, on brand-soft and on
+     a filled button (3:1+ against each). brand-200 alone was 1.5:1. */
+  --focus: 0 0 0 2px var(--surface), 0 0 0 4px var(--brand);
 
 
   /* --- 10 · MOTION --------------------------------------------------------

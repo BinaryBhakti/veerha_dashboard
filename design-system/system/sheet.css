@@ -39,7 +39,7 @@
 
 /* Section heading inside a documentation page */
 .sh-sec { padding-top: var(--s-12); scroll-margin-top: 80px; }
-.sh-sec__n { font-family: var(--num); color: var(--text-faint); font-size: var(--t-meta-s); }
+.sh-sec__n { font-family: var(--num); color: var(--text-muted); font-size: var(--t-meta-s); }
 .sh-sec__h { font-size: var(--t-page-s); line-height: var(--t-page-l); font-weight: 600; letter-spacing: -.018em; margin-top: 4px; }
 .sh-sec__d { margin-top: var(--s-2); font-size: var(--t-body-s); color: var(--text-secondary); max-width: 68ch; }
 .sh-sec__rule { margin-top: var(--s-5); border: 0; border-top: 1px solid var(--border); }
@@ -48,7 +48,7 @@
 .sh-spec { margin-top: var(--s-8); }
 .sh-spec__hd { display: flex; align-items: baseline; gap: var(--s-3); margin-bottom: var(--s-3); }
 .sh-spec__name { font-size: var(--t-card-s); font-weight: 600; letter-spacing: -.008em; }
-.sh-spec__cls { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-faint); }
+.sh-spec__cls { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-muted); }
 .sh-spec__note { font-size: var(--t-small-s); color: var(--text-muted); max-width: 70ch; margin-bottom: var(--s-3); }
 
 /* The frame a specimen sits in — the equivalent of a Figma frame */
@@ -80,7 +80,7 @@
 .sh-state { display: flex; flex-direction: column; gap: var(--s-2); align-items: flex-start; }
 .sh-state__l {
   font-size: var(--t-micro-s); font-weight: 600; letter-spacing: var(--label-tracking);
-  text-transform: uppercase; color: var(--text-faint);
+  text-transform: uppercase; color: var(--text-muted);
 }
 
 /* Colour swatches */
@@ -90,7 +90,7 @@
 .sh-sw__meta { padding: var(--s-2) var(--s-3); }
 .sh-sw__name { font-size: var(--t-meta-s); font-weight: 600; }
 .sh-sw__val { font-family: var(--num); font-size: var(--t-micro-s); color: var(--text-muted); text-transform: uppercase; }
-.sh-sw__use { font-size: var(--t-micro-s); color: var(--text-faint); margin-top: 2px; }
+.sh-sw__use { font-size: var(--t-micro-s); color: var(--text-muted); margin-top: 2px; }
 
 .sh-ramp { display: flex; width: 100%; border-radius: var(--r-tile); overflow: hidden; border: 1px solid var(--border); }
 .sh-ramp div { flex: 1; height: 56px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; font-size: 10px; font-family: var(--num); }
@@ -132,11 +132,11 @@
   transition: border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease);
 }
 .sh-card:hover { border-color: var(--border-strong); box-shadow: var(--e2); }
-.sh-card__n { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-faint); }
+.sh-card__n { font-family: var(--num); font-size: var(--t-meta-s); color: var(--text-muted); }
 .sh-card__h { font-size: var(--t-card-s); font-weight: 600; margin-top: var(--s-2); }
 .sh-card__p { font-size: var(--t-small-s); color: var(--text-muted); margin-top: 6px; }
 
-.sh-foot { margin-top: var(--s-20); padding: var(--s-6) 0; border-top: 1px solid var(--border); font-size: var(--t-meta-s); color: var(--text-faint); display: flex; gap: var(--s-4); flex-wrap: wrap; }
+.sh-foot { margin-top: var(--s-20); padding: var(--s-6) 0; border-top: 1px solid var(--border); font-size: var(--t-meta-s); color: var(--text-muted); display: flex; gap: var(--s-4); flex-wrap: wrap; }
 
 /* --- TYPEFACE SPECIMEN ----------------------------------------------------
    Shows the font itself, not just the scale it is set at. */
