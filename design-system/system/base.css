@@ -111,6 +111,16 @@ table { border-collapse: collapse; width: 100%; }
 .col-7  { grid-column: span 7; }
 .col-8  { grid-column: span 8; }
 .col-12 { grid-column: span 12; }
+/* Narrow screens: quarter tiles pair up, everything wider takes the row.
+   Numbers: --bp-tablet / --bp-phone in tokens.css. */
+@media (max-width: 1024px) {
+  .col-3 { grid-column: span 6; }
+  .col-4, .col-5, .col-7, .col-8 { grid-column: span 12; }
+}
+@media (max-width: 760px) {
+  .grid { gap: var(--s-3); }
+  .col-6 { grid-column: span 12; }
+}
 
 .band { margin-top: var(--sect-gap); }
 

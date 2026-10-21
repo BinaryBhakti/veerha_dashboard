@@ -1104,8 +1104,60 @@ td.v-table__num.amount { font-family: var(--ui); }
 @media (max-width: 760px) {
   .v-topbar { padding: 0 var(--s-4); gap: var(--s-2); }
   .v-pagehead { flex-wrap: wrap; gap: var(--s-3); }
+  .v-pagehead > .v-pagehead__copy { flex-basis: 100%; }
   .v-pagehead > .v-actions { width: 100%; }
-  .v-stat { flex-basis: 132px; }
+  .v-stat { flex-basis: 132px; padding: var(--s-3); }
   .v-modal, .v-modal--wide { max-width: 100%; }
   .v-drawer { max-width: 100%; }
+  .v-card__head, .v-card__body, .v-card__foot { padding-left: var(--s-4); padding-right: var(--s-4); }
+  .v-rows > * { padding-left: var(--s-4); padding-right: var(--s-4); }
+
+  /* A row that holds a sentence and some controls. Desktop keeps them on one
+     line; on a phone the controls are nowrap, so the sentence was squeezed to
+     one word per line. Here the row wraps instead, and the sentence keeps a
+     readable measure before anything gives -- the controls drop below it. */
+  :is(.row, .spread, .v-card__head, .v-card__foot, .v-pager, .v-record, .v-callout, .v-error,
+      .v-waiting__row, .v-working__row, .v-drawer__head, .v-drawer__foot, .v-footbar,
+      .v-bulkbar, .v-employee__top, .v-ranked__row, .v-next__acts, .v-savebar):not(td *) { flex-wrap: wrap; }
+  :is(.row, .spread, .v-card__head, .v-card__foot, .v-record, .v-callout, .v-error,
+      .v-waiting__row, .v-working__row, .v-drawer__head, .v-footbar, .v-employee__top):not(td *)
+    > :is(.grow, [style*="flex:1"], .v-record__body, .v-waiting__body, .v-working__act):not(:empty) {
+    flex: 1 1 0; min-width: min(14rem, 100%);
+  }
+  /* The text beside a leading icon stays beside it. */
+  :is(.v-callout, .v-error) > :not(svg, .v-callout__ic, .v-callout__link, button, .v-actions, .v-btn, [style*="flex:none"], :has(> svg:only-child)) {
+    flex: 1 1 0; min-width: min(13rem, calc(100% - 32px));
+  }
+  .v-callout__link { margin-left: auto; }
+  .v-drawer__foot > :is(span, p) { flex-basis: 100%; }
+  .v-working__obj { white-space: normal; text-align: left; }
+  .v-pager__n { margin-left: 0; }
+  .v-bulkbar { row-gap: var(--s-2); }
+  .v-bulkbar__n { white-space: nowrap; }
+  .v-msg { max-width: 86%; }
+  .v-composer { flex-wrap: wrap; }
+
+  /* One-line navigation scrolls sideways rather than wrapping into a block. */
+  .v-tabs, .v-stepper {
+    overflow-x: auto; scrollbar-width: none; flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .v-tabs::-webkit-scrollbar, .v-stepper::-webkit-scrollbar { display: none; }
+  .v-tab, .v-stepper__step { flex: none; white-space: nowrap; }
+  .v-stepper__bar { flex: 0 0 var(--s-4); }
+  .v-seg { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .v-seg__opt { white-space: nowrap; flex: none; }
+
+  /* Tables: a phone shows a table at a width its columns can be read at and
+     scrolls it, rather than folding every cell to a word per line. The pinned
+     action column (above) stays in view while the rest scrolls under it. */
+  :has(> .v-table) { overflow-x: auto; }
+  .v-table:has(tr > :nth-child(3)) { min-width: 520px; }
+  .v-table:has(tr > :nth-child(4)) { min-width: 620px; }
+  .v-table:has(tr > :nth-child(6)) { min-width: 760px; }
+  .v-table:has(tr > :nth-child(9)) { min-width: 960px; }
+
+  .v-kv { gap: var(--s-2) var(--s-3); }
+  .v-employee__stat { padding: var(--s-2); }
+  .v-menu { min-width: min(232px, calc(100vw - 2 * var(--s-4))); }
 }

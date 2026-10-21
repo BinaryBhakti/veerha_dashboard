@@ -295,6 +295,19 @@
   .vs-body--panes { overflow: auto; }
   .vs-overlay .v-drawer { max-width: 88%; }
   .vs-topbar__search { max-width: 280px; }
+  /* An inline main + fixed side column (the dashboard brief, the email
+     studio) stacks: beside a rail there is no room for the fixed column, and
+     the figures inside the main one were clipped. */
+  .vs-body [style*="grid-template-columns"][style*="px"]:not([style*="repeat("]):not(.vs-panes):not(.vs-pane) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .vs-body [style*="grid-template-columns"][style*="px"]:not([style*="repeat("]):not(.vs-panes) > [style*="border-right"] {
+    border-right: 0 !important; border-bottom: 1px solid var(--border);
+  }
+  /* Builders: list, form and preview side by side do not fit beside a rail
+     and a section nav, so they stack from tablet down. */
+  .vs-body:has(> .vs-pane) { flex-direction: column; overflow: auto; }
+  .vs-body > .vs-pane { width: auto !important; flex: none !important; border-right: 0 !important; border-bottom: 1px solid var(--border); }
 }
 
 @media (max-width: 760px) {
@@ -305,22 +318,74 @@
 
   .vs-canvas { padding: var(--s-4) var(--s-4) var(--s-8); }
   .vs-tabstrip { padding: 0 var(--s-4); }
+
+  /* The section nav becomes one sideways-scrolling strip above the page. As a
+     stacked list it was a whole screen of links before the page began. Group
+     labels, its search and the help card fold away; behaviour.js scrolls the
+     active item into view. */
   .vs-body--sectioned { flex-direction: column; }
-  .vs-body--sectioned > .v-sidenav { width: auto; max-height: 40vh; border-right: 0; border-bottom: 1px solid var(--border); }
+  .vs-body--sectioned > .v-sidenav {
+    width: auto; flex: none; flex-direction: row; align-items: center; gap: var(--s-1);
+    padding: var(--s-2) var(--s-4); overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+    border-right: 0; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: var(--z-sticky);
+  }
+  .vs-body--sectioned > .v-sidenav::-webkit-scrollbar { display: none; }
+  .vs-body--sectioned > .v-sidenav :is(.vs-sidenav__head, .v-sidenav__label, .v-sidenav__help, .vs-sidenav__search) { display: none; }
+  .vs-body--sectioned > .v-sidenav > :not(.v-sidenav__group):not(.v-sidenav__item):not(.vs-sidenav__head):not(.v-sidenav__help) { flex: none; }
+  .vs-body--sectioned > .v-sidenav .v-sidenav__group { flex-direction: row; gap: var(--s-1); flex: none; }
+  .vs-body--sectioned > .v-sidenav .v-sidenav__group + .v-sidenav__group { border-left: 1px solid var(--border); padding-left: var(--s-1); }
+  .vs-body--sectioned > .v-sidenav .v-sidenav__item { white-space: nowrap; flex: none; padding: 6px var(--s-3); min-height: 32px; }
+  .vs-body--sectioned > .v-sidenav .v-sidenav__item.is-active::before { left: var(--s-3); right: var(--s-3); top: auto; bottom: 0; width: auto; height: 2px; }
 
   .vs-panes, .vs-panes--inbox, .vs-panes--builder { grid-template-columns: minmax(0, 1fr) !important; }
   /* stacked panes take their natural height; the body scrolls, not each pane */
   .vs-pane { border-right: 0; border-bottom: 1px solid var(--border); overflow: visible; }
   .vs-panes { flex: none !important; height: auto !important; min-height: 0 !important; align-content: start; }
+  /* Builders lay their panes out as a flex row with fixed pane widths; on a
+     phone they stack the same way the grid panes do. Stacked, a pane header
+     no longer pins -- it would slide over the pane above it. */
+  .vs-body:has(> .vs-pane) { flex-direction: column; overflow: auto; }
+  .vs-body > .vs-pane { width: auto !important; flex: none !important; }
+  .vs-pane__hd { position: static; }
+  .vs-pane--canvas { padding: var(--s-4) !important; }
+  /* a fixed-size preview (the creative studio's square) scales to the screen */
+  .vs-pane--canvas [style*="width:380px"][style*="height:380px"] { width: 100% !important; max-width: 380px; height: auto !important; aspect-ratio: 1; }
+  /* Inline grids: a row of four to six figures pairs up; anything else -- a
+     form's two columns, main + side, three cards -- stacks. */
   .vs-body [style*="grid-template-columns"]:not([style*="repeat(7"]):not(.vs-pane) {
     grid-template-columns: minmax(0, 1fr) !important;
   }
+  .vs-body [style*="grid-template-columns"]:is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"]):not(.vs-pane) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  /* ...and when those figures are ruled, the rules follow the new grid. */
+  .vs-body :is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"]) > [style*="border-right"]:nth-child(2n) { border-right: 0 !important; }
+  .vs-body :is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"]):has(> [style*="border-right"]) > :nth-child(n+3) { border-top: 1px solid var(--border); }
+  .vs-body :is([style*="repeat(5,"]):has(> [style*="border-right"]) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* stacked, a ruled column's right rule becomes the rule between rows */
+  .vs-body [style*="grid-template-columns"]:not(:is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"], [style*="repeat(7"])) > [style*="border-right"] {
+    border-right: 0 !important; border-bottom: 1px solid var(--border);
+  }
+  .vs-body [style*="grid-template-columns"]:not(:is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"], [style*="repeat(7"])) > [style*="border-right"]:last-child { border-bottom: 0; }
+  /* An inline flex row of copy and controls wraps like .row does. */
+  .vs-body :is(.vs-canvas, .vs-pane, .v-drawer__body, .v-card) [style*="display:flex"]:not([style*="column"]):not(td *) { flex-wrap: wrap; }
+  .vs-body :is(.vs-canvas, .vs-pane, .v-drawer__body, .v-card) [style*="display:flex"]:not([style*="column"]):not(td *) > :is(.grow, [style*="flex:1"]):not(:empty) {
+    flex: 1 1 0; min-width: min(14rem, 100%);
+  }
   .vs-filterbar__search { min-width: 0; flex-basis: 100%; }
+  .vs-filterbar > .grow:not(:empty) { flex: 1 1 0; min-width: min(13rem, 100%); }
+  /* A settings row drawn as label | fields | switch: the label takes its own
+     line and the fields shrink to fit the one below. */
+  .vs-body [style*="display:flex"] > span.t-small[style*="width:"]:first-child { flex-basis: 100% !important; width: auto !important; }
+  .vs-body [style*="display:flex"] > .v-input[style*="width:"] { width: auto !important; flex: 0 1 7rem; min-width: 4.5rem; }
 
   .vs-topbar__search, .v-topbar__who { display: none; }
   .vs-overlay .v-drawer { width: 100%; max-width: 100%; }
   .vs-overlay .v-modal { width: calc(100% - 2 * var(--s-4)); }
-  .vs-tree { width: auto; }
+  /* the org chart keeps its width and scrolls from its left edge */
+  .vs-tree { margin: 0; }
+  .vs-canvas--chart { padding: var(--s-4); }
 }
 
 /* Sign-in and its siblings: the brand panel stacks above the form on a phone

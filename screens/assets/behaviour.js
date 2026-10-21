@@ -466,11 +466,22 @@
     location.href = 'walkthrough.html#' + g.getAttribute('data-go');
   });
 
+  /* ------------------------------------------------ phone section strip -- */
+  // On a phone the section nav is one sideways strip (shell.css), so the item
+  // for the page you are on can sit off the right edge. Bring it into view.
+  function revealNav(root) {
+    $$('.vs-body--sectioned > .v-sidenav', root).forEach(function (nav) {
+      var on = $('.v-sidenav__item.is-active', nav);
+      if (!on || nav.scrollWidth <= nav.clientWidth) return;
+      nav.scrollLeft = on.offsetLeft - nav.offsetLeft - (nav.clientWidth - on.offsetWidth) / 2;
+    });
+  }
+
   /* ------------------------------------------------------------ bootstrap -- */
   function wireAll() {
     var active = $('.wt-screen.is-on');
-    if (active) { wire(active); return; }
-    $$('.vs-frame').forEach(wire);
+    if (active) { wire(active); revealNav(active); return; }
+    $$('.vs-frame').forEach(function (f) { wire(f); revealNav(f); });
   }
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', wireAll);

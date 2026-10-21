@@ -93,6 +93,12 @@
   /* Phone: the rail is an off-canvas menu the top-bar button opens, the
      walkthrough badge moves to the foot of the screen, the panel fills the
      width. Numbers: --bp-phone in tokens.css. */
+  /* Below laptop width the top bar has no empty middle for the badge -- it sat
+     on the breadcrumb -- so it moves to the bottom corner. */
+  @media (max-width: 1180px) {
+    .wt-badge { top: auto; bottom: 12px; left: auto; right: 12px; transform: none; }
+    .wt-panel { top: auto; bottom: 60px; left: auto; right: 12px; transform: none; }
+  }
   @media (max-width: 760px) {
     .wt, .wt.is-expanded { grid-template-columns: minmax(0, 1fr); }
     .wt > .v-rail {
@@ -103,7 +109,10 @@
     .wt.is-expanded::after {
       content: ""; position: fixed; inset: 0; z-index: 64; background: var(--scrim);
     }
-    .wt-badge { top: auto; bottom: 12px; }
+    /* the badge shrinks to its count and sits in the corner, off the content */
+    .wt-badge { top: auto; bottom: 12px; left: auto; right: 12px; transform: none; padding: 5px; }
+    .wt-badge > span:first-child { display: none; }
+    .wt__stage .vs-canvas { padding-bottom: calc(var(--s-8) + 48px); }
     .wt-panel { top: auto; bottom: 60px; width: calc(100vw - 2 * var(--s-4)); max-height: calc(100vh - 120px); }
     .wt-unbuilt { padding: var(--s-6); }
   }
