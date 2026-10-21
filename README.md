@@ -667,6 +667,18 @@ being served.
 `.vercel/` links are per-machine and git-ignored, so a fresh clone has to be linked to
 the Vercel projects before `deploy.sh` can push. `--check` needs no Vercel access.
 
+```bash
+(cd design-system && vercel link --yes --project veerha-design-system)
+mkdir -p "${TMPDIR:-/tmp}/veerha-deploy-screens"
+(cd "${TMPDIR:-/tmp}/veerha-deploy-screens" && vercel link --yes --project veerha-screens)
+rm -f design-system/.env.local && git checkout design-system/.gitignore
+```
+
+`vercel link` writes a `.env.local` holding a Vercel token and edits `.gitignore`;
+the last line undoes both. `deploy.sh` refuses to run while that file exists, and
+writes the screens project's `vercel.json` (clean URLs, `/` → `/screens/`) into the
+staging root itself.
+
 ---
 
 ## What is not in this repository

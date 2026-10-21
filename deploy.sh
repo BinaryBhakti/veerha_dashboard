@@ -96,7 +96,11 @@ gate() {
 
   hdr "5 · token discipline"
   # tokens.css and fonts.css are where raw values live; everything else uses them.
-  local CSS=("$ROOT"/screens/assets/*.css "$ROOT"/design-system/system/{components,base,sheet}.css)
+  # (declared and assigned separately: bash does not expand globs or braces in
+  # a `local NAME=(...)` assignment, so the check silently grepped nothing)
+  local CSS
+  CSS=("$ROOT"/screens/assets/*.css "$ROOT"/design-system/system/components.css \
+       "$ROOT"/design-system/system/base.css "$ROOT"/design-system/system/sheet.css)
   out=$(grep -nE '#[0-9A-Fa-f]{3,8}\b' "${CSS[@]}" | grep -v '%23')   # %23 = an encoded data-URI colour
   [ -n "$out" ] && { echo "$out" | head -5 | sed 's/^/  /'; fail "raw hex outside tokens.css"; }
   grep -qE 'border-radius: *[0-9]+px' "${CSS[@]}" && fail "bare px radius outside tokens.css"
@@ -128,6 +132,24 @@ stage() {
   # nested .vercel links would retarget the deploy; the staging root's own must live
   find "$STAGE/screens" "$STAGE/design-system" -name .vercel -type d -prune -exec rm -rf {} + 2>/dev/null
   rm -f "$STAGE/screens/_partials.html"        # authoring reference, never ships
+  # `vercel link` drops a .env.local holding a VERCEL_OIDC_TOKEN beside the link.
+  # A static deploy would publish it, so it never travels.
+  rm -f "$STAGE"/.env* "$STAGE"/.gitignore
+  # The screens project is served from this staging root, so its config lives
+  # here, written fresh each time: clean URLs, as the design-system project has.
+  cat > "$STAGE/vercel.json" <<'JSON'
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "redirects": [{ "source": "/", "destination": "/screens/", "permanent": false }],
+  "headers": [
+    {
+      "source": "/design-system/system/fonts/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}
+JSON
   echo "  screens: $(ls "$STAGE/screens"/*.html | wc -l | tr -d ' ') pages · design-system: $(ls "$STAGE/design-system"/*.html | wc -l | tr -d ' ') pages"
   [ -f "$STAGE/.vercel/project.json" ] || fail "staging root lost its vercel link"
 }
@@ -149,6 +171,7 @@ push() {
 }
 
 deploy() {
+  ls "$ROOT"/design-system/.env* >/dev/null 2>&1 && fail "design-system/.env* exists (vercel link writes a token there) -- delete it before deploying"
   hdr "8 · deploying design-system"
   push design-system "$ROOT/design-system"
   hdr "9 · deploying screens (carrying a fresh copy of design-system)"
