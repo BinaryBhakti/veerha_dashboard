@@ -109,11 +109,28 @@
     .wt.is-expanded::after {
       content: ""; position: fixed; inset: 0; z-index: 64; background: var(--scrim);
     }
-    /* the badge shrinks to its count and sits in the corner, off the content */
-    .wt-badge { top: auto; bottom: 12px; left: auto; right: 12px; transform: none; padding: 5px; }
+    /* The badge shrinks to its count and moves up into the top bar, beside the
+       bell. In the bottom corner it sat on every sticky footer, bulk bar and
+       sheet button -- the primary action on a phone lives down there. */
+    .wt-badge { top: 10px; bottom: auto; left: auto; right: 152px; transform: none; padding: 4px; box-shadow: none; }
     .wt-badge > span:first-child { display: none; }
-    .wt__stage .vs-canvas { padding-bottom: calc(var(--s-8) + 48px); }
-    .wt-panel { top: auto; bottom: 60px; width: calc(100vw - 2 * var(--s-4)); max-height: calc(100vh - 120px); }
+    .wt-badge .v-badge { font-size: 0; }
+    .wt-badge #wtCount { font-size: var(--t-meta-s); }
+    /* Checkout at the counter: the pay button rides at the thumb while the
+       cashier scrolls the products; in place it sat below the whole list. */
+    .wt-screen.is-on .vs-checkout {
+      position: fixed; left: var(--s-4); right: var(--s-4); bottom: calc(var(--s-3) + env(safe-area-inset-bottom));
+      width: auto !important; margin: 0 !important; z-index: var(--z-sticky); box-shadow: var(--e3);
+    }
+    .wt-screen.is-on .vs-canvas:has(.vs-checkout) { padding-bottom: calc(var(--s-16) + var(--s-4)); }
+    /* The top bar on a phone names the page, not the path to it. */
+    .wt__main > .v-topbar #wtCrumbA, .wt__main > .v-topbar .v-crumb__sep { display: none; }
+    .wt__main > .v-topbar .v-crumb { flex: 1 1 0; min-width: 0; padding-right: 56px; }
+    .wt__main > .v-topbar .v-crumb__current {
+      font-size: var(--t-body-s); font-weight: 600;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .wt-panel { top: 60px; bottom: auto; left: var(--s-4); right: var(--s-4); width: auto; max-height: calc(100vh - 76px); }
     .wt-unbuilt { padding: var(--s-6); }
   }
 
@@ -1742,7 +1759,7 @@
               </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s-3);align-items:start">
+            <div class="vs-board" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s-3);align-items:start">
 
               <div>
                 <div class="v-card" style="padding:var(--s-3) var(--s-4);margin-bottom:var(--s-3)">
@@ -3847,7 +3864,7 @@
             </div>
 
             <div class="v-card" style="overflow:hidden">
-              <table class="v-table">
+              <table class="v-table v-table--keep">
                 <thead><tr>
                   <th style="width:196px">Contact</th>
                   <th style="width:132px">Owner</th>
@@ -3965,7 +3982,7 @@
                 <p class="v-pagehead__sub">19 of 22 contacts touched · 162 touches in 90 days</p></div>
             </div>
             <div class="v-card" style="overflow:hidden">
-              <table class="v-table">
+              <table class="v-table v-table--keep">
                 <thead><tr>
                   <th style="width:196px">Contact</th>
                   <th style="width:132px">Owner</th>
@@ -8687,7 +8704,7 @@ Late checkout, subject to availability</textarea>
               </div>
 
               <div class="v-card" style="margin-top:var(--s-5)">
-                <table class="v-table">
+                <table class="v-table v-table--keep">
                   <thead><tr><th>Source</th><th class="v-table__num">Leads</th><th class="v-table__num">Booked</th>
                     <th class="v-table__num">Conv.</th><th class="v-table__num">Revenue</th>
                     <th class="v-table__num">Ad spend</th><th class="v-table__num">Cost / lead</th>
@@ -15553,7 +15570,7 @@ Late checkout, subject to availability</textarea>
                   <div class="row" style="justify-content:space-between;padding:var(--s-2) 0;border-bottom:1px solid var(--border)"><span class="t-small">Offer DIWALI10 <span class="muted">· 10% over ₹1,000</span></span><span class="amount t-small" style="color:var(--ok-tx)">−₹125</span></div>
                   <div class="row" style="justify-content:space-between;padding:var(--s-3) 0"><b class="t-small">Total</b><b class="amount">₹1,125</b></div><div class="row" style="gap:var(--s-2);margin-top:var(--s-2)"><input class="v-input" value="DIWALI10" aria-label="Discount code"><button class="v-btn v-btn--secondary v-btn--sm" data-w data-inert="DIWALI10 is applied — 10% off over ₹1,000">Applied</button></div>
                   <div class="v-field" style="margin-top:var(--s-3)"><label class="v-field__label" for="f-18commer-1">Customer <span class="t-meta muted">· optional</span></label><input id="f-18commer-1" class="v-input" placeholder="Phone or name — leave empty for a walk-in"></div>
-                  <button class="v-btn v-btn--primary v-btn--lg" style="width:100%;margin-top:var(--s-4)" data-w data-go="counter-paid">Take payment · ₹1,125</button></div></section>
+                  <button class="v-btn v-btn--primary v-btn--lg vs-checkout" style="width:100%;margin-top:var(--s-4)" data-w data-go="counter-paid">Take payment · ₹1,125</button></div></section>
             </div>
             </div></div>
 <div data-screen="counter-paid" class="wt-screen vs-body"><div class="vs-canvas">

@@ -264,7 +264,7 @@
   width: 100%; min-height: 36px; padding: 7px var(--s-3);
   background: var(--surface); color: var(--text-primary);
   border: 1px solid var(--field-border); border-radius: var(--r-ctrl);
-  font-size: var(--t-small-s);
+  font-size: var(--t-field-s);
   transition: border-color var(--m-hover) var(--ease), box-shadow var(--m-hover) var(--ease);
 }
 .v-input::placeholder, .v-textarea::placeholder { color: var(--text-muted); }
@@ -1101,14 +1101,86 @@ td.v-table__num.amount { font-family: var(--ui); }
 /* --- NARROW SCREENS ------------------------------------------------------
    Components stay the same components on a phone; only what has to give
    gives. Breakpoint numbers: --bp-phone in tokens.css. */
+/* --- TOUCH ---------------------------------------------------------------
+   A finger needs --tap (44px) where a pointer needs 30. Controls keep their
+   look and grow their box; things drawn small (a check, a switch, an inline
+   link) keep their drawing and grow the area around it. */
+@media (pointer: coarse), (max-width: 760px) {
+  .v-btn, .v-btn--sm, .v-btn--lg { height: auto; min-height: var(--tap); }
+  .v-btn--sm { padding: 0 var(--s-4); font-size: var(--t-small-s); }
+  .v-btn--icon { width: var(--tap); }
+  /* !important: compact filter selects carry an inline min-height:30px. */
+  .v-input, .v-select { min-height: var(--tap) !important; }
+  .v-tab, .v-pill, .v-selectchip, .v-filterchip, .v-action { min-height: var(--tap); }
+  .v-seg__opt { min-height: calc(var(--tap) - 6px); }
+  .v-check, .v-toggle { min-height: var(--tap); min-width: var(--tap); }
+  .v-tab { min-width: var(--tap); justify-content: center; }
+  :is(.v-link, .v-callout__link):not(.v-btn) { padding-block: 12px; margin-block: -12px; }
+  .v-kbd { display: none; }
+  .v-topbar__icon { width: 40px; height: 40px; }
+  .v-ai__mark { font-size: var(--t-micro-s); width: 20px; height: 20px; }
+  .v-rail__count { font-size: var(--t-micro-s); }
+}
+
 @media (max-width: 760px) {
   .v-topbar { padding: 0 var(--s-4); gap: var(--s-2); }
   .v-pagehead { flex-wrap: wrap; gap: var(--s-3); }
   .v-pagehead > .v-pagehead__copy { flex-basis: 100%; }
-  .v-pagehead > .v-actions { width: 100%; }
-  .v-stat { flex-basis: 132px; padding: var(--s-3); }
+  .v-pagehead > .v-actions { width: 100%; flex-wrap: wrap; }
+  .v-pagehead > .v-actions > .v-btn--primary { margin-left: auto; }
+  .v-pagehead > .v-actions > .v-seg { flex: 0 1 auto; min-width: 0; }
+
+  /* Stat tiles are a summary, not the page. As a wrapped grid six of them
+     filled the first screen; as one row that scrolls they take a strip and
+     the list they summarise starts above the fold. */
+  .v-stats {
+    flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
+    scrollbar-width: none; padding: 2px; margin: -2px;
+  }
+  .v-stats::-webkit-scrollbar { display: none; }
+  .v-stats > .v-stat { flex: 0 0 42%; scroll-snap-align: start; padding: var(--s-3); gap: var(--s-1); }
+  .v-stats .v-stat svg:has(.g-spark), .v-stats .v-stat__ic { display: none; }
+  .v-stats .v-stat__n { font-size: var(--t-section-s); line-height: var(--t-section-l); }
+  .v-stat { padding: var(--s-3); }
   .v-modal, .v-modal--wide { max-width: 100%; }
+
+  /* A modal on a phone is a sheet from the bottom edge: it can hold a form
+     taller than the screen, its body scrolls, and its buttons stay pinned
+     under the thumb instead of below the fold. Paired fields stack. */
+  .v-modal {
+    width: 100%; padding: var(--s-5) var(--s-4) 0;
+    border-radius: var(--r-card) var(--r-card) 0 0;
+  }
+  .v-modal::before {
+    content: ""; flex: none; align-self: center; width: 36px; height: 4px;
+    margin: calc(-1 * var(--s-2)) 0 var(--s-1); border-radius: var(--r-full); background: var(--border-strong);
+  }
+  .v-modal .row:has(> .v-field) > .v-field { flex: 1 1 100%; }
+  .v-modal .v-field > :is(.v-input, .v-select, .v-textarea) { width: 100%; }
+  .v-modal__foot {
+    position: sticky; bottom: 0; margin: var(--s-2) calc(-1 * var(--s-4)) 0;
+    padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom));
+    background: var(--surface); border-top: 1px solid var(--border);
+  }
+  .v-modal__foot > .v-btn { flex: 1 1 0; }
   .v-drawer { max-width: 100%; }
+  /* A record's drawer head (avatar, name and chips, score, star, close) was
+     one row: the name column got what the score and buttons left over and its
+     contact line wrapped to four lines. On a phone the controls and the score
+     take the first row and the identity gets the full width under them. */
+  .v-drawer__head:has(> .v-avatar + .grow) {
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center; column-gap: var(--s-2); row-gap: var(--s-3);
+  }
+  .v-drawer__head:has(> .v-avatar + .grow) > .v-avatar { grid-column: 1; grid-row: 1; }
+  .v-drawer__head:has(> .v-avatar + .grow) > .grow { grid-column: 1 / -1; grid-row: 2; min-width: 0; }
+  .v-drawer__head:has(> .v-avatar + .grow) > [style*="flex:none"] {
+    grid-column: 2; grid-row: 1; justify-self: start; text-align: left !important;
+    display: flex; align-items: baseline; gap: var(--s-2);
+  }
+  .v-drawer__head:has(> .v-avatar + .grow) > [style*="flex:none"] > [style*="line-height"] { line-height: 1 !important; }
+  .v-drawer__head:has(> .v-avatar + .grow) > .v-btn:nth-last-child(2) { grid-column: 3; grid-row: 1; }
+  .v-drawer__head:has(> .v-avatar + .grow) > .v-btn:last-child { grid-column: 4; grid-row: 1; }
   .v-card__head, .v-card__body, .v-card__foot { padding-left: var(--s-4); padding-right: var(--s-4); }
   .v-rows > * { padding-left: var(--s-4); padding-right: var(--s-4); }
 
@@ -1118,12 +1190,16 @@ td.v-table__num.amount { font-family: var(--ui); }
      readable measure before anything gives -- the controls drop below it. */
   :is(.row, .spread, .v-card__head, .v-card__foot, .v-pager, .v-record, .v-callout, .v-error,
       .v-waiting__row, .v-working__row, .v-drawer__head, .v-drawer__foot, .v-footbar,
-      .v-bulkbar, .v-employee__top, .v-ranked__row, .v-next__acts, .v-savebar):not(td *) { flex-wrap: wrap; }
+      .v-employee__top, .v-ranked__row, .v-next__acts, .v-savebar):not(td *) { flex-wrap: wrap; }
   :is(.row, .spread, .v-card__head, .v-card__foot, .v-record, .v-callout, .v-error,
       .v-waiting__row, .v-working__row, .v-drawer__head, .v-footbar, .v-employee__top):not(td *)
     > :is(.grow, [style*="flex:1"], .v-record__body, .v-waiting__body, .v-working__act):not(:empty) {
     flex: 1 1 0; min-width: min(14rem, 100%);
   }
+  /* ...except a title between icon buttons (a month and its arrows): the
+     buttons are small enough to stay on the title's line. */
+  .v-card__head:not(:has(> :not(.grow, .v-btn--icon))) { flex-wrap: nowrap; }
+  .v-card__head:not(:has(> :not(.grow, .v-btn--icon))) > .grow { min-width: 0; }
   /* The text beside a leading icon stays beside it. */
   :is(.v-callout, .v-error) > :not(svg, .v-callout__ic, .v-callout__link, button, .v-actions, .v-btn, [style*="flex:none"], :has(> svg:only-child)) {
     flex: 1 1 0; min-width: min(13rem, calc(100% - 32px));
@@ -1132,7 +1208,8 @@ td.v-table__num.amount { font-family: var(--ui); }
   .v-drawer__foot > :is(span, p) { flex-basis: 100%; }
   .v-working__obj { white-space: normal; text-align: left; }
   .v-pager__n { margin-left: 0; }
-  .v-bulkbar { row-gap: var(--s-2); }
+  .v-bulkbar { padding-left: var(--s-4); padding-right: var(--s-3); }
+  .v-bulkbar > .t-small { display: none; }
   .v-bulkbar__n { white-space: nowrap; }
   .v-msg { max-width: 86%; }
   .v-composer { flex-wrap: wrap; }
@@ -1148,14 +1225,56 @@ td.v-table__num.amount { font-family: var(--ui); }
   .v-seg { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
   .v-seg__opt { white-space: nowrap; flex: none; }
 
-  /* Tables: a phone shows a table at a width its columns can be read at and
-     scrolls it, rather than folding every cell to a word per line. The pinned
-     action column (above) stays in view while the rest scrolls under it. */
-  :has(> .v-table) { overflow-x: auto; }
-  .v-table:has(tr > :nth-child(3)) { min-width: 520px; }
-  .v-table:has(tr > :nth-child(4)) { min-width: 620px; }
-  .v-table:has(tr > :nth-child(6)) { min-width: 760px; }
-  .v-table:has(tr > :nth-child(9)) { min-width: 960px; }
+  /* Tables. A list of records (leads, orders, invoices) becomes a stack of
+     cards: the record's name on top, its row actions beside it, and every
+     other column as a "label  value" line. behaviour.js marks such tables
+     .v-table--cards and stamps each cell with its column's name. A table
+     that is a matrix -- read across and down, like permissions -- carries
+     .v-table--keep and stays a table, scrolled sideways at a readable width
+     with its action column pinned (above). */
+  :has(> .v-table:not(.v-table--cards)) { overflow-x: auto; }
+  .v-table:not(.v-table--cards):has(tr > :nth-child(3)) { min-width: 520px; }
+  .v-table:not(.v-table--cards):has(tr > :nth-child(4)) { min-width: 620px; }
+  .v-table:not(.v-table--cards):has(tr > :nth-child(6)) { min-width: 760px; }
+  .v-table:not(.v-table--cards):has(tr > :nth-child(9)) { min-width: 960px; }
+
+  .v-table--cards, .v-table--cards tbody { display: block; width: 100%; }
+  .v-table--cards thead { display: none; }
+  .v-table--cards tr {
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: var(--s-3); row-gap: var(--s-2);
+    padding: var(--s-4); border-bottom: 1px solid var(--border);
+  }
+  .v-table--cards tbody tr:last-child { border-bottom: 0; }
+  .v-table--cards td { display: block; padding: 0; border: 0; grid-column: 2 / -1; min-width: 0; }
+  .v-table--cards td.v-table__sel { grid-column: 1; grid-row: 1 / span 2; }
+  .v-table--cards td.v-table__sel .v-check { align-items: flex-start; }
+  .v-table--cards td.v-table__title { grid-column: 2; grid-row: 1; }
+  .v-table--cards td.v-table__acts { grid-column: 3; grid-row: 1; align-self: start; }
+  .v-table--cards td.v-table__acts > * { flex-wrap: nowrap; }
+  .v-table--cards td[colspan] { grid-column: 1 / -1; }
+  /* !important: number cells carry an inline text-align:right, which in a
+     label-and-value list leaves money stranded at the far edge. */
+  .v-table--cards td[data-label] { position: relative; padding-left: 7.5rem; text-align: left !important; }
+  .v-table--cards td[data-label]::before {
+    content: attr(data-label); position: absolute; left: 0; top: 0; width: 7rem;
+    font-family: var(--ui); font-size: var(--t-meta-s); font-weight: 400; line-height: var(--t-body-l);
+    color: var(--text-muted); text-align: left; text-transform: none; letter-spacing: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .v-table--cards td:not(.v-table__title):not([data-label]):empty, .v-table--cards td.v-table__sep { display: none; }
+  .v-table--cards tbody tr.is-selected { box-shadow: inset 2px 0 0 var(--brand); }
+  .v-table--cards tbody tr.is-selected td:first-child { box-shadow: none; }
+  .v-card:has(> .v-table) > .v-table.v-table--cards tr > *:last-child {
+    position: relative; background: none; box-shadow: none;
+  }
+  .v-card:has(> .v-table--cards) { overflow-x: visible !important; }
+
+  /* Selecting rows on a phone: the bar sits where the thumb is. */
+  .v-bulkbar {
+    position: sticky; bottom: var(--s-3); z-index: var(--z-overlay);
+    box-shadow: var(--e2);
+  }
 
   .v-kv { gap: var(--s-2) var(--s-3); }
   .v-employee__stat { padding: var(--s-2); }

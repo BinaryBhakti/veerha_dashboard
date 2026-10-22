@@ -152,6 +152,7 @@
 .vs-pane { min-width: 0; min-height: 0; overflow: auto; border-right: 1px solid var(--border); background: var(--surface); }
 .vs-pane:last-child { border-right: 0; }
 .vs-pane--canvas { background: var(--canvas); }
+.vs-pane__back { display: none; }   /* phone only: the inbox's way back to the list */
 .vs-pane__hd {
   padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--border);
   background: var(--surface); position: sticky; top: 0; z-index: var(--z-sticky);
@@ -311,6 +312,9 @@
 }
 
 @media (max-width: 760px) {
+  .vs-overlay--modal { align-items: flex-end; }
+  .vs-overlay .v-modal { max-height: 92%; }
+
   /* frames: the rail would take two thirds of the screen; the walkthrough
      turns it into an off-canvas menu instead (walkthrough.html) */
   .vs-app, .vs-app:has(> .v-rail.is-expanded) { grid-template-columns: minmax(0, 1fr); }
@@ -324,24 +328,41 @@
      labels, its search and the help card fold away; behaviour.js scrolls the
      active item into view. */
   .vs-body--sectioned { flex-direction: column; }
+  /* A centred canvas (margin:0 auto) sizes to its content, not the screen,
+     so one wide stepper made the whole setup guide wider than the phone. */
+  .vs-body > .vs-canvas { width: 100%; min-width: 0; }
   .vs-body--sectioned > .v-sidenav {
     width: auto; flex: none; flex-direction: row; align-items: center; gap: var(--s-1);
     padding: var(--s-2) var(--s-4); overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
     border-right: 0; border-bottom: 1px solid var(--border);
     position: sticky; top: 0; z-index: var(--z-sticky);
+    /* Soft edges say "there is more this way". Mask alpha only; the colour is irrelevant. */
+    -webkit-mask-image: linear-gradient(to right, transparent, var(--text-primary) var(--s-3), var(--text-primary) calc(100% - var(--s-6)), transparent);
+            mask-image: linear-gradient(to right, transparent, var(--text-primary) var(--s-3), var(--text-primary) calc(100% - var(--s-6)), transparent);
   }
   .vs-body--sectioned > .v-sidenav::-webkit-scrollbar { display: none; }
   .vs-body--sectioned > .v-sidenav :is(.vs-sidenav__head, .v-sidenav__label, .v-sidenav__help, .vs-sidenav__search) { display: none; }
   .vs-body--sectioned > .v-sidenav > :not(.v-sidenav__group):not(.v-sidenav__item):not(.vs-sidenav__head):not(.v-sidenav__help) { flex: none; }
   .vs-body--sectioned > .v-sidenav .v-sidenav__group { flex-direction: row; gap: var(--s-1); flex: none; }
   .vs-body--sectioned > .v-sidenav .v-sidenav__group + .v-sidenav__group { border-left: 1px solid var(--border); padding-left: var(--s-1); }
-  .vs-body--sectioned > .v-sidenav .v-sidenav__item { white-space: nowrap; flex: none; padding: 6px var(--s-3); min-height: 32px; }
+  .vs-body--sectioned > .v-sidenav .v-sidenav__item { white-space: nowrap; flex: none; padding: 6px var(--s-3); min-height: var(--tap); }
   .vs-body--sectioned > .v-sidenav .v-sidenav__item.is-active::before { left: var(--s-3); right: var(--s-3); top: auto; bottom: 0; width: auto; height: 2px; }
 
   .vs-panes, .vs-panes--inbox, .vs-panes--builder { grid-template-columns: minmax(0, 1fr) !important; }
+  /* Inbox, master/detail: the list, or one conversation with a way back.
+     Stacked, the thread sat a full list-length below the list that opened it.
+     behaviour.js toggles .is-thread and adds the back button. */
+  /* !important: the thread pane carries an inline display:flex. */
+  .vs-panes--inbox:not(.is-thread) > .vs-pane:not(:first-child) { display: none !important; }
+  .vs-panes--inbox.is-thread > .vs-pane:first-child { display: none !important; }
+  .vs-pane__back { display: inline-flex; margin: 0 0 var(--s-2) calc(-1 * var(--s-2)); }
   /* stacked panes take their natural height; the body scrolls, not each pane */
   .vs-pane { border-right: 0; border-bottom: 1px solid var(--border); overflow: visible; }
   .vs-panes { flex: none !important; height: auto !important; min-height: 0 !important; align-content: start; }
+  /* ...and its row-flex parent must not stretch it back to the screen's
+     height: stretched, the rows split 788px and the steps spilled over the
+     pane below. */
+  .vs-body--panes { align-items: flex-start; }
   /* Builders lay their panes out as a flex row with fixed pane widths; on a
      phone they stack the same way the grid panes do. Stacked, a pane header
      no longer pins -- it would slide over the pane above it. */
@@ -359,6 +380,16 @@
   .vs-body [style*="grid-template-columns"]:is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"]):not(.vs-pane) {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+  /* A pipeline board on a phone: one stage at a time, swiped sideways, with
+     the next stage's edge showing so the swipe is discoverable. Two squeezed
+     columns read stages out of order (New, Qualified / Proposal, ...). */
+  .vs-body .vs-board[style*="grid-template-columns"]:not(.vs-pane) {
+    grid-template-columns: none !important; grid-auto-flow: column; grid-auto-columns: 82%;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    padding-bottom: var(--s-2);
+  }
+  .vs-board > * { scroll-snap-align: start; }
+  .vs-board::-webkit-scrollbar { display: none; }
   /* ...and when those figures are ruled, the rules follow the new grid. */
   .vs-body :is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"]) > [style*="border-right"]:nth-child(2n) { border-right: 0 !important; }
   .vs-body :is([style*="repeat(4,"], [style*="repeat(5,"], [style*="repeat(6,"]):has(> [style*="border-right"]) > :nth-child(n+3) { border-top: 1px solid var(--border); }

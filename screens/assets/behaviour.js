@@ -349,9 +349,33 @@
     return first.toLowerCase();
   }
 
+  /* On a phone a table of records reads as a stack of cards (components.css,
+     .v-table--cards). The CSS can't see a column's name from inside a cell,
+     so each cell is told it here, and the three cells with a fixed place on
+     the card -- the select check, the record's name, the row actions -- are
+     marked. A matrix opts out with .v-table--keep. */
+  function cardify(table, ths) {
+    var labels = ths.map(function (th) { return th.textContent.replace(/\s+/g, ' ').trim(); });
+    if (table.classList.contains('v-table--keep') || labels.filter(Boolean).length < 3) return;
+    table.classList.add('v-table--cards');
+    $$('tbody tr', table).forEach(function (tr) {
+      var cells = Array.prototype.slice.call(tr.children);
+      if (cells.length !== ths.length) return;
+      var titled = false;
+      cells.forEach(function (td, i) {
+        if (!td.textContent.trim() && $('.v-check', td)) { td.classList.add('v-table__sel'); return; }
+        if (!titled) { titled = true; td.classList.add('v-table__title'); return; }
+        if (i === cells.length - 1 && (!labels[i] || /^actions$/i.test(labels[i]))) { td.classList.add('v-table__acts'); return; }
+        if (labels[i]) td.setAttribute('data-label', labels[i]);
+        else if (td.textContent.trim().length <= 1 && !$('button, a, input, select', td)) td.classList.add('v-table__sep');   // an arrow between columns
+      });
+    });
+  }
+
   function initTable(table, scope) {
     if (table.dataset.vWired) return; table.dataset.vWired = '1';
     var ths = $$('thead th', table);
+    cardify(table, ths);
     ths.forEach(function (th, i) {
       if (!th.textContent.trim() || $('.v-check', th)) return;
       th.classList.add('is-sortable');
@@ -477,12 +501,86 @@
     });
   }
 
+  /* A page header on a phone keeps one row of actions: the view switch, the
+     primary action, and a "More" menu holding the rest. Six buttons wrapped
+     onto three rows and pushed the page down a screen. The buttons are moved,
+     not copied, so whatever they do still works; on a wider screen they go
+     back. flows.js opens the menu ([data-menu]); without it, so does this. */
+  var PHONE = window.matchMedia('(max-width: 760px)');
+  var DOTS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-dots"/></svg>';
+  function compactActions(root) {
+    $$('.v-pagehead > .v-actions', root).forEach(function (bar) {
+      if (PHONE.matches && !bar.__more) {
+        var extra = $$(':scope > .v-btn:not(.v-btn--primary)', bar);
+        // with no primary, the first labelled button keeps its place
+        if (!$(':scope > .v-btn--primary', bar)) extra = extra.filter(function (b, i) { return i > 0 || !b.textContent.trim(); });
+        if (extra.length < 2) return;
+        var host = document.createElement('span');
+        host.className = 'v-menu-host';
+        host.innerHTML = '<button class="v-btn v-btn--secondary v-btn--icon" data-menu aria-haspopup="menu" aria-expanded="false" aria-label="More actions">' + DOTS + '</button>' +
+          '<div class="v-menu v-menu--left" role="menu" hidden></div>';
+        var menu = host.lastChild;
+        extra.forEach(function (b) {
+          b.__cls = b.className;
+          if (!b.textContent.trim()) b.hidden = true;   // an icon-only "more" has nothing to say in a menu
+          b.className = 'v-menu__item'; b.setAttribute('role', 'menuitem');
+          menu.appendChild(b);
+        });
+        bar.insertBefore(host, $(':scope > .v-btn--primary', bar));
+        host.firstChild.addEventListener('click', function () {
+          menu.hidden = !menu.hidden;
+          host.firstChild.setAttribute('aria-expanded', !menu.hidden);
+        });
+        bar.__more = host; bar.__extra = extra;
+      } else if (!PHONE.matches && bar.__more) {
+        var m = bar.__more;
+        bar.__extra.forEach(function (b) {
+          b.className = b.__cls; b.removeAttribute('role'); b.hidden = false;
+          bar.insertBefore(b, m);
+        });
+        if (m.__menu) m.__menu.remove();
+        $$('.v-menu', document).forEach(function (x) { if (x.__host === m) x.remove(); });
+        m.remove(); bar.__more = null;
+      }
+    });
+  }
+
+  /* The inbox on a phone shows the list or one conversation, never both
+     (shell.css). Opening a conversation can also move to another walkthrough
+     screen, so the choice is remembered across that one navigation and
+     dropped on any other. */
+  var threadAt = 0;
+  function inboxPanes(on) {
+    $$('.vs-panes--inbox').forEach(function (p) { p.classList.toggle('is-thread', on); });
+  }
+  function wireInbox(root) {
+    $$('.vs-panes--inbox > .vs-pane:nth-child(2) > .vs-pane__hd', root).forEach(function (hd) {
+      if ($('.vs-pane__back', hd)) return;
+      var b = document.createElement('button');
+      b.className = 'v-btn v-btn--ghost v-btn--sm vs-pane__back';
+      b.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg>Inbox';
+      b.addEventListener('click', function (e) { e.stopPropagation(); inboxPanes(false); window.scrollTo(0, 0); });
+      hd.insertBefore(b, hd.firstChild);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    if (!PHONE.matches || !e.target.closest('.vs-panes--inbox .v-convitem')) return;
+    threadAt = Date.now(); inboxPanes(true); window.scrollTo(0, 0);
+  }, true);
+  window.addEventListener('hashchange', function () {
+    if (Date.now() - threadAt > 800) inboxPanes(false);
+    else setTimeout(function () { inboxPanes(true); }, 120);
+  });
+
   /* ------------------------------------------------------------ bootstrap -- */
   function wireAll() {
     var active = $('.wt-screen.is-on');
-    if (active) { wire(active); revealNav(active); return; }
-    $$('.vs-frame').forEach(function (f) { wire(f); revealNav(f); });
+    if (active) { wire(active); revealNav(active); compactActions(active); wireInbox(active); return; }
+    $$('.vs-frame').forEach(function (f) { wire(f); revealNav(f); compactActions(f); wireInbox(f); });
   }
+  (PHONE.addEventListener ? PHONE.addEventListener.bind(PHONE, 'change') : PHONE.addListener.bind(PHONE))(function () {
+    compactActions(document);
+  });
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', wireAll);
   else wireAll();

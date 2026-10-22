@@ -243,6 +243,17 @@
      the responsive layer lands. */
 
   --k: 1;
+
+  /* --- 12 · TOUCH ---------------------------------------------------------
+     Field text and the smallest label size. A phone raises both: iOS zooms
+     the page into any field set below 16px, and 11px labels are not legible
+     at arm's length. --tap is the smallest thing a finger is asked to hit. */
+  --t-field-s: var(--t-small-s);
+  --tap: 44px;
+}
+
+@media (max-width: 760px) {
+  :root { --t-field-s: 16px; --t-micro-s: 12px; --t-micro-l: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
